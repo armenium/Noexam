@@ -1,0 +1,6 @@
+<svg id="icon_scroll_top" xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56">
+  <rect id="Rectangle" width="56" height="56" rx="28" fill="#4a4a4a"/>
+  <g id="arrow-point-to-right" transform="translate(15.944 33.833) rotate(-90)">
+    <path id="Path" d="M13.5,13.677l-10.56,10.7a1.7,1.7,0,0,1-2.432,0,1.759,1.759,0,0,1,0-2.465l9.344-9.469L.5,2.975A1.76,1.76,0,0,1,.5.511a1.7,1.7,0,0,1,2.432,0l10.56,10.7a1.759,1.759,0,0,1,0,2.464Z" transform="translate(0.206)" fill="#fff"/>
+  </g>
+</svg>

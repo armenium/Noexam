@@ -1,0 +1,14 @@
+class_name: AcceptanceTester
+modules:
+    enabled:
+        - WebDriver:
+            url: http://noexam.digidez.com
+            host: 'Jholloway12:08e2b2c7-2336-49a4-b150-bc09b47ecf2c@ondemand.saucelabs.com'
+            port: 80
+            browser: chrome
+            capabilities:
+                platform: 'Windows 10'
+        - Yii2:
+            part: orm
+            entryScript: index-test.php
+            cleanup: false

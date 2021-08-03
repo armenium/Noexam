@@ -1,0 +1,88 @@
+Options +FollowSymLinks
+IndexIgnore */*
+
+RewriteEngine On RewriteBase /
+
+#RewriteCond %{HTTP_HOST} ^noexam.com
+#RewriteRule (.*) https://phpstack-223893-690316.cloudwaysapps.com$1 [R=301,L]
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+Rewriterule ^robots.txt$ web/robots.txt [L]
+
+RewriteCond %{REQUEST_URI} !\?
+RewriteCond %{REQUEST_URI} !\&
+RewriteCond %{REQUEST_URI} !\=
+RewriteCond %{REQUEST_URI} !\.
+RewriteCond %{REQUEST_URI} !\/$
+RewriteRule ^(.*[^\/])$ /$1/ [R=301,L]
+
+RewriteRule ^feed/$ feed.dat [QSA,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule . index.php
+
+#AuthType Basic
+#AuthName "Enter your login and password."
+#AuthUserFile /home/.htpasswd
+#Require valid-user
+
+Redirect 301 /home/ https://phpstack-223893-690316.cloudwaysapps.com/
+Redirect 301 /exam-home/ https://phpstack-223893-690316.cloudwaysapps.com/
+Redirect 301 /life-insurance-rates/ https://phpstack-223893-690316.cloudwaysapps.com/rates/
+Redirect 301 /no-exam-life-insurance/ https://phpstack-223893-690316.cloudwaysapps.com/
+Redirect 301 /quotes/ https://phpstack-223893-690316.cloudwaysapps.com/
+Redirect 301 /life-insurance-without-physical/ https://phpstack-223893-690316.cloudwaysapps.com/
+Redirect 301 /instant-life-insurance/ https://phpstack-223893-690316.cloudwaysapps.com/
+Redirect 301 /life-insurance-elderly/ https://phpstack-223893-690316.cloudwaysapps.com/
+Redirect 301 /life-insurance-parents/ https://phpstack-223893-690316.cloudwaysapps.com/
+Redirect 301 /applying-life-insurance-online-safe/ https://phpstack-223893-690316.cloudwaysapps.com/buy-online/
+Redirect 301 /what-is-guaranteed-life-insurance/ https://phpstack-223893-690316.cloudwaysapps.com/
+Redirect 301 /how-much-life-insurance/ https://phpstack-223893-690316.cloudwaysapps.com/guide/
+Redirect 301 /life-insurance-beneficiary/ https://phpstack-223893-690316.cloudwaysapps.com/guide/
+Redirect 301 /mortgage-life-insurance/ https://phpstack-223893-690316.cloudwaysapps.com/guide/
+Redirect 301 /spouse-life-insurance/ https://phpstack-223893-690316.cloudwaysapps.com/guide/
+Redirect 301 /types-of-life-insurance/ https://phpstack-223893-690316.cloudwaysapps.com/guide/
+Redirect 301 /will-and-proper-coverage/ https://phpstack-223893-690316.cloudwaysapps.com/guide/
+Redirect 301 /term-life-insurance-vs-whole-life-insurance/ https://phpstack-223893-690316.cloudwaysapps.com/guide/
+Redirect 301 /life-insurance-loans/ https://phpstack-223893-690316.cloudwaysapps.com/guide/
+Redirect 301 /life-insurance-exam/ https://phpstack-223893-690316.cloudwaysapps.com/guide/
+Redirect 301 /life-insurance-and-depression/ https://phpstack-223893-690316.cloudwaysapps.com/guide/
+Redirect 301 /life-insurance-weight-charts/ https://phpstack-223893-690316.cloudwaysapps.com/guide/
+Redirect 301 /third-party-ratings/ https://phpstack-223893-690316.cloudwaysapps.com/guide/
+Redirect 301 /how-it-works/ https://phpstack-223893-690316.cloudwaysapps.com/
+Redirect 301 /questions/ https://phpstack-223893-690316.cloudwaysapps.com/
+Redirect 301 /rates/ https://phpstack-223893-690316.cloudwaysapps.com/
+Redirect 301 /student-saving-guide/ https://phpstack-223893-690316.cloudwaysapps.com/
+Redirect 301 /no-medical-exam-life-insurance/ https://phpstack-223893-690316.cloudwaysapps.com/
+Redirect 301 /guide/ https://phpstack-223893-690316.cloudwaysapps.com/life-insurance/
+Redirect 301 /life-insurance-rates-based-age/ https://phpstack-223893-690316.cloudwaysapps.com/life-insurance/term/rates/
+Redirect 301 /aig-life-insurance-review/ https://phpstack-223893-690316.cloudwaysapps.com/life-insurance/companies/aig/
+Redirect 301 /best-mortgage-life-insurance/ https://phpstack-223893-690316.cloudwaysapps.com/life-insurance/mortgage/
+Redirect 301 /gerber-grow-up-plan-review/ https://phpstack-223893-690316.cloudwaysapps.com/life-insurance/companies/gerber-grow-up-plan/
+Redirect 301 /best-life-insurance-policies/ https://phpstack-223893-690316.cloudwaysapps.com/life-insurance/best-policies/
+Redirect 301 /life-insurance-for-seniors/ https://phpstack-223893-690316.cloudwaysapps.com/life-insurance/seniors/
+Redirect 301 /benefits-of-biking/ https://phpstack-223893-690316.cloudwaysapps.com/health/benefits-of-biking/
+Redirect 301 /millennials-life-insurance/ https://phpstack-223893-690316.cloudwaysapps.com/life-insurance/millennials/
+Redirect 301 /sagicor-review/ https://phpstack-223893-690316.cloudwaysapps.com/life-insurance/companies/sagicor/
+Redirect 301 /burial-insurance/ https://phpstack-223893-690316.cloudwaysapps.com/life-insurance/burial-insurance/
+Redirect 301 /banner-life-insurance-review/ https://phpstack-223893-690316.cloudwaysapps.com/life-insurance/companies/banner/
+Redirect 301 /importance-hobbies/ https://phpstack-223893-690316.cloudwaysapps.com/health/importance-hobbies/
+Redirect 301 /getting-started-life-insurance/ https://phpstack-223893-690316.cloudwaysapps.com/careers/getting-started-life-insurance/
+Redirect 301 /companies/ https://phpstack-223893-690316.cloudwaysapps.com/life-insurance/companies/
+Redirect 301 /over-45/ https://phpstack-223893-690316.cloudwaysapps.com/life-insurance/over-45/
+Redirect 301 /american-national/ https://phpstack-223893-690316.cloudwaysapps.com/life-insurance/companies/american-national/
+Redirect 301 /life-insurance-divorce-infographic/ https://phpstack-223893-690316.cloudwaysapps.com/life-insurance/divorce/
+Redirect 301 /life-insurance-approval/ https://phpstack-223893-690316.cloudwaysapps.com/life-insurance/approval-time/
+Redirect 301 /life-insurance-and-anxiety/ https://phpstack-223893-690316.cloudwaysapps.com/life-insurance/health-conditions/anxiety/
+Redirect 301 /life-insurance-with-high-blood-pressure/ https://phpstack-223893-690316.cloudwaysapps.com/life-insurance/health-conditions/high-blood-pressure/
+Redirect 301 /getting-life-insurance-with-diabetes-what-you-need-to-know/ https://phpstack-223893-690316.cloudwaysapps.com/life-insurance/health-conditions/diabetes/
+Redirect 301 /what-life-insurance-companies-test-for-in-a-health-exam/ https://phpstack-223893-690316.cloudwaysapps.com/life-insurance/health-exam/
+Redirect 301 /getting-life-insurance-with-high-cholesterol/ https://phpstack-223893-690316.cloudwaysapps.com/life-insurance/health-conditions/high-cholesterol/
+Redirect 301 /medical-conditions-medications/ https://phpstack-223893-690316.cloudwaysapps.com/life-insurance/health-conditions/
+Redirect 301 /financial-cost-of-smoking/ https://phpstack-223893-690316.cloudwaysapps.com/health/financial-cost-of-smoking/
+Redirect 301 /options-seniors/ https://phpstack-223893-690316.cloudwaysapps.com/life-insurance/no-exam/options-seniors/
+Redirect 301 /no-exam-life-insurance-diabetics/ https://phpstack-223893-690316.cloudwaysapps.com/life-insurance/no-exam/diabetics/
