@@ -108,3 +108,4 @@ class AppAsset extends AssetBundle {
 	}
 
 }
+
