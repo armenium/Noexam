@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/shared-styles.css">
+    <link rel="stylesheet" href="./start-quote.css">
+    <link rel="stylesheet" href="../plugins/css/ion.rangeSlider.min.css">
+</head>
+
+<body>
+
+    <header class="header header--empty">
+        <img src="../images/header/Logo.svg" alt="logo" class="header__logo">
+    </header>
+
+    <div class="main-wrapp">
+        <div class="wrapp">
+            <form class="start-quote">
+                <h1 class="start-quote__title heading-4">Let’s get started!</h1>
+                <div class="start-quote__subtitle fontBodyM"><b>Coverage</b></div>
+                <p class="start-quote__text fontBodyM">The amount of coverage you would like:</p>
+                <div class="start-quote__range">
+                    <input type="text" class="start-quote__range-slider" value="" />
+                </div>
+                <div class="start-quote__term">
+                    <div class="start-quote__subtitle fontBodyM"><b>Term Lenght</b></div>
+                    <div class="start-quote__radio-btns">
+                        <label class="start-quote__label main-radio-btn-label">
+                            <input type="radio" name="term" class="start-quote__radio-btn main-radio-btn">
+                            <span class="start-quote__btn-icon main-radio-btn-icon"></span>
+                            <span class="fontBodyM">10 years</span>
+                        </label>
+                        <label class="start-quote__label main-radio-btn-label">
+                            <input type="radio" name="term" class="start-quote__radio-btn main-radio-btn" checked>
+                            <span class="start-quote__btn-icon main-radio-btn-icon"></span>
+                            <span class="fontBodyM">15 years</span>
+                        </label>
+                        <label class="start-quote__label main-radio-btn-label">
+                            <input type="radio" name="term" class="start-quote__radio-btn main-radio-btn">
+                            <span class="start-quote__btn-icon main-radio-btn-icon"></span>
+                            <span class="fontBodyM"> 20 years</span>
+                            </label>
+                        <label class="start-quote__label main-radio-btn-label">
+                            <input type="radio" name="term" class="start-quote__radio-btn main-radio-btn">
+                            <span class="start-quote__btn-icon main-radio-btn-icon"></span>
+                            <span class="fontBodyM">30 years</span>
+                        </label>
+                    </div>
+                </div>
+                <button type="submit" class="start-quote__btn main-btn button-big">start my Quote</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../plugins/js/ion.rangeSlider.min.js"></script>
+    <script src="./start-quote.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/shared-styles.css">
+    <link rel="stylesheet" href="./date-of-birth.css">
+    <link rel="stylesheet" href="../plugins/css/bootstrap-select.css">
+</head>
+
+<body>
+
+    <header class="header header--empty">
+        <img src="../images/header/Logo.svg" alt="logo" class="header__logo">
+    </header>
+
+    <div class="main-wrapp">
+        <div class="wrapp">
+            <div class="date-of-birth my-quote-steps">
+
+                <div class="my-quote-steps__steps">
+                    <div class="my-quote-steps__steps-item my-quote-steps__steps-item--active">1</div>
+                    <span class="my-quote-steps__decor-line my-quote-steps__decor-line--active"></span>
+                    <div class="my-quote-steps__steps-item my-quote-steps__steps-item--active">2</div>
+                    <span class="my-quote-steps__decor-line"></span>
+                    <div class="my-quote-steps__steps-item">3</div>
+                </div>
+
+                <h1 class="date-of-birth__title heading-4">Date of Birth</h1>
+                <form class="date-of-birth__form">
+                    <div class="date-of-birth__container">
+                        <img src="#" alt="image" class="date-of-birth__img">
+                        <div class="date-of-birth__box">
+                            <label class="date-of-birth__label">
+                                    <span class="tags">Date</span>
+                                    <select name="date" class="date-of-birth__select">
+                                        <option value="DD">DD</option>
+                                        <option value="DD2">DD</option>
+                                        <option value="DD3">DD</option>
+                                    </select>
+                            </label>
+                            <label class="date-of-birth__label">
+                                    <span class="tags">Month</span>
+                                    <select name="month" class="date-of-birth__select">
+                                        <option value="MM">MM</option>
+                                        <option value="MM2">MM</option>
+                                        <option value="MM3">MM</option>
+                                    </select>
+                            </label>
+                            <label class="date-of-birth__label">
+                                    <span class="tags">Year</span>
+                                    <select name="year" class="date-of-birth__select">
+                                        <option value="YYYY">YYYY</option>
+                                        <option value="YYYY2">YYYY</option>
+                                        <option value="YYYY3">YYYY</option>
+                                    </select>
+                            </label>
+                        </div>
+                    </div>
+                    <button type="submit" class="date-of-birth__btn main-btn button-big">Continue</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="../plugins/js/bootstrap-select.js"></script>
+    <script src="./date-of-birth.js"></script>
+</body>
+
+</html>

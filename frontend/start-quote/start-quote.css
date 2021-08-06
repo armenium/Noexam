@@ -1,0 +1,138 @@
+.start-quote {
+    min-height: calc(100vh - 105px);
+    padding: 90px 0;
+}
+
+.start-quote__title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.start-quote__subtitle {
+    margin-bottom: 15px;
+}
+
+.start-quote__text {
+    margin-bottom: 30px;
+}
+
+.start-quote__range {
+    min-height: 160px;
+    margin-bottom: 50px;
+    padding-top: 40px;
+}
+
+.start-quote__term {}
+
+.start-quote__radio-btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 85px;
+    flex-wrap: wrap;
+}
+
+.start-quote__label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-bottom: 25px;
+}
+
+.start-quote__label:last-child {
+    margin-right: 0;
+}
+
+.start-quote__btn {
+    margin: 0 auto;
+    border: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+    .js-grid-text-1,
+    .js-grid-text-2,
+    .js-grid-text-3,
+    .js-grid-text-4,
+    .js-grid-text-5,
+    .js-grid-text-6,
+    .js-grid-text-7,
+    .js-grid-text-8,
+    .js-grid-text-9,
+    .js-grid-text-10 {
+        display: none !important;
+    }
+    .start-quote {
+        padding: 60px 0;
+    }
+    .start-quote__range {
+        overflow: hidden;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .start-quote__radio-btns {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.irs--round .irs-handle {
+    width: 35px !important;
+    height: 35px !important;
+    top: 19px !important;
+    border: 5px solid #F8A846 !important;
+    cursor: pointer;
+}
+
+.irs--round .irs-bar {
+    height: 5px !important;
+    background-color: #F8A846 !important;
+}
+
+.irs-grid {
+    display: block;
+    transform: translateY(20px) !important;
+}
+
+.irs-grid-text {
+    font-size: 14px !important;
+    line-height: 24px !important;
+    color: #757575 !important;
+}
+
+.irs-grid-pol {
+    display: none !important;
+}
+
+.irs-from,
+.irs-to,
+.irs-single {
+    top: -45px !important;
+    background-color: #F8A846 !important;
+}
+
+.irs--round .irs-from,
+.irs--round .irs-to,
+.irs--round .irs-single {
+    width: 150px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 18px !important;
+    line-height: 26px !important;
+    text-align: center;
+    color: #FFFFFF !important;
+}
+
+.irs--round .irs-from:before,
+.irs--round .irs-to:before,
+.irs--round .irs-single:before {
+    bottom: -20px !important;
+    border: 10px solid transparent !important;
+    border-top-color: #F8A846 !important;
+    margin-left: -10px !important;
+}
