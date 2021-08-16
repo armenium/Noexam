@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contract Details</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/shared-styles.css">
+    <link rel="stylesheet" href="./contract-details.css">
+</head>
+
+<body>
+
+    <header class="header header--empty">
+        <img src="../images/header/Logo.svg" alt="logo" class="header__logo">
+    </header>
+
+    <div class="main-wrapp">
+        <div class="wrapp">
+            <div class="contract-details my-quote-steps">
+
+                <div class="my-quote-steps__steps">
+                    <div class="my-quote-steps__steps-item my-quote-steps__steps-item--active">1</div>
+                    <span class="my-quote-steps__decor-line my-quote-steps__decor-line--active"></span>
+                    <div class="my-quote-steps__steps-item my-quote-steps__steps-item--active">2</div>
+                    <span class="my-quote-steps__decor-line my-quote-steps__decor-line--active"></span>
+                    <div class="my-quote-steps__steps-item my-quote-steps__steps-item--active">3</div>
+                </div>
+
+                <h1 class="contract-details__title heading-4">Contact Details</h1>
+                <form class="contract-details__form">
+                    <div class="contract-details__container">
+                        <div class="contract-details__row">
+                            <label class="contract-details__label">
+                                <span class="tags">First Name</span>
+                                <input type="text" class="contract-details__input fontBodyM" placeholder="Enter your first name">
+                            </label>
+                            <label class="contract-details__label">
+                                <span class="tags">Last Name</span>
+                                <input type="text" class="contract-details__input fontBodyM" placeholder="Enter your last name">
+                            </label>
+                        </div>
+
+                        <div class="contract-details__row">
+                            <label class="contract-details__label">
+                                <span class="tags">Email</span>
+                                <input type="email" class="contract-details__input contract-details__input--invalid fontBodyM" placeholder="Enter your email" value="mag">
+                            </label>
+                            <label class="contract-details__label">
+                                <span class="tags">Phone number</span>
+                                <input type="text" class="contract-details__input fontBodyM" placeholder="Enter your phone number">
+                            </label>
+                        </div>
+
+                        <div class="contract-details__row">
+                            <label class="contract-details__label">
+                                <span class="tags">State</span>
+                                <input type="text" class="contract-details__input fontBodyM" placeholder="Enter your state">
+                            </label>
+                            <label class="contract-details__label">
+                                <span class="tags">Zip Code</span>
+                                <input type="text" class="contract-details__input fontBodyM" placeholder="Enter your zip code">
+                            </label>
+                        </div>
+
+                        <div class="contract-details__row">
+                            <label class="contract-details__checkbox-label">
+                                <input type="checkbox">
+                                <div class="fontBodyS">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dictumst nisl proin lobortis morbi in vel elit molestie scelerisque. Dui pretium et nibh volutpat quisque.</div>
+                            </label>
+                        </div>
+                </form>
+
+                </div>
+
+                <button type="submit" class="contract-details__btn main-btn button-big">see my quote</button>
+            </div>
+        </div>
+
+        <script src="./contract-details.js"></script>
+</body>
+
+</html>

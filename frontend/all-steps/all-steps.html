@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All steps</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/shared-styles.css">
+    <link rel="stylesheet" href="./all-steps.css">
+    <link rel="stylesheet" href="../plugins/css/ion.rangeSlider.min.css">
+</head>
+
+<body>
+
+    <header class="header header--empty" style="background-color: #FCF9F3;">
+        <img src="../images/header/Logo.svg" alt="logo" class="header__logo">
+    </header>
+
+    <div class="main-wrapp" style="background-color: #FCF9F3;">
+        <div class="wrapp">
+            <div class="all-steps">
+                <h1 class="all-steps__title heading-4">Let’s get started!</h1>
+                <div class="all-steps__container">
+                    <form class="all-steps__form">
+                        <div class="all-steps__subtitle">Coverage</div>
+                        <label class="all-steps__label">
+                            <span class="fontBodyM">The amount of coverage you would like:</span>
+                            <input type="number" value="40000" class="all-steps__rangeInput">
+                        </label>
+                        <div class="all-steps__range">
+                            <input type="text" class="all-steps__range-slider" value="" />
+                        </div>
+
+                        <div class="all-steps__subtitle">Term Lenght</div>
+
+                        <div class="all-steps__radioBtnsBox">
+                            <label class="all-steps__label main-radio-btn-label">
+                                <input type="radio" name="term" class="all-steps__radio-btn main-radio-btn">
+                                <span class="all-steps__btn-icon main-radio-btn-icon"></span>
+                                <span class="fontBodyM"> 10 years</span>
+                            </label>
+                            <label class="all-steps__label main-radio-btn-label">
+                                <input type="radio" name="term" class="all-steps__radio-btn main-radio-btn">
+                                <span class="all-steps__btn-icon main-radio-btn-icon"></span>
+                                <span class="fontBodyM"> 15 years</span>
+                            </label>
+                            <label class="all-steps__label main-radio-btn-label">
+                                <input type="radio" name="term" class="all-steps__radio-btn main-radio-btn">
+                                <span class="all-steps__btn-icon main-radio-btn-icon"></span>
+                                <span class="fontBodyM"> 20 years</span>
+                            </label>
+                            <label class="all-steps__label main-radio-btn-label">
+                                <input type="radio" name="term" class="all-steps__radio-btn main-radio-btn">
+                                <span class="all-steps__btn-icon main-radio-btn-icon"></span>
+                                <span class="fontBodyM"> 30 years</span>
+                            </label>
+                        </div>
+
+                        <div class="all-steps__radioBtnsBox">
+                            <label class="all-steps__label main-radio-btn-label">
+                                <input type="radio" name="overall-health" class="all-steps__radio-btn main-radio-btn">
+                                <span class="all-steps__btn-icon main-radio-btn-icon"></span>
+                                <span class="fontBodyM">Сompletely healthy</span>
+                            </label>
+                            <label class="all-steps__label main-radio-btn-label">
+                                <input type="radio" name="overall-health" class="all-steps__radio-btn main-radio-btn">
+                                <span class="all-steps__btn-icon main-radio-btn-icon"></span>
+                                <span class="fontBodyM">Have chronic diseases</span>
+                            </label>
+                            <label class="all-steps__label main-radio-btn-label">
+                                <input type="radio" name="overall-health" class="all-steps__radio-btn main-radio-btn">
+                                <span class="all-steps__btn-icon main-radio-btn-icon"></span>
+                                <span class="fontBodyM">Have serious diseases</span>
+                            </label>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../plugins/js/ion.rangeSlider.min.js"></script>
+    <script src="./all-steps.js"></script>
+</body>
+
+</html>

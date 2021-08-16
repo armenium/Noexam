@@ -1,82 +1,75 @@
-.start-quote {
-    min-height: calc(100vh - 105px);
-    padding: 90px 0;
+.all-steps {
+    padding: 80px 0;
 }
 
-.start-quote__title {
+.all-steps__title {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 100px;
 }
 
-.start-quote__subtitle {
-    margin-bottom: 15px;
+.all-steps__container {
+    width: 100%;
+    max-width: 700px;
+    height: 1857px;
+    background: #FFFFFF;
+    box-shadow: 1px 12px 42px rgba(155, 164, 162, 0.12);
+    border-radius: 4px;
+    margin: 0 auto;
+    padding: 40px;
 }
 
-.start-quote__text {
-    margin-bottom: 30px;
+.all-steps__form {}
+
+.all-steps__subtitle {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 26px;
+    color: #282B29;
+    margin-bottom: 20px;
+}
+
+.all-steps__label>span {
+    color: #757575;
+}
+
+.all-steps__rangeInput {
+    width: 100%;
+    max-width: 110px;
+    height: 34px;
+    background: #D6ECE3;
+    border: 1px solid #377660;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 0 15px;
+    font-size: 18px;
+    line-height: 26px;
+    color: #282B29;
 }
 
 .all-steps__range {
     min-height: 160px;
     margin-bottom: 50px;
-    padding-top: 40px;
+    padding-top: 80px;
 }
 
-.start-quote__term {}
+.all-steps__range-slider {}
 
-.start-quote__radio-btns {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 85px;
-    flex-wrap: wrap;
+.all-steps__radioBtnsBox {
+    margin-bottom: 50px;
 }
 
-.start-quote__label {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    margin-right: 10px;
+.all-steps__label {
     margin-bottom: 25px;
 }
 
-.start-quote__label:last-child {
-    margin-right: 0;
+.all-steps__label:last-child {
+    margin-bottom: 0;
 }
 
-.start-quote__btn {
-    margin: 0 auto;
-    border: none;
-    cursor: pointer;
-}
 
-@media screen and (max-width: 767px) {
-    .js-grid-text-1,
-    .js-grid-text-2,
-    .js-grid-text-3,
-    .js-grid-text-4,
-    .js-grid-text-5,
-    .js-grid-text-6,
-    .js-grid-text-7,
-    .js-grid-text-8,
-    .js-grid-text-9,
-    .js-grid-text-10 {
-        display: none !important;
-    }
-    .start-quote {
-        padding: 60px 0;
-    }
-    .start-quote__range {
-        overflow: hidden;
-    }
-}
-
-@media screen and (max-width: 500px) {
-    .start-quote__radio-btns {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-}
+/* RANGE SLIDER */
 
 .irs--round .irs-handle {
     width: 35px !important;
