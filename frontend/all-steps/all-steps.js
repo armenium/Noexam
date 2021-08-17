@@ -9,3 +9,7 @@ $(".all-steps__range-slider").ionRangeSlider({
     hide_min_max: true,
     step: 50000
 });
+
+$(function() {
+    $('.all-steps__select').selectpicker();
+});

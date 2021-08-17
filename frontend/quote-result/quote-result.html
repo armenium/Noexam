@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote result</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/shared-styles.css">
+    <link rel="stylesheet" href="./quote-result.css">
+    <link rel="stylesheet" href="../plugins/css/ion.rangeSlider.min.css">
+    <link rel="stylesheet" href="../plugins/css/bootstrap-select.css">
+    <link rel="stylesheet" href="../css/questions.css">
+    <link rel="stylesheet" href="../css/range-slider.css">
+    <link rel="stylesheet" href="../plugins/css/slick.css">
+</head>
+
+<body>
+
+    <header class="header header--empty" style="background-color: #FCF9F3;">
+        <img src="../images/header/Logo.svg" alt="logo" class="header__logo">
+        <div class="header__imgWrapp">
+            <div class="header__imgBox"><img src="#" alt="icon"></div>
+            <div class="header__imgBox"><img src="#" alt="icon"></div>
+        </div>
+    </header>
+
+    <div class="main-wrapp" style="background-color: #FCF9F3;">
+        <div class="wrapp">
+            <section class="quotes-result">
+                <h1 class="quotes-result__title heading-1"><span>Compare</span> Quotes</h1>
+                <div class="quotes-result__subtitle fontBodyL">See the top companies prices side by side to compare.</div>
+
+                <div class="quotes-result__container">
+                    <form class="quotes-result__form">
+                        <div class="quotes-result__formColumn">
+                            <h4 class="quotes-result__formTitle main-title">Coverage</h4>
+                            <label class="quotes-result__label">
+                                <input type="text" class="quotes-result__range-slider" value="" />
+                            </label>
+                        </div>
+                        <div class="quotes-result__formColumn">
+                            <h4 class="quotes-result__formTitle main-title">Term Length</h4>
+                            <label class="quotes-result__label">
+                                <span class="tags">Select from dropdown</span>
+                                <select name="term" class="quotes-result__select fontBodyM">
+                                    <option value="DD">15 years</option>
+                                    <option value="DD2">20 years</option>
+                                </select>
+                            </label>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="quotes-result__container">
+                    <div class="quotes-result__containerHeader">
+                        <h2 class="quotes-result__containerTitle heading-5">No Medical Exam Policies</h2>
+                        <div class="heading-6">Total: <span>2</span></div>
+                    </div>
+                    <div class="quotes-result__tableHeader tableHeader">
+                        <div class="tableHeader__col fontBodyS">Insurance Company</div>
+                        <div class="tableHeader__col fontBodyS">Monthly Payment</div>
+                        <div class="tableHeader__col fontBodyS">Financial Rating</div>
+                        <div class="tableHeader__col fontBodyS">Term Length</div>
+                    </div>
+                    <hr>
+
+                    <div class="quotes-result__tableRow tableRow">
+                        <div class="tableRow__col">
+                            <div class="tableRow__imgWrapp">
+                                <img src="#" alt="logo" class="tableRow__img">
+                                <div class="tableRow__starsWrapp">
+                                    * * * * *
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tableRow__col">
+                            <div class="tableRow__price fontBodyM">$46.55</div>
+                        </div>
+                        <div class="tableRow__col">
+                            <div class="tableRow__rating fontBodyM">A <span>(Excellent)</span></div>
+                        </div>
+                        <div class="tableRow__col">
+                            <div class="tableRow__term fontBodyM">10 Year Plan</div>
+                        </div>
+                        <div class="tableRow__col tableRow__col--hiden">
+                            <div class="tableRow__box">
+                                <div class="tableRow__boxRow">
+                                    <span class="fontBodyS">Monthly Payment</span>
+                                    <span class="fontBodyM">$46.55</span>
+                                </div>
+                                <div class="tableRow__boxRow">
+                                    <span class="fontBodyS">Financial Rating</span>
+                                    <span class="fontBodyM">A <span>(Excellent)</span></span>
+                                </div>
+                                <div class="tableRow__boxRow">
+                                    <span class="fontBodyS">Term Length</span>
+                                    <span class="fontBodyM">10 Year Plan</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tableRow__col">
+                            <button type="submit" class="tableRow__btn main-btn button-big">apply now</button>
+                        </div>
+                    </div>
+                    <hr>
+
+                    <div class="quotes-result__tableRow tableRow">
+                        <div class="tableRow__col">
+                            <div class="tableRow__imgWrapp">
+                                <img src="#" alt="logo" class="tableRow__img">
+                                <div class="tableRow__starsWrapp">
+                                    * * * * *
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tableRow__col">
+                            <div class="tableRow__price fontBodyM">$46.55</div>
+                        </div>
+                        <div class="tableRow__col">
+                            <div class="tableRow__rating fontBodyM">A <span>(Excellent)</span></div>
+                        </div>
+                        <div class="tableRow__col">
+                            <div class="tableRow__term fontBodyM">10 Year Plan</div>
+                        </div>
+                        <div class="tableRow__col tableRow__col--hiden">
+                            <div class="tableRow__box">
+                                <div class="tableRow__boxRow">
+                                    <span class="fontBodyS">Monthly Payment</span>
+                                    <span class="fontBodyM">$46.55</span>
+                                </div>
+                                <div class="tableRow__boxRow">
+                                    <span class="fontBodyS">Financial Rating</span>
+                                    <span class="fontBodyM">A <span>(Excellent)</span></span>
+                                </div>
+                                <div class="tableRow__boxRow">
+                                    <span class="fontBodyS">Term Length</span>
+                                    <span class="fontBodyM">10 Year Plan</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tableRow__col">
+                            <button type="submit" class="tableRow__btn main-btn button-big">apply now</button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="quotes-result__container">
+                    <div class="quotes-result__containerHeader">
+                        <h2 class="quotes-result__containerTitle heading-5">Policies that Offer Accelerated Underwriting</h2>
+                        <div class="heading-6">Total: 3</div>
+                    </div>
+                    <div class="quotes-result__tableHeader tableHeader">
+                        <div class="tableHeader__col fontBodyS">Insurance Company</div>
+                        <div class="tableHeader__col fontBodyS">Monthly Payment</div>
+                        <div class="tableHeader__col fontBodyS">Financial Rating</div>
+                        <div class="tableHeader__col fontBodyS">Term Length</div>
+                    </div>
+                    <hr>
+
+                    <div class="quotes-result__tableRow tableRow">
+                        <div class="tableRow__col">
+                            <div class="tableRow__imgWrapp">
+                                <img src="#" alt="logo" class="tableRow__img">
+                                <div class="tableRow__starsWrapp">
+                                    * * * * *
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tableRow__col">
+                            <div class="tableRow__price fontBodyM">$46.55</div>
+                        </div>
+                        <div class="tableRow__col">
+                            <div class="tableRow__rating fontBodyM">A <span>(Excellent)</span></div>
+                        </div>
+                        <div class="tableRow__col">
+                            <div class="tableRow__term fontBodyM">10 Year Plan</div>
+                        </div>
+                        <div class="tableRow__col tableRow__col--hiden">
+                            <div class="tableRow__box">
+                                <div class="tableRow__boxRow">
+                                    <span class="fontBodyS">Monthly Payment</span>
+                                    <span class="fontBodyM">$46.55</span>
+                                </div>
+                                <div class="tableRow__boxRow">
+                                    <span class="fontBodyS">Financial Rating</span>
+                                    <span class="fontBodyM">A <span>(Excellent)</span></span>
+                                </div>
+                                <div class="tableRow__boxRow">
+                                    <span class="fontBodyS">Term Length</span>
+                                    <span class="fontBodyM">10 Year Plan</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tableRow__col">
+                            <button type="submit" class="tableRow__btn main-btn button-big">apply now</button>
+                        </div>
+                    </div>
+                    <hr>
+
+                    <div class="quotes-result__tableRow tableRow">
+                        <div class="tableRow__col">
+                            <div class="tableRow__imgWrapp">
+                                <img src="#" alt="logo" class="tableRow__img">
+                                <div class="tableRow__starsWrapp">
+                                    * * * * *
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tableRow__col">
+                            <div class="tableRow__price fontBodyM">$46.55</div>
+                        </div>
+                        <div class="tableRow__col">
+                            <div class="tableRow__rating fontBodyM">A <span>(Excellent)</span></div>
+                        </div>
+                        <div class="tableRow__col">
+                            <div class="tableRow__term fontBodyM">10 Year Plan</div>
+                        </div>
+                        <div class="tableRow__col tableRow__col--hiden">
+                            <div class="tableRow__box">
+                                <div class="tableRow__boxRow">
+                                    <span class="fontBodyS">Monthly Payment</span>
+                                    <span class="fontBodyM">$46.55</span>
+                                </div>
+                                <div class="tableRow__boxRow">
+                                    <span class="fontBodyS">Financial Rating</span>
+                                    <span class="fontBodyM">A <span>(Excellent)</span></span>
+                                </div>
+                                <div class="tableRow__boxRow">
+                                    <span class="fontBodyS">Term Length</span>
+                                    <span class="fontBodyM">10 Year Plan</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tableRow__col">
+                            <button type="submit" class="tableRow__btn main-btn button-big">apply now</button>
+                        </div>
+                    </div>
+                    <hr>
+
+                    <div class="quotes-result__tableRow tableRow">
+                        <div class="tableRow__col">
+                            <div class="tableRow__imgWrapp">
+                                <img src="#" alt="logo" class="tableRow__img">
+                                <div class="tableRow__starsWrapp">
+                                    * * * * *
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tableRow__col">
+                            <div class="tableRow__price fontBodyM">$46.55</div>
+                        </div>
+                        <div class="tableRow__col">
+                            <div class="tableRow__rating fontBodyM">A <span>(Excellent)</span></div>
+                        </div>
+                        <div class="tableRow__col">
+                            <div class="tableRow__term fontBodyM">10 Year Plan</div>
+                        </div>
+                        <div class="tableRow__col tableRow__col--hiden">
+                            <div class="tableRow__box">
+                                <div class="tableRow__boxRow">
+                                    <span class="fontBodyS">Monthly Payment</span>
+                                    <span class="fontBodyM">$46.55</span>
+                                </div>
+                                <div class="tableRow__boxRow">
+                                    <span class="fontBodyS">Financial Rating</span>
+                                    <span class="fontBodyM">A <span>(Excellent)</span></span>
+                                </div>
+                                <div class="tableRow__boxRow">
+                                    <span class="fontBodyS">Term Length</span>
+                                    <span class="fontBodyM">10 Year Plan</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tableRow__col">
+                            <button type="submit" class="tableRow__btn main-btn button-big">apply now</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+        </div>
+    </div>
+
+    <div class="main-wrapp">
+        <div class="wrapp">
+            <div class="quotes-result__cards cards">
+                <div class="cards__item">
+                    <div class="cards__subtitle sub-title-1">top rated companies</div>
+                    <h2 class="cards__title heading-4">Compare Quotes from the top Companies</h2>
+                    <p class="cards__text fontBodyM">Shop a rated carriers with proven track records.</p>
+                    <img src="#" alt="icon" class="cards__img">
+                </div>
+                <div class="cards__item">
+                    <div class="cards__subtitle sub-title-1">coverage amount</div>
+                    <h2 class="cards__title heading-4">Up to $1,000,000 of Coverage</h2>
+                    <p class="cards__text fontBodyM">Coverage with or without an exam available for ages 18-65.</p>
+                    <img src="#" alt="icon" class="cards__img">
+                </div>
+                <div class="cards__item">
+                    <div class="cards__subtitle sub-title-1">Our track record</div>
+                    <h2 class="cards__title heading-4">NoExam.com</h2>
+                    <p class="cards__text fontBodyM">BBB <span>A+ Rated</span><br> <span>4.8/5 Reviews</span> (1000+ Ratings)</p>
+                    <img src="#" alt="icon" class="cards__img">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-wrapp" style="background-color: #FCF9F3;">
+        <div class="wrapp">
+            <section class="questions">
+                <h1 class="questions__title heading-2">Frequently Asked Questions</h1>
+                <div class="questions__container">
+                    <div class="questions__item">
+                        <h6 class="questions__card-title heading-6">What Is Life Insurance?</h6>
+                        <div class="questions__card-body">
+                            <p class="questions__card-text fontBodyM">Fill out the form at the top of this page to see your custom life insurance quote. We will need your date of birth, height, weight, tobacco usage (if any), coverage amount and term length to show you a quote. This quote is
+                                preliminary and does not take into account any health issues you may have.</p>
+                        </div>
+                    </div>
+                    <div class="questions__item">
+                        <h6 class="questions__card-title heading-6">What is a Life Insurance Quote?</h6>
+                        <div class="questions__card-body">
+                            <p class="questions__card-text fontBodyM">Fill out the form at the top of this page to see your custom life insurance quote. We will need your date of birth, height, weight, tobacco usage (if any), coverage amount and term length to show you a quote. This quote is
+                                preliminary and does not take into account any health issues you may have.</p>
+                        </div>
+                    </div>
+                    <div class="questions__item">
+                        <h6 class="questions__card-title heading-6">Who Needs Life Insurance?</h6>
+                        <div class="questions__card-body">
+                            <p class="questions__card-text fontBodyM">Fill out the form at the top of this page to see your custom life insurance quote. We will need your date of birth, height, weight, tobacco usage (if any), coverage amount and term length to show you a quote. This quote is
+                                preliminary and does not take into account any health issues you may have.</p>
+                        </div>
+                    </div>
+                    <div class="questions__item">
+                        <h6 class="questions__card-title heading-6">How Much Life Insurance Do I Need?</h6>
+                        <div class="questions__card-body">
+                            <p class="questions__card-text fontBodyM">Fill out the form at the top of this page to see your custom life insurance quote. We will need your date of birth, height, weight, tobacco usage (if any), coverage amount and term length to show you a quote. This quote is
+                                preliminary and does not take into account any health issues you may have.</p>
+                        </div>
+                    </div>
+                    <div class="questions__item questions__item--active ">
+                        <h6 class="questions__card-title heading-6">What Are the Different Types of Life Insurance?</h6>
+                        <div class="questions__card-body">
+                            <div class="questions__card-text fontBodyM">
+                                <p>There are two main types of life insurance products you should be aware of as a consumer. They are <b>term life insurance</b> and <b>whole life insurance</b> (also called permanent life insurance). Term life insurance provides
+                                    coverage for a set number of years. Whole life insurance provides coverage for the rest of your life.</p>
+                                <p>The main benefit of term life insurance is its affordability. The drawback is that you can <b>outlive your policy</b> and be left with no life insurance later in life when it becomes more expensive to buy coverage.</p>
+                                <p>The main benefit of whole life insurance is that the coverage does not expire. The drawback is the price. Whole life insurance is much more expensive than term. Whole life insurance also involves a cash value component
+                                    which grows over time as you pay your premium.</p>
+                                <p>
+                                    We do not recommend you purchase life insurance as an investment. There are many other investment options that will outperform the returns on a whole life policy. This is why most financial pundits recommend to buy term and invest the difference of money
+                                    saved elsewhere. Read more on <b>term vs whole life insurance.</b>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="questions__item">
+                        <h6 class="questions__card-title heading-6">Which Type of Life Insurance is Right for You?</h6>
+                        <div class="questions__card-body">
+                            <p class="questions__card-text fontBodyM">Fill out the form at the top of this page to see your custom life insurance quote. We will need your date of birth, height, weight, tobacco usage (if any), coverage amount and term length to show you a quote. This quote is
+                                preliminary and does not take into account any health issues you may have.</p>
+                        </div>
+                    </div>
+                    <div class="questions__item">
+                        <h6 class="questions__card-title heading-6">What Life Insurance Companies Are Reputable?</h6>
+                        <div class="questions__card-body">
+                            <p class="questions__card-text fontBodyM">Fill out the form at the top of this page to see your custom life insurance quote. We will need your date of birth, height, weight, tobacco usage (if any), coverage amount and term length to show you a quote. This quote is
+                                preliminary and does not take into account any health issues you may have.</p>
+                        </div>
+                    </div>
+                    <div class="questions__item">
+                        <h6 class="questions__card-title heading-6">Should I Buy Life Insurance Online?</h6>
+                        <div class="questions__card-body">
+                            <p class="questions__card-text fontBodyM">Fill out the form at the top of this page to see your custom life insurance quote. We will need your date of birth, height, weight, tobacco usage (if any), coverage amount and term length to show you a quote. This quote is
+                                preliminary and does not take into account any health issues you may have.</p>
+                        </div>
+                    </div>
+                    <div class="questions__item">
+                        <h6 class="questions__card-title heading-6">Do I Need an Agent?</h6>
+                        <div class="questions__card-body">
+                            <p class="questions__card-text fontBodyM">Fill out the form at the top of this page to see your custom life insurance quote. We will need your date of birth, height, weight, tobacco usage (if any), coverage amount and term length to show you a quote. This quote is
+                                preliminary and does not take into account any health issues you may have.</p>
+                        </div>
+                    </div>
+                    <div class="questions__item">
+                        <h6 class="questions__card-title heading-6">When is the Best Time to Buy Life Insurance?</h6>
+                        <div class="questions__card-body">
+                            <p class="questions__card-text fontBodyM">Fill out the form at the top of this page to see your custom life insurance quote. We will need your date of birth, height, weight, tobacco usage (if any), coverage amount and term length to show you a quote. This quote is
+                                preliminary and does not take into account any health issues you may have.</p>
+                        </div>
+                    </div>
+                    <div class="questions__item">
+                        <h6 class="questions__card-title heading-6">What If I Have Health Conditions?</h6>
+                        <div class="questions__card-body">
+                            <p class="questions__card-text fontBodyM">Fill out the form at the top of this page to see your custom life insurance quote. We will need your date of birth, height, weight, tobacco usage (if any), coverage amount and term length to show you a quote. This quote is
+                                preliminary and does not take into account any health issues you may have.</p>
+                        </div>
+                    </div>
+                    <div class="questions__item">
+                        <h6 class="questions__card-title heading-6">NoExam's.com Security Promise</h6>
+                        <div class="questions__card-body">
+                            <p class="questions__card-text fontBodyM">Fill out the form at the top of this page to see your custom life insurance quote. We will need your date of birth, height, weight, tobacco usage (if any), coverage amount and term length to show you a quote. This quote is
+                                preliminary and does not take into account any health issues you may have.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="main-wrapp" style="background-color: #ffffff;">
+        <div class="wrapp">
+            <footer class="footer">
+                <div class="footer__col">
+                    <img src="../images/header/Logo.svg" alt="logo" class="footer__logo">
+                    <p class="footer__paragraph fontBodyS">Our state-of-the-art technology allows for individuals and families to shop for and buy life insurance online within a matter of minutes.</p>
+                    <div class="footer__icons">
+                        <img src="#" class="footer__icon" alt="facebook">
+                        <img src="#" class="footer__icon" alt="instagram">
+                        <img src="#" class="footer__icon" alt="youtube">
+                    </div>
+                </div>
+                <div class="footer__col">
+                    <div class="footer__box">
+                        <h1 class="footer__subtitle sub-title-1">Resources</h1>
+                        <ul class="footer__list">
+                            <li class="footer__item"><a href="#" class="footer__link fontBodyM">Help</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link fontBodyM">Get my price</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link fontBodyM">Calculator</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link fontBodyM">Partnership</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__box">
+                        <h1 class="footer__subtitle sub-title-1">Our website</h1>
+                        <ul class="footer__list">
+                            <li class="footer__item"><a href="#" class="footer__link fontBodyM">About</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link fontBodyM">Licenses</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link fontBodyM">Careers</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link fontBodyM">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <div class="copyright fontBodyS">Copyright © 2021 NoExam.com</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="../plugins/js/ion.rangeSlider.min.js"></script>
+    <script src="../plugins/js/bootstrap-select.js"></script>
+    <script type="text/javascript" src="../plugins/js/slick.js"></script>
+    <script src="./quote-result.js"></script>
+</body>
+
+</html>

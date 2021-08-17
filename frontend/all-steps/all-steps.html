@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="../css/shared-styles.css">
     <link rel="stylesheet" href="./all-steps.css">
     <link rel="stylesheet" href="../plugins/css/ion.rangeSlider.min.css">
+    <link rel="stylesheet" href="../plugins/css/bootstrap-select.css">
+    <link rel="stylesheet" href="../css/range-slider.css">
 </head>
 
 <body>
@@ -61,6 +63,8 @@
                             </label>
                         </div>
 
+                        <div class="all-steps__subtitle">Overall health</div>
+
                         <div class="all-steps__radioBtnsBox">
                             <label class="all-steps__label main-radio-btn-label">
                                 <input type="radio" name="overall-health" class="all-steps__radio-btn main-radio-btn">
@@ -79,14 +83,158 @@
                             </label>
                         </div>
 
+                        <div class="all-steps__subtitle">Do you use tabacco?</div>
+                        <div class="all-steps__radioBtnsBox">
+                            <label class="all-steps__label main-radio-btn-label">
+                                <input type="radio" name="use-tabacco" class="all-steps__radio-btn main-radio-btn">
+                                <span class="all-steps__btn-icon main-radio-btn-icon"></span>
+                                <span class="fontBodyM">Yes</span>
+                            </label>
+                            <label class="all-steps__label main-radio-btn-label">
+                                <input type="radio" name="use-tabacco" class="all-steps__radio-btn main-radio-btn">
+                                <span class="all-steps__btn-icon main-radio-btn-icon"></span>
+                                <span class="fontBodyM">No</span>
+                            </label>
+                        </div>
+
+                        <div class="all-steps__subtitle">Sex</div>
+                        <div class="all-steps__radioBtnsBox">
+                            <label class="all-steps__label main-radio-btn-label">
+                                <input type="radio" name="sex" class="all-steps__radio-btn main-radio-btn">
+                                <span class="all-steps__btn-icon main-radio-btn-icon"></span>
+                                <span class="fontBodyM">Male</span>
+                            </label>
+                            <label class="all-steps__label main-radio-btn-label">
+                                <input type="radio" name="sex" class="all-steps__radio-btn main-radio-btn">
+                                <span class="all-steps__btn-icon main-radio-btn-icon"></span>
+                                <span class="fontBodyM">Female</span>
+                            </label>
+                        </div>
+
+                        <div class="all-steps__subtitle">Date of Birth</div>
+
+                        <div class="all-steps__selectBox">
+                            <label class="all-steps__selectLabel">
+                                <span class="tags">Date</span>
+                                <select name="date" class="all-steps__select">
+                                    <option value="DD">DD</option>
+                                    <option value="DD2">DD</option>
+                                    <option value="DD3">DD</option>
+                                </select>
+                            </label>
+                            <label class="all-steps__selectLabel">
+                                <span class="tags">Month</span>
+                                <select name="month" class="all-steps__select">
+                                    <option value="MM">MM</option>
+                                    <option value="MM2">MM</option>
+                                    <option value="MM3">MM</option>
+                                </select>
+                            </label>
+                            <label class="all-steps__selectLabel">
+                                <span class="tags">Year</span>
+                                <select name="year" class="all-steps__select">
+                                    <option value="YYYY">YYYY</option>
+                                    <option value="YYYY2">YYYY</option>
+                                    <option value="YYYY3">YYYY</option>
+                                </select>
+                            </label>
+                        </div>
+
+                        <div class="all-steps__subtitle">Contract Details</div>
+                        <div class="all-steps__wrapp">
+                            <div class="all-steps__row">
+                                <label class="all-steps__inputLabel">
+                                    <span class="tags">First Name</span>
+                                    <input type="text" class="all-steps__input fontBodyM" placeholder="Enter your first name">
+                                </label>
+                                <label class="all-steps__inputLabel">
+                                    <span class="tags">Last Name</span>
+                                    <input type="text" class="all-steps__input fontBodyM" placeholder="Enter your last name">
+                                </label>
+                            </div>
+
+                            <div class="all-steps__row">
+                                <label class="all-steps__inputLabel">
+                                    <span class="tags">Email</span>
+                                    <input type="email" class="all-steps__input all-steps__input--invalid fontBodyM" placeholder="Enter your email" value="mag">
+                                </label>
+                                <label class="all-steps__inputLabel">
+                                    <span class="tags">Phone number</span>
+                                    <input type="text" class="all-steps__input fontBodyM" placeholder="Enter your phone number">
+                                </label>
+                            </div>
+
+                            <div class="all-steps__row">
+                                <label class="all-steps__inputLabel">
+                                    <span class="tags">State</span>
+                                    <select class="all-steps__input fontBodyM" name="state" placeholder="Select state">
+                                        <option value="" disabled selected>Select state</option>
+                                        <option value="state-2">state 2</option>
+                                    </select>
+                                </label>
+                                <label class="all-steps__inputLabel">
+                                    <span class="tags">Zip Code</span>
+                                    <input type="text" class="all-steps__input fontBodyM" placeholder="Enter your zip code">
+                                </label>
+                            </div>
+
+                            <div class="all-steps__row">
+                                <label class="all-steps__checkbox-label">
+                                    <input type="checkbox">
+                                    <div class="fontBodyS">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dictumst nisl proin lobortis morbi in vel elit molestie scelerisque. Dui pretium et nibh volutpat quisque.</div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="all-steps__btn main-btn button-big">see my quote</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <div class="main-wrapp">
+        <div class="wrapp">
+            <footer class="footer">
+                <div class="footer__col">
+                    <img src="../images/header/Logo.svg" alt="logo" class="footer__logo">
+                    <p class="footer__paragraph fontBodyS">Our state-of-the-art technology allows for individuals and families to shop for and buy life insurance online within a matter of minutes.</p>
+                    <div class="footer__icons">
+                        <img src="#" class="footer__icon" alt="facebook">
+                        <img src="#" class="footer__icon" alt="instagram">
+                        <img src="#" class="footer__icon" alt="youtube">
+                    </div>
+                </div>
+                <div class="footer__col">
+                    <div class="footer__box">
+                        <h1 class="footer__subtitle sub-title-1">Resources</h1>
+                        <ul class="footer__list">
+                            <li class="footer__item"><a href="#" class="footer__link fontBodyM">Help</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link fontBodyM">Get my price</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link fontBodyM">Calculator</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link fontBodyM">Partnership</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__box">
+                        <h1 class="footer__subtitle sub-title-1">Our website</h1>
+                        <ul class="footer__list">
+                            <li class="footer__item"><a href="#" class="footer__link fontBodyM">About</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link fontBodyM">Licenses</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link fontBodyM">Careers</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link fontBodyM">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <div class="copyright fontBodyS">Copyright © 2021 NoExam.com</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript" src="../plugins/js/ion.rangeSlider.min.js"></script>
+    <script src="../plugins/js/bootstrap-select.js"></script>
     <script src="./all-steps.js"></script>
 </body>
 

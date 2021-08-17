@@ -50,6 +50,11 @@
     cursor: pointer;
 }
 
+.start-quote__range {
+    margin-bottom: 50px;
+    padding-top: 50px;
+}
+
 @media screen and (max-width: 767px) {
     .js-grid-text-1,
     .js-grid-text-2,
@@ -76,63 +81,4 @@
         flex-direction: column;
         align-items: flex-start;
     }
-}
-
-.irs--round .irs-handle {
-    width: 35px !important;
-    height: 35px !important;
-    top: 19px !important;
-    border: 5px solid #F8A846 !important;
-    cursor: pointer;
-}
-
-.irs--round .irs-bar {
-    height: 5px !important;
-    background-color: #F8A846 !important;
-}
-
-.irs-grid {
-    display: block;
-    transform: translateY(20px) !important;
-}
-
-.irs-grid-text {
-    font-size: 14px !important;
-    line-height: 24px !important;
-    color: #757575 !important;
-}
-
-.irs-grid-pol {
-    display: none !important;
-}
-
-.irs-from,
-.irs-to,
-.irs-single {
-    top: -45px !important;
-    background-color: #F8A846 !important;
-}
-
-.irs--round .irs-from,
-.irs--round .irs-to,
-.irs--round .irs-single {
-    width: 150px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 600;
-    font-size: 18px !important;
-    line-height: 26px !important;
-    text-align: center;
-    color: #FFFFFF !important;
-}
-
-.irs--round .irs-from:before,
-.irs--round .irs-to:before,
-.irs--round .irs-single:before {
-    bottom: -20px !important;
-    border: 10px solid transparent !important;
-    border-top-color: #F8A846 !important;
-    margin-left: -10px !important;
 }
