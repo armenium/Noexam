@@ -1,0 +1,103 @@
+.contract-details {}
+
+.contract-details__title {
+    margin: 70px 0 50px 0;
+    text-align: center;
+}
+
+.contract-details__form {}
+
+.contract-details__container {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto 60px auto;
+    min-height: 435px;
+    background: #FFFFFF;
+    box-shadow: 1px 12px 42px rgba(155, 164, 162, 0.12);
+    border-radius: 4px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.contract-details__row {
+    margin-bottom: 20px;
+    display: flex;
+}
+
+.contract-details__row:last-child {
+    margin-bottom: 0;
+}
+
+.contract-details__label {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+    width: 100%;
+}
+
+.contract-details__label:last-child {
+    margin-right: 0;
+}
+
+.contract-details__label>span {
+    margin-bottom: 10px;
+    color: #757575;
+}
+
+.contract-details__input {
+    width: 100%;
+    max-width: 300px;
+    height: 55px;
+    background: #FFFFFF;
+    border: 1px solid #BABABA;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 15px 18px;
+}
+
+.contract-details__input--invalid {
+    background: #D6ECE3;
+    border: 1px solid #377660;
+}
+
+.contract-details__checkbox-label {
+    display: flex;
+    color: #757575;
+}
+
+.contract-details__checkbox-label>div {
+    color: #757575;
+    cursor: pointer;
+}
+
+.contract-details__checkbox-label>input {
+    margin-top: 6px;
+    margin-right: 10px;
+    margin: 6px 10px 0 0;
+}
+
+.contract-details__btn {
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 767px) {
+    .contract-details__row {
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+    .contract-details__input {
+        max-width: 100%;
+    }
+    .contract-details__label {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    .contract-details__container {
+        padding: 25px;
+    }
+    .contract-details__title {
+        margin: 40px 0 30px 0;
+    }
+}

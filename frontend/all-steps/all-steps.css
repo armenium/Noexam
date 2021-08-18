@@ -1,0 +1,197 @@
+.all-steps {
+    padding: 80px 0 215px 0;
+}
+
+.all-steps__title {
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.all-steps__container {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    background: #FFFFFF;
+    box-shadow: 1px 12px 42px rgba(155, 164, 162, 0.12);
+    border-radius: 4px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+.all-steps__form {}
+
+.all-steps__subtitle {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 26px;
+    color: #282B29;
+    margin-bottom: 20px;
+}
+
+.all-steps__label>span {
+    color: #757575;
+}
+
+.all-steps__rangeInput {
+    width: 100%;
+    max-width: 110px;
+    height: 34px;
+    background: #D6ECE3;
+    border: 1px solid #377660;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 0 15px;
+    font-size: 18px;
+    line-height: 26px;
+    color: #282B29;
+    margin-left: 25px;
+}
+
+.all-steps__range {
+    min-height: 160px;
+    margin-bottom: 50px;
+    padding-top: 80px;
+}
+
+.all-steps__range-slider {}
+
+.all-steps__radioBtnsBox {
+    margin-bottom: 50px;
+}
+
+.all-steps__label {
+    margin-bottom: 25px;
+}
+
+.all-steps__label:last-child {
+    margin-bottom: 0;
+}
+
+.all-steps__selectBox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.all-steps__selectLabel {
+    width: 180px;
+}
+
+.all-steps__selectLabel>span {
+    display: block;
+    margin-bottom: 20px;
+    color: #757575;
+}
+
+.all-steps__select {
+    width: 180px !important;
+}
+
+.all-steps__wrapp {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.all-steps__row {
+    margin-bottom: 20px;
+    display: flex;
+}
+
+.all-steps:last-child {
+    margin-bottom: 0;
+}
+
+.all-steps__inputLabel {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+    width: 100%;
+}
+
+.all-steps__inputLabel:last-child {
+    margin-right: 0;
+}
+
+.all-steps__inputLabel>span {
+    margin-bottom: 10px;
+    color: #757575;
+}
+
+.all-steps__input {
+    width: 100%;
+    max-width: 300px;
+    height: 55px;
+    background: #FFFFFF;
+    border: 1px solid #BABABA;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 15px 18px;
+}
+
+.all-steps__input--invalid {
+    background: #D6ECE3;
+    border: 1px solid #377660;
+}
+
+.all-steps__checkbox-label {
+    display: flex;
+    color: #757575;
+}
+
+.all-steps__checkbox-label>div {
+    color: #757575;
+    cursor: pointer;
+}
+
+.all-steps__checkbox-label>input {
+    margin-top: 6px;
+    margin-right: 10px;
+    margin: 6px 10px 0 0;
+}
+
+.all-steps__btn {
+    position: absolute;
+    bottom: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@media screen and (max-width: 767px) {
+    .all-steps__row {
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+    .all-steps__input {
+        max-width: 100%;
+    }
+    .all-steps__inputLabel {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    .all-steps__selectBox {
+        flex-direction: column;
+    }
+    .all-steps__selectLabel {
+        margin-bottom: 20px;
+    }
+    .all-steps__selectLabel:last-child {
+        margin-bottom: 0;
+    }
+    .all-steps__selectLabel>span {
+        margin-bottom: 10px;
+    }
+    .all-steps__title {
+        margin-bottom: 55px;
+    }
+    .all-steps {
+        padding: 20px 0 215px 0;
+        overflow: hidden;
+    }
+    .all-steps__rangeInput {
+        display: none;
+    }
+}
