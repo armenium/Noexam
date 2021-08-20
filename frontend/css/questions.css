@@ -25,7 +25,7 @@
 }
 
 .questions__item:after {
-    content: "+";
+    content: "";
     display: block;
     width: 30px;
     height: 30px;
@@ -33,6 +33,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background: url("../images/arrow-down.png") no-repeat 9px 12px;
     line-height: 30px;
     position: absolute;
     right: 35px;
@@ -44,9 +45,8 @@
 
 .questions__item--active:after {
     background-color: #339E75;
-    transform: rotate(-180deg);
-    color: #fff;
     transition: all .2s ease;
+    background: #339E75 url("../images/arrow-down-white.png") no-repeat 9px 10px;
 }
 
 .questions__item--active>.questions__card-title {
