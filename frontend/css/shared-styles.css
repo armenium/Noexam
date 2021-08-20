@@ -210,7 +210,7 @@ hr {
 }
 
 .button-big:after {
-    content: "+";
+    content: url("../images/arrow-right-white.png");
     margin-left: 12px;
 }
 
@@ -231,13 +231,10 @@ hr {
     cursor: pointer;
 }
 
-.main-btn:hover {
-    text-decoration: underline;
-}
-
 .main-btn:after {
-    content: "+";
+    content: url("../images/arrow-right-white.png");
     margin-left: 15px;
+    margin-top: 5px;
 }
 
 

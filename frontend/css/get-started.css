@@ -21,6 +21,10 @@
     color: #282B29;
 }
 
+.get-started__btn:after {
+    content: url("../images/arrow-right-dark.png");
+}
+
 @media screen and (max-width: 719px) {
     .get-started {
         padding: 80px 0;
