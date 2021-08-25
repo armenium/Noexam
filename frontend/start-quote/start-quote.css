@@ -1,0 +1,84 @@
+.start-quote {
+    min-height: calc(100vh - 105px);
+    padding: 90px 0;
+}
+
+.start-quote__title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.start-quote__subtitle {
+    margin-bottom: 15px;
+}
+
+.start-quote__text {
+    margin-bottom: 30px;
+}
+
+.all-steps__range {
+    min-height: 160px;
+    margin-bottom: 50px;
+    padding-top: 40px;
+}
+
+.start-quote__term {}
+
+.start-quote__radio-btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 85px;
+    flex-wrap: wrap;
+}
+
+.start-quote__label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-bottom: 25px;
+}
+
+.start-quote__label:last-child {
+    margin-right: 0;
+}
+
+.start-quote__btn {
+    margin: 0 auto;
+    border: none;
+    cursor: pointer;
+}
+
+.start-quote__range {
+    margin-bottom: 50px;
+    padding-top: 50px;
+}
+
+@media screen and (max-width: 767px) {
+    .js-grid-text-1,
+    .js-grid-text-2,
+    .js-grid-text-3,
+    .js-grid-text-4,
+    .js-grid-text-5,
+    .js-grid-text-6,
+    .js-grid-text-7,
+    .js-grid-text-8,
+    .js-grid-text-9,
+    .js-grid-text-10 {
+        display: none !important;
+    }
+    .start-quote {
+        padding: 60px 0;
+    }
+    .start-quote__range {
+        overflow: hidden;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .start-quote__radio-btns {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
