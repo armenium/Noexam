@@ -128,9 +128,9 @@
 }
 
 .tableRow__img {
-    width: 130px;
-    height: 30px;
-    border: 1px dashed rgb(56, 56, 56);
+    width: 100%;
+    max-width: 130px;
+    height: auto;
     margin-bottom: 25px;
 }
 
@@ -217,9 +217,8 @@
 
 .cards__img {
     display: block;
-    width: 85px;
-    height: 85px;
-    border: 1px dashed #333;
+    width: 80px;
+    height: 80px;
 }
 
 .tableRow__col--hiden {

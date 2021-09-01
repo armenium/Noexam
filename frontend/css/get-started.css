@@ -3,6 +3,23 @@
 .get-started {
     padding: 100px 0;
     text-align: center;
+    position: relative;
+}
+
+.get-started:before {
+    content: url("../images/get-started-decor-1.png");
+    position: absolute;
+    left: -200px;
+    top: 30px;
+    display: block;
+}
+
+.get-started:after {
+    content: url("../images/get-started-decor-2.png");
+    position: absolute;
+    right: -400px;
+    top: 100px;
+    display: block;
 }
 
 .get-started__title {
@@ -23,6 +40,15 @@
 
 .get-started__btn:after {
     content: url("../images/arrow-right-dark.png");
+}
+
+@media screen and (max-width: 1820px) {
+    .get-started:before {
+        content: none;
+    }
+    .get-started:after {
+        content: none;
+    }
 }
 
 @media screen and (max-width: 719px) {

@@ -9,6 +9,21 @@
     text-align: center;
 }
 
+.questions__title>span {
+    position: relative;
+}
+
+.questions__title>span:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: -10px;
+    top: -20px;
+    width: 250px;
+    height: 100px;
+    background: url("../images/question-decor.png") no-repeat;
+}
+
 .questions__item {
     position: relative;
     width: 100%;
@@ -82,5 +97,8 @@
         font-size: 14px;
         line-height: 24px;
         margin-right: -80px;
+    }
+    .questions__title>span:after {
+        content: none;
     }
 }

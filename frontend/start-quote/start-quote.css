@@ -4,8 +4,17 @@
 }
 
 .start-quote__title {
+    position: relative;
     text-align: center;
     margin-bottom: 60px;
+}
+
+.start-quote__title:after {
+    content: url("../images/start-quote-decor.png");
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .start-quote__subtitle {
