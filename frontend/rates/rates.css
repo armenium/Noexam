@@ -100,3 +100,122 @@
     height: 900px;
     border: 1px dashed #000;
 }
+
+
+/* PRICING-STUDY SECTION */
+
+.pricing-study {
+    padding: 100px;
+}
+
+.pricing-study__title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.pricing-study__text {
+    margin-bottom: 20px;
+    color: #757575;
+}
+
+.pricing-study__chart {
+    height: 345px;
+    background: #FEEEDA;
+    border-radius: 4px;
+    margin-bottom: 60px;
+}
+
+.pricing-study__subtitle {
+    margin-bottom: 25px;
+}
+
+.pricing-study__list {
+    margin-bottom: 60px;
+}
+
+.pricing-study__list-item {
+    position: relative;
+    padding-left: 60px;
+    margin-bottom: 10px;
+    color: #757575;
+}
+
+.pricing-study__list-item:last-child {
+    margin-bottom: 0;
+}
+
+.pricing-study__list-item>span {
+    color: #F8A846;
+}
+
+.pricing-study__list-item>b {
+    color: #282B29;
+}
+
+.pricing-study__list-item:after {
+    content: url("../images/arrow-right-red.png");
+    position: absolute;
+    left: 0;
+}
+
+.pricing-study__graph {
+    height: 460px;
+    border: 1px dashed #000;
+    margin-bottom: 60px;
+}
+
+.pricing-study-chart {
+    padding: 30px;
+}
+
+.pricing-study-chart__title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.pricing-study-chart__title>span {
+    color: #F8A846;
+}
+
+.pricing-study-chart__title>span:nth-of-type(2) {
+    color: #757575;
+}
+
+.pricing-study-chart__body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pricing-study-chart__col:first-child {
+    width: 225px;
+    height: 225px;
+    border-radius: 50%;
+    background-color: #eee;
+    margin-right: 60px;
+}
+
+.pricing-study-chart__list {}
+
+.pricing-study-chart__list-item {
+    position: relative;
+    color: #757575;
+    margin-bottom: 10px;
+    padding-left: 30px;
+}
+
+.pricing-study-chart__list-item :last-child {
+    margin-bottom: 0;
+}
+
+.pricing-study-chart__list-item:after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    display: block;
+    background-color: #F8A846;
+    border-radius: 50%;
+}
