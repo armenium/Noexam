@@ -219,6 +219,12 @@ hr {
     line-height: 16px;
 }
 
+.button-small--arrow:after {
+    content: url("../images/arrow-right-green.png");
+    margin-left: 12px;
+    transform: translateY(2px);
+}
+
 .main-btn {
     width: 100%;
     max-width: 215px;

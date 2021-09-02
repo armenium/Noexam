@@ -1,0 +1,102 @@
+.rates {}
+
+.rates__nav {}
+
+.rates__first-screen {}
+
+
+/* RATES CHARTS SECTION */
+
+.rates-charts {
+    padding: 100px 0;
+}
+
+.rates-charts__title {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.rates-charts__info {
+    width: 100%;
+    max-width: 810px;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 60px;
+    color: #757575;
+}
+
+.rates-charts__links {
+    width: 100%;
+    max-width: 905px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 55px;
+}
+
+.rates-charts__link {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 25px;
+    color: #339E75;
+}
+
+.rates-charts__chart {
+    padding: 0 70px 0 0;
+    margin-bottom: 70px;
+    height: 450px;
+    border: 1px dashed #000;
+}
+
+.rates-charts__footer {
+    width: 100%;
+    max-width: 880px;
+    margin: 0 auto;
+}
+
+.rates-charts__text-content {
+    margin-bottom: 25px;
+    color: #757575;
+}
+
+.rates-charts__table {
+    margin-bottom: 25px;
+    height: 300px;
+    border: 1px dashed #000;
+}
+
+.rates-charts__banner {
+    min-height: 120px;
+    background: #D6ECE3;
+    border-radius: 4px;
+    padding: 30px;
+}
+
+.rates-charts__banner-text {
+    color: #339E75;
+}
+
+
+/* RATE BY AGE SECTION */
+
+.rates-chart-by-age {
+    padding: 100px 0;
+}
+
+.rates-chart-by-age__title {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.rates-chart-by-age__subtitle {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    margin-bottom: 60px;
+    text-align: center;
+    color: #757575;
+}
+
+.rates-chart-by-age__slider {
+    height: 900px;
+    border: 1px dashed #000;
+}
