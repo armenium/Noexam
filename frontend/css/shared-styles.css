@@ -629,6 +629,24 @@ hr {
     background-color: #F8A846;
 }
 
+
+/* CARDS */
+
+.card {
+    border-radius: 4px;
+    padding: 30px;
+}
+
+.card-red {
+    background-color: #FEE2DA;
+    color: #F87146;
+}
+
+.card-green {
+    background-color: #D6ECE3;
+    color: #339E75;
+}
+
 @media screen and (max-width: 1400px) {
     .my-quote-steps {
         margin-top: -50px;
