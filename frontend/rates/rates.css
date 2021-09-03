@@ -105,7 +105,7 @@
 /* PRICING-STUDY SECTION */
 
 .pricing-study {
-    padding: 100px;
+    padding: 100px 0;
 }
 
 .pricing-study__title {
@@ -119,7 +119,7 @@
 }
 
 .pricing-study__chart {
-    height: 345px;
+    min-height: 345px;
     background: #FEEEDA;
     border-radius: 4px;
     margin-bottom: 60px;
@@ -218,4 +218,247 @@
     display: block;
     background-color: #F8A846;
     border-radius: 50%;
+}
+
+
+/* RATES FORM SECTION  */
+
+.rates-form {
+    padding-bottom: 100px;
+}
+
+.rates-form__form {
+    background: #FFFFFF;
+    box-shadow: 1px 12px 42px rgba(155, 164, 162, 0.12);
+    border-radius: 4px;
+    padding: 40px;
+}
+
+.rates-form__title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.rates-form__row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.rates-form__label {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+}
+
+.rates-form__label>span {
+    color: #757575;
+    margin-bottom: 10px;
+}
+
+.rates-form__label:last-child {
+    margin-right: 0;
+}
+
+.rates-form__select {}
+
+.rates-form__subtitle {
+    margin-bottom: 15px;
+}
+
+.rates-form__input {
+    width: 230px;
+    height: 55px;
+    background: #FFFFFF;
+    border: 1px solid #BABABA;
+    border-radius: 4px;
+    padding: 0 17px;
+}
+
+.rates-form__input--invalid {
+    background-color: #D6ECE3;
+    border: 1px solid #377660;
+}
+
+.rates-form__decor-line {
+    height: 1px;
+    background-color: #E4E4E4;
+    margin-bottom: 30px;
+}
+
+.rates-form__btn {
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 950px) {
+    .pricing-study-chart__body {
+        flex-direction: column;
+    }
+    .pricing-study-chart__col:first-child {
+        margin-bottom: 25px;
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .rates-form__row {
+        flex-direction: column;
+    }
+    .rates-form__label {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    .rates-form__row--no-wrap {
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+    .rates-form__row--no-wrap .rates-form__select {
+        width: 85px !important;
+        margin-right: 15px;
+    }
+    .rates-form__form {
+        padding: 24px;
+    }
+    .rates-form__select--full-width {
+        width: 100% !important;
+    }
+    .rates-form__select--half-width {
+        width: 125px !important;
+    }
+    .rates-form__label--margin>.rates-form__select--half-width {
+        margin-right: 15px !important;
+    }
+    .rates-form__row--no-column {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .rates-form__label--full-width {
+        width: 100%;
+    }
+    .rates-form__input {
+        width: 100%;
+    }
+    .pricing-study__list {
+        display: none;
+    }
+    .pricing-study__subtitle--hide {
+        display: none;
+    }
+    .pricing-study__text--hide {
+        display: none;
+    }
+    .pricing-study__graph {
+        display: none;
+    }
+}
+
+.listen-us {
+    padding: 100px 0;
+}
+
+.listen-us__title {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.listen-us__info {
+    text-align: center;
+    padding-bottom: 60px;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.listen-us__subtitle {
+    margin-bottom: 25px;
+}
+
+.listen-us__card {
+    margin-bottom: 25px;
+}
+
+.listen-us__text {
+    margin-bottom: 60px;
+    color: #757575;
+}
+
+.fontBodyM {}
+
+.card-green {}
+
+@media screen and (max-width: 550px) {
+    .main-first-screen__title {
+        font-size: 32px;
+        line-height: 40px;
+    }
+    .fs-advice .fs-advice__header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .fs-advice__col:first-child {
+        margin-bottom: 30px;
+    }
+    .rates-charts__title {
+        font-size: 32px;
+        line-height: 40px;
+    }
+    .rates-charts__title--small-title {
+        font-size: 24px;
+        line-height: 32px;
+    }
+    .rates-charts__info {
+        font-size: 18px;
+        line-height: 26px;
+    }
+    .rates-charts__link {
+        max-width: 100%;
+        display: flex;
+        justify-content: flex-start;
+    }
+    .rates-charts__banner {
+        padding: 20px;
+    }
+    .rates-charts__banner-text {
+        font-size: 14px;
+        line-height: 24px;
+    }
+    .rates-charts {
+        padding: 60px 0;
+    }
+    .rates-chart-by-age {
+        padding: 60px 0;
+    }
+    .rates-chart-by-age__title {
+        font-size: 32px;
+        line-height: 40px;
+    }
+    .rates-chart-by-age__subtitle {
+        font-size: 18px;
+        line-height: 26px;
+        margin-bottom: 50px;
+    }
+    .pricing-study {
+        padding: 60px 0;
+    }
+    .pricing-study__title {
+        font-size: 32px;
+        line-height: 40px;
+        margin-bottom: 20px;
+    }
+    .pricing-study-chart__list-item {
+        font-size: 12px;
+        line-height: 18px;
+    }
+    .pricing-study-chart__list-item:after {
+        top: 5px;
+    }
+    .pricing-study-chart {
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .rates-form__row--no-wrap {
+        flex-direction: column;
+    }
 }
