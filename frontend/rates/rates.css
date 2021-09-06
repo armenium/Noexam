@@ -114,8 +114,10 @@
 }
 
 .pricing-study__text {
-    margin-bottom: 20px;
     color: #757575;
+    width: 100%;
+    max-width: 880px;
+    margin: 0 auto 20px auto;
 }
 
 .pricing-study__chart {
@@ -126,11 +128,16 @@
 }
 
 .pricing-study__subtitle {
-    margin-bottom: 25px;
+    max-width: 880px;
+    width: 100%;
+    margin: 0 auto 25px auto;
 }
 
 .pricing-study__list {
     margin-bottom: 60px;
+    max-width: 880px;
+    width: 100%;
+    margin: 0 auto 60px auto;
 }
 
 .pricing-study__list-item {
@@ -166,6 +173,9 @@
 
 .pricing-study-chart {
     padding: 30px;
+    width: 100%;
+    max-width: 880px;
+    margin: 0 auto 60px auto;
 }
 
 .pricing-study-chart__title {
@@ -354,6 +364,9 @@
 
 .listen-us {
     padding: 100px 0;
+    width: 100%;
+    max-width: 880px;
+    margin: 0 auto;
 }
 
 .listen-us__title {
@@ -382,9 +395,142 @@
     color: #757575;
 }
 
-.fontBodyM {}
+.charts-by-age {
+    padding: 100px 0;
+}
 
-.card-green {}
+.charts-by-age__title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.charts-by-age__form {
+    width: 100%;
+    max-width: 100%;
+    min-height: 391px;
+    background: #FFFFFF;
+    box-shadow: 1px 12px 42px rgba(155, 164, 162, 0.12);
+    border-radius: 4px;
+    padding: 40px;
+}
+
+.charts-by-age__subtitle {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.charts-by-age__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-bottom: 30px;
+}
+
+.charts-by-age__label {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+}
+
+.charts-by-age__label:last-child {
+    margin-right: 0;
+}
+
+.charts-by-age__label>span {
+    margin-bottom: 10px;
+    color: #757575;
+}
+
+.charts-by-age__label:first-child {
+    position: relative;
+}
+
+.charts-by-age__input {
+    width: 230px;
+    height: 56px;
+    background-color: #FFFFFF;
+    border: 1px solid #BABABA;
+    border-radius: 4px;
+    padding: 0 100px 0 15px;
+    color: #000000;
+}
+
+.charts-by-age__input::-webkit-outer-spin-button,
+.charts-by-age__input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0;
+    /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+.charts-by-age__input-text {
+    display: block;
+    position: absolute;
+    bottom: 40px;
+    right: 15px;
+    z-index: 10;
+    color: #757575;
+}
+
+.charts-by-age__input:after {
+    content: "years old";
+}
+
+.charts-by-age__select {}
+
+.charts-by-age__decor-line {
+    width: 100%;
+    height: 1px;
+    background-color: #E4E4E4;
+    margin-bottom: 30px;
+}
+
+.charts-by-age__btn {
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 650px) {
+    .charts-by-age__container {
+        flex-direction: column;
+    }
+    .charts-by-age__input {
+        width: 100%;
+    }
+    .charts-by-age__select {
+        width: 100% !important;
+        max-width: 100%;
+    }
+    .charts-by-age__label {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    .charts-by-age__input-text {
+        bottom: 5px;
+    }
+    .charts-by-age__title {
+        font-size: 32px;
+        line-height: 40px;
+        margin-bottom: 50px;
+    }
+    .charts-by-age__subtitle {
+        font-size: 24px;
+        line-height: 32px;
+        margin-bottom: 25px;
+    }
+    .charts-by-age__form {
+        padding: 25px;
+    }
+    .charts-by-age__container {
+        margin-bottom: 25px;
+    }
+    .charts-by-age__decor-line {
+        margin-bottom: 25px;
+    }
+    .charts-by-age__btn {
+        height: 60px;
+        max-width: 100%;
+    }
+}
 
 @media screen and (max-width: 550px) {
     .main-first-screen__title {
@@ -454,6 +600,21 @@
     }
     .pricing-study-chart {
         padding: 20px;
+    }
+    .listen-us {
+        padding: 60px 0;
+    }
+    .listen-us__title {
+        font-size: 32px;
+        line-height: 40px;
+    }
+    .listen-us__info {
+        font-size: 18px;
+        line-height: 26px;
+    }
+    .listen-us__subtitle {
+        font-size: 20px;
+        line-height: 28px;
     }
 }
 
