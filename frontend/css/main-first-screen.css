@@ -1,15 +1,23 @@
 .main-first-screen {
+    padding: 60px 0;
     width: 100%;
     max-width: 880px;
     margin: 0 auto;
 }
 
 .main-first-screen__title {
-    padding: 60px 0;
     width: 100%;
     max-width: 700px;
-    margin: 0 auto;
+    margin: 20px auto;
     text-align: center;
+}
+
+.main-first-screen__subtitle {
+    text-align: center;
+    color: #757575;
+    width: 100%;
+    max-width: 550px;
+    margin: 0 auto 75px auto;
 }
 
 .main-first-screen__advice {}
@@ -56,8 +64,39 @@
 
 .fs-advice__text {
     color: #757575;
+    margin-bottom: 20px;
+}
+
+.fs-advice__text:last-child {
+    margin-bottom: 0;
 }
 
 .main-first-screen__info {
     padding-bottom: 25px;
+}
+
+.main-first-screen__top-title {
+    color: #F87146;
+    text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+    .main-first-screen__top-title {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .main-first-screen__title {
+        font-size: 32px;
+        line-height: 40px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .fs-advice__header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .fs-advice__col:first-child {
+        margin-bottom: 30px;
+    }
 }

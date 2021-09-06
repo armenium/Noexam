@@ -191,6 +191,7 @@ hr {
     text-transform: uppercase;
     color: #282B29;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .button-l:hover,
