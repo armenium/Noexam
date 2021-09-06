@@ -1,0 +1,170 @@
+.best-companies__list-body {
+    padding: 20px 100px;
+}
+
+.best-companies__list {
+    max-height: 240px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+}
+
+.best-companies__item {
+    height: 18px;
+    margin-bottom: 30px;
+    color: #339E75;
+}
+
+
+/* COMPANIES SECTION */
+
+.companies {
+    padding: 100px 0;
+}
+
+.companies__item {
+    margin-bottom: 15px;
+}
+
+.companies__item:last-child {
+    margin-bottom: 0;
+}
+
+.company {
+    width: 100%;
+    max-width: 100%;
+    background: #FFFFFF;
+    box-shadow: 1px 12px 42px rgba(155, 164, 162, 0.12);
+    border-radius: 4px;
+    padding: 40px;
+}
+
+.company__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 30px;
+}
+
+.company__header-column {
+    margin-right: 30px;
+}
+
+.company__header-column:last-child {
+    margin-right: 0;
+}
+
+.company__header-column:nth-of-type(2) {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.company__logo-box {
+    width: 250px;
+    height: 105px;
+    background-color: #E4E4E4;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.company__logo {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+}
+
+.company__name {
+    margin-bottom: 5px;
+}
+
+.company__rating-label {
+    margin-bottom: 5px;
+    color: #757575;
+}
+
+.company__rating-stars>img {
+    margin-right: 4px;
+}
+
+.company__link {
+    width: 160px;
+    height: 46px;
+}
+
+.company__link:first-child {
+    margin-bottom: 12px;
+}
+
+.company__link:last-child {
+    background-color: #ffffff;
+    border: 1px solid #E4E4E4;
+    color: #282B29;
+}
+
+.company__link:after {
+    content: none;
+}
+
+.company__decor-line {
+    width: 100%;
+    height: 1px;
+    background-color: #E4E4E4;
+}
+
+.company__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 25px 0;
+}
+
+.company__col {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+}
+
+.company__col:last-child {
+    margin-right: 0;
+}
+
+.company__label {
+    color: #757575;
+    margin-bottom: 5px;
+}
+
+.company__value {}
+
+.company__footer {
+    padding: 30px 0;
+}
+
+.company__footer-title {
+    margin-bottom: 15px;
+}
+
+.company__content {
+    margin-bottom: 20px;
+    color: #757575;
+}
+
+.company__content:last-child {
+    margin-bottom: 0;
+}
+
+.company__footer-btn {
+    text-align: right;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: #339E75;
+    font-weight: 600;
+    cursor: pointer;
+}
