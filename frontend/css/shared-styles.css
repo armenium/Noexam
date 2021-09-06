@@ -655,3 +655,11 @@ hr {
         flex-grow: 1;
     }
 }
+
+@media screen and (max-width: 1400px) {
+    .card {
+        padding: 20px;
+        font-size: 14px;
+        line-height: 24px;
+    }
+}
