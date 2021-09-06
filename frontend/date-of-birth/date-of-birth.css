@@ -19,9 +19,9 @@
 
 .date-of-birth__img {
     display: block;
+    width: 100%;
     max-width: 400px;
-    height: 130px;
-    background-color: #aaa;
+    height: auto;
     margin: 0 auto 70px auto;
 }
 

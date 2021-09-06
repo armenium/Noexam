@@ -27,8 +27,6 @@
     display: block;
     width: 100%;
     max-width: 904px;
-    height: 335px;
-    border: 1px dashed #F87146;
     margin: 0 auto;
 }
 
@@ -77,7 +75,6 @@
     display: block;
     width: 340px;
     height: 340px;
-    border: 1px dashed #333;
     margin-right: 50px;
 }
 

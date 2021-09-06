@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rates</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/shared-styles.css">
+    <link rel="stylesheet" href="./rates.css">
+    <link rel="stylesheet" href="../css/breadcrumbs.css">
+    <link rel="stylesheet" href="../css/main-first-screen.css">
+    <link rel="stylesheet" href="../css/get-started.css">
+    <link rel="stylesheet" href="../plugins/css/bootstrap-select.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="header__col">
+            <img src="../images/header/Logo.svg" alt="logo" class="header__logo">
+            <nav class="header__nav">
+                <ul class="header__list">
+                    <li class="header__item"><a href="#" class="header__link header__link--active">Home</a></li>
+                    <li class="header__item"><a href="#" class="header__link">Life Insurance Companies</a></li>
+                    <li class="header__item"><a href="#" class="header__link">Life Insurance</a></li>
+                    <li class="header__item"><a href="#" class="header__link">Get Quotes</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header__col">
+            <a href="tel:8884070714" class="header__link header__link--tel">888-407-0714</a>
+            <a href="#" class="header__link header__link--start">start my Quote</a>
+            <div class="header__burger-wrapp">
+                <img src="../images/header/burger-icon.png" alt="menu">
+            </div>
+        </div>
+    </header>
+
+    <div class="main-wrapp" style="background-color: #FCF9F3;">
+        <div class="wrapp">
+            <section class="rates">
+                <div class="rates__nav breadcrumbs">
+                    <ul class="breadcrumbs__list">
+                        <li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link tags">Life Insurance</a></li>
+                        <li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link tags breadcrumbs__link--active">Rates</a></li>
+                    </ul>
+                </div>
+                <div class="rates__first-screen main-first-screen">
+                    <h1 class="main-first-screen__title heading-0">See Life Insurance Rate Charts By Age</h1>
+                    <div class="main-first-screen__advice fs-advice">
+                        <div class="fs-advice__header">
+                            <div class="fs-advice__col">
+                                <img src="../images/avatar-1.png" alt="avatar" class="fs-advice__avatar">
+                                <div class="fs-advice__user-info">
+                                    <span class="tags">Jonathan Fritz</span>
+                                    <span class="fontBodyS">Published on January 22, 2021</span>
+                                </div>
+                            </div>
+                            <div class="fs-advice__col">
+                                <span class="button-small ">Advertiser Disclosure</span>
+                            </div>
+                        </div>
+                        <div class="fs-advice__body">
+                            <p class="fs-advice__text fontBodyM">Life insurance rates are heavily influenced by age. The older you are, the higher the rate. If you are curious about how much life insurance will cost for someone your age, use the tool below to quickly show sample life insurance
+                                rates from seven companies.</p>
+                        </div>
+                    </div>
+                    <h2 class="main-first-screen__info heading-6">Use the tool below to see life insurance rates for your age. Enter your details and desired coverage amount to see sample rates to compare.</h2>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="main-wrapp" style="background-color: #FCF9F3;">
+        <div class="wrapp">
+            <div class="rates-form">
+                <form class="rates-form__form">
+                    <h1 class="rates-form__title heading-5">Compare and Save. Get a Quote Today.</h1>
+                    <div class="rates-form__row">
+                        <label class="rates-form__label">
+                        <span class="tags">Coverage amount</span>
+                        <select class="rates-form__select">
+                            <option value="250000">$250,000</option>
+                            <option value="350000">$350,000</option>
+                        </select>
+                    </label>
+                        <label class="rates-form__label">
+                        <span class="tags">Term Length</span>
+                        <select class="rates-form__select">
+                            <option value="10">10 Year Term</option>
+                            <option value="20">20 Year Term</option>
+                        </select>
+                    </label>
+                        <label class="rates-form__label">
+                        <span class="tags">State you reside in</span>
+                        <select class="rates-form__select">
+                            <option value="" disabled selected>Select State</option>
+                            <option value="State 1">State 1</option>
+                        </select>
+                    </label>
+                        <label class="rates-form__label">
+                        <span class="tags">Do you use tobacco?</span>
+                        <select class="rates-form__select">
+                            <option value="Use">Use</option>
+                            <option value="">Doesn’t use</option>
+                        </select>
+                    </label>
+                    </div>
+
+                    <h2 class="rates-form__subtitle main-title">Date of Birth</h2>
+                    <div class="rates-form__row rates-form__row--no-wrap">
+                        <label class="rates-form__label">
+                        <span class="tags">Date</span>
+                        <select class="rates-form__select">
+                            <option value="DD">DD</option>
+                            <option value="DD">DD</option>
+                        </select>
+                    </label>
+                        <label class="rates-form__label">
+                        <span class="tags">Month</span>
+                        <select class="rates-form__select">
+                            <option value="MM">MM</option>
+                            <option value="MM">MM</option>
+                        </select>
+                    </label>
+                        <label class="rates-form__label">
+                        <span class="tags">Year</span>
+                        <select class="rates-form__select">
+                            <option value="YYYY">YYYY</option>
+                            <option value="YYYY">YYYY</option>
+                        </select>
+                    </label>
+                    </div>
+
+                    <h2 class="rates-form__subtitle main-title">About You</h2>
+                    <div class="rates-form__row rates-form__row--no-column">
+                        <label class="rates-form__label rates-form__label--full-width">
+                        <span class="tags">Sex</span>
+                        <select class="rates-form__select rates-form__select--full-width">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </label>
+                        <label class="rates-form__label rates-form__label--margin">
+                        <span class="tags">Height</span>
+                        <select class="rates-form__select rates-form__select--half-width">
+                            <option value="" disabled selected>Select</option>
+                            <option value="180">180</option>
+                            <option value="181">181</option>
+                        </select>
+                    </label>
+                        <label class="rates-form__label">
+                        <span class="tags">Weight</span>
+                        <select class="rates-form__select rates-form__select--half-width">
+                            <option value="" disabled selected>Select</option>
+                            <option value="180">65</option>
+                            <option value="181">70</option>
+                        </select>
+                    </label>
+                    </div>
+
+                    <h2 class="rates-form__subtitle main-title">Contact Details</h2>
+                    <div class="rates-form__row">
+                        <label class="rates-form__label">
+                        <span class="tags">First Name</span>
+                        <input type="text" class="rates-form__input fontBodyM" value="Magda">
+                    </label>
+                        <label class="rates-form__label">
+                        <span class="tags">Last Name</span>
+                        <input type="text" class="rates-form__input fontBodyM" value="Bierman">
+                    </label>
+                        <label class="rates-form__label">
+                        <span class="tags">Email</span>
+                        <input type="email" class="rates-form__input fontBodyM rates-form__input--invalid" value="mag">
+                    </label>
+                        <label class="rates-form__label">
+                        <span class="tags">Phone Number</span>
+                        <input type="text" class="rates-form__input fontBodyM" value="+1 602-275-6885">
+                    </label>
+                    </div>
+
+                    <div class="rates-form__decor-line"></div>
+                    <button type="submit" class="rates-form__btn main-btn button-big">see my quote</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-wrapp">
+        <div class="wrapp">
+            <section class="rates-charts">
+                <h1 class="rates-charts__title heading-2">Term life insurance rate Charts</h1>
+                <p class="rates-charts__info fontBodyL">Below are sample term life insurance rates by age for comparison purposes. The rates are broken up by term length, gender, age, and coverage amounts. We recommend you use this <b>comparison tool</b> to compare actual rates from <b>the best life
+                    insurance companies.</b></p>
+                <div class="rates-charts__links">
+                    <a href="#" class="rates-charts__link button-small button-small--arrow">Rates by Age 18-29</a>
+                    <a href="#" class="rates-charts__link button-small button-small--arrow">Rates by Age 40-49</a>
+                    <a href="#" class="rates-charts__link button-small button-small--arrow">Rates by Age 60-69</a>
+                    <a href="#" class="rates-charts__link button-small button-small--arrow">Rates by Age 30-39</a>
+                    <a href="#" class="rates-charts__link button-small button-small--arrow">Rates by Age 50-59</a>
+                </div>
+                <h2 class="rates-charts__title rates-charts__title--small-title heading-5">Average Cost of Life Insurance - How Much Does Term Insurance Cost?</h2>
+                <div class="rates-charts__chart"></div>
+
+                <div class="rates-charts__footer">
+                    <p class="rates-charts__text-content">Term insurance can cost as low as $10 per month or as high as $500+ per month depending on age, term length, coverage amount, and overall health. The charts below provide average rates for a 50-year old man in good health.</p>
+                    <p class="rates-charts__text-content">It is important to note once you buy a term life policy, the rates do not increase over the term period of the policy.</p>
+                    <div class="rates-charts__table"></div>
+                    <div class="rates-charts__banner">
+                        <p class="rates-charts__banner-text quote-s">* These life insurance rates are for a healthy 50-year-old male. An older male can expect higher rates. Use our comparison tool for a personalized quote.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="main-wrapp">
+        <div class="wrapp">
+            <section class="rates-chart-by-age">
+                <h1 class="rates-chart-by-age__title heading-2">10 Year Term Life Insurance<br> Rate Chart By Age</h1>
+                <p class="rates-chart-by-age__subtitle fontBodyL ">A 10-year term policy usually has the lowest rate. It will offer a level premium for 10 years. Once the initial 10 years are up, the premium will rise annually if the policy is renewable.</p>
+                <div class="rates-chart-by-age__slider"></div>
+            </section>
+        </div>
+    </div>
+
+    <div class="main-wrapp" style="background-color: #377660;">
+        <div class="wrapp">
+            <section class="get-started">
+                <h1 class="get-started__title heading-2">Apply now</h1>
+                <p class="get-started__subtitle fontBodyL">Our expert agents are standing by to help you find the right policy. Call 888-407-0714 to speak with an agent now, or click the button to apply online.</p>
+                <a href="#" class="get-started__btn main-btn button-big">apply now</a>
+            </section>
+        </div>
+    </div>
+
+    <div class="main-wrapp" style="background-color: #FCF9F3;">
+        <div class="wrapp">
+            <section class="pricing-study">
+                <h1 class="pricing-study__title  heading-2">Life Insurance Pricing Study</h1>
+                <p class="pricing-study__text fontBodyM">In a recent study, we analyzed over 100,000 quotes that were requested on our website. The results are significant, but not surprising. The longer you wait to buy it, the more it will cost you in monthly premiums. But what is more surprising
+                    is that <b>60% of shoppers are waiting to get life insurance until after the age of 45.</b> This is the problem that we are working to solve. Helping to raise awareness on the importance of life insurance. If you have financial dependents,
+                    get some type of coverage in force. As you are about to find out, you get the most bang for your buck by buying it younger.</p>
+                <p class="pricing-study__text fontBodyM">As part of our research, we asked nearly 4,000 people to guess their price. The results were surprising. Of the group, 94% of the answers came nowhere close to the actual price of life insurance. Our research shows that Americans have
+                    no idea how much term life insurance should cost.</p>
+
+                <div class="pricing-study__chart pricing-study-chart">
+                    <div class="pricing-study-chart__title tags">After 3,953 guesses <span>16%</span> guessed too high, <span>78%</span> guessed too low, and <span>6%</span> guessed correctly.</div>
+                    <div class="pricing-study-chart__body">
+                        <div class="pricing-study-chart__col"></div>
+                        <div class="pricing-study-chart__col">
+                            <ul class="pricing-study-chart__list">
+                                <li class="pricing-study-chart__list-item fontBodyS">16% of participants that guessed too high</li>
+                                <li class="pricing-study-chart__list-item fontBodyS">78% of participants that guessed too low</li>
+                                <li class="pricing-study-chart__list-item fontBodyS">6% of participants that guessed correctly</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="pricing-study__subtitle heading-5 pricing-study__subtitle--hide">Life Insurance Rates Increase By Age</h2>
+
+                <ul class="pricing-study__list">
+                    <li class="pricing-study__list-item fontBodyM">The average cost increases by <span>22%</span> from age <b>20</b> to age <b>30</b></li>
+                    <li class="pricing-study__list-item fontBodyM">The average cost increases by <span>22%</span> from age <b>30</b> to age <b>40</b></li>
+                    <li class="pricing-study__list-item fontBodyM">The average cost increases by <span>22%</span> from age <b>40</b> to age <b>50</b></li>
+                    <li class="pricing-study__list-item fontBodyM">The average cost increases by <span>22%</span> from age <b>50</b> to age <b>60</b></li>
+                    <li class="pricing-study__list-item fontBodyM">The average cost increases by <span>22%</span> from age <b>30</b> to age <b>50</b></li>
+                </ul>
+                <h2 class="pricing-study__subtitle heading-5">Overall Price Increases Ages 20 -70</h2>
+                <p class="pricing-study__text fontBodyM pricing-study__text--hide">The data shows that the price increases with age.</p>
+
+                <div class="pricing-study__graph"></div>
+
+                <p class="pricing-study__text fontBodyM">An important thing to note is that this is for monthly premiums. The total cost of a life insurance policy bought at age 30 vs age 45 could end up being the same if you are in perfect health. This is because as you age your needs decrease
+                    (both term length and coverage amount). You'll be paying a higher rate but for a lesser amount of time.</p>
+                <p class="pricing-study__text fontBodyM">The reason we show the prices in monthly premiums is that most people do their budgets on a monthly basis. Cash in, cash out. If your income increases along this same curve you won't feel a squeeze. If it doesn't, you will certainly be
+                    feeling it when you go to buy coverage later in life.</p>
+            </section>
+        </div>
+    </div>
+
+    <div class="main-wrapp">
+        <div class="wrapp">
+            <section class="listen-us">
+                <h1 class="listen-us__title heading-2">Why Should You Listen to Us?</h1>
+                <p class="listen-us__info fontBodyL"><b>NoExam.com</b> has been in business since 2013. As a small business, we have helped 10,000 families purchase life insurance. We have <b>over 1,000 verified 3rd party reviews</b> and maintain a score of 4.8 out of 5. Our philosophy is
+                    to go above and beyond without any expectation for something in return.</p>
+                <h2 class="listen-us__subtitle heading-5">How Are Life Insurance Rates Calculated?</h2>
+                <div class="listen-us__card card card-red quote-s">
+                    Rates are calculated by factoring in an applicant’s age, gender, height, weight, and overall health.
+                </div>
+                <div class="listen-us__text fontBodyM">
+                    The rate charts on this page represent the starting point. Age, gender, height, and weight are used to determine the rate class. Rate classes are typically labeled as:
+                    <ul style="list-style: circle; padding: 30px 0 30px 40px;">
+                        <li>Preferred Plus </li>
+                        <li>Preferred</li>
+                        <li>Standard</li>
+                        <li>Rated</li>
+                    </ul>
+                    After using the quote calculator listed above, when an acceptable quote is offered, users can click "apply" to begin their application. Once the application begins, the applicant will need to answer some health questions to determine health classification.
+                    These questions involve family history and any current or past medical conditions. Having a medical condition like high blood pressure can move you to the next health class. A family history of heart disease or cancer before the age
+                    of 60 can also affect an applicant’s class.
+                </div>
+
+                <h2 class="listen-us__subtitle heading-5">Term Life Insurance Calculator</h2>
+                <div class="listen-us__card card card-green quote-s">
+                    Use the term coverage calculator to <u>determine how much coverage to get</u>. A good rule of thumb is to have at least seven to 10 times the annual income of the household’s main financial provider in life insurance coverage.
+                </div>
+                <div class="listen-us__text fontBodyM">
+                    The answer to the question of how much coverage varies and is based on many factors. When determining the amount of coverage, consider the size of the applicant’s family, as well as their future needs, such as college tuition or wedding expenses. Also
+                    to be considered are any debts, <b>such as a mortgage.</b> Adding all these expenses up will give an idea of how much life insurance that family will need. It's not uncommon to need a <b>$1,000,000 life insurance policy.</b>
+                </div>
+
+                <h2 class="listen-us__subtitle heading-5">Choosing a Life Insurance Term Length</h2>
+                <div class="listen-us__card card card-green quote-s">
+                    The right term length is one that provides coverage while it is needed most. A 30-year term will provide the best value but may not be the right option, given the situation.
+                </div>
+                <div class="listen-us__text fontBodyM" style="margin-bottom: 25px;"> When choosing a term length, consider your age and insurance needs. A 30-year policy term makes more sense if it is affordable. This is because the older an applicant gets, the more expensive a life insurance policy is. A 30-year term
+                    policy at age 40 is cheaper than a 20-year term policy at age 50. Most importantly, the policy must meet the needs of the insured and be affordable.</div>
+                <div class="listen-us__text fontBodyM">Whole life insurance, on the other hand, specifically its cash value component, is confusing to many people. It is also more expensive, which is why we almost always recommend term life insurance.</div>
+
+            </section>
+        </div>
+    </div>
+
+    <div class="main-wrapp" style="background-color: #FCF9F3;">
+        <div class="wrapp">
+            <section class="charts-by-age">
+                <h1 class="charts-by-age__title heading-2">Life Insurance Rate</br> Charts by Age</h1>
+
+                <form class="charts-by-age__form">
+                    <h2 class="charts-by-age__subtitle heading-4">Compare Life Insurance Rates by Age</h2>
+
+                    <div class="charts-by-age__container">
+                        <label class="charts-by-age__label">
+                            <span class="tags">My age is</span>
+                            <input type="number" class="charts-by-age__input fontBodyM" value="55"><span class="charts-by-age__input-text tags">years old</span></input>
+                        </label>
+                        <label class="charts-by-age__label">
+                            <span class="tags">My gender is</span>
+                            <select name="gender" class="charts-by-age__select fontBodyM">
+                                <option value="female" selected>Female</option>
+                                <option value="female">Male</option>
+                            </select>
+                        </label>
+                        <label class="charts-by-age__label">
+                            <span class="tags">Term length</span>
+                            <select name="term" class="charts-by-age__select fontBodyM">
+                                <option value="20" selected>20 years</option>
+                                <option value="30">30 years</option>
+                            </select>
+                        </label>
+                        <label class="charts-by-age__label">
+                            <span class="tags">My overall health</span>
+                            <select name="health" class="charts-by-age__select fontBodyM">
+                                <option value="" selected>Very good</option>
+                                <option value="">Bad</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div class="charts-by-age__decor-line"></div>
+
+                    <button type="submit" class="charts-by-age__btn main-btn button-big">Load rates</button>
+                </form>
+            </section>
+        </div>
+    </div>
+
+    <div class="main-wrapp">
+        <div class="wrapp">
+            <footer class="footer">
+                <div class="footer__col">
+                    <img src="../images/header/Logo.svg" alt="logo" class="footer__logo">
+                    <p class="footer__paragraph fontBodyS">Our state-of-the-art technology allows for individuals and families to shop for and buy life insurance online within a matter of minutes.</p>
+                    <div class="footer__icons">
+                        <img src="../images/insta.svg" class="footer__icon" alt="facebook">
+                        <img src="../images/facebook.svg" class="footer__icon" alt="instagram">
+                        <img src="../images/youtube.svg" class="footer__icon" alt="youtube">
+                    </div>
+                </div>
+                <div class="footer__col">
+                    <div class="footer__box">
+                        <h1 class="footer__subtitle sub-title-1">Resources</h1>
+                        <ul class="footer__list">
+                            <li class="footer__item"><a href="#" class="footer__link fontBodyM">Help</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link fontBodyM">Get my price</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link fontBodyM">Calculator</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link fontBodyM">Partnership</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__box">
+                        <h1 class="footer__subtitle sub-title-1">Our website</h1>
+                        <ul class="footer__list">
+                            <li class="footer__item"><a href="#" class="footer__link fontBodyM">About</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link fontBodyM">Licenses</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link fontBodyM">Careers</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link fontBodyM">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <div class="copyright fontBodyS">Copyright © 2021 NoExam.com</div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="../plugins/js/bootstrap-select.js"></script>
+    <script src="./rates.js"></script>
+</body>
+
+</html>

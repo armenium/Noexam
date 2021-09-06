@@ -191,6 +191,7 @@ hr {
     text-transform: uppercase;
     color: #282B29;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .button-l:hover,
@@ -217,6 +218,12 @@ hr {
 .button-small {
     font-size: 14px;
     line-height: 16px;
+}
+
+.button-small--arrow:after {
+    content: url("../images/arrow-right-green.png");
+    margin-left: 12px;
+    transform: translateY(2px);
 }
 
 .main-btn {
@@ -623,11 +630,37 @@ hr {
     background-color: #F8A846;
 }
 
+
+/* CARDS */
+
+.card {
+    border-radius: 4px;
+    padding: 30px;
+}
+
+.card-red {
+    background-color: #FEE2DA;
+    color: #F87146;
+}
+
+.card-green {
+    background-color: #D6ECE3;
+    color: #339E75;
+}
+
 @media screen and (max-width: 1400px) {
     .my-quote-steps {
         margin-top: -50px;
     }
     .my-quote-steps__steps-item {
         flex-grow: 1;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .card {
+        padding: 20px;
+        font-size: 14px;
+        line-height: 24px;
     }
 }
