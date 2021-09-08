@@ -5,7 +5,7 @@ $plans = $result['plans'];
 $message = $result['message'];
 ?>
 <?php //VarDumper::dump($plans, 10, 1);?>
-<?php if(count($plans['sagicor']) > 0): $i=0;?>
+<?php if(isset($plans['sagicor']) && count($plans['sagicor']) > 0): $i=0;?>
 	<?php $cols = floor(12 / count($plans['sagicor']));?>
 	<?php foreach($plans['sagicor'] as $term => $data): $i++;?>
 		<div class="col-md-<?=$cols;?> wrap">

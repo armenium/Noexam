@@ -1133,8 +1133,9 @@ class BaseController extends Controller{
 		$session       = Yii::$app->session;
 		$cookies       = Yii::$app->response->cookies;
 		$customer_data = CustomerData::find()->where(['sid' => $session->id, 'status' => 'new'])->one();
+		#VarDumper::dump($customer_data, 10, 1); exit;
 		
-		if(count($customer_data)){
+		if(!is_null($customer_data)){
 			return $customer_data;
 		}
 		
@@ -1844,19 +1845,21 @@ class BaseController extends Controller{
 				if($ip == '127.0.0.1'){
 					$ip = $_SERVER['HTTP_X_REAL_IP'];
 				}
-				$record = $geoDB->city($ip);
-				#VarDumper::dump($record->subdivisions[0]->isoCode, 10, 1);
-				if(isset($record->mostSpecificSubdivision)){
-					if($this->state_code !== $record->mostSpecificSubdivision->isoCode){
-						$this->state_code = $record->mostSpecificSubdivision->isoCode;
+				#VarDumper::dump($ip, 10, 1); exit;
+				if(!is_null($ip)){
+					$record = $geoDB->city($ip);
+					if(isset($record->mostSpecificSubdivision)){
+						if($this->state_code !== $record->mostSpecificSubdivision->isoCode){
+							$this->state_code = $record->mostSpecificSubdivision->isoCode;
+						}
+					}elseif(isset($record->subdivisions) && count($record->subdivisions) > 0){
+						if($this->state_code !== $record->subdivisions[0]->isoCode){
+							$this->state_code = $record->subdivisions[0]->isoCode;
+						}
 					}
-				}elseif(isset($record->subdivisions) && count($record->subdivisions) > 0){
-					if($this->state_code !== $record->subdivisions[0]->isoCode){
-						$this->state_code = $record->subdivisions[0]->isoCode;
+					if($this->postal_code !== $record->postal->code){
+						$this->postal_code = $record->postal->code;
 					}
-				}
-				if($this->postal_code !== $record->postal->code){
-					$this->postal_code = $record->postal->code;
 				}
 			}catch(AddressNotFoundException $e){
 				// TODO: notify that IP cannot be verified

@@ -2,6 +2,7 @@
 
 $params = require(__DIR__ . '/params.php');
 $params['tinymce'] = require(__DIR__ . '/tinymce.php');
+$params['nav'] = require(__DIR__ . '/nav.php');
 //$cdn = require(__DIR__ . '/cdn.php');
 $assetsAutoCompress = require(__DIR__ . '/assetsAutoCompress.php');
 
@@ -10,7 +11,7 @@ $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log', 'devicedetect', 'assetsAutoCompress'],
-    'defaultRoute' => 'main',
+    'defaultRoute' => 'home',
     'modules' => [
 	    'admin' => [
 		    'class' => 'app\modules\admin\Module',
@@ -76,6 +77,29 @@ $config = [
         'db' => require(__DIR__.'/db.php'),
         'assetManager' => [
 	        'appendTimestamp' => true, #https://www.yiiframework.com/doc/guide/2.0/ru/structure-assets#cache-busting
+	        'bundles' => [
+		        'yii\web\JqueryAsset' => [
+			        'sourcePath' => null,
+			        'js' => ['https://code.jquery.com/jquery-3.6.0.min.js'],
+			        'jsOptions' => [
+				        'integrity' => 'sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=',
+				        'crossorigin' => 'anonymous'
+			        ],
+		        ],
+		        'yii\bootstrap\BootstrapPluginAsset' => [
+			        'sourcePath' => '@app/web/v2/bootstrap5',
+			        'js'=>[
+				        #'js/bootstrap.min.js',
+				        'js/bootstrap.bundle.min.js',
+			        ]
+		        ],
+		        'yii\bootstrap\BootstrapAsset' => [
+			        'sourcePath' => '@app/web/v2/bootstrap5',
+			        'css' => [
+			        	#'css/bootstrap.css'
+			        ]
+		        ]
+	        ]
         ],
         'urlManager' => [
 	        'class' => 'yii\web\UrlManager',

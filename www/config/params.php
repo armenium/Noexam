@@ -9,7 +9,8 @@ return [
 	'supportEmail' => 'robot@noexam.com',
 	'adminAllowedIPs' => [
 		'45.26.156.154',  # Jonathan's IP
-		'37.60.217.117', # Armen's IP
+		'37.60.208.187', # Armen's IP
+		'127.0.0.1', # Armen's IP
 	],
 
 	'dsr_key' => 'test',

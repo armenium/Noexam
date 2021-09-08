@@ -43,7 +43,7 @@ class MainController extends BaseController {
 	public function beforeAction($action){
 
 		$e404_pages = ['careers'];
-		$single_pages = ['admin', 'careers', 'privacy', '404', 'apply-now', 'apply-now2'];
+		$single_pages = ['admin', 'careers', 'privacy', '404', 'apply-now', 'apply-now2', 'debug'];
 		$double_pages = ['admin', 'careers', 'about', 'getting-started-life-insurance', 'apply-now', 'quote-result', 'apply-now2'];
 
 		$request_path_info = Yii::$app->request->getPathInfo();
@@ -987,8 +987,8 @@ class MainController extends BaseController {
 	 */
 	public function actionIndex(){
 		$customer_data = $this->getCustomeData();
-		//VarDumper::dump($customer_data,10,1);
-		if(count($customer_data)){
+		
+		if(!is_null($customer_data)){
 			$customer_data->attributes = $customer_data->decodeData();
 			if(!empty($customer_data->step)){
 				//return $this->redirect($this->getStepUrl($customer_data->step));
@@ -2505,13 +2505,6 @@ class MainController extends BaseController {
 		return $this->render('pdf_repoprt', ['report_data' => $report]);
 	}
 
-	public function getFaqs($cats){
-		$cats[] = 'anywhere';
-		$cats = array_unique($cats);
-		$model = Faqs::find()->where(['IN', 'category', $cats])->orderBy('item_order ASC')->all();
-
-		return $model;
-	}
 
 	public function actionQuoteOptions(){
 		$this->layout = 'results';
