@@ -305,7 +305,7 @@
     }
 }
 
-@media screen and (max-width: 519px) {
+@media screen and (max-width: 575px) {
     .quotes-result__containerHeader {
         flex-direction: column;
         align-items: flex-start;
