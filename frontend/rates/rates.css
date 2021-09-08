@@ -310,7 +310,7 @@
     }
 }
 
-@media screen and (max-width: 620px) {
+@media screen and (max-width: 767px) {
     .rates-form__row {
         flex-direction: column;
     }
@@ -489,7 +489,7 @@
     margin: 0 auto;
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 767px) {
     .charts-by-age__container {
         flex-direction: column;
     }
@@ -532,7 +532,7 @@
     }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 575px) {
     .main-first-screen__title {
         font-size: 32px;
         line-height: 40px;
