@@ -80,7 +80,7 @@
     text-align: center;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 767px) {
     .main-first-screen__top-title {
         font-size: 14px;
         line-height: 20px;
@@ -91,7 +91,7 @@
     }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 575px) {
     .fs-advice__header {
         flex-direction: column;
         align-items: flex-start;

@@ -139,12 +139,12 @@
                         </div>
                     </div>
 
-                    <div class="company__decor-line"></div>
+                    <div class="company__decor-line company__decor-line--between-rows"></div>
 
                     <div class="company__row">
                         <div class="company__col">
                             <span class="company__label fontBodyS">Average Complaints</span>
-                            <span class="company__value fontBodyM">Term, Whole, Final Expense</span>
+                            <span class="company__value fontBodyM">Above Average</span>
                         </div>
                         <div class="company__col">
                             <span class="company__label fontBodyS">BBB Rating</span>
@@ -167,11 +167,16 @@
                             complaints, and wide selection of products.</p>
                         <p class="company__content fontBodyM">Mutual of Omaha is financially stable and offers some of the most competitive pricing available. They have over eight billion dollars in assets with a <b>three-billion-dollar surplus.</b> They hold ratings from AM Best (A+ Superior),
                             Moody's (A1 Good), and S&P (AA- Very Strong). See our full <b>Mutual of Omaha review.</b></p>
-                        <div class="company__footer-btn">Hide</div>
                     </div>
-
+                    <div class="company__footer-btn btn-read-more">read more</div>
+                    <div class="company__footer-btn company__footer-btn--active btn-hide">hide</div>
                     <div id="shadow"></div>
 
+                    <div class="company__decor-line company__decor-line--adaptive"></div>
+                    <div class="company__footer-btns-box">
+                        <a href="#" class="company__footer-link main-btn button-small">Get your rate</a>
+                        <a href="#" class="company__footer-link main-btn button-small">apply now</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -258,6 +263,51 @@
                         <p class="choose-company__text fontBodyM">You are not required to work with an agent or company in your state. Many people seem to think they need to find a life insurance company near them to buy. Life insurance can be bought online and over the phone without needing
                             to find a local agent. Of course, you are welcome to work with a local agent should you prefer to do so.</p>
                     </div>
+
+                    <div class="choose-company__box">
+                        <h2 class="choose-company__subtitle heading-5">Ways to Buy</h2>
+                        <h3 class="choose-company__subtitle-small heading-6">Online</h3>
+                        <p class="choose-company__text fontBodyM">Even the century-old life insurance industry has caught on to the fact the consumer expectations are changing. 98% of consumers say they would use the internet to research a product before buying. If you are one in that group that
+                            seeks a user-friendly buying process, we have you covered.</p>
+                    </div>
+
+                    <div class="choose-company__box">
+                        <h3 class="choose-company__subtitle-small heading-6">Phone</h3>
+                        <p class="choose-company__text fontBodyM">While most prefer to research online, we have found that some consumers still desire the assistance of a licensed agent. With the amount of information life insurance companies require, it can feel reassuring to hear a voice on
+                            the other line before submitting your information.</p>
+                    </div>
+
+                    <div class="choose-company__box">
+                        <h3 class="choose-company__subtitle-small heading-6">In-Person - Agent</h3>
+                        <p class="choose-company__text fontBodyM">Whether you buy online, via phone, or in person, you are always buying from a <b>licensed life insurance agent.</b> How you go about purchasing, receiving customer support, and maintaining your life insurance policy is your choice.
+                            If you choose to buy from a local life insurance agent that's in your network, we can help point you in the right direction. </p>
+                    </div>
+
+                    <div class="choose-company__box">
+                        <h2 class="choose-company__subtitle heading-5">Customer Complaints</h2>
+                        <p class="choose-company__text fontBodyM">When looking at complaints on a company, you have to take this data with a grain of salt. Most complaints stem from billing errors and customer service. Rarely does a life insurance company not pay a claim. When conducting research,
+                            we analyzed the annual reports of over 50 companies. We looked at the percentage of claims that were contested and why they were contested. Overall we found it to be a very small percentage, and the most common reason claims
+                            are contested is due to material misrepresentation. Material misrepresentation is a fancy term for lying on the application. If you are looking for the best life insurance company that will payout, just be sure to answer the
+                            questions on the application truthfully, and select a company with strong financial ratings.</p>
+                        <p class="choose-company__text fontBodyM">A good place to look at reviews of a life insurance company is the Better Business Bureau. However, remember that the BBB is a complaint board. It is easy to get a feeling that a company is bad by looking at their BBB page and
+                            seeing hundreds of complaints. Remember to consider how many customers an insurance company and that 100 complaints may be a very small fraction of their total customers.</p>
+                        <p class="choose-company__text fontBodyM">Another good place to start is the NAIC. They have a public-facing tool that allows you to look up complaint data on insurance companies. However, the reason for these complaints can be about marketing & sales and have nothing
+                            to do with customer service or paying claims.</p>
+                    </div>
+
+                    <div class="choose-company__box">
+                        <h2 class="choose-company__subtitle heading-5">Price</h2>
+                        <p class="choose-company__text fontBodyM">As a budget-minded shopper, price is always going to play a role in any purchase decision. We see life insurance shoppers looking for the cheapest prices every day. Before you go jumping on the lowest price you see, there are a
+                            few key things to consider.</p>
+                        <ul class="choose-company__list fontBodyM">
+                            <li>The best life insurance company is the one with the highest rating that will underwrite you favorably. This means the best financial ratings and the best price given your current health.</li>
+                        </ul>
+                        <p class="choose-company__text fontBodyM">Every insurance company has different rules for how they price policies. For example, if you are in the 50% of Americans that have used at least one prescription drug in the last 30 days, your price can vary from company to company.
+                            If you are overweight, you will also see that your price can vary from company to company. These are quick examples, but you can imagine how complex it can get when you are factoring in your health history, medications, and
+                            family history.</p>
+                        <p class="choose-company__text fontBodyM">Some life insurance companies quote people low rates, and once the underwriting is complete they determine they do not qualify for the initial rates. The industry refers to this as a “bait and switch”. This is something to keep
+                            in mind when you see a life insurance rate that is much lower than the other quotes.</p>
+                    </div>
                 </div>
             </section>
         </div>
@@ -304,6 +354,21 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="./best-companies.js"></script>
+    <script>
+        let btnsReadMore = document.querySelectorAll(".btn-read-more")
+        let btnsHide = document.querySelectorAll(".btn-hide")
+        let listItems = document.querySelectorAll(".best-companies__item")
+
+        btnsReadMore.forEach((btn) => btn.addEventListener("click", () => {
+            btn.previousElementSibling.classList.add("company__footer--active")
+        }))
+
+        btnsHide.forEach((btn) => btn.addEventListener("click", () => {
+            btn.previousElementSibling.previousElementSibling.classList.remove("company__footer--active")
+        }))
+
+        btnsHide.forEach((item) => item.before = "01")
+    </script>
 </body>
 
 </html>
