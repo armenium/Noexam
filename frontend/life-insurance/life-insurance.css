@@ -1,0 +1,174 @@
+.get-quote {
+    width: 100%;
+    min-height: 330px;
+    background: #FFFFFF;
+    box-shadow: 1px 12px 42px rgba(155, 164, 162, 0.12);
+    border-radius: 4px;
+    text-align: center;
+    padding: 60px 15px;
+}
+
+.get-quote__title {
+    margin-bottom: 15px;
+}
+
+.get-quote__subtitle {
+    max-width: 513px;
+    color: #757575;
+    margin: 0 auto 30px auto;
+}
+
+.get-quote__btn {
+    margin: 0 auto;
+}
+
+.article {
+    padding: 60px 0;
+    max-width: 880px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.article__title {
+    margin-bottom: 25px;
+}
+
+.article__title--center {
+    text-align: center;
+}
+
+.article__box {
+    margin-bottom: 60px;
+}
+
+.article__chapter-title {
+    margin-bottom: 30px;
+}
+
+.article__subtitle {
+    margin-bottom: 15px;
+}
+
+.article__paragraph {
+    color: #757575;
+    margin-bottom: 15px;
+}
+
+.article__paragraph:last-child {
+    margin-bottom: 0;
+}
+
+.article__card {
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.article__btn {
+    max-width: 150px;
+    margin-left: auto;
+    color: #339E75;
+}
+
+.article__btn:after {
+    content: url("../images/arrow-right-green.png");
+    transform: rotate(-90deg);
+}
+
+.article__links {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+}
+
+.article__links-column {
+    margin-right: 60px;
+    width: 46%;
+}
+
+.article__links-column:last-child {
+    margin-right: 0;
+}
+
+.article__link {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: #339E75;
+}
+
+.article__link:last-child {
+    margin-bottom: 0;
+}
+
+.article__glossary {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.article__glossary-column {
+    max-width: 31%;
+    margin: 0 20px 20px 0;
+}
+
+.article__glossary-column:last-child {
+    margin-right: 0;
+    margin-bottom: 0;
+}
+
+.article__glossary-item {
+    color: #339E75;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.article__glossary-item:last-child {
+    margin-bottom: 0;
+}
+
+.states {
+    padding: 100px 0;
+}
+
+.states__title {
+    margin-bottom: 80px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.states__body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.states__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    margin: 0 20px 20px 0;
+    width: 225px;
+    height: 75px;
+    color: #F8A846;
+    border-radius: 4px;
+    transition: all .2s ease;
+}
+
+.states__item>span:after {
+    content: url("../images/arrow-right-red.png");
+    margin-left: 12px;
+}
+
+.states__item:hover {
+    background-color: #339E75;
+    color: #FFFFFF;
+    transition: all .2s ease;
+}
+
+.states__item:hover>span:after {
+    content: url("../images/arrow-right-white.png");
+    display: inline-block;
+    transform: translateY(3px);
+}
