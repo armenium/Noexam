@@ -77,11 +77,12 @@
 .article__links {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     margin-bottom: 60px;
 }
 
 .article__links-column {
-    margin-right: 60px;
+    margin-right: 55px;
     width: 46%;
 }
 
@@ -171,4 +172,62 @@
     content: url("../images/arrow-right-white.png");
     display: inline-block;
     transform: translateY(3px);
+}
+
+@media screen and (max-width: 768px) {
+    .get-quote__title {
+        font-size: 24px;
+        line-height: 32px;
+        margin-bottom: 10px;
+    }
+    .get-quote__subtitle {
+        font-size: 18px;
+        line-height: 26px;
+        margin-bottom: 25px;
+    }
+    .states__title {
+        font-size: 32px;
+        line-height: 40px;
+        margin-bottom: 50px;
+    }
+    .states {
+        padding: 60px 0;
+    }
+    .states__item {
+        width: 100%;
+        max-width: 335px;
+        height: 60px;
+    }
+    .article__links {
+        flex-direction: column;
+    }
+    .article__links-column {
+        margin-right: 0;
+    }
+    .article__links-column:first-child {
+        margin-bottom: 10px;
+    }
+    .article__links {
+        margin-bottom: 30px;
+    }
+    .article__links-column {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .states__item {
+        margin-right: 0;
+    }
+    .article__glossary {
+        flex-direction: column;
+    }
+    .article__glossary-column {
+        max-width: 100%;
+        margin: 0 0 10px 0;
+        display: flex;
+        flex-direction: column;
+    }
 }
