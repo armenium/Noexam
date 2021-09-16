@@ -366,13 +366,8 @@ hr {
     align-items: center;
 }
 
-.header__item {
-    margin-right: 40px;
-}
-
-.header__item:last-child {
-    margin-right: 0;
-}
+.header__item {margin-right: 40px;}
+.header__item:last-child {margin-right: 0;}
 
 .header__link {
     font-size: 18px;
@@ -428,9 +423,7 @@ hr {
 }
 
 @media screen and (max-width: 1260px) {
-    .header__item {
-        margin-right: 15px;
-    }
+    .header__item {margin-right: 15px;}
 }
 
 @media screen and (max-width: 1180px) {
@@ -459,21 +452,20 @@ hr {
     }
 }
 
-.mob-menu {position: fixed; overflow-y: auto; background-color: #FCF9F3; z-index: 11; right: -91%; top: 105px; width: 86%; height: 100%; box-shadow: 0 0 0 rgba(0,0,0,0.1);}
+.mob-menu {position: fixed; overflow-y: auto; background-color: #FCF9F3; z-index: 11; top: 105px; bottom: 0; width: 100%; box-shadow: 0 0 0 rgba(0,0,0,0.1); opacity: 0; visibility: hidden;}
 .mob-overlay {background-color: rgba(0,0,0,0.1); position: fixed; height: 100%; left: 0; top: 105px; width: 0; z-index: 10;}
 .scrolled .mob-menu,
 .scrolled .mob-overlay {top: 65px;}
 .nav-mob-opened {overflow: hidden; height: 100vh;}
-.nav-mob-opened .mob-overlay {width: 100%;}
 .nav-mob-opened .navbar-mobile .mobile-inner {background-color: #fff;}
-.nav-mob-opened .mob-menu {right: 0; box-shadow: 5px 30px 30px rgba(0,0,0,0.1);}
+.nav-mob-opened .mob-menu {opacity: 1; visibility: visible;}
 .mob-menu .navbar-nav {height: auto;}
 .mob-menu .logo {width: 126px; background-image: url('../img/logo-noexam.png'); background-repeat: no-repeat; -webkit-background-size: 100%; background-size: 100%; height: 18px; max-width: 155px; position: relative; top: 2px; margin: auto;}
-.mob-menu .phone {color: #9FD1DD; font-family: Poppins; font-size: 22px; font-weight: bold; line-height: 1; padding: 0; text-align: center; margin-bottom: 43px;}
-.mob-menu .nav {margin: 13px 0 43px; padding-bottom: 33px; border-bottom: 1px solid	#EBEBEB;}
+.mob-menu .phone {color: #9FD1DD; font-family: Poppins; font-size: 22px; font-weight: bold; line-height: 1; padding: 0; text-align: center;}
+.mob-menu .nav {margin: 0 0 43px; padding-bottom: 33px; border-bottom: 1px solid	#EBEBEB;}
 .mob-menu .nav > li {margin-bottom: 0; height: auto; padding: 0;}
 .mob-menu .nav > li:last-child {margin: 0;}
-.mob-menu .nav > li > a {display: block; padding: 18px 20px; font-size: 22px; font-weight: 300; color: #999;}
+.mob-menu .nav > li > a {display: inline-block; padding: 18px 20px; font-size: 22px; font-weight: 300; color: #999;}
 .mob-menu .nav > li > a:after {display: none;}
 .mob-menu .nav > li > a:hover,
 .mob-menu .nav > li.active > a {color: #12ACE4;}
@@ -523,9 +515,21 @@ hr {
 .nav-mob-opened .header__burger-wrapp .menu-btn span:nth-child(1) {top: 5px; width: 100%; background: #000; -webkit-transform: rotate(135deg); -moz-transform: rotate(135deg); -o-transform: rotate(135deg); transform: rotate(135deg);}
 .nav-mob-opened .header__burger-wrapp .menu-btn span:nth-child(2) {opacity: 0; left: -30px;}
 .nav-mob-opened .header__burger-wrapp .menu-btn span:nth-child(3) {top: 5px; width: 100%; background: #000; -webkit-transform: rotate(-135deg); -moz-transform: rotate(-135deg); -o-transform: rotate(-135deg); transform: rotate(-135deg);}
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px){
+    .mob-menu {display: flex; flex-flow: column; align-items: center; justify-content: center;}
+    .mob-menu .nav > li {text-align: center;}
+}
+@media screen and (min-width: 1181px){
     .mob-menu,
     .mob-overlay {display: none;}
+}
+@media all and (max-width: 1180px){
+    .header__item {margin-right: 0;}
+}
+@media all and (max-width: 767px){
+    .mob-menu {right: -91%; width: 86%; box-shadow: 0 0 0 rgba(0,0,0,0.1);}
+    .nav-mob-opened .mob-overlay {width: 100%;}
+    .nav-mob-opened .mob-menu {right: 0; box-shadow: 5px 30px 30px rgba(0,0,0,0.1);}
 }
 
 

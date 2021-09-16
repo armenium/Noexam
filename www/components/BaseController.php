@@ -935,18 +935,14 @@ class BaseController extends Controller{
     	// VarDumper::dump( $prepared_data , 10, 1 );
 
     	if( !$searh_result ){
-
     		$result = $SFClient->create_lead($prepared_data);
-
     	}else{
-
 			Yii::info( 'Lead with email  - '.$prepared_data['Email'] . ' - currently exists - ' . $searh_result[ 'id' ], 'noexam' );
     		return false;
     	}
 
 
     	if( is_array( $result ) && array_key_exists( 'success', $result ) && $result[ 'success' ] ){
-
     		$lead_id = $result[ 'id' ];
     		Yii::info( 'New lead is created - ' . $lead_id, 'noexam' );
 
@@ -970,14 +966,10 @@ class BaseController extends Controller{
     		Yii::info( 'New lead hasn\'t created.', 'noexam' );
 
     		if( is_array( $result ) ){
-
     			foreach ($result as $key => $error) {
-
     				if( array_key_exists( 'message', $error ) ){
-
     					Yii::info( $error[ 'message' ], 'noexam' );
     				}
-
     			}
     		}
 
@@ -1128,21 +1120,23 @@ class BaseController extends Controller{
 
     }
 	
-	public function getCustomeData(){
+	public function getCustomeData($status = 'new', $reset = true){
 		
 		$session       = Yii::$app->session;
 		$cookies       = Yii::$app->response->cookies;
-		$customer_data = CustomerData::find()->where(['sid' => $session->id, 'status' => 'new'])->one();
+		$customer_data = CustomerData::find()->where(['sid' => $session->id, 'status' => $status])->one();
 		#VarDumper::dump($customer_data, 10, 1); exit;
 		
 		if(!is_null($customer_data)){
 			return $customer_data;
 		}
 		
-		$cookies->add(new Cookie([
-			'name'   => 'PHPSESSID',
-			'expire' => -3600,
-		]));
+		if($reset){
+			$cookies->add(new Cookie([
+				'name'   => 'PHPSESSID',
+				'expire' => -3600,
+			]));
+		}
 		
 		return null;
 	}

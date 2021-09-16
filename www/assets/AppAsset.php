@@ -20,9 +20,9 @@ class AppAsset extends AssetBundle {
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap',
+        'https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap',
         #'css/bootstrap-4.css?11',
-        'css/bootstrap-select.css',
+        #'css/bootstrap-select.css',
         #'css/datepicker.css',
         #'css/slick.css',
         #'css/slick-theme.css',

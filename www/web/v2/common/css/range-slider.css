@@ -3,13 +3,19 @@
 .irs--round .irs-handle {
     width: 35px !important;
     height: 35px !important;
-    top: 19px !important;
+    top: 23px !important;
     border: 5px solid #F8A846 !important;
     cursor: pointer;
+    background-image: url(../images/3.svg);
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
+.irs--round .irs-line {
+    height: 10px;
+}
 .irs--round .irs-bar {
-    height: 5px !important;
+    height: 10px !important;
     background-color: #F8A846 !important;
 }
 

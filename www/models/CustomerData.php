@@ -34,11 +34,14 @@ class CustomerData extends ActiveRecord {
     const SCENARIO_IMQ = 'intermediary-questions';
     const SCENARIO_RATE_CALC = 'rate-calc';
     const SCENARIO_RATE_CALC_TABLE = 'rate-calc-table';
+    const SCENARIO_SELECT_COVERAGE = 'select-coverage';
+    const SCENARIO_OVERALL_HEALTH = 'overall-health';
 	
 	public $reCaptcha;
     public $agree;
     public $form_name;
     public $avg_amount;
+    public $coverage_amount;
     public $completed_application;
     public $monthly_premium;
     public $premium_amount;
@@ -517,6 +520,20 @@ class CustomerData extends ActiveRecord {
 		750 => '750000',
 		1000 => '1000000',
 	];
+	public static $avg_amounts4 = [
+		100 => '100k',
+		150 => '150k',
+		200 => '200k',
+		250 => '250k',
+		300 => '300k',
+		400 => '400k',
+		500 => '500k',
+		600 => '600k',
+		700 => '700k',
+		800 => '800k',
+		900 => '900k',
+		1000 => '1m',
+	];
 	public static $heights = [
 		'4|8' => '4’8"',
 		'4|9' => '4’9"',
@@ -629,7 +646,11 @@ class CustomerData extends ActiveRecord {
 		'good' => 'Good', // 3
 		'fair' => 'Fair', // 2
 	];
-
+	public static $healths3 = [
+		'very-good' => 'Сompletely healthy', // 4
+		'good' => 'Have chronic diseases', // 3
+		'fair' => 'Have serious diseases', // 2
+	];
 	public static $amount_range = [
 		100000,
 		200000,
@@ -641,6 +662,14 @@ class CustomerData extends ActiveRecord {
 		1000000,
 		//2000000,
 		//3000000,
+	];
+	public static $yes_no = [
+		1 => 'Yes',
+		0 => 'No',
+	];
+	public static $gender = [
+		'm' => 'Male',
+		'f' => 'Female',
 	];
 
 	public function beforeSave($insert){
@@ -697,6 +726,9 @@ class CustomerData extends ActiveRecord {
      */
 	public function scenarios(){
 		$scenarios                      = parent::scenarios();
+		$scenarios[self::SCENARIO_SELECT_COVERAGE] = ['avg_amount', 'term_length'];
+		$scenarios[self::SCENARIO_OVERALL_HEALTH] = ['health', 'tobaco', 'sex'];
+		
 		$scenarios[self::SCENARIO_TERM] = ['avg_amount', 'birthday', 'h_foot', 'h_inch', 'weight', 'sex', 'state', 'tobaco', 'term', 'status', 'iniciator', 'rate_class', 'monthly_premium', 'premium_amount'];
 		$scenarios[self::SCENARIO_PI]   = ['first_name', 'middle_name', 'last_name', 'street_address', 'state', 'city', 'zip', 'phone_number', 'email'];
 		$scenarios[self::SCENARIO_PI2]  = ['birth_state', 'birth_country', 'occupation', 'household_income', 'ssn', 'dls', 'dln',];
