@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step - 1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/shared-styles.css">
+    <link rel="stylesheet" href="../css/online-app.css">
+    <link rel="stylesheet" href="./online-app-step-1.css">
+    <link rel="stylesheet" href="../plugins/css/bootstrap-select.css">
+</head>
+
+<body>
+
+    <header class="header header--empty">
+        <img src="../images/header/Logo.svg" alt="logo" class="header__logo">
+    </header>
+
+
+    <div class="main-wrapp">
+        <div class="wrapp">
+            <div class="online-app-step-1 my-quote-steps">
+                <div class="my-quote-steps__steps">
+                    <div class="my-quote-steps__steps-item my-quote-steps__steps-item--active">1</div>
+                    <span class="my-quote-steps__decor-line my-quote-steps__decor-line--active"></span>
+                    <div class="my-quote-steps__steps-item">2</div>
+                    <span class="my-quote-steps__decor-line"></span>
+                    <div class="my-quote-steps__steps-item">3</div>
+                </div>
+            </div>
+            <form class="online-app-step-1__form">
+                <h1 class="online-app-step-1__title heading-5">Proposed Insured Information</h1>
+                <h3 class="online-app-step-1__subtitle main-title">Name</h3>
+
+                <div class="online-app-step-1__row">
+                    <label class="online-app-step-1__label online-app-step-1__label--first-name online-app-main-label">
+                        <span class="tags">First Name</span>
+                        <input type="text" class="online-app-step-1__input online-app-main-input" value="Magda">
+                    </label>
+                    <label class="online-app-step-1__label online-app-main-label online-app-step-1__input--initial-label">
+                        <span class="tags">Initial</span>
+                        <input type="text" class="online-app-step-1__input online-app-step-1__input--initial online-app-main-input" value="A">
+                    </label>
+                    <label class="online-app-step-1__label online-app-main-label">
+                        <span class="tags">Last Name</span>
+                        <input type="text" class="online-app-step-1__input online-app-main-input" value="Bierman">
+                    </label>
+                </div>
+
+                <h3 class="online-app-step-1__subtitle main-title">Address</h3>
+
+                <div class="online-app-step-1__row">
+                    <label class="online-app-step-1__label online-app-step-1__label--full-width online-app-main-label">
+                        <span class="tags">Street Address</span>
+                        <input type="text" class="online-app-step-1__input online-app-main-input" placeholder="Enter your street address">
+                    </label>
+                    <label class="online-app-step-1__label online-app-step-1__label--full-width online-app-main-label">
+                        <span class="tags">City</span>
+                        <input type="text" class="online-app-step-1__input online-app-main-input" placeholder="Enter your city">
+                    </label>
+                </div>
+
+                <div class="online-app-step-1__row online-app-step-1__row--direction-row">
+                    <label class="online-app-step-1__label online-app-step-1__label--full-width online-app-main-label">
+                        <span class="tags">State</span>
+                        <select class="online-app-step-1__select online-app-step-1__label--state">
+                            <option value="Select state" disabled selected>Select state</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                        </select>
+                    </label>
+                    <label class="online-app-step-1__label online-app-step-1__label--full-width online-app-step-1__label--zip-code online-app-main-label">
+                        <span class="tags">Zip Code</span>
+                        <input type="text" class="online-app-step-1__input online-app-main-input" placeholder="Enter your zip code">
+                    </label>
+                </div>
+
+                <h3 class="online-app-step-1__subtitle main-title">Contact Details</h3>
+                <div class="online-app-step-1__row">
+                    <label class="online-app-step-1__label online-app-step-1__label--full-width online-app-main-label">
+                        <span class="tags">Phone Number</span>
+                        <input type="text" class="online-app-step-1__input online-app-main-input" placeholder="Enter your phone number">
+                    </label>
+                    <label class="online-app-step-1__label online-app-step-1__label--full-width online-app-main-label">
+                        <span class="tags">Email</span>
+                        <input type="text" class="online-app-step-1__input online-app-main-input online-app-main-input--invalid" value="mag">
+                    </label>
+                </div>
+
+                <div class="online-app-step-1__btns">
+                    <button type="submit" class="online-app-step-1-btn main-btn button-big">Back</button>
+                    <button type="submit" class="online-app-step-1-btn main-btn button-big">next</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+
+
+    <div class="main-wrapp">
+        <div class="wrapp">
+            <footer class="footer">
+                <div class="footer__col">
+                    <img src="../images/header/Logo.svg" alt="logo" class="footer__logo">
+                    <p class="footer__paragraph fontBodyS">Our state-of-the-art technology allows for individuals and families to shop for and buy life insurance online within a matter of minutes.</p>
+                    <div class="footer__icons">
+                        <img src="../images/insta.svg" class="footer__icon" alt="facebook">
+                        <img src="../images/facebook.svg" class="footer__icon" alt="instagram">
+                        <img src="../images/youtube.svg" class="footer__icon" alt="youtube">
+                    </div>
+                </div>
+                <div class="footer__col">
+                    <div class="footer__box">
+                        <h1 class="footer__subtitle sub-title-1">Resources</h1>
+                        <ul class="footer__list">
+                            <li class="footer__item"><a href="#" class="footer__link fontBodyM">Help</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link fontBodyM">Get my price</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link fontBodyM">Calculator</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link fontBodyM">Partnership</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__box">
+                        <h1 class="footer__subtitle sub-title-1">Our website</h1>
+                        <ul class="footer__list">
+                            <li class="footer__item"><a href="#" class="footer__link fontBodyM">About</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link fontBodyM">Licenses</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link fontBodyM">Careers</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link fontBodyM">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <div class="copyright fontBodyS">Copyright © 2021 NoExam.com</div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="../plugins/js/bootstrap-select.js"></script>
+    <script src="./online-app-step-1.js"></script>
+</body>
+
+</html>
