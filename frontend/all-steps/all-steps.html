@@ -10,10 +10,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../plugins/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../plugins/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="../css/shared-styles.css">
     <link rel="stylesheet" href="./all-steps.css">
     <link rel="stylesheet" href="../plugins/css/ion.rangeSlider.min.css">
-    <link rel="stylesheet" href="../plugins/css/bootstrap-select.css">
     <link rel="stylesheet" href="../css/range-slider.css">
 </head>
 
@@ -114,30 +115,39 @@
                         <div class="all-steps__subtitle">Date of Birth</div>
 
                         <div class="all-steps__selectBox">
-                            <label class="all-steps__selectLabel">
-                                <span class="tags">Date</span>
-                                <select name="date" class="all-steps__select">
+                            <div class="all-steps__selectLabel">
+                                <label for="date">
+                                    <span class="tags">Date</span>
+                                </label>
+                                <select id="date" name="date" class="all-steps__select js_selectpicker">
                                     <option value="DD">DD</option>
                                     <option value="DD2">DD</option>
                                     <option value="DD3">DD</option>
                                 </select>
-                            </label>
-                            <label class="all-steps__selectLabel">
-                                <span class="tags">Month</span>
-                                <select name="month" class="all-steps__select">
+                            </div>
+
+                            <div class="all-steps__selectLabel">
+                                <label for="month">
+                                    <span class="tags">Month</span>
+                                </label>
+                                <select id="month" name="month" class="all-steps__select js_selectpicker">
                                     <option value="MM">MM</option>
                                     <option value="MM2">MM</option>
                                     <option value="MM3">MM</option>
                                 </select>
-                            </label>
-                            <label class="all-steps__selectLabel">
-                                <span class="tags">Year</span>
-                                <select name="year" class="all-steps__select">
+                            </div>
+
+                            <div class="all-steps__selectLabel">
+                                <label for="year">
+                                    <span class="tags">Year</span>
+                                </label>
+                                <select id="year" name="year" class="all-steps__select js_selectpicker">
                                     <option value="YYYY">YYYY</option>
                                     <option value="YYYY2">YYYY</option>
                                     <option value="YYYY3">YYYY</option>
                                 </select>
-                            </label>
+                            </div>
+
                         </div>
 
                         <div class="all-steps__subtitle">Contract Details</div>
@@ -165,13 +175,16 @@
                             </div>
 
                             <div class="all-steps__row">
-                                <label class="all-steps__inputLabel">
-                                    <span class="tags">State</span>
-                                    <select class="all-steps__input fontBodyM" name="state" placeholder="Select state">
+                                <div class="all-steps__stateSelectBox">
+                                    <label for="state" style="margin-bottom: 10px;">
+                                        <span class="tags">State</span>
+                                    </label>
+                                    <select id="state" class="all-steps__select--state fontBodyM js_selectpicker" name="state" placeholder="Select state">
                                         <option value="" disabled selected>Select state</option>
                                         <option value="state-2">state 2</option>
                                     </select>
-                                </label>
+                                </div>
+
                                 <label class="all-steps__inputLabel">
                                     <span class="tags">Zip Code</span>
                                     <input type="text" class="all-steps__input fontBodyM" placeholder="Enter your zip code">
@@ -234,7 +247,9 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript" src="../plugins/js/ion.rangeSlider.min.js"></script>
-    <script src="../plugins/js/bootstrap-select.js"></script>
+    <script src="../plugins/js/popper.min.js"></script>
+    <script src="../plugins/js/bootstrap.min.js"></script>
+    <script src="../plugins/js/bootstrap-select.min.js"></script>
     <script src="./all-steps.js"></script>
 </body>
 
