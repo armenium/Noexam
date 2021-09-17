@@ -53,6 +53,7 @@
 .online-app-step-1__btns {
     display: flex;
     justify-content: center;
+    margin-bottom: 60px;
 }
 
 .online-app-step-1-btn:first-child {
