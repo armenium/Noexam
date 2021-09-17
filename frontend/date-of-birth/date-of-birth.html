@@ -10,9 +10,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../plugins/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../plugins/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="../css/shared-styles.css">
     <link rel="stylesheet" href="./date-of-birth.css">
-    <link rel="stylesheet" href="../plugins/css/bootstrap-select.css">
 </head>
 
 <body>
@@ -38,30 +39,40 @@
                     <div class="date-of-birth__container">
                         <img src="./img/date-of-birdth-bg.png" alt="image" class="date-of-birth__img">
                         <div class="date-of-birth__box">
-                            <label class="date-of-birth__label">
-                                    <span class="tags">Date</span>
-                                    <select name="date" class="date-of-birth__select">
-                                        <option value="DD">DD</option>
-                                        <option value="DD2">DD</option>
-                                        <option value="DD3">DD</option>
-                                    </select>
-                            </label>
-                            <label class="date-of-birth__label">
+
+                            <div class="date-of-birth__label">
+                                <label for="date">
+                                    <span class=" tags">Date</span>
+                                </label>
+                                <select id="date" name="date" class="date-of-birth__select js_selectpicker">
+                                    <option value="DD">DD</option>
+                                    <option value="DD2">DD</option>
+                                    <option value="DD3">DD</option>
+                                </select>
+                            </div>
+
+                            <div class="date-of-birth__label">
+                                <label for="month">
                                     <span class="tags">Month</span>
-                                    <select name="month" class="date-of-birth__select">
-                                        <option value="MM">MM</option>
-                                        <option value="MM2">MM</option>
-                                        <option value="MM3">MM</option>
-                                    </select>
-                            </label>
-                            <label class="date-of-birth__label">
+                                </label>
+                                <select id="month" name="month" class="date-of-birth__select js_selectpicker">
+                                    <option value="MM">MM</option>
+                                    <option value="MM2">MM</option>
+                                    <option value="MM3">MM</option>
+                                </select>
+                            </div>
+
+                            <div class="date-of-birth__label">
+                                <label for="year">
                                     <span class="tags">Year</span>
-                                    <select name="year" class="date-of-birth__select">
-                                        <option value="YYYY">YYYY</option>
-                                        <option value="YYYY2">YYYY</option>
-                                        <option value="YYYY3">YYYY</option>
-                                    </select>
-                            </label>
+                                </label>
+                                <select id="year" name="year" class="date-of-birth__select js_selectpicker">
+                                    <option value="YYYY">YYYY</option>
+                                    <option value="YYYY2">YYYY</option>
+                                    <option value="YYYY3">YYYY</option>
+                                </select>
+                            </div>
+
                         </div>
                     </div>
                     <button type="submit" class="date-of-birth__btn main-btn button-big">Continue</button>
@@ -71,8 +82,10 @@
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="../plugins/js/bootstrap-select.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin=" anonymous"></script>
+    <script src="../plugins/js/popper.min.js"></script>
+    <script src="../plugins/js/bootstrap.min.js"></script>
+    <script src="../plugins/js/bootstrap-select.min.js"></script>
     <script src="./date-of-birth.js"></script>
 </body>
 

@@ -58,9 +58,14 @@
     flex-direction: column;
 }
 
-.quotes-result__label>span {
+.quotes-result__label>span,
+.quotes-result__label>label>span {
     color: #757575;
     margin-bottom: 10px;
+}
+
+.quotes-result__termSelect {
+    width: 300px !important;
 }
 
 .quotes-result__select {
@@ -331,6 +336,9 @@
     }
     .quotes-result__containerHeader>div>span {
         color: #282B29;
+    }
+    .quotes-result__termSelect {
+        width: 100% !important;
     }
 }
 

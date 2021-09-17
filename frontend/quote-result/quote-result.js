@@ -43,3 +43,7 @@ $(document).ready(function() {
         ]
     });
 });
+
+$(function() {
+    $('.js_selectpicker').selectpicker();
+});

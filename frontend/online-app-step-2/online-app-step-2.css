@@ -89,18 +89,6 @@
     color: #757575;
 }
 
-
-/* SELECT */
-
-.bootstrap-select>.dropdown-toggle {
-    height: 55px;
-}
-
-.bootstrap-select .dropdown-toggle .filter-option {
-    display: flex;
-    align-items: center;
-}
-
 @media screen and (max-width: 767px) {
     .online-app-step-2__form-box {
         padding: 25px;

@@ -11,5 +11,5 @@ $(".all-steps__range-slider").ionRangeSlider({
 });
 
 $(function() {
-    $('.all-steps__select').selectpicker();
+    $('.js_selectpicker').selectpicker();
 });

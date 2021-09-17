@@ -10,12 +10,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../plugins/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../plugins/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="../css/shared-styles.css">
     <link rel="stylesheet" href="./rates.css">
     <link rel="stylesheet" href="../css/breadcrumbs.css">
     <link rel="stylesheet" href="../css/main-first-screen.css">
     <link rel="stylesheet" href="../css/get-started.css">
-    <link rel="stylesheet" href="../plugins/css/bootstrap-select.css">
 </head>
 
 <body>
@@ -82,86 +83,117 @@
                 <form class="rates-form__form">
                     <h1 class="rates-form__title heading-5">Compare and Save. Get a Quote Today.</h1>
                     <div class="rates-form__row">
-                        <label class="rates-form__label">
-                        <span class="tags">Coverage amount</span>
-                        <select class="rates-form__select">
-                            <option value="250000">$250,000</option>
-                            <option value="350000">$350,000</option>
-                        </select>
-                    </label>
-                        <label class="rates-form__label">
-                        <span class="tags">Term Length</span>
-                        <select class="rates-form__select">
-                            <option value="10">10 Year Term</option>
-                            <option value="20">20 Year Term</option>
-                        </select>
-                    </label>
-                        <label class="rates-form__label">
-                        <span class="tags">State you reside in</span>
-                        <select class="rates-form__select">
-                            <option value="" disabled selected>Select State</option>
-                            <option value="State 1">State 1</option>
-                        </select>
-                    </label>
-                        <label class="rates-form__label">
-                        <span class="tags">Do you use tobacco?</span>
-                        <select class="rates-form__select">
-                            <option value="Use">Use</option>
-                            <option value="">Doesn’t use</option>
-                        </select>
-                    </label>
+
+                        <div class="rates-form__label">
+                            <label for="amount">
+                                <span class="tags">Coverage amount</span> 
+                            </label>
+                            <select id="amount" class="rates-form__select js_selectpicker">
+                                <option value="250000">$250,000</option>
+                                <option value="350000">$350,000</option>
+                            </select>
+                        </div>
+
+                        <div class="rates-form__label">
+                            <label for="term">
+                                <span class="tags">Term Length</span>
+                            </label>
+                            <select id="term" class="rates-form__select js_selectpicker">
+                                <option value="10">10 Year Term</option>
+                                <option value="20">20 Year Term</option>
+                            </select>
+                        </div>
+
+                        <div class="rates-form__label">
+                            <label for="state">
+                                <span class="tags">State you reside in</span>
+                            </label>
+                            <select id="state" class="rates-form__select js_selectpicker">
+                                <option value="" disabled selected>Select State</option>
+                                <option value="State 1">State 1</option>
+                            </select>
+                        </div>
+
+                        <div class="rates-form__label">
+                            <label for="tobacco">
+                                <span class="tags">Do you use tobacco?</span>
+                            </label>
+                            <select id="tobacco" class="rates-form__select js_selectpicker">
+                                <option value="Use">Use</option>
+                                <option value="">Doesn’t use</option>
+                            </select>
+                        </div>
+
+
                     </div>
 
                     <h2 class="rates-form__subtitle main-title">Date of Birth</h2>
                     <div class="rates-form__row rates-form__row--no-wrap">
-                        <label class="rates-form__label">
-                        <span class="tags">Date</span>
-                        <select class="rates-form__select">
-                            <option value="DD">DD</option>
-                            <option value="DD">DD</option>
-                        </select>
-                    </label>
-                        <label class="rates-form__label">
-                        <span class="tags">Month</span>
-                        <select class="rates-form__select">
-                            <option value="MM">MM</option>
-                            <option value="MM">MM</option>
-                        </select>
-                    </label>
-                        <label class="rates-form__label">
-                        <span class="tags">Year</span>
-                        <select class="rates-form__select">
-                            <option value="YYYY">YYYY</option>
-                            <option value="YYYY">YYYY</option>
-                        </select>
-                    </label>
+                        <div class="rates-form__label">
+                            <label for="date">
+                                <span class="tags">Date</span>
+                            </label>
+                            <select id="date" class="rates-form__select js_selectpicker">
+                                <option value="DD">DD</option>
+                                <option value="DD">DD</option>
+                            </select>
+                        </div>
+
+                        <div class="rates-form__label">
+                            <label for="month">
+                                <span class="tags">Month</span>
+                            </label>
+                            <select id="month" class="rates-form__select js_selectpicker">
+                                <option value="MM">MM</option>
+                                <option value="MM">MM</option>
+                            </select>
+                        </div>
+
+                        <div class="rates-form__label">
+                            <label for="year">
+                                <span class="tags">Year</span>
+                            </label>
+                            <select id="year" class="rates-form__select js_selectpicker">
+                                <option value="YYYY">YYYY</option>
+                                <option value="YYYY">YYYY</option>
+                            </select>
+                        </div>
                     </div>
 
                     <h2 class="rates-form__subtitle main-title">About You</h2>
                     <div class="rates-form__row rates-form__row--no-column">
-                        <label class="rates-form__label rates-form__label--full-width">
-                        <span class="tags">Sex</span>
-                        <select class="rates-form__select rates-form__select--full-width">
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                        </select>
-                    </label>
-                        <label class="rates-form__label rates-form__label--margin">
-                        <span class="tags">Height</span>
-                        <select class="rates-form__select rates-form__select--half-width">
-                            <option value="" disabled selected>Select</option>
-                            <option value="180">180</option>
-                            <option value="181">181</option>
-                        </select>
-                    </label>
-                        <label class="rates-form__label">
-                        <span class="tags">Weight</span>
-                        <select class="rates-form__select rates-form__select--half-width">
-                            <option value="" disabled selected>Select</option>
-                            <option value="180">65</option>
-                            <option value="181">70</option>
-                        </select>
-                    </label>
+                        <div class="rates-form__label">
+                            <label for="sex" class="rates-form__label--full-width">
+                                <span class="tags">Sex</span>
+                            </label>
+                            <select id="sex" class="rates-form__select rates-form__select--full-width js_selectpicker">
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+
+                        <div class="rates-form__label">
+                            <label for="height" class="rates-form__label--margin">
+                                <span class="tags">Height</span>
+                            </label>
+                            <select id="height" class="rates-form__select rates-form__select--half-width js_selectpicker">
+                                <option value="" disabled selected>Select</option>
+                                <option value="180">180</option>
+                                <option value="181">181</option>
+                            </select>
+                        </div>
+
+                        <div class="rates-form__label">
+                            <label for="weight">
+                                <span class="tags">Weight</span>
+                            </label>
+                            <select id="weight" class="rates-form__select rates-form__select--half-width js_selectpicker">
+                                <option value="" disabled selected>Select</option>
+                                <option value="180">65</option>
+                                <option value="181">70</option>
+                            </select>
+                        </div>
+
                     </div>
 
                     <h2 class="rates-form__subtitle main-title">Contact Details</h2>
@@ -343,27 +375,36 @@
                             <span class="tags">My age is</span>
                             <input type="number" class="charts-by-age__input fontBodyM" value="55"><span class="charts-by-age__input-text tags">years old</span></input>
                         </label>
-                        <label class="charts-by-age__label">
-                            <span class="tags">My gender is</span>
-                            <select name="gender" class="charts-by-age__select fontBodyM">
+                        <div class="charts-by-age__label">
+                            <label for="my-gender">
+                                <span class="tags">My gender is</span>
+                            </label>
+                            <select id="my-gender" name="gender" class="charts-by-age__select fontBodyM js_selectpicker">
                                 <option value="female" selected>Female</option>
                                 <option value="female">Male</option>
                             </select>
-                        </label>
-                        <label class="charts-by-age__label">
-                            <span class="tags">Term length</span>
-                            <select name="term" class="charts-by-age__select fontBodyM">
+                        </div>
+
+                        <div class="charts-by-age__label">
+                            <label for="term-length">
+                                <span class="tags">Term length</span>
+                            </label>
+                            <select id="term-length" name="term" class="charts-by-age__select fontBodyM js_selectpicker">
                                 <option value="20" selected>20 years</option>
                                 <option value="30">30 years</option>
                             </select>
-                        </label>
-                        <label class="charts-by-age__label">
-                            <span class="tags">My overall health</span>
-                            <select name="health" class="charts-by-age__select fontBodyM">
+                        </div>
+
+                        <div class="charts-by-age__label">
+                            <label for="health">
+                                <span class="tags">My overall health</span>
+                            </label>
+                            <select id="health" name="health" class="charts-by-age__select fontBodyM js_selectpicker">
                                 <option value="" selected>Very good</option>
                                 <option value="">Bad</option>
                             </select>
-                        </label>
+                        </div>
+
                     </div>
 
                     <div class="charts-by-age__decor-line"></div>
@@ -414,7 +455,9 @@
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="../plugins/js/bootstrap-select.js"></script>
+    <script src="../plugins/js/popper.min.js"></script>
+    <script src="../plugins/js/bootstrap.min.js"></script>
+    <script src="../plugins/js/bootstrap-select.min.js"></script>
     <script src="./rates.js"></script>
 </body>
 

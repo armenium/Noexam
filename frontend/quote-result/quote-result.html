@@ -10,10 +10,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../plugins/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../plugins/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="../css/shared-styles.css">
     <link rel="stylesheet" href="./quote-result.css">
     <link rel="stylesheet" href="../plugins/css/ion.rangeSlider.min.css">
-    <link rel="stylesheet" href="../plugins/css/bootstrap-select.css">
     <link rel="stylesheet" href="../css/questions.css">
     <link rel="stylesheet" href="../css/range-slider.css">
     <link rel="stylesheet" href="../plugins/css/slick.css">
@@ -45,13 +46,15 @@
                         </div>
                         <div class="quotes-result__formColumn">
                             <h4 class="quotes-result__formTitle main-title">Term Length</h4>
-                            <label class="quotes-result__label">
-                                <span class="tags">Select from dropdown</span>
-                                <select name="term" class="quotes-result__select fontBodyM">
+                            <div class="quotes-result__label">
+                                <label for="term">
+                                    <span class="tags">Select from dropdown</span>
+                                </label>
+                                <select id="term" name="term" class="quotes-result__termSelect js_selectpicker">
                                     <option value="DD">15 years</option>
                                     <option value="DD2">20 years</option>
                                 </select>
-                            </label>
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -455,8 +458,10 @@
     <div class="copyright fontBodyS">Copyright © 2021 NoExam.com</div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../plugins/js/popper.min.js"></script>
+    <script src="../plugins/js/bootstrap.min.js"></script>
+    <script src="../plugins/js/bootstrap-select.min.js"></script>
     <script type="text/javascript" src="../plugins/js/ion.rangeSlider.min.js"></script>
-    <script src="../plugins/js/bootstrap-select.js"></script>
     <script type="text/javascript" src="../plugins/js/slick.js"></script>
     <script src="./quote-result.js"></script>
 </body>
