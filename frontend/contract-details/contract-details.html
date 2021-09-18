@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../plugins/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../plugins/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="../css/shared-styles.css">
     <link rel="stylesheet" href="./contract-details.css">
 </head>
@@ -58,10 +60,16 @@
                         </div>
 
                         <div class="contract-details__row">
-                            <label class="contract-details__label">
-                                <span class="tags">State</span>
-                                <input type="text" class="contract-details__input fontBodyM" placeholder="Enter your state">
-                            </label>
+                            <div class="contract-details__label">
+                                <label for="state">
+                                    <span class="tags">State</span>
+                                </label>
+                                <select id="state" class="js_selectpicker contract-details__select">
+                                    <option value="State 1">State 1</option>
+                                    <option value="State 2">State 2</option>
+                                </select>
+                            </div>
+
                             <label class="contract-details__label">
                                 <span class="tags">Zip Code</span>
                                 <input type="text" class="contract-details__input fontBodyM" placeholder="Enter your zip code">
@@ -83,6 +91,10 @@
         </div>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="../plugins/js/popper.min.js"></script>
+    <script src="../plugins/js/bootstrap.min.js"></script>
+    <script src="../plugins/js/bootstrap-select.min.js"></script>
     <script src="./contract-details.js"></script>
 </body>
 

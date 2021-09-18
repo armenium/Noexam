@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step - 2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../plugins/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../plugins/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="../css/shared-styles.css">
+    <link rel="stylesheet" href="../css/online-app.css">
+    <link rel="stylesheet" href="./online-app-step-2.css">
+</head>
+
+<body>
+
+    <header class="header header--empty">
+        <img src="../images/header/Logo.svg" alt="logo" class="header__logo">
+    </header>
+
+
+    <div class="main-wrapp">
+        <div class="wrapp">
+            <div class="online-app-step-2 my-quote-steps">
+                <div class="my-quote-steps__steps">
+                    <div class="my-quote-steps__steps-item my-quote-steps__steps-item--active">1</div>
+                    <span class="my-quote-steps__decor-line my-quote-steps__decor-line--active"></span>
+                    <div class="my-quote-steps__steps-item my-quote-steps__steps-item--active">2</div>
+                    <span class="my-quote-steps__decor-line"></span>
+                    <div class="my-quote-steps__steps-item">3</div>
+                </div>
+            </div>
+
+            <form class="online-app-step-2__form">
+
+                <div class="online-app-step-2__form-box">
+                    <h1 class="online-app-step-2__title heading-5">Magda A Bierman with $100,000 for a 10-year Term</h1>
+
+                    <h3 class="online-app-step-2__subtitle main-title">Birth Place</h3>
+
+                    <div class="online-app-step-2__row">
+                        <div class="online-app-step-2__col">
+                            <label for="birth-state" class="online-app-step-2__label online-app-main-label">
+                                <span class="tags">Birth State</span>
+                            </label>
+                            <select id="birth-state" class="online-app-step-2__select js_selectpicker">
+                                <option value="Select state" disabled selected>Select state</option>
+                                <option value="Alabama">Alabama</option>
+                            </select>
+                        </div>
+
+                        <div class="online-app-step-2__col">
+                            <label for="birth-country" class="online-app-step-2__label online-app-main-label">
+                            <span class="tags">Birth Country</span>
+                        </label>
+                            <select id="birth-country" class="online-app-step-2__select js_selectpicker">
+                            <option value="">United States of America</option>
+                        </select>
+                        </div>
+                    </div>
+
+                    <h3 class="online-app-step-2__subtitle main-title">Job Information</h3>
+
+                    <div class="online-app-step-2__row">
+                        <label class="online-app-step-2__label online-app-main-label">
+                        <span class="tags">Occupation</span>
+                        <input type="text" class="online-app-step-2__input online-app-main-input" value="Engineering">
+                    </label>
+                        <label class="online-app-step-2__label online-app-main-label">
+                        <span class="tags">Household Income</span>
+                        <input type="text" class="online-app-step-2__input online-app-main-input" placeholder="Household Income">
+                    </label>
+                    </div>
+
+                    <h3 class="online-app-step-2__subtitle main-title">Identity Information</h3>
+                    <div class="online-app-step-2__row">
+                        <label class="online-app-step-2__label online-app-main-label">
+                        <span class="tags">Social Security Number</span>
+                        <input type="number" class="online-app-step-2__input online-app-main-input" value="123456789">
+                    </label>
+                    </div>
+
+                    <div class="online-app-step-2__row">
+                        <label class="online-app-step-2__label online-app-main-label">
+                        <span class="tags">Drivers License Number</span>
+                        <input type="text" class="online-app-step-2__input online-app-main-input" placeholder="Drivers License Number">
+                    </label>
+
+                        <div class="online-app-step-2__col">
+                            <label for="birth-country" class="online-app-step-2__label online-app-main-label">
+                            <span class="tags">Drivers License State</span>
+                        </label>
+                            <select id="birth-country" class="online-app-step-2__select js_selectpicker">
+                            <option value="">AL</option>
+                        </select>
+                        </div>
+                    </div>
+
+                    <h3 class="online-app-step-2__subtitle main-title">Payment Details</h3>
+
+                    <div class="online-app-step-2__row">
+                        <div class="online-app-step-2__col">
+                            <label for="payment-method" class="online-app-step-2__label online-app-main-label">
+                            <span class="tags">Payment Method</span>
+                        </label>
+                            <select id="payment-method" class="online-app-step-2__select js_selectpicker">
+                            <option value="EFT">EFT Checking Account</option>
+                        </select>
+                        </div>
+
+                        <div class="online-app-step-2__col">
+                            <label for="payment-frequency" class="online-app-step-2__label online-app-main-label">
+                            <span class="tags">Payment Frequency</span>
+                        </label>
+                            <select id="payment-frequency" class="online-app-step-2__select js_selectpicker">
+                            <option value="Monthly ($46.55)">Monthly ($46.55)</option>
+                        </select>
+                        </div>
+                    </div>
+
+                    <h3 class="online-app-step-2__subtitle main-title">Bank Details</h3>
+
+                    <div class="online-app-step-2__row">
+                        <label class="online-app-step-2__label online-app-main-label">
+                        <span class="tags">Bank Name</span>
+                        <input type="text" class="online-app-step-2__input online-app-main-input" placeholder="Please enter your bank name">
+                    </label>
+                    </div>
+
+                    <div class="online-app-step-2__row">
+                        <label class="online-app-step-2__label online-app-main-label">
+                        <span class="tags">Bank Account Number</span>
+                        <input type="text" class="online-app-step-2__input online-app-main-input" value="000123456789">
+                    </label>
+                        <label class="online-app-step-2__label online-app-main-label">
+                        <span class="tags">Routing Number</span>
+                        <input type="text" class="online-app-step-2__input online-app-main-input" value="170 lbs">
+                    </label>
+                    </div>
+
+                    <p class="online-app-step-2__note fontBodyS">
+                        <b>Note:</b> The submissin of this form does not bind your life insurance policy. Policy approvals occur in 24-48 hours of the initial application submission to the insurance company. Upon the time of your policy approval you will
+                        be notified by e-mail. If approved please expect 305 business days to recieve a hard copy of your policy in the mail.
+                    </p>
+
+                </div>
+
+                <div class="online-app-step-1__btns">
+                    <button type="submit" class="online-app-step-1-btn main-btn button-big">Back</button>
+                    <button type="submit" class="online-app-step-1-btn main-btn button-big">next</button>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+
+
+    <div class="main-wrapp">
+        <div class="wrapp">
+            <footer class="footer">
+                <div class="footer__col">
+                    <img src="../images/header/Logo.svg" alt="logo" class="footer__logo">
+                    <p class="footer__paragraph fontBodyS">Our state-of-the-art technology allows for individuals and families to shop for and buy life insurance online within a matter of minutes.</p>
+                    <div class="footer__icons">
+                        <img src="../images/insta.svg" class="footer__icon" alt="facebook">
+                        <img src="../images/facebook.svg" class="footer__icon" alt="instagram">
+                        <img src="../images/youtube.svg" class="footer__icon" alt="youtube">
+                    </div>
+                </div>
+                <div class="footer__col">
+                    <div class="footer__box">
+                        <h1 class="footer__subtitle sub-title-1">Resources</h1>
+                        <ul class="footer__list">
+                            <li class="footer__item"><a href="#" class="footer__link fontBodyM">Help</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link fontBodyM">Get my price</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link fontBodyM">Calculator</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link fontBodyM">Partnership</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__box">
+                        <h1 class="footer__subtitle sub-title-1">Our website</h1>
+                        <ul class="footer__list">
+                            <li class="footer__item"><a href="#" class="footer__link fontBodyM">About</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link fontBodyM">Licenses</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link fontBodyM">Careers</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link fontBodyM">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <div class="copyright fontBodyS">Copyright © 2021 NoExam.com</div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="../plugins/js/popper.min.js"></script>
+    <script src="../plugins/js/bootstrap.min.js"></script>
+    <script src="../plugins/js/bootstrap-select.min.js"></script>
+    <script src="./online-app-step-2.js"></script>
+
+</body>
+
+</html>

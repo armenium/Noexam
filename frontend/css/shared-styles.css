@@ -664,3 +664,29 @@ hr {
         line-height: 24px;
     }
 }
+
+
+/* SELECTS */
+
+.bootstrap-select>.dropdown-toggle {
+    height: 55px;
+    background-color: #ffffff;
+    border: 1px solid #BABABA;
+    border-radius: 4px;
+}
+
+.bootstrap-select .dropdown-toggle .filter-option {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-toggle::after {
+    content: url("../images/arrow-down.png");
+    border-top: none;
+}
+
+.bootstrap-select .dropdown-toggle .filter-option-inner-inner {
+    font-size: 18px;
+    line-height: 26px;
+    color: #000000;
+}

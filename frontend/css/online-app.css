@@ -4,7 +4,8 @@
     align-items: flex-start;
 }
 
-.online-app-main-label>span {
+.online-app-main-label>span,
+.online-app-main-label {
     color: #757575;
     margin-bottom: 10px;
 }
