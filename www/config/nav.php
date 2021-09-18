@@ -1,6 +1,5 @@
 <?php
 
-use Yii;
 use yii\helpers\VarDumper;
 
 #VarDumper::dump(Yii::$app->controller->id.'/'.Yii::$app->controller->action->id, 10, 1);

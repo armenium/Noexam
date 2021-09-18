@@ -9,7 +9,8 @@
 	align-items: center;
 	background-color: #fcf9f3;
 }
-@media all and (max-width: 767px){
+
+@media all and (max-width: 767px) {
 	.first-screen {padding-top: 105px;}
 }
 
@@ -25,7 +26,8 @@
 	/*overflow-x: hidden;*/
 	width: 50%;
 }
-@media all and (max-width: 767px){
+
+@media all and (max-width: 767px) {
 	.first-screen__col {overflow-x: hidden;}
 }
 
@@ -109,7 +111,7 @@
 	}
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 767px) {
 	.first-screen__subtitle {
 		font-size: 14px;
 		line-height: 20px;
@@ -254,7 +256,7 @@
 	}
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 767px) {
 	.slider-customers {
 		padding: 60px 0;
 	}
@@ -361,7 +363,7 @@
 	}
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 767px) {
 	.advantages-slider {
 		padding: 60px 0;
 	}
@@ -455,14 +457,16 @@
 	}
 }
 
-@media screen and (max-width: 435px) {
-	.companies__item {
-		margin-right: 0;
-	}
-
+@media screen and (max-width: 767px) {
 	.companies__title {
 		font-size: 32px;
 		line-height: 40px;
+	}
+}
+
+@media screen and (max-width: 435px) {
+	.companies__item {
+		margin-right: 0;
 	}
 }
 
@@ -544,7 +548,7 @@
 	}
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 767px) {
 	.reviews {
 		padding: 60px 0;
 	}
@@ -645,7 +649,7 @@
 	justify-content: flex-start;
 }
 
-@media screen and (max-width: 719px) {
+@media screen and (max-width: 767px) {
 	.cards__card-title {
 		font-size: 24px;
 		line-height: 32px;
