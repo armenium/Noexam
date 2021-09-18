@@ -55,6 +55,31 @@ class MyquoteController extends BaseController {
 					Yii::info('Step - "'.$CustomerData['form_name'].'". Planing redirect to "'.$redirect_url.'".', 'noexam');
 					$iniciator = $CustomerData['form_name'];
 					break;
+				case 'date-of-birth':
+					$status = 'create';
+					$model = $this->getCustomeData($status, false);
+					
+					$scenario     = CustomerData::SCENARIO_DATE_OF_BIRTH;
+					$redirect_url = '/'.$CustomerData['redirect'];
+					Yii::info('Step - "'.$CustomerData['form_name'].'". Planing redirect to "'.$redirect_url.'".', 'noexam');
+					$iniciator = $CustomerData['form_name'];
+					
+					$day = intval($CustomerData['birthday']['day']);
+					$month = intval($CustomerData['birthday']['month']);
+					$year = intval($CustomerData['birthday']['year']);
+					$birthday = date('d/m/Y', strtotime($day.'.'.$month.'.'.$year));
+					unset($request_post['CustomerData']['birthday']);
+					$request_post['CustomerData']['birthday'] = $birthday;
+					break;
+				case 'contact-details':
+					$status = 'create';
+					$model = $this->getCustomeData($status, false);
+					
+					$scenario     = CustomerData::SCENARIO_CONTACT_DETAILS;
+					$redirect_url = '/'.$CustomerData['redirect'];
+					Yii::info('Step - "'.$CustomerData['form_name'].'". Planing redirect to "'.$redirect_url.'".', 'noexam');
+					$iniciator = $CustomerData['form_name'];
+					break;
 				default:
 					Yii::info('Requested wrong form name in post request.', 'noexam' );
 					return false;
@@ -213,17 +238,39 @@ class MyquoteController extends BaseController {
 		
 		if(!is_null($customer_data)){
 			$customer_data->attributes = $customer_data->decodeData();
-			if(empty($customer_data->health)) $customer_data->health = 'very-good';
-			if(empty($customer_data->tobaco)) $customer_data->tobaco = 0;
-			if(empty($customer_data->sex)) $customer_data->sex = 'm';
+			if(!empty($customer_data->birthday)){
+				$d = explode("/", $customer_data->birthday);
+				$customer_data->birthday = [];
+				$customer_data->birthday['day'] = $d[0];
+				$customer_data->birthday['month'] = $d[1];
+				$customer_data->birthday['year'] = $d[2];
+			}else{
+				$customer_data->birthday = [];
+				$customer_data->birthday['day'] = '01';
+				$customer_data->birthday['month'] = '01';
+				$customer_data->birthday['year'] = 1970;
+			}
 		}else{
 			$customer_data = new CustomerData();
-			$customer_data->health = 'very-good';
-			$customer_data->tobaco = 0;
-			$customer_data->health = 'm';
+			$customer_data->birthday = [];
+			$customer_data->birthday['day'] = '01';
+			$customer_data->birthday['month'] = '01';
+			$customer_data->birthday['year'] = 1970;
 		}
 		
 		return $this->render('date-of-birth', ['customer_data' => $customer_data]);
+	}
+	
+	public function actionContactDetails(){
+		$customer_data = $this->getCustomeData('create', false);
+		
+		if(!is_null($customer_data)){
+			$customer_data->attributes = $customer_data->decodeData();
+		}else{
+			$customer_data = new CustomerData();
+		}
+		
+		return $this->render('contact-details', ['customer_data' => $customer_data]);
 	}
 	
 	

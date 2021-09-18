@@ -36,6 +36,8 @@ class CustomerData extends ActiveRecord {
     const SCENARIO_RATE_CALC_TABLE = 'rate-calc-table';
     const SCENARIO_SELECT_COVERAGE = 'select-coverage';
     const SCENARIO_OVERALL_HEALTH = 'overall-health';
+    const SCENARIO_DATE_OF_BIRTH = 'date-of-birth';
+    const SCENARIO_CONTACT_DETAILS = 'contact-details';
 	
 	public $reCaptcha;
     public $agree;
@@ -728,6 +730,8 @@ class CustomerData extends ActiveRecord {
 		$scenarios                      = parent::scenarios();
 		$scenarios[self::SCENARIO_SELECT_COVERAGE] = ['avg_amount', 'term_length'];
 		$scenarios[self::SCENARIO_OVERALL_HEALTH] = ['health', 'tobaco', 'sex'];
+		$scenarios[self::SCENARIO_DATE_OF_BIRTH] = ['birthday'];
+		$scenarios[self::SCENARIO_CONTACT_DETAILS] = ['first_name', 'last_name', 'state', 'zip', 'phone_number', 'email'];
 		
 		$scenarios[self::SCENARIO_TERM] = ['avg_amount', 'birthday', 'h_foot', 'h_inch', 'weight', 'sex', 'state', 'tobaco', 'term', 'status', 'iniciator', 'rate_class', 'monthly_premium', 'premium_amount'];
 		$scenarios[self::SCENARIO_PI]   = ['first_name', 'middle_name', 'last_name', 'street_address', 'state', 'city', 'zip', 'phone_number', 'email'];

@@ -5,8 +5,13 @@ if(typeof jQuery === "undefined"){
 $(function(){
 	"use strict";
 
+	$.fn.exists = function () {
+		return this.length !== 0;
+	};
+
 	var FJS = {
 		options: {
+			device: (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)),
 		},
 		vars: {
 			ww: 0,
@@ -31,6 +36,7 @@ $(function(){
 			body: $("body"),
 			js_loader: $(".js_data_loader"),
 			js_header: $("#js_header"),
+			js_selectpicker: $(".js_selectpicker"),
 		},
 		Init: function(){
 			this.vars.ww = $(window).width();
@@ -39,6 +45,7 @@ $(function(){
 			this.vars.csrf_token = $('meta[name="csrf-token"]').attr('content');
 
 			this.initEvents();
+			this.Forms.stylingSelect();
 		},
 		initEvents: function(){
 			$(window)
@@ -82,6 +89,9 @@ $(function(){
 				case "toggle_mobile_nav":
 					FJS.Common.toggleMobileNav($this);
 					break;
+				case "contact_details_form_submit":
+					FJS.Forms.submitContactDetails($this);
+					break;
 				default:
 					break;
 			}
@@ -122,6 +132,53 @@ $(function(){
 						FJS.els.body.removeClass("scrolled");
 					}
 				}
+			},
+		},
+		Forms: {
+			stylingSelect: function(){
+				if(FJS.els.js_selectpicker.exists())
+					FJS.els.js_selectpicker.selectpicker({'mobile': FJS.options.device});
+			},
+			submitContactDetails: function($btn){
+				var $form = $btn.parents('form');
+				var error = FJS.Forms.validateForm($form);
+
+				if(!error){
+					setTimeout(function(){
+						$form.submit();
+					}, 500);
+				}else{
+					alert("Please complete all fields marked in red.");
+					return false;
+				}
+			},
+			validateForm: function($form){
+				var error = 0;
+				var pattern = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+
+				console.log($form.find('input:required, select:required').length);
+
+				$form.find('input:required, select:required').each(function(){
+					if(error) return false;
+					if($(this).attr('type') == 'email'){
+						if(!$.trim($(this).val()).match(pattern)){
+							console.log('email alert');
+							$(this).parent().addClass('error').end().addClass('error contact-details__input--invalid');
+							error = true;
+						}
+					}
+					//console.log($(this).val());
+					if($(this).val() == ''){
+						$(this).parent().addClass('error').end().addClass('error contact-details__input--invalid');
+						error = true;
+					}
+				});
+
+				if(error == false){
+					$(this).parent().removeClass('error').end().removeClass('error contact-details__input--invalid');
+				}
+
+				return error;
 			},
 		},
 	};

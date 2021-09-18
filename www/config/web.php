@@ -87,16 +87,16 @@ $config = [
 			        ],
 		        ],
 		        'yii\bootstrap\BootstrapPluginAsset' => [
-			        'sourcePath' => '@app/web/v2/bootstrap-5.1.1',
+			        'sourcePath' => '@app/web/v2/',
 			        'js'=>[
-				        #'js/bootstrap.min.js',
-				        'js/bootstrap.bundle.min.js',
+				        'plugins/js/popper.min.js',
+				        'bootstrap-4.6.0/js/bootstrap.min.js',
 			        ]
 		        ],
 		        'yii\bootstrap\BootstrapAsset' => [
-			        'sourcePath' => '@app/web/v2/bootstrap-5.1.1',
+			        'sourcePath' => '@app/web/v2/',
 			        'css' => [
-			        	'css/bootstrap.min.css'
+			        	'bootstrap-4.6.0/css/bootstrap.min.css'
 			        ]
 		        ]
 	        ]
@@ -154,10 +154,11 @@ $config = [
 	            //'health/importance-hobbies' => 'main/lifeinsurance',
 	            //'apply-now' => 'main/applynow',
 	            
+	            'myquote/post' => 'myquote/post',
 	            'start-quote' => 'myquote/start-quote',
 	            'overall-health' => 'myquote/overall-health',
 	            'date-of-birth' => 'myquote/date-of-birth',
-	            'myquote/post' => 'myquote/post',
+	            'contact-details' => 'myquote/contact-details',
 
 	            'apply-now/quote-result' => 'main/quoteresult',
 	            'apply-now2/quote-result' => 'main/quoteresult2',
