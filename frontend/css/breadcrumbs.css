@@ -32,3 +32,7 @@
 .breadcrumbs__link--active {
     color: #F8A846;
 }
+
+.breadcrumbs__link--active:hover {
+    color: #F8A846;
+}

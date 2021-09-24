@@ -9,6 +9,15 @@
 
 .quotes-result__title>span {
     color: #339E75;
+    position: relative;
+}
+
+.quotes-result__title>span:after {
+    content: url("./img/title-decor.png");
+    display: block;
+    position: absolute;
+    bottom: -20px;
+    left: 0;
 }
 
 .quotes-result__subtitle {
@@ -226,6 +235,10 @@
     height: 80px;
 }
 
+.tableRow__starsWrapp>img {
+    cursor: pointer;
+}
+
 .tableRow__col--hiden {
     display: none;
 }
@@ -339,6 +352,10 @@
     }
     .quotes-result__termSelect {
         width: 100% !important;
+    }
+    .quotes-result__title>span:after {
+        transform: scale(0.6);
+        left: -50px;
     }
 }
 

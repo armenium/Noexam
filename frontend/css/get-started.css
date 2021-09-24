@@ -38,6 +38,10 @@
     color: #282B29;
 }
 
+.get-started__btn:hover {
+    color: #282B29;
+}
+
 .get-started__btn:after {
     content: url("../images/arrow-right-dark.png");
 }
