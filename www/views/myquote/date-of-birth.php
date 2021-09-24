@@ -63,7 +63,7 @@ $dropdown_options = [
 			<h1 class="date-of-birth__title heading-4">Date of Birth</h1>
 			<?php $form = ActiveForm::begin(['id' => $page_id, 'action' => '/myquote/post/', 'options' => ['class' => 'date-of-birth__form'], 'fieldConfig' => ['options' => ['tag' => false]]]);?>
 				<?=$form->field($customer_data, 'form_name')->hiddenInput(['value' => $page_id, 'id' => ''])->label(false);?>
-				<?=$form->field($customer_data, 'redirect')->hiddenInput(['value' => 'contract-details', 'id' => ''])->label(false);?>
+				<?=$form->field($customer_data, 'redirect')->hiddenInput(['value' => 'contact-details', 'id' => ''])->label(false);?>
 				<div class="date-of-birth__container">
 					<img src="/v2/myquote/img/date-of-birdth-bg.png" alt="image" class="date-of-birth__img">
 					<div class="date-of-birth__box">

@@ -1070,18 +1070,18 @@ class BaseController extends Controller{
 		exit;*/
 		
 		$search_result = $SFClient->search_lead($prepared_data['Email'], ($prepared_data['FirstName'].' '.$prepared_data['LastName']), $search_type);
-
-		//if($search_result != null){
-		if(array_key_exists('done', $search_result) && array_key_exists('totalSize', $search_result)){
-			if($search_result['totalSize'] != 0){
-				return [
-					'status' => true,
-					'id'     => $search_result['records'][0]['Id'],
-				];
+		#VarDumper::dump($search_result, 10, 1); exit;
+		
+		if(!is_null($search_result)){
+			if(array_key_exists('done', $search_result) && array_key_exists('totalSize', $search_result)){
+				if($search_result['totalSize'] != 0){
+					return [
+						'status' => true,
+						'id'     => $search_result['records'][0]['Id'],
+					];
+				}
 			}
 		}
-		
-		//}
 		
 		return false;
 		

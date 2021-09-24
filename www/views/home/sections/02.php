@@ -6,7 +6,7 @@
 					<div class="slider-customers__col">
 						<div class="slider-customers__subtitle sub-title-3">what people say</div>
 						<blockquote class="slider-customers__quote quote-30">“Smooth and very easy process from start to finish. Would recommend!”</blockquote>
-						<a href="#" class="slider-customers__link button-big main-btn">see Quotes</a>
+						<a href="/start-quote/" class="slider-customers__link button-big main-btn">see Quotes</a>
 					</div>
 					<div class="slider-customers__col">
 						<img src="/v2/home/img/customer-1.png" class="slider-customers__photo" alt="photo">
@@ -20,7 +20,7 @@
 					<div class="slider-customers__col">
 						<div class="slider-customers__subtitle sub-title-3">what people say</div>
 						<blockquote class="slider-customers__quote quote-30">“Smooth and very easy process from start to finish. Would recommend!”</blockquote>
-						<a href="#" class="slider-customers__link button-big main-btn">see Quotes</a>
+						<a href="/start-quote/" class="slider-customers__link button-big main-btn">see Quotes</a>
 					</div>
 					<div class="slider-customers__col">
 						<img src="/v2/home/img/customer-2.png" class="slider-customers__photo" alt="photo">
@@ -34,7 +34,7 @@
 					<div class="slider-customers__col">
 						<div class="slider-customers__subtitle sub-title-3">what people say</div>
 						<blockquote class="slider-customers__quote quote-30">“Smooth and very easy process from start to finish. Would recommend!”</blockquote>
-						<a href="#" class="slider-customers__link button-big main-btn">see Quotes</a>
+						<a href="/start-quote/" class="slider-customers__link button-big main-btn">see Quotes</a>
 					</div>
 					<div class="slider-customers__col">
 						<img src="/v2/home/img/customer-1.png" class="slider-customers__photo" alt="photo">

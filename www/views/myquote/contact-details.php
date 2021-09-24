@@ -56,7 +56,7 @@ $isMobile = Yii::$app->params['devicedetect']['isMobile'];
 					<div class="contact-details__row">
 						<label class="contact-details__label">
 							<span class="tags">Email</span>
-							<?=$form->field($customer_data, 'email')->input('email', ['required' => 'required', 'class' => 'contact-details__input contact-details__input--invalid fontBodyM', 'placeholder' => 'Enter your email', 'autocomplete' => 'on', 'autofocus' => false])->label(false);?>
+							<?=$form->field($customer_data, 'email')->input('email', ['required' => 'required', 'class' => 'contact-details__input fontBodyM', 'placeholder' => 'Enter your email', 'autocomplete' => 'on', 'autofocus' => false])->label(false);?>
 						</label>
 						<label class="contact-details__label">
 							<span class="tags">Phone number</span>
@@ -86,7 +86,8 @@ $isMobile = Yii::$app->params['devicedetect']['isMobile'];
 
 					<div class="contact-details__row">
 						<label class="contact-details__checkbox-label">
-							<input type="checkbox">
+							<input type="checkbox" required="required" value="1">
+							<span></span>
 							<div class="fontBodyS">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dictumst nisl proin lobortis morbi in vel elit molestie scelerisque. Dui pretium et nibh volutpat quisque.</div>
 						</label>
 					</div>

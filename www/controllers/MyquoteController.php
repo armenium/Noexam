@@ -34,6 +34,7 @@ class MyquoteController extends BaseController {
 			$CustomerData = $request->post('CustomerData');
 			
 			switch($CustomerData['form_name']){
+				#After STEP 1
 				case 'start-quote':
 					$status = 'create';
 					$model = $this->getCustomeData($status, false);
@@ -46,6 +47,8 @@ class MyquoteController extends BaseController {
 					$request_post['CustomerData']['avg_amount'] = str_replace(['k', 'm'], ['000', '0000'], $CustomerData['coverage_amount']);
 					unset($request_post['CustomerData']['coverage_amount']);
 					break;
+
+				#After STEP 2
 				case 'overall-health':
 					$status = 'create';
 					$model = $this->getCustomeData($status, false);
@@ -55,6 +58,8 @@ class MyquoteController extends BaseController {
 					Yii::info('Step - "'.$CustomerData['form_name'].'". Planing redirect to "'.$redirect_url.'".', 'noexam');
 					$iniciator = $CustomerData['form_name'];
 					break;
+
+				#After STEP 3
 				case 'date-of-birth':
 					$status = 'create';
 					$model = $this->getCustomeData($status, false);
@@ -71,15 +76,19 @@ class MyquoteController extends BaseController {
 					unset($request_post['CustomerData']['birthday']);
 					$request_post['CustomerData']['birthday'] = $birthday;
 					break;
+
+				#After STEP 4
 				case 'contact-details':
 					$status = 'create';
 					$model = $this->getCustomeData($status, false);
+					$status = 'new';
 					
 					$scenario     = CustomerData::SCENARIO_CONTACT_DETAILS;
 					$redirect_url = '/'.$CustomerData['redirect'];
 					Yii::info('Step - "'.$CustomerData['form_name'].'". Planing redirect to "'.$redirect_url.'".', 'noexam');
 					$iniciator = $CustomerData['form_name'];
 					break;
+
 				default:
 					Yii::info('Requested wrong form name in post request.', 'noexam' );
 					return false;
@@ -91,6 +100,7 @@ class MyquoteController extends BaseController {
 				$model->load($request_post);
 				$model->scenario = $scenario;
 				$model->iniciator = $iniciator;
+				$model->status    = $status;
 				
 				if($model->validate()){
 					
@@ -116,8 +126,6 @@ class MyquoteController extends BaseController {
 								// if( 'Yes' == $completed){
 								$json_decoded['Updated_Lead_to_App'] = 'Yes';
 								// }
-								
-								//VarDumper::dump($json_decoded, 10, 1); exit;
 								
 								$lead_result = $this->updateSFLead($search_result['id'], $json_decoded, $item->sid);
 								if($lead_result){
@@ -157,16 +165,11 @@ class MyquoteController extends BaseController {
 					}
 				}else{
 					VarDumper::dump($model->getErrors(), 10, 1);
-					//VarDumper::dump($request_post, 10, 1);
-					//VarDumper::dump($model, 10, 1);
 				}
 				
 				Yii::info('Redirecting to "'.$redirect_url.'"', 'noexam');
 				
-				//VarDumper::dump($redirect_url, 10, 1); exit;
 				return $this->redirect([$redirect_url]);
-				//header("Location:$redirect_url", true, 200);
-				//return Yii::$app->getResponse()->redirect($redirect_url, 303, false);
 			}else{
 				$model = new CustomerData(['scenario' => $scenario]);
 				$model->load($request_post);
@@ -192,6 +195,7 @@ class MyquoteController extends BaseController {
 		return $this->redirect([$redirect_url]);
 	}
 	
+	#STEP 1
 	public function actionStartQuote(){
 		$customer_data = $this->getCustomeData('create', false);
 
@@ -215,6 +219,7 @@ class MyquoteController extends BaseController {
 		return $this->render('start-quote', ['customer_data' => $customer_data, 'from' => $from]);
 	}
 	
+	#STEP 2
 	public function actionOverallHealth(){
 		$customer_data = $this->getCustomeData('create', false);
 		
@@ -233,6 +238,7 @@ class MyquoteController extends BaseController {
 		return $this->render('overall-health', ['customer_data' => $customer_data]);
 	}
 	
+	#STEP 3
 	public function actionDateOfBirth(){
 		$customer_data = $this->getCustomeData('create', false);
 		
@@ -261,6 +267,7 @@ class MyquoteController extends BaseController {
 		return $this->render('date-of-birth', ['customer_data' => $customer_data]);
 	}
 	
+	#STEP 4
 	public function actionContactDetails(){
 		$customer_data = $this->getCustomeData('create', false);
 		
@@ -273,5 +280,197 @@ class MyquoteController extends BaseController {
 		return $this->render('contact-details', ['customer_data' => $customer_data]);
 	}
 	
+	#STEP 5
+	public function actionQuoteResults(){
+		$this->layout = 'v2/myquoteresults';
+		
+		$customer_data = $this->getCustomeData('new', false);
+		
+		$display_form = false;
+		$prices = [];
+		$total_plans_count = 0;
+		$total_terms_count = 0;
+		
+		if(is_null($customer_data)){
+			$display_form = true;
+			$customer_data = new CustomerData();
+			$customer_data->coverage_amount = 300;
+			$customer_data->term_length = '10';
+		}else{
+			$customer_data->attributes = $customer_data->decodeData();
+			$customer_data->coverage_amount = $customer_data->avg_amount / 1000;
+
+			$sagicor = Yii::$app->Sagicor;
+			$nq_client = Yii::$app->NQClient;
+			$ts_client = Yii::$app->TSClient;
+			
+			$customer_data->attributes = $customer_data->decodeData();
+			$age            = $this->getAge($customer_data->birthday);
+			$foot           = $customer_data->h_foot;
+			$inch           = $customer_data->h_inch;
+			$weight         = $customer_data->weight;
+			$avarage_amount = $customer_data->avg_amount.'000';
+			$smoker         = isset($customer_data->tobaco) ? $customer_data->tobaco : 0;
+			$sex            = $customer_data->sex;
+			
+			$db = $sagicor->getBirthdates($customer_data->birthday);
+			$args = [
+				'birthdate'      => $db[1].'/'.$db[0].'/'.$db[2],
+				'sex'            => $sex,
+				'avarage_amount' => $customer_data->avg_amount,
+				'h_foot'         => $foot,
+				'h_inch'         => $inch,
+				'weight'         => $weight,
+				'tobaco'         => $smoker,
+				'state'          => isset($customer_data->state) ? $customer_data->state : 'AL',
+				'term_length' => $customer_data->term_length,
+			];
+			
+			#VarDumper::dump([$request->post(), $args], 10, 1); exit;
+			#VarDumper::dump($customer_data->attributes, 10, 1); exit;
+			
+			#TruStage
+			$ts_args = $args;
+			$ts_args['first_name'] = $customer_data->first_name;
+			$ts_args['last_name'] = $customer_data->last_name;
+			$ts_args['email'] = $customer_data->email;
+			$ts_args['phone'] = $customer_data->phone_number;
+			$ts_prices = $ts_client->get_quotes($ts_args);
+			$prices['plans']['exam_no']['trustage'] = $ts_prices['plans']['trustage'];
+			
+			#Sagicor
+			$sg_prices = $sagicor->getSagicorPlans($args);
+			$prices['plans']['exam_no']['sagicor'] = $sg_prices['plans']['sagicor'];
+			$prices['plans']['exam_yes'] = [];
+			
+			#Ninja Quoter
+			$nq_prices = $nq_client->get_quotes($args);
+			
+			if(intval($nq_prices['status']) == 200 && !empty($nq_prices['response']['results'])){
+				foreach($nq_prices['response']['results'] as $k => $result){
+					switch($result['company_code']){
+						case "sagicor":
+							$prices['plans']['exam_no'][$result['company_code']] = [];
+							$prices['plans']['exam_no'][$result['company_code']][$result['term']] = $result;
+							break;
+						case "sagicor_express_issue":
+							break;
+						case "mutual_omaha":
+							$prices['plans']['exam_yes'][$result['company_code']][$result['term']] = $result;
+							break;
+						case "mutual_omaha_express":
+							$prices['plans']['exam_no'][$result['company_code']][$result['term']] = $result;
+							break;
+						case "phoenix":
+							$prices['plans']['exam_no'][$result['company_code']][$result['term']] = $result;
+							break;
+						case "phoenix_express":
+							break;
+						case "protective":
+							$pc = implode("_", array_slice(explode("_", $result['product_code']), 0, 3));
+							switch($pc){
+								case "protective_classic_choice":
+									$prices['plans']['exam_yes'][$result['company_code']][$result['term']] = $result;
+									break;
+								case "protective_custom_choice":
+									break;
+							}
+							break;
+						case "north_american":
+							break;
+						case "pacific_life":
+							$prices['plans']['exam_yes'][$result['company_code']][$result['term']] = $result;
+							break;
+						case "principal":
+							break;
+						case "foresters":
+							break;
+						case "foresters_express":
+							$prices['plans']['exam_no'][$result['company_code']][$result['term']] = $result;
+							break;
+						case "john_hancock":
+							break;
+						case "american_general":
+							break;
+						case "assurity":
+							break;
+						case "transamerica_lb":
+							switch($result['product_code']){
+								case "transamerica_trendsetter_lb_10":
+									break;
+								case "transamerica_trendsetter_lb_10_all":
+									break;
+							}
+							break;
+						case "transamerica":
+							break;
+						case "banner":
+							break;
+						case "prudential":
+							$prices['plans']['exam_yes'][$result['company_code']][$result['term']] = $result;
+							break;
+						case "lincoln_financial":
+						case "lincoln_financial_express":
+							break;
+						case "sbli":
+							break;
+						case "sbli_express":
+							$prices['plans']['exam_no'][$result['company_code']][$result['term']] = $result;
+							break;
+						case "american_national":
+							break;
+					}
+				}
+			}
+			
+			#VarDumper::dump($prices, 10, 1); exit;
+			
+			foreach($prices['plans']['exam_no'] as $company_terms){
+				if(!is_null($company_terms) && is_array($company_terms))
+					$total_terms_count += count($company_terms);
+			}
+			foreach($prices['plans']['exam_yes'] as $company_terms){
+				if(!is_null($company_terms) && is_array($company_terms))
+					$total_terms_count += count($company_terms);
+			}
+			
+			$total_plans_count = count($prices['plans']['exam_no']) + count($prices['plans']['exam_yes']);
+			
+			#VarDumper::dump($prices, 10, 1);
+			
+			/*$na_rates = NaRates::find()->where(['foot' => $foot, 'inch' => $inch, 'sex' => $sex])->all();
+			/// Получаем Band
+			$band = $this->getNaBand($avarage_amount);
+			//Получаем rate в зависимости курящий или нет.
+			$rate = $this->getNaRate($na_rates, $weight, $smoker);
+			$na_prices = NaPrices::find()->where(['type' => $rate, 'age' => $age, 'sex' => $sex])->orderBy('term ASC')->all();
+			//Получаем цены.
+			$prices = $this->calculateAllPrices($na_prices, $avarage_amount, $band);*/
+		}
+		
+		$from = 0;
+		foreach($customer_data::$avg_amounts4 as $k => $v){
+			if($k == $customer_data->coverage_amount) break;
+			$from++;
+		}
+		
+		return $this->render('quote-results', [
+			'customer_data' => $customer_data,
+			'display_form' => $display_form,
+			'from' => $from,
+			'prices' => $prices,
+			'total_plans_count' => $total_plans_count,
+			'total_terms_count' => $total_terms_count,
+			'faq_items' => $this->getFaqs(['homepage']),
+		]);
+	}
+	
+	public function getFaqs($cats){
+		$cats[] = 'anywhere';
+		$cats = array_unique($cats);
+		$model = Faqs::find()->where(['IN', 'category', $cats])->orderBy('item_order ASC')->all();
+		
+		return $model;
+	}
 	
 }

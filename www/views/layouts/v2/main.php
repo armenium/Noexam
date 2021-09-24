@@ -16,12 +16,12 @@ AppAsset::register($this);
 <!DOCTYPE html>
 <html lang="<?=Yii::$app->language;?>">
 
-	<?=$this->render('main/head'); ?>
+	<?=$this->render('common/head'); ?>
 	
 	<body class="<?=Yii::$app->controller->getBodyClasses();?>">
 		<?php $this->beginBody();?>
 	
-		<?=$this->render('main/google-tag/body');?>
+		<?=$this->render('common/google-tag/body');?>
 	
 		<?=$this->render('main/header');?>
 	
@@ -29,9 +29,9 @@ AppAsset::register($this);
 		
 		<?=$content;?>
 		
-		<?=$this->render('main/footer');?>
-		<?=$this->render('main/copyright');?>
-		<?=$this->render('main/overlays');?>
+		<?=$this->render('common/footer');?>
+		<?=$this->render('common/copyright');?>
+		<?=$this->render('common/overlays');?>
 	
 		<?php $this->endBody();?>
 	</body>

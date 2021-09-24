@@ -90,7 +90,7 @@ $config = [
 			        'sourcePath' => '@app/web/v2/',
 			        'js'=>[
 				        'plugins/js/popper.min.js',
-				        'bootstrap-4.6.0/js/bootstrap.min.js',
+				        'bootstrap-4.6.0/js/bootstrap.bundle.min.js',
 			        ]
 		        ],
 		        'yii\bootstrap\BootstrapAsset' => [
@@ -159,6 +159,7 @@ $config = [
 	            'overall-health' => 'myquote/overall-health',
 	            'date-of-birth' => 'myquote/date-of-birth',
 	            'contact-details' => 'myquote/contact-details',
+	            'quote-results' => 'myquote/quote-results',
 
 	            'apply-now/quote-result' => 'main/quoteresult',
 	            'apply-now2/quote-result' => 'main/quoteresult2',

@@ -22,7 +22,7 @@
 					<span class="steps__text">Get your decision Immediately</span>
 				</div>
 			</div>
-			<a href="#" class="steps__btn main-btn button-big">start my Quote</a>
+			<a href="/start-quote/" class="steps__btn main-btn button-big">start my Quote</a>
 		</section>
 	</div>
 </div>

@@ -6,16 +6,12 @@ use yii\bootstrap\Nav;
 		<a href="/"><img src="/v2/common/images/header/Logo.svg" alt="" title="" class="header__logo" width="112" height="16"></a>
 	</div>
 	<div class="header__col">
-		<div class="header__burger-wrapp">
-			<a href="javascript:void(0);" id="menu-btn" class="menu-btn menu-icon button" data-trigger="js_action_click" data-action="toggle_mobile_nav" data-target=".mob-menu">
-				<span></span>
-				<span></span>
-				<span></span>
-			</a>
+		<div class="header__imgWrapp">
+			<div class="header__imgBox"><img src="/v2/common/images/logo-ab.gif" alt="icon" width="75" height="28"></div>
+			<div class="header__imgBox"><img src="/v2/common/images/logo-sa.gif" alt="icon" width="80" height="28"></div>
 		</div>
+		<?=$this->render('../common/mobile/burger');?>
 	</div>
 </header>
-<div class="mob-menu trans_all">
-	<?=Nav::widget(['options' => ['class' => 'navbar-nav'], 'items' => Yii::$app->params['nav']]);?>
-	<div class="phone">888-407-0714</div>
-</div>
+<?=$this->render('../common/mobile/nav');?>
+

@@ -12,6 +12,11 @@ $(function(){
 	var FJS = {
 		options: {
 			device: (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)),
+			lg: [1920, 1200],
+			md: [1199, 992],
+			sm: [991, 768],
+			xs: [767, 576],
+			xxs: [575, 0],
 		},
 		vars: {
 			ww: 0,
@@ -46,6 +51,7 @@ $(function(){
 
 			this.initEvents();
 			this.Forms.stylingSelect();
+			//this.Common.doEqualHeight();
 		},
 		initEvents: function(){
 			$(window)
@@ -56,7 +62,8 @@ $(function(){
 				.on('blur', '[data-trigger="js_action_blur"]', FJS.doAction)
 				.on('change', '[data-trigger="js_action_change"]', FJS.doAction)
 				.on('click', '[data-trigger="js_action_click"]', FJS.doAction)
-				.on('submit', '[data-trigger="js_action_submit"]', FJS.doAction);
+				.on('submit', '[data-trigger="js_action_submit"]', FJS.doAction)
+				.on('focus change', 'input[required], select[required]', FJS.Forms.removeElementsErrors);
 		},
 		eventResizeWindow: function(){
 			FJS.vars.ww = $(window).width();
@@ -65,6 +72,8 @@ $(function(){
 			if(FJS.vars.ww > 767){
 
 			}
+
+			//FJS.Common.doEqualHeight();
 		},
 		eventScrollWindow: function(){
 			FJS.vars.scrollTop = $(window).scrollTop();
@@ -133,6 +142,68 @@ $(function(){
 					}
 				}
 			},
+			doEqualHeight: function(){
+				if($('[data-equal-height]').length){
+					var devices = ['desktop', 'tablet', 'mobile'];
+					var obj_arr = [];
+
+					$('[data-equal-height]').removeAttr('style');
+
+					$('[data-equal-height]').each(function(i, p){
+						var sizes = $(this).data('equal-height').split(',');
+						console.log(sizes);
+
+						$(this).find('.mk-imagelist-item').each(function(j, c){
+							if(obj_arr[j] != undefined){
+								if(obj_arr[j] < $(c).height()){
+									obj_arr[j] = $(c).height();
+								}
+							}else{
+								obj_arr[j] = $(c).height();
+							}
+						});
+					});
+
+					//console.log(obj_arr);
+
+					$('.js_equal_height').each(function(i, p){
+						$(this).find('.mk-imagelist-item').each(function(j, e){
+							//console.log(j, obj_arr[j]);
+							$(e).height(Math.round(obj_arr[j]));
+						});
+					});
+
+					if(FJS.vars.ww >= 768){
+						//FJS.Common._setEqualHeight()
+						//console.log(globals.device, JP.options.ww);
+
+					}
+				}
+			},
+			_setEqualHeight: function($elem, size){
+				var obj_arr = [];
+
+				$elem.each(function(i, p){
+					$(this).find('.eq_height-in-'+size).each(function(j, c){
+						if(obj_arr[j] != undefined){
+							if(obj_arr[j] < $(c).height()){
+								obj_arr[j] = $(c).height();
+							}
+						}else{
+							obj_arr[j] = $(c).height();
+						}
+					});
+				});
+
+				//console.log(obj_arr);
+
+				$elem.each(function(i, p){
+					$(this).find('.eq_height-in-'+size).each(function(j, e){
+						//console.log(j, obj_arr[j]);
+						$(e).height(Math.round(obj_arr[j]));
+					});
+				});
+			},
 		},
 		Forms: {
 			stylingSelect: function(){
@@ -148,7 +219,7 @@ $(function(){
 						$form.submit();
 					}, 500);
 				}else{
-					alert("Please complete all fields marked in red.");
+					alert("Please complete all fields marked in green.");
 					return false;
 				}
 			},
@@ -160,14 +231,22 @@ $(function(){
 
 				$form.find('input:required, select:required').each(function(){
 					if(error) return false;
+
 					if($(this).attr('type') == 'email'){
 						if(!$.trim($(this).val()).match(pattern)){
-							console.log('email alert');
+							//console.log('email alert');
 							$(this).parent().addClass('error').end().addClass('error contact-details__input--invalid');
 							error = true;
 						}
 					}
-					//console.log($(this).val());
+
+					if($(this).attr('type') == 'checkbox'){
+						if(!$(this).is(':checked')){
+							$(this).parent().addClass('error').end().addClass('error contact-details__input--invalid');
+							error = true;
+						}
+					}
+
 					if($(this).val() == ''){
 						$(this).parent().addClass('error').end().addClass('error contact-details__input--invalid');
 						error = true;
@@ -178,10 +257,16 @@ $(function(){
 					$(this).parent().removeClass('error').end().removeClass('error contact-details__input--invalid');
 				}
 
+				console.log(error ? 1 : -1);
+
 				return error;
 			},
+			removeElementsErrors: function(){
+				$(this).parent().removeClass('error').end().removeClass('error contact-details__input--invalid');
+			}
 		},
 	};
+
 
 	FJS.Init();
 });

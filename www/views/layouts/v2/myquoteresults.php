@@ -20,17 +20,19 @@ AppAsset::register($this);
 	
 	<body class="<?=Yii::$app->controller->getBodyClasses();?>">
 		<?php $this->beginBody();?>
-		
+	
 		<?=$this->render('common/google-tag/body');?>
-		
+	
 		<?=$this->render('myquote/header');?>
-		
+	
 		<?php #=Breadcrumbs::widget(['links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : []]);?>
 		
 		<?=$content;?>
 		
+		<?=$this->render('common/footer');?>
+		<?=$this->render('common/copyright');?>
 		<?=$this->render('common/overlays');?>
-		
+	
 		<?php $this->endBody();?>
 	</body>
 </html>

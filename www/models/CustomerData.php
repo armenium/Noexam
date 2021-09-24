@@ -727,7 +727,8 @@ class CustomerData extends ActiveRecord {
      * @inheritdoc
      */
 	public function scenarios(){
-		$scenarios                      = parent::scenarios();
+		$scenarios = parent::scenarios();
+		
 		$scenarios[self::SCENARIO_SELECT_COVERAGE] = ['avg_amount', 'term_length'];
 		$scenarios[self::SCENARIO_OVERALL_HEALTH] = ['health', 'tobaco', 'sex'];
 		$scenarios[self::SCENARIO_DATE_OF_BIRTH] = ['birthday'];

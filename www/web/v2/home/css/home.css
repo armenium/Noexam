@@ -68,16 +68,17 @@
 	width: 100%;
 	max-width: 240px;
 	height: 76px;
-	background: #f8a846;
+	background-color: #f8a846;
 	border-radius: 4px;
 	color: #ffffff;
+	transition: all 0.2s;
 }
-
 .first-screen__link:after {
 	content: url("../../common/images/arrow-right-white.png");
 	margin-left: 20px;
 	margin-top: 6px;
 }
+.first-screen__link:hover {background-color: #ffae47;}
 
 .first-screen__bg {
 	display: block;
