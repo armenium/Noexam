@@ -65,6 +65,10 @@
 	color: #ffffff;
 }
 
+.first-screen__link:hover {
+    color: #FFFFFF;
+}
+
 .first-screen__link:after {
 	content: url("../images/arrow-right-white.png");
 	margin-left: 20px;

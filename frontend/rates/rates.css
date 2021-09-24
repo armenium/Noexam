@@ -40,6 +40,10 @@
     color: #339E75;
 }
 
+.rates-charts__link:hover {
+    color: #339E75;
+}
+
 .rates-charts__chart {
     padding: 0 70px 0 0;
     margin-bottom: 70px;
@@ -389,6 +393,11 @@
 
 .listen-us__card {
     margin-bottom: 25px;
+    display: block;
+}
+
+.listen-us__card>span {
+    text-decoration: underline;
 }
 
 .listen-us__text {
@@ -467,7 +476,7 @@
 .charts-by-age__input-text {
     display: block;
     position: absolute;
-    bottom: 40px;
+    bottom: 5px;
     right: 15px;
     z-index: 10;
     color: #757575;
