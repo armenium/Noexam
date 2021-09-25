@@ -1,6 +1,7 @@
 .quotes-result {padding: 120px 0 70px 0;}
 .quotes-result__title {text-align: center; margin-bottom: 25px;}
-.quotes-result__title > span {color: #339e75;}
+.quotes-result__title > span {color: #339e75; position: relative;}
+.quotes-result__title > span:after {content: url(../img/title-decor.png); display: block; position: absolute; bottom: -20px; left: 0;}
 .quotes-result__subtitle {text-align: center; color: #757575; margin-bottom: 35px;}
 .quotes-result__container {width: 100%; max-width: 1060px; background: #fff; border-radius: 4px; padding: 35px 30px; margin-bottom: 15px;}
 .quotes-result__container:last-child {margin-bottom: 0;}
