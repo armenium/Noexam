@@ -71,9 +71,18 @@ $isMobile = Yii::$app->params['devicedetect']['isMobile'];
 					</div>
 				<?php ActiveForm::end();?>
 			</div>
-
-			<?=$this->render('../myquote/partials/quote-results-form', ['prices' => $prices, 'total_plans_count' => $total_plans_count, 'total_terms_count' => $total_terms_count]);?>
-
+			
+			<div id="js_quote_results">
+				<?=$this->render('../myquote/partials/quote-results-form', [
+					'customer_data' => $customer_data,
+					'prices' => $prices,
+					'no_plans_count' => $no_plans_count,
+					'yes_plans_count' => $yes_plans_count,
+					'total_plans_count' => $total_plans_count,
+					'total_terms_count' => $total_terms_count
+				]);?>
+			</div>
+			
 		</section>
 	</div>
 </div>

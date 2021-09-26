@@ -101,6 +101,9 @@ $(function(){
 				case "contact_details_form_submit":
 					FJS.Forms.submitContactDetails($this);
 					break;
+				case "quote-result-link":
+					FJS.ApplyNow.QuoteResult.goToLink($this);
+					break;
 				default:
 					break;
 			}
@@ -263,6 +266,17 @@ $(function(){
 			},
 			removeElementsErrors: function(){
 				$(this).parent().removeClass('error').end().removeClass('error contact-details__input--invalid');
+			}
+		},
+		ApplyNow: {
+			QuoteResult: {
+				goToLink: function($btn){
+					var url = $btn.data('url');
+
+					if(url != ''){
+						window.location.href = url;
+					}
+				},
 			}
 		},
 	};

@@ -6,6 +6,7 @@
 .quotes-result__container {width: 100%; max-width: 1060px; background: #fff; border-radius: 4px; padding: 35px 30px; margin-bottom: 15px;}
 .quotes-result__container:last-child {margin-bottom: 0;}
 .quotes-result__container.results-table {box-shadow: 1px 12px 42px rgba(155, 164, 162, 0.12);}
+.quotes-result__container.results-table hr:last-child {display: none;}
 .quotes-result__form {display: flex; justify-content: space-between;}
 .quotes-result__formColumn.first {flex-grow: 1; margin-right: 90px;}
 .quotes-result__formColumn.last {width: 100%; max-width: 300px;}

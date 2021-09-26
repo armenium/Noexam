@@ -45,6 +45,9 @@ hr {
     background: #E4E4E4;
 }
 
+*:focus,
+*:active {outline: 0 none !important; box-shadow: none !important;}
+
 .trans_me,
 .trans_all,
 .trans_all:before,

@@ -288,6 +288,8 @@ class MyquoteController extends BaseController {
 		
 		$display_form = false;
 		$prices = [];
+		$no_plans_count = 0;
+		$yes_plans_count = 0;
 		$total_plans_count = 0;
 		$total_terms_count = 0;
 		
@@ -426,17 +428,21 @@ class MyquoteController extends BaseController {
 			#VarDumper::dump($prices, 10, 1); exit;
 			
 			foreach($prices['plans']['exam_no'] as $company_terms){
-				if(!is_null($company_terms) && is_array($company_terms))
+				if(!is_null($company_terms) && is_array($company_terms)){
 					$total_terms_count += count($company_terms);
+					$no_plans_count += count($company_terms);
+				}
 			}
 			foreach($prices['plans']['exam_yes'] as $company_terms){
-				if(!is_null($company_terms) && is_array($company_terms))
+				if(!is_null($company_terms) && is_array($company_terms)){
 					$total_terms_count += count($company_terms);
+					$yes_plans_count += count($company_terms);
+				}
 			}
 			
 			$total_plans_count = count($prices['plans']['exam_no']) + count($prices['plans']['exam_yes']);
 			
-			#VarDumper::dump($prices, 10, 1);
+			#VarDumper::dump($total_terms_count, 10, 1);
 			
 			/*$na_rates = NaRates::find()->where(['foot' => $foot, 'inch' => $inch, 'sex' => $sex])->all();
 			/// Получаем Band
@@ -459,6 +465,8 @@ class MyquoteController extends BaseController {
 			'display_form' => $display_form,
 			'from' => $from,
 			'prices' => $prices,
+			'no_plans_count' => $no_plans_count,
+			'yes_plans_count' => $yes_plans_count,
 			'total_plans_count' => $total_plans_count,
 			'total_terms_count' => $total_terms_count,
 			'faq_items' => $this->getFaqs(['homepage']),
