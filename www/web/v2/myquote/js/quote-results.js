@@ -7,7 +7,11 @@ $(".js-range-slider").ionRangeSlider({
     //from: 4,
     prefix: "$",
     hide_min_max: true,
-    step: 50000
+    step: 50000,
+
+    onFinish: function(data){
+        FJS.ApplyNow.QuoteResult.goToLink($(this));
+    },
 });
 
 let questionsItems = [...document.querySelectorAll('.questions__item')].forEach(item => {

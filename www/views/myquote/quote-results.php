@@ -50,6 +50,9 @@ $isMobile = Yii::$app->params['devicedetect']['isMobile'];
 							'id' => 'rc_coverage_amount',
 							'data-from' => $from,
 							'data-values' => implode(',', $customer_data::$avg_amounts4),
+							#'data-trigger' => 'js_action_mouseup',
+							#'data-action' => 'ajax_quote_results_request',
+							'data-parent' => "#$page_id",
 						])->label(false);?>
 						</label>
 					</div>
@@ -66,6 +69,9 @@ $isMobile = Yii::$app->params['devicedetect']['isMobile'];
 								'data-dropup-auto' => true,
 								'data-size' => 10,
 								'data-mobile' => (string)$isMobile,
+								'data-trigger' => 'js_action_change',
+								'data-action' => 'ajax_quote_results_request',
+								'data-parent' => "#$page_id",
 							])->label(false);?>
 						</div>
 					</div>

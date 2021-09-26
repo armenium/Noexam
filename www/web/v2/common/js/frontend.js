@@ -5,7 +5,7 @@ if(typeof jQuery === "undefined"){
 $(function(){
 	"use strict";
 
-	$.fn.exists = function () {
+	$.fn.exists = function(){
 		return this.length !== 0;
 	};
 
@@ -59,6 +59,7 @@ $(function(){
 				.on('resize orientationchange deviceorientation', FJS.eventResizeWindow);
 
 			$(document)
+				.on('mouseup', '[data-trigger="js_action_mouseup"]', FJS.doAction)
 				.on('blur', '[data-trigger="js_action_blur"]', FJS.doAction)
 				.on('change', '[data-trigger="js_action_change"]', FJS.doAction)
 				.on('click', '[data-trigger="js_action_click"]', FJS.doAction)
@@ -100,6 +101,9 @@ $(function(){
 					break;
 				case "contact_details_form_submit":
 					FJS.Forms.submitContactDetails($this);
+					break;
+				case "ajax_quote_results_request":
+					FJS.Forms.ajaxQuoteResults($this);
 					break;
 				case "quote-result-link":
 					FJS.ApplyNow.QuoteResult.goToLink($this);
@@ -225,6 +229,12 @@ $(function(){
 					alert("Please complete all fields marked in green.");
 					return false;
 				}
+			},
+			ajaxQuoteResults: function($obj){
+				var $form = $($obj.data('parent')),
+					data = $form.serializeArray();
+
+				console.log(data);
 			},
 			validateForm: function($form){
 				var error = 0;
