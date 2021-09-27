@@ -38,7 +38,7 @@ $isMobile = Yii::$app->params['devicedetect']['isMobile'];
 			<div class="quotes-result__subtitle fontBodyL">See the top companies prices side by side to compare.</div>
 
 			<div class="quotes-result__container">
-				<?php $form = ActiveForm::begin(['id' => $page_id, 'action' => '/myquote/post/', 'options' => ['class' => 'quotes-result__form'], 'fieldConfig' => ['options' => ['tag' => false]]]);?>
+				<?php $form = ActiveForm::begin(['id' => $page_id, 'action' => '/myquote/ajax/', 'options' => ['class' => 'quotes-result__form'], 'fieldConfig' => ['options' => ['tag' => false]]]);?>
 					<?=$form->field($customer_data, 'form_name')->hiddenInput(['value' => $page_id, 'id' => ''])->label(false)->error(false);?>
 					<?=$form->field($customer_data, 'redirect')->hiddenInput(['value' => '', 'id' => ''])->label(false)->error(false);?>
 					<div class="quotes-result__formColumn first">
@@ -46,11 +46,11 @@ $isMobile = Yii::$app->params['devicedetect']['isMobile'];
 						<label class="quotes-result__label">
 						<?=$form->field($customer_data, 'coverage_amount')->input('text', [
 							'required' => 'required',
-							'class' => 'js-range-slider start-quote__range-slider',
+							'class' => 'js_range_slider start-quote__range-slider',
 							'id' => 'rc_coverage_amount',
 							'data-from' => $from,
 							'data-values' => implode(',', $customer_data::$avg_amounts4),
-							#'data-trigger' => 'js_action_mouseup',
+							#'data-trigger' => 'js_action_change',
 							#'data-action' => 'ajax_quote_results_request',
 							'data-parent' => "#$page_id",
 						])->label(false);?>
@@ -79,7 +79,7 @@ $isMobile = Yii::$app->params['devicedetect']['isMobile'];
 			</div>
 			
 			<div id="js_quote_results">
-				<?=$this->render('../myquote/partials/quote-results-form', [
+				<?=$this->render('../myquote/partials/quote-results-list', [
 					'customer_data' => $customer_data,
 					'prices' => $prices,
 					'no_plans_count' => $no_plans_count,

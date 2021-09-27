@@ -155,6 +155,7 @@ $config = [
 	            //'apply-now' => 'main/applynow',
 	            
 	            'myquote/post' => 'myquote/post',
+	            'myquote/ajax' => 'myquote/ajax',
 	            'start-quote' => 'myquote/start-quote',
 	            'overall-health' => 'myquote/overall-health',
 	            'date-of-birth' => 'myquote/date-of-birth',

@@ -1124,7 +1124,11 @@ class BaseController extends Controller{
 		
 		$session       = Yii::$app->session;
 		$cookies       = Yii::$app->response->cookies;
-		$customer_data = CustomerData::find()->where(['sid' => $session->id, 'status' => $status])->one();
+		$params = ['sid' => $session->id];
+		if(!is_null($status)){
+			$params['status'] = $status;
+		}
+		$customer_data = CustomerData::find()->where($params)->one();
 		#VarDumper::dump($customer_data, 10, 1); exit;
 		
 		if(!is_null($customer_data)){

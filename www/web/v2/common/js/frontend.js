@@ -49,70 +49,73 @@ $(function(){
 			this.vars.csrf_param = $('meta[name="csrf-param"]').attr('content');
 			this.vars.csrf_token = $('meta[name="csrf-token"]').attr('content');
 
-			this.initEvents();
+			this.Core.initEvents();
+			this.Forms.initRangeSlider();
 			this.Forms.stylingSelect();
 			//this.Common.doEqualHeight();
 		},
-		initEvents: function(){
-			$(window)
-				.on('scroll', FJS.eventScrollWindow)
-				.on('resize orientationchange deviceorientation', FJS.eventResizeWindow);
+		Core: {
+			initEvents: function(){
+				$(window)
+					.on('scroll', FJS.Core.eventScrollWindow)
+					.on('resize orientationchange deviceorientation', FJS.Core.eventResizeWindow);
 
-			$(document)
-				.on('mouseup', '[data-trigger="js_action_mouseup"]', FJS.doAction)
-				.on('blur', '[data-trigger="js_action_blur"]', FJS.doAction)
-				.on('change', '[data-trigger="js_action_change"]', FJS.doAction)
-				.on('click', '[data-trigger="js_action_click"]', FJS.doAction)
-				.on('submit', '[data-trigger="js_action_submit"]', FJS.doAction)
-				.on('focus change', 'input[required], select[required]', FJS.Forms.removeElementsErrors);
-		},
-		eventResizeWindow: function(){
-			FJS.vars.ww = $(window).width();
-			FJS.vars.wh = $(window).height();
+				$(document)
+					.on('mouseup', '[data-trigger="js_action_mouseup"]', FJS.Core.doAction)
+					.on('blur', '[data-trigger="js_action_blur"]', FJS.Core.doAction)
+					.on('change', '[data-trigger="js_action_change"]', FJS.Core.doAction)
+					.on('click', '[data-trigger="js_action_click"]', FJS.Core.doAction)
+					.on('submit', '[data-trigger="js_action_submit"]', FJS.Core.doAction)
+					.on('focus change', 'input[required], select[required]', FJS.Forms.removeElementsErrors);
+			},
+			eventResizeWindow: function(){
+				FJS.vars.ww = $(window).width();
+				FJS.vars.wh = $(window).height();
 
-			if(FJS.vars.ww > 767){
+				if(FJS.vars.ww > 767){
 
-			}
-
-			//FJS.Common.doEqualHeight();
-		},
-		eventScrollWindow: function(){
-			FJS.vars.scrollTop = $(window).scrollTop();
-			if(FJS.vars.scrollTopPrev > 0){
-				if(FJS.vars.scrollTop > FJS.vars.scrollTopPrev){
-					FJS.vars.scroll_dir = 'bottom';
-				}else{
-					FJS.vars.scroll_dir = 'top';
 				}
-			}
-			FJS.vars.scrollTopPrev = FJS.vars.scrollTop;
-			FJS.Common.setScrolled();
-		},
-		doAction: function(e){
-			var $this = $(this),
-				action = $(this).data('action');
 
-			switch(action){
-				case "print":
-					window.print();
-					break;
-				case "toggle_mobile_nav":
-					FJS.Common.toggleMobileNav($this);
-					break;
-				case "contact_details_form_submit":
-					FJS.Forms.submitContactDetails($this);
-					break;
-				case "ajax_quote_results_request":
-					FJS.Forms.ajaxQuoteResults($this);
-					break;
-				case "quote-result-link":
-					FJS.ApplyNow.QuoteResult.goToLink($this);
-					break;
-				default:
-					break;
-			}
+				//FJS.Common.doEqualHeight();
+			},
+			eventScrollWindow: function(){
+				FJS.vars.scrollTop = $(window).scrollTop();
+				if(FJS.vars.scrollTopPrev > 0){
+					if(FJS.vars.scrollTop > FJS.vars.scrollTopPrev){
+						FJS.vars.scroll_dir = 'bottom';
+					}else{
+						FJS.vars.scroll_dir = 'top';
+					}
+				}
+				FJS.vars.scrollTopPrev = FJS.vars.scrollTop;
+				FJS.Common.setScrolled();
+			},
+			doAction: function(e){
+				var $this = $(this),
+					action = $(this).data('action');
 
-			e.preventDefault();
+				switch(action){
+					case "print":
+						window.print();
+						break;
+					case "toggle_mobile_nav":
+						FJS.Common.toggleMobileNav($this);
+						break;
+					case "contact_details_form_submit":
+						FJS.Forms.submitContactDetails($this);
+						break;
+					case "ajax_quote_results_request":
+						FJS.ApplyNow.QuoteResult.ajaxRequest($this);
+						break;
+					case "quote-result-link":
+						FJS.ApplyNow.QuoteResult.goToLink($this);
+						break;
+					default:
+						break;
+				}
+
+				e.preventDefault();
+			},
 		},
 		Loader: {
 			start: function(){
@@ -213,6 +216,20 @@ $(function(){
 			},
 		},
 		Forms: {
+			initRangeSlider: function(){
+				if($(".js_range_slider").exists){
+					$(".js_range_slider").ionRangeSlider({
+						skin: "round",
+						grid: true,
+						prefix: "$",
+						hide_min_max: true,
+						step: 50000,
+						onFinish: function(data){
+							FJS.ApplyNow.QuoteResult.ajaxRequest(data.input);
+						},
+					});
+				}
+			},
 			stylingSelect: function(){
 				if(FJS.els.js_selectpicker.exists())
 					FJS.els.js_selectpicker.selectpicker({'mobile': FJS.options.device});
@@ -229,12 +246,6 @@ $(function(){
 					alert("Please complete all fields marked in green.");
 					return false;
 				}
-			},
-			ajaxQuoteResults: function($obj){
-				var $form = $($obj.data('parent')),
-					data = $form.serializeArray();
-
-				console.log(data);
 			},
 			validateForm: function($form){
 				var error = 0;
@@ -280,6 +291,26 @@ $(function(){
 		},
 		ApplyNow: {
 			QuoteResult: {
+				ajaxRequest: function($obj){
+					var $yiiform = $($obj.data('parent'));
+
+					FJS.Loader.start();
+					$.ajax({
+						type: $yiiform.attr('method'),
+						url: $yiiform.attr('action'),
+						data: $yiiform.serializeArray()
+					}).done(function(responce){
+						console.log(responce);
+						if(!responce.error){
+
+						}else{
+
+						}
+						FJS.Loader.stop();
+					}).fail(function(){
+						FJS.Loader.stop();
+					});
+				},
 				goToLink: function($btn){
 					var url = $btn.data('url');
 

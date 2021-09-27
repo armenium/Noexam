@@ -1,6 +1,7 @@
 //const marks = ['100k', '150k', '200k', '250k', '300k', '400k', '500k', '600k', '700k', '800k', '900k', '1m'];
 
-$(".js-range-slider").ionRangeSlider({
+
+/*$(".js-range-slider").ionRangeSlider({
     skin: "round",
     //values: marks,
     grid: true,
@@ -10,9 +11,9 @@ $(".js-range-slider").ionRangeSlider({
     step: 50000,
 
     onFinish: function(data){
-        FJS.ApplyNow.QuoteResult.goToLink($(this));
+        //FJS.ApplyNow.QuoteResult.goToLink($(this));
     },
-});
+});*/
 
 let questionsItems = [...document.querySelectorAll('.questions__item')].forEach(item => {
     item.addEventListener('click', (e) => {
