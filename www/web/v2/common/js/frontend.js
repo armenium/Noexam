@@ -42,6 +42,7 @@ $(function(){
 			js_loader: $(".js_data_loader"),
 			js_header: $("#js_header"),
 			js_selectpicker: $(".js_selectpicker"),
+			js_quote_results: $("#js_quote_results"),
 		},
 		Init: function(){
 			this.vars.ww = $(window).width();
@@ -300,9 +301,9 @@ $(function(){
 						url: $yiiform.attr('action'),
 						data: $yiiform.serializeArray()
 					}).done(function(responce){
-						console.log(responce);
-						if(!responce.error){
-
+						//console.log(responce);
+						if(!responce.error && responce.html != ''){
+							FJS.els.js_quote_results.html(responce.html);
 						}else{
 
 						}

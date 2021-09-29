@@ -7,6 +7,7 @@ use app\models\CustomerData;
 use app\models\Faqs;
 use Yii;
 use yii\helpers\VarDumper;
+use yii\web\Response;
 
 class MyquoteController extends BaseController {
 
@@ -208,6 +209,7 @@ class MyquoteController extends BaseController {
 		unset($request_post['CustomerData']['coverage_amount']);
 		
 		$html = '';
+		$error = 0;
 		
 		if($iniciator == 'quote-results'){
 			$model = $this->getCustomeData(null, false);
@@ -217,7 +219,7 @@ class MyquoteController extends BaseController {
 				$model->iniciator = $iniciator;
 				if($model->validate()){
 					if($model->save()){
-					
+						$html = $this->renderPartial('partials/quote-results-list', $this->getQuoteResults($model));
 					}else{
 						$error = 3;
 					}
@@ -497,17 +499,12 @@ class MyquoteController extends BaseController {
 			$from++;
 		}
 		
-		return $this->render('quote-results', [
-			'customer_data' => $customer_data,
-			'display_form' => $display_form,
-			'from' => $from,
-			'prices' => $prices,
-			'no_plans_count' => $no_plans_count,
-			'yes_plans_count' => $yes_plans_count,
-			'total_plans_count' => $total_plans_count,
-			'total_terms_count' => $total_terms_count,
-			'faq_items' => $this->getFaqs(['homepage']),
-		]);
+		$params = $this->getQuoteResults($customer_data);
+		$params['display_form'] = $display_form;
+		$params['from'] = $from;
+		$params['faq_items'] = $this->getFaqs(['homepage']);
+		
+		return $this->render('quote-results', $params);
 	}
 	
 	public function getQuoteResults($customer_data){
@@ -679,14 +676,14 @@ class MyquoteController extends BaseController {
 		}
 		
 	
-		return $this->render('partials/quote-results-list', [
+		return [
 			'customer_data' => $customer_data,
 			'prices' => $prices,
 			'no_plans_count' => $no_plans_count,
 			'yes_plans_count' => $yes_plans_count,
 			'total_plans_count' => $total_plans_count,
 			'total_terms_count' => $total_terms_count,
-		]);
+		];
 	}
 	
 	public function getFaqs($cats){
