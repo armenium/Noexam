@@ -251,7 +251,7 @@ $config = [
 	    'TSClient' => [
 		    'class'      => 'app\components\TSClient',
 		    'cache_time' => 604800,  # 7 days
-		    'max_coverage' => 300000, # 0 = ignore
+		    'max_coverage' => 1000000, # 0 = ignore
 		    'env'        => 'demo',  # demo | prod
 		    'channel'    => 'phone', # web | phone
 		    'demo'       => [

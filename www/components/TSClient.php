@@ -208,6 +208,7 @@ class TSClient extends Component{
 			'channel' => $this->channel,
 			'minCoverage' => $args['avarage_amount'] - 1,
 			'maxCoverage' => $args['avarage_amount'],
+			'postalCode' => $args['zip'],
 		];
 		
 		if($this->max_coverage > 0 && $this->max_coverage < $args['avarage_amount']){
@@ -279,7 +280,7 @@ class TSClient extends Component{
 					$rates_data_cache_model->save(false);
 				}
 			}else{
-				VarDumper::dump($data, 10, 1);
+				#VarDumper::dump($data, 10, 1);
 			}
 		}
 		
@@ -312,7 +313,7 @@ class TSClient extends Component{
 				#"streetAddress2" => "",
 				#"city" => "Madison",
 				"productCategory" => "SIT",
-				"postalCode" => "53711",
+				"postalCode" => $params['postalCode'],
 				#"stateCode" => $params['state'],
 				"birthDate" => $params['birthDate'],
 				"gender" => $params['gender']
