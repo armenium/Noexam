@@ -70,6 +70,59 @@
     text-align: center;
 }
 
+.online-app-pop-up {}
+
+.online-app-pop-up__wrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(117, 117, 117, 0.45);
+}
+
+.online-app-pop-up__body {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 395px;
+    background: #FFFFFF;
+    box-shadow: 10px 20px 80px rgba(117, 117, 117, 0.2);
+    border-radius: 4px;
+    padding: 25px 40px;
+}
+
+.online-app-pop-up__header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.online-app-pop-up__logo {
+    margin-right: 20px;
+}
+
+.online-app-pop-up__close-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    border: 1px solid #BABABA;
+    cursor: pointer;
+}
+
+.online-app-pop-up__top-title {}
+
+.online-app-pop-up__title {}
+
+.online-app-pop-up__stars {}
+
+.online-app-pop-up__bottom-image {}
+
 @media screen and (max-width: 991px) {
     .online-app-finish__cards {
         flex-direction: column;
