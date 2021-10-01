@@ -102,7 +102,7 @@ class TSClient extends Component{
 			$options->option_value = $json_response;
 			$options->save(false);
 		}else{
-			VarDumper::dump($response, 10, 1);
+			#VarDumper::dump($response, 10, 1);
 		}
 		
 		return $response;

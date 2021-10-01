@@ -300,6 +300,10 @@ form input[type="hidden"] {display: none;}
     color: #282B29;
 }
 
+.tags:hover {
+    color: #282B29;
+}
+
 
 /* HEADER */
 
@@ -388,6 +392,10 @@ form input[type="hidden"] {display: none;}
 .header__item.active .header__link,
 .header__link--active {
     font-weight: 600;
+    color: #339E75;
+}
+
+.header__link--active:hover {
     color: #339E75;
 }
 

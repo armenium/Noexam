@@ -162,6 +162,8 @@ $config = [
 	            'contact-details' => 'myquote/contact-details',
 	            'quote-results' => 'myquote/quote-results',
 
+	            'about' => 'pages/about',
+
 	            'apply-now/quote-result' => 'main/quoteresult',
 	            'apply-now2/quote-result' => 'main/quoteresult2',
 	            'faq' => 'faqs/posts',
