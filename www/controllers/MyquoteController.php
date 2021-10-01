@@ -45,7 +45,7 @@ class MyquoteController extends BaseController {
 					Yii::info('Step - "'.$CustomerData['form_name'].'". Planing redirect to "'.$redirect_url.'".', 'noexam');
 					$iniciator = $CustomerData['form_name'];
 					
-					$request_post['CustomerData']['avg_amount'] = str_replace(['k', 'm'], ['000', '000000'], $CustomerData['coverage_amount']);
+					$request_post['CustomerData']['avg_amount'] = str_replace(['k', 'm'], ['', '000'], $CustomerData['coverage_amount']);
 					unset($request_post['CustomerData']['coverage_amount']);
 					break;
 
@@ -205,7 +205,7 @@ class MyquoteController extends BaseController {
 		$CustomerData = $request->post('CustomerData');
 		$iniciator = $CustomerData['form_name'];
 		$scenario = CustomerData::SCENARIO_SELECT_COVERAGE;
-		$request_post['CustomerData']['avg_amount'] = str_replace(['k', 'm'], ['000', '000000'], $CustomerData['coverage_amount']);
+		$request_post['CustomerData']['avg_amount'] = str_replace(['k', 'm'], ['', '000'], $CustomerData['coverage_amount']);
 		unset($request_post['CustomerData']['coverage_amount']);
 		
 		$html = '';
@@ -219,8 +219,7 @@ class MyquoteController extends BaseController {
 				$model->iniciator = $iniciator;
 				if($model->validate()){
 					if($model->save()){
-						$model = $this->getCustomeData(null, false);
-						$html = $this->renderPartial('partials/quote-results-list', $this->getQuoteResults($model));
+						$html = $this->renderPartial('partials/quote-results-list', $this->getQuoteResults($this->getCustomeData(null, false)));
 					}else{
 						$error = 3;
 					}
@@ -326,12 +325,14 @@ class MyquoteController extends BaseController {
 		
 		$customer_data = $this->getCustomeData('new', false);
 		
-		$display_form = false;
-		$prices = [];
-		$no_plans_count = 0;
-		$yes_plans_count = 0;
-		$total_plans_count = 0;
-		$total_terms_count = 0;
+		if(is_null($customer_data)){
+			$customer_data = new CustomerData();
+			$customer_data->coverage_amount = 300;
+			$customer_data->term_length = '10';
+		}else{
+			$customer_data->attributes      = $customer_data->decodeData();
+			$customer_data->coverage_amount = $customer_data->avg_amount > 1000 ? $customer_data->avg_amount / 1000 : $customer_data->avg_amount;
+		}
 		
 		$from = 0;
 		foreach($customer_data::$avg_amounts4 as $k => $v){
@@ -340,9 +341,9 @@ class MyquoteController extends BaseController {
 		}
 		
 		$params = $this->getQuoteResults($customer_data);
-		$params['display_form'] = $display_form;
 		$params['from'] = $from;
 		$params['faq_items'] = $this->getFaqs(['homepage']);
+		
 		
 		return $this->render('quote-results', $params);
 	}
@@ -361,7 +362,7 @@ class MyquoteController extends BaseController {
 			$customer_data->term_length = '10';
 		}else{
 			$customer_data->attributes = $customer_data->decodeData();
-			$customer_data->coverage_amount = $customer_data->avg_amount / 1000;
+			$customer_data->coverage_amount = $customer_data->avg_amount > 1000 ? $customer_data->avg_amount / 1000 : $customer_data->avg_amount;
 
 			$sagicor = Yii::$app->Sagicor;
 			$nq_client = Yii::$app->NQClient;
