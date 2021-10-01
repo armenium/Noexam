@@ -20,6 +20,9 @@ $this->registerCssFile('@web/v2/common/css/breadcrumbs.css', ['depends' => [Boot
 
 $this->registerJsFile('@web/v2/pages/js/about.js', ['depends' => [JqueryAsset::className(), AppAsset::className()]]);
 
+#$this->params['breadcrumbs'][] = ['label' => 'Home', 'url' => '/'];
+$this->params['breadcrumbs'][] = 'About';
+
 echo $this->render('sections/about/hero.php');
 echo $this->render('sections/about/leadership.php');
 echo $this->render('sections/about/in-the-press.php');
