@@ -17,10 +17,15 @@
 
 .about-first-screen__title {
     margin-bottom: 18px;
+    width: 100%;
+    max-width: 675px;
+    margin: 0 auto 18px auto;
 }
 
 .about-first-screen__text {
-    margin-bottom: 60px;
+    width: 100%;
+    max-width: 820px;
+    margin: 0 auto 60px auto;
 }
 
 .about-first-screen__bgImg {
@@ -122,6 +127,7 @@
 .press__container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     margin-bottom: 20px;
 }
 
@@ -130,7 +136,7 @@
 }
 
 .press__item {
-    margin: 0 20px 20px 0;
+    margin: 0 10px 20px 10px;
 }
 
 .press__item:last-child {
@@ -139,7 +145,7 @@
 
 .pressItem {
     width: 100%;
-    max-width: 340px;
+    max-width: 330px;
     height: 420px;
     background: #FFFFFF;
     border-radius: 4px;
@@ -174,10 +180,136 @@
 }
 
 .pressItem__btn:after {
-    content: "+";
+    content: url("../images/arrow-right-green.png");
     margin-left: 10px;
 }
 
 .pressItem__btn:hover .pressItem__btn:after {
     text-decoration: none !important;
+}
+
+.reviews {
+    padding: 100px 0;
+}
+
+.reviews__title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.reviews__body {
+    display: flex;
+    justify-content: space-between;
+}
+
+.reviews__item {
+    margin: 0 20px 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reviews__item:last-child {
+    margin-right: 0;
+}
+
+.reviews__content {
+    padding: 30px;
+    width: 100%;
+    max-width: 520px;
+    height: 250px;
+    background: #FFFFFF;
+    box-shadow: 10px 20px 80px rgba(187, 178, 166, 0.2);
+    margin-bottom: 35px;
+}
+
+.reviews__stars {
+    display: flex;
+    margin-bottom: 12px;
+}
+
+.reviews__stars>img {
+    margin-right: 5px;
+}
+
+.reviews__subtitle {
+    margin-bottom: 10px;
+}
+
+.reviews__text {}
+
+.reviews__author {
+    display: flex;
+}
+
+.reviews__author-photo {
+    margin-right: 15px;
+}
+
+.reviews__author-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.reviews__name {}
+
+.reviews__date {}
+
+@media screen and (max-width: 767px) {
+    .about-first-screen__nav {
+        margin-bottom: 30px;
+    }
+    .about-first-screen__subtitle {
+        font-size: 14px;
+        line-height: 24px;
+    }
+    .about-first-screen__title {
+        font-size: 32px;
+        line-height: 40px;
+    }
+    .leadership {
+        padding: 60px 0;
+    }
+    .leadership__row {
+        flex-direction: column;
+        align-items: center;
+    }
+    .leadership__title {
+        font-size: 32px;
+        line-height: 40px;
+    }
+    .leadership__avatar,
+    .leadership__row--reverse .leadership__avatar {
+        margin-bottom: 30px;
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .leadership__info {
+        font-size: 14px;
+        line-height: 24px;
+    }
+    .leadership__avatar {
+        width: 100%;
+        max-width: 340px;
+        margin-right: 50px;
+        height: 100%;
+    }
+    .leadership__subtitle {
+        font-size: 18px;
+        line-height: 26px;
+        margin-bottom: 50px;
+    }
+    .press {
+        padding: 60px 0;
+    }
+    .press__tilte {
+        font-size: 32px;
+        line-height: 40px;
+        margin-bottom: 50px;
+    }
+    .pressItem__content {
+        max-height: 170px;
+        overflow: hidden;
+    }
 }

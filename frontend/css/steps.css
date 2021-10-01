@@ -108,6 +108,7 @@
     .steps__title {
         font-size: 32px;
         line-height: 40px;
+        margin-bottom: 50px;
     }
     .steps__container {
         flex-direction: column;
@@ -116,5 +117,8 @@
     .steps__col {
         width: 100%;
         margin-bottom: 60px;
+    }
+    .steps {
+        padding: 60px 0;
     }
 }
