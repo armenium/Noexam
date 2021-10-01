@@ -70,7 +70,13 @@
     text-align: center;
 }
 
-.online-app-pop-up {}
+.online-app-pop-up {
+    display: none;
+}
+
+.online-app-pop-up--active {
+    display: block;
+}
 
 .online-app-pop-up__wrapper {
     position: absolute;
@@ -86,8 +92,9 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 700px;
-    height: 395px;
+    width: 100%;
+    max-width: 700px;
+    min-height: 395px;
     background: #FFFFFF;
     box-shadow: 10px 20px 80px rgba(117, 117, 117, 0.2);
     border-radius: 4px;
@@ -97,6 +104,7 @@
 .online-app-pop-up__header {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 40px;
 }
 
 .online-app-pop-up__logo {
@@ -115,13 +123,44 @@
     cursor: pointer;
 }
 
-.online-app-pop-up__top-title {}
+.online-app-pop-up__top-title {
+    text-align: center;
+    color: #339E75;
+    margin-bottom: 15px;
+}
 
-.online-app-pop-up__title {}
+.online-app-pop-up__title {
+    max-width: 470px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 25px;
+}
 
-.online-app-pop-up__stars {}
+.online-app-pop-up__stars {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
 
-.online-app-pop-up__bottom-image {}
+.online-app-pop-up__stars>img {
+    margin-right: 15px;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+
+.online-app-pop-up__bottom-image-wrapp {
+    width: 150px;
+    height: 45px;
+    background: #FFFFFF;
+    border: 1px solid #E4E4E4;
+    border-radius: 4px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 @media screen and (max-width: 991px) {
     .online-app-finish__cards {
