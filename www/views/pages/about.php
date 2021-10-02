@@ -6,6 +6,7 @@ use yii\bootstrap\BootstrapAsset;
 use yii\web\JqueryAsset;
 use yii\widgets\ActiveForm;
 use yii\helpers\Html;
+use yii\helpers\Url;
 
 
 $this->title = 'Buy Life Insurance Online - About Us';
@@ -20,8 +21,8 @@ $this->registerCssFile('@web/v2/common/css/breadcrumbs.css', ['depends' => [Boot
 
 $this->registerJsFile('@web/v2/pages/js/about.js', ['depends' => [JqueryAsset::className(), AppAsset::className()]]);
 
-#$this->params['breadcrumbs'][] = ['label' => 'Home', 'url' => '/'];
-$this->params['breadcrumbs'][] = 'About';
+$this->params['breadcrumbs'][] = ['label' => 'About', 'url' => Url::toRoute('about/'), 'class' => 'breadcrumbs__link tags breadcrumbs__link--active'];
+#$this->params['breadcrumbs'][] = 'About';
 
 echo $this->render('sections/about/hero.php');
 echo $this->render('sections/about/leadership.php');

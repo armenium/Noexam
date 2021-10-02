@@ -2,22 +2,14 @@
 /* @var $this \yii\web\View */
 /* @var $content string */
 
-use yii\widgets\Breadcrumbs;
+use app\components\BreadcrumbsNew;
 ?>
 
 <div class="main-wrapp" style="background-color: #FCF9F3;">
 	<div class="wrapp">
 		<section class="about-first-screen">
 			<div class="about-first-screen__nav breadcrumbs">
-				<?=Breadcrumbs::widget([
-					'options' => ['class' => 'breadcrumbs__list'],
-					'itemTemplate' => '<li class="breadcrumbs__item">{link}</li>', // шаблон для всех ссылок
-					'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : []
-				]);?>
-				<ul class="breadcrumbs__list">
-					<li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link tags">Home</a></li>
-					<li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link tags breadcrumbs__link--active">About</a></li>
-				</ul>
+				<?=BreadcrumbsNew::widget(['links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : []]);?>
 			</div>
 			<div class="about-first-screen__body">
 				<div class="about-first-screen__subtitle sub-title-2">About us</div>

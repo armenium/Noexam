@@ -218,7 +218,7 @@ $(function(){
 		},
 		Forms: {
 			initRangeSlider: function(){
-				if($(".js_range_slider").exists){
+				if($(".js_range_slider").exists()){
 					$(".js_range_slider").ionRangeSlider({
 						skin: "round",
 						grid: true,
