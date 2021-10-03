@@ -24,4 +24,8 @@ class LifeInsuranceController extends BaseController {
 		return $this->render('index', []);
 	}
 
+	public function actionCompanies(){
+		return $this->render('companies', []);
+	}
+
 }

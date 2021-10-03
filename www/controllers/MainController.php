@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\assets\AppAsset;
 use app\components\BaseController;
 use app\models\ApplyNow2;
 use app\models\CustomerData;
@@ -16,19 +17,22 @@ use app\models\ResourcesGrid;
 use app\models\SignupForm;
 use app\models\User;
 use Yii;
+use yii\bootstrap\BootstrapAsset;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
 use yii\helpers\Url;
 use yii\helpers\VarDumper;
 use yii\web\Cookie;
 use yii\web\HttpException;
+use yii\web\JqueryAsset;
 use yii\web\Response;
 use yii\widgets\ActiveForm;
 use app\models\ResourcesCompare;
 use app\controllers\CompaniesFilterController;
 
 class MainController extends BaseController {
-
+	
+	public $layout = 'v2/main';
 	public $url = '';
 	public $current_cat;
 	private $return_404 = false;
@@ -1989,7 +1993,7 @@ class MainController extends BaseController {
 		/*if(!is_null($_pjax)){
 			return $this->renderPjaxContent($_pjax);
 		}*/
-		$this->layout = 'resource_fw';
+		$this->layout = 'v2/main';
 
 		$request = Yii::$app->request;
 		$request_type = $request->get('request_type', 'normal');
@@ -2013,6 +2017,13 @@ class MainController extends BaseController {
 		//VarDumper::dump($path_info, 10, true);
 
 		if($request_type != 'ajax'){
+			$this->view->registerCssFile('@web/v2/common/css/shared-styles.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
+			$this->view->registerCssFile('@web/v2/life-insurance/css/life-insurance.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
+			$this->view->registerCssFile('@web/v2/common/css/breadcrumbs.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
+			$this->view->registerCssFile('@web/v2/common/css/main-first-screen.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
+			
+			$this->view->registerJsFile('@web/v2/life-insurance/js/life-insurance.js', ['depends' => [JqueryAsset::className(), AppAsset::className()]]);
+			
 			if(!empty($this->current_cat->layout)){
 				$this->layout = $this->current_cat->layout;
 			}
@@ -2036,11 +2047,7 @@ class MainController extends BaseController {
 
 		$content = $this->current_cat->content;
 		
-		if(!empty($this->current_cat->template)){
-			$template = str_replace('views/', '', $this->current_cat->template);
-		}else{
-			$template = '/main/resources/common.php';
-		}
+		$template = !empty($this->current_cat->template) ? str_replace('views/', '', $this->current_cat->template) : '/main/resources/common.php';
 		//VarDumper::dump($template, 10, true);
 
 		if(!file_exists($view_path.$template) || empty($this->current_cat)){

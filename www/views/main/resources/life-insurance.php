@@ -1,6 +1,6 @@
 <?php
 
-use yii\widgets\Breadcrumbs;
+use app\components\BreadcrumbsNew;
 
 //VarDumper::dump($this->context->current_cat, 10, 1);
 
@@ -37,7 +37,7 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 
 		<article class="content">
 			<h1>Life Insurance</h1>
-			<?=Breadcrumbs::widget(['links' => $this->params['breadcrumbs']]);?>
+			<?=BreadcrumbsNew::widget(['links' => $this->params['breadcrumbs']]);?>
 			<?=$this->render('/main/widgets/authors-small.php', ['updated' => date('F j, Y', filemtime(__FILE__))]);?>
 
 			<p>The <a href="https://www.tbrins.com/uploads/9/5/9/7/95973204/2019_insurance_barometer_study.pdf">2019 Insurance Barometer</a> published by LIMRA describes the current life insurance market as the best environment to purchase life insurance since the history of the study. However, most

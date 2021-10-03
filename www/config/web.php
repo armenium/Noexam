@@ -169,6 +169,9 @@ $config = [
 	            'faq' => 'faqs/posts',
 	            'faq/<slug:.*?>' => 'faqs/single',
 
+	            /*'<controller:(life-insurance)>/<action:[\w-]+>' => '<controller>/<action>',
+	            '<controller:(life-insurance)>/<action:[\w-]+>/<slug:.*?>' => '<controller>/<action>',*/
+	            
 	            '<controller:(companies-filter)>/<action:[\w-]+>' => '<controller>/<action>',
 	            '<controller:(companies-filter)>/<action:[\w-]+>/<slug:.*?>' => '<controller>/<action>',
 
