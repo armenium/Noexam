@@ -2,6 +2,8 @@
 
 use app\components\BreadcrumbsNew;
 use yii\helpers\Url;
+use app\widgets\Author;
+use app\widgets\GetQuote;
 
 //VarDumper::dump($this->context->current_cat, 10, 1);
 
@@ -29,18 +31,8 @@ $this->params['breadcrumbs'][] = ['label' => $this->context->current_cat->title,
 			<div class="life-insurance__first-screen main-first-screen">
 				<h1 class="main-first-screen__title heading-0">Life Insurance</h1>
 				<div class="main-first-screen__advice fs-advice">
-					<?=$this->render('/main/widgets/authors-small.php', ['updated' => date('F j, Y', filemtime(__FILE__))]);?>
 					<div class="fs-advice__header">
-						<div class="fs-advice__col">
-							<img src="../images/avatar-1.png" alt="avatar" class="fs-advice__avatar">
-							<div class="fs-advice__user-info">
-								<span class="tags">Jonathan Fritz</span>
-								<span class="fontBodyS">Published on January 22, 2021</span>
-							</div>
-						</div>
-						<div class="fs-advice__col">
-							<span class="button-small ">Advertiser Disclosure</span>
-						</div>
+						<?=Author::widget(['db_time' => $this->context->current_cat->updated, 'file_time' => filemtime(__FILE__)]);?>
 					</div>
 					<div class="fs-advice__body">
 						<p class="fs-advice__text fontBodyM">The <b>2019 Insurance Barometer</b> published by LIMRA describes the current market as the best environment to purchase life insurance since the history of the study. However, most consumers are already worried enough about
@@ -56,11 +48,7 @@ $this->params['breadcrumbs'][] = ['label' => $this->context->current_cat->title,
 
 <div class="main-wrapp" style="background-color: #FCF9F3;">
 	<div class="wrapp">
-		<section class="get-quote">
-			<h1 class="get-quote__title heading-4">Get a Quote</h1>
-			<p class="get-quote__subtitle fontBodyL">No phone calls or emails. Quickly compare prices with our free comparison tool.</p>
-			<a href="#" class="get-quote__btn button-big main-btn">apply now</a>
-		</section>
+		<?=GetQuote::widget();?>
 	</div>
 </div>
 

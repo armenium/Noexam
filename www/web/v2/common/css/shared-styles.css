@@ -772,3 +772,10 @@ form input[type="hidden"] {display: none;}
 
 body:not(.myquote.quote-results) .header__imgWrapp {display: none;}
 body.myquote.quote-results header.header {background-color: #FCF9F3;}
+
+/*
+.popover {background-color: #4A4A4A; color: #fff; font-size: 12px; border-color: #4a4a4a; border-radius: 8px; text-align: center; line-height: 1.2; max-width: 300px;}
+.popover.bottom > .arrow:after {border-bottom-color: #4a4a4a;}
+.popover.bottom > .arrow {display: none;}
+.popover .close {background: transparent url(../images/icon_popover_close.svg) no-repeat center; width: 8px; height: 8px; float: right; opacity: 1; margin: 8px 10px;}
+*/

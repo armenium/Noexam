@@ -54,6 +54,7 @@ $(function(){
 			this.Forms.initRangeSlider();
 			this.Forms.stylingSelect();
 			//this.Common.doEqualHeight();
+			this.Common.initDisclosure();
 		},
 		Core: {
 			initEvents: function(){
@@ -153,6 +154,20 @@ $(function(){
 					}
 				}
 			},
+			initDisclosure: function(){
+				if($('[data-toggle="popover"]').length){
+					$('[data-toggle="popover"]').popover({
+						selector: 'a',
+						//container: "main.wrapper-main",
+						viewport: {"selector": "body", "padding": 30},
+						toggle: "popover",
+						placement: "bottom",
+						trigger: "focus",
+						//template: '<div class="popover" role="tooltip"><div class="close"></div><div class="popover-content"></div></div>'
+					});
+				}
+			},
+			/*
 			doEqualHeight: function(){
 				if($('[data-equal-height]').length){
 					var devices = ['desktop', 'tablet', 'mobile'];
@@ -215,6 +230,7 @@ $(function(){
 					});
 				});
 			},
+			*/
 		},
 		Forms: {
 			initRangeSlider: function(){

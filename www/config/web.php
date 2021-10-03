@@ -89,7 +89,7 @@ $config = [
 		        'yii\bootstrap\BootstrapPluginAsset' => [
 			        'sourcePath' => '@app/web/v2/',
 			        'js'=>[
-				        'plugins/js/popper.min.js',
+				        #'plugins/js/popper.min.js',
 				        'bootstrap-4.6.0/js/bootstrap.bundle.min.js',
 			        ]
 		        ],
