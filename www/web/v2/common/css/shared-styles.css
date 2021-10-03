@@ -214,7 +214,7 @@ form input[type="hidden"] {display: none;}
 
 .button-l:hover,
 .button-big:hover,
-.button-small:hover {text-decoration: none; color: #fff;}
+.button-small:hover {text-decoration: underline;}
 
 .button-l {
     font-size: 18px;

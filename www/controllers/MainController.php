@@ -1993,7 +1993,7 @@ class MainController extends BaseController {
 		/*if(!is_null($_pjax)){
 			return $this->renderPjaxContent($_pjax);
 		}*/
-		$this->layout = 'v2/main';
+		$this->layout = 'v2/life-insurance';
 
 		$request = Yii::$app->request;
 		$request_type = $request->get('request_type', 'normal');
@@ -2017,13 +2017,6 @@ class MainController extends BaseController {
 		//VarDumper::dump($path_info, 10, true);
 
 		if($request_type != 'ajax'){
-			$this->view->registerCssFile('@web/v2/common/css/shared-styles.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
-			$this->view->registerCssFile('@web/v2/life-insurance/css/life-insurance.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
-			$this->view->registerCssFile('@web/v2/common/css/breadcrumbs.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
-			$this->view->registerCssFile('@web/v2/common/css/main-first-screen.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
-			
-			$this->view->registerJsFile('@web/v2/life-insurance/js/life-insurance.js', ['depends' => [JqueryAsset::className(), AppAsset::className()]]);
-			
 			if(!empty($this->current_cat->layout)){
 				$this->layout = $this->current_cat->layout;
 			}
