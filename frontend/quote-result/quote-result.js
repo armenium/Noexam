@@ -2,12 +2,24 @@ const marks = ['100k', '150k', '200k', '250k', '300k', '400k', '500k', '600k', '
 
 $(".quotes-result__range-slider").ionRangeSlider({
     skin: "round",
+    type: "single",
     values: marks,
     grid: true,
-    from: 5,
     prefix: "$",
     hide_min_max: true,
-    step: 50000
+    onChange: () => {
+        console.log("value")
+    },
+    onFinish: () => {
+        console.log("finish")
+            // Don't work
+        let heightWindow = window.pageYOffset
+        console.log(heightWindow)
+        window.scrollTo({
+            top: heightWindow,
+            behavior: "smooth"
+        });
+    }
 });
 
 let questionsItems = [...document.querySelectorAll('.questions__item')].forEach(item => {
