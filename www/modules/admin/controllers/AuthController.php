@@ -17,7 +17,7 @@ class AuthController extends Controller{
 		}
 		$adminAllowedIPs = Yii::$app->params['adminAllowedIPs'];
 		
-		#VarDumper::dump($adminAllowedIPs, 10, 1);
+		#VarDumper::dump($ip, 10, 1); exit;
 		
 		if(!in_array($ip, $adminAllowedIPs)){
 			$this->redirect('/');

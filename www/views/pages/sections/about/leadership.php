@@ -4,7 +4,7 @@
 			<h1 class="leadership__title heading-2">Leadership</h1>
 			<p class="leadership__subtitle fontBodyL">We founded noexam.com as a resource to middle market consumers researching life insurance online. What’s the difference? We have removed the friction out of the traditional buying process by working with insurance companies to offer coverage
 				via accelerated underwriting.</p>
-			
+
 			<div class="leadership__row">
 				<div class="leadership__col">
 					<img src="/v2/pages/img/leadership-1.png" alt="avatar" class="leadership__avatar">
@@ -21,7 +21,7 @@
 						highest achievement.</p>
 				</div>
 			</div>
-			
+
 			<div class="leadership__row leadership__row--reverse">
 				<div class="leadership__col">
 					<img src="/v2/pages/img/leadership-1.png" alt="avatar" class="leadership__avatar">
@@ -38,7 +38,7 @@
 						Achievement of Georgia and Hire Heroes USA.</p>
 				</div>
 			</div>
-		
+
 		</section>
 	</div>
 </div>

@@ -1,7 +1,7 @@
 <div class="main-wrapp" style="background-color: #FCF9F3;">
 	<div class="wrapp">
 		<section class="press">
-			<h1 class="press__tilte heading-2">In the Press</h1>
+			<h1 class="press__tilte heading-2">In the <span>Press</span></h1>
 			<div class="press__container">
 				
 				<div class="press__item pressItem">

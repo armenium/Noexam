@@ -55,6 +55,7 @@ $(function(){
 			this.Forms.stylingSelect();
 			//this.Common.doEqualHeight();
 			this.Common.initDisclosure();
+			this.Common.initLazyLoad();
 		},
 		Core: {
 			initEvents: function(){
@@ -167,6 +168,16 @@ $(function(){
 					});
 				}
 			},
+			initLazyLoad: function(){
+				if($('img.lazy').length){
+					var lazyLoadInstance = new LazyLoad({
+						elements_selector: ".lazy",
+						//load_delay: 300,
+						threshold: 0
+					});
+				}
+			},
+
 			/*
 			doEqualHeight: function(){
 				if($('[data-equal-height]').length){

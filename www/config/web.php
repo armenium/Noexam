@@ -96,7 +96,7 @@ $config = [
 		        'yii\bootstrap\BootstrapAsset' => [
 			        'sourcePath' => '@app/web/v2/',
 			        'css' => [
-			        	'bootstrap-4.6.0/css/bootstrap.min.css'
+			        	'bootstrap-4.6.0/css/bootstrap.min.css',
 			        ]
 		        ]
 	        ]

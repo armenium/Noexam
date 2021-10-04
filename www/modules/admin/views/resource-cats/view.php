@@ -89,6 +89,17 @@ $this->params['breadcrumbs'][] = $this->title;
 		        },
 	        ],
 	        [
+		        'attribute' => 'is_best_companies_page',
+		        'format' => 'html',
+		        'value' => function($data){
+			        $ret = '<span class="label label-danger">No</span>';
+			        if($data->is_best_companies_page){
+				        $ret = '<span class="label label-warning">Yes</span>';
+			        }
+			        return $ret;
+		        },
+	        ],
+	        [
 		        'attribute' => 'display_subpages_in_footer',
 		        'format' => 'html',
 		        'value' => function($data){

@@ -2051,7 +2051,7 @@ class MainController extends BaseController {
 		}
 
 		$companies_data = ($this->current_cat->is_companies_main_page) ? $this->CompaniesFilterController->getCompanies() : [];
-		$best_companies_data = ($this->current_cat->is_companies_main_page) ? $this->CompaniesFilterController->getBestCompanies() : [];
+		$best_companies_data = ($this->current_cat->is_best_companies_page) ? $this->CompaniesFilterController->getBestCompanies() : [];
 
 		return $this->render($template, [
 			'grid_data' => $grid_data,

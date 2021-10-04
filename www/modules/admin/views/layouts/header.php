@@ -5,6 +5,7 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\helpers\Url;
 use yii\widgets\Breadcrumbs;
+use app\components\BreadcrumbsNew;
 
 $layout_class = AdminController::getLayoutClass();
 ?>
@@ -16,11 +17,11 @@ $layout_class = AdminController::getLayoutClass();
 			'brandLabel' => 'Admin Home',
 			'brandUrl' => Url::to(['/admin/']),
 			'options' => [
-				'class' => 'navbar-inverse',
+				'class' => 'navbar bg-dark',
 			],
 		]);
 		echo Nav::widget([
-			'options' => ['class' => 'navbar-nav'],
+			'options' => ['class' => 'navbar-nav mr-auto'],
 			'items' => [
 				[
 					'label' => 'Resource',

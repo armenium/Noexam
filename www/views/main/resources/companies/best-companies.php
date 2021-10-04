@@ -53,18 +53,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Best Companies', 'url' => $this->c
 				</div>
 			</div>
 			<div class="best-companies__list-body">
-				<ol class="best-companies__list">
-					<li class="best-companies__item button-small button-small--arrow">Prudential</li>
-					<li class="best-companies__item button-small button-small--arrow">Mass Mutual</li>
-					<li class="best-companies__item button-small button-small--arrow">Mutual of omaha</li>
-					<li class="best-companies__item button-small button-small--arrow">Banner</li>
-					<li class="best-companies__item button-small button-small--arrow">Protective</li>
-					<li class="best-companies__item button-small button-small--arrow">Sagicor</li>
-					<li class="best-companies__item button-small button-small--arrow">New york life</li>
-					<li class="best-companies__item button-small button-small--arrow">sbli</li>
-					<li class="best-companies__item button-small button-small--arrow">metlife</li>
-					<li class="best-companies__item button-small button-small--arrow">assurity</li>
-				</ol>
+				<?=$this->render('/main/partials/companies/short-links-list.php', ['dataProviderBest' => $dataProviderBest]);?>
 			</div>
 		</section>
 	</div>
@@ -73,90 +62,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Best Companies', 'url' => $this->c
 <div class="main-wrapp" style="background-color: #FCF9F3;">
 	<div class="wrapp">
 		<div class="companies">
-			<div class="companies__item company">
-				<div class="company__header">
-					<div class="company__header-column">
-						<div class="company__logo-box">
-							<img src="./img/company-logo.png" alt="logo" class="company__logo">
-						</div>
-					</div>
-					<div class="company__header-column">
-						<span class="company__name heading-5">Prudential</span>
-						<span class="company__rating-label fontBodyS">Our Rating</span>
-						<div class="company__rating-stars">
-							<img src="../images/star.png" alt="*">
-							<img src="../images/star.png" alt="*">
-							<img src="../images/star.png" alt="*">
-							<img src="../images/star.png" alt="*">
-							<img src="../images/star-no-active.png" alt="*">
-						</div>
-					</div>
-					<div class="company__header-column">
-						<a href="#" class="company__link main-btn button-small">apply now</a>
-						<a href="#" class="company__link main-btn button-small">Get your rate</a>
-					</div>
-				</div>
-
-				<div class="company__decor-line"></div>
-
-				<div class="company__row">
-					<div class="company__col">
-						<span class="company__label fontBodyS">Type of coverage</span>
-						<span class="company__value fontBodyM">Term, Universal</span>
-					</div>
-					<div class="company__col">
-						<span class="company__label fontBodyS">Financial strenght</span>
-						<span class="company__value fontBodyM">A+</span>
-					</div>
-					<div class="company__col">
-						<span class="company__label fontBodyS">Underwriting time</span>
-						<span class="company__value fontBodyM">2-4 Weeks</span>
-					</div>
-					<div class="company__col">
-						<span class="company__label fontBodyS">Company size</span>
-						<span class="company__value fontBodyM">10,000+</span>
-					</div>
-				</div>
-
-				<div class="company__decor-line company__decor-line--between-rows"></div>
-
-				<div class="company__row">
-					<div class="company__col">
-						<span class="company__label fontBodyS">Average Complaints</span>
-						<span class="company__value fontBodyM">Above Average</span>
-					</div>
-					<div class="company__col">
-						<span class="company__label fontBodyS">BBB Rating</span>
-						<span class="company__value fontBodyM">A+</span>
-					</div>
-					<div class="company__col">
-						<span class="company__label fontBodyS">Company Age</span>
-						<span class="company__value fontBodyM">112 Years</span>
-					</div>
-					<div class="company__col">
-					</div>
-				</div>
-
-				<div class="company__decor-line"></div>
-
-				<div class="company__footer">
-					<h3 class="company__footer-title main-title">About Mutual of Omaha</h3>
-					<p class="company__content fontBodyM">Mutual of Omaha is a Fortune 500 company based in Omaha, Nebraska. They began selling insurance in 1909, making them over 100 years old. Mutual of Omaha offers a wide array of life insurance products. They offer term, whole, universal,
-						and long term care products. They even produced a popular television show in 1963 called “Wild Kingdom.” They are in our top 10 list for the best life insurance companies due to their strong financial rating, below average
-						complaints, and wide selection of products.</p>
-					<p class="company__content fontBodyM">Mutual of Omaha is financially stable and offers some of the most competitive pricing available. They have over eight billion dollars in assets with a <b>three-billion-dollar surplus.</b> They hold ratings from AM Best (A+ Superior),
-						Moody's (A1 Good), and S&P (AA- Very Strong). See our full <b>Mutual of Omaha review.</b></p>
-				</div>
-				<div class="company__footer-btn btn-read-more">read more</div>
-				<div class="company__footer-btn company__footer-btn--active btn-hide">hide</div>
-				<div id="shadow"></div>
-
-				<div class="company__decor-line company__decor-line--adaptive"></div>
-				<div class="company__footer-btns-box">
-					<a href="#" class="company__footer-link main-btn button-small">Get your rate</a>
-					<a href="#" class="company__footer-link main-btn button-small">apply now</a>
-				</div>
-			</div>
+			<?=$this->render('/main/partials/companies/best-items.php', ['dataProviderBest' => $dataProviderBest]);?>
 		</div>
 	</div>
 </div>

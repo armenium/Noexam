@@ -25,6 +25,7 @@ use app\models\ResourcesCompanies;
  * @property string $layout
  * @property integer $company_id
  * @property integer $is_companies_main_page
+ * @property integer $is_best_companies_page
  * @property string $header_title
  * @property string $header_subtitle
  * @property string $header_image
@@ -62,7 +63,7 @@ class ResourcesCats extends ActiveRecord {
 	 */
 	public function rules(){
 		return [
-			[['id', 'parent_id', 'item_order', 'child_to_parent_links', 'company_id', 'is_companies_main_page', 'display_subpages_in_footer'], 'integer'],
+			[['id', 'parent_id', 'item_order', 'child_to_parent_links', 'company_id', 'is_companies_main_page', 'is_best_companies_page', 'display_subpages_in_footer'], 'integer'],
 			[['title', 'meta_title', 'meta_desc', 'meta_keys', 'url', 'template', 'layout', 'header_title', 'header_subtitle', 'header_image'], 'string', 'max' => 255],
 			//[['custom_childs_links'], 'string', 'max' => 1024],
 			[['content'], 'string'],
@@ -94,6 +95,7 @@ class ResourcesCats extends ActiveRecord {
 			'header_subtitle'  => 'Header subtitle',
 			'header_image'  => 'Header background',
 			'is_companies_main_page'  => 'Companies main page',
+			'is_best_companies_page'  => 'Best Companies page',
 			'display_subpages_in_footer'  => 'Display subpages in footer',
 		];
 	}

@@ -196,6 +196,7 @@ $ResourcesCompanies = new ResourcesCompanies();
 				</div>
 				<div class="col-md-3">
 					<?=$form->field($model, 'is_companies_main_page')->checkbox();?>
+					<?=$form->field($model, 'is_best_companies_page')->checkbox();?>
 					<?=$form->field($model, 'display_subpages_in_footer')->checkbox();?>
 				</div>
 				<div class="col-md-2">

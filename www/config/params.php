@@ -10,7 +10,7 @@ return [
 	'adminAllowedIPs' => [
 		'45.26.156.154',  # Jonathan's IP
 		'213.149.10.173', # Armen's IP
-		'127.0.0.1', # Armen's IP
+		null, # Armen's IP
 	],
 
 	'dsr_key' => 'test',
