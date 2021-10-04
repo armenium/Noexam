@@ -1,9 +1,12 @@
 <?php
 
+use app\assets\AppAsset;
 use app\components\BreadcrumbsNew;
+use yii\bootstrap\BootstrapAsset;
 use yii\helpers\Url;
 use app\widgets\Author;
 use app\widgets\GetQuote;
+use yii\web\JqueryAsset;
 
 //VarDumper::dump($this->context->current_cat, 10, 1);
 
@@ -18,6 +21,11 @@ if(!empty($this->context->current_cat->meta_title)){
 }else{
 	$this->title = $this->context->current_cat->title;
 }
+
+$this->registerCssFile('@web/v2/life-insurance/css/life-insurance.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
+$this->registerCssFile('@web/v2/common/css/main-first-screen.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
+$this->registerJsFile('@web/v2/life-insurance/js/life-insurance.js', ['depends' => [JqueryAsset::className(), AppAsset::className()]]);
+
 $this->params['breadcrumbs'][] = ['label' => $this->context->current_cat->title, 'url' => Url::toRoute('life-insurance/'), 'class' => 'breadcrumbs__link tags breadcrumbs__link--active'];
 #$this->params['breadcrumbs'][] = $this->context->current_cat->title;
 ?>

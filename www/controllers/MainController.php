@@ -1993,7 +1993,7 @@ class MainController extends BaseController {
 		/*if(!is_null($_pjax)){
 			return $this->renderPjaxContent($_pjax);
 		}*/
-		$this->layout = 'v2/life-insurance';
+		$this->layout = 'v2/main';
 
 		$request = Yii::$app->request;
 		$request_type = $request->get('request_type', 'normal');

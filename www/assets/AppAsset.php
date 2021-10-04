@@ -22,7 +22,7 @@ class AppAsset extends AssetBundle {
     public $css = [
         'https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap',
         #'css/bootstrap-4.css?11',
-        #'css/bootstrap-select.css',
+        'v2/plugins/css/bootstrap-select.min.css',
         #'css/datepicker.css',
         #'css/slick.css',
         #'css/slick-theme.css',
@@ -33,11 +33,13 @@ class AppAsset extends AssetBundle {
         #'css/fontello.css?1',
         //'css/table-default.css?11',
         #'css/datatables-row-details.css',
+	    'v2/common/css/shared-styles.css',
+	    'v2/common/css/breadcrumbs.css',
     ];
     public $js = [
         //'js/tuupola-lazyload/jquery.lazyload.min.js',
         'js/vanilla-lazyload/dist/lazyload.min.js',
-        #'js/bootstrap-select.js',
+        'v2/plugins/js/bootstrap-select.min.js',
         #'js/bootstrap-datepicker.js',
         #'js/slick.js',
         #'js/snap.svg-min.js',

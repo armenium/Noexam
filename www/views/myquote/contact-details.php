@@ -15,11 +15,7 @@ $this->title = 'Buy Life Insurance Online - Contact Details';
 $this->registerMetaTag(['name' => 'description', 'content' => 'Compare life insurance policies and apply for coverage today. Shop the top rated companies offering up to $1,000,000 of coverage from $23 per month.']);
 $this->registerMetaTag(['name' => 'keywords', 'content' => '']);
 
-$this->registerCssFile('@web/v2/plugins/css/bootstrap-select.min.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
-$this->registerCssFile('@web/v2/common/css/shared-styles.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
 $this->registerCssFile('@web/v2/myquote/css/'.$page_id.'.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
-
-$this->registerJsFile('@web/v2/plugins/js/bootstrap-select.min.js', ['depends' => [JqueryAsset::className(), AppAsset::className()]]);
 #$this->registerJsFile('@web/v2/myquote/js/'.$page_id.'.js', ['depends' => [JqueryAsset::className(), AppAsset::className()]]);
 
 $isMobile = Yii::$app->params['devicedetect']['isMobile'];

@@ -1,6 +1,12 @@
 <?php
 
-use yii\widgets\Breadcrumbs;
+use app\assets\AppAsset;
+use app\components\BreadcrumbsNew;
+use yii\bootstrap\BootstrapAsset;
+use yii\helpers\Url;
+use app\widgets\Author;
+use app\widgets\GetQuote;
+use yii\web\JqueryAsset;
 
 if(!empty($this->context->current_cat->meta_desc)){
 	$this->registerMetaTag(['name' => 'description', 'content' => $this->context->current_cat->meta_desc]);
@@ -13,153 +19,276 @@ if(!empty($this->context->current_cat->meta_title)){
 }else{
 	$this->title = $this->context->current_cat->title;
 }
+
+$this->registerCssFile('@web/v2/life-insurance/css/best-companies.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
+$this->registerCssFile('@web/v2/common/css/main-first-screen.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
+$this->registerJsFile('@web/v2/life-insurance/js/best-companies.js', ['depends' => [JqueryAsset::className(), AppAsset::className()]]);
+
 $this->params['breadcrumbs'][] = ['label' => 'Life Insurance', 'url' => '/life-insurance/'];
-$this->params['breadcrumbs'][] = ['label' => 'Life Insurance Companies', 'url' => '/life-insurance/companies/'];
-$this->params['breadcrumbs'][] = $this->context->current_cat->title;
+#$this->params['breadcrumbs'][] = ['label' => 'Life Insurance Companies', 'url' => '/life-insurance/companies/'];
+$this->params['breadcrumbs'][] = ['label' => 'Best Companies', 'url' => $this->context->current_cat->url, 'class' => 'breadcrumbs__link tags breadcrumbs__link--active'];
+#$this->params['breadcrumbs'][] = $this->context->current_cat->title;
 ?>
-<div class="page-content page-wrapper trans_all">
 
-	<!-- START PAGE-CONTENT -->
-	<section class="page">
-
-		<article class="content">
-			<h1>Best Whole Life Insurance Companies</h1>
-			<?=Breadcrumbs::widget(['links' => $this->params['breadcrumbs']]);?>
-			<?=$this->render('/main/widgets/authors-small.php', ['updated' => date('F j, Y', filemtime(__FILE__))]);?>
-
-			<p>Whole life insurance can be a prudent choice for people who want to stay insured throughout their life. It also offers several other benefits that term life insurance does not.</p>
-			<p><strong>In this article, we take a look at the benefits of <a href="https://www.noexam.com/life-insurance/whole/">whole life insurance</a>, the different types of whole life policies available, the factors to consider while buying whole life insurance, and the best whole life
-					insurance companies in the industry today.</strong></p>
-			<h2>Top Five Whole Life Insurance Companies</h2>
-			<div class="company-box">
-				<h3>MassMutual<img src="../../../img/mass-mutual.png" alt="mass mutual logo" width="150" height="30"/></h3>
-				<p>Established In: 1851</p>
-				<p>A.M. Best: A++</p>
-				<p>Moody’s: Aa2</p>
-				<p>Standard &amp; Poor’s: AA+</p>
-				<p>Fitch: AA+</p>
+<div class="main-wrapp" style="background-color: #FCF9F3;">
+	<div class="wrapp">
+		<section class="best-companies">
+			<div class="best-companies__nav breadcrumbs">
+				<?=BreadcrumbsNew::widget(['links' => $this->params['breadcrumbs']]);?>
 			</div>
-			<div class="company-box">
-				<h3>New York Life<img src="../../../img/new-york-life-150x150.png" alt="new york life logo" width="150" height="150"/></h3>
-				<p>Established In: 1845</p>
-				<p>A.M. Best: A++</p>
-				<p>Moody’s: Aaa</p>
-				<p>Standard &amp; Poor’s: AA+</p>
-				<p>Fitch: AAA</p>
+			<div class="best-companies__first-screen main-first-screen">
+				<div class="main-first-screen__top-title sub-title-2">top insurance companies</div>
+				<h1 class="main-first-screen__title heading-0">Find the Best Life Insurance Company</h1>
+				<div class="main-first-screen__subtitle fontBodyM">Filter life insurance companies by their financial ratings, products offered, and approval time.</div>
+				<div class="main-first-screen__advice fs-advice">
+					<div class="fs-advice__header">
+						<?=Author::widget(['db_time' => $this->context->current_cat->updated, 'file_time' => filemtime(__FILE__)]);?>
+					</div>
+					<div class="fs-advice__body">
+						<p class="fs-advice__text fontBodyM">Shopping for life insurance can be overwhelming. There are dozens of companies to choose from. This comparison shopping tool presents the top 10 best life insurance companies. With just a few clicks you can compare the best
+							companies based on price, financial strength, products offered, and more.</p>
+						<p class="fs-advice__text fontBodyM">Some of the life insurance companies on this page pay NoExam.com a commission if you decide to apply through us. We also include companies that we have no affiliation with whatsoever. Our goal is to provide shoppers with an
+							unbiased list of the top-rated life insurance companies.</p>
+					</div>
+				</div>
 			</div>
-			<div class="company-box">
-				<h3>MetLife<img src="../../../img/metlife-1-300x183.jpg" alt="metlife logo" width="150" height="92"/></h3>
-				<p>Established In: 1868</p>
-				<p>A.M. Best: A+</p>
-				<p>Moody’s: Aa3</p>
-				<p>Standard &amp; Poor’s: AA–</p>
-				<p>Fitch: AA–</p>
+			<div class="best-companies__list-body">
+				<ol class="best-companies__list">
+					<li class="best-companies__item button-small button-small--arrow">Prudential</li>
+					<li class="best-companies__item button-small button-small--arrow">Mass Mutual</li>
+					<li class="best-companies__item button-small button-small--arrow">Mutual of omaha</li>
+					<li class="best-companies__item button-small button-small--arrow">Banner</li>
+					<li class="best-companies__item button-small button-small--arrow">Protective</li>
+					<li class="best-companies__item button-small button-small--arrow">Sagicor</li>
+					<li class="best-companies__item button-small button-small--arrow">New york life</li>
+					<li class="best-companies__item button-small button-small--arrow">sbli</li>
+					<li class="best-companies__item button-small button-small--arrow">metlife</li>
+					<li class="best-companies__item button-small button-small--arrow">assurity</li>
+				</ol>
 			</div>
-			<div class="company-box">
-				<h3>Northwestern Mutual<img src="../../../img/northwestern-mutual.png" alt="northwestern mutual logo" width="150" height="36"/></h3>
-				<p>Established In: 1857</p>
-				<p>A.M. Best: A++</p>
-				<p>Moody’s: Aaa</p>
-				<p>Standard &amp; Poor’s: AA+</p>
-				<p>Fitch: AAA</p>
-			</div>
-			<div class="company-box">
-				<h3>Guardian Life<img src="../../../img/guardian-logo.jpg" alt="guardian life logo" width="150" height="76"/></h3>
-				<p>Established In: 1860</p>
-				<p>A.M. Best: A++</p>
-				<p>Moody’s: Aa2</p>
-				<p>Standard &amp; Poor’s: AA+</p>
-				<p>Fitch: AA+</p>
-			</div>
-			<p>All five of these companies are financially very stable, have a very good track record in terms of claim settlements, and have been in the industry for well over a century. They also offer a wide array of policies along with riders, which you can compare with each other and pick one
-				that meets your budget and needs.</p>
-			<p><strong>Why Choose Whole Life Insurance over Term Life Insurance? </strong></p>
-			<p><u>Lifelong Coverage</u></p>
-			<p><a href="https://www.noexam.com/life-insurance/term/">Term insurance</a>, by definition, has a fixed term, which could be anywhere from 10 to 30 years. Once it expires, you have two options.</p>
-			<ul>
-				<li>You can stay uninsured for the rest of your life, which is only possible if you do not have any financial obligations or people who are financially dependent on you.</li>
-				<li>You can apply for a new policy, which you might find difficult to qualify for owing to your age and <a href="https://www.noexam.com/life-insurance/health-conditions/">health condition</a>. Even if an insurer accepts you, they are likely to charge a higher rate compared to what
-					you previously paid for your policy.
-				</li>
-			</ul>
-			<p>This is not an issue at all with whole life insurance, since it offers lifetime coverage for the policyholder. You will stay insured as long as you keep making the premium payments. It can be very beneficial, especially if you happen to have a spouse who does not work and is
-				financially dependent on you.</p>
-			<p><u>Financial Benefits</u></p>
-			<p>Term life insurance has a death benefit, which your beneficiary will receive after your passing. Other than that, there are no living benefits associated with a term life policy.</p>
-			<p>Whole life insurance, on the other hand, not only has a guaranteed death benefit, but also has a cash value component. A portion of the premiums you pay is allocated to the cash value component, which earns interest throughout the term of the policy.</p>
-			<p>The cash value component is similar to a savings account, which you can tap into in case you are in need of money. You can either withdraw money or take out a loan from the cash value component.</p>
-			<p>The amount you withdraw is tax-deferred, as long as it does not exceed the premiums you have paid into the policy. If you take out a loan, on the other hand, you have to pay it back with interest. In case you fail to do so, the outstanding amount will be deducted from your death
-				benefit.</p>
-			<p><strong>Many whole life insurance companies also pay you dividends on an annual basis.</strong> These companies distribute a portion of their profits evenly among all the policyholders. Some policies offers guaranteed dividends, which means you will be paid dividends every year. Some
-				other policies offer non-guaranteed dividends, which means you will be paid dividends only when the company makes sufficient amount of profits. The dividends you receive from your whole life policy are also tax free.</p>
-			<p>In essence, whole life insurance offers you lifelong coverage and provides living benefits like cash value and dividends, which are not available with term life insurance. So, despite the fact that it costs more, a whole life policy is a better choice for you in the long term compared
-				to a pure term policy.</p>
-			<p><strong>Now, let us take a look at the different types of whole life policies available.</strong></p>
-			<h2>Different Types of Whole Life Policies</h2>
-			<h3><u>Non-Participating</u></h3>
-			<p>A non-participating whole life policy is the simplest and also the most affordable choice for you. It usually has two components – a death benefit and a cash value component which accrues interest at a fixed rate. The premiums remain the same throughout the term of the policy.</p>
-			<p>It is called ‘non-participating’ because you, as an individual policyholder, are a non-participant in the investment activities of the company. So, you will not receive any dividends from the profits the company makes.</p>
-			<h3><u>Participating</u></h3>
-			<p>It has three components – a death benefit, a cash value component which grows at a fixed rate, and dividends which are paid out on an annual basis. As a participating policyholder, you are technically one of the owners of the insurance company, which means you are eligible to receive
-				a share of the profits the company makes.</p>
-			<p>Participating whole life policies typically have a higher premium than non-participating policies.</p>
-			<h3><u>Economic</u></h3>
-			<p>This is similar to a participating whole life policy, wherein you receive dividends in addition to the death benefit and the cash value component. The difference, however, is that the dividends are used to buy additional coverage on your existing policy. So, every time the company
-				pays dividends, your death benefit increases.</p>
-			<p>The only downside is that if the insurance company’s performance is exceptionally poor, your death benefit might get reduced.</p>
-			<h3><u>Level Premium</u></h3>
-			<p>In this type of policy, the premiums stay the same throughout the policy period. You have to pay the exact same amount every month for as long as you are insured.</p>
-			<h3><u>Single Premium</u></h3>
-			<p>This type of whole life policy requires you to pay the entire premium amount in a lump sum. A significant portion of your payment is allocated to the cash value component, which continues to grow at a steady rate throughout the term of the policy.</p>
-			<h3><u>Indeterminate Premium</u></h3>
-			<p>In this type of policy, the premium does not remain the same, but changes from time to time depending on the insurance company’s performance. If the company performs well, they charge you a lower rate.</p>
-			<p>If they perform poorly, they charge you a higher rate. It should be noted that these policies usually come with a guaranteed maximum premium. No matter how badly the company performs, your premium payments will not exceed the guaranteed maximum amount mentioned in your policy.</p>
-			<h3><u>Limited Payment</u></h3>
-			<p>This type of policy limits your premium payments to a shorter term, within which you have to pay the entire premium amount. The timeframe depends on the policy you choose and the terms of the insurer.</p>
-			<p>The advantage of this policy is that you can pay off the full amount of your policy in 10 or 15 years and do not have to worry about making monthly or yearly payments for the rest of your life. The disadvantage is that the premiums are usually higher compared to a regular whole life
-				policy, due to the shortened payment schedule.</p>
-			<h3><u>Interest Sensitive </u></h3>
-			<p>In this type of policy, the cash value component is linked to market conditions. If the market performs well, the cash value grows at a faster rate.</p>
-			<p>If it does not, the cash value grows at a slow rate. Similarly, the premiums are linked to the insurance provider’s performance. If the company performs well, you will be charged a lower rate. If it does not, you will be charged a higher rate.</p>
-			<p>Just like indeterminate whole life policy, this one too has a maximum guaranteed premium, which is the highest rate the company can charge you irrespective of market conditions and its performance.</p>
-			<h2><strong>Factors to Consider While Buying a Whole Life Policy</strong></h2>
-			<h3><u>Death Benefit</u></h3>
-			<p>The amount of death benefit you need depends largely on your age. If you are young, you might want to provide your beneficiaries with a lot of money in the event of your untimely death.</p>
-			<p>In which case, you should calculate the coverage you need by taking into account various factors including your <a href="https://www.noexam.com/life-insurance/mortgage/">mortgage</a>, children’s education, and any other financial commitments you might have.</p>
-			<p>In case you are older and need money for your retirement years, you might require a relatively smaller amount, since you are not likely to have any major ongoing financial obligations after your retirement.</p>
-			<p>If you are in your 60’s or 70’s and do not have any financial obligations or anyone who is financially dependent on you, you might need a policy only to cover your funeral expenses and to pay off small amounts of debts and outstanding bills, if any.</p>
-			<h3><u>Approval Process</u></h3>
-			<p>If you are young and in good health, you should choose a fully underwritten whole life policy, which usually includes a comprehensive medical exam. It is the best way for you to find the <a href="https://www.noexam.com/life-insurance/term/rates/">lowest possible life insurance
-					rates</a>, since you are most likely to be accepted in the Preferred or Preferred Plus category.</p>
-			<p>If you are older and have health issues, you might still want to apply for a fully underwritten policy, since some insurers have relatively lenient underwriting guidelines. If you do not qualify, you can opt for a simplified issue policy (which requires you to answer a number of
-				health-related questions, but no medical exams) or a guaranteed issue policy (no questionnaire, no exam).</p>
-			<h3><u>Premium Rate</u></h3>
-			<p>Whole life policies are typically more expensive than term policies, but it does not mean that you cannot find an affordable policy. The premium rates usually vary from one insurer to another, so ask for multiple quotes, compare them with each other, and choose a policy that is
-				relatively cheaper than the rest.</p>
-			<h3><u>Premium Payment Schedule</u></h3>
-			<p>Are you okay with making monthly payments for the rest of your life? If so, a regular, level-premium policy should be a good choice for you. If not, you should press the button for a limited payment policy with a shortened payment schedule or a single premium policy.</p>
-			<h3><u>Cash Value Interest Rate</u></h3>
-			<p>The cash value component in your policy usually grows at a fixed rate, which is predetermined by the insurance company. So, ask for quotes from multiple companies and choose the company that pays a relatively higher interest rate.</p>
-			<p>If you are young, have a steady source of income, and are not likely to dip into the cash value component, you could open the door for a policy which has a cash value component with a variable interest rate, which is linked to market conditions.</p>
-			<p>If you are older, it might not be a good option for you, since you need the cash value component to grow at a steady pace in your retirement years, which is when you might need it the most.</p>
-			<h2>Why does the Financial Rating of an Insurance Company Matter?</h2>
-			<p><strong>One of the key factors you should take into account while buying whole life insurance is the financial rating of the company.</strong></p>
-			<p>The financial stability of a company matters the most because insurance, by definition, is a long term commitment. So, it is advisable to choose a company with strong fundamentals and is likely to be around for a long time from now. The best way to determine the financial strength of
-				an insurer is to check their financial ratings.</p>
-			<p>Agencies like A.M. Best, Standard &amp; Poor’s, Moody’s, and Fitch rate insurance providers based on their assets, cash flow, statutory reserves, and long term financial outlook.</p>
-			<p>Insurance companies that consistently receive high ratings from these agencies are likely to be financially very stable and have the capacity to meet all their commitments – both in the short term as well as long term.</p>
-			<h2>Which Whole Life Policy Is the Right Choice for You?</h2>
-			<p>There are several types of whole life policies available for you to choose from, as explained above. You can choose the right type of policy for you based on a number of factors including age, income level, financial needs, and number of dependents.</p>
-			<p>If you are young, you can choose a policy whose growth is linked to market conditions, since you can afford to take risks. If you are older and averse to taking risks, you can choose a policy whose cash value grows at a steady rate.</p>
-			<p>No matter which type of whole life policy you decide to buy, make sure you get quotes from different companies and choose the best offer – both in terms of cost and the benefits offered.</p>
-		</article>
-
-	</section>
-	<!-- END PAGE-CONTENT -->
-
-	<section class="related-articles">
-		<?=$this->render('/main/widgets/related-articles.php');?>
-	</section>
-
+		</section>
+	</div>
 </div>
-<?=$this->render('/main/widgets/bio-jonathan-holloway.php'); //Bio Embed Code?>
+
+<div class="main-wrapp" style="background-color: #FCF9F3;">
+	<div class="wrapp">
+		<div class="companies">
+			<div class="companies__item company">
+				<div class="company__header">
+					<div class="company__header-column">
+						<div class="company__logo-box">
+							<img src="./img/company-logo.png" alt="logo" class="company__logo">
+						</div>
+					</div>
+					<div class="company__header-column">
+						<span class="company__name heading-5">Prudential</span>
+						<span class="company__rating-label fontBodyS">Our Rating</span>
+						<div class="company__rating-stars">
+							<img src="../images/star.png" alt="*">
+							<img src="../images/star.png" alt="*">
+							<img src="../images/star.png" alt="*">
+							<img src="../images/star.png" alt="*">
+							<img src="../images/star-no-active.png" alt="*">
+						</div>
+					</div>
+					<div class="company__header-column">
+						<a href="#" class="company__link main-btn button-small">apply now</a>
+						<a href="#" class="company__link main-btn button-small">Get your rate</a>
+					</div>
+				</div>
+
+				<div class="company__decor-line"></div>
+
+				<div class="company__row">
+					<div class="company__col">
+						<span class="company__label fontBodyS">Type of coverage</span>
+						<span class="company__value fontBodyM">Term, Universal</span>
+					</div>
+					<div class="company__col">
+						<span class="company__label fontBodyS">Financial strenght</span>
+						<span class="company__value fontBodyM">A+</span>
+					</div>
+					<div class="company__col">
+						<span class="company__label fontBodyS">Underwriting time</span>
+						<span class="company__value fontBodyM">2-4 Weeks</span>
+					</div>
+					<div class="company__col">
+						<span class="company__label fontBodyS">Company size</span>
+						<span class="company__value fontBodyM">10,000+</span>
+					</div>
+				</div>
+
+				<div class="company__decor-line company__decor-line--between-rows"></div>
+
+				<div class="company__row">
+					<div class="company__col">
+						<span class="company__label fontBodyS">Average Complaints</span>
+						<span class="company__value fontBodyM">Above Average</span>
+					</div>
+					<div class="company__col">
+						<span class="company__label fontBodyS">BBB Rating</span>
+						<span class="company__value fontBodyM">A+</span>
+					</div>
+					<div class="company__col">
+						<span class="company__label fontBodyS">Company Age</span>
+						<span class="company__value fontBodyM">112 Years</span>
+					</div>
+					<div class="company__col">
+					</div>
+				</div>
+
+				<div class="company__decor-line"></div>
+
+				<div class="company__footer">
+					<h3 class="company__footer-title main-title">About Mutual of Omaha</h3>
+					<p class="company__content fontBodyM">Mutual of Omaha is a Fortune 500 company based in Omaha, Nebraska. They began selling insurance in 1909, making them over 100 years old. Mutual of Omaha offers a wide array of life insurance products. They offer term, whole, universal,
+						and long term care products. They even produced a popular television show in 1963 called “Wild Kingdom.” They are in our top 10 list for the best life insurance companies due to their strong financial rating, below average
+						complaints, and wide selection of products.</p>
+					<p class="company__content fontBodyM">Mutual of Omaha is financially stable and offers some of the most competitive pricing available. They have over eight billion dollars in assets with a <b>three-billion-dollar surplus.</b> They hold ratings from AM Best (A+ Superior),
+						Moody's (A1 Good), and S&P (AA- Very Strong). See our full <b>Mutual of Omaha review.</b></p>
+				</div>
+				<div class="company__footer-btn btn-read-more">read more</div>
+				<div class="company__footer-btn company__footer-btn--active btn-hide">hide</div>
+				<div id="shadow"></div>
+
+				<div class="company__decor-line company__decor-line--adaptive"></div>
+				<div class="company__footer-btns-box">
+					<a href="#" class="company__footer-link main-btn button-small">Get your rate</a>
+					<a href="#" class="company__footer-link main-btn button-small">apply now</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="main-wrapp">
+	<div class="wrapp">
+		<section class="choose-company">
+			<h1 class="choose-company__title heading-2">How to Choose a Life Insurance<br> Company</h1>
+			<div class="choose-company__box">
+				<h2 class="choose-company__subtitle"></h2>
+				<p class="choose-company__text fontBodyM">NoExam.com has been in business since 2013. As a small business, we have helped over 10,000 families purchase life insurance. We have <b>over 1,000 verified 3rd party reviews</b> and maintain a score of 4.8 out of 5.</p>
+				<p class="choose-company__text fontBodyM">Our philosophy is to go above and beyond without any expectation for something in return.</p>
+			</div>
+			<div class="choose-company__box">
+				<h2 class="choose-company__subtitle heading-5">Our Company Ratings Explained</h2>
+				<p class="choose-company__text fontBodyM">Our rating formula relies on financial data, product offering, underwriting time, history, and consumer complaints. We update our data in the 4th quarter of each year when new financial reports are released. Financial strength is a
+					key component of our ratings, as it is the most important factor to consider when choosing a life insurance company. We put in many hours of analysis to have our list of the top 10 life insurance companies be free from bias.</p>
+			</div>
+			<div class="choose-company__box">
+				<h2 class="choose-company__subtitle heading-5">Types of Coverage</h2>
+				<p class="choose-company__text fontBodyM">There are two main types of life insurance you can buy. The most popular choice is term life insurance, which gives you coverage for a set number of years. The other type is permanent life insurance, also called whole life, which provides
+					coverage for your entire life as long as premiums are paid.</p>
+				<p class="choose-company__text fontBodyM">In terms of value, term life insurance is hard to beat. The monthly premiums are low and the coverage amounts are high. but has other features that term lacks, such as the cash value component. To learn more about the difference between
+					term and whole life, see our article on <b>term vs whole life insurance.</b></p>
+			</div>
+			<div class="choose-company__box">
+				<h2 class="choose-company__subtitle heading-5">Types of Coverage</h2>
+				<p class="choose-company__text fontBodyM">When buying an insurance product that may be needed 20+ years from now, you want to be certain that the company will be able to pay the claim. To address this very concern, many 3rd party rating agencies grade the financial strength
+					of insurance companies. There are several that you will see reporting grades for insurance companies:</p>
+				<ul class="choose-company__list fontBodyM">
+					<li><b>AM Best</b></li>
+					<li>Moody’s</li>
+					<li>Standard & Poors</li>
+					<li>Fitch</li>
+				</ul>
+				<p class="choose-company__text fontBodyM">Each rating agency has a different way of assessing and reporting the financial strength of an insurance company. Generally, the companies are rated as a report card. You’ll see that the high ratings are A’s and the low ratings are
+					B or C. We advise shoppers to choose a company with high financial ratings. The reasoning behind this is simple, life insurance is meant to be a safety net for your family. The net is only as strong as the insurance company’s ability
+					to pay its claims. The rating agencies determine their ratings by analyzing data like:</p>
+				<ul class="choose-company__list fontBodyM">
+					<li>The Annual amount of premiums collected</li>
+					<li>The Annual amount of claims paid</li>
+					<li>Total reserves and assets</li>
+					<li>Cash flow</li>
+					<li>Return on investments</li>
+					<li>Potential risks in the short-term and long-term.</li>
+				</ul>
+
+				<p class="choose-company__text fontBodyM">A good rule of thumb is to choose a company that has the letter “A” in its ratings and to avoid the companies that do not.</p>
+
+				<div class="choose-company__chart"></div>
+
+				<div class="choose-company__box">
+					<h2 class="choose-company__subtitle heading-5">Underwriting Time</h2>
+					<p class="choose-company__text fontBodyM">Underwriting is the process of the insurance company processing your application and issuing a decision. Underwriting time can vary widely from company to company and even from product to product. We are living in a time where
+						technology is making life insurance easier to purchase, and one of the areas to recently improve in life insurance is underwriting time.</p>
+					<p class="choose-company__text fontBodyM">The standard process of buying life insurance takes 4-6 weeks. This is how long it takes from start to finish. You submit your application, the health exam is scheduled, and then you take the exam and wait for a decision.</p>
+					<p class="choose-company__text fontBodyM">Many companies now offer accelerated underwriting, which means that certain applicants can breeze through the process without needing to take an exam. Some companies offer products that do not require the exam at all. This is referred
+						to as simplified issue life insurance. These policies generally get issued in under a week. This is possible because the insurance company can look at digital records such as your prescription report, driving record, and MIB
+						record.
+					</p>
+					<p class="choose-company__text fontBodyM">One important thing to keep in mind when applying for life insurance that advertises an instant decision is what happens if you get declined. The <b>instant issue policies</b> have very strict requirements, and they are quick to
+						decline an applicant. When you go to apply for a different policy, you now have to disclose that you applied somewhere else and were declined. This can affect their decision on your application.</p>
+				</div>
+				<div class="choose-company__box">
+					<h2 class="choose-company__subtitle heading-5">Company Size</h2>
+					<p class="choose-company__text fontBodyM">The size of the life insurance company can tell you a few things about the organization. A company with 10,000+ employees likely has a very high financial rating, offers many products, and is a stable choice. However, some people
+						do not like dealing with large companies when it comes to customer service. You could end up with long hold times and a lack of personal service. You may like working with a financially strong, specialty life insurance company
+						with just a few hundred employees.</p>
+				</div>
+				<div class="choose-company__box">
+					<h2 class="choose-company__subtitle heading-5">Company Age</h2>
+					<p class="choose-company__text fontBodyM">Why should the age of a life insurance company matter to you? The <b>average lifespan of a male and female in the US is around 80.</b> If you bought life insurance in your forties, it's important to know the company you are putting
+						your business with has a positive financial outlook and will have the ability to pay claims years down the road. </p>
+					<p class="choose-company__text fontBodyM">We factor in age as part of our criteria. After all, if a company has made it through the great depression, ww1,ww2, and the great recession, all while being able to make good on their commitment to their policyholders, we think
+						that's worth something. </p>
+					<p class="choose-company__text fontBodyM">It should come as no surprise that companies that are the oldest often have more assets under management. The assets each life insurance company accumulates throughout its time in business serve as a shield of financial strength
+						and backing for its policyholders. A mature insurance company with a diverse portfolio is a key indicator that a company is well-positioned to be in business for years to come.</p>
+				</div>
+				<div class="choose-company__box">
+					<h2 class="choose-company__subtitle heading-5">State Availability</h2>
+					<p class="choose-company__text fontBodyM">Each state in the US has a department of insurance, and each company has to maintain a license in an individual state. Because of this, some companies do not sell their insurance products in certain states. To save time, be sure
+						to select your state in the filter to make sure you don’t choose a company that isn’t available to you.</p>
+					<p class="choose-company__text fontBodyM">You are not required to work with an agent or company in your state. Many people seem to think they need to find a life insurance company near them to buy. Life insurance can be bought online and over the phone without needing
+						to find a local agent. Of course, you are welcome to work with a local agent should you prefer to do so.</p>
+				</div>
+
+				<div class="choose-company__box">
+					<h2 class="choose-company__subtitle heading-5">Ways to Buy</h2>
+					<h3 class="choose-company__subtitle-small heading-6">Online</h3>
+					<p class="choose-company__text fontBodyM">Even the century-old life insurance industry has caught on to the fact the consumer expectations are changing. 98% of consumers say they would use the internet to research a product before buying. If you are one in that group that
+						seeks a user-friendly buying process, we have you covered.</p>
+				</div>
+
+				<div class="choose-company__box">
+					<h3 class="choose-company__subtitle-small heading-6">Phone</h3>
+					<p class="choose-company__text fontBodyM">While most prefer to research online, we have found that some consumers still desire the assistance of a licensed agent. With the amount of information life insurance companies require, it can feel reassuring to hear a voice on
+						the other line before submitting your information.</p>
+				</div>
+
+				<div class="choose-company__box">
+					<h3 class="choose-company__subtitle-small heading-6">In-Person - Agent</h3>
+					<p class="choose-company__text fontBodyM">Whether you buy online, via phone, or in person, you are always buying from a <b>licensed life insurance agent.</b> How you go about purchasing, receiving customer support, and maintaining your life insurance policy is your choice.
+						If you choose to buy from a local life insurance agent that's in your network, we can help point you in the right direction. </p>
+				</div>
+
+				<div class="choose-company__box">
+					<h2 class="choose-company__subtitle heading-5">Customer Complaints</h2>
+					<p class="choose-company__text fontBodyM">When looking at complaints on a company, you have to take this data with a grain of salt. Most complaints stem from billing errors and customer service. Rarely does a life insurance company not pay a claim. When conducting research,
+						we analyzed the annual reports of over 50 companies. We looked at the percentage of claims that were contested and why they were contested. Overall we found it to be a very small percentage, and the most common reason claims
+						are contested is due to material misrepresentation. Material misrepresentation is a fancy term for lying on the application. If you are looking for the best life insurance company that will payout, just be sure to answer the
+						questions on the application truthfully, and select a company with strong financial ratings.</p>
+					<p class="choose-company__text fontBodyM">A good place to look at reviews of a life insurance company is the Better Business Bureau. However, remember that the BBB is a complaint board. It is easy to get a feeling that a company is bad by looking at their BBB page and
+						seeing hundreds of complaints. Remember to consider how many customers an insurance company and that 100 complaints may be a very small fraction of their total customers.</p>
+					<p class="choose-company__text fontBodyM">Another good place to start is the NAIC. They have a public-facing tool that allows you to look up complaint data on insurance companies. However, the reason for these complaints can be about marketing & sales and have nothing
+						to do with customer service or paying claims.</p>
+				</div>
+
+				<div class="choose-company__box">
+					<h2 class="choose-company__subtitle heading-5">Price</h2>
+					<p class="choose-company__text fontBodyM">As a budget-minded shopper, price is always going to play a role in any purchase decision. We see life insurance shoppers looking for the cheapest prices every day. Before you go jumping on the lowest price you see, there are a
+						few key things to consider.</p>
+					<ul class="choose-company__list fontBodyM">
+						<li>The best life insurance company is the one with the highest rating that will underwrite you favorably. This means the best financial ratings and the best price given your current health.</li>
+					</ul>
+					<p class="choose-company__text fontBodyM">Every insurance company has different rules for how they price policies. For example, if you are in the 50% of Americans that have used at least one prescription drug in the last 30 days, your price can vary from company to company.
+						If you are overweight, you will also see that your price can vary from company to company. These are quick examples, but you can imagine how complex it can get when you are factoring in your health history, medications, and
+						family history.</p>
+					<p class="choose-company__text fontBodyM">Some life insurance companies quote people low rates, and once the underwriting is complete they determine they do not qualify for the initial rates. The industry refers to this as a “bait and switch”. This is something to keep
+						in mind when you see a life insurance rate that is much lower than the other quotes.</p>
+				</div>
+			</div>
+		</section>
+	</div>
+</div>
+

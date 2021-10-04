@@ -46,7 +46,7 @@ hr {
 }
 
 *:focus,
-*:active {outline: 0 none !important; box-shadow: none !important;}
+*:active {outline: 0 none !important; /*box-shadow: none !important;*/}
 
 .trans_me,
 .trans_all,
