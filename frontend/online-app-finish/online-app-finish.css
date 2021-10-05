@@ -92,7 +92,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 100%;
+    width: 94%;
     max-width: 700px;
     min-height: 395px;
     background: #FFFFFF;
@@ -188,5 +188,14 @@
     }
     .online-app-finish__subtitle {
         margin-bottom: 30px;
+    }
+    /* POPUP */
+    .online-app-pop-up__body {
+        padding: 25px 25px;
+    }
+    .online-app-pop-up__stars>img {
+        width: 40px;
+        height: 40px;
+        margin-right: 8px;
     }
 }
