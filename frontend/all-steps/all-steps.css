@@ -7,6 +7,17 @@
     margin-bottom: 100px;
 }
 
+.all-steps__title>span {
+    position: relative;
+}
+
+.all-steps__title>span:after {
+    content: url("../images/start-quote-decor.png");
+    position: absolute;
+    left: 0;
+    bottom: -30px;
+}
+
 .all-steps__container {
     position: relative;
     width: 100%;
@@ -169,6 +180,26 @@
 .all-steps__stateSelectBox {
     width: 100%;
     margin-right: 20px;
+}
+
+.bg-section__img1 {
+    position: absolute;
+    top: 410px;
+    left: 55px;
+}
+
+.bg-section__img2 {
+    position: absolute;
+    top: 330px;
+    right: -50px;
+    transform: scale(-0.7);
+}
+
+@media screen and (max-width: 1199px) {
+    .bg-section__img1,
+    .bg-section__img2 {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 767px) {

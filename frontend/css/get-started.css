@@ -9,7 +9,7 @@
 .get-started:before {
     content: url("../images/get-started-decor-1.png");
     position: absolute;
-    left: -200px;
+    left: -155px;
     top: 30px;
     display: block;
 }
@@ -17,7 +17,7 @@
 .get-started:after {
     content: url("../images/get-started-decor-2.png");
     position: absolute;
-    right: -400px;
+    right: -220px;
     top: 100px;
     display: block;
 }
@@ -46,7 +46,7 @@
     content: url("../images/arrow-right-dark.png");
 }
 
-@media screen and (max-width: 1820px) {
+@media screen and (max-width: 1520px) {
     .get-started:before {
         content: none;
     }
