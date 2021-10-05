@@ -46,6 +46,29 @@
     content: url("../images/arrow-right-dark.png");
 }
 
+.get-started__date {
+    display: inline-block;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #AFC8BF;
+    margin-bottom: 35px;
+}
+
+.get-started__link {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    text-decoration-line: underline;
+    text-transform: uppercase;
+    color: #F8A846;
+}
+
+.get-started__link:hover {
+    color: #F8A846;
+}
+
 @media screen and (max-width: 1520px) {
     .get-started:before {
         content: none;
