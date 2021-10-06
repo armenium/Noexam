@@ -1,5 +1,5 @@
 .top-companies-v1 {
-    padding: 100px;
+    padding: 100px 0;
 }
 
 .top-companies-v1__title {
@@ -31,22 +31,34 @@
 
 .top-companies-v1__box-switch {}
 
-.top-companies-v1__body {}
+.top-companies-v1__body {
+    margin-bottom: 60px;
+}
 
 .top-companies-v1__row {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.top-companies-v1__row:last-child {
+    margin-bottom: 0;
 }
 
 .top-companies-v1__card {
-    margin-right: 20px;
+    margin: 0 15px 15px 0;
+}
+
+.top-companies-v1__card:last-child {
+    margin-right: 0;
 }
 
 .company-card {
     position: relative;
     width: 100%;
-    max-width: 340px;
-    height: 605px;
+    max-width: 335px;
+    min-height: 605px;
     background-color: #FFFFFF;
     box-shadow: 1px 12px 42px rgba(155, 164, 162, 0.12);
     border-radius: 4px;
@@ -174,6 +186,7 @@
 
 .company-card__btn {
     margin: 0 auto;
+    max-width: 100%;
 }
 
 .company-card__btn:after {
@@ -190,20 +203,83 @@
     justify-content: center;
 }
 
-.top-companies-v1-pagination__arrow {}
+.top-companies-v1-pagination__arrow {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+}
 
 .pagination-arrow-prev {
     margin-right: 25px;
+    color: #BABABA;
 }
 
 .top-companies-v1-pagination__number {
     margin-right: 8px;
+    width: 45px;
+    height: 45px;
+    background-color: #FFFFFF;
+    border: 1px solid #E4E4E4;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: #282B29;
+    cursor: pointer;
 }
 
-.top-companies-v1-pagination__number--active {}
+.top-companies-v1-pagination__number--active {
+    background-color: #339E75;
+    color: #FFFFFF;
+}
 
-.top-companies-v1-pagination__dots {}
+.top-companies-v1-pagination__dots {
+    margin-right: 8px;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
 
 .pagination-arrow-next {
     margin-left: 25px;
+    color: #339E75;
+}
+
+@media screen and (max-width: 575px) {
+    .top-companies-v1__box {
+        flex-direction: column;
+        align-items: center;
+    }
+    .top-companies-v1__box-label {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .top-companies-v1 {
+        padding: 60px 0;
+    }
+    .top-companies-v1__row {
+        flex-direction: column;
+        align-items: center;
+    }
+    .top-companies-v1__card {
+        margin-right: 0;
+        padding: 20px;
+    }
+    .top-companies-v1-pagination__arrow {
+        display: none;
+    }
+    .top-companies-v1__body {
+        margin-bottom: 50px;
+    }
 }
