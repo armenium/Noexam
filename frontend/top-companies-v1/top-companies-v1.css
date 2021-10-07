@@ -119,6 +119,10 @@
     color: #757575;
 }
 
+.company-card__rating>span:hover {
+    color: #757575;
+}
+
 .company-card__rating>b:last-child {
     position: relative;
     padding-left: 27px;
