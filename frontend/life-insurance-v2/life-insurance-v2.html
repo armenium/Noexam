@@ -10,15 +10,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../plugins/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../plugins/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="../css/shared-styles.css">
     <link rel="stylesheet" href="./life-insurance-v2.css">
     <link rel="stylesheet" href="../css/breadcrumbs.css">
     <link rel="stylesheet" href="../css/main-first-screen.css">
     <link rel="stylesheet" href="../about/about.css">
-    <link rel="stylesheet" href="../plugins/css/bootstrap.min.css">
     <link rel="stylesheet" href="../plugins/css/slick.css">
     <link rel="stylesheet" href="../css/questions.css">
     <link rel="stylesheet" href="../quote-result/quote-result.css">
+    <link rel="stylesheet" href="../rates/rates.css">
     <!-- ??? -->
 </head>
 
@@ -59,6 +61,161 @@
                     <div class="main-first-screen__subtitle">Compare quotes to get the right policy at the right price</div>
                 </div>
             </section>
+        </div>
+    </div>
+
+    <div class="main-wrapp" style="background-color: #FCF9F3;">
+        <div class="wrapp">
+            <div class="rates-form">
+                <form class="rates-form__form">
+                    <h2 class="rates-form__subtitle main-title">General Information</h2>
+                    <div class="rates-form__row rates-form__row--no-wrapp">
+                        <div class="rates-form__label">
+                            <label for="amount">
+                                <span class="tags">Coverage amount</span> 
+                            </label>
+                            <select id="amount" class="rates-form__select js_selectpicker">
+                                <option value="250000">$250,000</option>
+                                <option value="350000">$350,000</option>
+                            </select>
+                        </div>
+
+                        <div class="rates-form__label">
+                            <label for="term">
+                                <span class="tags">Term Length</span>
+                            </label>
+                            <select id="term" class="rates-form__select js_selectpicker">
+                                <option value="10">10 Year Term</option>
+                                <option value="20">20 Year Term</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="rates-form__row rates-form__row--no-wrapp">
+                        <div class="rates-form__label">
+                            <label for="state">
+                                <span class="tags">State</span>
+                            </label>
+                            <select id="state" class="rates-form__select js_selectpicker">
+                                <option value="" disabled selected>Select State</option>
+                                <option value="State 1">State 1</option>
+                            </select>
+                        </div>
+
+                        <div class="rates-form__label">
+                            <label for="tobacco">
+                                <span class="tags">Do you use tobacco?</span>
+                            </label>
+                            <select id="tobacco" class="rates-form__select js_selectpicker">
+                                <option value="Use">Use</option>
+                                <option value="">Doesn’t use</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <h2 class="rates-form__subtitle main-title">Date of Birth</h2>
+                    <div class="rates-form__row rates-form__row--no-wrapp rates-form__row--date-of-birth">
+                        <div class="rates-form__label">
+                            <label for="month">
+                                <span class="tags">Month</span>
+                            </label>
+                            <select id="month" class="rates-form__select js_selectpicker">
+                                <option value="MM">MM</option>
+                                <option value="MM">MM</option>
+                            </select>
+                        </div>
+                        <div class="rates-form__label">
+                            <label for="date">
+                                <span class="tags">Date</span>
+                            </label>
+                            <select id="date" class="rates-form__select js_selectpicker">
+                                <option value="DD">DD</option>
+                                <option value="DD">DD</option>
+                            </select>
+                        </div>
+                        <div class="rates-form__label">
+                            <label for="year">
+                                <span class="tags">Year</span>
+                            </label>
+                            <select id="year" class="rates-form__select js_selectpicker">
+                                <option value="YYYY">YYYY</option>
+                                <option value="YYYY">YYYY</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <h2 class="rates-form__subtitle main-title">About You</h2>
+                    <div class="rates-form__row rates-form__row--no-wrapp">
+                        <div class="rates-form__label">
+                            <label for="sex" class="rates-form__label--full-width">
+                                <span class="tags">Sex</span>
+                            </label>
+                            <select id="sex" class="rates-form__select rates-form__select--full-width js_selectpicker">
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+
+                        <div class="rates-form__label">
+                            <label for="height" class="rates-form__label--margin">
+                                <span class="tags">Height</span>
+                            </label>
+                            <select id="height" class="rates-form__select rates-form__select--half-width js_selectpicker">
+                                <option value="" disabled selected>Select</option>
+                                <option value="180">180</option>
+                                <option value="181">181</option>
+                            </select>
+                        </div>
+
+                        <div class="rates-form__label">
+                            <label for="weight">
+                                <span class="tags">Weight</span>
+                            </label>
+                            <select id="weight" class="rates-form__select rates-form__select--half-width js_selectpicker">
+                                <option value="" disabled selected>Select</option>
+                                <option value="180">65</option>
+                                <option value="181">70</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="rates-form__row rates-form__row--no-wrapp">
+                        <label class="rates-form__label">
+                            <span class="tags">First Name</span>
+                            <input type="text" class="rates-form__input fontBodyM" value="Magda">
+                        </label>
+                        <label class="rates-form__label">
+                            <span class="tags">Last Name</span>
+                            <input type="text" class="rates-form__input fontBodyM" value="Bierman">
+                        </label>
+                    </div>
+                    <div class="rates-form__row rates-form__row--no-wrapp">
+                        <label class="rates-form__label">
+                            <span class="tags">Phone Number</span>
+                            <input type="text" class="rates-form__input fontBodyM" value="+1 602-275-6885">
+                        </label>
+                        <label class="rates-form__label">
+                            <span class="tags">Email</span>
+                            <input type="email" class="rates-form__input fontBodyM rates-form__input--invalid" value="mag">
+                        </label>
+                    </div>
+                    <div class="rates-form__decor-line"></div>
+                    <button type="submit" class="rates-form__btn main-btn button-big">see my quote</button>
+                </form>
+
+                <div class="rates-form__info rates-form-info">
+                    <div class="rates-form-info__item">
+                        <h3 class="rates-form-info__title tags">Low monthy payment</h3>
+                        <p class="rates-form-info__text fontBodyS">Fixed monthly rates that will never change during the level term period of your policy.</p>
+                    </div>
+                    <div class="rates-form-info__item">
+                        <h3 class="rates-form-info__title tags">No hassle</h3>
+                        <p class="rates-form-info__text fontBodyS">Our fast and simple questionnaire will get you coverage fast.</p>
+                    </div>
+                    <div class="rates-form-info__item">
+                        <h3 class="rates-form-info__title tags">Easy to qualify</h3>
+                        <p class="rates-form-info__text fontBodyS">Answer our short medical health application to see if you qualify for immediate coverage.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -264,6 +421,9 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="../plugins/js/slick.js"></script>
+    <script src="../plugins/js/popper.min.js"></script>
+    <script src="../plugins/js/bootstrap.min.js"></script>
+    <script src="../plugins/js/bootstrap-select.min.js"></script>
     <script src="./life-insurance-v2.js"></script>
 </body>
 
