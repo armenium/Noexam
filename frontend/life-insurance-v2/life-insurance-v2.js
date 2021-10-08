@@ -19,3 +19,7 @@ let questionsItems = [...document.querySelectorAll('.questions__item')].forEach(
         item.classList.toggle("questions__item--active")
     });
 });
+
+$(function() {
+    $('.js_selectpicker').selectpicker();
+});
