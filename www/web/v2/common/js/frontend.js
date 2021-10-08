@@ -43,6 +43,7 @@ $(function(){
 			js_header: $("#js_header"),
 			js_selectpicker: $(".js_selectpicker"),
 			js_quote_results: $("#js_quote_results"),
+			js_rate_from_modal: $('#js_rate_from_modal'),
 		},
 		Init: function(){
 			this.vars.ww = $(window).width();
@@ -104,6 +105,9 @@ $(function(){
 					case "toggle_mobile_nav":
 						FJS.Common.toggleMobileNav($this);
 						break;
+					case "scroll_to":
+						FJS.Common.scrollTo($this, 800, 'easeOutExpo');
+						break;
 					case "contact_details_form_submit":
 						FJS.Forms.submitContactDetails($this);
 						break;
@@ -112,6 +116,9 @@ $(function(){
 						break;
 					case "quote-result-link":
 						FJS.ApplyNow.QuoteResult.goToLink($this);
+						break;
+					case "display_rate_modal":
+						FJS.ApplyNow.displayRateModal($this);
 						break;
 					default:
 						break;
@@ -175,6 +182,24 @@ $(function(){
 						//load_delay: 300,
 						threshold: 0
 					});
+				}
+			},
+			scrollTo: function($btn, speed, effect){
+				if(speed == undefined){
+					speed = 1000;
+				}
+				if(effect == undefined){
+					effect = 'linear';
+				}
+
+				var elem = $btn.attr('href'),
+					top = ~~$(elem).offset().top;
+
+				if(top != undefined){
+					if(FJS.vars.ww < 768){
+						top -= 70;
+					}
+					$('html, body').animate({scrollTop: top}, speed, effect);
 				}
 			},
 
@@ -346,7 +371,10 @@ $(function(){
 						window.location.href = url;
 					}
 				},
-			}
+			},
+			displayRateModal: function($btn){
+				FJS.els.js_rate_from_modal.fadeIn(400);
+			},
 		},
 	};
 

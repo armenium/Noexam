@@ -198,3 +198,6 @@ $this->params['breadcrumbs'][] = ['label' => 'Best Companies', 'url' => $this->c
 	</div>
 </div>
 
+<div id="js_rate_from_modal" class="rate-from-modal">
+	<?=$this->render('/main/widgets/rate-form-modal.php');?>
+</div>
