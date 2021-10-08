@@ -42,6 +42,10 @@
     flex-wrap: nowrap !important;
 }
 
+.rates-form__row--no-margin {
+    margin-bottom: 20px;
+}
+
 .rates-form__row--no-wrapp>label {
     width: 100%;
 }
@@ -53,6 +57,19 @@
 .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn),
 .rates-form__row--no-wrapp>.rates-form__label {
     width: 100%;
+}
+
+.life-insurance__cards {
+    padding: 100px 0;
+}
+
+.questions__item--life-insurance {
+    border: 1px solid #E4E4E4;
+}
+
+.life-insurance__cards {
+    display: flex;
+    flex-direction: column;
 }
 
 @media screen and (max-width: 991px) {
@@ -77,5 +94,23 @@
     }
     .rates-form__row--date-of-birth>.rates-form__label {
         margin-right: 15px;
+    }
+    .life-insurance__cards {
+        padding: 60px 0;
+    }
+    .rates-form__row--date-of-birth>.rates-form__label:last-child {
+        margin-right: 0;
+    }
+    .rates-form__select--half-width {
+        width: 100%!important;
+    }
+}
+
+@media screen and (max-width: 374px) {
+    .rates-form__row--date-of-birth {
+        flex-wrap: wrap !important;
+    }
+    .rates-form__row--date-of-birth>.rates-form__label {
+        margin-right: 0;
     }
 }
