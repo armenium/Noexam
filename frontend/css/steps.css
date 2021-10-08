@@ -12,6 +12,7 @@
 }
 
 .steps__container {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -80,6 +81,7 @@
     align-items: center;
     justify-content: center;
     color: #FFFFFF;
+    z-index: 5;
 }
 
 .steps__sub-title {
@@ -95,16 +97,7 @@
     margin: 0 auto;
 }
 
-@media screen and (max-width: 1100px) {
-    .steps__col:first-child:after {
-        content: none;
-    }
-    .steps__col:last-child:before {
-        content: none;
-    }
-}
-
-@media screen and (max-width: 719px) {
+@media screen and (max-width: 767px) {
     .steps__title {
         font-size: 32px;
         line-height: 40px;
@@ -120,5 +113,17 @@
     }
     .steps {
         padding: 60px 0;
+    }
+    .steps__col:first-child:after {
+        content: none;
+    }
+    .steps__col:last-child:before {
+        content: none;
+    }
+    .steps__container:after {
+        content: url("../images/steps-vertical-line.png");
+        position: absolute;
+        top: 80px;
+        transform: translateX(10px);
     }
 }

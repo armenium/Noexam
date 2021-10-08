@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Insurance v2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../plugins/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../plugins/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="../plugins/css/slick.css">
+    <link rel="stylesheet" href="../css/shared-styles.css">
+    <link rel="stylesheet" href="../css/cards.css">
+    <link rel="stylesheet" href="../css/breadcrumbs.css">
+    <link rel="stylesheet" href="../css/main-first-screen.css">
+    <link rel="stylesheet" href="../css/questions.css">
+    <link rel="stylesheet" href="../about/about.css">
+    <link rel="stylesheet" href="../rates/rates.css">
+    <link rel="stylesheet" href="./life-insurance-v2.css">
+    <!-- ??? -->
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="header__col">
+            <img src="../images/header/Logo.svg" alt="logo" class="header__logo">
+            <nav class="header__nav">
+                <ul class="header__list">
+                    <li class="header__item"><a href="#" class="header__link header__link--active">Home</a></li>
+                    <li class="header__item"><a href="#" class="header__link">Life Insurance Companies</a></li>
+                    <li class="header__item"><a href="#" class="header__link">Life Insurance</a></li>
+                    <li class="header__item"><a href="#" class="header__link">Get Quotes</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header__col">
+            <a href="tel:8884070714" class="header__link header__link--tel">888-407-0714</a>
+            <a href="#" class="header__link header__link--start">start my Quote</a>
+            <div class="header__burger-wrapp">
+                <img src="../images/header/burger-icon.png" alt="menu">
+            </div>
+        </div>
+    </header>
+
+    <div class="main-wrapp" style="background-color: #FCF9F3;">
+        <div class="wrapp">
+            <section class="life-insurance">
+                <div class="life-insurance__nav breadcrumbs">
+                    <ul class="breadcrumbs__list">
+                        <li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link tags">Home</a></li>
+                        <li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link tags breadcrumbs__link--active">Apply Now</a></li>
+                    </ul>
+                </div>
+                <div class="life-insurance__first-screen main-first-screen">
+                    <h1 class="main-first-screen__title heading-0">Life Insurance Quotes</h1>
+                    <div class="main-first-screen__subtitle">Compare quotes to get the right policy at the right price</div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="main-wrapp" style="background-color: #FCF9F3;">
+        <div class="wrapp">
+            <div class="rates-form">
+                <form class="rates-form__form">
+                    <h2 class="rates-form__subtitle main-title">General Information</h2>
+                    <div class="rates-form__row rates-form__row--no-wrapp">
+                        <div class="rates-form__label">
+                            <label for="amount">
+                                <span class="tags">Coverage amount</span> 
+                            </label>
+                            <select id="amount" class="rates-form__select js_selectpicker">
+                                <option value="250000">$250,000</option>
+                                <option value="350000">$350,000</option>
+                            </select>
+                        </div>
+
+                        <div class="rates-form__label">
+                            <label for="term">
+                                <span class="tags">Term Length</span>
+                            </label>
+                            <select id="term" class="rates-form__select js_selectpicker">
+                                <option value="10">10 Year Term</option>
+                                <option value="20">20 Year Term</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="rates-form__row rates-form__row--no-wrapp">
+                        <div class="rates-form__label">
+                            <label for="state">
+                                <span class="tags">State</span>
+                            </label>
+                            <select id="state" class="rates-form__select js_selectpicker">
+                                <option value="" disabled selected>Select State</option>
+                                <option value="State 1">State 1</option>
+                            </select>
+                        </div>
+
+                        <div class="rates-form__label">
+                            <label for="tobacco">
+                                <span class="tags">Do you use tobacco?</span>
+                            </label>
+                            <select id="tobacco" class="rates-form__select js_selectpicker">
+                                <option value="Use">Use</option>
+                                <option value="">Doesn’t use</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <h2 class="rates-form__subtitle main-title">Date of Birth</h2>
+                    <div class="rates-form__row rates-form__row--no-wrapp rates-form__row--date-of-birth">
+                        <div class="rates-form__label">
+                            <label for="month">
+                                <span class="tags">Month</span>
+                            </label>
+                            <select id="month" class="rates-form__select js_selectpicker">
+                                <option value="MM">MM</option>
+                                <option value="MM">MM</option>
+                            </select>
+                        </div>
+                        <div class="rates-form__label">
+                            <label for="date">
+                                <span class="tags">Date</span>
+                            </label>
+                            <select id="date" class="rates-form__select js_selectpicker">
+                                <option value="DD">DD</option>
+                                <option value="DD">DD</option>
+                            </select>
+                        </div>
+                        <div class="rates-form__label">
+                            <label for="year">
+                                <span class="tags">Year</span>
+                            </label>
+                            <select id="year" class="rates-form__select js_selectpicker">
+                                <option value="YYYY">YYYY</option>
+                                <option value="YYYY">YYYY</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <h2 class="rates-form__subtitle main-title">About You</h2>
+                    <div class="rates-form__row rates-form__row--no-wrapp rates-form__row--no-margin">
+                        <div class="rates-form__label">
+                            <label for="sex" class="rates-form__label--full-width">
+                                <span class="tags">Sex</span>
+                            </label>
+                            <select id="sex" class="rates-form__select rates-form__select--full-width js_selectpicker">
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+
+                        <div class="rates-form__label">
+                            <label for="height" class="rates-form__label--margin">
+                                <span class="tags">Height</span>
+                            </label>
+                            <select id="height" class="rates-form__select rates-form__select--half-width js_selectpicker">
+                                <option value="" disabled selected>Select</option>
+                                <option value="180">180</option>
+                                <option value="181">181</option>
+                            </select>
+                        </div>
+
+                        <div class="rates-form__label">
+                            <label for="weight">
+                                <span class="tags">Weight</span>
+                            </label>
+                            <select id="weight" class="rates-form__select rates-form__select--half-width js_selectpicker">
+                                <option value="" disabled selected>Select</option>
+                                <option value="180">65</option>
+                                <option value="181">70</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="rates-form__row rates-form__row--no-wrapp rates-form__row--no-margin">
+                        <label class="rates-form__label">
+                            <span class="tags">First Name</span>
+                            <input type="text" class="rates-form__input fontBodyM" value="Magda">
+                        </label>
+                        <label class="rates-form__label">
+                            <span class="tags">Last Name</span>
+                            <input type="text" class="rates-form__input fontBodyM" value="Bierman">
+                        </label>
+                    </div>
+                    <div class="rates-form__row rates-form__row--no-wrapp">
+                        <label class="rates-form__label">
+                            <span class="tags">Phone Number</span>
+                            <input type="text" class="rates-form__input fontBodyM" value="+1 602-275-6885">
+                        </label>
+                        <label class="rates-form__label">
+                            <span class="tags">Email</span>
+                            <input type="email" class="rates-form__input fontBodyM rates-form__input--invalid" value="mag">
+                        </label>
+                    </div>
+                    <div class="rates-form__decor-line"></div>
+                    <button type="submit" class="rates-form__btn main-btn button-big">see my quote</button>
+                </form>
+
+                <div class="rates-form__info rates-form-info">
+                    <div class="rates-form-info__item">
+                        <h3 class="rates-form-info__title tags">Low monthy payment</h3>
+                        <p class="rates-form-info__text fontBodyS">Fixed monthly rates that will never change during the level term period of your policy.</p>
+                    </div>
+                    <div class="rates-form-info__item">
+                        <h3 class="rates-form-info__title tags">No hassle</h3>
+                        <p class="rates-form-info__text fontBodyS">Our fast and simple questionnaire will get you coverage fast.</p>
+                    </div>
+                    <div class="rates-form-info__item">
+                        <h3 class="rates-form-info__title tags">Easy to qualify</h3>
+                        <p class="rates-form-info__text fontBodyS">Answer our short medical health application to see if you qualify for immediate coverage.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-wrapp" style="background-color: #FFFFFF;">
+        <div class="wrapp">
+            <div class="reviews">
+                <h1 class="reviews__title heading-2">Customer Reviews</h1>
+
+                <div class="reviews__body">
+                    <div class="reviews__item">
+                        <div class="reviews__content">
+                            <div class="reviews__stars">
+                                <img src="../images/star.png" alt="*">
+                                <img src="../images/star.png" alt="*">
+                                <img src="../images/star.png" alt="*">
+                                <img src="../images/star.png" alt="*">
+                                <img src="../images/star-no-active.png" alt="*">
+                            </div>
+                            <h3 class="reviews__subtitle tags">My experience with noexam.com and Life Insurance Broker Heidi Blaser was exceptional. </h3>
+                            <p class="reviews__text fontBodyS">Ms. Blaser timely responded to my initial inquiry for a policy and she answered each of my questions in a timely manner. She also followed through with documentation I needed after the policy was issued. </p>
+                        </div>
+                        <div class="reviews__author">
+                            <img src="../about/img/reviews-photo.png" class="reviews__author-photo"></img>
+                            <div class="reviews__author-info">
+                                <span class="reviews__name tags">Jane Cooper</span>
+                                <span class="reviews__date fontBodyS">July 1, 2021</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reviews__item">
+                        <div class="reviews__content">
+                            <div class="reviews__stars">
+                                <img src="../images/star.png" alt="*">
+                                <img src="../images/star.png" alt="*">
+                                <img src="../images/star.png" alt="*">
+                                <img src="../images/star.png" alt="*">
+                                <img src="../images/star-no-active.png" alt="*">
+                            </div>
+                            <p class="reviews__text fontBodyS">I had worked with Richard Olson in the past and had a great experience. Heidi Blaser did an excellent job working me thru a second policy purchase, getting approved very quickly. She really does an excellent job. I have referred
+                                2 neighbors to her for life insurance policies too. People are nervous about the process and Heidi made it easy to work through. Thank you! Five stars for sure!</p>
+                        </div>
+                        <div class="reviews__author">
+                            <img src="../about/img/reviews-photo.png" class="reviews__author-photo"></img>
+                            <div class="reviews__author-info">
+                                <span class="reviews__name tags">Jane Cooper</span>
+                                <span class="reviews__date fontBodyS">July 1, 2021</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reviews__item">
+                        <div class="reviews__content">
+                            <div class="reviews__stars">
+                                <img src="../images/star.png" alt="*">
+                                <img src="../images/star.png" alt="*">
+                                <img src="../images/star.png" alt="*">
+                                <img src="../images/star.png" alt="*">
+                                <img src="../images/star-no-active.png" alt="*">
+                            </div>
+                            <h3 class="reviews__subtitle tags">My experience with noexam.com and Life Insurance Broker Heidi Blaser was exceptional. </h3>
+                            <p class="reviews__text fontBodyS">Ms. Blaser timely responded to my initial inquiry for a policy and she answered each of my questions in a timely manner. She also followed through with documentation I needed after the policy was issued. </p>
+                        </div>
+                        <div class="reviews__author">
+                            <img src="../about/img/reviews-photo.png" class="reviews__author-photo"></img>
+                            <div class="reviews__author-info">
+                                <span class="reviews__name tags">Jane Cooper</span>
+                                <span class="reviews__date fontBodyS">July 1, 2021</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-wrapp" style="background-color: #FCF9F3;">
+        <div class="wrapp">
+            <div class="life-insurance__cards cards">
+                <div class="cards__item">
+                    <div class="cards__subtitle sub-title-1">top rated companies</div>
+                    <h2 class="cards__title heading-4">Compare Quotes from the top Companies</h2>
+                    <p class="cards__text fontBodyM">Shop a rated carriers with proven track records.</p>
+                    <img src="../quote-result/img/quote-result-card-icon-1.png" alt="icon" class="cards__img">
+                </div>
+                <div class="cards__item">
+                    <div class="cards__subtitle sub-title-1">coverage amount</div>
+                    <h2 class="cards__title heading-4">Up to $1,000,000 of Coverage</h2>
+                    <p class="cards__text fontBodyM">Coverage with or without an exam available for ages 18-65.</p>
+                    <img src="../quote-result/img/quote-result-card-icon-2.png" alt="icon" class="cards__img">
+                </div>
+                <div class="cards__item">
+                    <div class="cards__subtitle sub-title-1">Our track record</div>
+                    <h2 class="cards__title heading-4">NoExam.com</h2>
+                    <p class="cards__text fontBodyM">BBB <span>A+ Rated</span><br> <span>4.8/5 Reviews</span> (1000+ Ratings)</p>
+                    <img src="../quote-result/img/quote-result-card-icon-3.png" alt="icon" class="cards__img">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-wrapp" style="background-color: #FFFFFF;">
+        <div class="wrapp">
+            <section class="questions">
+                <h1 class="questions__title heading-2">Frequently Asked <span>Questions</span></h1>
+                <div class="questions__container">
+                    <div class="questions__item questions__item--life-insurance">
+                        <h6 class="questions__card-title heading-6">Why Did We Create This Business?</h6>
+                        <div class="questions__card-body">
+                            <p class="questions__card-text fontBodyM">Fill out the form at the top of this page to see your custom life insurance quote. We will need your date of birth, height, weight, tobacco usage (if any), coverage amount and term length to show you a quote. This quote is
+                                preliminary and does not take into account any health issues you may have.</p>
+                        </div>
+                    </div>
+                    <div class="questions__item questions__item--life-insurance">
+                        <h6 class="questions__card-title heading-6">Why Do People Buy Life Insurance?</h6>
+                        <div class="questions__card-body">
+                            <p class="questions__card-text fontBodyM">Fill out the form at the top of this page to see your custom life insurance quote. We will need your date of birth, height, weight, tobacco usage (if any), coverage amount and term length to show you a quote. This quote is
+                                preliminary and does not take into account any health issues you may have.</p>
+                        </div>
+                    </div>
+                    <div class="questions__item questions__item--life-insurance">
+                        <h6 class="questions__card-title heading-6">What Can Our Agents Do For You?</h6>
+                        <div class="questions__card-body">
+                            <p class="questions__card-text fontBodyM">Fill out the form at the top of this page to see your custom life insurance quote. We will need your date of birth, height, weight, tobacco usage (if any), coverage amount and term length to show you a quote. This quote is
+                                preliminary and does not take into account any health issues you may have.</p>
+                        </div>
+                    </div>
+                    <div class="questions__item questions__item--life-insurance">
+                        <h6 class="questions__card-title heading-6">Is it Term or Whole Life Insurance?</h6>
+                        <div class="questions__card-body">
+                            <p class="questions__card-text fontBodyM">Fill out the form at the top of this page to see your custom life insurance quote. We will need your date of birth, height, weight, tobacco usage (if any), coverage amount and term length to show you a quote. This quote is
+                                preliminary and does not take into account any health issues you may have.</p>
+                        </div>
+                    </div>
+                    <div class="questions__item questions__item--life-insurance questions__item--active ">
+                        <h6 class="questions__card-title heading-6">How Can I Get a Life Insurance Quote?</h6>
+                        <div class="questions__card-body">
+                            <p class="questions__card-text fontBodyM">Fill out the form at the top of this page to see your custom life insurance quote. We will need your date of birth, height, weight, tobacco usage (if any), coverage amount and term length to show you a quote. This quote is
+                                preliminary and does not take into account any health issues you may have.</p>
+                        </div>
+                    </div>
+                    <div class="questions__item questions__item--life-insurance">
+                        <h6 class="questions__card-title heading-6">Do I Have to Take a Medical Exam?</h6>
+                        <div class="questions__card-body">
+                            <p class="questions__card-text fontBodyM">Fill out the form at the top of this page to see your custom life insurance quote. We will need your date of birth, height, weight, tobacco usage (if any), coverage amount and term length to show you a quote. This quote is
+                                preliminary and does not take into account any health issues you may have.</p>
+                        </div>
+                    </div>
+                    <div class="questions__item questions__item--life-insurance">
+                        <h6 class="questions__card-title heading-6">What What if I Have Health Conditions?</h6>
+                        <div class="questions__card-body">
+                            <p class="questions__card-text fontBodyM">Fill out the form at the top of this page to see your custom life insurance quote. We will need your date of birth, height, weight, tobacco usage (if any), coverage amount and term length to show you a quote. This quote is
+                                preliminary and does not take into account any health issues you may have.</p>
+                        </div>
+                    </div>
+                    <div class="questions__item questions__item--life-insurance">
+                        <h6 class="questions__card-title heading-6">How Much Life Insurance Coverage Should I Get?</h6>
+                        <div class="questions__card-body">
+                            <p class="questions__card-text fontBodyM">Fill out the form at the top of this page to see your custom life insurance quote. We will need your date of birth, height, weight, tobacco usage (if any), coverage amount and term length to show you a quote. This quote is
+                                preliminary and does not take into account any health issues you may have.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="main-wrapp">
+        <div class="wrapp">
+            <footer class="footer">
+                <div class="footer__col">
+                    <img src="../images/header/Logo.svg" alt="logo" class="footer__logo">
+                    <p class="footer__paragraph fontBodyS">Our state-of-the-art technology allows for individuals and families to shop for and buy life insurance online within a matter of minutes.</p>
+                    <div class="footer__icons">
+                        <img src="../images/insta.svg" class="footer__icon" alt="facebook">
+                        <img src="../images/facebook.svg" class="footer__icon" alt="instagram">
+                        <img src="../images/youtube.svg" class="footer__icon" alt="youtube">
+                    </div>
+                </div>
+                <div class="footer__col">
+                    <div class="footer__box">
+                        <h1 class="footer__subtitle sub-title-1">Resources</h1>
+                        <ul class="footer__list">
+                            <li class="footer__item"><a href="#" class="footer__link fontBodyM">Help</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link fontBodyM">Get my price</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link fontBodyM">Calculator</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link fontBodyM">Partnership</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__box">
+                        <h1 class="footer__subtitle sub-title-1">Our website</h1>
+                        <ul class="footer__list">
+                            <li class="footer__item"><a href="#" class="footer__link fontBodyM">About</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link fontBodyM">Licenses</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link fontBodyM">Careers</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link fontBodyM">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <div class="copyright fontBodyS">Copyright © 2021 NoExam.com</div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../plugins/js/slick.js"></script>
+    <script src="../plugins/js/popper.min.js"></script>
+    <script src="../plugins/js/bootstrap.min.js"></script>
+    <script src="../plugins/js/bootstrap-select.min.js"></script>
+    <script src="./life-insurance-v2.js"></script>
+</body>
+
+</html>

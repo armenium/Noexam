@@ -1,4 +1,7 @@
 .best-companies__list-body {
+    max-width: 880px;
+    width: 100%;
+    margin: 0 auto;
     padding: 20px 0 100px 0;
 }
 
@@ -16,6 +19,25 @@
     height: 18px;
     margin-bottom: 30px;
     color: #339E75;
+    cursor: text;
+}
+
+.best-companies__item:hover {
+    text-decoration: none;
+}
+
+.best-companies__item>a {
+    color: #339E75;
+}
+
+.best-companies__item>a:hover {
+    text-decoration: underline;
+}
+
+.best-companies__item>span {
+    line-height: 24px;
+    color: #757575;
+    margin-right: 12px;
 }
 
 

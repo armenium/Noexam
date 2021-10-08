@@ -1,0 +1,116 @@
+.rates-form {
+    display: flex;
+    justify-content: space-between;
+}
+
+.rates-form__form {
+    width: 100%;
+    max-width: 700px;
+}
+
+.rates-form-info {
+    padding-top: 100px;
+}
+
+.rates-form-info__item {
+    width: 100%;
+    max-width: 250px;
+    margin-bottom: 40px;
+}
+
+.rates-form-info__item:last-child {
+    margin-bottom: 0;
+}
+
+.rates-form-info__title {
+    position: relative;
+    margin-bottom: 15px;
+    padding-left: 40px;
+}
+
+.rates-form-info__title:before {
+    content: url("./img/title-icon.png");
+    position: absolute;
+    left: 0;
+}
+
+.rates-form-info__text {
+    color: #7D7D82;
+}
+
+.rates-form__row--no-wrapp {
+    flex-wrap: nowrap !important;
+}
+
+.rates-form__row--no-margin {
+    margin-bottom: 20px;
+}
+
+.rates-form__row--no-wrapp>label {
+    width: 100%;
+}
+
+.rates-form__row--no-wrapp>label>.rates-form__input {
+    width: 100%;
+}
+
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn),
+.rates-form__row--no-wrapp>.rates-form__label {
+    width: 100%;
+}
+
+.life-insurance__cards {
+    padding: 100px 0;
+}
+
+.questions__item--life-insurance {
+    border: 1px solid #E4E4E4;
+}
+
+.life-insurance__cards {
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 991px) {
+    .rates-form {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .rates-form-info {
+        padding-top: 0;
+    }
+    .main-first-screen__subtitle {
+        margin: 0 auto 0 auto !important;
+    }
+    .rates-form-info {
+        padding-bottom: 50px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .rates-form__row--date-of-birth {
+        flex-direction: row !important;
+    }
+    .rates-form__row--date-of-birth>.rates-form__label {
+        margin-right: 15px;
+    }
+    .life-insurance__cards {
+        padding: 60px 0;
+    }
+    .rates-form__row--date-of-birth>.rates-form__label:last-child {
+        margin-right: 0;
+    }
+    .rates-form__select--half-width {
+        width: 100%!important;
+    }
+}
+
+@media screen and (max-width: 374px) {
+    .rates-form__row--date-of-birth {
+        flex-wrap: wrap !important;
+    }
+    .rates-form__row--date-of-birth>.rates-form__label {
+        margin-right: 0;
+    }
+}
