@@ -23,7 +23,7 @@ for($i = $y; $i >= $y - 100; $i--){
 	$years[$i] = $i;
 }
 
-$c = count($prices['plans']['sagicor']);
+#$c = count($prices['plans']['sagicor']);
 
 $wigths = [];
 for($i = 80; $i <= 400; $i++){

@@ -417,3 +417,70 @@
         font-size: 12px;
     }
 }
+
+/* REATE FORM MODAL */
+.close-btn {display: block; position: absolute; z-index: 1; top: 0; right: 0; width: 16px; height: 16px; border-radius: 50%; background: #4a4a4a url(../../../img/icons/close_alt.svg) no-repeat center; cursor: pointer;}
+.close-btn:hover {background-color: #FF5CA0;}
+
+.rate-from-modal {display: none; position: fixed; z-index: 1000; background-color: rgba(117, 117, 117, 0.45); left: 0; top: 0; bottom: 0; right: 0;}
+.rate-from-modal .form-inner {display: flex; justify-content: center; align-items: center; width: 100%; height: 100%;}
+.rate-form {max-width: 700px; margin: auto; padding: 40px; box-shadow: 10px 20px 80px rgba(117, 117, 117, 0.2); border-radius: 4px; background-color: #fff; position: relative;}
+.rate-form .close-btn {top: 20px; right: 20px; width: 24px; height: 24px;}
+.rate-form h2 {font-size: 32px; line-height: 1; color: #4a4a4a; font-weight: normal; margin: 0 0 36px;}
+.rate-form .help-block {display: none;}
+.rate-form .first,
+.rate-form .second,
+.rate-form .third,
+.rate-form .fourth {margin-bottom: 30px;}
+.rate-form label {font-size: 16px; margin-bottom: 0; font-weight: 300; color: #868686; line-height: 1; cursor: pointer;}
+.rate-form label.el_lbl {margin-bottom: 15px;}
+.rate-form label.error {color: #ff006f;}
+.rate-form input[type="text"].dark-border {font-size: 24px; border-color: #D4D4D4; padding: 0 95px 0 5px; text-align: center; line-height: 22px; height: auto; background-color: transparent; border-width: 0 0 2px 0; border-style: solid; border-radius: 0; color: #4a4a4a; width: 100%;}
+.rate-form input[type="text"].dark-border:focus {border-color: #9dd0da;}
+.rate-form input[type="text"].dark-border.invalid {border-color: #ff006f;}
+.rate-form .age-wrap {color: #999; font-size: 13px; position: relative; line-height: 1;}
+.rate-form .age-wrap::after {content: attr(data-postfix); position: absolute; right: 0; bottom: -3px; background-color: #fff; padding: 0 0 0 25px; font-size: 16px; font-weight: 300;}
+.rate-form .form-control-radio.rbtn {margin-top: 5px; display: flex; display: -webkit-flex; flex-flow: row nowrap; -webkit-flex-flow: row nowrap;	justify-content: space-between;	-webkit-justify-content: space-between;}
+.rate-form .form-control-radio.rbtn label {margin-right: 5px; display: block;}
+.rate-form .form-control-radio.rbtn label:last-child {margin-right: 0;}
+.rate-form .first .form-control-radio.rbtn label,
+.rate-form .third .form-control-radio.rbtn label {flex: 1 1 auto; -webkit-flex: 1 1 auto;}
+.rate-form .form-control-radio.rbtn label span {border: 1px solid #D6D6D6; border-radius: 4px; text-align: center; padding: 9px 5px; width: 100%; color: #9B9B9B; font-size: 16px; font-weight: normal; display: block; line-height: 1;}
+.rate-form .form-control-radio.rbtn label:hover span {background-color: #F6FFF6;}
+.rate-form .form-control-radio.rbtn label span:before {display: none;}
+.rate-form .form-control-radio.rbtn label input[type="radio"]:checked + span {background-color: #EEFDEE; color: #4a4a4a;}
+.rate-form .coverage-amount-lbl {text-align: center; font-size: 24px; color: #4a4a4a;}
+.rate-form .btn-quote {background-color: #12A3E1; color: #fff; height: auto; border-radius: 5px; width: 100%; display: block; font-size: 20px; line-height: 1; padding: 14px 10px; margin: auto;}
+.rate-form .btn-quote:disabled {background-color: #D6D6D6;}
+.rate-form .btn-quote:not(:disabled):hover,
+.rate-form .btn-quote:not(:disabled):active,
+.rate-form .btn-quote:not(:disabled):focus {background-color: #12b9fd;}
+.rate-form .btn-quote:not(:disabled):active {box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);}
+.rate-form .form-control-radio.dot {white-space: nowrap;}
+.rate-form .form-control-radio.dot label:first-child {margin-right: 20px;}
+.rate-form .form-control-radio.dot label span {display: block; line-height: 28px; color: #999; font-weight: normal; font-size: 16px; position: relative;}
+.rate-form .form-control-radio.dot label span:before {content: ""; display: inline-block; height: 26px; width: 26px; border: 2px solid #C2C3CC; border-radius: 25px; margin: 0 8px 0 0; position: relative; top: auto; vertical-align: middle;}
+.rate-form .form-control-radio.dot label span::after {content: ""; opacity: 0; display: block; border-radius: 50%; width: 18px; height: 18px; position: absolute; z-index: 1; left: 4px; top: 7px; background-color: #399A3F;}
+.rate-form .form-control-radio.dot label input[type="radio"]:checked + span:after {opacity: 1;}
+.rate-form .healths {margin-top: 10px;}
+.rate-form .healths .selected-health-lbl {text-align: center; margin-top: 15px;}
+.rate-form .healths .health {margin: auto; /*width:370px; overflow: hidden;*/ display: flex; flex-flow: row-reverse nowrap; justify-content: space-between;}
+.rate-form .healths .health span {flex: 1 1 auto; /*float:right;*/ position:relative; line-height: 0;}
+.rate-form .healths .health span input {position:absolute; top:0; left:0; opacity:0; display: block; width: 100%; height: 100%; margin: 0; cursor: pointer;}
+.rate-form .healths .health span label {display: block; width:auto; height:42px; text-align: center; font-size:0; margin:0; /*padding: 0 40px 0 0;*/ line-height:0; background-color: transparent; cursor: pointer;}
+.rate-form .healths .health span:first-child label {/*padding: 0;*/}
+.rate-form .healths .health span label:before {display: none;}
+.rate-form .healths .health span:hover ~ span label svg polygon,
+.rate-form .healths .health span:hover ~ span label svg path,
+.rate-form .healths .health span:hover label svg polygon,
+.rate-form .healths .health span:hover label svg path,
+.rate-form .healths .health span.checked label svg polygon,
+.rate-form .healths .health span.checked label svg path,
+.rate-form .healths .health span.checked ~ span label svg polygon,
+.rate-form .healths .health span.checked ~ span label svg path {fill: #99D399;}
+
+@media all and (max-width: 767px){
+    .rate-form {padding: 20px; border-radius: 0; height: 100vh;}
+    .rate-form h2 {font-size: 26px;}
+    .rate-form .form-control-radio.dot {text-align: center;}
+}
