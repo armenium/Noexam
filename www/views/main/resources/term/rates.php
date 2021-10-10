@@ -1,9 +1,12 @@
 <?php
 
 use app\assets\AppAsset;
+use app\components\BreadcrumbsNew;
+use app\widgets\Author;
 use yii\bootstrap\BootstrapAsset;
 use yii\web\JqueryAsset;
 use yii\web\View;
+use app\widgets\ApplyNowForm;
 
 $isMobile = Yii::$app->params['devicedetect']['isMobile'];
 
@@ -39,29 +42,16 @@ $this->params['breadcrumbs'][] = ['label' => 'Rates', 'url' => $this->context->c
 	<div class="wrapp">
 		<section class="rates">
 			<div class="rates__nav breadcrumbs">
-				<ul class="breadcrumbs__list">
-					<li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link tags">Life Insurance</a></li>
-					<li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link tags breadcrumbs__link--active">Rates</a></li>
-				</ul>
+				<?=BreadcrumbsNew::widget(['links' => $this->params['breadcrumbs']]);?>
 			</div>
 			<div class="rates__first-screen main-first-screen">
 				<h1 class="main-first-screen__title heading-0">See Life Insurance Rate Charts By Age</h1>
 				<div class="main-first-screen__advice fs-advice">
 					<div class="fs-advice__header">
-						<div class="fs-advice__col">
-							<img src="../images/avatar-1.png" alt="avatar" class="fs-advice__avatar">
-							<div class="fs-advice__user-info">
-								<span class="tags">Jonathan Fritz</span>
-								<span class="fontBodyS">Published on January 22, 2021</span>
-							</div>
-						</div>
-						<div class="fs-advice__col">
-							<span class="button-small ">Advertiser Disclosure</span>
-						</div>
+						<?=Author::widget(['db_time' => $this->context->current_cat->updated, 'file_time' => filemtime(__FILE__)]);?>
 					</div>
 					<div class="fs-advice__body">
-						<p class="fs-advice__text fontBodyM">Life insurance rates are heavily influenced by age. The older you are, the higher the rate. If you are curious about how much life insurance will cost for someone your age, use the tool below to quickly show sample life insurance
-							rates from seven companies.</p>
+						<p class="fs-advice__text fontBodyM">Life insurance rates are heavily influenced by age. The older you are, the higher the rate. If you are curious about how much life insurance will cost for someone your age, use the tool below to quickly show sample life insurance rates from seven companies.</p>
 					</div>
 				</div>
 				<h2 class="main-first-screen__info heading-6">Use the tool below to see life insurance rates for your age. Enter your details and desired coverage amount to see sample rates to compare.</h2>
@@ -72,6 +62,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Rates', 'url' => $this->context->c
 
 <div class="main-wrapp" style="background-color: #FCF9F3;">
 	<div class="wrapp">
+		<?=ApplyNowForm::widget();?>
 		<div class="rates-form">
 			<form class="rates-form__form">
 				<h1 class="rates-form__title heading-5">Compare and Save. Get a Quote Today.</h1>
