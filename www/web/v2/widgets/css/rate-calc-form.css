@@ -1,0 +1,14 @@
+.applynow-form-section.rate-calc.v2.center .results {margin-left: auto; margin-right: auto;}
+.applynow-form-section.rate-calc.v2.center .results .inner {max-width: 786px; margin-left: auto; margin-right: auto; margin-bottom: 30px;}
+.applynow-form-section.rate-calc.v2.center .results .quote-results-table {max-width: 786px; margin-left: auto; margin-right: auto;}
+.applynow-form-section.rate-calc.v2 .rate-calc-desc {font-size: 24px; font-weight: bold !important; line-height: 1.3;}
+.applynow-form-section.rate-calc.v2 .rate-calc-desc * {font-weight: bold !important;}
+.quote-results-table .table-wrap {overflow: auto; width: 100%;}
+.plans-table {border-collapse: separate; border-spacing: 0; border: 1px solid #BABABA; border-radius: 4px; overflow: hidden;}
+.plans-table th,
+.plans-table td {white-space: nowrap; background-color: #fff; line-height: 1; padding: 8px 13px; text-align: right; border-width: 0 1px 1px 0; border-color: #E4E4E4; border-style: solid; cursor: default;}
+.plans-table [data-sign]:before {content: attr(data-sign); float: left;}
+.plans-table .sticky-col {position: sticky; position: -webkit-sticky; left: 0; box-shadow: 8px 8px 10px 0px rgba(0,0,0,0.3);}
+.plans-table th,
+.plans-table .sticky-col {font-weight: bold !important;}
+.plans-table tr:hover td {background-color: #9dd0da !important; color: #000 !important;}

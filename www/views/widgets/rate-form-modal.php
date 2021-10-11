@@ -1,16 +1,11 @@
 <?php
 
-use yii\web\Cookie;
 use yii\widgets\ActiveForm;
 use yii\helpers\Html;
-use yii\helpers\VarDumper;
 use app\models\Customers;
-use yii\widgets\Pjax;
 use app\components\Helpers;
-use app\components\BaseController;
+use yii\helpers\VarDumper;
 
-$customer_data = new Customers(['scenario' => Customers::SCENARIO_RATE_DATA]);
-$isMobile = Yii::$app->params['devicedetect']['isMobile'];
 ?>
 <div class="form-inner">
 	<div class="rate-form trans_all">
@@ -18,7 +13,7 @@ $isMobile = Yii::$app->params['devicedetect']['isMobile'];
 		<a class="close-btn btn-close-rate-form" data-trigger="js_action_click" data-action="hide_rate_modal"></a>
 		<?php $form = ActiveForm::begin([
 			'id' => 'rate_form_flat',
-			'action' => '/companies-filter/post-rate-flat/',
+			'action' => $action,
 			'enableAjaxValidation' => false,
 			'options' => ['class' => 'applynow-form', 'data-view' => 'product'], 'fieldConfig' => ['options' => ['tag' => false]]
 		]);?>
@@ -36,7 +31,7 @@ $isMobile = Yii::$app->params['devicedetect']['isMobile'];
 			<div class="col-xs-12 col-sm-6 el">
 				<label class="el_lbl">&nbsp;</label>
 				<?=$form->field($customer_data, 'gender')->radioList(
-					['f' => 'Female', 'm' => 'Male'],
+					$customer_data::$genders,
 					[
 						'item' => function($index, $label, $name, $checked, $value) {
 							$checked = $checked ? 'checked="checked"' : '';

@@ -895,3 +895,9 @@ body.myquote.quote-results header.header {background-color: #FCF9F3;}
         flex-direction: column;
     }
 }
+
+.input--invalid,
+.input--invalid + button.dropdown-toggle {background-color: #d6ece3; border: 1px solid #377660;}
+.checkbox-label > input.input--invalid + span {background-color: #d6ece3; border-color: #377660;}
+
+.err-mess {color: #377660; text-align: center; margin-bottom: 15px;}

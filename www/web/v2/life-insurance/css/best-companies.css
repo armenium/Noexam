@@ -263,13 +263,7 @@
     margin-bottom: 0;
 }
 
-.choose-company__chart {
-    width: 100%;
-    max-width: 700px;
-    height: 430px;
-    margin: 0 auto 60px auto;
-    border: 1px dashed #000;
-}
+.choose-company__chart {margin: 0 auto 60px auto;}
 
 .company__footer-btns-box {
     display: none;

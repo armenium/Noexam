@@ -6,6 +6,7 @@ use yii\bootstrap\BootstrapAsset;
 use yii\helpers\Url;
 use app\widgets\Author;
 use app\widgets\GetQuote;
+use app\widgets\RateFormModal;
 use yii\web\JqueryAsset;
 
 if(!empty($this->context->current_cat->meta_desc)){
@@ -112,7 +113,9 @@ $this->params['breadcrumbs'][] = ['label' => 'Best Companies', 'url' => $this->c
 
 				<p class="choose-company__text fontBodyM">A good rule of thumb is to choose a company that has the letter “A” in its ratings and to avoid the companies that do not.</p>
 
-				<div class="choose-company__chart"></div>
+				<div class="choose-company__chart text-center">
+					<?=Yii::$app->Helpers->getImage(['class' => 'img-fluid', 'src' => '/v2/life-insurance/img/image-2828.jpg', 'alt' => 'average cost of life insurance', 'from_cdn' => true, 'lazyload' => true]);?>
+				</div>
 
 				<div class="choose-company__box">
 					<h2 class="choose-company__subtitle heading-5">Underwriting Time</h2>
@@ -199,5 +202,5 @@ $this->params['breadcrumbs'][] = ['label' => 'Best Companies', 'url' => $this->c
 </div>
 
 <div id="js_rate_from_modal" class="rate-from-modal">
-	<?=$this->render('/main/widgets/rate-form-modal-2.php');?>
+	<?=RateFormModal::widget();?>
 </div>

@@ -81,7 +81,7 @@ $isMobile = Yii::$app->params['devicedetect']['isMobile'];
 					</div>
 
 					<div class="contact-details__row">
-						<label class="contact-details__checkbox-label">
+						<label class="contact-details__checkbox-label checkbox-label">
 							<input type="checkbox" required="required" value="1">
 							<span></span>
 							<div class="fontBodyS">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dictumst nisl proin lobortis morbi in vel elit molestie scelerisque. Dui pretium et nibh volutpat quisque.</div>

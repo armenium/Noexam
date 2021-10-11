@@ -8,24 +8,35 @@ use Yii;
 use yii\base\Widget;
 use yii\helpers\Html;
 
-class ApplyNowForm extends Widget{
+class RateCalcForm2 extends Widget{
 	
-	public $title = 'Compare and Save. Get a Quote Today.';
-	public $position = 'center';
-	public $width = 'auto';
+	public $autoload = 'off'; # off | ajax | instantly
+	public $autoscroll = 0;
 	public $display_title = true;
+	public $title = 'Compare Life Insurance Rates by Age';
+	public $submit_text = 'Load Rates';
+
 	private $customer_data;
 	private $isMobile;
 	private $days = [];
 	private $months = [];
 	private $years = [];
 	private $wigths = [];
+	private $quots_count = 0;
+	private $default_results = '';
 	
 	public function init(){
 		parent::init();
 		
-		$this->customer_data = new CustomerData();
+		$this->customer_data = new CustomerData(['scenario' => CustomerData::SCENARIO_RATE_CALC_TABLE]);
 		$this->isMobile = Yii::$app->params['devicedetect']['isMobile'];
+		
+		$quots_count = Yii::$app->controller->getUsageCounterFromRateCalc();
+		$this->quots_count = number_format((intval($quots_count) / 3), 0, '.', ',');
+		
+		if($autoload == 'instantly'){
+			$this->default_results = Yii::$app->controller->getRateCalcTableDefaultResults();
+		}
 		
 		for($i = 1; $i <= 31; $i++){
 			if(strlen($i) == 1){
@@ -51,10 +62,11 @@ class ApplyNowForm extends Widget{
 	}
 	
 	public function run(){
-		return $this->render('@app/views/widgets/apply-now-form.php', [
+		return $this->render('@app/views/widgets/rate-calc-form-2.php', [
 			'title' => $this->title,
-			'position' => $this->position,
-			'width' => $this->width,
+			'submit_text' => $this->submit_text,
+			'autoload' => $this->autoload,
+			'autoscroll' => $this->autoscroll,
 			'display_title' => $this->display_title,
 			'customer_data' => $this->customer_data,
 			'isMobile' => $this->isMobile,
@@ -62,6 +74,8 @@ class ApplyNowForm extends Widget{
 			'months' => $this->months,
 			'years' => $this->years,
 			'wigths' => $this->wigths,
+			'quots_count' => $this->quots_count,
+			'default_results' => $this->default_results,
 		]);
 	}
 	

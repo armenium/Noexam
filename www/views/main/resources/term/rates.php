@@ -7,6 +7,7 @@ use yii\bootstrap\BootstrapAsset;
 use yii\web\JqueryAsset;
 use yii\web\View;
 use app\widgets\ApplyNowForm;
+use app\widgets\RateCalcForm2;
 
 $isMobile = Yii::$app->params['devicedetect']['isMobile'];
 
@@ -63,148 +64,6 @@ $this->params['breadcrumbs'][] = ['label' => 'Rates', 'url' => $this->context->c
 <div class="main-wrapp" style="background-color: #FCF9F3;">
 	<div class="wrapp">
 		<?=ApplyNowForm::widget();?>
-		<div class="rates-form">
-			<form class="rates-form__form">
-				<h1 class="rates-form__title heading-5">Compare and Save. Get a Quote Today.</h1>
-				<div class="rates-form__row">
-
-					<div class="rates-form__label">
-						<label for="amount">
-							<span class="tags">Coverage amount</span>
-						</label>
-						<select id="amount" class="rates-form__select js_selectpicker">
-							<option value="250000">$250,000</option>
-							<option value="350000">$350,000</option>
-						</select>
-					</div>
-
-					<div class="rates-form__label">
-						<label for="term">
-							<span class="tags">Term Length</span>
-						</label>
-						<select id="term" class="rates-form__select js_selectpicker">
-							<option value="10">10 Year Term</option>
-							<option value="20">20 Year Term</option>
-						</select>
-					</div>
-
-					<div class="rates-form__label">
-						<label for="state">
-							<span class="tags">State you reside in</span>
-						</label>
-						<select id="state" class="rates-form__select js_selectpicker">
-							<option value="" disabled selected>Select State</option>
-							<option value="State 1">State 1</option>
-						</select>
-					</div>
-
-					<div class="rates-form__label">
-						<label for="tobacco">
-							<span class="tags">Do you use tobacco?</span>
-						</label>
-						<select id="tobacco" class="rates-form__select js_selectpicker">
-							<option value="Use">Use</option>
-							<option value="">Doesn’t use</option>
-						</select>
-					</div>
-
-
-				</div>
-
-				<h2 class="rates-form__subtitle main-title">Date of Birth</h2>
-				<div class="rates-form__row rates-form__row--no-wrap">
-					<div class="rates-form__label">
-						<label for="date">
-							<span class="tags">Date</span>
-						</label>
-						<select id="date" class="rates-form__select js_selectpicker">
-							<option value="DD">DD</option>
-							<option value="DD">DD</option>
-						</select>
-					</div>
-
-					<div class="rates-form__label">
-						<label for="month">
-							<span class="tags">Month</span>
-						</label>
-						<select id="month" class="rates-form__select js_selectpicker">
-							<option value="MM">MM</option>
-							<option value="MM">MM</option>
-						</select>
-					</div>
-
-					<div class="rates-form__label">
-						<label for="year">
-							<span class="tags">Year</span>
-						</label>
-						<select id="year" class="rates-form__select js_selectpicker">
-							<option value="YYYY">YYYY</option>
-							<option value="YYYY">YYYY</option>
-						</select>
-					</div>
-				</div>
-
-				<h2 class="rates-form__subtitle main-title">About You</h2>
-				<div class="rates-form__row rates-form__row--no-column">
-					<div class="rates-form__label">
-						<label for="sex" class="rates-form__label--full-width">
-							<span class="tags">Sex</span>
-						</label>
-						<select id="sex" class="rates-form__select rates-form__select--full-width js_selectpicker">
-							<option value="male">Male</option>
-							<option value="female">Female</option>
-						</select>
-					</div>
-
-					<div class="rates-form__label">
-						<label for="height" class="rates-form__label--margin">
-							<span class="tags">Height</span>
-						</label>
-						<select id="height" class="rates-form__select rates-form__select--half-width js_selectpicker">
-							<option value="" disabled selected>Select</option>
-							<option value="180">180</option>
-							<option value="181">181</option>
-						</select>
-					</div>
-
-					<div class="rates-form__label">
-						<label for="weight">
-							<span class="tags">Weight</span>
-						</label>
-						<select id="weight" class="rates-form__select rates-form__select--half-width js_selectpicker">
-							<option value="" disabled selected>Select</option>
-							<option value="180">65</option>
-							<option value="181">70</option>
-						</select>
-					</div>
-
-				</div>
-
-				<h2 class="rates-form__subtitle main-title">Contact Details</h2>
-				<div class="rates-form__row">
-					<label class="rates-form__label">
-						<span class="tags">First Name</span>
-						<input type="text" class="rates-form__input fontBodyM" value="Magda">
-					</label>
-					<label class="rates-form__label">
-						<span class="tags">Last Name</span>
-						<input type="text" class="rates-form__input fontBodyM" value="Bierman">
-					</label>
-					<label class="rates-form__label">
-						<span class="tags">Email</span>
-						<input type="email" class="rates-form__input fontBodyM rates-form__input--invalid" value="mag">
-					</label>
-					<label class="rates-form__label">
-						<span class="tags">Phone Number</span>
-						<input type="text" class="rates-form__input fontBodyM" value="+1 602-275-6885">
-					</label>
-				</div>
-
-				<div class="rates-form__decor-line"></div>
-				<button type="submit" class="rates-form__btn main-btn button-big">see my quote</button>
-
-			</form>
-		</div>
 	</div>
 </div>
 
@@ -349,52 +208,8 @@ $this->params['breadcrumbs'][] = ['label' => 'Rates', 'url' => $this->context->c
 <div class="main-wrapp" style="background-color: #FCF9F3;">
 	<div class="wrapp">
 		<section class="charts-by-age">
-			<h1 class="charts-by-age__title heading-2">Life Insurance Rate</br> Charts by Age</h1>
-
-			<form class="charts-by-age__form">
-				<h2 class="charts-by-age__subtitle heading-4">Compare Life Insurance Rates by Age</h2>
-
-				<div class="charts-by-age__container">
-					<label class="charts-by-age__label">
-						<span class="tags">My age is</span>
-						<input type="number" class="charts-by-age__input fontBodyM" value="55"><span class="charts-by-age__input-text tags">years old</span></input>
-					</label>
-					<div class="charts-by-age__label">
-						<label for="my-gender">
-							<span class="tags">My gender is</span>
-						</label>
-						<select id="my-gender" name="gender" class="charts-by-age__select fontBodyM js_selectpicker">
-							<option value="female" selected>Female</option>
-							<option value="female">Male</option>
-						</select>
-					</div>
-
-					<div class="charts-by-age__label">
-						<label for="term-length">
-							<span class="tags">Term length</span>
-						</label>
-						<select id="term-length" name="term" class="charts-by-age__select fontBodyM js_selectpicker">
-							<option value="20" selected>20 years</option>
-							<option value="30">30 years</option>
-						</select>
-					</div>
-
-					<div class="charts-by-age__label">
-						<label for="health">
-							<span class="tags">My overall health</span>
-						</label>
-						<select id="health" name="health" class="charts-by-age__select fontBodyM js_selectpicker">
-							<option value="" selected>Very good</option>
-							<option value="">Bad</option>
-						</select>
-					</div>
-
-				</div>
-
-				<div class="charts-by-age__decor-line"></div>
-
-				<button type="submit" class="charts-by-age__btn main-btn button-big">Load rates</button>
-			</form>
+			<h2 class="charts-by-age__title heading-2">Life Insurance Rate</br> Charts by Age</h2>
+			<?=RateCalcForm2::widget(['autoload' => 'ajax', 'autoscroll' => 0, 'title' => 'Compare Life Insurance Rates by Age']);?>
 		</section>
 	</div>
 </div>
@@ -563,9 +378,6 @@ $this->params['breadcrumbs'][] = ['label' => 'Rates', 'url' => $this->context->c
 	</section>
 	<!-- END PAGE-CONTENT -->
 
-	<section class="related-articles">
-		<?=$this->render('/main/widgets/related-articles.php');?>
-	</section>
 </div>
 
 <script type="application/ld+json">

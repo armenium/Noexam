@@ -299,7 +299,12 @@ $(function(){
 						$form.submit();
 					}, 500);
 				}else{
-					alert("Please complete all fields marked in green.");
+					if($form.find('.err-mess').length){
+						$form.find('.err-mess').remove();
+					}
+					$btn.before('<div class="err-mess">Please complete all fields marked in green.</div>');
+					$btn.prev('.err-mess').delay(3000).fadeOut(400);
+					//alert("Please complete all fields marked in green.");
 					return false;
 				}
 			},
@@ -315,26 +320,26 @@ $(function(){
 					if($(this).attr('type') == 'email'){
 						if(!$.trim($(this).val()).match(pattern)){
 							//console.log('email alert');
-							$(this).parent().addClass('error').end().addClass('error contact-details__input--invalid');
+							$(this).parent().addClass('error').end().addClass('error input--invalid');
 							error = true;
 						}
 					}
 
 					if($(this).attr('type') == 'checkbox'){
 						if(!$(this).is(':checked')){
-							$(this).parent().addClass('error').end().addClass('error contact-details__input--invalid');
+							$(this).parent().addClass('error').end().addClass('error input--invalid');
 							error = true;
 						}
 					}
 
 					if($(this).val() == ''){
-						$(this).parent().addClass('error').end().addClass('error contact-details__input--invalid');
+						$(this).parent().addClass('error').end().addClass('error input--invalid');
 						error = true;
 					}
 				});
 
 				if(error == false){
-					$(this).parent().removeClass('error').end().removeClass('error contact-details__input--invalid');
+					$(this).parent().removeClass('error').end().removeClass('error input--invalid');
 				}
 
 				console.log(error ? 1 : -1);
@@ -342,7 +347,7 @@ $(function(){
 				return error;
 			},
 			removeElementsErrors: function(){
-				$(this).parent().removeClass('error').end().removeClass('error contact-details__input--invalid');
+				$(this).parent().removeClass('error').end().removeClass('error input--invalid');
 			}
 		},
 		ApplyNow: {

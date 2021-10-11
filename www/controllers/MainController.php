@@ -259,8 +259,9 @@ class MainController extends BaseController {
 			$scenario = null;
 
 			$model = CustomerData::find()->where(['sid' => $session->id, 'status' => 'new'])->one();
-
-			//VarDumper::dump($request->post('CustomerData'), 10, 1);
+			#VarDumper::dump($request->post('CustomerData'), 10, 1);
+			#VarDumper::dump($model, 10, 1); exit;
+			
 			switch($request->post('CustomerData')['form_name']){
 				case 'term':
 					Yii::info( 'Step - "term". Planing redirect to "/personalinfo/" page.', 'noexam' );
@@ -394,7 +395,7 @@ class MainController extends BaseController {
 					break;
 			}
 
-			if(count($model)){
+			if(!is_null($model)){
 
 				$model->load($request_post);
 				$model->scenario = $scenario;
@@ -705,7 +706,7 @@ class MainController extends BaseController {
 			$iniciator           = $requestCustomerData['form_name'];
 			$scenario            = CustomerData::SCENARIO_RATE_CALC_TABLE;
 
-			if(count($model)){
+			if(!is_null($model)){
 				$model->load($request_post);
 				$model->scenario = $scenario;
 				$ret['message'] = 'CustomerData - updated record - '.$model->id;
@@ -1768,7 +1769,9 @@ class MainController extends BaseController {
 		$this->layout = 'planinformation';
 		$display_form = false;
 		$prices = [];
-
+		$total_terms_count = 0;
+		$total_plans_count = 0;
+		
 		$request = Yii::$app->request;
 		$session = Yii::$app->session;
 		$sagicor = Yii::$app->Sagicor;
@@ -1900,12 +1903,21 @@ class MainController extends BaseController {
 				}
 			}
 			
-			$total_terms_count = 0;
-			foreach($prices['plans']['exam_no'] as $company_terms){
-				$total_terms_count += count($company_terms);
+			
+			if(count($prices['plans']['exam_no'])){
+				foreach($prices['plans']['exam_no'] as $company_terms){
+					if(!is_null($company_terms)){
+						$total_terms_count += count($company_terms);
+					}
+				}
 			}
-			foreach($prices['plans']['exam_yes'] as $company_terms){
-				$total_terms_count += count($company_terms);
+			
+			if(count($prices['plans']['exam_yes'])){
+				foreach($prices['plans']['exam_yes'] as $company_terms){
+					if(!is_null($company_terms)){
+						$total_terms_count += count($company_terms);
+					}
+				}
 			}
 
 			$total_plans_count = count($prices['plans']['exam_no']) + count($prices['plans']['exam_yes']);

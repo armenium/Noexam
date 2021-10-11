@@ -88,6 +88,7 @@ class CustomerData extends ActiveRecord {
     public $age;
     public $health;
     public $guessing_statistic_type;
+    public $gender;
 	//public $birth_month;
 	//public $birth_day;
 	//public $birth_year;
@@ -669,7 +670,7 @@ class CustomerData extends ActiveRecord {
 		1 => 'Yes',
 		0 => 'No',
 	];
-	public static $gender = [
+	public static $genders = [
 		'm' => 'Male',
 		'f' => 'Female',
 	];

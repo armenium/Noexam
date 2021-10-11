@@ -3042,9 +3042,9 @@ class BaseController extends Controller{
 		$count = count($prices_range);
 		$center = $sum / $count;
 
-		$color_min = "#35d84e";
-		$color_mid = "#ffdd00";
-		$color_max = "#ff3a3d";
+		$color_min = "#339e75";
+		$color_mid = "#FAE675";
+		$color_max = "#e65023";
 
 		$adj = $center - $min;
 

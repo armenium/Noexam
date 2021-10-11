@@ -6,7 +6,7 @@ use yii\helpers\VarDumper;
 <div class="rates-form applynow-form-section widget <?=$position;?>" style="width:<?=$width;?>;">
 	<?php $form = ActiveForm::begin(['id' => 'applynow-form', 'action' => '/post/', 'options' => ['class' => 'rates-form__form'], 'fieldConfig' => ['options' => ['tag' => false]]]);?>
 	<?=$form->field($customer_data, 'form_name')->hiddenInput(['value' => 'contentform', 'id' => ''])->label(false);?>
-	<?=$form->field($customer_data, 'redirect')->hiddenInput(['value' => 'apply-now/quote-result/', 'id' => ''])->label(false);?>
+	<?=$form->field($customer_data, 'redirect')->hiddenInput(['value' => 'quote-results', 'id' => ''])->label(false);?>
 	
 	<?php if($display_title):?>
 		<h1 class="rates-form__title heading-5"><?=$title;?></h1>
