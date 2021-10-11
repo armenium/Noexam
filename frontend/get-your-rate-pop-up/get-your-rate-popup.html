@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote result</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../plugins/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../plugins/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="../css/shared-styles.css">
+    <link rel="stylesheet" href="../css/range-slider.css">
+    <link rel="stylesheet" href="../plugins/css/ion.rangeSlider.min.css">
+    <link rel="stylesheet" href="./get-your-rate-popup.css">
+</head>
+
+<body>
+
+    <header class="header header--empty" style="background-color: #FCF9F3;">
+        <img src="../images/header/Logo.svg" alt="logo" class="header__logo">
+    </header>
+
+    <div class="get-your-rate-popup get-your-rate-popup--active">
+        <div class="get-your-rate-popup__wrapper"></div>
+        <div class="get-your-rate-popup__body">
+            <div class="get-your-rate-popup__close-icon">×</div>
+            <h1 class="get-your-rate-popup__title heading-4">Get your rate</h1>
+            <div class="get-your-rate-popup__range">
+                <input type="text" class="get-your-rate-popup__range-slider" value="" />
+            </div>
+            <div class="get-your-rate-popup__radio-btns">
+                <label class="get-your-rate-popup__label main-radio-btn-label">
+                    <input type="radio" name="term" class="get-your-rate-popup__radio-btn main-radio-btn">
+                    <span class="get-your-rate-popup__btn-icon main-radio-btn-icon"></span>
+                    <span class="fontBodyM">10 years</span>
+                </label>
+                <label class="get-your-rate-popup__label main-radio-btn-label">
+                    <input type="radio" name="term" class="get-your-rate-popup__radio-btn main-radio-btn" checked>
+                    <span class="get-your-rate-popup__btn-icon main-radio-btn-icon"></span>
+                    <span class="fontBodyM">15 years</span>
+                </label>
+                <label class="get-your-rate-popup__label main-radio-btn-label">
+                    <input type="radio" name="term" class="get-your-rate-popup__radio-btn main-radio-btn"> 
+                    <span class="get-your-rate-popup__btn-icon main-radio-btn-icon"></span>
+                    <span class="fontBodyM"> 20 years</span>
+                </label>
+                <label class="get-your-rate-popup__label main-radio-btn-label">
+                    <input type="radio" name="term" class="get-your-rate-popup__radio-btn main-radio-btn">
+                    <span class="get-your-rate-popup__btn-icon main-radio-btn-icon"></span>
+                    <span class="fontBodyM">30 years</span>
+                </label>
+            </div>
+            <div class="get-your-rate-popup__radioBtnsBox">
+                <label class="get-your-rate-popup__label main-radio-btn-label">
+                    <input type="radio" name="sex" class="get-your-rate-popup__radio-btn main-radio-btn">
+                    <span class="get-your-rate-popup__btn-icon main-radio-btn-icon"></span>
+                    <span class="fontBodyM">Male</span>
+                </label>
+                <label class="get-your-rate-popup__label main-radio-btn-label">
+                    <input type="radio" name="sex" class="get-your-rate-popup__radio-btn main-radio-btn">
+                    <span class="get-your-rate-popup__btn-icon main-radio-btn-icon"></span>
+                    <span class="fontBodyM">Female</span>
+                </label>
+            </div> 
+
+            <div class="get-your-rate-popup__row">
+                <label class="get-your-rate-popup__label">
+                    <span class="tags">My age is</span>
+                    <input type="number" class="get-your-rate-popup__input fontBodyM" value="55"><span class="charts-by-age__input-text tags">years old</span></input>
+                </label>
+            </div>
+
+        </div>
+    </div>
+    
+
+
+    <div class="main-wrapp" style="background-color: #ffffff;">
+        <div class="wrapp">
+            <footer class="footer">
+                <div class="footer__col">
+                    <img src="../images/header/Logo.svg" alt="logo" class="footer__logo">
+                    <p class="footer__paragraph fontBodyS">Our state-of-the-art technology allows for individuals and families to shop for and buy life insurance online within a matter of minutes.</p>
+                    <div class="footer__icons">
+                        <img src="../images/insta.svg" class="footer__icon" alt="facebook">
+                        <img src="../images/facebook.svg" class="footer__icon" alt="instagram">
+                        <img src="../images/youtube.svg" class="footer__icon" alt="youtube">
+                    </div>
+                </div>
+                <div class="footer__col">
+                    <div class="footer__box">
+                        <h1 class="footer__subtitle sub-title-1">Resources</h1>
+                        <ul class="footer__list">
+                            <li class="footer__item"><a href="#" class="footer__link fontBodyM">Help</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link fontBodyM">Get my price</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link fontBodyM">Calculator</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link fontBodyM">Partnership</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__box">
+                        <h1 class="footer__subtitle sub-title-1">Our website</h1>
+                        <ul class="footer__list">
+                            <li class="footer__item"><a href="#" class="footer__link fontBodyM">About</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link fontBodyM">Licenses</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link fontBodyM">Careers</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link fontBodyM">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <div class="copyright fontBodyS">Copyright © 2021 NoExam.com</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../plugins/js/popper.min.js"></script>
+    <script src="../plugins/js/bootstrap.min.js"></script>
+    <script src="../plugins/js/bootstrap-select.min.js"></script>
+    <script type="text/javascript" src="../plugins/js/ion.rangeSlider.min.js"></script>
+    <script src="./get-your-rate-popup.js"></script>
+</body>
+
+</html>

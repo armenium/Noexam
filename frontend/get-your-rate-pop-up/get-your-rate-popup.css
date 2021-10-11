@@ -1,0 +1,45 @@
+.get-your-rate-popup {
+    display: none;
+}
+
+.get-your-rate-popup--active {
+    display: block;
+}
+
+.get-your-rate-popup__wrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(117, 117, 117, 0.45);
+}
+
+.get-your-rate-popup__body {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 94%;
+    max-width: 700px;
+    min-height: 820px;
+    background: #FFFFFF;
+    box-shadow: 10px 20px 80px rgba(117, 117, 117, 0.2);
+    border-radius: 4px;
+    padding: 25px 40px;
+}
+
+.get-your-rate-popup__close-icon {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    border: 1px solid #BABABA;
+    cursor: pointer;
+}
