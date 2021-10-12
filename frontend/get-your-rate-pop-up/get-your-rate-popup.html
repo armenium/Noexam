@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quote result</title>
+    <title>Get your rate</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -28,11 +28,14 @@
         <div class="get-your-rate-popup__wrapper"></div>
         <div class="get-your-rate-popup__body">
             <div class="get-your-rate-popup__close-icon">×</div>
-            <h1 class="get-your-rate-popup__title heading-4">Get your rate</h1>
+            <h1 class="get-your-rate-popup__title heading-4"><span>Get your rate</span></h1>
+            <h3 class="get-your-rate-popup__subtitle main-title">Coverage Amount</h3>
             <div class="get-your-rate-popup__range">
                 <input type="text" class="get-your-rate-popup__range-slider" value="" />
             </div>
-            <div class="get-your-rate-popup__radio-btns">
+
+            <h3 class="get-your-rate-popup__subtitle main-title">Term Lenght</h3>
+            <div class="get-your-rate-popup__radio-btns get-your-rate-popup__radio-btns--term">
                 <label class="get-your-rate-popup__label main-radio-btn-label">
                     <input type="radio" name="term" class="get-your-rate-popup__radio-btn main-radio-btn">
                     <span class="get-your-rate-popup__btn-icon main-radio-btn-icon"></span>
@@ -54,7 +57,9 @@
                     <span class="fontBodyM">30 years</span>
                 </label>
             </div>
-            <div class="get-your-rate-popup__radioBtnsBox">
+
+            <h3 class="get-your-rate-popup__subtitle main-title">My Gender</h3>
+            <div class="get-your-rate-popup__radio-btns get-your-rate-popup__radio-btns--gender">
                 <label class="get-your-rate-popup__label main-radio-btn-label">
                     <input type="radio" name="sex" class="get-your-rate-popup__radio-btn main-radio-btn">
                     <span class="get-your-rate-popup__btn-icon main-radio-btn-icon"></span>
@@ -65,19 +70,46 @@
                     <span class="get-your-rate-popup__btn-icon main-radio-btn-icon"></span>
                     <span class="fontBodyM">Female</span>
                 </label>
-            </div> 
-
-            <div class="get-your-rate-popup__row">
-                <label class="get-your-rate-popup__label">
-                    <span class="tags">My age is</span>
-                    <input type="number" class="get-your-rate-popup__input fontBodyM" value="55"><span class="charts-by-age__input-text tags">years old</span></input>
-                </label>
             </div>
 
+            <div class="get-your-rate-popup__row">
+                <div class="get-your-rate-popup__item">
+                    <label class="get-your-rate-popup__label main-title" for="age">My Age</label>
+                    <input type="number" id="age" class="get-your-rate-popup__input fontBodyM" value="55">
+                    <span class="get-your-rate-popup__input-text tags">years old</span>
+                    </input>
+                </div>
+                <div class="get-your-rate-popup__item">
+                    <label for="health" class="get-your-rate-popup__label main-title">My Overall Health Is ...</label>
+                    <select id="health" name="health" class="get-your-rate-popup__select fontBodyM js_selectpicker">
+                        <option value="" selected>Very good</option>
+                        <option value="">Bad</option>
+                    </select>
+                </div>
+            </div>
+
+            <button type="submit" class="get-your-rate-popup__btn main-btn button-big">show my rates</button>
         </div>
     </div>
-    
 
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur deserunt odio ipsam molestiae atque veritatis animi? Sunt ducimus nisi, quam esse illo, architecto amet animi sapiente laborum perferendis adipisci. Nisi accusamus sed qui iure quaerat
+    aut sunt corporis, reprehenderit animi voluptas iusto odit vel dolore molestiae ullam, voluptates repudiandae minus debitis aspernatur, consequatur amet? Fugit cumque doloremque ex aliquam. Sapiente, laborum ullam tenetur modi laboriosam hic animi
+    ipsam dolorum temporibus quas quod placeat officia cumque sint velit impedit et distinctio dignissimos sunt totam aliquid illo ea voluptate officiis. Nam recusandae tempore obcaecati, voluptatem ipsum itaque? Iure commodi et non doloremque nihil eum
+    aliquam reiciendis blanditiis, nobis cupiditate quia earum quibusdam natus? Vel obcaecati consectetur quibusdam deserunt dicta nulla iure cumque expedita at nam, eligendi sed provident a nesciunt, saepe autem necessitatibus ab culpa voluptates dolorum
+    sit facere tempora. Praesentium dolore asperiores perspiciatis laudantium ea sunt, quos illum at nobis harum minima alias illo earum ex odit modi velit vel aliquid incidunt. Itaque repudiandae laborum vero delectus accusantium fugit illum amet! Magnam
+    excepturi autem, nisi accusamus nam, saepe nemo cumque officia corporis dicta velit hic unde libero delectus laudantium! Officia inventore est impedit quae quidem quia dolorem rerum non facilis, perspiciatis aspernatur quos, natus ad deleniti quisquam
+    ipsum doloremque maiores quam recusandae tenetur aliquam expedita deserunt earum! Praesentium, est molestiae? Cupiditate earum suscipit placeat iure alias ipsam repellendus, voluptatem nisi cum quo eum sit soluta magni? Beatae, culpa, nihil ex, similique
+    possimus nisi dolorum repellat consequuntur corporis omnis harum aperiam quaerat aliquam ducimus soluta amet quo! At sint eius assumenda iusto voluptates corrupti? Ab dolores neque perspiciatis laudantium saepe vitae nihil deserunt sint commodi est
+    recusandae provident ea itaque, impedit atque a sapiente quis repellendus dolorem labore repudiandae culpa at fuga beatae! Laboriosam veritatis omnis nulla illo nam? Molestiae ullam deserunt in error expedita, voluptates beatae earum, unde eius similique
+    maiores recusandae! Eos quam iure dicta odit debitis alias provident dolor, aperiam suscipit, perferendis animi maxime. Quo totam rem eveniet placeat repellendus modi sapiente quisquam ipsum nostrum, autem repellat eius ratione? Quod non exercitationem
+    nostrum nesciunt adipisci voluptas velit officia quam, deleniti consequatur! Officiis nihil deleniti repellat neque ab, facilis ad consequuntur sequi culpa iure. Totam ipsum, consequuntur commodi a officia quam sequi sint deserunt itaque necessitatibus
+    enim qui ratione sit, illo nam nihil, inventore nesciunt beatae adipisci consequatur corporis harum neque saepe? Officia molestias praesentium voluptatibus nemo repudiandae. Commodi, aperiam corrupti perspiciatis dignissimos temporibus laborum quisquam
+    sequi alias obcaecati ea est voluptatum ex vero adipisci molestiae? Nostrum dolor, rerum tempora ipsa non repellendus, odio sapiente vero necessitatibus atque soluta quam obcaecati impedit! Illum, odio! Numquam, quos. Error, ducimus? Possimus, magnam,
+    ratione alias qui velit eaque neque harum cumque eius illo pariatur consequatur consectetur ex, sunt tempore provident. Sunt architecto deserunt, voluptatem odio accusamus eius? Cumque aliquid cupiditate, cum dolorem ratione accusantium. Minima minus
+    facere dolor molestias voluptate, tenetur explicabo? Possimus beatae laudantium adipisci modi dolores harum autem aspernatur! Inventore aut magnam quis placeat aperiam deserunt necessitatibus rerum recusandae, nihil iste ratione labore magni, laudantium
+    odit facilis distinctio dignissimos officiis alias neque? Molestiae accusantium ex corporis vitae sed libero quae distinctio commodi, blanditiis eveniet, soluta rem quis odio aliquid laudantium placeat delectus quisquam? Nam, nulla mollitia ducimus
+    soluta eos itaque facilis dolorum quibusdam rem et amet tenetur tempore deleniti voluptatum saepe blanditiis fugiat officiis possimus ad asperiores in. Consectetur impedit quo possimus minima quam ex vero quod aspernatur sint inventore? Tenetur earum
+    voluptatum id. Corrupti exercitationem saepe esse fuga, assumenda quae ut soluta ipsam, omnis rem impedit numquam officia dolores vero suscipit explicabo rerum animi enim vitae adipisci porro non repellat!
 
     <div class="main-wrapp" style="background-color: #ffffff;">
         <div class="wrapp">

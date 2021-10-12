@@ -1,7 +1,5 @@
 let closeBtn = document.querySelector(".get-your-rate-popup__close-icon")
 let popup = document.querySelector(".get-your-rate-popup")
-let html = document.querySelector("html")
-html.style.overflow = "hidden" // add to open popup function
 
 closeBtn.addEventListener("click", () => {
     popup.classList.remove("get-your-rate-popup--active")
@@ -18,4 +16,8 @@ $(".get-your-rate-popup__range-slider").ionRangeSlider({
     prefix: "$",
     hide_min_max: true,
     step: 50000
+});
+
+$(function() {
+    $('.js_selectpicker').selectpicker();
 });
