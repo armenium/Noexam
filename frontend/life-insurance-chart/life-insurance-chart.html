@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Insurance Chart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../plugins/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../plugins/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="../css/shared-styles.css">
+    <link rel="stylesheet" href="../rates/rates.css">
+    <link rel="stylesheet" href="../css/breadcrumbs.css">
+    <link rel="stylesheet" href="../css/main-first-screen.css">
+    <link rel="stylesheet" href="../css/get-started.css">
+    <link rel="stylesheet" href="./life-insurance-chart.css">
+</head>
+
+<body>
+
+    <div class="main-wrapp" style="background-color: #FCF9F3;">
+        <div class="wrapp">
+            <section class="charts-by-age">
+                <h1 class="charts-by-age__title heading-2">Life Insurance Rate</br> Charts by Age</h1>
+
+                <form class="charts-by-age__form">
+                    <h2 class="charts-by-age__subtitle heading-4">Compare Life Insurance Rates by Age</h2>
+
+                    <div class="charts-by-age__container">
+                        <label class="charts-by-age__label">
+                            <span class="tags">My age is</span>
+                            <input type="number" class="charts-by-age__input fontBodyM" value="55"><span class="charts-by-age__input-text tags">years old</span></input>
+                        </label>
+                        <div class="charts-by-age__label">
+                            <label for="my-gender">
+                                <span class="tags">My gender is</span>
+                            </label>
+                            <select id="my-gender" name="gender" class="charts-by-age__select fontBodyM js_selectpicker">
+                                <option value="female" selected>Female</option>
+                                <option value="female">Male</option>
+                            </select>
+                        </div>
+
+                        <div class="charts-by-age__label">
+                            <label for="term-length">
+                                <span class="tags">Term length</span>
+                            </label>
+                            <select id="term-length" name="term" class="charts-by-age__select fontBodyM js_selectpicker">
+                                <option value="20" selected>20 years</option>
+                                <option value="30">30 years</option>
+                            </select>
+                        </div>
+
+                        <div class="charts-by-age__label">
+                            <label for="health">
+                                <span class="tags">My overall health</span>
+                            </label>
+                            <select id="health" name="health" class="charts-by-age__select fontBodyM js_selectpicker">
+                                <option value="" selected>Very good</option>
+                                <option value="">Bad</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div class="charts-by-age__decor-line"></div>
+
+                    <button type="submit" class="charts-by-age__btn main-btn button-big">Load rates</button>
+                </form>
+            </section>
+        </div>
+    </div>
+
+    <div class="main-wrapp" style="background-color: #FCF9F3;">
+        <div class="wrapp">
+            <div class="rates-chart">
+                <p class="rates-chart__info main-title"><b>The following rates are for a</b> 55-year-old man <b>in</b> very good health <b>looking for a</b> 20-year <b>term life policy.</b></p>
+            </div>
+            <div class="rates-chart__table rates-table">
+                <div class="rates-table__body"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="../plugins/js/popper.min.js"></script>
+    <script src="../plugins/js/bootstrap.min.js"></script>
+    <script src="../plugins/js/bootstrap-select.min.js"></script>
+    <script src="./life-insurance-chart.js"></script>
+</body>
+
+</html>

@@ -1,4 +1,5 @@
 .get-quote {
+    position: relative;
     width: 100%;
     min-height: 330px;
     background: #FFFFFF;
@@ -20,6 +21,20 @@
 
 .get-quote__btn {
     margin: 0 auto;
+}
+
+.get-quote__arrow-left,
+.get-quote__arrow-right {
+    position: absolute;
+    top: 180px;
+}
+
+.get-quote__arrow-left {
+    right: 130px;
+}
+
+.get-quote__arrow-right {
+    left: 130px;
 }
 
 .article {
@@ -127,6 +142,7 @@
 }
 
 .states {
+    position: relative;
     padding: 100px 0;
 }
 
@@ -134,6 +150,36 @@
     margin-bottom: 80px;
     text-align: center;
     color: #FFFFFF;
+}
+
+.states__title>span {
+    position: relative;
+}
+
+.states__left-decor-line,
+.states__right-decor-line {
+    position: relative;
+}
+
+.states__left-decor-line:after,
+.states__right-decor-line:before {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #3D403E;
+    border: 3px solid rgba(255, 255, 255, 0.5);
+}
+
+.states__left-decor-line:after {
+    top: 45px;
+    right: -50px;
+}
+
+.states__right-decor-line:before {
+    bottom: 47px;
+    left: -39px;
 }
 
 .states__body {
@@ -174,11 +220,69 @@
     transform: translateY(3px);
 }
 
+.states__left-decor-line,
+.states__right-decor-line {
+    position: absolute;
+}
+
+.states__left-decor-line {
+    top: 50px;
+    left: 0;
+}
+
+.states__right-decor-line {
+    top: 150px;
+    right: 0;
+}
+
+@media screen and (max-width: 1650px) {
+    .states__left-decor-line {
+        left: -150px;
+    }
+    .states__right-decor-line {
+        right: -150px;
+    }
+}
+
+@media screen and (max-width: 1350px) {
+    .states__left-decor-line {
+        left: -300px;
+    }
+    .states__right-decor-line {
+        right: -300px;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .states__left-decor-line {
+        left: -400px;
+    }
+    .states__right-decor-line {
+        right: -400px;
+    }
+    .states__left-decor-line:after {
+        top: 35px;
+        right: -25px;
+    }
+    .states__right-decor-line:before {
+        bottom: 40px;
+        left: -20px;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .get-quote__title {
         font-size: 24px;
         line-height: 32px;
         margin-bottom: 10px;
+        max-width: 330px;
+        margin: 0 auto;
+    }
+    .states__left-decor-line {
+        top: 10px;
+    }
+    .states__right-decor-line {
+        top: 100px;
     }
     .get-quote__subtitle {
         font-size: 18px;
@@ -189,6 +293,8 @@
         font-size: 32px;
         line-height: 40px;
         margin-bottom: 50px;
+        max-width: 330px;
+        margin: 0 auto;
     }
     .states {
         padding: 60px 0;
@@ -229,5 +335,23 @@
         margin: 0 0 10px 0;
         display: flex;
         flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 465px) {
+    .states__left-decor-line {
+        left: -450px;
+    }
+    .states__right-decor-line {
+        right: -445px;
+    }
+}
+
+@media screen and (max-width: 365px) {
+    .states__left-decor-line {
+        display: none;
+    }
+    .states__right-decor-line {
+        display: none;
     }
 }
