@@ -1,0 +1,14 @@
+.rates-chart {}
+
+.rates-chart__info {
+    margin-bottom: 25px;
+}
+
+.rates-chart__table {
+    padding-bottom: 100px;
+}
+
+.rates-table__body {
+    height: 463px;
+    background-color: pink;
+}
