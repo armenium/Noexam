@@ -40,6 +40,26 @@ class Customers extends ActiveRecord{
 		'750000',
 		'1000000',
 	];
+	public static $coverage_amounts = [
+		100 => '100k',
+		150 => '150k',
+		200 => '200k',
+		250 => '250k',
+		300 => '300k',
+		400 => '400k',
+		500 => '500k',
+		600 => '600k',
+		700 => '700k',
+		800 => '800k',
+		900 => '900k',
+		1000 => '1m',
+	];
+	public static $term_lengths2 = [
+		'10' => '10 years',
+		'15' => '15 years',
+		'20' => '20 years',
+		'30' => '30 years',
+	];
 	public static $term_lengths3 = [
 		'10' => '10 yr',
 		'15' => '15 yr',
@@ -52,6 +72,16 @@ class Customers extends ActiveRecord{
 		'good' => 'Good', // 3
 		'fair' => 'Fair', // 2
 		'none' => 'Fair', // 1
+	];
+	public static $healths2 = [
+		'excellent' => 'Excellent', // 5
+		'very-good' => 'Very Good', // 4
+		'good' => 'Good', // 3
+		'fair' => 'Fair', // 2
+	];
+	public static $genders = [
+		'm' => 'Male',
+		'f' => 'Female',
 	];
 
 
@@ -68,9 +98,9 @@ class Customers extends ActiveRecord{
 	public function rules(){
 		return [
 			[['sid'], 'required'],
-			[['age', 'byear', 'amount', 'term', 'updates'], 'integer'],
+			[['age', 'byear', 'term', 'updates'], 'integer'],
 			[['prices'], 'string'],
-			[['updated_at', 'created_at'], 'safe'],
+			[['amount', 'updated_at', 'created_at'], 'safe'],
 			[['sid', 'ip'], 'string', 'max' => 32],
 			[['state'], 'string', 'max' => 4],
 			[['gender'], 'string', 'max' => 1],

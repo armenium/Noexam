@@ -75,7 +75,7 @@ $this->registerJsFile('@web/v2/myquote/js/'.$page_id.'.js', ['depends' => [Jquer
 					<div class="overal-health__col">
 						<div class="overal-health__subtitle fontBodyM"><b>Sex</b></div>
 						<?=$form->field($customer_data, 'sex')->radioList(
-							$customer_data::$gender,
+							$customer_data::$genders,
 							[
 								'item' => function($index, $label, $name, $checked, $value) {
 									$checked = $checked ? 'checked="checked"' : '';

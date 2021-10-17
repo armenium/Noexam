@@ -11,8 +11,8 @@ use yii\widgets\Pjax;
 use app\components\Helpers;
 use app\components\BaseController;
 
-$this->registerCssFile('@web/v2/widgets/css/rate-calc-form.css', ['depends' => [JqueryAsset::className(), AppAsset::className()]]);
-$this->registerJsFile('@web/v2/widgets/js/rate-calc-form.js', ['depends' => [JqueryAsset::className(), AppAsset::className()]]);
+$this->registerCssFile('@web/v2/widgets/css/rate-calc-form-2.css', ['depends' => [JqueryAsset::className(), AppAsset::className()]]);
+$this->registerJsFile('@web/v2/widgets/js/rate-calc-form-2.js', ['depends' => [JqueryAsset::className(), AppAsset::className()]]);
 
 ?>
 

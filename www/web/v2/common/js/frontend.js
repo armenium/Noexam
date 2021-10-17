@@ -117,12 +117,6 @@ $(function(){
 					case "quote-result-link":
 						FJS.ApplyNow.QuoteResult.goToLink($this);
 						break;
-					case "display_rate_modal":
-						FJS.ApplyNow.displayRateModal($this);
-						break;
-					case "hide_rate_modal":
-						FJS.ApplyNow.hideRateModal($this);
-						break;
 					default:
 						break;
 				}
@@ -379,12 +373,6 @@ $(function(){
 						window.location.href = url;
 					}
 				},
-			},
-			displayRateModal: function($btn){
-				FJS.els.js_rate_from_modal.fadeIn(400);
-			},
-			hideRateModal: function($btn){
-				FJS.els.js_rate_from_modal.fadeOut(400);
 			},
 		},
 	};

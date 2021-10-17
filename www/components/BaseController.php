@@ -59,10 +59,10 @@ class BaseController extends Controller{
 	    $session->open();
 		//$session->set('expire', 3600);
 		//$session->set('lifetime', 3600);
-	    // print_r($session->id);
+	    #print_r($action); exit;
 		$this->getStateIsoCode();
-	    return true;
 
+	    return true;
 	}
 
 	public function getBodyClasses($classes = ''){
@@ -1835,7 +1835,7 @@ class BaseController extends Controller{
 	}
 
 	public function getStateIsoCode(){
-
+		
 		if(empty($this->state_code)){
 			$geoDB = new Reader(Yii::getAlias('@app/web/maxmind/GeoLite2-City.mmdb'));
 			try{
@@ -1858,13 +1858,16 @@ class BaseController extends Controller{
 					if($this->postal_code !== $record->postal->code){
 						$this->postal_code = $record->postal->code;
 					}
+				}else{
+					$this->state_code = 'GA';
 				}
 			}catch(AddressNotFoundException $e){
 				// TODO: notify that IP cannot be verified
+				$this->state_code = 'GA';
 			}
 		}
 
-		#VarDumper::dump($this->state_code, 10, 1);
+		#VarDumper::dump($this->state_code, 10, 1); exit;
 
 		return $this->state_code;
 	}

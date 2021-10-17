@@ -43,7 +43,6 @@ class CustomerData extends ActiveRecord {
     public $agree;
     public $form_name;
     public $avg_amount;
-    public $coverage_amount;
     public $completed_application;
     public $monthly_premium;
     public $premium_amount;
@@ -523,7 +522,7 @@ class CustomerData extends ActiveRecord {
 		750 => '750000',
 		1000 => '1000000',
 	];
-	public static $avg_amounts4 = [
+	public static $coverage_amounts = [
 		100 => '100k',
 		150 => '150k',
 		200 => '200k',
@@ -764,8 +763,8 @@ class CustomerData extends ActiveRecord {
      */
 	public function rules(){
 		return [
-			[['id', 'h_foot', 'h_inch', 'weight', 'term', 'ssn', 'avg_amount', 'zip', 'agree', 'age', 'guess_price'], 'integer'],
-			//[['household_income'], 'double'],
+			[['id', 'h_foot', 'h_inch', 'weight', 'term', 'ssn', 'zip', 'agree', 'age', 'guess_price'], 'integer'],
+			[['avg_amount'], 'string'],
 			[['household_income', 'monthly_premium', 'premium_amount'], 'number', 'numberPattern' => '/^\s*[-+]?[0-9]*[.,]?[0-9]+([eE][-+]?[0-9]+)?[.,]?[0-9]+([eE][-+]?[0-9]+)?\s*$/'],
 			[['sid', 'dls', 'step', 'birth_state', 'birth_country', 'occupation', 'status', 'iniciator', 'rate_class', 'completed_application', 'term_length', 'company_code', 'company_name', 'product_code', 'product_name', 'guess_result'], 'string', 'max' => 255],
 			[['last_name', 'first_name'], 'validateFirstName'],

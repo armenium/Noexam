@@ -29,20 +29,19 @@ $this->registerJsFile('@web/v2/myquote/js/'.$page_id.'.js', ['depends' => [Jquer
 			<div class="start-quote__subtitle fontBodyM"><b>Coverage</b></div>
 			<p class="start-quote__text fontBodyM">The amount of coverage you would like:</p>
 			<div class="start-quote__range">
-				<?=$form->field($customer_data, 'coverage_amount')->input('text', [
+				<?=$form->field($customer_data, 'avg_amount')->input('text', [
 					'required' => 'required',
 					'class' => 'js-range-slider start-quote__range-slider',
 					'id' => 'rc_coverage_amount',
 					#'value' => '400',
 					'data-from' => $from,
-					'data-values' => implode(',', $customer_data::$avg_amounts4),
-				])->label(false);?>
+					'data-values' => implode(',', $customer_data::$coverage_amounts),
+				])->label(false)->error(false);?>
 			</div>
 			<div class="start-quote__term">
 				<div class="start-quote__subtitle fontBodyM"><b>Term Lenght</b></div>
 				<?=$form->field($customer_data, 'term_length')->radioList(
-					$customer_data::$term_lengths2,
-					[
+					$customer_data::$term_lengths2, [
 						'item' => function($index, $label, $name, $checked, $value) {
 							$checked = $checked ? 'checked="checked"' : '';
 							$return = '<label class="start-quote__label main-radio-btn-label">';
@@ -55,7 +54,8 @@ $this->registerJsFile('@web/v2/myquote/js/'.$page_id.'.js', ['depends' => [Jquer
 						'required' => 'required',
 						'class' => 'start-quote__radio-btns',
 						'id' => 'term_length',
-					])->label(false);?>
+						'unselect' => null,
+				])->label(false)->error(false);?>
 			</div>
 			<?=Html::submitButton('Start my Quote', ['class' => 'start-quote__btn main-btn button-big', 'id' => 'submit_btn']);?>
 		<?php ActiveForm::end();?>

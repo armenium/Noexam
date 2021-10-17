@@ -160,8 +160,11 @@ class CompaniesFilterController extends BaseController{
 			$updates          = 1;
 			$iniciator        = $requestCustomers['form_name'];
 			$scenario         = Customers::SCENARIO_RATE_DATA;
-
-			if(count($model)){
+			
+			$requestCustomers['amount'] = str_replace(['k', 'm'], '000', $requestCustomers['amount']);
+			$request_post['Customers']['amount'] = $requestCustomers['amount'];
+			
+			if(!is_null($model)){
 				$model->load($request_post);
 				$model->scenario = $scenario;
 				$model->status = 'updated';
@@ -179,7 +182,8 @@ class CompaniesFilterController extends BaseController{
 			$model->state = $this->state_code;
 			$model->byear = intval(date('Y')) - $requestCustomers['age'];
 			$model->updates = $updates;
-
+			
+			
 			$ret['request'] = $requestCustomers;
 
 			$RateCalcArgs = [
@@ -195,7 +199,7 @@ class CompaniesFilterController extends BaseController{
 
 			if($model->validate()){
 				if($model->save()){
-					//$ret['data'] = $RateCalcAPIsData;
+					$ret['data'] = $RateCalcAPIsData;
 					if(!empty($RateCalcAPIsData['plans'])){
 						CustomersPrices::deleteAll(['customer_id' => $model->id]);
 						foreach($RateCalcAPIsData['plans'] as $plan){
