@@ -135,7 +135,7 @@ $(document).ready(function(){
                         $yiiform.find('.btn-quote').addClass('clicked');
                         RFM.actionCloseRateForm();
 
-
+                        RFM.getBestCompanies(null);
                     }else{
 
                     }
@@ -144,6 +144,36 @@ $(document).ready(function(){
                     $parent.removeClass('loading');
                 });
             }
+            return false;
+        },
+        getBestCompanies: function(e){
+            if(e){
+                e.preventDefault();
+            }
+            var ids = [],
+                sorting = CF.el.sorting.val(),
+                data = [];
+
+            CF.el.section_best_companies.addClass('loading');
+
+            $.ajax({
+                type: 'post',
+                url: CF.options.get_best_companies_url,
+                data: data,
+                format: 'json'
+            }).done(function(responce){
+                //console.log(responce);
+                if(!responce.error){
+                    CF.el.best_results.html(responce.html);
+                    CF.initLazyLoad();
+                }else{
+
+                }
+                CF.el.section_best_companies.removeClass('loading');
+            }).fail(function(){
+                CF.el.section_best_companies.removeClass('loading');
+            });
+
             return false;
         },
     };

@@ -2002,9 +2002,6 @@ class MainController extends BaseController {
 	}
 
 	public function actionLifeInsurance($_pjax = null){
-		/*if(!is_null($_pjax)){
-			return $this->renderPjaxContent($_pjax);
-		}*/
 		$this->layout = 'v2/main';
 
 		$request = Yii::$app->request;
@@ -2017,27 +2014,17 @@ class MainController extends BaseController {
 		}
 
 		$view_path = Yii::$app->getViewPath();
-
-		//VarDumper::dump($view_path, 10, true);
-		//VarDumper::dump($_SERVER['REQUEST_URI'], 10, true);
-		//VarDumper::dump($_GET['slug'], 10, 1);
-
 		$this->url = $_SERVER['REQUEST_URI'];
 		$this->current_cat = $this->getResourcesCatByUrl($path_info);
-		//VarDumper::dump($this->current_cat, 10, true);
-		//VarDumper::dump($this->url, 10, true);
-		//VarDumper::dump($path_info, 10, true);
 
 		if($request_type != 'ajax'){
 			if(!empty($this->current_cat->layout)){
 				$this->layout = $this->current_cat->layout;
 			}
 		}
-		//VarDumper::dump($this->layout, 10, true);
 
 		if(is_null($this->current_cat) && strstr($this->url, '-vs-') !== false){
 			$compare_data = $this->getComparisonCompaniesData();
-			#VarDumper::dump($compare_data, 10, true);
 
 			if($request_type == 'ajax'){
 				$page = $this->render('/main/templates/comparison-ratings-result.php', ['compare_data' => $compare_data]);
@@ -2053,10 +2040,8 @@ class MainController extends BaseController {
 		$content = $this->current_cat->content;
 		
 		$template = !empty($this->current_cat->template) ? str_replace('views/', '', $this->current_cat->template) : '/main/resources/common.php';
-		//VarDumper::dump($template, 10, true);
 
 		if(!file_exists($view_path.$template) || empty($this->current_cat)){
-			//$template = '404';
 			throw new HttpException(404 ,'Page not found');
 		}else{
 			$grid_data = $this->getResourceCatGrid($this->current_cat->id);
