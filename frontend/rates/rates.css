@@ -64,8 +64,6 @@
 
 .rates-charts__table {
     margin-bottom: 25px;
-    height: 300px;
-    border: 1px dashed #000;
 }
 
 .rates-charts__banner {
@@ -499,6 +497,46 @@
     margin: 0 auto;
 }
 
+.rates-charts__table {}
+
+.rates-table {
+    box-shadow: 1px 12px 42px rgba(155, 164, 162, 0.12);
+    border-radius: 4px;
+    display: block;
+    padding: 30px;
+}
+
+.rates-table__head {
+    display: block;
+}
+
+.rates-table__head>tr {
+    border-bottom: 1px solid #E4E4E4;
+    ;
+}
+
+.rates-table__head>tr>td {
+    color: #757575;
+}
+
+.rates-table__body {
+    display: block;
+}
+
+.rates-table__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    border-bottom: 1px solid #e4e4e47a;
+}
+
+.rates-table__body>.rates-table__row:last-child {
+    border-bottom: none;
+}
+
+.rates-table__col {}
+
 @media screen and (max-width: 767px) {
     .charts-by-age__container {
         flex-direction: column;
@@ -539,6 +577,23 @@
     .charts-by-age__btn {
         height: 60px;
         max-width: 100%;
+    }
+    .rates-table {
+        padding: 20px;
+    }
+    .rates-table__row {
+        height: 45px;
+    }
+    .rates-table__head>tr>td {
+        font-size: 12px;
+        line-height: 18px;
+    }
+    .rates-table__head>tr>td:last-child {
+        text-align: right;
+    }
+    .rates-table__body>tr>td {
+        font-size: 14px;
+        line-height: 24px;
     }
 }
 
@@ -631,5 +686,189 @@
 @media screen and (max-width: 420px) {
     .rates-form__row--no-wrap {
         flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .rates-table__head>tr>td {
+        font-size: 10px;
+        line-height: 14px;
+    }
+}
+
+
+/* tabs */
+
+.tabs {}
+
+.tabs__nav {
+    width: 100%;
+    border-bottom: 1px solid #E4E4E4;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.tabs-age>.tabs__nav {
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+.tabs-age>.tabs__nav>.tabs__link {
+    align-items: center;
+}
+
+.tabs-age>.tabs__nav>.tabs__link_active {
+    color: #000000 !important;
+    background: #FEEEDA;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.tabs__link {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    text-transform: uppercase;
+    color: #339E75 !important;
+    opacity: 0.5;
+    transition: all .2s ease-in;
+    width: 100%;
+    max-width: 350px;
+}
+
+.tabs__link_active {
+    opacity: 1;
+    transition: all .2s ease-in;
+}
+
+.tabs__link_active:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #339E75;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.tabs-age>.tabs__nav>.tabs__link_active:after {
+    content: none;
+}
+
+.tabs__link:not(.tabs__link_active):hover,
+.tabs__link:not(.tabs__link_active):focus {}
+
+.tabs__content {}
+
+.tabs__pane {
+    position: relative;
+    display: none;
+}
+
+.tabs__pane_show {
+    display: block;
+}
+
+.age-table {
+    width: 100%;
+    background: #FFFFFF;
+    box-shadow: 1px 12px 42px rgba(155, 164, 162, 0.12);
+    border-radius: 4px;
+    padding: 0 30px;
+}
+
+.age-table__row {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 30px;
+    border-bottom: 1px solid #FEEEDA;
+}
+
+.age-table__header>.age-table__row {
+    background-color: #FEEEDA;
+}
+
+.age-table__header>.age-table__row>.age-table__col {
+    color: #757575;
+}
+
+.age-table__body>.age-table__row:last-child {
+    border-bottom: none;
+}
+
+.tabs__selects {
+    display: none;
+    margin-bottom: 15px;
+}
+
+.tabs-selects {}
+
+.tabs-selects__label {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.tabs-selects__label>span {
+    color: #757575;
+    margin-bottom: 10px;
+}
+
+.tabs-selects__label:first-child {
+    margin-right: 15px;
+}
+
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+    width: 100% !important;
+}
+
+.tabs__arrow {
+    position: absolute;
+    top: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tabs__arrow>span {
+    color: #339E75;
+    margin-top: 12px;
+}
+
+.tabs__arrow>img {
+    max-width: 30px;
+}
+
+.tabs__arrow--left>img {
+    transform: rotate(180deg);
+}
+
+.tabs__arrow--left {
+    left: -140px;
+}
+
+.tabs__arrow--right {
+    right: -140px;
+}
+
+@media screen and (max-width: 767px) {
+    .tabs-age>.tabs__nav {
+        display: none;
+    }
+    .tabs__selects {
+        display: flex;
+    }
+    .age-table__row {
+        padding: 0 20px;
+    }
+    .age-table__col {
+        font-size: 14px;
+        line-height: 24px;
     }
 }
