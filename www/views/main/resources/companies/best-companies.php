@@ -62,7 +62,8 @@ $this->params['breadcrumbs'][] = ['label' => 'Best Companies', 'url' => $this->c
 
 <div class="main-wrapp" style="background-color: #FCF9F3;">
 	<div class="wrapp">
-		<div class="companies">
+		<div class="loader fixed"></div>
+		<div id="js_best_results" class="companies-list">
 			<?=$this->render('/main/partials/companies/best-items.php', ['dataProviderBest' => $dataProviderBest]);?>
 		</div>
 	</div>

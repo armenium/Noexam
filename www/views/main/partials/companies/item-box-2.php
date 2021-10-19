@@ -64,7 +64,6 @@ $id_attr = ($insert_id_attributs) ? 'id="'.$model->slug.'"' : '';
 				<div class="company__value fontBodyM">
 					<div class="price"><?=$model->prices->price;?></div>
 					<div class="params"><?=number_format($model->prices->amount, 0, '.', ',');?> / <?=$model->prices->term;?>-years</div>
-					<a role="button" class="get-your-rate" href="#">Change coverage</a>
 				</div>
 		<?php endif;?>
 		</div>

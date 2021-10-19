@@ -1,4 +1,7 @@
 .best-companies__list-body {
+    max-width: 880px;
+    width: 100%;
+    margin: 0 auto;
     padding: 20px 0 100px 0;
 }
 
@@ -16,12 +19,30 @@
     height: 18px;
     margin-bottom: 30px;
     color: #339E75;
+    cursor: text;
 }
 
+.best-companies__item:hover {
+    text-decoration: none;
+}
+
+.best-companies__item>a {
+    color: #339E75;
+}
+
+.best-companies__item>a:hover {
+    text-decoration: underline;
+}
+
+.best-companies__item>span {
+    line-height: 24px;
+    color: #757575;
+    margin-right: 12px;
+}
 
 /* COMPANIES SECTION */
 
-.companies {
+.companies-list {
     padding: 100px 0;
 }
 
@@ -263,7 +284,13 @@
     margin-bottom: 0;
 }
 
-.choose-company__chart {margin: 0 auto 60px auto;}
+.choose-company__chart {
+    width: 100%;
+    max-width: 700px;
+    height: 430px;
+    margin: 0 auto 60px auto;
+    border: 1px dashed #000;
+}
 
 .company__footer-btns-box {
     display: none;
@@ -392,7 +419,7 @@
     .best-companies__first-screen {
         padding: 60px 0 0 0 !important;
     }
-    .companies {
+    .companies-list {
         padding: 60px 0;
     }
 }

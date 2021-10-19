@@ -9,6 +9,10 @@ $(document).ready(function(){
         },
         el: {
             js_rate_from_modal: $('#js_rate_from_modal'),
+            js_best_results: $('#js_best_results'),
+        },
+        routs: {
+            get_best_companies_url: '/companies-filter/get-best-companies/',
         },
         Init: function(){
             this.initEvents();
@@ -151,30 +155,38 @@ $(document).ready(function(){
                 e.preventDefault();
             }
             var ids = [],
-                sorting = CF.el.sorting.val(),
                 data = [];
 
-            CF.el.section_best_companies.addClass('loading');
+            RFM.el.js_best_results.parent().addClass('loading');
 
             $.ajax({
                 type: 'post',
-                url: CF.options.get_best_companies_url,
+                url: RFM.routs.get_best_companies_url,
                 data: data,
                 format: 'json'
             }).done(function(responce){
                 //console.log(responce);
                 if(!responce.error){
-                    CF.el.best_results.html(responce.html);
-                    CF.initLazyLoad();
+                    RFM.el.js_best_results.html(responce.html);
+                    RFM.initLazyLoad();
                 }else{
 
                 }
-                CF.el.section_best_companies.removeClass('loading');
+                RFM.el.js_best_results.parent().removeClass('loading');
             }).fail(function(){
-                CF.el.section_best_companies.removeClass('loading');
+                RFM.el.js_best_results.parent().removeClass('loading');
             });
 
             return false;
+        },
+        initLazyLoad: function(){
+            if($('img.lazy').length){
+                var lazyLoadInstance = new LazyLoad({
+                    elements_selector: ".lazy",
+                    //load_delay: 300,
+                    threshold: 0
+                });
+            }
         },
     };
 

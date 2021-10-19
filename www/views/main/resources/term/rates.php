@@ -24,11 +24,12 @@ if(!empty($this->context->current_cat->meta_title)){
 	$this->title = $this->context->current_cat->title;
 }
 
-$this->registerCssFile('@web/css/table-default.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
+$this->registerCssFile('@web/v2/plugins/css/table-default.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
+#$this->registerCssFile('@web/v2/plugins/css/datatables-row-details.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
 $this->registerCssFile('@web/v2/life-insurance/css/rates.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
 $this->registerCssFile('@web/v2/common/css/main-first-screen.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
 $this->registerCssFile('@web/v2/common/css/get-started.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
-$this->registerJsFile('@web/js/tabby.js', ['depends' => [JqueryAsset::className(), AppAsset::className()]]);
+$this->registerJsFile('@web/v2/plugins/js/tabby.js', ['depends' => [JqueryAsset::className(), AppAsset::className()]]);
 //$this->registerJS('jQuery(document).ready(function($) { RESPONSIVEUI.responsiveTabs(); });', View::POS_END, 'responsive-tab-js');
 $this->registerJsFile('@web/v2/life-insurance/js/rates.js', ['depends' => [JqueryAsset::className(), AppAsset::className()]]);
 
@@ -71,8 +72,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Rates', 'url' => $this->context->c
 	<div class="wrapp">
 		<section class="rates-charts">
 			<h1 class="rates-charts__title heading-2">Term life insurance rate Charts</h1>
-			<p class="rates-charts__info fontBodyL">Below are sample term life insurance rates by age for comparison purposes. The rates are broken up by term length, gender, age, and coverage amounts. We recommend you use this <b>comparison tool</b> to compare actual rates from <b>the best life
-					insurance companies.</b></p>
+			<p class="rates-charts__info fontBodyL">Below are sample term life insurance rates by age for comparison purposes. The rates are broken up by term length, gender, age, and coverage amounts. We recommend you use this <b>comparison tool</b> to compare actual rates from <b>the best life insurance companies.</b></p>
 			<div class="rates-charts__links">
 				<a href="#" class="rates-charts__link button-small button-small--arrow">Rates by Age 18-29</a>
 				<a href="#" class="rates-charts__link button-small button-small--arrow">Rates by Age 40-49</a>
