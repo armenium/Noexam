@@ -710,6 +710,11 @@
     margin-bottom: 25px;
 }
 
+.tabs-age>.tabs__nav {
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
 .tabs-age>.tabs__nav>.tabs__link {
     align-items: center;
 }
@@ -749,15 +754,121 @@
     left: 0;
 }
 
+.tabs-age>.tabs__nav>.tabs__link_active:after {
+    content: none;
+}
+
 .tabs__link:not(.tabs__link_active):hover,
 .tabs__link:not(.tabs__link_active):focus {}
 
 .tabs__content {}
 
 .tabs__pane {
+    position: relative;
     display: none;
 }
 
 .tabs__pane_show {
     display: block;
+}
+
+.age-table {
+    width: 100%;
+    background: #FFFFFF;
+    box-shadow: 1px 12px 42px rgba(155, 164, 162, 0.12);
+    border-radius: 4px;
+    padding: 0 30px;
+}
+
+.age-table__row {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 30px;
+    border-bottom: 1px solid #FEEEDA;
+}
+
+.age-table__header>.age-table__row {
+    background-color: #FEEEDA;
+}
+
+.age-table__header>.age-table__row>.age-table__col {
+    color: #757575;
+}
+
+.age-table__body>.age-table__row:last-child {
+    border-bottom: none;
+}
+
+.tabs__selects {
+    display: none;
+    margin-bottom: 15px;
+}
+
+.tabs-selects {}
+
+.tabs-selects__label {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.tabs-selects__label>span {
+    color: #757575;
+    margin-bottom: 10px;
+}
+
+.tabs-selects__label:first-child {
+    margin-right: 15px;
+}
+
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+    width: 100% !important;
+}
+
+.tabs__arrow {
+    position: absolute;
+    top: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tabs__arrow>span {
+    color: #339E75;
+    margin-top: 12px;
+}
+
+.tabs__arrow>img {
+    max-width: 30px;
+}
+
+.tabs__arrow--left>img {
+    transform: rotate(180deg);
+}
+
+.tabs__arrow--left {
+    left: -140px;
+}
+
+.tabs__arrow--right {
+    right: -140px;
+}
+
+@media screen and (max-width: 767px) {
+    .tabs-age>.tabs__nav {
+        display: none;
+    }
+    .tabs__selects {
+        display: flex;
+    }
+    .age-table__row {
+        padding: 0 20px;
+    }
+    .age-table__col {
+        font-size: 14px;
+        line-height: 24px;
+    }
 }
