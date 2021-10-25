@@ -64,7 +64,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Rates', 'url' => $this->context->c
 
 <div class="main-wrapp" style="background-color: #FCF9F3;">
 	<div class="wrapp">
-		<?=ApplyNowForm::widget();?>
+		<?=ApplyNowForm::widget(['form' => 'apply-now-form']);?>
 	</div>
 </div>
 

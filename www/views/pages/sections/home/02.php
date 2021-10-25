@@ -9,7 +9,7 @@
 						<a href="/start-quote/" class="slider-customers__link button-big main-btn">see Quotes</a>
 					</div>
 					<div class="slider-customers__col">
-						<img src="/v2/home/img/customer-1.png" class="slider-customers__photo" alt="photo">
+						<img src="/v2/pages/img/customer-1.png" class="slider-customers__photo" alt="photo">
 						<div class="slider-customers__photo-label">
 							<span class="fontBodyM">Sarah S</span>
 							<span class="fontBodyS">Satisfied Customer</span>
@@ -23,7 +23,7 @@
 						<a href="/start-quote/" class="slider-customers__link button-big main-btn">see Quotes</a>
 					</div>
 					<div class="slider-customers__col">
-						<img src="/v2/home/img/customer-2.png" class="slider-customers__photo" alt="photo">
+						<img src="/v2/pages/img/customer-2.png" class="slider-customers__photo" alt="photo">
 						<div class="slider-customers__photo-label">
 							<span class="fontBodyM">Sarah S</span>
 							<span class="fontBodyS">Satisfied Customer</span>
@@ -37,7 +37,7 @@
 						<a href="/start-quote/" class="slider-customers__link button-big main-btn">see Quotes</a>
 					</div>
 					<div class="slider-customers__col">
-						<img src="/v2/home/img/customer-1.png" class="slider-customers__photo" alt="photo">
+						<img src="/v2/pages/img/customer-1.png" class="slider-customers__photo" alt="photo">
 						<div class="slider-customers__photo-label">
 							<span class="fontBodyM">Sarah S</span>
 							<span class="fontBodyS">Satisfied Customer</span>

@@ -7,7 +7,7 @@
 			<a href="/start-quote/" class="first-screen__link button-big">start my Quote</a>
 		</div>
 		<div class="first-screen__col">
-			<img src="/v2/home/img/bg.png" alt="background" class="first-screen__bg">
+			<img src="/v2/pages/img/bg.png" alt="background" class="first-screen__bg">
 		</div>
 	</div>
 </section>

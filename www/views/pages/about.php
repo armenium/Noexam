@@ -9,7 +9,6 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 
 
-$this->title = 'Buy Life Insurance Online - About Us';
 $this->registerMetaTag(['name' => 'description', 'content' => 'Compare life insurance policies and apply for coverage today. Shop the top rated companies offering up to $1,000,000 of coverage from $23 per month.']);
 $this->registerMetaTag(['name' => 'keywords', 'content' => '']);
 
@@ -21,6 +20,7 @@ $this->registerCssFile('@web/v2/common/css/get-started.css', ['depends' => [Boot
 $this->registerJsFile('@web/v2/plugins/js/slick.js', ['depends' => [JqueryAsset::className(), AppAsset::className()]]);
 $this->registerJsFile('@web/v2/pages/js/about.js', ['depends' => [JqueryAsset::className(), AppAsset::className()]]);
 
+$this->title = 'Buy Life Insurance Online - About Us';
 $this->params['breadcrumbs'][] = ['label' => 'About', 'url' => Url::toRoute('about/'), 'class' => 'breadcrumbs__link tags breadcrumbs__link--active'];
 #$this->params['breadcrumbs'][] = 'About';
 

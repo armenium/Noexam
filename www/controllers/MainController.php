@@ -1732,34 +1732,17 @@ class MainController extends BaseController {
 		return $this->render('career');
 	}
 
-	public function actionApplyNow(){
+	/*public function actionApplyNow(){
 		if($this->return_404){
 			throw new HttpException(404, 'Page not found');
 		}
 
 		$this->layout = 'planinformation';
 
-
-
-		/*$session       = Yii::$app->session;
-		$customer_data = CustomerData::find()->where(['sid' => $session->id])->one();
-
-		if(count($customer_data)){
-			$customer_data->attributes = $customer_data->decodeData();
-
-			if($customer_data->step != 'term'){
-				return $this->redirect($this->getStepUrl($customer_data->step));
-			}
-
-		}else{
-			$customer_data = new CustomerData();
-			//return $this->redirect('/');
-		}*/
-
 		$customer_data = new CustomerData();
 
 		return $this->render('applynow', ['customer_data' => $customer_data, 'display_form' => true]);
-	}
+	}*/
 
 	public function actionQuoteresult(){
 		if($this->return_404){

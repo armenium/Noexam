@@ -10,6 +10,7 @@ use yii\helpers\Html;
 
 class ApplyNowForm extends Widget{
 	
+	public $form = 'apply-now-form';
 	public $title = 'Compare and Save. Get a Quote Today.';
 	public $position = 'center';
 	public $width = 'auto';
@@ -51,7 +52,7 @@ class ApplyNowForm extends Widget{
 	}
 	
 	public function run(){
-		return $this->render('@app/views/widgets/apply-now-form.php', [
+		return $this->render(sprintf('@app/views/widgets/%s.php', $this->form), [
 			'title' => $this->title,
 			'position' => $this->position,
 			'width' => $this->width,

@@ -6,25 +6,25 @@
 			
 			<div class="advantages-slider__container">
 				<div class="advantages-slider__col">
-					<img src="/v2/home/img/card-icon-3.png" alt="icon" class="advantages-slider__icon">
+					<img src="/v2/pages/img/card-icon-3.png" alt="icon" class="advantages-slider__icon">
 					<h2 class="advantages-slider__card-title heading-5">Save time by buying a policy online</h2>
 					<p class="advantages-slider__content fontBodyM">Life insurance has been catching up with the modern age of the internet. The latest underwriting technology allows you to apply and buy a policy online. This means no waiting for an exam, no waiting for a decision. Get life insurance
 						in 1 day rather than 4-6 weeks.</p>
 				</div>
 				<div class="advantages-slider__col">
-					<img src="/v2/home/img/card-icon-1.png" alt="icon" class="advantages-slider__icon">
+					<img src="/v2/pages/img/card-icon-1.png" alt="icon" class="advantages-slider__icon">
 					<h2 class="advantages-slider__card-title heading-5">Save time by buying a policy online</h2>
 					<p class="advantages-slider__content fontBodyM">Life insurance has been catching up with the modern age of the internet. The latest underwriting technology allows you to apply and buy a policy online. This means no waiting for an exam, no waiting for a decision. Get life insurance
 						in 1 day rather than 4-6 weeks.</p>
 				</div>
 				<div class="advantages-slider__col">
-					<img src="/v2/home/img/card-icon-2.png" alt="icon" class="advantages-slider__icon">
+					<img src="/v2/pages/img/card-icon-2.png" alt="icon" class="advantages-slider__icon">
 					<h2 class="advantages-slider__card-title heading-5">Save time by buying a policy online</h2>
 					<p class="advantages-slider__content fontBodyM">Life insurance has been catching up with the modern age of the internet. The latest underwriting technology allows you to apply and buy a policy online. This means no waiting for an exam, no waiting for a decision. Get life insurance
 						in 1 day rather than 4-6 weeks.</p>
 				</div>
 				<div class="advantages-slider__col">
-					<img src="/v2/home/img/card-icon-1.png" alt="icon" class="advantages-slider__icon">
+					<img src="/v2/pages/img/card-icon-1.png" alt="icon" class="advantages-slider__icon">
 					<h2 class="advantages-slider__card-title heading-5">Save time by buying a policy online</h2>
 					<p class="advantages-slider__content fontBodyM">Life insurance has been catching up with the modern age of the internet. The latest underwriting technology allows you to apply and buy a policy online. This means no waiting for an exam, no waiting for a decision. Get life insurance
 						in 1 day rather than 4-6 weeks.</p>
