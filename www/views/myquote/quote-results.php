@@ -91,7 +91,7 @@ $isMobile = Yii::$app->params['devicedetect']['isMobile'];
 
 <?=$this->render('../myquote/sections/03.php');?>
 
-<?=$this->render('../home/sections/08.php', ['faq_items' => $faq_items]);?>
+<?=$this->render('../pages/sections/home/08.php', ['faq_items' => $faq_items]);?>
 
 
 

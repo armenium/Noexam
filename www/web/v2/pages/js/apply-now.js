@@ -21,7 +21,7 @@ let questionsItems = [...document.querySelectorAll('.questions__item')].forEach(
 });
 
 $(function() {
-    $('.js_selectpicker').selectpicker();
+    //$('.js_selectpicker').selectpicker();
 });
 
 $(document).ready(function() {

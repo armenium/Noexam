@@ -8,6 +8,7 @@ use yii\web\JqueryAsset;
 use yii\web\View;
 use app\widgets\ApplyNowForm;
 use app\widgets\RateCalcForm2;
+use app\widgets\RateChartByAge;
 
 $isMobile = Yii::$app->params['devicedetect']['isMobile'];
 
@@ -24,14 +25,14 @@ if(!empty($this->context->current_cat->meta_title)){
 	$this->title = $this->context->current_cat->title;
 }
 
-$this->registerCssFile('@web/v2/plugins/css/table-default.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
+#$this->registerCssFile('@web/v2/plugins/css/table-default.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
 #$this->registerCssFile('@web/v2/plugins/css/datatables-row-details.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
 $this->registerCssFile('@web/v2/life-insurance/css/rates.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
 $this->registerCssFile('@web/v2/common/css/main-first-screen.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
 $this->registerCssFile('@web/v2/common/css/get-started.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
-$this->registerJsFile('@web/v2/plugins/js/tabby.js', ['depends' => [JqueryAsset::className(), AppAsset::className()]]);
+#$this->registerJsFile('@web/v2/plugins/js/tabby.js', ['depends' => [JqueryAsset::className(), AppAsset::className()]]);
 //$this->registerJS('jQuery(document).ready(function($) { RESPONSIVEUI.responsiveTabs(); });', View::POS_END, 'responsive-tab-js');
-$this->registerJsFile('@web/v2/life-insurance/js/rates.js', ['depends' => [JqueryAsset::className(), AppAsset::className()]]);
+#$this->registerJsFile('@web/v2/life-insurance/js/rates.js', ['depends' => [JqueryAsset::className(), AppAsset::className()]]);
 
 $this->params['breadcrumbs'][] = ['label' => 'Life Insurance', 'url' => '/life-insurance/'];
 #$this->params['breadcrumbs'][] = ['label' => 'Term Life Insurance', 'url' => '/life-insurance/term/'];
@@ -81,12 +82,41 @@ $this->params['breadcrumbs'][] = ['label' => 'Rates', 'url' => $this->context->c
 				<a href="#" class="rates-charts__link button-small button-small--arrow">Rates by Age 50-59</a>
 			</div>
 			<h2 class="rates-charts__title rates-charts__title--small-title heading-5">Average Cost of Life Insurance - How Much Does Term Insurance Cost?</h2>
-			<div class="rates-charts__chart"></div>
+			<div class="rates-charts__chart">
+				<?=Yii::$app->Helpers->getImage(['class' => 'img-fluid', 'src' => '/v2/life-insurance/img/frame-46312.svg', 'alt' => 'average cost of life insurance', 'from_cdn' => true, 'lazyload' => true]);?>
+			</div>
 
 			<div class="rates-charts__footer">
 				<p class="rates-charts__text-content">Term insurance can cost as low as $10 per month or as high as $500+ per month depending on age, term length, coverage amount, and overall health. The charts below provide average rates for a 50-year old man in good health.</p>
 				<p class="rates-charts__text-content">It is important to note once you buy a term life policy, the rates do not increase over the term period of the policy.</p>
-				<div class="rates-charts__table"></div>
+				<div class="rates-charts__table">
+					<table class="rates-table">
+						<thead class="rates-table__head">
+						<tr class="rates-table__row">
+							<td class="rates-table__col fontBodyS">Term Life Coverage Amount</td>
+							<td class="rates-table__col fontBodyS">Average Monthly Cost of a 10 Year Term Policy * </td>
+						</tr>
+						</thead>
+						<tbody class="rates-table__body">
+						<tr class="rates-table__row">
+							<td class="rates-table__col fontBodyM">$100,000</td>
+							<td class="rates-table__col fontBodyM">$18.22</td>
+						</tr>
+						<tr class="rates-table__row">
+							<td class="rates-table__col fontBodyM">$250,000</td>
+							<td class="rates-table__col fontBodyM">$36.55</td>
+						</tr>
+						<tr class="rates-table__row">
+							<td class="rates-table__col fontBodyM">$500,000</td>
+							<td class="rates-table__col fontBodyM">$57.36</td>
+						</tr>
+						<tr class="rates-table__row">
+							<td class="rates-table__col fontBodyM">$1,000,000</td>
+							<td class="rates-table__col fontBodyM">$108.72</td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
 				<div class="rates-charts__banner">
 					<p class="rates-charts__banner-text quote-s">* These life insurance rates are for a healthy 50-year-old male. An older male can expect higher rates. Use our comparison tool for a personalized quote.</p>
 				</div>
@@ -96,13 +126,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Rates', 'url' => $this->context->c
 </div>
 
 <div class="main-wrapp">
-	<div class="wrapp">
-		<section class="rates-chart-by-age">
-			<h1 class="rates-chart-by-age__title heading-2">10 Year Term Life Insurance<br> Rate Chart By Age</h1>
-			<p class="rates-chart-by-age__subtitle fontBodyL ">A 10-year term policy usually has the lowest rate. It will offer a level premium for 10 years. Once the initial 10 years are up, the premium will rise annually if the policy is renewable.</p>
-			<div class="rates-chart-by-age__slider"></div>
-		</section>
-	</div>
+	<?=RateChartByAge::widget();?>
 </div>
 
 <div class="main-wrapp" style="background-color: #377660;">
@@ -151,7 +175,9 @@ $this->params['breadcrumbs'][] = ['label' => 'Rates', 'url' => $this->context->c
 			<h2 class="pricing-study__subtitle heading-5">Overall Price Increases Ages 20 -70</h2>
 			<p class="pricing-study__text fontBodyM pricing-study__text--hide">The data shows that the price increases with age.</p>
 
-			<div class="pricing-study__graph"></div>
+			<div class="pricing-study__graph">
+				<?=Yii::$app->Helpers->getImage(['class' => 'img-fluid', 'src' => '/v2/life-insurance/img/frame-46362.svg', 'alt' => 'Overall Price Increases Ages 20 -70', 'from_cdn' => true, 'lazyload' => true]);?>
+			</div>
 
 			<p class="pricing-study__text fontBodyM">An important thing to note is that this is for monthly premiums. The total cost of a life insurance policy bought at age 30 vs age 45 could end up being the same if you are in perfect health. This is because as you age your needs decrease
 				(both term length and coverage amount). You'll be paying a higher rate but for a lesser amount of time.</p>
@@ -330,7 +356,6 @@ $this->params['breadcrumbs'][] = ['label' => 'Rates', 'url' => $this->context->c
 			<!-- #tablepress-104 from cache -->
 			<blockquote class="center green">* These life insurance rates are for a healthy 50-year-old male. An older male can expect higher rates. <strong>Use our <a href="https://www.noexam.com/life-insurance/term/rates/#compare">comparison tool</a></strong> for a personalized quote.</blockquote>
 
-				<?=$this->render('/main/partials/rates/tabcons-area.php');?>
 
 			<h2 id="pricingstudy">Life Insurance Pricing Study</h2>
 			<p>In a recent study, we analyzed over 100,000 quotes that were requested on our website. The results are significant, but not surprising. The longer you wait to buy it, the more it will cost you in monthly premiums. But what is more surprising is that <strong>60% of shoppers are waiting to get life insurance until after the age of 45</strong>. This is the problem that we are working to solve. Helping to raise awareness on the importance of life insurance. If you have financial dependents, get some type of coverage in force. As you are about to find out, you get the most bang for your buck by buying it younger.</p>

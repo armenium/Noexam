@@ -27,11 +27,11 @@ class PagesController extends BaseController {
 	public function actionHome(){
 		$faq_items = $this->getFaqs(['homepage']);
 		
-		return $this->render('index', ['faq_items' => $faq_items]);
+		return $this->render('home', ['faq_items' => $faq_items]);
 	}
 
 	public function actionAbout(){
-		return $this->render('about', []);
+		return $this->render('about');
 	}
 	
 	public function actionApplyNow(){

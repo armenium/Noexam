@@ -3,10 +3,13 @@
 
 namespace app\widgets;
 
+use app\assets\AppAsset;
 use app\models\CustomerData;
 use Yii;
 use yii\base\Widget;
+use yii\bootstrap\BootstrapAsset;
 use yii\helpers\Html;
+use yii\web\JqueryAsset;
 
 class ApplyNowForm extends Widget{
 	
@@ -49,6 +52,10 @@ class ApplyNowForm extends Widget{
 		for($i = 80; $i <= 400; $i++){
 			$this->wigths[$i] = $i.' lbs';
 		}
+		
+		$this->view->registerCssFile('@web/v2/widgets/css/apply-now-form.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
+		$this->view->registerJsFile('@web/v2/widgets/js/apply-now-form.js', ['depends' => [JqueryAsset::className(), AppAsset::className()]]);
+		
 	}
 	
 	public function run(){
