@@ -16,7 +16,7 @@
 			</li>
 		</ul>
 		
-		<?=$this->render('/widgets/'.$main_dir.'/partials/mobile-selects.php', ['id' => $id]);?>
+		<?=$this->render('/widgets/'.$main_dir.'/partials/mobile-selects.php', ['id' => $id, 'selected' => $view_dir]);?>
 		
 		<div class="tab-content custom-tab-content" id="js_<?=$id;?>_tab_content">
 			<div class="gender-tab tab-pane fade show active" id="<?=$id;?>-male" role="tabpanel" aria-labelledby="<?=$id;?>-male-tab">

@@ -14,11 +14,11 @@
 		<div class="col-6">
 			<label class="tags d-block">Term</label>
 			<select class="js_selectpicker" data-trigger="js_action_change" data-action="change_terms_tab" data-target="#js_invisible_tabs">
-				<option value="10-year">10 Years</option>
-				<option value="15-year">15 Years</option>
-				<option value="20-year">20 Years</option>
-				<option value="30-year">30 Years</option>
-				<option value="universal">Universal</option>
+				<option value="10-year" <?php if($selected == '10-year'):?>selected="selected"<?php endif;?>>10 Years</option>
+				<option value="15-year" <?php if($selected == '15-year'):?>selected="selected"<?php endif;?>>15 Years</option>
+				<option value="20-year" <?php if($selected == '20-year'):?>selected="selected"<?php endif;?>>20 Years</option>
+				<option value="30-year" <?php if($selected == '30-year'):?>selected="selected"<?php endif;?>>30 Years</option>
+				<option value="universal" <?php if($selected == 'universal'):?>selected="selected"<?php endif;?>>Universal</option>
 			</select>
 		</div>
 	</div>

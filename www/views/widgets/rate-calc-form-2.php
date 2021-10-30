@@ -36,24 +36,24 @@ $this->registerJsFile('@web/v2/widgets/js/rate-calc-form-2.js', ['depends' => [J
 			<h2 class="charts-by-age__subtitle heading-4"><?=$title;?></h2>
 		<?php endif;?>
 
-		<div class="charts-by-age__container">
-			<label class="charts-by-age__label">
-				<span class="tags">My age is</span>
+		<div class="row charts-by-age__container">
+			<div class="col-12 col-md-6 col-lg-3 charts-by-age__label d-flex flex-column">
+				<label for="v2_age"><span class="tags">My age is</span></label>
 				<?=$form->field($customer_data, 'age')->input('number', ['required' => 'required', 'class' => 'age charts-by-age__input fontBodyM active-el', 'id' => 'v2_age', 'placeholder' => 'e.g. 42', 'value' => 55])->label(false);?>
 				<span class="charts-by-age__input-text tags">years old</span>
-			</label>
-			<div class="charts-by-age__label">
-				<label for="my-gender"><span class="tags">My gender is</span></label>
+			</div>
+			<div class="col-12 col-md-6 col-lg-3 charts-by-age__label d-flex flex-column">
+				<label for="v2_sex"><span class="tags">My gender is</span></label>
 				<?=$form->field($customer_data, 'sex')->dropDownList(['m' => 'Male', 'f' => 'Female'], ['class' => 'js_selectpicker sex charts-by-age__select fontBodyM', 'id' => 'v2_sex', 'data-style' => 'btn-light', 'data-mobile' => (string)$isMobile, 'options' => ['m' => ['selected' => 'selected']]])->label(false);?>
 			</div>
-
-			<div class="charts-by-age__label">
-				<label for="term-length"><span class="tags">Term length</span></label>
+			
+			<div class="col-12 col-md-6 col-lg-3 charts-by-age__label d-flex flex-column">
+				<label for="v2_term_length"><span class="tags">Term length</span></label>
 				<?=$form->field($customer_data, 'term_length')->dropDownList($customer_data::$term_lengths2, ['class' => 'js_selectpicker term_length charts-by-age__select fontBodyM', 'id' => 'v2_term_length', 'data-style' => 'btn-light', 'data-mobile' => (string)$isMobile, 'options' => [20 => ['selected' => 'selected']]])->label(false);?>
 			</div>
-
-			<div class="charts-by-age__label">
-				<label for="health"><span class="tags">My overall health</span></label>
+			
+			<div class="col-12 col-md-6 col-lg-3 charts-by-age__label d-flex flex-column">
+				<label for="v2_health"><span class="tags">My overall health</span></label>
 				<?=$form->field($customer_data, 'health')->dropDownList($customer_data::$healths2, ['class' => 'js_selectpicker health charts-by-age__select fontBodyM', 'id' => 'v2_health', 'data-style' => 'btn-light', 'data-mobile' => (string)$isMobile, 'options' => ['very-good' => ['selected' => 'selected']]])->label(false);?>
 			</div>
 

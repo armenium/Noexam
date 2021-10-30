@@ -322,16 +322,16 @@
 }
 
 .charts-by-age__container {
-    display: flex;
+    /*display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: flex-start;*/
     margin-bottom: 30px;
 }
 
 .charts-by-age__label {
-    display: flex;
+    /*display: flex;
     flex-direction: column;
-    margin-right: 20px;
+    margin-right: 20px;*/
 }
 
 .charts-by-age__label:last-child {
