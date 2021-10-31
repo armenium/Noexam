@@ -49,10 +49,10 @@ $(document).ready(function(){
 				}
 			}
 		},
-		form_input_radio_click: function(){
+		/*form_input_radio_click: function(){
 			$(this).parents('.el').find('.el_lbl').removeClass('error');
-		},
-		form_rating_input_radio_events: function(e){
+		},*/
+		/*form_rating_input_radio_events: function(e){
 			var $selected_health_lbl = $(this).parents('.healths').find('.selected-health-lbl');
 			var userRating = $(this).val();
 			var userRatingLabel = $(this).attr('label');
@@ -76,8 +76,8 @@ $(document).ready(function(){
 					}
 					break;
 			}
-		},
-		guess_price_input: function(){
+		},*/
+		/*guess_price_input: function(){
 			this.value = this.value.replace(/[^\d]/, '');
 			//console.log(this.value);
 			if(this.value > 1000){
@@ -90,8 +90,8 @@ $(document).ready(function(){
 			if(this.value < 0){
 				this.value = '';
 			}
-		},
-		range_slider_init: function(){
+		},*/
+		/*range_slider_init: function(){
 			var $coverage_amount_lbl = $(".js-range-slider").parent('div').find('.coverage-amount-lbl');
 			$coverage_amount_lbl.text('$250,000');
 			$(".js-range-slider").ionRangeSlider({
@@ -130,7 +130,7 @@ $(document).ready(function(){
 					$coverage_amount_lbl.text('$' + v);
 				}
 			});
-		},
+		},*/
 		form_submit_btn_question: function(){
 			RATE_CALC.autoscroll = true;
 			if(RATE_CALC.rc_form.data('autoscroll') != undefined){
@@ -147,7 +147,7 @@ $(document).ready(function(){
 			var $parent = $yiiform.parents('.applynow-form-section.rate-calc');
 			var error = RATE_CALC.validateRateCalcWidgetFields($yiiform);
 			if(!error){
-				$parent.addClass('loading');
+				$parent.find('.loader').addClass('show');
 				$.ajax({
 					type: $yiiform.attr('method'),
 					url: $yiiform.attr('action'),
@@ -177,14 +177,14 @@ $(document).ready(function(){
 					}else{
 
 					}
-					$parent.removeClass('loading');
+					$parent.find('.loader').removeClass('show');
 				}).fail(function(){
-					$parent.removeClass('loading');
+					$parent.find('.loader').removeClass('show');
 				});
 			}
 			return false;
 		},
-		applynow_widget__submit_btn_click: function(){
+		/*applynow_widget__submit_btn_click: function(){
 			var error = RATE_CALC.validateApplyNowWidgetFields();
 			//console.log(error);
 			var $form = $(this).parent('form'),
@@ -195,7 +195,7 @@ $(document).ready(function(){
 				//alert("Please complete all fields marked in red.");
 				//return false;
 			}
-		},
+		},*/
 		validateRateCalcWidgetFields: function(form){
 			var error = 0;
 			var pattern = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
@@ -244,7 +244,7 @@ $(document).ready(function(){
 
 			return error;
 		},
-		validateApplyNowWidgetFields: function(){
+		/*validateApplyNowWidgetFields: function(){
 			var error = false;
 			var pattern = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
 
@@ -273,7 +273,7 @@ $(document).ready(function(){
 			}
 
 			return error;
-		},
+		},*/
 	};
 
 	if($('#rate-calc-form').length || $('#rate-calc-form2').length){
@@ -281,11 +281,11 @@ $(document).ready(function(){
 	}
 
 	$(document)
-		.on('click', '.applynow-form-section.widget #submit_btn', RATE_CALC.applynow_widget__submit_btn_click)
-		.on('click', '#rate-calc-form #submit_btn, #rate-calc-form .submit_question', RATE_CALC.form_submit_btn_question)
-		.on('input', '#rate-calc-form #guess_price', RATE_CALC.guess_price_input)
-		.on('click', '#rate-calc-form input:radio', RATE_CALC.form_input_radio_click)
-		.on('click change mouseover mouseout', '#rate-calc-form .rating input', RATE_CALC.form_rating_input_radio_events)
+		//.on('click', '.applynow-form-section.widget #submit_btn', RATE_CALC.applynow_widget__submit_btn_click)
+		.on('click', '#rate-calc-form #submit_btn', RATE_CALC.form_submit_btn_question)
+		//.on('input', '#rate-calc-form #guess_price', RATE_CALC.guess_price_input)
+		//.on('click', '#rate-calc-form input:radio', RATE_CALC.form_input_radio_click)
+		//.on('click change mouseover mouseout', '#rate-calc-form .rating input', RATE_CALC.form_rating_input_radio_events)
 		.on('submit', '#rate-calc-form', RATE_CALC.form_submit);
 
 });

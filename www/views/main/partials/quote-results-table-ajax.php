@@ -7,7 +7,7 @@ $health = ($health == 'none') ? 'fair' : $health;
 $term = $request['term_length'];
 $gender = $request['sex'] == 'm' ? 'man' : 'woman';
 ?>
-<div class="rate-calc-desc text-center inner">
+<div class="rate-calc-desc inner">
 	<?php if($display_default_desc):?>
 		The following rates can be customized and this is instructional text for the user.
 	<?php else:?>
