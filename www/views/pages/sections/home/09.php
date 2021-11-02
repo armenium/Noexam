@@ -1,4 +1,4 @@
-<div class="main-wrapp" style="background-color: #377660;">
+<div class="main-wrapp get-started-wrap">
 	<div class="wrapp">
 		<section class="get-started">
 			<h1 class="get-started__title heading-2">Ready to get started?</h1>

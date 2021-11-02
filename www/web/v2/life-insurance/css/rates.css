@@ -185,13 +185,10 @@
     margin-bottom: 30px;
 }
 
-.pricing-study-chart__title>span {
-    color: #F8A846;
-}
+.color-y {color: #F8A846 !important;}
+.color-g {color: #339E75 !important;}
+.color-o {color: #F87146 !important;}
 
-.pricing-study-chart__title>span:nth-of-type(2) {
-    color: #757575;
-}
 
 .pricing-study-chart__body {
     display: flex;
@@ -203,7 +200,7 @@
     width: 225px;
     height: 225px;
     border-radius: 50%;
-    background-color: #eee;
+    background-color: transparent;
     margin-right: 60px;
 }
 
@@ -228,9 +225,12 @@
     width: 15px;
     height: 15px;
     display: block;
-    background-color: #F8A846;
+    background-color: #ccc;
     border-radius: 50%;
 }
+.pricing-study-chart__list-item.y:after {background-color: #F8A846;}
+.pricing-study-chart__list-item.g:after {background-color: #339E75;}
+.pricing-study-chart__list-item.o:after {background-color: #F87146;}
 
 
 
@@ -301,11 +301,7 @@
     padding: 100px 0;
 }
 
-.charts-by-age__title {
-    text-align: center;
-    margin-bottom: 60px;
-}
-
+.charts-by-age__title {text-align: center; margin-bottom: 20px;}
 
 .rates-charts__table {}
 

@@ -10,7 +10,7 @@ use yii\bootstrap\Nav;
 			<div class="header__imgBox"><img src="/v2/common/images/logo-ab.gif" alt="icon" width="75" height="28"></div>
 			<div class="header__imgBox"><img src="/v2/common/images/logo-sa.gif" alt="icon" width="80" height="28"></div>
 		</div>
-		<?=$this->render('../common/mobile/burger');?>
+		<?=$this->render('../common/mobile/burger', ['color' => 'black']);?>
 	</div>
 </header>
 <?=$this->render('../common/mobile/nav');?>

@@ -19,7 +19,7 @@ $this->registerJsFile('@web/v2/widgets/js/rate-calc-form-2.js', ['depends' => [J
 <div class="applynow-form-section rate-calc v2 widget center trans_all position-relative">
 	<div class="desc text-center">Over <span class="bt"><?=$quots_count;?></span> quotes generated to date!</div>
 
-	<div class="loader"></div>
+	<div class="loader bg1"></div>
 
 	<div class="form-wrap">
 		<?php $form = ActiveForm::begin([

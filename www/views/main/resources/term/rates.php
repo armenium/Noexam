@@ -150,14 +150,16 @@ $this->params['breadcrumbs'][] = ['label' => 'Rates', 'url' => $this->context->c
 				no idea how much term life insurance should cost.</p>
 
 			<div class="pricing-study__chart pricing-study-chart">
-				<div class="pricing-study-chart__title tags">After 3,953 guesses <span>16%</span> guessed too high, <span>78%</span> guessed too low, and <span>6%</span> guessed correctly.</div>
+				<div class="pricing-study-chart__title tags">After 3,953 guesses <span class="color-y">16%</span> guessed too high, <span class="color-g">78%</span> guessed too low, and <span class="color-o">6%</span> guessed correctly.</div>
 				<div class="pricing-study-chart__body">
-					<div class="pricing-study-chart__col"></div>
+					<div class="pricing-study-chart__col">
+						<?=Yii::$app->Helpers->getImage(['class' => 'img-fluid', 'src' => '/v2/life-insurance/img/c-chart.svg', 'alt' => 'Life Insurance Pricing Study', 'from_cdn' => true, 'lazyload' => true]);?>
+					</div>
 					<div class="pricing-study-chart__col">
 						<ul class="pricing-study-chart__list">
-							<li class="pricing-study-chart__list-item fontBodyS">16% of participants that guessed too high</li>
-							<li class="pricing-study-chart__list-item fontBodyS">78% of participants that guessed too low</li>
-							<li class="pricing-study-chart__list-item fontBodyS">6% of participants that guessed correctly</li>
+							<li class="pricing-study-chart__list-item fontBodyS y">16% of participants that guessed too high</li>
+							<li class="pricing-study-chart__list-item fontBodyS g">78% of participants that guessed too low</li>
+							<li class="pricing-study-chart__list-item fontBodyS o">6% of participants that guessed correctly</li>
 						</ul>
 					</div>
 				</div>
@@ -166,11 +168,11 @@ $this->params['breadcrumbs'][] = ['label' => 'Rates', 'url' => $this->context->c
 			<h2 class="pricing-study__subtitle heading-5 pricing-study__subtitle--hide">Life Insurance Rates Increase By Age</h2>
 
 			<ul class="pricing-study__list">
-				<li class="pricing-study__list-item fontBodyM">The average cost increases by <span>22%</span> from age <b>20</b> to age <b>30</b></li>
-				<li class="pricing-study__list-item fontBodyM">The average cost increases by <span>22%</span> from age <b>30</b> to age <b>40</b></li>
-				<li class="pricing-study__list-item fontBodyM">The average cost increases by <span>22%</span> from age <b>40</b> to age <b>50</b></li>
-				<li class="pricing-study__list-item fontBodyM">The average cost increases by <span>22%</span> from age <b>50</b> to age <b>60</b></li>
-				<li class="pricing-study__list-item fontBodyM">The average cost increases by <span>22%</span> from age <b>30</b> to age <b>50</b></li>
+				<li class="pricing-study__list-item fontBodyM">The average cost increases by <b class="color-o">22%</b> from age <b>20</b> to age <b>30</b></li>
+				<li class="pricing-study__list-item fontBodyM">The average cost increases by <b class="color-o">22%</b> from age <b>30</b> to age <b>40</b></li>
+				<li class="pricing-study__list-item fontBodyM">The average cost increases by <b class="color-o">22%</b> from age <b>40</b> to age <b>50</b></li>
+				<li class="pricing-study__list-item fontBodyM">The average cost increases by <b class="color-o">22%</b> from age <b>50</b> to age <b>60</b></li>
+				<li class="pricing-study__list-item fontBodyM">The average cost increases by <b class="color-o">22%</b> from age <b>30</b> to age <b>50</b></li>
 			</ul>
 			<h2 class="pricing-study__subtitle heading-5">Overall Price Increases Ages 20 -70</h2>
 			<p class="pricing-study__text fontBodyM pricing-study__text--hide">The data shows that the price increases with age.</p>
@@ -238,41 +240,6 @@ $this->params['breadcrumbs'][] = ['label' => 'Rates', 'url' => $this->context->c
 			<?=RateCalcForm2::widget(['autoload' => 'ajax', 'autoscroll' => 0, 'title' => 'Compare Life Insurance Rates by Age']);?>
 		</section>
 	</div>
-</div>
-
-<!------------------------------------------------------------------------>
-
-<div class="page-content page-wrapper trans_all">
-
-	<!-- START PAGE-CONTENT -->
-	<section class="page">
-			<h2 id="pricingstudy">Life Insurance Pricing Study</h2>
-			<p>In a recent study, we analyzed over 100,000 quotes that were requested on our website. The results are significant, but not surprising. The longer you wait to buy it, the more it will cost you in monthly premiums. But what is more surprising is that <strong>60% of shoppers are waiting to get life insurance until after the age of 45</strong>. This is the problem that we are working to solve. Helping to raise awareness on the importance of life insurance. If you have financial dependents, get some type of coverage in force. As you are about to find out, you get the most bang for your buck by buying it younger.</p>
-			<p>As part of our research, we asked nearly 4,000 people to guess their price. The results were surprising. Of the group, 94% of the answers came nowhere close to the actual price of life insurance. Our research shows that Americans have no idea how much term life insurance should cost. </p>
-			<div class="guessed-prices-statistic widget">
-				<div class="text-center title">After <span class="mt">3,953</span> guesses <span class="gt">16%</span> guessed too high, <span class="bt">78%</span> guessed too low, and <span class="rt">6%</span> guessed correctly.</div>
-				<div class="text-center"><?=Yii::$app->Helpers->getImage(['class' => 'img-fluid', 'src' => '/img/guess.png', 'alt' => 'average cost of life insurance', 'from_cdn' => true, 'lazyload' => true]);?></div>
-			</div>
-
-			<div class="row mt-5">
-				<div class="col-sm-12 text-center pb-5">
-					<h2 class="text-center">Life Insurance Rates Increase By Age</h2>
-					<div class="statistic-summarizing widget trans_all text-left">
-						<ul>
-							<li class="item">The average cost increases by <span class="rt">22%</span> <span class="nowrap">from age <span class="gt">20</span> to age <span class="bt">30</span></span></li>
-							<li class="item">The average cost increases by <span class="rt">65%</span> <span class="nowrap">from age <span class="gt">30</span> to age <span class="bt">40</span></span></li>
-							<li class="item">The average cost increases by <span class="rt">96%</span> <span class="nowrap">from age <span class="gt">40</span> to age <span class="bt">50</span></span></li>
-							<li class="item">The average cost increases by <span class="rt">94%</span> <span class="nowrap">from age <span class="gt">50</span> to age <span class="bt">60</span></span></li>
-							<li class="item">The average cost increases by <span class="rt">225%</span> <span class="nowrap">from age <span class="gt">30</span> to age <span class="bt">50</span></span></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-
-
-	</section>
-	<!-- END PAGE-CONTENT -->
-
 </div>
 
 <script type="application/ld+json">

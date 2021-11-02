@@ -28,7 +28,7 @@ echo $this->render('sections/home/04.php');
 echo $this->render('sections/home/05.php');
 echo $this->render('sections/home/06.php');
 echo $this->render('sections/home/07.php');
-echo $this->render('sections/home/08.php', ['faq_items' => $faq_items]);
+echo $this->render('sections/home/faqs.php', ['faq_items' => $faq_items]);
 echo $this->render('sections/home/09.php');
 
 

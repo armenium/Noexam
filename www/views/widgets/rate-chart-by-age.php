@@ -1,5 +1,5 @@
 <section class="max-w-1400 m-auto">
-	<div class="row align-items-center flex-nowrap" data-charts='<?=json_encode($charts);?>'>
+	<div class="row align-items-center" data-charts='<?=json_encode($charts);?>'>
 		<div class="col">
 			<a role="button" id="js_rate_chart_by_age_prev_btn" class="tabs__arrow tabs__arrow--left trans_all" data-trigger="js_action_click" data-action="change_tab" data-direction="prev" data-target="#js_invisible_tabs">
 				<img src="/v2/common/images/arrow-left-green.svg" alt="">

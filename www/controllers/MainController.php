@@ -2032,12 +2032,21 @@ class MainController extends BaseController {
 
 		$companies_data = ($this->current_cat->is_companies_main_page) ? $this->CompaniesFilterController->getCompanies() : [];
 		$best_companies_data = ($this->current_cat->is_best_companies_page) ? $this->CompaniesFilterController->getBestCompanies() : [];
-
+		
+		$faq_items = [];
+		
+		if(strstr($template, 'top-8-life-insurance-companies') !== false){
+			$cats[] = 'homepage';
+			$cats[] = 'anywhere';
+			$faq_items = Faqs::find()->where(['IN', 'category', $cats])->orderBy('item_order ASC')->all();
+		}
+		
 		return $this->render($template, [
 			'grid_data' => $grid_data,
 			'dataProvider' => $companies_data,
 			'dataProviderBest' => $best_companies_data,
 			'content' => $content,
+			'faq_items' => $faq_items,
 		]);
 	}
 

@@ -1,0 +1,99 @@
+.top-companies-v2__body {
+    padding-bottom: 60px;
+}
+
+.top-companies-v2__row {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.top-companies-v2__row:last-child {
+    margin-bottom: 0;
+}
+
+.company-card-v2 {
+    display: flex;
+    align-items: flex-start;
+    background: #FFFFFF;
+    box-shadow: 1px 12px 42px rgba(155, 164, 162, 0.12);
+    border-radius: 4px;
+}
+
+.top-companies-v2-card__col {
+    width: 33.33%;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.top-companies-v2-card__col:first-child {
+    border-right: 1px solid #E4E4E4;
+}
+
+.top-companies-v2-card__col:nth-child(2) {
+    padding: 60px 0 0 0;
+}
+
+.top-companies-v2-card__col:last-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.company-card__list-item:before {
+    content: url("../img/icon-for-list-item-v2.png");
+    top: 3px;
+}
+
+.top-companies-v2-card__order {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F8A846;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 26px;
+    color: #FFFFFF;
+}
+
+@media screen and (max-width: 991px) {
+    .top-companies-v2-card__col:nth-child(2) {
+        width: 43%;
+    }
+    .top-companies-v2-card__col:last-child {
+        width: 23%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .company-card-v2 {
+        flex-direction: column;
+    }
+    .top-companies-v2-card__col:first-child {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #E4E4E4;
+        min-height: 0;
+        padding: 0 25px 0 25px;
+    }
+    .top-companies-v2-card__col:nth-child(2) {
+        width: 100%;
+        min-height: 0;
+        padding: 30px 25px 0 25px;
+    }
+    .top-companies-v2-card__col:last-child {
+        width: 100%;
+        min-height: 0;
+        padding: 0 25px 25px 25px;
+    }
+    .company-card__company-name {
+        padding-left: 0;
+    }
+}
