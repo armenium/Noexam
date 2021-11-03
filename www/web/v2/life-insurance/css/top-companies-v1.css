@@ -67,8 +67,8 @@
 
 .company-card__logo {
     display: block;
-    margin: 0 auto;
-    margin-bottom: 5px;
+    margin: 10px auto;
+    max-width: 175px;
 }
 
 .company-card__reviews {

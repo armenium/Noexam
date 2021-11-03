@@ -8,7 +8,8 @@ use yii\web\JqueryAsset;
 use yii\web\View;
 use app\widgets\ApplyNowForm;
 use app\widgets\RateCalcForm2;
-use app\widgets\RateChartByAge;
+use app\widgets\CompanyRating;
+
 
 $isMobile = Yii::$app->params['devicedetect']['isMobile'];
 
@@ -72,33 +73,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Top 8 Life Insurance Companies', '
 				<div class="top-companies-v2__row" data-weight="2" data-peoples-count="95" data-company-name="Legal & General">
 					<div class="top-companies-v2__card company-card-v2">
 						<div class="top-companies-v2-card__col">
-							<img src="/img/company_logos/logo_legal_general2.png" alt="Legal & General" class="company-card__logo">
-							<div class="company-card__reviews">
-								<b class="tags">129</b>
-								<span class="tags">Reviews</span>
-							</div>
-							<div class="company-card__stars">
-								<div class="company-card__star-box">
-									<img src="/v2/common/images/star-v2.png" alt="">
-								</div>
-								<div class="company-card__star-box">
-									<img src="/v2/common/images/star-v2.png" alt="">
-								</div>
-								<div class="company-card__star-box">
-									<img src="/v2/common/images/star-v2.png" alt="">
-								</div>
-								<div class="company-card__star-box">
-									<img src="/v2/common/images/star-v2.png" alt="">
-								</div>
-								<div class="company-card__star-box">
-									<img src="/v2/common/images/star-v2.png" alt="">
-								</div>
-							</div>
-							<div class="company-card__rating">
-								<b class="tags">4.8</b>
-								<span class="tags">On</span>
-								<b class="tags">Trustpilot</b>
-							</div>
+							<?=CompanyRating::widget(['logo_url' => '/img/company_logos/logo_legal_general2.png', 'logo_alt' => 'Legal & General', 'reviews' => 129, 'rating' => 4.8]);?>
 						</div>
 						<div class="top-companies-v2-card__col">
 							<div class="company-card__company-name heading-6">Legal and General Life Insurance</div>
@@ -118,33 +93,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Top 8 Life Insurance Companies', '
 				<div class="top-companies-v2__row" data-weight="2" data-peoples-count="87" data-company-name="Prudential">
 					<div class="top-companies-v2__card company-card-v2">
 						<div class="top-companies-v2-card__col">
-							<img src="../images/company-logo.png" alt="logo" class="company-card__logo">
-							<div class="company-card__reviews">
-								<b class="tags">129</b>
-								<span class="tags">Reviews</span>
-							</div>
-							<div class="company-card__stars">
-								<div class="company-card__star-box">
-									<img src="/v2/common/images/star-v2.png" alt="">
-								</div>
-								<div class="company-card__star-box">
-									<img src="/v2/common/images/star-v2.png" alt="">
-								</div>
-								<div class="company-card__star-box">
-									<img src="/v2/common/images/star-v2.png" alt="">
-								</div>
-								<div class="company-card__star-box">
-									<img src="/v2/common/images/star-v2.png" alt="">
-								</div>
-								<div class="company-card__star-box">
-									<img src="/v2/common/images/star-v2.png" alt="">
-								</div>
-							</div>
-							<div class="company-card__rating">
-								<b class="tags">4.8</b>
-								<span class="tags">On</span>
-								<b class="tags">Trustpilot</b>
-							</div>
+							<?=CompanyRating::widget(['logo_url' => '/img/company_logos/logo_prudential2.png', 'logo_alt' => 'Prudential', 'reviews' => 121, 'rating' => 4.7]);?>
 						</div>
 						<div class="top-companies-v2-card__col">
 							<div class="company-card__company-name heading-6">Legal and General Life Insurance</div>
