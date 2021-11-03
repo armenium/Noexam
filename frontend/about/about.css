@@ -229,6 +229,7 @@
     max-width: 520px;
     min-height: 250px;
     background: #FFFFFF;
+    box-shadow: 10px 20px 80px rgba(187, 178, 166, 0.2);
     margin-bottom: 35px;
 }
 
@@ -242,7 +243,6 @@
     width: 25px;
     height: 25px;
     background: #FFFFFF;
-    /* box-shadow: 10px 20px 80px rgba(187, 178, 166, 0.2); */
     z-index: 0;
 }
 
