@@ -70,7 +70,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Top 8 Life Insurance Companies', '
 
 			<div class="top-companies-v2__body">
 				
-				<div class="top-companies-v2__row" data-weight="2" data-peoples-count="95" data-company-name="Legal & General">
+				<div class="top-companies-v2__row" data-weight="1" data-peoples-count="95" data-company-name="Legal & General">
 					<div class="top-companies-v2__card company-card-v2">
 						<div class="top-companies-v2-card__col">
 							<?=CompanyRating::widget(['logo_url' => '/img/company_logos/logo_legal_general2.png', 'logo_alt' => 'Legal & General', 'reviews' => 129, 'rating' => 4.8]);?>
@@ -96,16 +96,136 @@ $this->params['breadcrumbs'][] = ['label' => 'Top 8 Life Insurance Companies', '
 							<?=CompanyRating::widget(['logo_url' => '/img/company_logos/logo_prudential2.png', 'logo_alt' => 'Prudential', 'reviews' => 121, 'rating' => 4.7]);?>
 						</div>
 						<div class="top-companies-v2-card__col">
-							<div class="company-card__company-name heading-6">Legal and General Life Insurance</div>
+							<div class="company-card__company-name heading-6">Prudential Life Insurance</div>
 							<ul class="company-card__list">
-								<li class="company-card__list-item fontBodyM">Competitive Term Life Prices</li>
-								<li class="company-card__list-item fontBodyM">High Acceptance Rate</li>
-								<li class="company-card__list-item fontBodyM">5th Largest Term Life Provider</li>
+								<li class="company-card__list-item fontBodyM">Lenient Underwriting</li>
+								<li class="company-card__list-item fontBodyM">Good for Seniors</li>
+								<li class="company-card__list-item fontBodyM">Competitive Tobacco Rates</li>
 							</ul>
 						</div>
 						<div class="top-companies-v2-card__col">
 							<a href="/out/quotes-2.php" class="company-card__link button-small main-btn">Get Rates</a>
 							<div class="top-companies-v2-card__order">2</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="top-companies-v2__row" data-weight="3" data-peoples-count="144" data-company-name="Mutual Omaha">
+					<div class="top-companies-v2__card company-card-v2">
+						<div class="top-companies-v2-card__col">
+							<?=CompanyRating::widget(['logo_url' => '/img/company_logos/logo_mutual_omaha2.png', 'logo_alt' => 'Mutual Omaha', 'reviews' => 151, 'rating' => 4.7]);?>
+						</div>
+						<div class="top-companies-v2-card__col">
+							<div class="company-card__company-name heading-6">Mutual of Omaha Life Insurance</div>
+							<ul class="company-card__list">
+								<li class="company-card__list-item fontBodyM">Best Product Selection</li>
+								<li class="company-card__list-item fontBodyM">Strong Financial Ratings</li>
+								<li class="company-card__list-item fontBodyM">Mutual Life Insurance Company</li>
+							</ul>
+						</div>
+						<div class="top-companies-v2-card__col">
+							<a href="/out/quotes-2.php" class="company-card__link button-small main-btn">Get Rates</a>
+							<div class="top-companies-v2-card__order">3</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="top-companies-v2__row" data-weight="4" data-peoples-count="203" data-company-name="AIG">
+					<div class="top-companies-v2__card company-card-v2">
+						<div class="top-companies-v2-card__col">
+							<?=CompanyRating::widget(['logo_url' => '/img/company_logos/logo_aig2.png', 'logo_alt' => 'AIG', 'reviews' => 151, 'rating' => 4.7]);?>
+						</div>
+						<div class="top-companies-v2-card__col">
+							<div class="company-card__company-name heading-6">AIG Life Insurance</div>
+							<ul class="company-card__list">
+								<li class="company-card__list-item fontBodyM">Strong Financial Ratings</li>
+								<li class="company-card__list-item fontBodyM">Wide Selection of Products</li>
+								<li class="company-card__list-item fontBodyM">Online Application</li>
+							</ul>
+						</div>
+						<div class="top-companies-v2-card__col">
+							<a href="/out/aig.php" class="company-card__link button-small main-btn">Get Rates</a>
+							<div class="top-companies-v2-card__order">4</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="top-companies-v2__row" data-weight="5" data-peoples-count="137" data-company-name="Bestow Life">
+					<div class="top-companies-v2__card company-card-v2">
+						<div class="top-companies-v2-card__col">
+							<?=CompanyRating::widget(['logo_url' => '/img/bestow.svg', 'logo_alt' => 'Bestow Life', 'reviews' => 151, 'rating' => 4.7]);?>
+						</div>
+						<div class="top-companies-v2-card__col">
+							<div class="company-card__company-name heading-6">Bestow Life Insurance</div>
+							<ul class="company-card__list">
+								<li class="company-card__list-item fontBodyM">Age 21 to 55 Only</li>
+								<li class="company-card__list-item fontBodyM">Short Terms</li>
+								<li class="company-card__list-item fontBodyM">Quick Application and Decision</li>
+							</ul>
+						</div>
+						<div class="top-companies-v2-card__col">
+							<a href="/out/bestow-2.php" class="company-card__link button-small main-btn">Get Rates</a>
+							<div class="top-companies-v2-card__order">5</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="top-companies-v2__row" data-weight="6" data-peoples-count="112" data-company-name="Ladder Life">
+					<div class="top-companies-v2__card company-card-v2">
+						<div class="top-companies-v2-card__col">
+							<?=CompanyRating::widget(['logo_url' => '/img/company_logos/logo_ladder.png', 'logo_alt' => 'Ladder Life', 'reviews' => 151, 'rating' => 4.7]);?>
+						</div>
+						<div class="top-companies-v2-card__col">
+							<div class="company-card__company-name heading-6">Ladder Life Insurance</div>
+							<ul class="company-card__list">
+								<li class="company-card__list-item fontBodyM">Adjustable Coverage Amount</li>
+								<li class="company-card__list-item fontBodyM">Low Prices</li>
+								<li class="company-card__list-item fontBodyM">Fast Online Application</li>
+							</ul>
+						</div>
+						<div class="top-companies-v2-card__col">
+							<a href="/out/ladder-2.php" class="company-card__link button-small main-btn">Get Rates</a>
+							<div class="top-companies-v2-card__order">6</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="top-companies-v2__row" data-weight="7" data-peoples-count="189" data-company-name="Haven Life">
+					<div class="top-companies-v2__card company-card-v2">
+						<div class="top-companies-v2-card__col">
+							<?=CompanyRating::widget(['logo_url' => '/img/company_logos/logo_haven_life3.png', 'logo_alt' => 'Haven Life', 'reviews' => 151, 'rating' => 4.7]);?>
+						</div>
+						<div class="top-companies-v2-card__col">
+							<div class="company-card__company-name heading-6">Haven Life Insurance</div>
+							<ul class="company-card__list">
+								<li class="company-card__list-item fontBodyM">Competitive Prices</li>
+								<li class="company-card__list-item fontBodyM">Online Application</li>
+								<li class="company-card__list-item fontBodyM">Fast Decision & No Exam</li>
+							</ul>
+						</div>
+						<div class="top-companies-v2-card__col">
+							<a href="/out/haven-2.php" class="company-card__link button-small main-btn">Get Rates</a>
+							<div class="top-companies-v2-card__order">7</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="top-companies-v2__row" data-weight="8" data-peoples-count="122" data-company-name="Health IQ">
+					<div class="top-companies-v2__card company-card-v2">
+						<div class="top-companies-v2-card__col">
+							<?=CompanyRating::widget(['logo_url' => '/img/company_logos/logo_health_iq2.png', 'logo_alt' => 'Health IQ', 'reviews' => 151, 'rating' => 4.7]);?>
+						</div>
+						<div class="top-companies-v2-card__col">
+							<div class="company-card__company-name heading-6">Health IQ Life Insurance</div>
+							<ul class="company-card__list">
+								<li class="company-card__list-item fontBodyM">Best for Active People</li>
+								<li class="company-card__list-item fontBodyM">Cheaper Rates if You Exercise Often</li>
+								<li class="company-card__list-item fontBodyM">Online Application</li>
+							</ul>
+						</div>
+						<div class="top-companies-v2-card__col">
+							<a href="/out/health-iq-2.php" class="company-card__link button-small main-btn">Get Rates</a>
+							<div class="top-companies-v2-card__order">8</div>
 						</div>
 					</div>
 				</div>
