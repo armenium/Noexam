@@ -117,6 +117,9 @@ $(function(){
 					case "quote-result-link":
 						FJS.ApplyNow.QuoteResult.goToLink($this);
 						break;
+					case "sort_companies":
+						FJS.Common.sortCompanies($this);
+						break;
 					default:
 						break;
 				}
@@ -199,7 +202,33 @@ $(function(){
 					$('html, body').animate({scrollTop: top}, speed, effect);
 				}
 			},
+			sortCompanies: function($btn){
+				var parent = $btn.data('target');
+				var child = '.item';
+				var ul = document.getElementById(parent),
+					lis = ul.querySelectorAll(child),
+					liHeight = [];//lis[0].offsetHeight;
+				ul.style.height = ul.offsetHeight+'px';
+				var h = 0;
 
+				/*for(var i = 0, l = lis.length; i < l; i++) {
+					var li = lis[i];
+					liHeight[i] = li.offsetHeight;
+					//h += liHeight[i] + 10;
+					li.style.position = 'absolute';
+					li.style.width = '100%';
+					li.style.top = liHeight[i] + 10 + 'px';
+					console.log(i, li.style.top);
+				}
+				console.log(liHeight);*/
+				tinysort('#'+parent+'>'+child,{data:'weight'}).forEach(function(elm, i){
+					setTimeout((function(elm, i){
+						elm.style.top = i * liHeight[i] + (i * 10) + 'px';
+						//elm.style.position = 'relative';
+						$(elm).find('.number').text('#'+(i+1));
+					}).bind(null,elm,i),40);
+				});
+			},
 			/*
 			doEqualHeight: function(){
 				if($('[data-equal-height]').length){
