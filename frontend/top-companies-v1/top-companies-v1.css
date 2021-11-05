@@ -145,7 +145,6 @@
 }
 
 .company-card__company-name {
-    padding-left: 55px;
     position: relative;
     margin-bottom: 15px;
 }
@@ -174,7 +173,6 @@
 .company-card__list-item {
     position: relative;
     color: #757575;
-    padding-left: 25px;
     margin-bottom: 25px;
 }
 
@@ -184,8 +182,9 @@
 
 .company-card__list-item:before {
     content: url("./img/icon-for-list-item.png");
-    position: absolute;
+    position: relative;
     left: 0;
+    margin-right: 15px;
 }
 
 .company-card__btn {
