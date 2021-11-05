@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="../css/shared-styles.css">
     <link rel="stylesheet" href="../css/get-started.css">
     <link rel="stylesheet" href="../css/questions.css">
+    <link rel="stylesheet" href="../css/toggle-btn.css">
     <link rel="stylesheet" href="../top-companies-v1/top-companies-v1.css">
     <link rel="stylesheet" href="./top-companies-v2.css">
 </head>
@@ -45,8 +46,12 @@
 
                 <div class="top-companies-v1__box">
                     <span class="top-companies-v1__box-label fontBodyM">Are you over the age of 55?</span>
-                    <div class="top-companies-v1__box-switch">
-                        yes/no**
+                    <div class="button b2" id="button-10">
+                        <input type="checkbox" class="checkbox">
+                        <div class="knobs">
+                            <span class="button-small">YES</span>
+                        </div>
+                        <div class="layer"></div>
                     </div>
                 </div>
 
@@ -54,7 +59,9 @@
                     <div class="top-companies-v2__row">
                         <div class="top-companies-v2__card company-card-v2">
                             <div class="top-companies-v2-card__col">
-                                <img src="../images/company-logo.png" alt="logo" class="company-card__logo">
+                                <div class="company-card__logo-wrapp">
+                                    <img src="../images/company-logo.png" alt="logo" class="company-card__logo">
+                                </div>
                                 <div class="company-card__reviews">
                                     <b class="tags">129</b>
                                     <span class="tags">Reviews</span>
@@ -99,7 +106,9 @@
                     <div class="top-companies-v2__row">
                         <div class="top-companies-v2__card company-card-v2">
                             <div class="top-companies-v2-card__col">
-                                <img src="../images/company-logo.png" alt="logo" class="company-card__logo">
+                                <div class="company-card__logo-wrapp">
+                                    <img src="./img/company-logo-2.png" alt="logo" class="company-card__logo">
+                                </div>
                                 <div class="company-card__reviews">
                                     <b class="tags">129</b>
                                     <span class="tags">Reviews</span>
