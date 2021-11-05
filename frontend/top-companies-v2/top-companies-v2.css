@@ -24,7 +24,6 @@
     min-height: 300px;
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 .top-companies-v2-card__col:first-child {
@@ -32,7 +31,7 @@
 }
 
 .top-companies-v2-card__col:nth-child(2) {
-    padding: 60px 0 0 0;
+    padding: 60px 0 0 40px;
 }
 
 .top-companies-v2-card__col:last-child {
@@ -61,6 +60,13 @@
     font-size: 18px;
     line-height: 26px;
     color: #FFFFFF;
+}
+
+.company-card__logo-wrapp {
+    height: 155px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 @media screen and (max-width: 991px) {
