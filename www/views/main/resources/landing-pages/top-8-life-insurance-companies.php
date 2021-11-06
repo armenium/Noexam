@@ -28,10 +28,11 @@ if(!empty($this->context->current_cat->meta_title)){
 
 $this->registerCssFile('@web/v2/common/css/get-started.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
 $this->registerCssFile('@web/v2/common/css/questions.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
+$this->registerCssFile('@web/v2/common/css/toggle-btn.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
 $this->registerCssFile('@web/v2/life-insurance/css/top-companies-v1.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
 $this->registerCssFile('@web/v2/life-insurance/css/top-companies-v2.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
-$this->registerJsFile('@web/v2/plugins/js/jquery.tinysort.min.js', ['depends' => [JqueryAsset::className(), AppAsset::className()]]);
 $this->registerJsFile('@web/v2/plugins/js/tinysort.min.js', ['depends' => [JqueryAsset::className(), AppAsset::className()]]);
+$this->registerJsFile('@web/v2/plugins/js/jquery.tinysort.min.js', ['depends' => [JqueryAsset::className(), AppAsset::className()]]);
 $this->registerJsFile('@web/v2/life-insurance/js/top-companies.js', ['depends' => [JqueryAsset::className(), AppAsset::className()]]);
 
 $this->params['breadcrumbs'][] = ['label' => 'Life Insurance', 'url' => '/life-insurance/'];
@@ -65,14 +66,18 @@ $this->params['breadcrumbs'][] = ['label' => 'Top 8 Life Insurance Companies', '
 
 			<div class="top-companies-v1__box">
 				<span class="top-companies-v1__box-label fontBodyM">Are you over the age of 55?</span>
-				<div class="top-companies-v1__box-switch" data-trigger="js_action_click" data-action="sort_companies" data-target="sorting_list">
-					yes/no**
+				<div class="button b2" id="button-10">
+					<input type="checkbox" class="checkbox" name="sorting" data-trigger="js_action_click" data-action="sort_companies" data-target="sorting_list" data-prevent-default="false">
+					<div class="knobs">
+						<span class="button-small">YES</span>
+					</div>
+					<div class="layer"></div>
 				</div>
 			</div>
 
 			<div id="sorting_list" class="top-companies-v2__body position-relative">
 				
-				<div class="item top-companies-v2__row" data-weight="2" data-peoples-count="95" data-company-name="Legal & General">
+				<div class="item top-companies-v2__row" data-weight="1" data-peoples-count="95" data-company-name="Legal & General">
 					<div class="top-companies-v2__card company-card-v2">
 						<div class="top-companies-v2-card__col">
 							<?=CompanyRating::widget(['logo_url' => '/img/company_logos/logo_legal_general2.png', 'logo_alt' => 'Legal & General', 'reviews' => 129, 'rating' => 4.8]);?>
@@ -212,7 +217,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Top 8 Life Insurance Companies', '
 					</div>
 				</div>
 				
-				<div class="item top-companies-v2__row" data-weight="1" data-peoples-count="122" data-company-name="Health IQ">
+				<div class="item top-companies-v2__row" data-weight="8" data-peoples-count="122" data-company-name="Health IQ">
 					<div class="top-companies-v2__card company-card-v2">
 						<div class="top-companies-v2-card__col">
 							<?=CompanyRating::widget(['logo_url' => '/img/company_logos/logo_health_iq2.png', 'logo_alt' => 'Health IQ', 'reviews' => 151, 'rating' => 4.7]);?>

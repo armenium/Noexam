@@ -67,8 +67,8 @@
 
 .company-card__logo {
     display: block;
-    margin: 10px auto;
-    max-width: 175px;
+    margin: 0 auto;
+    margin-bottom: 5px;
 }
 
 .company-card__reviews {
@@ -145,7 +145,6 @@
 }
 
 .company-card__company-name {
-    padding-left: 55px;
     position: relative;
     margin-bottom: 15px;
 }
@@ -186,6 +185,7 @@
     content: url("../img/icon-for-list-item.png");
     position: absolute;
     left: 0;
+    margin-right: 15px;
 }
 
 .company-card__btn {

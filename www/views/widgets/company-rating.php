@@ -1,4 +1,6 @@
-<img src="<?=$logo_url;?>" alt="<?=$logo_alt;?>" class="company-card__logo">
+<div class="company-card__logo-wrapp">
+	<img src="<?=$logo_url;?>" alt="<?=$logo_alt;?>" class="company-card__logo">
+</div>
 <div class="company-card__reviews">
 	<b class="tags"><?=$reviews;?></b>
 	<span class="tags">Reviews</span>

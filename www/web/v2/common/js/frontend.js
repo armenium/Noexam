@@ -96,7 +96,12 @@ $(function(){
 			},
 			doAction: function(e){
 				var $this = $(this),
-					action = $(this).data('action');
+					action = $(this).data('action'),
+					preventDefault = $(this).data('prevent-default');
+
+				if(preventDefault == undefined){
+					preventDefault = true;
+				}
 
 				switch(action){
 					case "print":
@@ -124,7 +129,11 @@ $(function(){
 						break;
 				}
 
-				e.preventDefault();
+				//console.log(preventDefault);
+
+				if(preventDefault){
+					e.preventDefault();
+				}
 			},
 		},
 		Loader: {
@@ -203,31 +212,10 @@ $(function(){
 				}
 			},
 			sortCompanies: function($btn){
-				var parent = $btn.data('target');
-				var child = '.item';
-				var ul = document.getElementById(parent),
-					lis = ul.querySelectorAll(child),
-					liHeight = [];//lis[0].offsetHeight;
-				ul.style.height = ul.offsetHeight+'px';
-				var h = 0;
+				var target = $btn.data('target'),
+					is_checked = $btn.is(':checked');
 
-				/*for(var i = 0, l = lis.length; i < l; i++) {
-					var li = lis[i];
-					liHeight[i] = li.offsetHeight;
-					//h += liHeight[i] + 10;
-					li.style.position = 'absolute';
-					li.style.width = '100%';
-					li.style.top = liHeight[i] + 10 + 'px';
-					console.log(i, li.style.top);
-				}
-				console.log(liHeight);*/
-				tinysort('#'+parent+'>'+child,{data:'weight'}).forEach(function(elm, i){
-					setTimeout((function(elm, i){
-						elm.style.top = i * liHeight[i] + (i * 10) + 'px';
-						//elm.style.position = 'relative';
-						$(elm).find('.number').text('#'+(i+1));
-					}).bind(null,elm,i),40);
-				});
+				tinysort('#'+target+' > .item', {data: 'weight', order: is_checked ? 'desc' : 'asc'});
 			},
 			/*
 			doEqualHeight: function(){
