@@ -5,8 +5,10 @@ namespace app\controllers;
 use app\components\BaseController;
 use app\models\CustomerData;
 use app\models\Faqs;
+use app\models\Questions;
 use Yii;
 use yii\helpers\VarDumper;
+use yii\web\Cookie;
 use yii\web\Response;
 
 class ApplicationController extends BaseController {
@@ -71,122 +73,124 @@ class ApplicationController extends BaseController {
 		return ['error' => $error, 'html' => $html];
 	}
 	
-	#STEP 1
-	public function actionPersonalinfo(){
+	#Personal Info
+	public function actionOnlineApplicationStep1(){
 		$customer_data = $this->getCustomeData('create', false);
 
 		if(!is_null($customer_data)){
 			$customer_data->attributes = $customer_data->decodeData();
-			$customer_data->avg_amount = intval($customer_data->avg_amount);
-			if($customer_data->avg_amount > 1000)
-				$customer_data->avg_amount /= 1000;
 		}else{
-			$customer_data = new CustomerData();
-			$customer_data->avg_amount = 300;
-			$customer_data->term_length = '10';
-			$customer_data->tobaco = '0';
+			return $this->redirect('/');
 		}
 		
-		#VarDumper::dump($customer_data->avg_amount, 10, 1);
-		
-		$from = 0;
-		foreach($customer_data::$coverage_amounts as $k => $v){
-			if($k == $customer_data->avg_amount) break;
-			$from++;
-		}
-		
-		
-		return $this->render('start-quote', ['customer_data' => $customer_data, 'from' => $from]);
+		return $this->render('step-1', ['customer_data' => $customer_data]);
 	}
 	
-	#STEP 2
-	public function actionOverallHealth(){
+	#Personal Info 2
+	public function actionOnlineApplicationStep2(){
 		$customer_data = $this->getCustomeData('create', false);
 		
 		if(!is_null($customer_data)){
 			$customer_data->attributes = $customer_data->decodeData();
-			if(empty($customer_data->health)) $customer_data->health = 'very-good';
-			if(empty($customer_data->tobaco)) $customer_data->tobaco = 0;
-			if(empty($customer_data->sex)) $customer_data->sex = 'm';
 		}else{
-			$customer_data = new CustomerData();
-			$customer_data->health = 'very-good';
-			$customer_data->tobaco = 0;
-			$customer_data->health = 'm';
+			return $this->redirect('/');
 		}
 		
-		return $this->render('overall-health', ['customer_data' => $customer_data]);
+		return $this->render('step-2', ['customer_data' => $customer_data]);
 	}
 	
-	#STEP 3
-	public function actionDateOfBirth(){
+	#Questions
+	public function actionOnlineApplicationStep3(){
+		$isMobile = Yii::$app->params['devicedetect']['isMobile'];
+
 		$customer_data = $this->getCustomeData('create', false);
 		
 		if(!is_null($customer_data)){
 			$customer_data->attributes = $customer_data->decodeData();
-			if(!empty($customer_data->birthday)){
-				$d = explode("/", $customer_data->birthday);
-				$customer_data->birthday = [];
-				$customer_data->birthday['day'] = $d[0];
-				$customer_data->birthday['month'] = $d[1];
-				$customer_data->birthday['year'] = $d[2];
-			}else{
-				$customer_data->birthday = [];
-				$customer_data->birthday['day'] = '01';
-				$customer_data->birthday['month'] = '01';
-				$customer_data->birthday['year'] = 1970;
+			
+			$questions    = Questions::find()->where(['type' => 'question', 'num' => '1'])->one();
+			$subquestions = $questions->subquestion;
+			
+			if(count($subquestions)){
+				$subquestions = array_chunk($subquestions, ($isMobile ? 1 : 3));
+			}
+		}else{
+			return $this->redirect('/');
+		}
+		
+		return $this->render('step-3', ['question' => $questions, 'subquestions' => $subquestions]);
+	}
+	
+	#Beneficiary
+	public function actionOnlineApplicationStep4(){
+		$customer_data = $this->getCustomeData('create', false);
+		
+		if(!is_null($customer_data)){
+			$customer_data->attributes = $customer_data->decodeData();
+			
+			if($customer_data->step != CustomerData::SCENARIO_ADDQ && $customer_data->step != CustomerData::SCENARIO_PI2){
+				if($customer_data->step == CustomerData::SCENARIO_BENEFICIARY){
+				
+				}else{
+					return $this->redirect($this->getStepUrl($customer_data->step));
+				}
 			}
 		}else{
 			$customer_data = new CustomerData();
-			$customer_data->birthday = [];
-			$customer_data->birthday['day'] = '01';
-			$customer_data->birthday['month'] = '01';
-			$customer_data->birthday['year'] = 1970;
 		}
 		
-		return $this->render('date-of-birth', ['customer_data' => $customer_data]);
+		$bf_id = 1;
+		
+		return $this->render('step-4', ["bf_id" => $bf_id, 'customer_data' => $customer_data]);
 	}
 	
-	#STEP 4
-	public function actionContactDetails(){
+	#Payment Info
+	public function actionOnlineApplicationStep5(){
+		
 		$customer_data = $this->getCustomeData('create', false);
 		
 		if(!is_null($customer_data)){
 			$customer_data->attributes = $customer_data->decodeData();
 		}else{
-			$customer_data = new CustomerData();
+			return $this->redirect('/');
 		}
 		
-		return $this->render('contact-details', ['customer_data' => $customer_data]);
+		return $this->render('step-5', ['customer_data' => $customer_data]);
 	}
 	
-	#STEP 5
-	public function actionQuoteResults(){
-		$this->layout = 'v2/myquoteresults';
+	public function actionSuccess(){
+		$session = Yii::$app->session;
+		$cookies = Yii::$app->response->cookies;
 		
-		$customer_data = $this->getCustomeData('new', false);
+		$report = ['path' => '', 'url' => ''];
 		
-		if(is_null($customer_data)){
-			$customer_data = new CustomerData();
-			$customer_data->avg_amount = 300;
-			$customer_data->term_length = '10';
+		$customer_data = $this->getCustomeData('create', true);
+		
+		if(!is_null($customer_data)){
+			
+			$customer_data->attributes = $customer_data->decodeData();
+			$report = $customer_data->success;
+			
+			if($customer_data->step == CustomerData::SCENARIO_COMPLETED ){
+				Yii::info(  'Success page - COMPLETED' ,'noexam');
+			}else{
+				Yii::info(  'Success page - redirecting to step - ' . $customer_data->step ,'noexam');
+			}
+			
 		}else{
-			$customer_data->attributes      = $customer_data->decodeData();
-			$customer_data->avg_amount = $customer_data->avg_amount > 1000 ? $customer_data->avg_amount / 1000 : $customer_data->avg_amount;
+			return $this->redirect('/');
 		}
 		
-		$from = 0;
-		foreach($customer_data::$coverage_amounts as $k => $v){
-			if($k == $customer_data->avg_amount) break;
-			$from++;
-		}
+		$cookies->add(new Cookie([
+			'name' => 'PHPSESSID',
+			'expire' => -3600,
+		]));
 		
-		$params = $this->getQuoteResults($customer_data);
-		$params['from'] = $from;
-		$params['faq_items'] = $this->getFaqs(['homepage']);
-		
-		
-		return $this->render('quote-results', $params);
+		return $this->render('success', ['report_data' => $report]);
+	}
+	
+	public function actionNotEligible(){
+		return $this->render('not-eligible');
 	}
 	
 	public function getQuoteResults($customer_data){
