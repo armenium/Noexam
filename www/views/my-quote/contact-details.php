@@ -15,8 +15,8 @@ $this->title = 'Buy Life Insurance Online - Contact Details';
 $this->registerMetaTag(['name' => 'description', 'content' => 'Compare life insurance policies and apply for coverage today. Shop the top rated companies offering up to $1,000,000 of coverage from $23 per month.']);
 $this->registerMetaTag(['name' => 'keywords', 'content' => '']);
 
-$this->registerCssFile('@web/v2/myquote/css/'.$page_id.'.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
-#$this->registerJsFile('@web/v2/myquote/js/'.$page_id.'.js', ['depends' => [JqueryAsset::className(), AppAsset::className()]]);
+$this->registerCssFile('@web/v2/my-quote/css/'.$page_id.'.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
+#$this->registerJsFile('@web/v2/my-quote/js/'.$page_id.'.js', ['depends' => [JqueryAsset::className(), AppAsset::className()]]);
 
 $isMobile = Yii::$app->params['devicedetect']['isMobile'];
 ?>
@@ -34,7 +34,7 @@ $isMobile = Yii::$app->params['devicedetect']['isMobile'];
 			</div>
 
 			<h1 class="contact-details__title heading-4">Contact Details</h1>
-			<?php $form = ActiveForm::begin(['id' => $page_id, 'action' => '/myquote/post/', 'options' => ['class' => 'contact-details__form'], 'fieldConfig' => ['options' => ['tag' => false]]]);?>
+			<?php $form = ActiveForm::begin(['id' => $page_id, 'action' => '/my-quote/post/', 'options' => ['class' => 'contact-details__form'], 'fieldConfig' => ['options' => ['tag' => false]]]);?>
 				<?=$form->field($customer_data, 'form_name')->hiddenInput(['value' => $page_id, 'id' => ''])->label(false);?>
 				<?=$form->field($customer_data, 'redirect')->hiddenInput(['value' => 'quote-results', 'id' => ''])->label(false);?>
 				<div class="contact-details__container">

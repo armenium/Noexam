@@ -11,9 +11,9 @@ use yii\helpers\VarDumper;
 use yii\web\Cookie;
 use yii\web\Response;
 
-class ApplicationController extends BaseController {
+class MyQuestionsController extends BaseController {
 
-	public $layout = 'v2/application';
+	public $layout = 'v2/my-quote';
 
 	public function beforeAction($action){
 		$this->enableCsrfValidation = ($action->id !== "crl");
@@ -75,7 +75,7 @@ class ApplicationController extends BaseController {
 	
 	#Personal Info
 	public function actionOnlineApplicationStep1(){
-		$customer_data = $this->getCustomeData('create', false);
+		$customer_data = $this->getCustomeData('new', false);
 
 		if(!is_null($customer_data)){
 			$customer_data->attributes = $customer_data->decodeData();
@@ -88,7 +88,7 @@ class ApplicationController extends BaseController {
 	
 	#Personal Info 2
 	public function actionOnlineApplicationStep2(){
-		$customer_data = $this->getCustomeData('create', false);
+		$customer_data = $this->getCustomeData('new', false);
 		
 		if(!is_null($customer_data)){
 			$customer_data->attributes = $customer_data->decodeData();
@@ -103,7 +103,7 @@ class ApplicationController extends BaseController {
 	public function actionOnlineApplicationStep3(){
 		$isMobile = Yii::$app->params['devicedetect']['isMobile'];
 
-		$customer_data = $this->getCustomeData('create', false);
+		$customer_data = $this->getCustomeData('new', false);
 		
 		if(!is_null($customer_data)){
 			$customer_data->attributes = $customer_data->decodeData();
@@ -123,7 +123,7 @@ class ApplicationController extends BaseController {
 	
 	#Beneficiary
 	public function actionOnlineApplicationStep4(){
-		$customer_data = $this->getCustomeData('create', false);
+		$customer_data = $this->getCustomeData('new', false);
 		
 		if(!is_null($customer_data)){
 			$customer_data->attributes = $customer_data->decodeData();
@@ -147,7 +147,7 @@ class ApplicationController extends BaseController {
 	#Payment Info
 	public function actionOnlineApplicationStep5(){
 		
-		$customer_data = $this->getCustomeData('create', false);
+		$customer_data = $this->getCustomeData('new', false);
 		
 		if(!is_null($customer_data)){
 			$customer_data->attributes = $customer_data->decodeData();
@@ -159,38 +159,60 @@ class ApplicationController extends BaseController {
 	}
 	
 	public function actionSuccess(){
-		$session = Yii::$app->session;
-		$cookies = Yii::$app->response->cookies;
-		
-		$report = ['path' => '', 'url' => ''];
-		
-		$customer_data = $this->getCustomeData('create', true);
+		$customer_data = $this->getCustomeData('new', true);
 		
 		if(!is_null($customer_data)){
-			
 			$customer_data->attributes = $customer_data->decodeData();
-			$report = $customer_data->success;
+			$report                    = $customer_data->success;
 			
-			if($customer_data->step == CustomerData::SCENARIO_COMPLETED ){
-				Yii::info(  'Success page - COMPLETED' ,'noexam');
+			if($customer_data->step == CustomerData::SCENARIO_COMPLETED){
+				Yii::info('Success page - COMPLETED', 'noexam');
 			}else{
-				Yii::info(  'Success page - redirecting to step - ' . $customer_data->step ,'noexam');
+				Yii::info('Success page - redirecting to step - '.$customer_data->step, 'noexam');
 			}
 			
 		}else{
 			return $this->redirect('/');
 		}
 		
-		$cookies->add(new Cookie([
-			'name' => 'PHPSESSID',
-			'expire' => -3600,
-		]));
-		
 		return $this->render('success', ['report_data' => $report]);
 	}
 	
 	public function actionNotEligible(){
 		return $this->render('not-eligible');
+	}
+	
+	public function actionIntermediaryQuestions(){
+		$isMobile     = Yii::$app->params['devicedetect']['isMobile'];
+		$session      = Yii::$app->session;
+		$this->layout = 'planinformation';
+		
+		//$customer_data = $this->getCustomeData();
+		$customer_data = CustomerData::find()->where(['sid' => $session->id])->one();
+		//VarDumper::dump($customer_data, 10, true);
+		if(count($customer_data)){
+			$customer_data->attributes = $customer_data->decodeData();
+			//if($customer_data->step != 'add-question' && $customer_data->step != 'personal-info2'){
+			//return $this->redirect($this->getStepUrl($customer_data->step));
+			//}
+		}else{
+			return $this->redirect('/');
+		}
+		
+		$_questions = [];
+		$_subquestions = [];
+		
+		$questions    = Questions::find()->where(['type' => 'question_nq'])->orderBy('item_order ASC')->all();
+		foreach($questions as $k => $question){
+			$questions[$k]->sub_questions = $question->getSubquestion()->all();
+		}
+		//VarDumper::dump($questions, 10, true);
+		//$subquestions = $questions->subquestion;
+		//VarDumper::dump($subquestions, 10, true);
+		
+		//VarDumper::dump($questions, 10, 1);
+		
+		return $this->render('intermediary', ['questions' => $questions]);
 	}
 	
 	public function getQuoteResults($customer_data){

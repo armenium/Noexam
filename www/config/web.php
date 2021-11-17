@@ -154,13 +154,15 @@ $config = [
 	            //'health/importance-hobbies' => 'main/lifeinsurance',
 	            //'apply-now' => 'main/applynow',
 	            
-	            'myquote/post' => 'myquote/post',
-	            'myquote/ajax' => 'myquote/ajax',
-	            'start-quote' => 'myquote/start-quote',
-	            'overall-health' => 'myquote/overall-health',
-	            'date-of-birth' => 'myquote/date-of-birth',
-	            'contact-details' => 'myquote/contact-details',
-	            'quote-results' => 'myquote/quote-results',
+	            'my-quote/post' => 'my-quote/post',
+	            'my-quote/ajax' => 'my-quote/ajax',
+	            'start-quote' => 'my-quote/start-quote',
+	            'overall-health' => 'my-quote/overall-health',
+	            'date-of-birth' => 'my-quote/date-of-birth',
+	            'contact-details' => 'my-quote/contact-details',
+	            'quote-results' => 'my-quote/quote-results',
+
+	            'online-application-step-1' => 'my-questions/online-application-step-1',
 
 	            'about' => 'pages/about',
 	            'apply-now' => 'pages/apply-now',

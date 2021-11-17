@@ -9,9 +9,9 @@ use Yii;
 use yii\helpers\VarDumper;
 use yii\web\Response;
 
-class MyquoteController extends BaseController {
+class MyQuoteController extends BaseController {
 
-	public $layout = 'v2/myquote';
+	public $layout = 'v2/my-quote';
 
 	public function beforeAction($action){
 		$this->enableCsrfValidation = ($action->id !== "crl");
@@ -88,7 +88,23 @@ class MyquoteController extends BaseController {
 					Yii::info('Step - "'.$CustomerData['form_name'].'". Planing redirect to "'.$redirect_url.'".', 'noexam');
 					$iniciator = $CustomerData['form_name'];
 					break;
+				
+				case 'quote-result':
+					$status = 'new';
+					$model = $this->getCustomeData($status, false);
 
+					$scenario     = CustomerData::SCENARIO_QUOTE_RESULT;
+					$redirect_url = '/online-application-step-1/';
+
+					$model->attributes = $model->decodeData();
+					if($request->post('CustomerData')['company_code'] != 'sagicor'){
+						Yii::info('Step - "quote-result". company_code = '.$request->post('CustomerData')['company_code'].'. Planing redirect to "intermediary-questions".', 'noexam' );
+						$redirect_url = '/intermediary-questions/';
+					}else{
+						Yii::info('Step - "quote-result". Planing redirect to "online-application-step-1".', 'noexam' );
+					}
+					break;
+				
 				default:
 					Yii::info('Requested wrong form name in post request.', 'noexam' );
 					return false;
@@ -323,7 +339,7 @@ class MyquoteController extends BaseController {
 	
 	#STEP 5
 	public function actionQuoteResults(){
-		$this->layout = 'v2/myquoteresults';
+		$this->layout = 'v2/my-quote-results';
 		
 		$customer_data = $this->getCustomeData('new', false);
 		

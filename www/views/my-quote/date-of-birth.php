@@ -15,8 +15,8 @@ $this->title = 'Buy Life Insurance Online - Date of birth';
 $this->registerMetaTag(['name' => 'description', 'content' => 'Compare life insurance policies and apply for coverage today. Shop the top rated companies offering up to $1,000,000 of coverage from $23 per month.']);
 $this->registerMetaTag(['name' => 'keywords', 'content' => '']);
 
-$this->registerCssFile('@web/v2/myquote/css/'.$page_id.'.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
-#$this->registerJsFile('@web/v2/myquote/js/'.$page_id.'.js', ['depends' => [JqueryAsset::className(), AppAsset::className()]]);
+$this->registerCssFile('@web/v2/my-quote/css/'.$page_id.'.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
+#$this->registerJsFile('@web/v2/my-quote/js/'.$page_id.'.js', ['depends' => [JqueryAsset::className(), AppAsset::className()]]);
 
 $isMobile = Yii::$app->params['devicedetect']['isMobile'];
 
@@ -57,11 +57,11 @@ $dropdown_options = [
 			</div>
 
 			<h1 class="date-of-birth__title heading-4">Date of Birth</h1>
-			<?php $form = ActiveForm::begin(['id' => $page_id, 'action' => '/myquote/post/', 'options' => ['class' => 'date-of-birth__form'], 'fieldConfig' => ['options' => ['tag' => false]]]);?>
+			<?php $form = ActiveForm::begin(['id' => $page_id, 'action' => '/my-quote/post/', 'options' => ['class' => 'date-of-birth__form'], 'fieldConfig' => ['options' => ['tag' => false]]]);?>
 				<?=$form->field($customer_data, 'form_name')->hiddenInput(['value' => $page_id, 'id' => ''])->label(false);?>
 				<?=$form->field($customer_data, 'redirect')->hiddenInput(['value' => 'contact-details', 'id' => ''])->label(false);?>
 				<div class="date-of-birth__container">
-					<img src="/v2/myquote/img/date-of-birdth-bg.png" alt="image" class="date-of-birth__img">
+					<img src="/v2/my-quote/img/date-of-birdth-bg.png" alt="image" class="date-of-birth__img">
 					<div class="date-of-birth__box">
 						<label class="date-of-birth__label">
 							<span class="tags">Date</span>
