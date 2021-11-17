@@ -10,8 +10,9 @@ use yii\bootstrap\Nav;
 			<div class="header__imgBox"><img src="/v2/common/images/logo-ab.gif" alt="icon" width="75" height="28"></div>
 			<div class="header__imgBox"><img src="/v2/common/images/logo-sa.gif" alt="icon" width="80" height="28"></div>
 		</div>
-		<div class="header__help-wrapp">
-			<a href="#" class="question-mark">?</a>
+		<div class="header__help-wrapp" data-toggle="popover">
+			<a role="button" class="question-mark" tabindex="-1"
+			   data-content="Please enter the information for the person who is applying for life insurance.">?</a>
 		</div>
 		<?=$this->render('../common/mobile/burger', ['color' => 'black']);?>
 	</div>

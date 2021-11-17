@@ -84,7 +84,10 @@ class BaseController extends Controller{
 		if(count($a)){
 			$body_class = array_unique(array_merge($body_class, $a));
 		}
-
+		
+		$body_class = array_filter($body_class);
+		#VarDumper::dump($body_class, 10, 1); exit;
+		
 		return implode(' ', $body_class);
 	}
 

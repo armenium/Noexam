@@ -16,27 +16,96 @@ $isMobile = Yii::$app->params['devicedetect']['isMobile'];
 $this->registerCssFile('@web/v2/my-questions/css/online-app.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
 $this->registerCssFile('@web/v2/my-questions/css/'.$page_id.'.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
 ?>
-<div class="row top-bar">
-	<div class="head-block">
-		<div class="iconbar">
-			<div id="current_step_icon" class="icon-name active"></div>
-			<div class="icon-heart"></div>
+<div class="main-wrapp">
+	<div class="wrapp">
+		<div class="online-app-step-1 my-quote-steps">
+			<div class="my-quote-steps__steps">
+				<div class="my-quote-steps__steps-item my-quote-steps__steps-item--active">1</div>
+				<span class="my-quote-steps__decor-line my-quote-steps__decor-line--active"></span>
+				<div class="my-quote-steps__steps-item">2</div>
+				<span class="my-quote-steps__decor-line"></span>
+				<div class="my-quote-steps__steps-item">3</div>
+			</div>
 		</div>
-		<div class="text">Proposed Insured Information</div>
-		<a href="/faq/" class="q-mark" data-toggle="tooltip" data-placement="left" title="Please enter the information for the person who is applying for life insurance."></a>
+		<form class="online-app-step-1__form">
+			
+			<div class="online-app-step-2__form-box">
+				<h1 class="online-app-step-1__title heading-5">Proposed Insured Information</h1>
+				<h3 class="online-app-step-1__subtitle main-title">Name</h3>
+				
+				<div class="online-app-step-1__row">
+					<label class="online-app-step-1__label online-app-step-1__label--first-name online-app-main-label">
+						<span class="tags">First Name</span>
+						<input type="text" class="online-app-step-1__input online-app-main-input" value="Magda">
+					</label>
+					<label class="online-app-step-1__label online-app-main-label online-app-step-1__input--initial-label">
+						<span class="tags">Initial</span>
+						<input type="text" class="online-app-step-1__input online-app-step-1__input--initial online-app-main-input" value="A">
+					</label>
+					<label class="online-app-step-1__label online-app-main-label">
+						<span class="tags">Last Name</span>
+						<input type="text" class="online-app-step-1__input online-app-main-input" value="Bierman">
+					</label>
+				</div>
+				
+				<h3 class="online-app-step-1__subtitle main-title">Address</h3>
+				
+				<div class="online-app-step-1__row">
+					<label class="online-app-step-1__label online-app-step-1__label--full-width online-app-main-label">
+						<span class="tags">Street Address</span>
+						<input type="text" class="online-app-step-1__input online-app-main-input" placeholder="Enter your street address">
+					</label>
+					<label class="online-app-step-1__label online-app-step-1__label--full-width online-app-main-label">
+						<span class="tags">City</span>
+						<input type="text" class="online-app-step-1__input online-app-main-input" placeholder="Enter your city">
+					</label>
+				</div>
+				
+				<div class="online-app-step-1__row online-app-step-1__row--direction-row">
+					<label class="online-app-step-1__label online-app-step-1__label--full-width online-app-main-label">
+						<span class="tags">State</span>
+						<select class="online-app-step-1__select online-app-step-1__label--state js-selectpicker">
+							<option value="Select state" disabled selected>Select state</option>
+							<option value="12">12</option>
+							<option value="13">13</option>
+						</select>
+					</label>
+					<label class="online-app-step-1__label online-app-step-1__label--full-width online-app-step-1__label--zip-code online-app-main-label">
+						<span class="tags">Zip Code</span>
+						<input type="text" class="online-app-step-1__input online-app-main-input" placeholder="Enter your zip code">
+					</label>
+				</div>
+				
+				<h3 class="online-app-step-1__subtitle main-title">Contact Details</h3>
+				<div class="online-app-step-1__row">
+					<label class="online-app-step-1__label online-app-step-1__label--full-width online-app-main-label">
+						<span class="tags">Phone Number</span>
+						<input type="text" class="online-app-step-1__input online-app-main-input" placeholder="Enter your phone number">
+					</label>
+					<label class="online-app-step-1__label online-app-step-1__label--full-width online-app-main-label">
+						<span class="tags">Email</span>
+						<input type="text" class="online-app-step-1__input online-app-main-input online-app-main-input--invalid" value="mag">
+					</label>
+				</div>
+			</div>
+		
+		</form>
+		
+		<div class="online-app-step-1__btns">
+			<button type="submit" class="online-app-step-1-btn main-btn button-big">Back</button>
+			<button type="submit" class="online-app-step-1-btn main-btn button-big">next</button>
+		</div>
+	
 	</div>
 </div>
+
+<img class="bg-section__img1" src="/v2/common/images/online-app/online-app-bg-1.png" alt="">
+<img class="bg-section__img2" src="/v2/common/images/online-app/online-app-bg-2.png" alt="">
+<img class="bg-section__img3" src="/v2/common/images/online-app/online-app-bg-3.png" alt="">
+
 <div class="row content personal-info">
 	<div class="form-block clearfix">
-		<?php $form = ActiveForm::begin([
-			'enableAjaxValidation' => true,
-			'enableClientValidation'=>true,
-			'validationUrl' => Url::toRoute('/validation'),
-			'id' => 'term-form',
-			'action' => '/post/',
-			'options' => ['class' => 'personal-info-form'],
-			//'fieldConfig' => ['options' => ['tag' => false,],],
-		]);?>
+		<?php $form = ActiveForm::begin(['enableAjaxValidation' => true, 'enableClientValidation'=>true, 'validationUrl' => Url::toRoute('/validation'), 'id' => 'term-form', 'action' => '/post/', 'options' => ['class' => 'personal-info-form']]);?>
 		<?=$form->field($customer_data, 'form_name')->hiddenInput(['value' => 'pi', 'id' => ''])->label(false);?>
 		<div class="timeline-list">
 			<?php if($isMobile):?>
@@ -126,13 +195,4 @@ $this->registerCssFile('@web/v2/my-questions/css/'.$page_id.'.css', ['depends' =
 		</div>
 		<?php ActiveForm::end();?>
 	</div>
-</div>
-<div class="row bottom-bar">
-	<div class="back-button">Back</div>
-	<div class="bar-progress-wrapper">
-		<div class="bar-progress">
-			<div class="bar-line" data-progress="30"></div>
-		</div>
-	</div>
-	<div class="next-button">Next</div>
 </div>

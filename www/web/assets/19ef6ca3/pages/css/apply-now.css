@@ -1,0 +1,62 @@
+
+.life-insurance__cards {
+    padding: 100px 0;
+}
+
+.questions__item--life-insurance {
+    border: 1px solid #E4E4E4;
+}
+
+.life-insurance__cards {
+    display: flex;
+    flex-direction: column;
+}
+
+.rates-form-info {
+    padding-top: 100px;
+}
+
+.rates-form-info__item {
+    width: 100%;
+    max-width: 250px;
+    margin-bottom: 40px;
+}
+
+.rates-form-info__item:last-child {
+    margin-bottom: 0;
+}
+
+.rates-form-info__title {
+    position: relative;
+    margin-bottom: 15px;
+    padding-left: 40px;
+}
+
+.rates-form-info__title:before {
+    content: url("../img/title-icon.png");
+    position: absolute;
+    left: 0;
+}
+
+.rates-form-info__text {
+    color: #7D7D82;
+}
+
+@media screen and (max-width: 991px) {
+    .main-first-screen__subtitle {
+        margin: 0 auto 0 auto !important;
+    }
+    .rates-form-info {
+        padding-top: 0;
+    }
+    .rates-form-info {
+        padding-bottom: 50px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .life-insurance__cards {
+        padding: 60px 0;
+    }
+}
+

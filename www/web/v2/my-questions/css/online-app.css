@@ -59,7 +59,7 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: #339E75;
+    background: #377660;
     transform: translateX(20px);
 }
 
@@ -67,6 +67,12 @@
     color: #FFFFFF;
     text-decoration: none;
 }
+
+.popover {background-color: #98CCB4; border-color: #98CCB4; max-width: 340px;}
+.popover .arrow {left: auto; right: 10px;}
+.popover .arrow:before,
+.popover .arrow:after {border-bottom-color: #98CCB4;}
+.popover .popover-body {padding: 24px; color: #282B29; line-height: 24px;}
 
 @media screen and (max-width: 767px) {
     .bg-section__img1,
