@@ -1,13 +1,20 @@
 <?php
 
+use app\assets\AppAsset;
+use yii\bootstrap\BootstrapAsset;
 use yii\helpers\Url;
 use yii\widgets\ActiveForm;
 
+$page_id = 'online-app-step-1';
+
 /* @var $this yii\web\View */
+$this->title = 'Questions';
 $this->registerMetaTag(['name' => 'description', 'content' => '']);
 $this->registerMetaTag(['name' => 'keywords', 'content' => '']);
-$this->title = 'Questions';
 $isMobile = Yii::$app->params['devicedetect']['isMobile'];
+
+$this->registerCssFile('@web/v2/my-questions/css/online-app.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
+$this->registerCssFile('@web/v2/my-questions/css/'.$page_id.'.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
 ?>
 <div class="row top-bar">
 	<div class="head-block">
