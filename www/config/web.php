@@ -162,6 +162,7 @@ $config = [
 	            'contact-details' => 'my-quote/contact-details',
 	            'quote-results' => 'my-quote/quote-results',
 
+	            'my-questions/ajax' => 'my-questions/ajax',
 	            'online-application-step-1' => 'my-questions/online-application-step-1',
 
 	            'about' => 'pages/about',

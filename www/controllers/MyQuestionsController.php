@@ -38,39 +38,45 @@ class MyQuestionsController extends BaseController {
 	
 	public function actionAjax(){
 		Yii::$app->response->format = Response::FORMAT_JSON;
-
-		$request = Yii::$app->request;
-		$session = Yii::$app->session;
-		$request_post = $request->post();
-		$CustomerData = $request->post('CustomerData');
-		$iniciator = $CustomerData['form_name'];
-		$scenario = CustomerData::SCENARIO_SELECT_COVERAGE;
-		$request_post['CustomerData']['avg_amount'] = str_replace(['k', 'm'], ['', '000'], $CustomerData['avg_amount']);
 		
-		$html = '';
-		$error = 0;
+		$redirect = '/';
 		
-		if($iniciator == 'quote-results'){
-			$model = $this->getCustomeData(null, false);
-			if(!is_null($model)){
-				$model->load($request_post);
-				$model->scenario = $scenario;
-				$model->iniciator = $iniciator;
-				if($model->validate()){
-					if($model->save()){
-						$html = $this->renderPartial('partials/quote-results-list', $this->getQuoteResults($this->getCustomeData(null, false)));
-					}else{
-						$error = 3;
+		$current_url = Yii::$app->request->post('current_url');
+		$u = explode($_SERVER['HTTP_HOST'], $current_url);
+		$current_uri = $u[1];
+		//VarDumper::dump($current_uri);
+		
+		switch($current_uri){
+			case "/personalinfo/":
+				$redirect = "/";
+				break;
+			case "/personalinfo2/":
+				$redirect = "/personalinfo/";
+				break;
+			case "/questions2/":
+				$redirect = "/personalinfo2/";
+				break;
+			case "/beneficiary/":
+				$redirect = "/questions2/";
+				break;
+			case "/paymentinfo/":
+				$redirect = "/beneficiary/";
+				break;
+			default:
+				$session = Yii::$app->session;
+				$customer_data = CustomerData::find()->where(['sid' => $session->id])->one();
+				if(!is_null($customer_data)){
+					$attributes = $customer_data->decodeData();
+					if(!empty($attributes['referer'])){
+						if(strstr($attributes['referer'], 'apply-now') !== false){
+							$redirect = '/apply-now/';
+						}
 					}
-				}else{
-					$error = 2;
 				}
-			}
-		}else{
-			$error = 1;
+				break;
 		}
 		
-		return ['error' => $error, 'html' => $html];
+		return ['error' => empty($redirect) ? 1 : 0, 'redirect' => $redirect];
 	}
 	
 	#Personal Info

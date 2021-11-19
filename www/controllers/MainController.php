@@ -972,7 +972,7 @@ class MainController extends BaseController {
 			default:
 				$session = Yii::$app->session;
 				$customer_data = CustomerData::find()->where(['sid' => $session->id])->one();
-				if(count($customer_data)){
+				if(!is_null($customer_data)){
 					$attributes = $customer_data->decodeData();
 					if(!empty($attributes['referer'])){
 						if(strstr($attributes['referer'], 'apply-now') !== false){

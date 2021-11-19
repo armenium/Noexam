@@ -13,7 +13,9 @@ use yii\base\Component;
 use yii\helpers\VarDumper;
 
 class Helpers extends Component{
-
+	
+	private $states_dropdown_options_subtexts = [];
+	
 	// HealthClass(preferred,standard etc.) -> Health(P,RP etc.)
 	static function HealthClass2Health($HealthClass){
 		switch($HealthClass){
@@ -196,6 +198,16 @@ class Helpers extends Component{
 		
 		
 		return $protocols;
+	}
+	
+	public function createDropdownOptionsSubtext($options){
+		
+		if(empty($this->states_dropdown_options_subtexts))
+			foreach($options as $k => $v)
+				$this->states_dropdown_options_subtexts[$k] = ['data-subtext' => $v, 'class' => ''];
+		
+		
+		return $this->states_dropdown_options_subtexts;
 	}
 	
 }
