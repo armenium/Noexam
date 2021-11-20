@@ -31,7 +31,8 @@ $(function(){
 					.on('blur', '[data-trigger="js_action_blur"]', OAPPJS.Core.doAction)
 					.on('change', '[data-trigger="js_action_change"]', OAPPJS.Core.doAction)
 					.on('click', '[data-trigger="js_action_click"]', OAPPJS.Core.doAction)
-					.on('submit', '[data-trigger="js_action_submit"]', OAPPJS.Core.doAction);
+					.on('submit', '[data-trigger="js_action_submit"]', OAPPJS.Core.doAction)
+					.on('focus change', 'input[required], select[required]', OAPPJS.Form.removeElementsErrors);
 			},
 			doAction: function(e){
 				var $this = $(this),
@@ -52,35 +53,61 @@ $(function(){
 			},
 		},
 		Form: {
-			validateRequiredFields: function(){
-				var error = false;
+			Validate: function($form){
+				var error = 0;
 				var pattern = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
 
-				$('input:required').each(function(){
-					//if(error) return false;
+				console.log($form.find('input:required, select:required').length);
+
+				$form.find('input:required, select:required').each(function(){
+					if(error) return false;
+
 					if($(this).attr('type') == 'email'){
 						if(!$.trim($(this).val()).match(pattern)){
+							//console.log('email alert');
+							$(this).parent().addClass('error').end().addClass('error input--invalid');
 							error = true;
 						}
 					}
+
+					if($(this).attr('type') == 'checkbox'){
+						if(!$(this).is(':checked')){
+							$(this).parent().addClass('error').end().addClass('error input--invalid');
+							error = true;
+						}
+					}
+
 					if($(this).val() == ''){
-						$(this).parent().addClass('error').end().addClass('error invalid');
+						$(this).parent().addClass('error').end().addClass('error input--invalid');
 						error = true;
 					}
 				});
 
 				if(error == false){
-					$(this).parent().removeClass('error').end().removeClass('error invalid');
+					$(this).parent().removeClass('error').end().removeClass('error input--invalid');
 				}
+
+				console.log(error ? 1 : -1);
 
 				return error;
 			},
 			Submit: function($btn){
-				if(!OAPPJS.Form.validateRequiredFields()){
-					var form = $('form');
-					form.submit();
+				var $form = $($btn.data('target')),
+					error = OAPPJS.Form.Validate($form),
+					$parent = $($btn.parent('div'));
+
+				if(!error){
+					setTimeout(function(){
+						$form.submit();
+					}, 500);
 				}else{
-					alert("Please complete all fields marked in red.");
+					if($parent.find('.err-mess').length){
+						$parent.find('.err-mess').remove();
+					}
+					$parent.prepend('<div class="err-mess">Please complete all fields marked in green.</div>');
+					$parent.find('.err-mess').delay(3000).fadeOut(400);
+
+					return false;
 				}
 			},
 			GoBack: function($btn){
@@ -97,6 +124,9 @@ $(function(){
 					}
 				});
 			},
+			removeElementsErrors: function(){
+				$(this).parent().removeClass('error').end().removeClass('error input--invalid');
+			}
 		},
 	};
 

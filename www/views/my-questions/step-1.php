@@ -30,8 +30,8 @@ $this->registerJsFile('@web/v2/my-questions/js/online-app.js', ['depends' => [Jq
 			</div>
 		</div>
 		
-		<?php $form = ActiveForm::begin(['enableAjaxValidation' => true, 'enableClientValidation' => true, 'validationUrl' => Url::toRoute('/validation'), 'id' => 'term-form', 'action' => '/post/', 'options' => ['class' => 'online-app-step-1__form'], 'fieldConfig' => ['options' => ['tag' => false]]]);?>
-		<?=$form->field($customer_data, 'form_name')->hiddenInput(['value' => 'pi', 'id' => ''])->label(false);?>
+		<?php $form = ActiveForm::begin(['enableAjaxValidation' => true, 'enableClientValidation' => true, 'validationUrl' => Url::toRoute('/validation'), 'id' => 'js_pii', 'action' => '/post/', 'options' => ['class' => 'online-app-step-1__form'], 'fieldConfig' => ['options' => ['tag' => false]]]);?>
+			<?=$form->field($customer_data, 'form_name')->hiddenInput(['value' => 'pi', 'id' => ''])->label(false);?>
 			
 			<div class="online-app-step-2__form-box">
 				<h1 class="online-app-step-1__title heading-5">Proposed Insured Information</h1>
@@ -104,8 +104,8 @@ $this->registerJsFile('@web/v2/my-questions/js/online-app.js', ['depends' => [Jq
 		<?php ActiveForm::end();?>
 		
 		<div class="online-app-step-1__btns">
-			<button type="submit" class="online-app-step-1-btn main-btn button-big" data-trigger="js_action_click" data-action="online_app_back">Back</button>
-			<button type="submit" class="online-app-step-1-btn main-btn button-big" data-trigger="js_action_click" data-action="online_app_next">next</button>
+			<button type="submit" class="online-app-step-1-btn main-btn button-big prev" data-trigger="js_action_click" data-action="online_app_back">Back</button>
+			<button type="submit" class="online-app-step-1-btn main-btn button-big next" data-trigger="js_action_click" data-action="online_app_next" data-target="#js_pii">next</button>
 		</div>
 	
 	</div>
