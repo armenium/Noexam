@@ -54,6 +54,7 @@ $(function(){
 			this.Core.initEvents();
 			this.Forms.initRangeSlider();
 			this.Forms.stylingSelect();
+			this.Common.Init();
 			//this.Common.doEqualHeight();
 			this.Common.initDisclosure();
 			this.Common.initLazyLoad();
@@ -144,7 +145,19 @@ $(function(){
 				FJS.els.js_loader.removeClass('show');
 			},
 		},
+		Storage: {
+			set: function(key, value){
+				sessionStorage.setItem(key, value);
+			},
+			get: function(key){
+				return sessionStorage.getItem(key);
+			}
+		},
 		Common: {
+			Init: function(){
+				FJS.Storage.set('referrer_url', document.referrer);
+				FJS.Storage.set('current_url', window.location.href);
+			},
 			toggleMobileNav: function($obj){
 				var target = $obj.data("target");
 
