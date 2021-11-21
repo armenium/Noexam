@@ -47,7 +47,7 @@ $config = [
             'useFileTransport' => true,
         ],
         'log' => [
-            'traceLevel' => YII_DEBUG ? 3 : 0,
+            'traceLevel' => YII_DEBUG ? 0 : 0,
             'targets' => [
                 [
                     'class' => 'yii\log\FileTarget',
@@ -162,8 +162,11 @@ $config = [
 	            'contact-details' => 'my-quote/contact-details',
 	            'quote-results' => 'my-quote/quote-results',
 
-	            'my-questions/ajax' => 'my-questions/ajax',
-	            'online-application-step-1' => 'my-questions/online-application-step-1',
+	            'my-application/post' => 'my-application/post',
+	            'my-application/goback' => 'my-application/goback',
+	            'my-application/validation' => 'my-application/validation',
+	            'online-application-step-1' => 'my-application/online-application-step-1',
+	            'online-application-step-2' => 'my-application/online-application-step-2',
 
 	            'about' => 'pages/about',
 	            'apply-now' => 'pages/apply-now',

@@ -19,7 +19,9 @@ $(function(){
 			xxs: [575, 0],
 		},
 		vars: {},
-		routes: {},
+		routes: {
+			go_back: '/my-application/goback',
+		},
 		els: {},
 		Init: function(){
 			this.Core.initEvents();
@@ -32,7 +34,7 @@ $(function(){
 					.on('change', '[data-trigger="js_action_change"]', OAPPJS.Core.doAction)
 					.on('click', '[data-trigger="js_action_click"]', OAPPJS.Core.doAction)
 					.on('submit', '[data-trigger="js_action_submit"]', OAPPJS.Core.doAction)
-					.on('focus change', 'input[required], select[required]', OAPPJS.Form.removeElementsErrors);
+					.on('focus change', 'input[required], select[required]', OAPPJS.Forms.removeElementsErrors);
 			},
 			doAction: function(e){
 				var $this = $(this),
@@ -40,10 +42,10 @@ $(function(){
 
 				switch(action){
 					case "online_app_next":
-						OAPPJS.Form.Submit($this);
+						OAPPJS.Forms.Submit($this);
 						break;
 					case "online_app_back":
-						OAPPJS.Form.GoBack($this);
+						OAPPJS.Forms.GoBack($this);
 						break;
 					default:
 						break;
@@ -52,60 +54,61 @@ $(function(){
 				e.preventDefault();
 			},
 		},
-		Form: {
+		Forms: {
+			/**
+			 * @return {boolean}
+			 */
 			Validate: function($form){
-				var error = 0;
+				var error = false;
 				var pattern = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
 
-				console.log($form.find('input:required, select:required').length);
+				console.log('Elements count:', $form.find('input:required, select:required').length);
 
 				$form.find('input:required, select:required').each(function(){
-					if(error) return false;
+					var $el = $(this),
+						val = $el.val();
 
-					if($(this).attr('type') == 'email'){
-						if(!$.trim($(this).val()).match(pattern)){
-							//console.log('email alert');
-							$(this).parent().addClass('error').end().addClass('error input--invalid');
+					if($el.attr('type') == 'email'){
+						if(!$.trim(val).match(pattern)){
+							$el.parent().addClass('error').end().addClass('error input--invalid');
 							error = true;
 						}
 					}
 
-					if($(this).attr('type') == 'checkbox'){
-						if(!$(this).is(':checked')){
-							$(this).parent().addClass('error').end().addClass('error input--invalid');
+					if($el.attr('type') == 'checkbox'){
+						if(!$el.is(':checked')){
+							$el.parent().addClass('error').end().addClass('error input--invalid');
 							error = true;
 						}
 					}
 
-					if($(this).val() == ''){
-						$(this).parent().addClass('error').end().addClass('error input--invalid');
+					if(val == ''){
+						$el.parent().addClass('error').end().addClass('error input--invalid');
 						error = true;
 					}
 				});
 
-				if(error == false){
-					$(this).parent().removeClass('error').end().removeClass('error input--invalid');
-				}
-
-				console.log(error ? 1 : -1);
+				console.log('error:', error);
 
 				return error;
 			},
+			/**
+			 * @return {boolean}
+			 */
 			Submit: function($btn){
-				var $form = $($btn.data('target')),
-					error = OAPPJS.Form.Validate($form),
-					$parent = $($btn.parent('div'));
+				var $form = $($btn.data('target'));
+				var error = OAPPJS.Forms.Validate($form);
 
-				if(!error){
+				if(error == false){
 					setTimeout(function(){
 						$form.submit();
 					}, 500);
 				}else{
-					if($parent.find('.err-mess').length){
-						$parent.find('.err-mess').remove();
+					if($form.find('.err-mess').length){
+						$form.find('.err-mess').remove();
 					}
-					$parent.prepend('<div class="err-mess">Please complete all fields marked in green.</div>');
-					$parent.find('.err-mess').delay(3000).fadeOut(400);
+					$form.append('<div class="err-mess">Please complete all fields marked in green.</div>');
+					$form.find('.err-mess').delay(3000).fadeOut(400);
 
 					return false;
 				}
@@ -114,14 +117,17 @@ $(function(){
 				$.ajax({
 					type: "POST",
 					dataType: "json",
-					url: "my-questions/ajax",
+					url: OAPPJS.routes.go_back,
 					data: {current_url: window.location.href},
-					complete: function(data){
-						console.log(data.responseText);
-						if(data.responseText != ''){
-							//window.location.href = data.responseText;
-						}
+				}).done(function(responce){
+					console.log(responce);
+					if(!responce.error && responce.redirect != ''){
+						//window.location.href = responce.redirect;
+					}else{
+
 					}
+				}).fail(function(){
+
 				});
 			},
 			removeElementsErrors: function(){

@@ -779,7 +779,7 @@ form input[type="hidden"] {display: none;}
 
 body:not(.my-quote.quote-results) .header__imgWrapp {display: none;}
 body.my-quote.quote-results header.header {background-color: #FCF9F3;}
-body:not(.my-questions) .header__help-wrapp {display: none;}
+body:not(.my-application) .header__help-wrapp {display: none;}
 
 /*
 .popover {background-color: #4A4A4A; color: #fff; font-size: 12px; border-color: #4a4a4a; border-radius: 8px; text-align: center; line-height: 1.2; max-width: 300px;}

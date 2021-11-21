@@ -150,7 +150,7 @@ class MainController extends BaseController {
 
 	#-------------------------------------------------------------------------
 
-	public function actionValidation(){
+	/*public function actionValidation(){
 		if(Yii::$app->request->isAjax){
 
 
@@ -194,7 +194,7 @@ class MainController extends BaseController {
 
 			return ActiveForm::validate($model);
 		}
-	}
+	}*/
 
 	public function xml_questions($decoded, $formatted_questions, &$counter){
 		foreach($decoded as $key => $value){
@@ -945,7 +945,7 @@ class MainController extends BaseController {
 		return $this->renderPartial('quoteresult', ['result' => $result]);
 	}
 
-	public function actionAjaxGoBack(){
+	/*public function actionAjaxGoBack(){
 		$redirect = '/';
 
 		$current_url = Yii::$app->request->post('current_url');
@@ -984,7 +984,7 @@ class MainController extends BaseController {
 		}
 
 		return $redirect;
-	}
+	}*/
 
 	/**
 	 * Homepage

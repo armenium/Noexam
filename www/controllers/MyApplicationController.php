@@ -10,8 +10,9 @@ use Yii;
 use yii\helpers\VarDumper;
 use yii\web\Cookie;
 use yii\web\Response;
+use yii\widgets\ActiveForm;
 
-class MyQuestionsController extends BaseController {
+class MyApplicationController extends BaseController {
 
 	public $layout = 'v2/my-quote';
 
@@ -19,6 +20,43 @@ class MyQuestionsController extends BaseController {
 		$this->enableCsrfValidation = ($action->id !== "crl");
 		
 		return parent::beforeAction($action);
+	}
+	
+	public function actionValidation(){
+		if(Yii::$app->request->isAjax){
+			switch(Yii::$app->request->post('CustomerData')['form_name']){
+				
+				case 'term':
+					$scenario     = CustomerData::SCENARIO_TERM;
+					break;
+				case 'plan':
+					$scenario     = CustomerData::SCENARIO_PI;
+					break;
+				case 'step-1':
+					$scenario     = CustomerData::SCENARIO_PI;
+					break;
+				case 'pi2':
+					$scenario     = CustomerData::SCENARIO_PI2;
+					break;
+				case 'benef':
+					$scenario     = CustomerData::SCENARIO_BENEFICIARY;
+					break;
+				case 'payment':
+					$scenario     = CustomerData::SCENARIO_PAYMENT;
+					break;
+				default:
+					return false;
+					break;
+			}
+			
+			Yii::$app->response->format = Response::FORMAT_JSON;
+			
+			$model           = new CustomerData;
+			$model->scenario = $scenario;
+			$model->load(Yii::$app->request->post());
+			
+			return ActiveForm::validate($model);
+		}
 	}
 	
 	public function actionPost(){
@@ -31,15 +69,248 @@ class MyQuestionsController extends BaseController {
 		
 		$redirect_url = '/';
 		
+		if($request->isPost){
+			$request_post = $request->post();
+			
+			$scenario = null;
+			
+			$model = $this->getCustomeData('new', false);
+			#VarDumper::dump($request->post('CustomerData'), 10, 1); exit;
+			#VarDumper::dump($model, 10, 1); exit;
+			
+			switch($request->post('CustomerData')['form_name']){
+				case 'step-1': #Personal Info
+					$scenario     = CustomerData::SCENARIO_PI;
+					$redirect_url = '/online-application-step-2/';
+					break;
+				case 'step-2': #Personal Info 2
+					$scenario     = CustomerData::SCENARIO_PI2;
+					$redirect_url = '/questions2/';
+					$model->attributes = $model->decodeData();
+					if($model->company_code != 'sagicor'){
+						$redirect_url = '/online-application-step-3/';
+					}
+					break;
+				case 'benef':
+					if(!count($model)){
+						$model = CustomerData::find()->where(['sid' => $session->id])->one();
+					}
+					Yii::info('Step - "benef". Planing redirect to "/paymentinfo/" page.', 'noexam' );
+					$scenario     = CustomerData::SCENARIO_BENEFICIARY;
+					$redirect_url = '/paymentinfo/';
+					$model->attributes = $model->decodeData();
+					$model->beneficiary = $request_post['CustomerData']['beneficiary'];
+					$model->completed_application = 'No';
+					if($model->company_code != 'sagicor'){
+						$model->success = $this->generatePDFReport(25, $session->id);
+						$model->completed_application = 'Yes';
+						$model->status   = 'completed';
+						$redirect_url = '/success/';
+					}
+					break;
+				case 'payment':
+					if(!count($model)){
+						$model = CustomerData::find()->where(['sid' => $session->id])->one();
+					}
+					Yii::info('Step - "payment". Model: '.count($model), 'noexam');
+					Yii::info('Step - "payment". Session ID: '.$session->id, 'noexam');
+					Yii::info('Step - "payment". Planing redirect to "/success/" page.', 'noexam');
+					$scenario     = CustomerData::SCENARIO_PAYMENT;
+					$redirect_url = '/success/';
+					$model->attributes = $model->decodeData();
+					$model->payment = $request_post['CustomerData']['payment'];
+					$model->success = $this->generatePDFReport(25);
+					$model->completed_application = 'Yes';
+					break;
+				case 'success':
+					Yii::info( 'Step - "success". All done.', 'noexam' );
+					$scenario     = CustomerData::SCENARIO_SUCCESS;
+					//$redirect_url = '/success/';
+					break;
+				case 'homeform':
+					$scenario     = CustomerData::SCENARIO_APPLY_NOW_HOME;
+					$redirect_url = '/'.$request->post('CustomerData')['redirect'];
+					Yii::info( 'Step - "'.$request->post('CustomerData')['form_name'].'". Planing redirect to "' . $redirect_url . '".', 'noexam' );
+					$status = 'new';
+					$iniciator = $request->post('CustomerData')['form_name'];
+					
+					#VarDumper::dump($request_post, 10, 1); exit;
+					$day = intval($request_post['CustomerData']['birthday']['day']);
+					$month = intval($request_post['CustomerData']['birthday']['month']);
+					$year = intval($request_post['CustomerData']['birthday']['year']);
+					$birthday = date('d/m/Y', strtotime($day.'.'.$month.'.'.$year));
+					$request_post['CustomerData']['birthday'] = $birthday;
+					//VarDumper::dump($request_post, 10, 1); exit;
+					
+					$height_arr = explode('|', $request_post['CustomerData']['height']);
+					$request_post['CustomerData']['h_foot'] = $height_arr[0];
+					$request_post['CustomerData']['h_inch'] = $height_arr[1];
+					unset($request_post['CustomerData']['height']);
+					//VarDumper::dump($scenario);
+					break;
+				case 'applynow':
+				case 'contentform':
+					$scenario     = CustomerData::SCENARIO_APPLY_NOW;
+					$redirect_url = '/'.$request->post('CustomerData')['redirect'];
+					Yii::info( 'Step - "'.$request->post('CustomerData')['form_name'].'". Planing redirect to "' . $redirect_url . '".', 'noexam' );
+					$status = 'new';
+					$iniciator = $request->post('CustomerData')['form_name'];
+					
+					#VarDumper::dump($request_post, 10, 1); exit;
+					$day = intval($request_post['CustomerData']['birthday']['day']);
+					$month = intval($request_post['CustomerData']['birthday']['month']);
+					$year = intval($request_post['CustomerData']['birthday']['year']);
+					$birthday = date('d/m/Y', strtotime($day.'.'.$month.'.'.$year));
+					$request_post['CustomerData']['birthday'] = $birthday;
+					//VarDumper::dump($request_post, 10, 1); exit;
+					
+					$height_arr = explode('|', $request_post['CustomerData']['height']);
+					$request_post['CustomerData']['h_foot'] = $height_arr[0];
+					$request_post['CustomerData']['h_inch'] = $height_arr[1];
+					unset($request_post['CustomerData']['height']);
+					//VarDumper::dump($scenario);
+					break;
+				case 'quote-result':
+					Yii::debug( 'Step - "quote-result". Planing redirect to "personalinfo".', 'noexam' );
+					$scenario     = CustomerData::SCENARIO_QUOTE_RESULT;
+					$redirect_url = '/personalinfo/';
+					$model->attributes = $model->decodeData();
+					if($request->post('CustomerData')['company_code'] != 'sagicor'){
+						Yii::debug('Step - "quote-result". company_code = '.$request->post('CustomerData')['company_code'].'. Planing redirect to "intermediary-questions".', 'noexam' );
+						$redirect_url = '/intermediary-questions/';
+					}else{
+						Yii::debug('Step - "quote-result". Planing redirect to "personalinfo".', 'noexam' );
+					}
+					//VarDumper::dump($redirect_url, 10, 1); exit;
+					break;
+				case "intermediary_questions":
+					Yii::debug('Step - "intermediary-questions". Planing redirect to "personalinfo".', 'noexam' );
+					$scenario     = CustomerData::SCENARIO_IMQ;
+					//VarDumper::dump($scenario, 10, 1);
+					$status = 'new';
+					$iniciator = $request->post('CustomerData')['form_name'];
+					$redirect_url = '/personalinfo/';
+					break;
+				default:
+					Yii::debug('Requested wrong form name in post request.', 'noexam' );
+					return false;
+					break;
+			}
+			
+			Yii::debug($request->post('CustomerData')['form_name'].'. Planing redirect to "'.$redirect_url.'" page.', 'noexam');
+			
+			if(!is_null($model)){
+				
+				$model->load($request_post);
+				$model->scenario = $scenario;
+				
+				if($model->validate()){
+					
+					if($model->save()){
+						Yii::debug('CustomerData - updated record - '.$model->id, 'noexam');
+						
+						$SF_process_flag = false;
+						
+						if($model->company_code == 'sagicor' && $model->scenario == CustomerData::SCENARIO_PAYMENT){
+							$SF_process_flag = true;
+						}elseif($model->company_code != 'sagicor'){
+							$SF_process_flag = true;
+						}
+						
+						if($SF_process_flag){
+							$json_decoded  = json_decode($model->data, true);
+							$search_result = $this->searchSFLead($json_decoded);
+							
+							if(is_array($search_result)){
+								Yii::debug('Updating lead with existing email --- '.$json_decoded['email'], 'noexam');
+								// $completed = $this->getSFLeadField( $search_result[ 'id' ], 'Completed_Application__c' );
+								// $completed = $completed['records'][0]['Completed_Application__c'];
+								// if( 'Yes' == $completed){
+								$json_decoded['Updated_Lead_to_App'] = 'Yes';
+								// }
+								
+								//VarDumper::dump($json_decoded, 10, 1); exit;
+								
+								$lead_result = $this->updateSFLead($search_result['id'], $json_decoded, $item->sid);
+								if($lead_result){
+									Yii::debug('Lead --- '.$search_result['id'].' --- successfuly updated.', 'noexam');
+								}else{
+									Yii::debug('Lead --- '.$search_result['id'].' --- didn\'t updated.', 'noexam');
+								}
+							}else{
+								$search_result = $this->searchSFLead($json_decoded, 'email');
+								
+								if(is_array($search_result)){
+									$random_int = random_int(10000, 99999);
+									preg_match_all("/^(?<user>[\w.']+)@(?<domain>[\w.']+)/", $json_decoded['email'], $email_match, PREG_SET_ORDER);
+									$parsed_email = $email_match[0]['user'].'+'.$random_int.'@'.$email_match[0]['domain'];
+									
+									$json_decoded['email'] = $parsed_email;
+									Yii::debug('Creating lead with special email --- '.$json_decoded['email'], 'noexam');
+									$lead_result = $this->createSFLead($json_decoded, $item->sid);
+								}else{
+									Yii::debug('Creating new lead.', 'noexam');
+									$lead_result = $this->createSFLead($json_decoded, $item->sid);
+								}
+							}
+							
+							if($lead_result){
+								if($model->company_code == 'sagicor' && $model->scenario == CustomerData::SCENARIO_PAYMENT){
+									$model->scenario = CustomerData::SCENARIO_COMPLETED;
+									$model->status   = 'completed';
+									if($model->save()){
+										Yii::debug('Record - '.$model->id.' marked as "completed".', 'noexam');
+									}
+								}
+							}
+						}
+					}else{
+						Yii::debug('CustomerData - record hasn\'t updated - '.$model->id, 'noexam');
+					}
+				}else{
+					VarDumper::dump($model->getErrors(), 10, 1);
+					//VarDumper::dump($request_post, 10, 1);
+					//VarDumper::dump($model, 10, 1);
+				}
+				
+				Yii::debug('Redirecting to "'.$redirect_url.'"', 'noexam');
+				
+				//VarDumper::dump($redirect_url, 10, 1); exit;
+				return $this->redirect([$redirect_url]);
+				//header("Location:$redirect_url", true, 200);
+				//return Yii::$app->getResponse()->redirect($redirect_url, 303, false);
+			}else{
+				
+				$model = new CustomerData(['scenario' => $scenario]);
+				$model->load($request_post);
+				$model->sid       = $session->id;
+				$model->status    = $status;
+				$model->iniciator = $iniciator;
+				
+				if($model->validate()){
+					
+					if($model->save()){
+						Yii::debug('CustomerData - new record is created - '.$model->id, 'noexam');
+					}else{
+						Yii::debug('CustomerData - new record didn\'t created.', 'noexam');
+					}
+					
+				}
+				Yii::debug('Redirecting to "'.$redirect_url.'"', 'noexam');
+				
+				return $this->redirect([$redirect_url]);
+			}
+			
+		}
 		
-		Yii::info( 'This is not POST request. Redirecting to "' . $redirect_url .'"', 'noexam' );
+		Yii::debug('This is not POST request. Redirecting to "'.$redirect_url.'"', 'noexam');
 		return $this->redirect([$redirect_url]);
 	}
 	
-	public function actionAjax(){
+	public function actionGoback(){
 		Yii::$app->response->format = Response::FORMAT_JSON;
 		
-		$redirect = '/';
+		$redirect = '/start-quote/';
 		
 		$current_url = Yii::$app->request->post('current_url');
 		$u = explode($_SERVER['HTTP_HOST'], $current_url);

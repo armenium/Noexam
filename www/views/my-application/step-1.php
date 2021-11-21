@@ -14,9 +14,9 @@ $this->registerMetaTag(['name' => 'description', 'content' => '']);
 $this->registerMetaTag(['name' => 'keywords', 'content' => '']);
 $isMobile = Yii::$app->params['devicedetect']['isMobile'];
 
-$this->registerCssFile('@web/v2/my-questions/css/online-app.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
-$this->registerCssFile('@web/v2/my-questions/css/'.$page_id.'.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
-$this->registerJsFile('@web/v2/my-questions/js/online-app.js', ['depends' => [JqueryAsset::className(), AppAsset::className()]]);
+$this->registerCssFile('@web/v2/my-application/css/online-app.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
+$this->registerCssFile('@web/v2/my-application/css/'.$page_id.'.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
+$this->registerJsFile('@web/v2/my-application/js/online-app.js', ['depends' => [JqueryAsset::className(), AppAsset::className()]]);
 ?>
 <div class="main-wrapp">
 	<div class="wrapp">
@@ -30,8 +30,15 @@ $this->registerJsFile('@web/v2/my-questions/js/online-app.js', ['depends' => [Jq
 			</div>
 		</div>
 		
-		<?php $form = ActiveForm::begin(['enableAjaxValidation' => true, 'enableClientValidation' => true, 'validationUrl' => Url::toRoute('/validation'), 'id' => 'js_pii', 'action' => '/post/', 'options' => ['class' => 'online-app-step-1__form'], 'fieldConfig' => ['options' => ['tag' => false]]]);?>
-			<?=$form->field($customer_data, 'form_name')->hiddenInput(['value' => 'pi', 'id' => ''])->label(false);?>
+		<?php $form = ActiveForm::begin([
+			'enableAjaxValidation' => true,
+			'enableClientValidation' => true,
+			'validationUrl' => Url::toRoute('/my-application/validation'),
+			'id' => 'js_pii',
+			'action' => '/my-application/post/',
+			'options' => ['class' => 'online-app-step-1__form'], 'fieldConfig' => ['options' => ['tag' => false]]
+		]);?>
+			<?=$form->field($customer_data, 'form_name')->hiddenInput(['value' => 'step-1', 'id' => ''])->label(false);?>
 			
 			<div class="online-app-step-2__form-box">
 				<h1 class="online-app-step-1__title heading-5">Proposed Insured Information</h1>
@@ -96,7 +103,7 @@ $this->registerJsFile('@web/v2/my-questions/js/online-app.js', ['depends' => [Jq
 					</label>
 					<label class="online-app-step-1__label online-app-step-1__label--full-width online-app-main-label">
 						<span class="tags">Email</span>
-						<?=$form->field($customer_data, 'email')->textInput(['required' => 'required', 'class' => 'online-app-step-1__input online-app-main-input', 'placeholder' => 'Enter your Email Address', 'autocomplete' => 'on', 'autofocus ' => ''])->label(false)->error(false);?>
+						<?=$form->field($customer_data, 'email')->input('email', ['required' => 'required', 'class' => 'online-app-step-1__input online-app-main-input', 'placeholder' => 'Enter your Email Address', 'autocomplete' => 'on', 'autofocus ' => ''])->label(false)->error(false);?>
 					</label>
 				</div>
 			</div>
