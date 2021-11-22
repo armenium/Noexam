@@ -80,13 +80,14 @@ class MyApplicationController extends BaseController {
 			
 			switch($request->post('CustomerData')['form_name']){
 				case 'step-1': #Personal Info
-					$scenario     = CustomerData::SCENARIO_PI;
+					$scenario     = CustomerData::SCENARIO_APP_STEP_1;
 					$redirect_url = '/online-application-step-2/';
 					break;
 				case 'step-2': #Personal Info 2
-					$scenario     = CustomerData::SCENARIO_PI2;
-					$redirect_url = '/questions2/';
+					$scenario     = CustomerData::SCENARIO_APP_STEP_2;
+					$redirect_url = '/online-application-step-questions/';
 					$model->attributes = $model->decodeData();
+					$model->payment = $request_post['CustomerData']['payment'];
 					if($model->company_code != 'sagicor'){
 						$redirect_url = '/online-application-step-3/';
 					}
@@ -109,16 +110,11 @@ class MyApplicationController extends BaseController {
 					}
 					break;
 				case 'payment':
-					if(!count($model)){
-						$model = CustomerData::find()->where(['sid' => $session->id])->one();
-					}
-					Yii::info('Step - "payment". Model: '.count($model), 'noexam');
-					Yii::info('Step - "payment". Session ID: '.$session->id, 'noexam');
-					Yii::info('Step - "payment". Planing redirect to "/success/" page.', 'noexam');
-					$scenario     = CustomerData::SCENARIO_PAYMENT;
-					$redirect_url = '/success/';
-					$model->attributes = $model->decodeData();
-					$model->payment = $request_post['CustomerData']['payment'];
+					#$model = CustomerData::find()->where(['sid' => $session->id])->one();
+					#$scenario     = CustomerData::SCENARIO_PAYMENT;
+					#$redirect_url = '/success/';
+					#$model->attributes = $model->decodeData();
+					#$model->payment = $request_post['CustomerData']['payment'];
 					$model->success = $this->generatePDFReport(25);
 					$model->completed_application = 'Yes';
 					break;
@@ -126,62 +122,6 @@ class MyApplicationController extends BaseController {
 					Yii::info( 'Step - "success". All done.', 'noexam' );
 					$scenario     = CustomerData::SCENARIO_SUCCESS;
 					//$redirect_url = '/success/';
-					break;
-				case 'homeform':
-					$scenario     = CustomerData::SCENARIO_APPLY_NOW_HOME;
-					$redirect_url = '/'.$request->post('CustomerData')['redirect'];
-					Yii::info( 'Step - "'.$request->post('CustomerData')['form_name'].'". Planing redirect to "' . $redirect_url . '".', 'noexam' );
-					$status = 'new';
-					$iniciator = $request->post('CustomerData')['form_name'];
-					
-					#VarDumper::dump($request_post, 10, 1); exit;
-					$day = intval($request_post['CustomerData']['birthday']['day']);
-					$month = intval($request_post['CustomerData']['birthday']['month']);
-					$year = intval($request_post['CustomerData']['birthday']['year']);
-					$birthday = date('d/m/Y', strtotime($day.'.'.$month.'.'.$year));
-					$request_post['CustomerData']['birthday'] = $birthday;
-					//VarDumper::dump($request_post, 10, 1); exit;
-					
-					$height_arr = explode('|', $request_post['CustomerData']['height']);
-					$request_post['CustomerData']['h_foot'] = $height_arr[0];
-					$request_post['CustomerData']['h_inch'] = $height_arr[1];
-					unset($request_post['CustomerData']['height']);
-					//VarDumper::dump($scenario);
-					break;
-				case 'applynow':
-				case 'contentform':
-					$scenario     = CustomerData::SCENARIO_APPLY_NOW;
-					$redirect_url = '/'.$request->post('CustomerData')['redirect'];
-					Yii::info( 'Step - "'.$request->post('CustomerData')['form_name'].'". Planing redirect to "' . $redirect_url . '".', 'noexam' );
-					$status = 'new';
-					$iniciator = $request->post('CustomerData')['form_name'];
-					
-					#VarDumper::dump($request_post, 10, 1); exit;
-					$day = intval($request_post['CustomerData']['birthday']['day']);
-					$month = intval($request_post['CustomerData']['birthday']['month']);
-					$year = intval($request_post['CustomerData']['birthday']['year']);
-					$birthday = date('d/m/Y', strtotime($day.'.'.$month.'.'.$year));
-					$request_post['CustomerData']['birthday'] = $birthday;
-					//VarDumper::dump($request_post, 10, 1); exit;
-					
-					$height_arr = explode('|', $request_post['CustomerData']['height']);
-					$request_post['CustomerData']['h_foot'] = $height_arr[0];
-					$request_post['CustomerData']['h_inch'] = $height_arr[1];
-					unset($request_post['CustomerData']['height']);
-					//VarDumper::dump($scenario);
-					break;
-				case 'quote-result':
-					Yii::debug( 'Step - "quote-result". Planing redirect to "personalinfo".', 'noexam' );
-					$scenario     = CustomerData::SCENARIO_QUOTE_RESULT;
-					$redirect_url = '/personalinfo/';
-					$model->attributes = $model->decodeData();
-					if($request->post('CustomerData')['company_code'] != 'sagicor'){
-						Yii::debug('Step - "quote-result". company_code = '.$request->post('CustomerData')['company_code'].'. Planing redirect to "intermediary-questions".', 'noexam' );
-						$redirect_url = '/intermediary-questions/';
-					}else{
-						Yii::debug('Step - "quote-result". Planing redirect to "personalinfo".', 'noexam' );
-					}
-					//VarDumper::dump($redirect_url, 10, 1); exit;
 					break;
 				case "intermediary_questions":
 					Yii::debug('Step - "intermediary-questions". Planing redirect to "personalinfo".', 'noexam' );

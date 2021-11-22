@@ -75,6 +75,13 @@
 .popover .popover-body {padding: 24px; color: #282B29; line-height: 24px;}
 
 @media screen and (max-width: 767px) {
+    .main-wrapp {
+        padding-top: 65px;
+        padding-bottom: 50px;
+    }
+    .my-quote-steps {
+        padding: 35px 0;
+    }
     .bg-section__img1,
     .bg-section__img2,
     .bg-section__img3 {

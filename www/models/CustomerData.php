@@ -38,6 +38,12 @@ class CustomerData extends ActiveRecord {
     const SCENARIO_OVERALL_HEALTH = 'overall-health';
     const SCENARIO_DATE_OF_BIRTH = 'date-of-birth';
     const SCENARIO_CONTACT_DETAILS = 'contact-details';
+
+    const SCENARIO_APP_STEP_1 = 'app_step_1';
+    const SCENARIO_APP_STEP_2 = 'app_step_2';
+    const SCENARIO_APP_STEP_3 = 'app_step_3';
+    const SCENARIO_APP_STEP_QUESTIONS = 'app_step_questions';
+    const SCENARIO_APP_STEP_FINISH = 'app_step_finish';
 	
 	public $reCaptcha;
     public $agree;
@@ -673,6 +679,10 @@ class CustomerData extends ActiveRecord {
 		'm' => 'Male',
 		'f' => 'Female',
 	];
+	public static $payment_methods = [
+		'payment-method-eft' => 'EFT Checking Account',
+		'payment-method-card' => 'Credit Card',
+	];
 
 	public function beforeSave($insert){
 		if(parent::beforeSave($insert)){
@@ -750,7 +760,10 @@ class CustomerData extends ActiveRecord {
 		$scenarios[self::SCENARIO_IMQ] = ['im_questions'];
 		$scenarios[self::SCENARIO_RATE_CALC] = ['age', 'sex', 'avg_amount', 'term_length', 'health', 'user_ip'];
 		$scenarios[self::SCENARIO_RATE_CALC_TABLE] = ['age', 'sex', 'term_length', 'health', 'user_ip'];
-
+		
+		$scenarios[self::SCENARIO_APP_STEP_1] = ['first_name', 'middle_name', 'last_name', 'street_address', 'state', 'city', 'zip', 'phone_number', 'email'];
+		$scenarios[self::SCENARIO_APP_STEP_2] = ['birth_state', 'birth_country', 'occupation', 'household_income', 'ssn', 'dls', 'dln', 'payment'];
+		
 		return $scenarios;
 	}
 

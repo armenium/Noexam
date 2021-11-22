@@ -200,9 +200,9 @@ class Helpers extends Component{
 		return $protocols;
 	}
 	
-	public function createDropdownOptionsSubtext($options){
+	public function createDropdownOptionsSubtext($options, $force = false){
 		
-		if(empty($this->states_dropdown_options_subtexts))
+		if(empty($this->states_dropdown_options_subtexts) || $force)
 			foreach($options as $k => $v)
 				$this->states_dropdown_options_subtexts[$k] = ['data-subtext' => $v, 'class' => ''];
 		

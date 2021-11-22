@@ -34,7 +34,7 @@ $this->registerJsFile('@web/v2/my-application/js/online-app.js', ['depends' => [
 			'enableAjaxValidation' => true,
 			'enableClientValidation' => true,
 			'validationUrl' => Url::toRoute('/my-application/validation'),
-			'id' => 'js_pii',
+			'id' => 'js_step_1',
 			'action' => '/my-application/post/',
 			'options' => ['class' => 'online-app-step-1__form'], 'fieldConfig' => ['options' => ['tag' => false]]
 		]);?>
@@ -77,7 +77,7 @@ $this->registerJsFile('@web/v2/my-application/js/online-app.js', ['depends' => [
 						<span class="tags">State</span>
 						<?=$form->field($customer_data, 'state')->dropDownList($customer_data::$states_short, [
 							'required' => 'required',
-							'class' => 'js_selectpicker online-app-step-1__select online-app-step-1__label--state show-tick',
+							'class' => 'js_selectpicker show-tick online-app-step-1__select online-app-step-1__label--state',
 							'id' => 'state',
 							'data-dropup-auto' => true,
 							'data-live-search' => 'true',
@@ -112,7 +112,7 @@ $this->registerJsFile('@web/v2/my-application/js/online-app.js', ['depends' => [
 		
 		<div class="online-app-step-1__btns">
 			<button type="submit" class="online-app-step-1-btn main-btn button-big prev" data-trigger="js_action_click" data-action="online_app_back">Back</button>
-			<button type="submit" class="online-app-step-1-btn main-btn button-big next" data-trigger="js_action_click" data-action="online_app_next" data-target="#js_pii">next</button>
+			<button type="submit" class="online-app-step-1-btn main-btn button-big next" data-trigger="js_action_click" data-action="online_app_next" data-target="#js_step_1">next</button>
 		</div>
 	
 	</div>
