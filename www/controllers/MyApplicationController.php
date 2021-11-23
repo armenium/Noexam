@@ -432,186 +432,128 @@ class MyApplicationController extends BaseController {
 		return $this->render('intermediary', ['questions' => $questions]);
 	}
 	
-	public function getQuoteResults($customer_data){
+	public function actionOnlineApplicationGetQuestions(){
+		$isMobile = Yii::$app->params['devicedetect']['isMobile'];
+		$request = Yii::$app->request;
+		$reflexes;
 		
-		$prices = [];
-		$no_plans_count = 0;
-		$yes_plans_count = 0;
-		$total_plans_count = 0;
-		$total_terms_count = 0;
-		
-		if(is_null($customer_data)){
-			$customer_data = new CustomerData();
-			$customer_data->avg_amount = 300;
-			$customer_data->term_length = '10';
-		}else{
-			$customer_data->attributes = $customer_data->decodeData();
-			$customer_data->avg_amount = $customer_data->avg_amount > 1000 ? $customer_data->avg_amount / 1000 : $customer_data->avg_amount;
-
-			$sagicor = Yii::$app->Sagicor;
-			$nq_client = Yii::$app->NQClient;
-			$ts_client = Yii::$app->TSClient;
-			
-			$customer_data->attributes = $customer_data->decodeData();
-			$age            = $this->getAge($customer_data->birthday);
-			$foot           = $customer_data->h_foot;
-			$inch           = $customer_data->h_inch;
-			$weight         = $customer_data->weight;
-			$avarage_amount = $customer_data->avg_amount.'000';
-			$smoker         = isset($customer_data->tobaco) ? $customer_data->tobaco : 0;
-			$sex            = $customer_data->sex;
-			$zip            = $customer_data->zip;
-			
-			$db = $sagicor->getBirthdates($customer_data->birthday);
-			$args = [
-				'birthdate'      => $db[1].'/'.$db[0].'/'.$db[2],
-				'sex'            => $sex,
-				'avarage_amount' => $customer_data->avg_amount,
-				'h_foot'         => $foot,
-				'h_inch'         => $inch,
-				'weight'         => $weight,
-				'tobaco'         => $smoker,
-				'zip'         => $zip,
-				'state'          => isset($customer_data->state) ? $customer_data->state : 'AL',
-				'term_length' => $customer_data->term_length,
-			];
-			
-			#VarDumper::dump([$request->post(), $args], 10, 1); exit;
-			#VarDumper::dump($customer_data->attributes, 10, 1); exit;
-			
-			#TruStage
-			$ts_args = $args;
-			$ts_args['first_name'] = $customer_data->first_name;
-			$ts_args['last_name'] = $customer_data->last_name;
-			$ts_args['email'] = $customer_data->email;
-			$ts_args['phone'] = $customer_data->phone_number;
-			$ts_prices = $ts_client->get_quotes($ts_args);
-			$prices['plans']['exam_no']['trustage'] = $ts_prices['plans']['trustage'];
-			
-			#Sagicor
-			$sg_prices = $sagicor->getSagicorPlans($args);
-			$prices['plans']['exam_no']['sagicor'] = $sg_prices['plans']['sagicor'];
-			$prices['plans']['exam_yes'] = [];
-			
-			#Ninja Quoter
-			$nq_prices = $nq_client->get_quotes($args);
-			
-			if(intval($nq_prices['status']) == 200 && !empty($nq_prices['response']['results'])){
-				foreach($nq_prices['response']['results'] as $k => $result){
-					switch($result['company_code']){
-						case "sagicor":
-							$prices['plans']['exam_no'][$result['company_code']] = [];
-							$prices['plans']['exam_no'][$result['company_code']][$result['term']] = $result;
-							break;
-						case "sagicor_express_issue":
-							break;
-						case "mutual_omaha":
-							$prices['plans']['exam_yes'][$result['company_code']][$result['term']] = $result;
-							break;
-						case "mutual_omaha_express":
-							$prices['plans']['exam_no'][$result['company_code']][$result['term']] = $result;
-							break;
-						case "phoenix":
-							$prices['plans']['exam_no'][$result['company_code']][$result['term']] = $result;
-							break;
-						case "phoenix_express":
-							break;
-						case "protective":
-							$pc = implode("_", array_slice(explode("_", $result['product_code']), 0, 3));
-							switch($pc){
-								case "protective_classic_choice":
-									$prices['plans']['exam_yes'][$result['company_code']][$result['term']] = $result;
-									break;
-								case "protective_custom_choice":
-									break;
-							}
-							break;
-						case "north_american":
-							break;
-						case "pacific_life":
-							$prices['plans']['exam_yes'][$result['company_code']][$result['term']] = $result;
-							break;
-						case "principal":
-							break;
-						case "foresters":
-							break;
-						case "foresters_express":
-							$prices['plans']['exam_no'][$result['company_code']][$result['term']] = $result;
-							break;
-						case "john_hancock":
-							break;
-						case "american_general":
-							break;
-						case "assurity":
-							break;
-						case "transamerica_lb":
-							switch($result['product_code']){
-								case "transamerica_trendsetter_lb_10":
-									break;
-								case "transamerica_trendsetter_lb_10_all":
-									break;
-							}
-							break;
-						case "transamerica":
-							break;
-						case "banner":
-							break;
-						case "prudential":
-							$prices['plans']['exam_yes'][$result['company_code']][$result['term']] = $result;
-							break;
-						case "lincoln_financial":
-						case "lincoln_financial_express":
-							break;
-						case "sbli":
-							break;
-						case "sbli_express":
-							$prices['plans']['exam_no'][$result['company_code']][$result['term']] = $result;
-							break;
-						case "american_national":
-							break;
-					}
+		if(isset($_POST['answers']) && !empty($_POST['answers'])){
+			foreach($_POST['answers'] as $key => $answer){
+				$result_q[$key] = Questions::findOne(['id' => $answer['id']]);
+				$result_q[$key]->q_answer = $answer['answer'];
+				$condition = $result_q[$key]->getCondition($answer['answer'])->one();
+				
+				if($condition->spec_q){
+					$result_q[$key]->spec_q = $condition->spec_q;
 				}
-			}
-			
-			#VarDumper::dump($prices, 10, 1); exit;
-			
-			foreach($prices['plans']['exam_no'] as $company_terms){
-				if(!is_null($company_terms) && is_array($company_terms)){
-					$total_terms_count += count($company_terms);
-					$no_plans_count += count($company_terms);
+				
+				$result_q[$key]->q_answer = $answer['answer'];
+				
+				switch($condition->condition){
+					case 'ne':
+						echo 'ne';
+						exit;
+						break;
+					case 'rtu':
+						echo 'rtu';
+						exit;
+						break;
 				}
+				
+				
 			}
-			foreach($prices['plans']['exam_yes'] as $company_terms){
-				if(!is_null($company_terms) && is_array($company_terms)){
-					$total_terms_count += count($company_terms);
-					$yes_plans_count += count($company_terms);
-				}
-			}
-			
-			$total_plans_count = count($prices['plans']['exam_no']) + count($prices['plans']['exam_yes']);
-			
-			#VarDumper::dump($total_terms_count, 10, 1);
-			
-			/*$na_rates = NaRates::find()->where(['foot' => $foot, 'inch' => $inch, 'sex' => $sex])->all();
-			/// Получаем Band
-			$band = $this->getNaBand($avarage_amount);
-			//Получаем rate в зависимости курящий или нет.
-			$rate = $this->getNaRate($na_rates, $weight, $smoker);
-			$na_prices = NaPrices::find()->where(['type' => $rate, 'age' => $age, 'sex' => $sex])->orderBy('term ASC')->all();
-			//Получаем цены.
-			$prices = $this->calculateAllPrices($na_prices, $avarage_amount, $band);*/
 		}
 		
-	
-		return [
-			'customer_data' => $customer_data,
-			'prices' => $prices,
-			'no_plans_count' => $no_plans_count,
-			'yes_plans_count' => $yes_plans_count,
-			'total_plans_count' => $total_plans_count,
-			'total_terms_count' => $total_terms_count,
-		];
+		if(!count($questions)){
+			$questions = Questions::find()->where(['type' => 'question', 'num' => $_POST['number'] + 1])->one();
+			
+			if(!count($questions)){
+				return $this->redirect($this->getStepUrl(CustomerData::SCENARIO_BENEFICIARY), 200);
+			}
+			
+			$subquestions = $questions->subquestion;
+			if(count($subquestions)){
+				$subquestions = array_chunk($subquestions, ($isMobile ? 1 : 3));
+			}
+			
+			return $this->renderPartial('_questions', ['question' => $questions, 'subquestions' => $subquestions]);
+		}
 	}
 	
+	public function actionOnlineApplicationGetReflex(){
+		
+		$this->layout = 'questions';
+		$request      = Yii::$app->request;
+		$session      = Yii::$app->session;
+		
+		$customer_data = $this->getCustomeData('new', false);
+		
+		if(!is_null($customer_data)){
+			return false;
+		}
+		$questionId     = $request->post('questionId');
+		$parentId       = $request->post('parentId');
+		$questionNumber = $request->post('questionNumber');
+		$questionAnswer = $request->post('questionAnswer');
+		
+		$parent = Questions::findOne($parentId);
+		
+		if(!is_null($parent)){
+			return false;
+		}
+		
+		switch($parent->type){
+			case 'question':
+				$question = $parent->getSubquestionById($questionId)->one();
+				break;
+			case 'sub':
+				$question = $parent->getReflexQuestionById($questionId)->one();
+				break;
+			case 'reflex':
+				$question = $parent->getReflexQuestionById($questionId)->one();
+				break;
+			
+			default:
+				return false;
+				break;
+		}
+		
+		$customer_data->attributes = $customer_data->decodeData();
+		
+		if(!is_array($customer_data->questions)){
+			$customer_data->questions = [];
+		}
+		
+		$preparedQuestionsData = [
+			$question->xml_num => [
+				'answer' => $questionAnswer[0],
+			],
+		];
+		
+		if(!$this->arraySearchRecursive2($customer_data->questions, $parent->xml_num, $preparedQuestionsData)){
+			$customer_data->questions[$parent->xml_num] = $preparedQuestionsData;
+		}
+
+		$customer_data->scenario = CustomerData::SCENARIO_ADDQ;
+		$customer_data->save();
+		
+		if($question->getCondition($questionAnswer[0])->one()->condition != 'reflex'){
+			return false;
+		}
+		if($question->getCondition($questionAnswer[0])->one()->spec_q){
+			$reflexQuestions = Questions::find()->where(['id' => explode(',', $question->getCondition($questionAnswer[0])->one()->spec_q)])->all();
+			
+		}else{
+			
+			$reflexQuestions = $question->reflexquestion;
+		}
+		
+		if(!$reflexQuestions){
+			return false;
+		}
+		
+		return $this->renderPartial('reflex5', ['reflex' => $reflexQuestions, 'questionNumber' => $questionNumber, 'parentQustionId' => $questionId]);
+		
+	}
 	
 }

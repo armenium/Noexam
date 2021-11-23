@@ -15,6 +15,10 @@ $(document).ready(function(){
 			swipe: false,
 			accessibility: false,
 		},
+		routs: {
+			'get_reflex': '/online-application-get-reflex/',
+			'get_questions': '/online-application-get-questions/',
+		},
 	};
 
 	var checkAnswered = function(questions){
@@ -82,7 +86,7 @@ $(document).ready(function(){
 					questionAnswer: [answer],
 				},
 				global: true,
-				url: "/get-reflex/",
+				url: globals.routs.get_reflex,
 				complete: function(data){
 					// if(data){
 					$(document).trigger('getreflexx', [data.responseText, answer]);
@@ -171,7 +175,7 @@ $(document).ready(function(){
 					questionNumber: questionNumber,
 					questionAnswer: [answer],
 				},
-				url: "/get-reflex/",
+				url: globals.routs.get_reflex,
 				complete: function(data){
 					$(document).trigger('getreflexxx', [data.responseText, answer, parent, parentMain, button, reflexQuestions, questionId])
 				}
@@ -439,7 +443,7 @@ $(document).ready(function(){
 					$.ajax({
 						type: "post",
 						data: data,
-						url: "/get-questions/",
+						url: globals.routs.get_questions,
 						complete: function(data){
 							//console.log(data.responseText);
 							if(data.responseText == 'ne'){

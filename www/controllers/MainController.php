@@ -1246,7 +1246,8 @@ class MainController extends BaseController {
 
 		return $this->render('processing');
 	}
-
+	
+	/** OLD */
 	public function actionGetQuestions(){
 		$isMobile = Yii::$app->params['devicedetect']['isMobile'];
 		$request = Yii::$app->request;
@@ -1351,6 +1352,7 @@ class MainController extends BaseController {
 		return $this->render('questions', ['question' => $questions, 'subquestions' => $subquestions]);
 	}
 
+	/** OLD */
 	public function actionGetReflex(){
 
 		$this->layout = 'questions';
