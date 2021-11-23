@@ -122,7 +122,7 @@ $(function(){
 				}).done(function(responce){
 					console.log(responce);
 					if(!responce.error && responce.redirect != ''){
-						//window.location.href = responce.redirect;
+						window.location.href = responce.redirect;
 					}else{
 
 					}

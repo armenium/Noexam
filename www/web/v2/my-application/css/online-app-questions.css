@@ -40,6 +40,7 @@
 
 .online-app-questions__form-btns {
     display: flex;
+    flex-flow: row wrap;
     justify-content: center;
     margin-bottom: 30px;
 }
@@ -54,7 +55,7 @@
 }
 
 .online-app-questions__form-btn:first-child:before {
-    content: url("../images/arrow-left-dark.png");
+    content: url("../../common/images/arrow-left-dark.png");
     left: 0;
     margin-right: 10px;
     transform: translateY(3px);

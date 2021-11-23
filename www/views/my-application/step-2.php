@@ -176,7 +176,7 @@ $payment_frequencies = [
 			<div class="online-app-step-2__row">
 				<label class="online-app-step-2__label online-app-main-label">
 					<span class="tags">Bank Name</span>
-					<?=$form->field($customer_data, "payment[bank-name]")->input('number', ['required' => 'required','class' => 'online-app-step-2__input online-app-main-input', 'placeholder' => 'Please enter your bank name', 'autocomplete' => 'on', 'autofocus ' => ''])->label(false)->error(false);?>
+					<?=$form->field($customer_data, "payment[bank-name]")->textInput(['required' => 'required','class' => 'online-app-step-2__input online-app-main-input', 'placeholder' => 'Please enter your bank name', 'autocomplete' => 'on', 'autofocus ' => ''])->label(false)->error(false);?>
 				</label>
 			</div>
 			<div class="online-app-step-2__row">

@@ -33,10 +33,10 @@ class MyApplicationController extends BaseController {
 					$scenario     = CustomerData::SCENARIO_PI;
 					break;
 				case 'step-1':
-					$scenario     = CustomerData::SCENARIO_PI;
+					$scenario     = CustomerData::SCENARIO_APP_STEP_1;
 					break;
-				case 'pi2':
-					$scenario     = CustomerData::SCENARIO_PI2;
+				case 'step-2':
+					$scenario     = CustomerData::SCENARIO_APP_STEP_2;
 					break;
 				case 'benef':
 					$scenario     = CustomerData::SCENARIO_BENEFICIARY;
@@ -317,7 +317,7 @@ class MyApplicationController extends BaseController {
 	}
 	
 	#Questions
-	public function actionOnlineApplicationStep3(){
+	public function actionOnlineApplicationStepQuestions(){
 		$isMobile = Yii::$app->params['devicedetect']['isMobile'];
 
 		$customer_data = $this->getCustomeData('new', false);
@@ -335,7 +335,7 @@ class MyApplicationController extends BaseController {
 			return $this->redirect('/');
 		}
 		
-		return $this->render('step-3', ['question' => $questions, 'subquestions' => $subquestions]);
+		return $this->render('step-questions', ['question' => $questions, 'subquestions' => $subquestions]);
 	}
 	
 	#Beneficiary
@@ -613,12 +613,5 @@ class MyApplicationController extends BaseController {
 		];
 	}
 	
-	public function getFaqs($cats){
-		$cats[] = 'anywhere';
-		$cats = array_unique($cats);
-		$model = Faqs::find()->where(['IN', 'category', $cats])->orderBy('item_order ASC')->all();
-		
-		return $model;
-	}
 	
 }
