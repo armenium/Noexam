@@ -168,8 +168,8 @@ $config = [
 	            'online-application-step-1' => 'my-application/online-application-step-1',
 	            'online-application-step-2' => 'my-application/online-application-step-2',
 	            'online-application-step-questions' => 'my-application/online-application-step-questions',
-	            'online-application-get-questions' => 'my-application/online-application-get-questions',
-	            'online-application-get-reflex' => 'my-application/online-application-get-reflex',
+	            'get-questions' => 'my-application/get-questions',
+	            'get-reflex' => 'my-application/get-reflex',
 
 	            'about' => 'pages/about',
 	            'apply-now' => 'pages/apply-now',

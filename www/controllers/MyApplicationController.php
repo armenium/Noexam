@@ -432,13 +432,14 @@ class MyApplicationController extends BaseController {
 		return $this->render('intermediary', ['questions' => $questions]);
 	}
 	
-	public function actionOnlineApplicationGetQuestions(){
+	public function actionGetQuestions(){
 		$isMobile = Yii::$app->params['devicedetect']['isMobile'];
-		$request = Yii::$app->request;
+		$request = Yii::$app->request->post();
+		
 		$reflexes;
 		
-		if(isset($_POST['answers']) && !empty($_POST['answers'])){
-			foreach($_POST['answers'] as $key => $answer){
+		if(isset($request['answers']) && !empty($request['answers'])){
+			foreach($request['answers'] as $key => $answer){
 				$result_q[$key] = Questions::findOne(['id' => $answer['id']]);
 				$result_q[$key]->q_answer = $answer['answer'];
 				$condition = $result_q[$key]->getCondition($answer['answer'])->one();
@@ -464,23 +465,23 @@ class MyApplicationController extends BaseController {
 			}
 		}
 		
-		if(!count($questions)){
-			$questions = Questions::find()->where(['type' => 'question', 'num' => $_POST['number'] + 1])->one();
-			
-			if(!count($questions)){
+		//if(!is_null($questions)){
+			$questions = Questions::find()->where(['type' => 'question', 'num' => $request['number'] + 1])->one();
+		
+			if(is_null($questions)){
 				return $this->redirect($this->getStepUrl(CustomerData::SCENARIO_BENEFICIARY), 200);
 			}
 			
 			$subquestions = $questions->subquestion;
-			if(count($subquestions)){
+			if(!is_null($subquestions)){
 				$subquestions = array_chunk($subquestions, ($isMobile ? 1 : 3));
 			}
 			
 			return $this->renderPartial('_questions', ['question' => $questions, 'subquestions' => $subquestions]);
-		}
+		//}
 	}
 	
-	public function actionOnlineApplicationGetReflex(){
+	public function actionGetReflex(){
 		
 		$this->layout = 'questions';
 		$request      = Yii::$app->request;
@@ -552,7 +553,7 @@ class MyApplicationController extends BaseController {
 			return false;
 		}
 		
-		return $this->renderPartial('reflex5', ['reflex' => $reflexQuestions, 'questionNumber' => $questionNumber, 'parentQustionId' => $questionId]);
+		return $this->renderPartial('_reflex', ['reflex' => $reflexQuestions, 'questionNumber' => $questionNumber, 'parentQustionId' => $questionId]);
 		
 	}
 	
