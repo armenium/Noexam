@@ -168,7 +168,7 @@ $(document).ready(function(){
 					parent.attr('data-answer', answer);
 					parent.removeClass('reanswered');
 					reflexQuestions.html(responseText);
-					$('.selectpicker').selectpicker('render');
+					$('.js_selectpicker').selectpicker('render');
 				}else{
 					parent.attr('data-answer', answer);
 					parent.removeClass('active reanswered').addClass('answered no');
@@ -203,7 +203,7 @@ $(document).ready(function(){
 				},
 				url: globals.routs.get_reflex,
 				complete: function(data){
-					console.log('getAjaxReflexReflex', data);
+					//console.log('getAjaxReflexReflex', data);
 					$(document).trigger('getreflexxx', [data.responseText, answer, parent, parentMain, button, reflexQuestions, questionId])
 				}
 			});
@@ -234,7 +234,7 @@ $(document).ready(function(){
 				});
 
 				parent.after(response);
-				$('.selectpicker').selectpicker('render');
+				$('.js_selectpicker').selectpicker('render');
 				if(globals.ww > 768){
 					/*$('.main-questions .scroll-bar').jScrollPane({
 						verticalDragMinHeight: 82,
@@ -311,23 +311,6 @@ $(document).ready(function(){
 						answer[""+$(this).attr('name')+""] = $(this).val();
 					});
 				}
-
-				/*if($(button).parents('.buttons').find('select').length){
-					answer = $(button).parents('.buttons').find('select option:selected').val();
-				}
-				if($(button).parents('.buttons').find('input[type="text"]:not(:disabled)').length){
-					var $i_obj = $(button).parents('.buttons').find('input[type="text"]:not(:disabled)');
-					var k = $($i_obj).attr('name');
-					var v = $i_obj.val();
-					answer[k] = v;
-					//answer = $(button).parents('.buttons').find('input[type="text"]:not(:disabled)').val();
-				}
-				if($(button).parents('.buttons').find('textarea:not(:disabled)').length){
-					var $i_obj = $(button).parents('.buttons').find('textarea:not(:disabled)');
-					var k = $($i_obj).attr('name');
-					var v = $i_obj.val();
-					answer[k] = v;
-				}*/
 			}
 
 			if(table_answer){
@@ -335,7 +318,6 @@ $(document).ready(function(){
 				//console.log(answer);
 			}
 
-			//if(parent.length){
 			if(parent.attr('data-answer') == answer){
 				if(parent.hasClass('reanswered')){
 					if(parent.next().length){
@@ -362,7 +344,7 @@ $(document).ready(function(){
 				parentMain.attr('data-answer', 'ok')
 			}
 
-			//console.log(questionId, questionNumber, answer, parent, parentMain, button, reflexQuestions);
+			console.log(questionId, questionNumber, answer, parent, parentMain, button, reflexQuestions);
 			getAjaxReflexReflex(questionId, questionNumber, answer, parent, parentMain, button, reflexQuestions);
 		};
 
@@ -386,10 +368,7 @@ $(document).ready(function(){
 		});
 
 		$('.content.questions').on('answered', '.yes-button, .no-button, .btn-confirm', function(){
-			var questions = $('.slick-active').find('.sub-question');
-			if(!checkAnswered(questions)){
-				$('.next-button').attr('disabled', false);
-			}
+			changeNextBtnState();
 		});
 
 		$('.content.questions').on('click', '.btn-confirm', function(){
@@ -474,12 +453,12 @@ $(document).ready(function(){
 						complete: function(data){
 							//console.log(data.responseText);
 							if(data.responseText == 'ne'){
-								window.location = '/not-eligible/';
+								window.location = '/online-application-step-not-eligible/';
 								return;
 							}
 
 							if(data.responseText == 'rtu'){
-								window.location = '/rtu/';
+								window.location = '/online-application-step-rtu/';
 								return;
 							}
 
@@ -487,12 +466,12 @@ $(document).ready(function(){
 								$('#js_questions_container').html(data.responseText);
 								$('.next-button').attr('disabled', true);
 								$('.sub-questions').slick(globals.subQuestionsSliderOptions);
-								$('.selectpicker').selectpicker('render');
+								$('.js_selectpicker').selectpicker('render');
 							}else{
 								$('#js_questions_container').html(data.responseText);
 								$('.next-button').attr('disabled', true);
 								$('.sub-questions').slick(globals.subQuestionsSliderOptions);
-								$('.selectpicker').selectpicker('render');
+								$('.js_selectpicker').selectpicker('render');
 							}
 						}
 					});

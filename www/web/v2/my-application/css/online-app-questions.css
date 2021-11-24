@@ -40,8 +40,9 @@
 .main-questions .sub-question.active > .buttons {}
 .main-questions .sub-question.active .text {color: #000;}
 .main-questions .sub-question.answered .q-num {color: #fff; background-color: #339e75;}
-.main-questions .sub-question.answered .reflex-questions {display: none;}
 .main-questions .sub-question.answered {cursor: pointer;}
+.main-questions .sub-question.answered .reflex-questions,
+.main-questions .sub-question .reflex-questions .sub-question:not(.active) .online-app-questions__fields {display: none;}
 
 .main-questions .reflex-questions:not(:empty) {padding-left: 47px; margin-top: 15px;}
 .main-questions .online-app-questions__fields {padding-left: 47px;}

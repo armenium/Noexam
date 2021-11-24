@@ -1,8 +1,9 @@
 <?php
 use yii\helpers\Html;
-?>			
-<?php $counter = 1; foreach ($reflex as $key => $reflex_item2):?>
-	<div class="online-app-questions__item trans_all sub-question <?=($key==0) ? 'active' : '';?>" data-parent-id="<?=$parentQustionId?>" data-question-number="<?=($questionNumber)? $questionNumber.'-'.$counter:$counter;?>" data-type="<?=$reflex_item2->type?>" data-question-id="<?=$reflex_item2->id?>" data-answer="">
+
+$counter = 1;
+foreach($reflex as $key => $reflex_item2):?>
+	<div class="online-app-questions__item sub-question <?=($key==0) ? 'active' : '';?>" data-parent-id="<?=$parentQustionId?>" data-question-number="<?=($questionNumber)? $questionNumber.'-'.$counter:$counter;?>" data-type="<?=$reflex_item2->type?>" data-question-id="<?=$reflex_item2->id?>" data-answer="">
 		<?=Html::hiddenInput($reflex_item2->xml_num); ?>
 		<div class="online-app-questions__item-header">
 			<span class="online-app-questions__item-num q-num"><?=($questionNumber) ? '-' : $counter;?></span>
@@ -10,11 +11,11 @@ use yii\helpers\Html;
 			<p class="online-app-questions__text fontBodyM text"><?=$reflex_item2->text?></p>
 		</div>
 		<?php if($answers = $reflex_item2->answer): $confirm_btn = false;?>
-			<div class="online-app-questions__fields">
+			<div class="online-app-questions__fields buttons">
 				<?php foreach ($answers as $key => $answer):?>
 					<?php if($answer->type == 'text_field' || $answer->type == 'text_area' || $answer->type == 'table'): $confirm_btn = true;?>
 						<?php if(!empty($answer->field_label)):?>
-						<div class="lbl"><?=$answer->field_label;?></div>
+							<div class="lbl"><?=$answer->field_label;?></div>
 						<?php endif;?>
 						<?php if($answer->type == 'text_field'):?>
 							<div class="input select reflex_input">
@@ -30,18 +31,16 @@ use yii\helpers\Html;
 							<?php endif;?>
 						<?php endif?>
 					<?php endif?>
-
+					
 					<?php if($answer->type == 'select'):
 						$question_id = $answer->q_id;
 						$select[$answer->value] = $answer->text;
 					endif;?>
 				<?php endforeach?>
-			</div>
-			<?php if($confirm_btn):?>
-				<div class="online-app-questions__btns buttons">
+				<?php if($confirm_btn):?>
 					<a role="button" class="online-app-questions__btn active btn-confirm">Confirm</a>
-				</div>
-			<?php endif;?>
+				<?php endif;?>
+			</div>
 		<?php else:?>
 			<div class="online-app-questions__btns buttons">
 				<a role="button" class="online-app-questions__btn yes-button reflex-button">Yes</a>
@@ -49,13 +48,16 @@ use yii\helpers\Html;
 			</div>
 		<?php endif?>
 		<?php if($select):?>
-			<div class="input select">
-				<?=Html::dropDownList('q_'.$question_id, '', $select, ["prompt" => "Please select", "class" => "js_selectpicker show-tick online-app-step-2__select", "data-size" => "5"]);?>
-			</div>
-			<div class="online-app-questions__btns buttons">
-				<a role="button" class="online-app-questions__btn active btn-confirm">Confirm</a>
+			<div class="online-app-questions__fields buttons">
+				<div class="input select">
+					<?=Html::dropDownList('q_'.$question_id, '', $select, ["prompt" => "Please select", "class" => "js_selectpicker show-tick online-app-step-2__select", "data-size" => "5"]);?>
+				</div>
+				<div class="online-app-questions__btns">
+					<a role="button" class="online-app-questions__btn active btn-confirm">Confirm</a>
+				</div>
 			</div>
 			<?php unset($select);?>
 		<?php endif?>
 	</div>
 <?php endforeach?>
+
