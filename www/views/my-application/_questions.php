@@ -21,7 +21,7 @@ $this->title = 'Questions';
 						</div>
 						<div class="online-app-questions__btns buttons">
 							<?php if(!empty($question_item->template_src)):?>
-								<?=$this->render('templates/'.$question_item->template_src, ['question_item' => $question_item, 'qustionId' => $question_item->id, 'parentQustionId' => $question->id, 'questionNumber' => $question->num]);?>
+								<?=$this->render('_'.$question_item->template_src, ['question_item' => $question_item, 'qustionId' => $question_item->id, 'parentQustionId' => $question->id, 'questionNumber' => $question->num]);?>
 							<?php else:?>
 								<a role="button" class="online-app-questions__btn yes-button sub-button">Yes</a>
 								<a role="button" class="online-app-questions__btn no-button sub-button">No</a>

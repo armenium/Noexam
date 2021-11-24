@@ -38,9 +38,26 @@
 .online-app-questions__item-num {display: flex; justify-content: center; align-items: center; flex-shrink: 0; flex-basis: 32px; height: 32px; border-radius: 50%; background: #e4e4e4; margin-right: 15px; font-size: 16px; line-height: 24px; color: #757575;}
 .main-questions .sub-question:not(.active) > .buttons {display: none;}
 .main-questions .sub-question.active > .buttons {}
-.main-questions .sub-question .text {cursor: pointer;}
 .main-questions .sub-question.active .text {color: #000;}
 .main-questions .sub-question.answered .q-num {color: #fff; background-color: #339e75;}
+.main-questions .sub-question.answered .reflex-questions {display: none;}
+.main-questions .sub-question.answered {cursor: pointer;}
+
+.main-questions .reflex-questions:not(:empty) {padding-left: 47px; margin-top: 15px;}
+.main-questions .online-app-questions__fields {padding-left: 47px;}
+.main-questions .online-app-questions__fields .lbl {margin-bottom: 5px;}
+.main-questions .online-app-questions__fields .input {margin-bottom: 15px;}
+.main-questions table.avia {border: 1px solid #ccc; border-collapse: collapse; margin: 0 0 10px; padding: 0; table-layout: fixed; max-width: 100%;}
+.main-questions table.avia tr {border: 1px solid #ddd; padding: .35em;}
+.main-questions table.avia thead tr {background: #f8f8f8;}
+.main-questions table.avia th,
+.main-questions table.avia td {padding: .525em .725em; font-size: 15px;}
+.main-questions table.avia th {color: #999;}
+.main-questions table.avia td {}
+.main-questions table.avia input[type="text"] {background-color: #a2d2dd; border: 0; border-radius: 6px; color: #fff; width: 100%; padding: 3px 12px; text-align: left; font-size: 15px; max-width: 100px; font-weight: normal;}
+.main-questions table.avia input[type="text"][name^="cdeath"] {max-width: 200px;}
+.main-questions table.avia input[type="text"]:disabled {background-color: #ccc;}
+.main-questions table.avia input[type="radio"] {display: inherit;}
 
 @media screen and (max-width: 767px) {
 	.online-app-questions__box {padding: 20px;}

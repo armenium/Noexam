@@ -13,15 +13,18 @@
 .online-app-main-input {
     width: 100%;
     max-width: 245px;
-    height: 55px;
-    background-color: #FFFFFF;
+    background-color: #FFF;
     border: 1px solid #BABABA;
     border-radius: 4px;
     padding: 18px 15px;
     font-size: 18px;
     line-height: 26px;
-    color: #000000;
+    color: #000;
 }
+.online-app-main-input[type="text"],
+.online-app-main-input[type="tel"],
+.online-app-main-input[type="email"],
+.online-app-main-input[type="number"] {height: 55px;}
 
 .input--invalid {
     background-color: #D6ECE3;

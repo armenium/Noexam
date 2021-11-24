@@ -489,7 +489,7 @@ class MyApplicationController extends BaseController {
 		
 		$customer_data = $this->getCustomeData('new', false);
 		
-		if(!is_null($customer_data)){
+		if(is_null($customer_data)){
 			return false;
 		}
 		$questionId     = $request->post('questionId');
@@ -499,7 +499,7 @@ class MyApplicationController extends BaseController {
 		
 		$parent = Questions::findOne($parentId);
 		
-		if(!is_null($parent)){
+		if(is_null($parent)){
 			return false;
 		}
 		

@@ -21,6 +21,24 @@ $(document).ready(function(){
 		},
 	};
 
+	var goBack = function(){
+		$.ajax({
+			type: "POST",
+			dataType: "json",
+			url: "/my-application/goback",
+			data: {current_url: window.location.href},
+		}).done(function(responce){
+			console.log(responce);
+			if(!responce.error && responce.redirect != ''){
+				window.location.href = responce.redirect;
+			}else{
+
+			}
+		}).fail(function(){
+
+		});
+	};
+
 	var checkAnswered = function(questions){
 		var error = 0;
 		if(questions == undefined){
@@ -94,9 +112,8 @@ $(document).ready(function(){
 				global: true,
 				url: globals.routs.get_reflex,
 				complete: function(data){
-					// if(data){
+					console.log('getAjaxReflex', data);
 					$(document).trigger('getreflexx', [data.responseText, answer]);
-					// }
 				}
 			});
 		};
@@ -186,6 +203,7 @@ $(document).ready(function(){
 				},
 				url: globals.routs.get_reflex,
 				complete: function(data){
+					console.log('getAjaxReflexReflex', data);
 					$(document).trigger('getreflexxx', [data.responseText, answer, parent, parentMain, button, reflexQuestions, questionId])
 				}
 			});
