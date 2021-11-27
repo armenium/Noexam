@@ -1324,7 +1324,8 @@ class MainController extends BaseController {
 
 
 	}
-
+	
+	/** OLD */
 	public function actionQuestions2(){
 		$isMobile = Yii::$app->params['devicedetect']['isMobile'];
 		$session      = Yii::$app->session;

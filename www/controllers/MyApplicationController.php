@@ -92,7 +92,7 @@ class MyApplicationController extends BaseController {
 						$redirect_url = '/online-application-step-3/';
 					}
 					break;
-				case 'benef':
+				case 'step-3': #Beneficiary
 					if(!count($model)){
 						$model = CustomerData::find()->where(['sid' => $session->id])->one();
 					}
@@ -321,25 +321,29 @@ class MyApplicationController extends BaseController {
 		$isMobile = Yii::$app->params['devicedetect']['isMobile'];
 
 		$customer_data = $this->getCustomeData('new', false);
+		#VarDumper::dump($customer_data, 10, 1); exit;
 		
 		if(!is_null($customer_data)){
 			$customer_data->attributes = $customer_data->decodeData();
-			
-			$questions    = Questions::find()->where(['type' => 'question', 'num' => '1'])->one();
-			$subquestions = $questions->subquestion;
-			
-			if(count($subquestions)){
-				$subquestions = array_chunk($subquestions, ($isMobile ? 1 : 3));
+			if($customer_data->step != 'add-question' && $customer_data->step != 'personal-info2'){
+				//return $this->redirect($this->getStepUrl($customer_data->step));
 			}
 		}else{
 			return $this->redirect('/');
+		}
+		
+		$questions    = Questions::find()->where(['type' => 'question', 'num' => '1'])->one();
+		$subquestions = $questions->subquestion;
+		
+		if(count($subquestions)){
+			$subquestions = array_chunk($subquestions, ($isMobile ? 1 : 3));
 		}
 		
 		return $this->render('step-questions', ['question' => $questions, 'subquestions' => $subquestions]);
 	}
 	
 	#Beneficiary
-	public function actionOnlineApplicationStep4(){
+	public function actionOnlineApplicationStep3(){
 		$customer_data = $this->getCustomeData('new', false);
 		
 		if(!is_null($customer_data)){
@@ -469,7 +473,7 @@ class MyApplicationController extends BaseController {
 			$questions = Questions::find()->where(['type' => 'question', 'num' => $request['number'] + 1])->one();
 		
 			if(is_null($questions)){
-				return $this->redirect($this->getStepUrl(CustomerData::SCENARIO_BENEFICIARY), 200);
+				return $this->redirect($this->getStepUrl(CustomerData::SCENARIO_APP_STEP_3), 200);
 			}
 			
 			$subquestions = $questions->subquestion;

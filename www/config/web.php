@@ -167,6 +167,7 @@ $config = [
 	            'my-application/validation' => 'my-application/validation',
 	            'online-application-step-1' => 'my-application/online-application-step-1',
 	            'online-application-step-2' => 'my-application/online-application-step-2',
+	            'online-application-step-3' => 'my-application/online-application-step-3',
 	            'online-application-step-questions' => 'my-application/online-application-step-questions',
 	            'get-questions' => 'my-application/get-questions',
 	            'get-reflex' => 'my-application/get-reflex',

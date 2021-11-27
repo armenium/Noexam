@@ -236,6 +236,9 @@ class BaseController extends Controller{
 			case 'beneficiary':
 				return '/beneficiary/';
 				break;
+			case 'app_step_3':
+				return '/online-application-step-3/';
+				break;
 			case 'paymentinfo':
 				return '/paymentinfo/';
 				break;
