@@ -20,7 +20,8 @@ $(function(){
 		},
 		vars: {},
 		routes: {
-			go_back: '/my-application/goback',
+			go_back: '/my-application/goback/',
+			add_beneficiary: '/my-application/add-beneficiary/',
 		},
 		els: {},
 		Init: function(){
@@ -46,6 +47,12 @@ $(function(){
 						break;
 					case "online_app_back":
 						OAPPJS.Forms.GoBack($this);
+						break;
+					case "add_beneficiary":
+						OAPPJS.Forms.AddBeneficiary($this);
+						break;
+					case "remove_beneficiary":
+						OAPPJS.Forms.RemoveBeneficiary($this);
 						break;
 					default:
 						break;
@@ -132,7 +139,52 @@ $(function(){
 			},
 			removeElementsErrors: function(){
 				$(this).parent().removeClass('error').end().removeClass('error input--invalid');
-			}
+			},
+			AddBeneficiary: function($btn){
+				var $form = $($btn.data('target-form'));
+				var bf_id = ~~$('.beneficiary_item').length + 1;
+
+				$.ajax({
+					type: "GET",
+					dataType: "json",
+					url: OAPPJS.routes.add_beneficiary,
+					data: {"bf_id": bf_id},
+				}).done(function(responce){
+					if(!responce.error){
+						$('#benef_fields').append(responce.html);
+						$('.js_selectpicker').selectpicker({'mobile': OAPPJS.options.device});
+						$('#benef_fields').find('.remove-bf').removeClass('d-none');
+
+						var error = OAPPJS.Forms.Validate($form);
+						if(!error){
+							$('.next-button').addClass('active');
+						}else{
+							$('.next-button').removeClass('active');
+						}
+
+					}else{
+
+					}
+				}).fail(function(){
+
+				});
+			},
+			RemoveBeneficiary: function($btn){
+				var $parent = $btn.parents('.beneficiary_item');
+				$parent.slideUp(200, function(){
+					$parent.remove();
+					OAPPJS.Forms.recountsBfs();
+
+					if($('.beneficiary_item').length == 1){
+						$('.beneficiary_item').find('.remove-bf').addClass('d-none');
+					}
+				});
+			},
+			recountsBfs: function(){
+				$("#benef_fields .beneficiary_item").each(function(i, e){
+					$(this).find('.beneficiary-id').find('.number').text(i+1);
+				});
+			},
 		},
 	};
 

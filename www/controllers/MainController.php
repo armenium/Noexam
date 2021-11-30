@@ -150,7 +150,8 @@ class MainController extends BaseController {
 
 	#-------------------------------------------------------------------------
 
-	/*public function actionValidation(){
+	/*
+	 public function actionValidation(){
 		if(Yii::$app->request->isAjax){
 
 
@@ -194,7 +195,8 @@ class MainController extends BaseController {
 
 			return ActiveForm::validate($model);
 		}
-	}*/
+	}
+	*/
 
 	public function xml_questions($decoded, $formatted_questions, &$counter){
 		foreach($decoded as $key => $value){
@@ -1087,8 +1089,9 @@ class MainController extends BaseController {
 
 		return $this->render('beneficiary', ["bf_id" => $bf_id, 'customer_data' => $customer_data]);
 	}
-
-	public function actionBeneficiaryAjax(){
+	
+	/** OLD */
+	/*public function actionBeneficiaryAjax(){
 		$this->layout = 'questions';
 		$customer_data = new CustomerData();
 		$form = new ActiveForm();
@@ -1096,7 +1099,7 @@ class MainController extends BaseController {
 		$bf_id   = $request->get('bf_id');
 
 		return $this->renderPartial('_beneficiary', ["bf_id" => $bf_id, 'customer_data' => $customer_data, 'form' => $form]);
-	}
+	}*/
 
 	public function actionPaymentinfo(){
 		$this->layout = 'questions';

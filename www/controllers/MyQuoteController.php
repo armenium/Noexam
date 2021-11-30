@@ -388,9 +388,9 @@ class MyQuoteController extends BaseController {
 			
 			$customer_data->attributes = $customer_data->decodeData();
 			$age            = $this->getAge($customer_data->birthday);
-			$foot           = $customer_data->h_foot;
-			$inch           = $customer_data->h_inch;
-			$weight         = $customer_data->weight;
+			$foot           = $customer_data->h_foot ? $customer_data->h_foot : 5;
+			$inch           = $customer_data->h_inch ? $customer_data->h_inch : 10;
+			$weight         = $customer_data->weight ? $customer_data->weight : 170;
 			$avarage_amount = $customer_data->avg_amount.'000';
 			$smoker         = isset($customer_data->tobaco) ? $customer_data->tobaco : 0;
 			$sex            = $customer_data->sex;
@@ -410,7 +410,7 @@ class MyQuoteController extends BaseController {
 				'term_length' => $customer_data->term_length,
 			];
 			
-			#VarDumper::dump([$request->post(), $args], 10, 1); exit;
+			#VarDumper::dump($args, 10, 1); exit;
 			#VarDumper::dump($customer_data->attributes, 10, 1); exit;
 			
 			#TruStage

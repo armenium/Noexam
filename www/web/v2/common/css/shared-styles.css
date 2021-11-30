@@ -83,7 +83,7 @@ form input[type="hidden"] {display: none;}
 .fontBodyL,
 .fontBodyM,
 .fontBodyS {
-    font-family: Work Sans;
+    font-family: 'Work Sans';
     font-style: normal;
     font-weight: normal;
     color: #282B29;
@@ -206,7 +206,7 @@ form input[type="hidden"] {display: none;}
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: Work Sans;
+    font-family: 'Work Sans';
     font-style: normal;
     font-weight: 600;
     text-transform: uppercase;
@@ -266,12 +266,22 @@ form input[type="hidden"] {display: none;}
 .main-btn:hover {background-color: #3dbf8d; color: #fff; text-decoration: none;}
 .main-btn:hover:after {transform: translateX(5px);}
 
+.text-btn {font-family: 'Work Sans'; font-style: normal; font-weight: 600; text-transform: uppercase; color: #282B29; text-decoration: none; cursor: pointer; user-select: none;}
+.text-btn:hover {text-decoration: none;}
+.text-btn.green {color: #339E75;}
+.text-btn.green:hover {opacity: 0.8;}
+
+
+/* ICONS */
+.icon-plus-green:before {content: ""; background: transparent url("../images/icon-plus.svg") no-repeat center; background-size: cover; display: inline-block; width: 24px; height: 24px; margin-right: 12px;}
+.icon-trash:before {content: ""; background: transparent url("../images/icon-trash.svg") no-repeat center; background-size: cover; display: inline-block; width: 24px; height: 24px;}
+
 
 /* EXTRA */
 
 .quote-30,
 .quote-s {
-    font-family: Work Sans;
+    font-family: 'Work Sans';
     font-style: italic;
     font-weight: normal;
     color: #282B29;
@@ -288,7 +298,7 @@ form input[type="hidden"] {display: none;}
 }
 
 .tabs-and-links {
-    font-family: Work Sans;
+    font-family: 'Work Sans';
     font-style: normal;
     font-weight: 600;
     font-size: 18px;
@@ -297,7 +307,7 @@ form input[type="hidden"] {display: none;}
 }
 
 .tags {
-    font-family: Work Sans;
+    font-family: 'Work Sans';
     font-style: normal;
     font-weight: 500;
     font-size: 16px;

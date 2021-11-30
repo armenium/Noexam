@@ -763,6 +763,8 @@ class CustomerData extends ActiveRecord {
 		
 		$scenarios[self::SCENARIO_APP_STEP_1] = ['first_name', 'middle_name', 'last_name', 'street_address', 'state', 'city', 'zip', 'phone_number', 'email'];
 		$scenarios[self::SCENARIO_APP_STEP_2] = ['birth_state', 'birth_country', 'occupation', 'household_income', 'ssn', 'dls', 'dln', 'payment'];
+		$scenarios[self::SCENARIO_APP_STEP_3] = ['beneficiary', 'completed_application'];
+		$scenarios[self::SCENARIO_APP_STEP_QUESTIONS] = ['questions'];
 		
 		return $scenarios;
 	}

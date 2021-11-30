@@ -55,6 +55,7 @@ class AppAsset extends AssetBundle {
 	    #'js/jquery.inputmask.bundle.min.js',
         #'js/ion.rangeSlider.min.js',
         //'js/Chart.min.js',
+        #'js/script.js?12',
         //'js/tabby.js',
         #'js/tinysort/tinysort.min.js',
         //'js/tinysort/jquery.tinysort.min.js',

@@ -169,8 +169,10 @@ $config = [
 	            'online-application-step-2' => 'my-application/online-application-step-2',
 	            'online-application-step-3' => 'my-application/online-application-step-3',
 	            'online-application-step-questions' => 'my-application/online-application-step-questions',
+	            'online-application-step-success' => 'my-application/online-application-step-success',
 	            'get-questions' => 'my-application/get-questions',
 	            'get-reflex' => 'my-application/get-reflex',
+	            'my-application/add-beneficiary' => 'my-application/add-beneficiary',
 
 	            'about' => 'pages/about',
 	            'apply-now' => 'pages/apply-now',

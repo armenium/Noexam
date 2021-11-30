@@ -72,7 +72,7 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
                     <li>Age 51-65: Up to $250,000.</li>
                 </ul>
                 
-                <p><a href="https://www.noexam.com/life-insurance/companies/fidelity/">Fidelity</a> offers a simplified issue term product called RAPIDecision Express. It has coverage amounts up to $100,000 for those between the ages 18-65.</p>
+                <p>Fidelity offers a simplified issue term product called RAPIDecision Express. It has coverage amounts up to $100,000 for those between the ages 18-65.</p>
 
                 <h2>Guaranteed Issue Life Insurance</h2>
                 <p>This type of life insurance is a whole life policy with a small death benefit usually under $25,000. This is the type of policy that is referred to as "no exam no questions asked" since there is no medical questionnaire or exam. However, there is a waiting period of 2-3 years where if the insured dies, the insurance company will not pay the death benefit. Instead, they refund the premium plus interest. If this seems like an option for you, consider these companies for guaranteed issue life insurance:</p>

@@ -1127,7 +1127,6 @@ class BaseController extends Controller{
     }
 	
 	public function getCustomeData($status = 'new', $reset = true){
-		
 		$session       = Yii::$app->session;
 		$cookies       = Yii::$app->response->cookies;
 		$params = ['sid' => $session->id];
@@ -1142,10 +1141,7 @@ class BaseController extends Controller{
 		}
 		
 		if($reset){
-			$cookies->add(new Cookie([
-				'name'   => 'PHPSESSID',
-				'expire' => -3600,
-			]));
+			$cookies->add(new Cookie(['name'   => 'PHPSESSID', 'expire' => -3600]));
 		}
 		
 		return null;

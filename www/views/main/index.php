@@ -6,9 +6,9 @@ use yii\widgets\ActiveForm;
 use yii\helpers\Html;
 
 
-$this->registerMetaTag(['name' => 'description', 'content' => 'Compare life insurance policies and apply for coverage today. Shop the top rated companies offering up to $1,000,000 of coverage from $23 per month.']);
+$this->registerMetaTag(['name' => 'description', 'content' => 'Compare no exam life insurance policies and apply for coverage today. Shop the top rated companies offering up to $1,000,000 of coverage from $23 per month.']);
 $this->registerMetaTag(['name' => 'keywords', 'content' => '']);
-$this->title = 'Buy Life Insurance Online - Compare and Save';
+$this->title = 'Buy No Exam Life Insurance Online - Compare and Save';
 ?>
 <div class="main-index">
 	<?php //=$this->render('/main/widgets/home-page-form.php', []);?>
@@ -24,7 +24,7 @@ $this->title = 'Buy Life Insurance Online - Compare and Save';
 
 	<?=$this->render('/main/partials/homepage/section-logos.php');?>
 
-	<?=$this->render('/main/partials/homepage/section-content-box.php');?>
+	
 
 	<?=$this->render('/main/partials/homepage/section-timeline.php');?>
 

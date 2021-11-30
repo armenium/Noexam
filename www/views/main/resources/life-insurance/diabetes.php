@@ -65,7 +65,7 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
             <p>You can get a no exam term policy if you have diabetes. Some companies that offer coverage are discussed below. You'll need to meet their criteria to qualify.</p>
             <ul>
             <li><strong><a href="https://www.noexam.com/life-insurance/companies/sagicor/">Sagicor</a></strong> &mdash; You can get a policy of up to $500,000 if you were diagnosed after age 50 and your diabetes is well controlled with oral medication. You'll be declined if you were diagnosed before you turned 50, haven't checked your blood sugar in the past 6 months, have had uncontrolled blood sugars in the past 12 months, or have had any complications from your diabetes. Complications include unintended weight loss, neuropathy, amputation, retinopathy, and diabetic coma.</li>
-            <li><strong><a href="https://www.noexam.com/life-insurance/companies/fidelity/">Fidelity</a></strong> &mdash; You can get a <a href="https://www.noexam.com/life-insurance/one-million/">term policy of up to $1,000,000</a> that blends accidental death and all-cause death coverage. The company allows you to get coverage 24 to 48 hours after underwriting and gives you the option to take an exam within the first 6 months of your policy to possibly improve your benefits. You won't qualify if you're insulin-dependent and use tobacco.</li>
+            <li><strong>Fidelity</strong> &mdash; You can get a <a href="https://www.noexam.com/life-insurance/one-million/">term policy of up to $1,000,000</a> that blends accidental death and all-cause death coverage. The company allows you to get coverage 24 to 48 hours after underwriting and gives you the option to take an exam within the first 6 months of your policy to possibly improve your benefits. You won't qualify if you're insulin-dependent and use tobacco.</li>
             <li><strong><a href="https://www.noexam.com/life-insurance/companies/mutual-of-omaha/">Mutual of Omaha Term Life Express</a></strong> &mdash; You can get a term policy of up to $300,000 from this company. People with diabetes are normally accepted for this policy. However, you might be denied if you have diabetes along with another risk factor like tobacco use, obesity, or vascular disease.</li>
             </ul>
             <p><a href="https://www.noexam.com/life-insurance/term/rates/"><strong><em>Check rates for these companies here.</em></strong></a></p>
@@ -85,7 +85,7 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
             <li>To provide information about your current primary care doctor including how often you see them and contact information</li>
             </ul>
             <p>A life insurance exam is usually a very quick process of around a half hour. Companies can often work with you to find a timeslot that fits your schedule. In some cases, a company might even be able to send someone to your home to give you the exam.&nbsp;</p>
-            <p>It's a good idea to shop around for companies with the best rates for diabetics. Some companies that often offer <a href="https://www.noexam.com/life-insurance/companies/diabetics/">good rates for diabetics</a> include:</p>
+            <p>It's a good idea to shop around for companies with the best rates for diabetics. Some companies that often offer good rates for diabetics include:</p>
             <ul>
             <li>AIG</li>
             <li>Banner Life</li>

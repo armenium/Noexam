@@ -5,9 +5,9 @@ $tabs = [
 		['title' => 'Life Insurance 101', 'class' => 'active', 'content_items' => [
 			['text' => 'Intro to Life Insurance', 'link' => 'https://www.noexam.com/life-insurance/', 'read-time' => '22 min read'],
 			['text' => 'Types of Life Insurance', 'link' => 'https://www.noexam.com/life-insurance/types/', 'read-time' => '18 min read'],
-			['text' => 'Term vs Whole Life ', 'link' => 'https://www.noexam.com/life-insurance/term-vs-whole/', 'read-time' => '20 min read'],
+			['text' => 'Term vs Whole Life Insurance', 'link' => 'https://www.noexam.com/life-insurance/term-vs-whole/', 'read-time' => '20 min read'],
 			['text' => 'Life Insurance Health Exam', 'link' => 'https://www.noexam.com/life-insurance/health-exam/', 'read-time' => '10 min read'],
-			['text' => 'Application Approval Time', 'link' => 'https://www.noexam.com/life-insurance/approval-time/', 'read-time' => '8 min read'],
+			['text' => 'Life Insurance Approval Time', 'link' => 'https://www.noexam.com/life-insurance/approval-time/', 'read-time' => '8 min read'],
 			['text' => 'Life Insurance Statistics', 'link' => 'https://www.noexam.com/life-insurance/statistics', 'read-time' => '15 min read'],
 		]],
 		// Tab 2

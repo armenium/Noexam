@@ -27,22 +27,22 @@ class MyApplicationController extends BaseController {
 			switch(Yii::$app->request->post('CustomerData')['form_name']){
 				
 				case 'term':
-					$scenario     = CustomerData::SCENARIO_TERM;
+					$scenario = CustomerData::SCENARIO_TERM;
 					break;
 				case 'plan':
-					$scenario     = CustomerData::SCENARIO_PI;
+					$scenario = CustomerData::SCENARIO_PI;
 					break;
 				case 'step-1':
-					$scenario     = CustomerData::SCENARIO_APP_STEP_1;
+					$scenario = CustomerData::SCENARIO_APP_STEP_1;
 					break;
 				case 'step-2':
-					$scenario     = CustomerData::SCENARIO_APP_STEP_2;
+					$scenario = CustomerData::SCENARIO_APP_STEP_2;
 					break;
-				case 'benef':
-					$scenario     = CustomerData::SCENARIO_BENEFICIARY;
+				case 'step-3':
+					$scenario = CustomerData::SCENARIO_APP_STEP_3;
 					break;
 				case 'payment':
-					$scenario     = CustomerData::SCENARIO_PAYMENT;
+					$scenario = CustomerData::SCENARIO_PAYMENT;
 					break;
 				default:
 					return false;
@@ -93,43 +93,22 @@ class MyApplicationController extends BaseController {
 					}
 					break;
 				case 'step-3': #Beneficiary
-					if(!count($model)){
-						$model = CustomerData::find()->where(['sid' => $session->id])->one();
-					}
-					Yii::info('Step - "benef". Planing redirect to "/paymentinfo/" page.', 'noexam' );
-					$scenario     = CustomerData::SCENARIO_BENEFICIARY;
-					$redirect_url = '/paymentinfo/';
+					$scenario = CustomerData::SCENARIO_APP_STEP_3;
 					$model->attributes = $model->decodeData();
 					$model->beneficiary = $request_post['CustomerData']['beneficiary'];
-					$model->completed_application = 'No';
-					if($model->company_code != 'sagicor'){
-						$model->success = $this->generatePDFReport(25, $session->id);
-						$model->completed_application = 'Yes';
-						$model->status   = 'completed';
-						$redirect_url = '/success/';
-					}
-					break;
-				case 'payment':
-					#$model = CustomerData::find()->where(['sid' => $session->id])->one();
-					#$scenario     = CustomerData::SCENARIO_PAYMENT;
-					#$redirect_url = '/success/';
-					#$model->attributes = $model->decodeData();
-					#$model->payment = $request_post['CustomerData']['payment'];
-					$model->success = $this->generatePDFReport(25);
+					$model->success = $this->generatePDFReport(25, $session->id);
 					$model->completed_application = 'Yes';
+					$model->status   = 'completed';
+					$redirect_url = '/online-application-step-success/';
 					break;
 				case 'success':
-					Yii::info( 'Step - "success". All done.', 'noexam' );
 					$scenario     = CustomerData::SCENARIO_SUCCESS;
-					//$redirect_url = '/success/';
 					break;
 				case "intermediary_questions":
-					Yii::debug('Step - "intermediary-questions". Planing redirect to "personalinfo".', 'noexam' );
 					$scenario     = CustomerData::SCENARIO_IMQ;
-					//VarDumper::dump($scenario, 10, 1);
 					$status = 'new';
 					$iniciator = $request->post('CustomerData')['form_name'];
-					$redirect_url = '/personalinfo/';
+					$redirect_url = '/online-application-step-1/';
 					break;
 				default:
 					Yii::debug('Requested wrong form name in post request.', 'noexam' );
@@ -151,7 +130,7 @@ class MyApplicationController extends BaseController {
 						
 						$SF_process_flag = false;
 						
-						if($model->company_code == 'sagicor' && $model->scenario == CustomerData::SCENARIO_PAYMENT){
+						if($model->company_code == 'sagicor' && $model->scenario == CustomerData::SCENARIO_APP_STEP_3){
 							$SF_process_flag = true;
 						}elseif($model->company_code != 'sagicor'){
 							$SF_process_flag = true;
@@ -195,7 +174,7 @@ class MyApplicationController extends BaseController {
 							}
 							
 							if($lead_result){
-								if($model->company_code == 'sagicor' && $model->scenario == CustomerData::SCENARIO_PAYMENT){
+								if($model->company_code == 'sagicor' && $model->scenario == CustomerData::SCENARIO_APP_STEP_3){
 									$model->scenario = CustomerData::SCENARIO_COMPLETED;
 									$model->status   = 'completed';
 									if($model->save()){
@@ -345,12 +324,13 @@ class MyApplicationController extends BaseController {
 	#Beneficiary
 	public function actionOnlineApplicationStep3(){
 		$customer_data = $this->getCustomeData('new', false);
-		
+
 		if(!is_null($customer_data)){
 			$customer_data->attributes = $customer_data->decodeData();
+			#VarDumper::dump($customer_data->step, 10, 1); exit;
 			
-			if($customer_data->step != CustomerData::SCENARIO_ADDQ && $customer_data->step != CustomerData::SCENARIO_PI2){
-				if($customer_data->step == CustomerData::SCENARIO_BENEFICIARY){
+			if($customer_data->step != CustomerData::SCENARIO_APP_STEP_QUESTIONS && $customer_data->step != CustomerData::SCENARIO_APP_STEP_2){
+				if($customer_data->step == CustomerData::SCENARIO_APP_STEP_3){
 				
 				}else{
 					return $this->redirect($this->getStepUrl($customer_data->step));
@@ -362,25 +342,11 @@ class MyApplicationController extends BaseController {
 		
 		$bf_id = 1;
 		
-		return $this->render('step-4', ["bf_id" => $bf_id, 'customer_data' => $customer_data]);
+		return $this->render('step-3', ["bf_id" => $bf_id, 'customer_data' => $customer_data]);
 	}
 	
-	#Payment Info
-	public function actionOnlineApplicationStep5(){
-		
-		$customer_data = $this->getCustomeData('new', false);
-		
-		if(!is_null($customer_data)){
-			$customer_data->attributes = $customer_data->decodeData();
-		}else{
-			return $this->redirect('/');
-		}
-		
-		return $this->render('step-5', ['customer_data' => $customer_data]);
-	}
-	
-	public function actionSuccess(){
-		$customer_data = $this->getCustomeData('new', true);
+	public function actionOnlineApplicationStepSuccess(){
+		$customer_data = $this->getCustomeData('completed', true);
 		
 		if(!is_null($customer_data)){
 			$customer_data->attributes = $customer_data->decodeData();
@@ -406,7 +372,6 @@ class MyApplicationController extends BaseController {
 	public function actionIntermediaryQuestions(){
 		$isMobile     = Yii::$app->params['devicedetect']['isMobile'];
 		$session      = Yii::$app->session;
-		$this->layout = 'planinformation';
 		
 		//$customer_data = $this->getCustomeData();
 		$customer_data = CustomerData::find()->where(['sid' => $session->id])->one();
@@ -486,8 +451,6 @@ class MyApplicationController extends BaseController {
 	}
 	
 	public function actionGetReflex(){
-		
-		$this->layout = 'questions';
 		$request      = Yii::$app->request;
 		$session      = Yii::$app->session;
 		
@@ -539,7 +502,7 @@ class MyApplicationController extends BaseController {
 			$customer_data->questions[$parent->xml_num] = $preparedQuestionsData;
 		}
 
-		$customer_data->scenario = CustomerData::SCENARIO_ADDQ;
+		$customer_data->scenario = CustomerData::SCENARIO_APP_STEP_QUESTIONS;
 		$customer_data->save();
 		
 		if($question->getCondition($questionAnswer[0])->one()->condition != 'reflex'){
@@ -559,6 +522,21 @@ class MyApplicationController extends BaseController {
 		
 		return $this->renderPartial('_reflex', ['reflex' => $reflexQuestions, 'questionNumber' => $questionNumber, 'parentQustionId' => $questionId]);
 		
+	}
+	
+	public function actionAddBeneficiary(){
+		$return = ['error' => 0, 'html' => ''];
+		Yii::$app->response->format = Response::FORMAT_JSON;
+		
+		$request = Yii::$app->request;
+		$bf_id   = $request->get('bf_id');
+		
+		$customer_data = new CustomerData();
+		$form = new ActiveForm();
+		
+		$return['html'] = $this->renderPartial('_beneficiary', ["bf_id" => $bf_id, 'customer_data' => $customer_data, 'form' => $form]);
+		
+		return $return;
 	}
 	
 }

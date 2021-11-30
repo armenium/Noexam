@@ -40,9 +40,10 @@ $payment_frequencies = [
 			'enableAjaxValidation' => true,
 			'enableClientValidation' => true,
 			'validationUrl' => Url::toRoute('/my-application/validation'),
-			'id' => 'js_step_1',
+			'id' => 'js_step_2',
 			'action' => '/my-application/post/',
-			'options' => ['class' => 'online-app-step-2__form'], 'fieldConfig' => ['options' => ['tag' => false]]
+			'options' => ['class' => 'online-app-step-2__form'],
+			'fieldConfig' => ['options' => ['tag' => false]]
 		]);?>
 		<?=$form->field($customer_data, 'form_name')->hiddenInput(['value' => 'step-2', 'id' => ''])->label(false);?>
 
@@ -176,17 +177,17 @@ $payment_frequencies = [
 			<div class="online-app-step-2__row">
 				<label class="online-app-step-2__label online-app-main-label">
 					<span class="tags">Bank Name</span>
-					<?=$form->field($customer_data, "payment[bank-name]")->textInput(['required' => 'required','class' => 'online-app-step-2__input online-app-main-input', 'placeholder' => 'Please enter your bank name', 'autocomplete' => 'on', 'autofocus ' => ''])->label(false)->error(false);?>
+					<?=$form->field($customer_data, "payment[bank-name]")->textInput(['required' => 'required', 'class' => 'online-app-step-2__input online-app-main-input', 'placeholder' => 'Please enter your bank name', 'autocomplete' => 'on', 'autofocus ' => ''])->label(false)->error(false);?>
 				</label>
 			</div>
 			<div class="online-app-step-2__row">
 				<label class="online-app-step-2__label online-app-main-label">
 					<span class="tags">Bank Account Number</span>
-					<?=$form->field($customer_data, "payment[bank-account-number]")->input('number', ['required' => 'required','class' => 'online-app-step-2__input online-app-main-input', 'placeholder' => 'Bank Account Number', 'autocomplete' => 'on', 'autofocus ' => ''])->label(false)->error(false);?>
+					<?=$form->field($customer_data, "payment[bank-account-number]")->input('number', ['required' => 'required', 'class' => 'online-app-step-2__input online-app-main-input', 'placeholder' => 'Bank Account Number', 'autocomplete' => 'on', 'autofocus ' => ''])->label(false)->error(false);?>
 				</label>
 				<label class="online-app-step-2__label online-app-main-label">
 					<span class="tags">Routing Number</span>
-					<?=$form->field($customer_data, "payment[routing-number]")->input('number', ['required' => 'required','class' => 'online-app-step-2__input online-app-main-input', 'placeholder' => 'Routing Number', 'autocomplete' => 'on', 'autofocus ' => ''])->label(false)->error(false);?>
+					<?=$form->field($customer_data, "payment[routing-number]")->input('number', ['required' => 'required', 'class' => 'online-app-step-2__input online-app-main-input', 'placeholder' => 'Routing Number', 'autocomplete' => 'on', 'autofocus ' => ''])->label(false)->error(false);?>
 				</label>
 			</div>
 
@@ -201,7 +202,7 @@ $payment_frequencies = [
 
 		<div class="online-app-step-1__btns">
 			<button type="submit" class="online-app-step-1-btn main-btn button-big prev" data-trigger="js_action_click" data-action="online_app_back">Back</button>
-			<button type="submit" class="online-app-step-1-btn main-btn button-big next" data-trigger="js_action_click" data-action="online_app_next" data-target="#js_step_1">next</button>
+			<button type="submit" class="online-app-step-1-btn main-btn button-big next" data-trigger="js_action_click" data-action="online_app_next" data-target="#js_step_2">next</button>
 		</div>
 
 	</div>
