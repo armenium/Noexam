@@ -2008,7 +2008,10 @@ class MainController extends BaseController {
 
 		if($request_type != 'ajax'){
 			if(!empty($this->current_cat->layout)){
-				$this->layout = $this->current_cat->layout;
+				$this->layout = str_replace('/views/layouts', '', $this->current_cat->layout);
+				$this->layout = ltrim($this->layout, DIRECTORY_SEPARATOR);
+				$this->layout = str_replace("\\", "/", $this->layout);
+				#VarDumper::dump($this->layout, 10, 1); exit;
 			}
 		}
 

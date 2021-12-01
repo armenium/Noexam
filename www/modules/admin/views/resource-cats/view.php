@@ -35,7 +35,7 @@ $this->params['breadcrumbs'][] = $this->title;
 		        'attribute' => 'id',
 		        'format' => 'html',
 		        'value' => function($data){
-			        return '<span class="label label-danger">'.$data->id.'</span>';
+			        return '<span class="badge bg-danger text-light">'.$data->id.'</span>';
 		        },
 	        ],
 	        'title',
@@ -43,7 +43,7 @@ $this->params['breadcrumbs'][] = $this->title;
 		        'attribute' => 'parent_id',
 		        'format' => 'html',
 		        'value' => function($data){
-			        return '<span class="label label-success">'.$data->parent_id.'</span> '.$data->getCatName($data->parent_id);
+			        return '<span class="badge bg-success text-light">'.$data->parent_id.'</span> '.$data->getCatName($data->parent_id);
 		        },
 	        ],
             'url',
@@ -67,23 +67,23 @@ $this->params['breadcrumbs'][] = $this->title;
 		        'attribute' => 'custom_childs_links',
 		        'format' => 'html',
 		        'value' => function($data){
-			        return '<span class="label label-warning">'.str_replace(',', '</span> <span class="label label-warning">', $data->custom_childs_links).'</span>';
+			        return '<span class="badge bg-warning text-dark">'.str_replace(',', '</span> <span class="badge bg-warning text-dark">', $data->custom_childs_links).'</span>';
 		        },
 	        ],
 	        [
 		        'attribute' => 'company_id',
 		        'format' => 'html',
 		        'value' => function($data){
-			        return '<span class="label label-success">'.$data->company_id.'</span> '.$data->getCompanyName($data->company_id);
+			        return '<span class="badge bg-success text-light">'.$data->company_id.'</span> '.$data->getCompanyName($data->company_id);
 		        },
 	        ],
 	        [
 		        'attribute' => 'is_companies_main_page',
 		        'format' => 'html',
 		        'value' => function($data){
-			        $ret = '<span class="label label-danger">No</span>';
+			        $ret = '<span class="badge bg-danger text-light">No</span>';
 			        if($data->is_companies_main_page){
-				        $ret = '<span class="label label-warning">Yes</span>';
+				        $ret = '<span class="badge bg-warning text-dark">Yes</span>';
 			        }
 			        return $ret;
 		        },
@@ -92,9 +92,9 @@ $this->params['breadcrumbs'][] = $this->title;
 		        'attribute' => 'is_best_companies_page',
 		        'format' => 'html',
 		        'value' => function($data){
-			        $ret = '<span class="label label-danger">No</span>';
+			        $ret = '<span class="badge bg-danger text-light">No</span>';
 			        if($data->is_best_companies_page){
-				        $ret = '<span class="label label-warning">Yes</span>';
+				        $ret = '<span class="badge bg-warning text-dark">Yes</span>';
 			        }
 			        return $ret;
 		        },
@@ -103,9 +103,9 @@ $this->params['breadcrumbs'][] = $this->title;
 		        'attribute' => 'display_subpages_in_footer',
 		        'format' => 'html',
 		        'value' => function($data){
-			        $ret = '<span class="label label-danger">No</span>';
+			        $ret = '<span class="badge bg-danger text-light">No</span>';
 			        if($data->display_subpages_in_footer){
-				        $ret = '<span class="label label-warning">Yes</span>';
+				        $ret = '<span class="badge bg-warning text-dark">Yes</span>';
 			        }
 			        return $ret;
 		        },

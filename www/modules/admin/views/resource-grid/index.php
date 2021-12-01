@@ -42,7 +42,7 @@ $this->params['breadcrumbs'][] = $this->title;
 				'attribute' => 'id',
 				'contentOptions' => ['class' => 'col-50'],
 				'content' => function($data){
-					return '<span class="label label-success">'.$data->id.'</span>';
+					return '<span class="badge bg-success text-light">'.$data->id.'</span>';
 				},
 			],
 			[
@@ -59,7 +59,7 @@ $this->params['breadcrumbs'][] = $this->title;
 				'filter'=> $txcolor_list,
 				'filterOptions' => ['class' => ''],
 				'content' => function($model, $key, $index, $column){
-					$ret = '<span class="label label-info">'.$model->txcolor.'</span>';
+					$ret = '<span class="badge bg-info text-light">'.$model->txcolor.'</span>';
 
 					return $ret;
 				}
@@ -73,7 +73,7 @@ $this->params['breadcrumbs'][] = $this->title;
 				'filter'=> $label_list,
 				'filterOptions' => ['class' => ''],
 				'content' => function($model, $key, $index, $column){
-					$ret = '<span class="label label-info">'.$model->label.'</span>';
+					$ret = '<span class="badge bg-info text-light">'.$model->label.'</span>';
 
 					return $ret;
 				}
@@ -92,7 +92,7 @@ $this->params['breadcrumbs'][] = $this->title;
 				'filter'=> $placement_list,
 				'filterOptions' => ['class' => ''],
 				'content' => function($model, $key, $index, $column){
-					$ret = '<span class="label label-info">'.$model->placement.'</span>';
+					$ret = '<span class="badge bg-info text-light">'.$model->placement.'</span>';
 
 					return $ret;
 				}

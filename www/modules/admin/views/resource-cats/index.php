@@ -14,7 +14,7 @@ use app\assets\AppAsset;
 
 
 $this->title = 'Resource Pages';
-$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = ['label' => $this->title, 'class' => 'breadcrumb-item active'];
 
 yii::$app->params['child_to_parent_links'] = ['0' => 'No', '1' => 'Yes'];
 
@@ -45,7 +45,7 @@ yii::$app->params['child_to_parent_links'] = ['0' => 'No', '1' => 'Yes'];
 				'attribute' => 'id',
 				'contentOptions' => ['class' => 'col-50'],
 				'content' => function($data){
-					return '<span class="label label-success">'.$data->id.'</span>';
+					return '<span class="badge bg-success text-light">'.$data->id.'</span>';
 				},
 			],
 			'title',
@@ -53,9 +53,9 @@ yii::$app->params['child_to_parent_links'] = ['0' => 'No', '1' => 'Yes'];
 				'attribute' => 'parent_id',
 				'content' => function($data){
 					if($data->parent_id){
-						return '<span class="label label-success">'.$data->parent_id.'</span> '.$data->getCatName($data->parent_id);
+						return '<span class="badge bg-success text-light">'.$data->parent_id.'</span> '.$data->getCatName($data->parent_id);
 					}else{
-						return '<span class="label label-default">Top level</span>';
+						return '<span class="badge bg-secondary text-light">Top level</span>';
 					}
 				},
 			],
@@ -75,7 +75,7 @@ yii::$app->params['child_to_parent_links'] = ['0' => 'No', '1' => 'Yes'];
 				'header' => 'Order',
 				'contentOptions' => ['class' => 'col-50'],
 				'content' => function($data){
-					return '<span class="label label-info">'.$data->item_order.'</span>';
+					return '<span class="badge bg-info text-light">'.$data->item_order.'</span>';
 				},
 			],
 			[
@@ -85,9 +85,9 @@ yii::$app->params['child_to_parent_links'] = ['0' => 'No', '1' => 'Yes'];
 				'filter'=> yii::$app->params['child_to_parent_links'],
 				'filterOptions' => ['class' => ''],
 				'content' => function($model, $key, $index, $column){
-					$ret = '<span class="label label-danger">No</span>';
+					$ret = '<span class="badge bg-danger text-light">No</span>';
 					if($model->child_to_parent_links){
-						$ret = '<span class="label label-warning">Yes</span>';
+						$ret = '<span class="badge bg-warning text-dark">Yes</span>';
 					}
 					return $ret;
 				}
@@ -96,7 +96,7 @@ yii::$app->params['child_to_parent_links'] = ['0' => 'No', '1' => 'Yes'];
 				'attribute' => 'company_id',
 				'format' => 'html',
 				'value' => function($data){
-					return '<span class="label label-success">'.$data->company_id.'</span> '.$data->getCompanyName($data->company_id);
+					return '<span class="badge bg-success text-light">'.$data->company_id.'</span> '.$data->getCompanyName($data->company_id);
 				},
 			],
 			[
@@ -110,15 +110,15 @@ yii::$app->params['child_to_parent_links'] = ['0' => 'No', '1' => 'Yes'];
 				'buttons' => [
 					'view' => function ($url, $model){
 						$t = '/resource-cats/'.$model->id.'/view/';
-					    return Html::a('<span class="glyphicon glyphicon-eye-open"></span>', Url::to($t), ['title' => 'View', 'aria-label' => 'View', 'data-pjax' => '0']);
+					    return Html::a('<span class="bi-eye"></span>', Url::to($t), ['title' => 'View', 'aria-label' => 'View', 'data-pjax' => '0']);
 				    },
 					'update' => function ($url, $model){
 					    $t = '/resource-cats/'.$model->id.'/update/';
-					    return Html::a('<span class="glyphicon glyphicon-pencil"></span>', Url::to($t), ['title' => 'Update', 'aria-label' => 'Update', 'data-pjax' => '0']);
+					    return Html::a('<span class="bi-pencil"></span>', Url::to($t), ['title' => 'Update', 'aria-label' => 'Update', 'data-pjax' => '0']);
 				    },
 					'remove' => function ($url, $model){
 					    $t = '/resource-cats/'.$model->id.'/delete/';
-					    return Html::a('<span class="glyphicon glyphicon-trash"></span>', Url::to($t), ['title' => 'Delete', 'aria-label' => 'Delete', 'data-pjax' => '0', 'data' => ['confirm' => 'Are you sure you want to delete this item?', 'method' => 'post']]);
+					    return Html::a('<span class="bi-trash"></span>', Url::to($t), ['title' => 'Delete', 'aria-label' => 'Delete', 'data-pjax' => '0', 'data' => ['confirm' => 'Are you sure you want to delete this item?', 'method' => 'post']]);
 				    },
 					/*'import' => function ($url, $model){
 					    $t = '/resource-cats/'.$model->id.'/import/';
@@ -136,11 +136,18 @@ yii::$app->params['child_to_parent_links'] = ['0' => 'No', '1' => 'Yes'];
 			],
 		],
 		'pager' => [
+			/** For all options look here: /vendor/yiisoft/yii2/widgets/LinkPager.php */
+			'maxButtonCount' => 20,
 			'firstPageLabel' => '&laquo;',
 			'prevPageLabel' => '&lsaquo;',
 			'nextPageLabel' => '&rsaquo;',
 			'lastPageLabel'  => '&raquo;',
-			'maxButtonCount' => 20,
+			'options' => ['class' => 'pagination'],
+			'linkOptions' => ['class' => 'page-link'],
+			'linkContainerOptions' => ['class' => 'page-item'],
+			'disabledPageCssClass' => ['class' => 'page-item'],
+			'disabledListItemSubTagOptions' => ['tag' => 'a', 'class' => 'page-link'],
+			'activePageCssClass' => ['class' => 'page-item active'],
 		],
 	]);
 	?>

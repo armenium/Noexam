@@ -61,7 +61,7 @@ use app\models\CompaniesFilter;
 	<?=Yii::$app->Helpers->getImage(['src' => '/img/life-insurance-companies.png', 'style' => 'float:right;', 'alt' => 'life insurance companies asset chart', 'from_cdn' => true, 'lazyload' => true]);?>
 	<p>When buying an insurance product that may be needed 20+ years from now, you want to be certain that the company will be able to pay the claim. To address this very concern, many 3rd party rating agencies grade the financial strength of insurance companies. There are several that you will see reporting grades for insurance companies:&nbsp;</p>
 	<ul>
-	<li>AM Best</li>
+	<li><a href="https://www.noexam.com/life-insurance/companies/am-best-ratings/">AM Best</a></li>
 	<li>Moody&rsquo;s</li>
 	<li>Standard &amp; Poors</li>
 	<li>Fitch</li>
@@ -79,13 +79,16 @@ use app\models\CompaniesFilter;
 	<p>A good rule of thumb is to choose a company that has the letter &ldquo;A&rdquo; in its ratings and to avoid the companies that do not.</p>
 
 	<h2 id="underwriting-time">Underwriting Time</h2>
+	<div class="col-md-6 col-sm-12 float-right">
+	<img src="/img/how-to-choose.jpg" alt="choosing a life insurance company" class="img-fluid img-thumbnail">
+    </div>
 	<p>Underwriting is the process of the insurance company processing your application and issuing a decision. Underwriting time can vary widely from company to company and even from product to product. We are living in a time where technology is making life insurance easier to purchase, and one of the areas to recently improve in life insurance is underwriting time.</p> 
 
 	<p>The standard process of buying life insurance takes 4-6 weeks. This is how long it takes from start to finish. You submit your application, the health exam is scheduled, and then you take the exam and wait for a decision. </p>
 
 	<p>Many companies now offer accelerated underwriting, which means that certain applicants can breeze through the process without needing to take an exam. Some companies offer products that do not require the exam at all. This is referred to as simplified issue life insurance. These policies generally get issued in under a week. This is possible because the insurance company can look at digital records such as your prescription report, driving record, and MIB record.</p>
 
-	<p>One important thing to keep in mind when applying for life insurance that advertises an instant decision is what happens if you get declined. The instant issue policies have very strict requirements, and they are quick to decline an applicant. When you go to apply for a different policy, you now have to disclose that you applied somewhere else and were declined. This can affect their decision on your application. </p>
+	<p>One important thing to keep in mind when applying for life insurance that advertises an instant decision is what happens if you get declined. The <a href="https://www.noexam.com/life-insurance/instant/">instant issue policies</a> have very strict requirements, and they are quick to decline an applicant. When you go to apply for a different policy, you now have to disclose that you applied somewhere else and were declined. This can affect their decision on your application. </p>
 
 
 	<h2 id="company-size">Company Size</h2>
@@ -108,7 +111,7 @@ use app\models\CompaniesFilter;
 	<h3>Phone</h3>
 	<p>While most prefer to research online, we have found that some consumers still desire the assistance of a licensed agent. With the amount of information life insurance companies require, it can feel reassuring to hear a voice on the other line before submitting your information.&nbsp;</p>
 	<h3>In-Person - Agent</h3>
-	<p>Whether you buy online, via phone, or in person, you are always buying from a licensed life insurance agent. How you go about purchasing, receiving customer support, and maintaining your life insurance policy is your choice. If you choose to buy from a local life insurance agent that's in your network, we can help point you in the right direction.&nbsp;</p>
+	<p>Whether you buy online, via phone, or in person, you are always buying from a <a href="https://www.noexam.com/life-insurance/using-an-agent/">licensed life insurance agent</a>. How you go about purchasing, receiving customer support, and maintaining your life insurance policy is your choice. If you choose to buy from a local life insurance agent that's in your network, we can help point you in the right direction.&nbsp;</p>
 
 	<h2 id="complaints">Customer Complaints</h2>
 	<p>When looking at complaints on a company, you have to take this data with a grain of salt. Most complaints stem from billing errors and customer service. Rarely does a life insurance company not pay a claim. When conducting research, we analyzed the annual reports of over 50 companies. We looked at the percentage of claims that were contested and why they were contested. Overall we found it to be a very small percentage, and the most common reason claims are contested is due to material misrepresentation. Material misrepresentation is a fancy term for lying on the application. If you are looking for the best life insurance company that will payout, just be sure to answer the questions on the application truthfully, and select a company with strong financial ratings.</p>
@@ -126,4 +129,33 @@ use app\models\CompaniesFilter;
 	<p>Some life insurance companies quote people low rates, and once the underwriting is complete they determine they do not qualify for the initial rates. The industry refers to this as a &ldquo;bait and switch&rdquo;. This is something to keep in mind when you see a life insurance rate that is much lower than the other quotes.</p>
 
 </article>
-
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.noexam.com/life-insurance/companies/"
+  },
+  "headline": "The Best Life Insurance Companies in 2021",
+  "description": "Compare life insurance companies and see prices for policies in 2021.",
+  "image": [
+    "https://www.noexam.com/img/how-to-choose.jpg",
+    "https://223893-681207-raikfcquaxqncofqfm.stackpathdns.com/img/life-insurance-companies.png"
+  ],  
+  "author": {
+    "@type": "Person",
+    "name": "Jonathan Fritz"
+  },  
+  "publisher": {
+    "@type": "Organization",
+    "name": "NoExam.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.noexam.com/img/no-exam-logo.svg"
+    }
+  },
+  "datePublished": "2020-09-16",
+  "dateModified": "2021-02-25"
+}
+</script>

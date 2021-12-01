@@ -317,7 +317,8 @@ class ResourceCatsController extends AdminController {
 		$root = Yii::getAlias('@app');
 
 		if(empty($dir)){
-			$dir = $root.'/views/main/resources';
+			#$dir = $root.'/views/main/resources';
+			$dir = $root.'/views/life-insurance';
 		}
 
 		$cdir = array_diff(scandir($dir), ['..', '.']);
@@ -352,16 +353,20 @@ class ResourceCatsController extends AdminController {
 
 		$cdir = array_diff(scandir($dir), ['..', '.']);
 		//VarDumper::dump($cdir, 10, 1);
-
+		
 		foreach($cdir as $key => $value){
 			if(is_dir($dir.DIRECTORY_SEPARATOR.$value)){
-				/*if(substr($value, 0, 1) != '_'){
-					$result[$value] = $this->getLayouts($dir.DIRECTORY_SEPARATOR.$value);
-				}*/
+				if(substr($value, 0, 1) != '_'){
+					$data = $this->getLayouts($dir.DIRECTORY_SEPARATOR.$value);
+					if(!empty($data)){
+						$result[$value] = $data;
+					}
+				}
 			}else{
 				$path = str_replace($root, '', $dir.DIRECTORY_SEPARATOR.$value);
-				if($layout_name = $this->get_file_description($dir.DIRECTORY_SEPARATOR.$value)){
-					$result[$value] = $layout_name;
+				$layout_name = $this->get_file_description($dir.DIRECTORY_SEPARATOR.$value);
+				if($layout_name !== false){
+					$result[$path] = $layout_name;
 				}
 			}
 		}

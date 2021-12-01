@@ -32,7 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
 		        'attribute' => 'id',
 		        'format' => 'html',
 		        'value' => function($data){
-			        return '<span class="label label-danger">'.$data->id.'</span>';
+			        return '<span class="badge bg-danger text-light">'.$data->id.'</span>';
 		        },
 	        ],
             'category_id',

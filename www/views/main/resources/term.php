@@ -21,7 +21,7 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 
 	<!-- START PAGE-CONTENT -->
 	<section class="page">
-		<aside>
+		<!-- <aside>
 			<div class="sticky-block">
 				<h2>Jump to a section</h2>
 				<ul>
@@ -39,16 +39,16 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 					<li><a href="#taxation">Claims and Taxation</a></li>
 				</ul>
 			</div>
-		</aside>
+		</aside> -->
 
 		<article class="content">
 			<h1>Term Life Insurance</h1>
-			<?=Breadcrumbs::widget(['links' => $this->params['breadcrumbs']]);?>
+			<!-- <?=Breadcrumbs::widget(['links' => $this->params['breadcrumbs']]);?> -->
 			<?=$this->render('/main/widgets/authors-small.php', ['updated' => date('F j, Y', filemtime(__FILE__))]);?>
 
 			<h2 id="what">What is Term Life Insurance?</h2>
 			<p>Term life insurance is a life insurance policy that offers coverage for a fixed duration of time, or “term.”</p>
-			<p>The insured pays a pre-determined amount as the premium at periodic intervals during the policy’s term. At the end of the policy term, the insured can explore new rates and conditions prevailing at that time to purchase a new insurance policy.</p>
+			<p>The insured pays a predetermined amount as the premium at periodic intervals during the policy’s term. At the end of the policy term, the insured can explore new rates and conditions prevailing at that time to purchase a new insurance policy.</p>
 			<p>If the policyholder passes away before the maturity date, the insurance company will pay death benefits as promised in the term life policy to the policy’s named beneficiary.</p>
 			<p>Term life insurance has two primary benefits:</p>
 			<ul>
@@ -68,7 +68,7 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 			<h3>Step 2 – Choose the Amount of Death Benefit</h3>
 			<p>To calculate the right death benefit amount, the applicants will need to determine:</p>
 			<ul>
-				<li>The number of years the they want to provide financial support for their family following the possibility of their untimely death. Considering what future expenses are expected to be covered by the death benefit will provide an accurate value for the payout sum needed.</li>
+				<li>The number of years they want to provide financial support for their family following the possibility of their untimely death. Considering what future expenses are expected to be covered by the death benefit will provide an accurate value for the payout sum needed.</li>
 				<li>How much premium the applicant can afford, keeping in mind as the death benefit increases, the premium also increases.</li>
 			</ul>
 
@@ -79,8 +79,8 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 				simplified issue policies, insurance companies will only ask a few questions about the applicant’s health throughout the application.</p>
 
 			<h3>Step 4 – Pay Premiums</h3>
-			<p>Many criteria are factored in when calculating premiums. This is a complicated equation determined by the <a href="https://www.noexam.com/life-insurance/companies/">life insurance companies</a>. But in general, younger, middle-aged policy holders pay a less expensive premium because
-				they considered low risk. Older applicants and senior citizens, thus, pay higher premiums. </p>
+			<p>Many criteria are factored in when calculating premiums. This is a complicated equation determined by the <a href="https://www.noexam.com/life-insurance/companies/">life insurance companies</a>. But in general, younger, middle-aged policyholders pay a less expensive premium because
+				they are considered low risk. Older applicants and senior citizens, thus, pay higher premiums. </p>
 
 			<h3>Step 5 – Death Benefit Goes to Beneficiary in the Event of Death</h3>
 			<p>The policy beneficiary will receive the death benefit payout amount in the unfortunate event the insured individual passes during the policy period. If policy payments are discontinued, even if still within the policy term, or the policy period has lapsed or expired, no benefits will
@@ -101,9 +101,9 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 
 			<h3>Single Parent</h3>
 
-			<p>Single moms and single dads are another example of prime candidates for a term life policy. Considering if something happens to their parent, leaving the children with no one to bring in income or ensure them a safe upbringing, parents can find comfort in purchasing a policy that will
+			<p>Single moms and single dads are other examples of prime candidates for term life insurance. Considering if something happens to their parents, leaving the children with no one to bring in income or ensure them a safe upbringing, parents can find comfort in purchasing a policy that will
 				alleviate some of their children’s stress during a difficult time. This coverage is perfect for helping single parents protect their children’s future.</p>
-			<p>The policy also allows for guardianship of the children to be named, so policy holders not only know their children’s well-being is protected, but also that a trusted caretaker selected by the parent will see to it that the children’s needs are met. With its low premium advantage,
+			<p>The policy also allows for guardianship of the children to be named, so policyholders not only know their children’s well-being is protected, but also that a trusted caretaker selected by the parent will see to it that the children’s needs are met. With its low premium advantage,
 				term life insurance is one of the best options for substantial coverage.</p>
 			<h3>Young Couples without Children</h3>
 			<p>Even for a young couple who do not have children, living expenditures are expensive. In a family with only one income or where two incomes are vital for survival, if one person passes away, the other could fall under financial strain.</p>
@@ -116,7 +116,7 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 				<li>He or she plans to get married and/or have children in the future</li>
 				<li>He or she has student loans for which their aging parents co-signed. To prevent co-signers from being responsible for these debts in the event something happens, term life will ensure</li>
 			</ul>
-			<p>A term life policy would protect the insured’s future family or parents from financial burdens that would result follow if the policy holder passes away. The best time to purchase a term life insurance policy is now when it is more affordable than it will be in the future since <a
+			<p>A term life policy would protect the insured’s future family or parents from financial burdens that would result from the policyholder passing away. The best time to purchase a term life insurance policy is now when it is more affordable than it will be in the future since <a
 						href="https://www.noexam.com/life-insurance/cheap/">premiums are lower</a> for young people.</p>
 			<p><a href="#toc">Back to top</a></p>
 
@@ -124,14 +124,14 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 			<p>
 			<blockquote class="green">The two types of life insurance are term life insurance and whole life insurance. The main difference between the two is the length of coverage. Term life insurance provides coverage for a set period of time. Whole life provides coverage for life.</blockquote>
 			</p>
-			<p>Whole life policies also have an investment component that builds cash value. For most people, it makes sense to buy term and invest the money saved in premiums somewhere else. This is the financial advice many experts prescribe. See our guide for a deep comparison of <a
+			<p>Whole life policies also have an investment <a href="https://www.noexam.com/life-insurance/whole/cash-value/">component that builds cash value</a>. For most people, it makes sense to buy term and invest the money saved in premiums somewhere else. This is the financial advice many experts prescribe. See our comparison of <a
 						href="https://www.noexam.com/life-insurance/term-vs-whole/">term life vs whole life insurance</a>.</p>
 			<p><a href="#toc">Back to top</a></p>
 
 			<h2 id="length">What Term Length is Best?</h2>
 			<img class="float-sm-right rounded" src="../../img/family-walking2.jpg" alt="family needing life insurance"/>
 			<p>Term life coverage is available for varying durations or terms. These terms include the following:</p>
-			<p><strong>Renewable annually:</strong> Requires the policy holder to renew the term annually. The premium rates for an annually renewable term (ART) could increase every year. This coverage is better suited for individuals needing coverage for only one year. For others, it may not be
+			<p><strong>Renewable annually:</strong> Requires the policyholder to renew the term annually. The premium rates for an annually renewable term (ART) could increase every year. This coverage is better suited for individuals needing coverage for only one year. For others, it may not be
 				the best choice.</p>
 
 			<p><strong>10-Year Term:</strong> A 10-year term policy expires after a period of 10 years.</p>
@@ -139,7 +139,7 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 			<p><strong>20-Year Term:</strong> The policy term is 20 years.</p>
 			<p><strong>30-Year Term:</strong> The policy term is 30 years.</p>
 			<p><strong>Other terms:</strong> A few insurers may offer 5-year and 25-year terms, but these are less common.</p>
-			<p>It is paramount to note if a policy holder wants to buy another term life insurance policy at the end of the current term, the new premium rate is calculated at current levels, and other terms and conditions could also change.</p>
+			<p>It is paramount to note if a policyholder wants to buy another term life insurance policy at the end of the current term, the new premium rate is calculated at current levels, and other terms and conditions could also change.</p>
 
 
 			<h2>Factors to Consider while Choosing a Policy Term</h2>
@@ -151,7 +151,7 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 			<ul>
 				<li>If your child is four years old, and you are taking a term life policy now, a 20-year term would likely suit your needs.</li>
 				<li>If your child is 12, then a 15-year term might be a better option.</li>
-				<li>If you are yet to have children, but plan to expand your family someday, you might choose a 30-year term.</li>
+				<li>If you are yet to have children but plan to expand your family someday, you might choose a 30-year term.</li>
 			</ul>
 
 			<h3>Applicant’s Debt Situation</h3>
@@ -179,13 +179,13 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 
 			<h3>What is your Budget?</h3>
 
-			<p>One important thing to remember when planning a life coverage policy is that premium payments must be paid on time and for the entire term of the policy to keep the policy active. If the insured defaults on payments, the policy will lapse. Because this is not a short-term arrangement,
+			<p>One important thing to remember when planning a life coverage policy is that premium payments must be paid on time and for the entire term of the policy to keep the policy active. If the insured defaults on payments, the <a href="https://www.noexam.com/life-insurance/lapses/">policy will lapse</a>. Because this is not a short-term arrangement,
 				applicants should choose a plan carefully that fits within their budget now and in the long run. </p>
 
 			<p><strong>To save some money on insurance premiums, consider the following tips:</strong></p>
 			<ul>
 				<li>Start early. Buy the policy when you are younger and healthier. The rate at which premiums are calculated is lower for young, healthy persons.</li>
-				<li>Do not over-estimate coverage needs. This will add to the premium burden.</li>
+				<li>Do not overestimate coverage needs. This will add to the premium burden.</li>
 				<li>Choose a reasonable term length.</li>
 			</ul>
 			<p>Using an online premium calculator to find out what unnecessary coverage is avoidable can also put these variables in perspective. Adjust policy durations and policy coverage amounts to see how premium amounts change when you manipulate these values.</p>
@@ -219,11 +219,11 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 				<li>Policy term</li>
 				<li>Coverage amount</li>
 				<li>Age of insured</li>
-				<li>Health status of insured (both physical and mental)</li>
+				<li>Health status of the insured (both physical and mental)</li>
 				<li>Smoking habits</li>
 				<li>Driving history</li>
 				<li>Family history of diseases</li>
-				<li>Lifestyle—passion for adventure such as flying, sky diving, etc.</li>
+				<li>Lifestyle—passion for adventure such as flying, skydiving, etc.</li>
 			</ul>
 			<p><a href="#toc">Back to top</a></p>
 
@@ -260,7 +260,7 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 				<li>Beneficiary details—social security information about the person who will receive the payout in the event of your demise</li>
 				<li>Contingent beneficiary details—if both you and the beneficiary pass away at the same time, or if the beneficiary dies before the payout, then the contingent beneficiary will receive the death benefits, such as your children or a trusted family friend.</li>
 			</ul>
-			<p>When filling out the application, make sure you provide complete and accurate information. Incomplete details will cause undue delay in processing, and inaccurate information adds to the risk of provider rejecting the application.</p>
+			<p>When filling out the application, make sure you provide complete and accurate information. Incomplete details will cause undue delay in processing, and inaccurate information adds to the risk of the provider rejecting the application.</p>
 
 			<h3>Step 2: Take the Medical Exam </h3>
 
@@ -285,9 +285,9 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 
 				<li>Minimize the risk of any unusual spurt in blood pressure by avoiding alcohol, coffee, smoking, and extended physical workouts on the day of the exam</li>
 
-				<li>Bloodwork is done on an empty stomach, so scheduling your appointment in the morning prevents the need to fast throughout the day</li>
+				<li>Blood work is done on an empty stomach, so scheduling your appointment in the morning prevents the need to fast throughout the day</li>
 			</ul>
-			<p>Because the medical exam portion of life insurance shopping is a dreaded by most applicants, many people choose to go through an independent insurance agency to purchase a policy. This is because they only must undergo one medical exam, which will serve sufficient for all insurance
+			<p>Because the medical exam portion of life insurance shopping is dreaded by most applicants, many people choose to go through an independent insurance agency to purchase a policy. This is because they only must undergo one medical exam, which will serve sufficient for all insurance
 				provider applications. Thus, if one insurance company declines an applicant, there is no need to repeat the medical test when applying to another.</p>
 
 			<h3>Step 3: Underwriting the Policy</h3>
@@ -308,17 +308,17 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 			</ul>
 			<h3>Step 4: Policy Approval</h3>
 
-			<p>Within 10 to 15 days from the date of approval of coverage, the insurance provider will mail the policy documents to the newly insured to establish payment and get vital signatures needed to finalize the policy.</p>
+			<p>Within 10 to 15 days from the date of approval of coverage, the insurance provider will mail the policy documents to the newly insured to establish payments and get vital signatures needed to finalize the policy.</p>
 
 			<p>The faster the insured party returns the signed documents to the insurer, the sooner the policy is active. Once the provider receives the first premium, the policy becomes active. </p>
 
-			<p>For the first 30 days of the policy, the insured can make changes to the policy or change his or her mind all together and receive a full refund and policy cancellation. This is known as the “free look” period.</p>
+			<p>For the first 30 days of the policy, the insured can make changes to the policy or change his or her mind altogether and receive a full refund and policy cancellation. This is known as the “free look” period.</p>
 
 			<h3>Useful Tips During the Application Process</h3>
 
 			<p>During the application phase, there are some things applicants can do to make the process easier. These suggestions are noted below.</p>
 			<ul>
-				<li>Choose an insurance agency to help navigate the entire process from selecting the right term life insurance product to the application.</li>
+				<li>Choose an insurance agent to help navigate the entire process from selecting the right term life insurance product to the application.</li>
 
 				<li>Stay transparent and honest—both with the agent and the insurance company. Dishonesty causes both short-term and long-term problems.</li>
 
@@ -339,11 +339,11 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 
 			<h2 id="beneficiaries">Term Life Insurance Beneficiary</h2>
 			<img class="float-sm-right rounded" src="../../img/new-life.jpg" alt="new life"/>
-			<p>A term life insurance policy holder will need to specify a beneficiary who will receive the death benefit in the event of the insured’s passing. The list below explains the different types of beneficiaries.</p>
+			<p>A term life insurance policyholder will need to specify a beneficiary who will receive the death benefit in the event of the insured’s passing. The list below explains the different types of beneficiaries.</p>
 			<ul>
-				<li>Primary beneficiary–This individual or group of persons will receive the payout in the event of the insured’s death. The policy holder may nominate anyone of his or her choosing as beneficiary.</li>
+				<li>Primary beneficiary–This individual or group of persons will receive the payout in the event of the insured’s death. The policyholder may nominate anyone of his or her choosing as beneficiary.</li>
 
-				<li>Contingent beneficiary–Another common term for this kind of beneficiary is “secondary beneficiary.” If the primary beneficiary dies before the insured person, the death benefit goes to the contingent beneficiary. In case the primary beneficiary is still alive at the time of the
+				<li><a href="https://www.noexam.com/life-insurance/contingent-beneficiary/">Contingent beneficiary</a>–Another common term for this kind of beneficiary is “secondary beneficiary.” If the primary beneficiary dies before the insured person, the death benefit goes to the contingent beneficiary. In case the primary beneficiary is still alive at the time of the
 					insured’s passing, the payout goes to the primary beneficiary only. The contingent beneficiary will not receive any money in that situation.
 				</li>
 			</ul>
@@ -353,16 +353,16 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 			<ul>
 				<li>Revocable beneficiary–Under this category, the insured person can change the beneficiary of the term life insurance without informing the person previously designated as the beneficiary. This can be done at any point during the policy term.</li>
 
-				<li>Irrevocable beneficiary–As per this category, the policyholder cannot make any changes with respect to beneficiaries without getting the consent from the person(s) already named as beneficiaries in the existing policy.</li>
+				<li>Irrevocable beneficiary–As per this category, the policyholder cannot make any changes with respect to beneficiaries without getting consent from the person(s) already named as beneficiaries in the existing policy.</li>
 			</ul>
 			<p>Of these two, most experts favor the revocable option since it offers maximum flexibility to the insured individual in the long run.</p>
 
 			<h3>Choosing the Beneficiary</h3>
 
-			<p>Policy holders have a range of choices to consider when it comes to identifying a beneficiary including the following:</p>
+			<p>Policyholders have a range of choices to consider when it comes to identifying a beneficiary including the following:</p>
 			<ul>
 				<li>Family member</li>
-				<li>Beneficiaries can be minors with legal guardian named</li>
+				<li>Beneficiaries can be minors with legal a guardian named</li>
 				<li>Estate</li>
 				<li>Trust</li>
 				<li>Charity</li>
@@ -371,9 +371,9 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 
 			<h2 id="riders">Term Life Insurance Riders</h2>
 
-			<p>A rider is an add-on that attaches to a term insurance for an additional, nominal charge. The rider provides supplementary protection in addition to the sum assured, under stipulated conditions stated in the rider.</p>
+			<p>A rider is an add-on that attaches to a life insurance policy for an additional, nominal charge. The rider provides supplementary protection in addition to the sum assured, under stipulated conditions stated in the rider.</p>
 
-			<p>Each insurance company offers different types of riders, and charges vary as well. The conditions under which they apply are also different. The same factors that affect the premium rate also affect rider rates.</p>
+			<p>Each insurance company offers <a href="https://www.noexam.com/life-insurance/riders/">different types of riders</a>, and charges vary as well. The conditions under which they apply are also different. The same factors that affect the premium rate also affect rider rates.</p>
 
 			<p><strong>Some common riders are found below.</strong></p>
 
@@ -381,7 +381,7 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 
 			<h4>Waiver of Premium Rider</h4>
 
-			<p>As per the <a href="https://www.noexam.com/life-insurance/waiver-of-premium/">waiver of premium rider</a>, if the policy holder becomes totally disabled and unable to work, payment of premium becomes unnecessary, but the policy remains active. This rider typically applies until 60 or
+			<p>As per the <a href="https://www.noexam.com/life-insurance/waiver-of-premium/">waiver of premium rider</a>, if the policyholder becomes totally disabled and unable to work, payment of premium becomes unnecessary, but the policy remains active. This rider typically applies until 60 or
 				65 years of age.</p>
 
 			<h4>Disability Income Rider</h4>
@@ -391,7 +391,7 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 
 			<h3>If the Insured’s Health Deteriorates but More Coverage Is Necessary:</h3>
 
-			<p>Rider Guaranteeing Insurability</p>
+			<p>Guaranteed Insurability Rider</p>
 
 			<p>Under normal circumstances, a person in poor health may have to pay hefty premiums to renew his or her term life insurance. In some cases, the insurer may refuse to renew the policy citing ill health as a major risk.</p>
 
@@ -401,25 +401,25 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 				<li>Without fresh medical exams</li>
 				<li>Buy additional insurance at preset times</li>
 			</ul>
-			<p>If the provider offers the option for this rider and the policy holder fears their health will deteriorate with time, this rider serves as a convenient opportunity for extension of coverage beyond the original term.</p>
+			<p>If the applicant fears their health will deteriorate with time, this rider serves as a convenient opportunity for the extension of coverage beyond the original term.</p>
 
 			<h3>Converting Term Life Coverage into Permanent Coverage:</h3>
 
 			<h4>Conversion Rider</h4>
 
-			<p>A conversion rider allows for a term life policy to convert into a permanent life insurance policy without updated medical tests. While the premiums for permanent insurance are usually higher, this rider allows younger applicants with entry-level income get an affordable policy. </p>
+			<p>A conversion rider allows for a term life policy to convert into a permanent life insurance policy without updated medical tests. While the premiums for permanent insurance are usually higher, this rider allows younger applicants with entry-level income to get an affordable policy. </p>
 
 			<h3>In the Event of a Serious Illness:</h3>
 
 			<h4>Accelerated Death Benefit Rider</h4>
 
-			<p>This is now a standard add-on provided for free or at a nominal charge. If the policy holder falls terminally ill and has a shortened life expectancy, he or she can withdraw a fixed part of the death benefit in advance with this rider. </p>
+			<p>This is now a standard add-on provided for free or at a nominal charge. If the policyholder falls terminally ill and has a shortened life expectancy, he or she can withdraw a fixed part of the death benefit in advance with this rider. </p>
 
 			<p>The amount available will range between $250,000 and $500,000, but even if the rider came at no extra cost initially, the provider may charge a certain fee when the insured claims the amount made available.</p>
 
 			<h4>Rider for Critical Illness</h4>
 
-			<p>If a policy holder is diagnosed with a critical illness included in this rider (cancer, heart attack, renal failure, etc.), the insurer will pay a comprehensive sum to the insured to be used to pay for medical treatment related to that illness.</p>
+			<p>If a policyholder is diagnosed with a critical illness included in this rider (cancer, heart attack, renal failure, etc.), the insurer will pay a comprehensive sum to the insured to be used to pay for medical treatment related to that illness.</p>
 
 			<h3>In the Event of Death from an Accident:</h3>
 
@@ -433,11 +433,9 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 
 			<p>Here are a few points to remember regarding tax implications:</p>
 			<ul>
-				<li>Because premiums paid under term life coverage are considered a personal expense, they are not eligible for federal income tax deductions</li>
-				<li>When coverage exceeds $50,000, the insured may be taxed for employer-paid premiums. While the payment towards the first $50,000 is not taxable for the insured, and he or she does not have to declare the premium amount as income earned, for every dollar of premium paid, for
-					coverage beyond $50,000, tax must be paid, as the amount is treated as part of annual earnings.
-				</li>
-				<li>In most cases, death benefits paid out posthumously are non-taxable. Both state and federal laws exempt the benefit from taxation. Therefore, if the sum assured is $500,000, then the beneficiary will not need to pay taxes on the overall amount.</li>
+				<li>Because premiums paid under term life coverage are considered a personal expense, they are <a href="https://www.noexam.com/life-insurance/deductible/">not eligible for federal income tax deductions</a></li>
+				
+				<li>In most cases, death benefits paid out posthumously are not subject to income tax. Both state and federal laws exempt the benefit from taxation.</li>
 				<li>If the death benefit is paid out in installments, different rules apply. The principal is non-taxable, but any interest accrued on the installments is taxable at an ordinary rate.</li>
 				<li>Loans taken against the policy may also be tax-free.</li>
 			</ul>

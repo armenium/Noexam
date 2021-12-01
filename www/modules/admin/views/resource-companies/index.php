@@ -73,9 +73,9 @@ yii::$app->params['no_yes'] = [0 => 'No', 1 => 'Yes'];
 				'filter'=> yii::$app->params['no_yes'],
 				'filterOptions' => ['class' => ''],
 				'content' => function($model, $key, $index, $column){
-					$ret = '<span class="label label-danger">No</span>';
+					$ret = '<span class="badge bg-danger text-light">No</span>';
 					if($model->best_company){
-						$ret = '<span class="label label-warning">Yes</span>';
+						$ret = '<span class="badge bg-warning text-dark">Yes</span>';
 					}
 					return $ret;
 				}

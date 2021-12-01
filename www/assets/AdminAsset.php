@@ -20,7 +20,7 @@ class AdminAsset extends AssetBundle {
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        #'css/bootstrap-4.css?11',
+        'v2/plugins/icons/bootstrap-icons.css',
         'css/bootstrap-select.css',
         'css/datepicker.css',
         //'css/jquery.jscrollpane.css',

@@ -29,10 +29,8 @@ $body_class = $is_admin ? 'admin' : 'guest';
 		<?=$this->render('header.php', ['is_admin' => $is_admin]);?>
 		
 
-		<section>
-			<div class="<?=$layout_class;?>">
-				<?=$content;?>
-			</div>
+		<section class="<?=$layout_class;?>">
+			<?=$content;?>
 		</section>
 		
 		<?=$this->render('footer.php');?>

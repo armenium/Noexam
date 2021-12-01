@@ -1,4 +1,5 @@
 <?php
+/* Layout Name: Top (new design) */
 /* @var $this \yii\web\View */
 /* @var $content string */
 

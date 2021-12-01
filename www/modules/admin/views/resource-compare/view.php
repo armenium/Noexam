@@ -31,21 +31,21 @@ $this->params['breadcrumbs'][] = $this->title;
 		        'attribute' => 'id',
 		        'format' => 'html',
 		        'value' => function($data){
-			        return '<span class="label label-danger">'.$data->id.'</span>';
+			        return '<span class="badge bg-danger text-light">'.$data->id.'</span>';
 		        },
 	        ],
 	        [
 		        'attribute' => 'company1_id',
 		        'format' => 'html',
 		        'value' => function($data){
-			        return $data->getCompanyName($data->company1_id).' <span class="label label-success">'.$data->company1_id.'</span>';
+			        return $data->getCompanyName($data->company1_id).' <span class="badge bg-success text-light">'.$data->company1_id.'</span>';
 		        },
 	        ],
 	        [
 		        'attribute' => 'company2_id',
 		        'format' => 'html',
 		        'value' => function($data){
-			        return $data->getCompanyName($data->company2_id).' <span class="label label-success">'.$data->company2_id.'</span>';
+			        return $data->getCompanyName($data->company2_id).' <span class="badge bg-success text-light">'.$data->company2_id.'</span>';
 		        },
 	        ],
             'title',
@@ -54,9 +54,9 @@ $this->params['breadcrumbs'][] = $this->title;
 		        'attribute' => 'no_index',
 		        'format' => 'html',
 		        'value' => function($data){
-			        $ret = '<span class="label label-danger">No</span>';
+			        $ret = '<span class="badge bg-danger text-light">No</span>';
 			        if($data->no_index){
-				        $ret = '<span class="label label-warning">Yes</span>';
+				        $ret = '<span class="badge bg-warning text-dark">Yes</span>';
 			        }
 			        return $ret;
 		        }
@@ -65,9 +65,9 @@ $this->params['breadcrumbs'][] = $this->title;
 		        'attribute' => 'no_follow',
 		        'format' => 'html',
 		        'value' => function($data){
-			        $ret = '<span class="label label-danger">No</span>';
+			        $ret = '<span class="badge bg-danger text-light">No</span>';
 			        if($data->no_follow){
-				        $ret = '<span class="label label-warning">Yes</span>';
+				        $ret = '<span class="badge bg-warning text-dark">Yes</span>';
 			        }
 			        return $ret;
 		        }

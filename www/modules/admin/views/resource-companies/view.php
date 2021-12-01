@@ -32,7 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
 		        'attribute' => 'id',
 		        'format' => 'html',
 		        'value' => function($data){
-			        return '<span class="label label-danger">'.$data->id.'</span>';
+			        return '<span class="badge bg-danger text-light">'.$data->id.'</span>';
 		        },
 	        ],
             'internal_code',
@@ -40,9 +40,9 @@ $this->params['breadcrumbs'][] = $this->title;
 		        'attribute' => 'display_in_page',
 		        'format' => 'html',
 		        'value' => function($data){
-			        $ret = '<span class="label label-danger">No</span>';
+			        $ret = '<span class="badge bg-danger text-light">No</span>';
 			        if($data->display_in_page){
-				        $ret = '<span class="label label-warning">Yes</span>';
+				        $ret = '<span class="badge bg-warning text-dark">Yes</span>';
 			        }
 			        return $ret;
 		        },
@@ -51,9 +51,9 @@ $this->params['breadcrumbs'][] = $this->title;
 		        'attribute' => 'best_company',
 		        'format' => 'html',
 		        'value' => function($data){
-			        $ret = '<span class="label label-danger">No</span>';
+			        $ret = '<span class="badge bg-danger text-light">No</span>';
 			        if($data->best_company){
-				        $ret = '<span class="label label-warning">Yes</span>';
+				        $ret = '<span class="badge bg-warning text-dark">Yes</span>';
 			        }
 			        return $ret;
 		        },
@@ -106,7 +106,7 @@ $this->params['breadcrumbs'][] = $this->title;
 		        'attribute' => 'ways_to_buy',
 		        'format' => 'html',
 		        'value' => function($data){
-			        return '<span class="label label-warning">'.str_replace(',', '</span> <span class="label label-warning">', $data->ways_to_buy).'</span>';
+			        return '<span class="badge bg-warning text-dark">'.str_replace(',', '</span> <span class="badge bg-warning text-dark">', $data->ways_to_buy).'</span>';
 		        },
 	        ],
             'content:ntext',

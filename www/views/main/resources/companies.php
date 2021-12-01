@@ -51,24 +51,23 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 		<article class="content">
 			<h1>The Best Ranked Life Insurance Companies</h1>
 
-			<?=$this->render('/main/widgets/authors-small.php', ['updated' => date('F j, Y', filemtime(__FILE__))]);?>
+			<?=$this->render('/main/widgets/authors-small-wd.php', ['updated' => date('F j, Y', filemtime(__FILE__))]);?>
 
 			<p>We spent hundreds of hours analyzing life insurance companies all to answer one question:
 				<strong>Which life insurance companies are the best?</strong> These companies are ranked to help shoppers like you make the best choice for this important decision.</p>
-			<blockquote class="green">We hope this list saves you hours of time that you would otherwise spend researching. We want you to sleep better at night knowing you made the right choice for life insurance.</blockquote>
+			<blockquote class="green">This page will help you choose the best company to protect your family. Rankings are determined through analysis of 3rd party financial ratings, complaint data, public financial reports, and pricing data.</blockquote>
 
-			<h2>How We Ranked Them</h2>
+			<h2>Ranking Criteria</h2>
 			<ul>
 				<li>We compared companies' financial ratings to only present options that are financially strong and have a good financial outlook.</li>
-				<li>Over 100,000 life insurance quotes were analyzed to determine who offers the best value.</li>
+				<li>100,000+ price quotes were analyzed to determine who offers the best value.</li>
 				<li>We reviewed complaint data from state insurance departments to find companies with the best customer service.</li>
 				<li>We reviewed company financial statements to confirm financial strength and longevity.</li>
 			</ul>
-			<h2>About Us</h2>
-			<?=$this->render('/main/widgets/authors-bio.php', ['align' => '', 'image' => 'avatar', 'width' => '']);?>
+			
 			<h2 id="topten">Top 10 Companies Overall</h2>
 
-			<p>Here are the top 10 life insurance companies in the United States. These company rankings are based on financial strength, customer reviews, pricing, product offering, customer service, and customer experience.</p>
+			<p>Here are our <strong>top 10 life insurance companies</strong> in the United States. This list is determined by a combination of financial strength, customer reviews, pricing, product offering, customer service, and customer experience.</p>
 			<ul>
 				<li><a href="#havenlife">Haven Life</a></li>
 				<li><a href="#aig">AIG</a></li>
@@ -100,7 +99,7 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 			<?php endif;?>
 
 			<h2>How much does life insurance cost?</h2>
-			<p>The price of life insurance varies greatly from person to person. A 20-year term policy with a $100,000 death benefit will cost a 30-year-old male in good health around $12 per month. The same policy will cost a 60-year-old male around $65 per month. The rate calculator tool below
+			<p>The price varies greatly from person to person. A 20-year term policy with a $100,000 death benefit will cost a 30-year-old male in good health around $12 per month. The same policy will cost a 60-year-old male around $65 per month. The rate calculator tool below
 				allows you to quickly compare custom quotes with accurate pricing.</p>
 
 			<?php if($isMobile):?>
@@ -121,9 +120,9 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 			</ul>
 			<h2>Further Reading</h2>
 			<ul>
-				<li><a href="#mutual">Traditional vs Mutual Life Insurance Companies</a></li>
-				<li><a href="#avoid">Life Insurance Companies to Avoid</a></li>
-				<li><a href="#list">List of Life Insurance Companies</a></li>
+				<li><a href="#mutual">Traditional vs Mutual Companies</a></li>
+				<li><a href="#avoid">Companies to Avoid</a></li>
+				<li><a href="#list">List of All Companies Considered</a></li>
 			</ul>
 
 			<h2 id="financial">Financial Strength</h2>
@@ -148,8 +147,8 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 				<li>Return on investments</li>
 				<li>Potential risks in the short-term and the long-term</li>
 			</ul>
-			<p>If a life insurance company is rated highly by these agencies on a consistent basis, it is a very good sign of its ability to honor its commitments. If a company receives subpar ratings from these agencies, you should be wary of choosing it.</p>
-			<h2>Best Life Insurance Companies by Financial Rating</h2>
+			<p>If a company is rated highly by these agencies on a consistent basis, it is a very good sign of its ability to honor its commitments. If a company receives subpar ratings from these agencies, you should be wary of choosing it.</p>
+			<h2>Best Companies by Financial Rating</h2>
 
 			<?php if($isMobile):?>
 				<div class="ajaxContent" data-view-file="/main/widgets/company-ratings-table.php"></div>
@@ -157,15 +156,15 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 				<?=$this->render('/main/widgets/company-ratings-table.php');?>
 			<?php endif;?>
 
-			<h2>Life Insurance Companies With the Most Assets</h2>
+			<h2>Companies With the Most Assets</h2>
 			<?=Yii::$app->Helpers->getImage(['src' => '/img/life-insurance-companies.png', 'alt' => 'life insurance companies asset chart', 'from_cdn' => true, 'lazyload' => true]);?>
 			<h2 id="products">Product Offering</h2>
 			<p>When ranking the companies, we look for insurance organizations that offer a wide range of policies. Everyone’s financial situation is different and having a selection of life insurance products is the best way to find the right solution. Here are some recommendations on the
 				different products offered.</p>
 			<h3>Convertible Policies</h3>
-			<p>Look for a company that allows you to convert a term policy into a permanent one. A <a href="https://www.noexam.com/life-insurance/term/">term life insurance</a> plan generally lasts anywhere from 10 to 30 years.</p>
+			<p>Look for a company that allows you to convert a term policy into a permanent one. A <a href="https://www.noexam.com/life-insurance/term/">term life</a> policy generally lasts anywhere from 10 to 30 years.</p>
 			<p>If you are in your 50’s or 60’s when it expires, you might need to get yourself insured again. Qualifying for a new policy at that age can be difficult. You might be charged higher
-				<a href="https://www.noexam.com/life-insurance/term/rates/">life insurance rates</a> compared to younger applicants.</p>
+				<a href="https://www.noexam.com/life-insurance/term/rates/">rates</a> compared to younger applicants.</p>
 			<p>With the conversion option, you can convert your existing term policy into a permanent one. No need to qualify for a new policy or undergo any medical tests. Even if you think that you might not need it, it’s a good option to have.</p>
 			<h3>Policy Riders and Additional Benefits</h3>
 			<p>Look for a company that offers optional policy riders and benefits. A <a href="https://www.noexam.com/life-insurance/cheap/">standard term policy is the cheapest option</a> you could go for, but it may not cover all your needs.</p>
@@ -182,7 +181,7 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 				<li>unemployment</li>
 			</ul>
 			<p>Choosing one or more of these riders will increase your premium payments. However, paying a few dollars more is worth the extra protection these riders provide.</p>
-			<h2 id="complaints">Life Insurance Company Complaints and Customer Reviews</h2>
+			<h2 id="complaints">Company Complaints and Customer Reviews</h2>
 			<p>You should check the company’s complaints in regard to settling its claims. Does it have a long record of serving its customers well? Has it settled all or most of its claims without any issues? These are the questions you need to ask to find out if the company is the right choice for
 				you.</p>
 			<p>Does the company have a history of policy cancellations and claim disputes? Think twice before choosing a company that does, even if its rates happen to be affordable.</p>
@@ -201,22 +200,22 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 			</ul>
 			<p>Other companies can be more lenient with their underwriting guidelines.</p>
 			<p>Even if you do not qualify for the cheap rates with one company, you might be able to do so with another company. By doing so, you might be able to save hundreds of dollars in life insurance premiums every year.</p>
-			<p>This is why it is important to get quotes from multiple companies while buying life insurance. Not all companies have the same guidelines or medical test requirements. So, choose one where you are most likely to qualify for the lowest possible rates.</p>
+			<p>This is why it is important to get quotes from multiple companies while shopping. Not all companies have the same guidelines or medical test requirements. So, choose one where you are most likely to qualify for the lowest possible rates.</p>
 
-			<h2 id="prices">Life Insurance Company Prices</h2>
-			<p>Pricing is often the most important factor when shopping for life insurance. Because of this, we analyzed pricing for all of the companies we consider in our ranking. All 10 companies in our top 10 rankings have competitive pricing. </p>
-			<h3>What life insurance company has the lowest rates?</h3>
+			<h2 id="prices">Compare Prices</h2>
+			<p>Pricing is often the most important factor when shopping for coverage. Because of this, we analyzed pricing for all of the companies we consider in our ranking. All 10 companies in our top 10 rankings have competitive pricing. </p>
+			<h3>What company has the lowest rates?</h3>
 			<p>The answer to this depends on your overall health, coverage amount, and term length. It is difficult to say who has the best rates when the factors and conditions vary so much. One company might have better rates for older customers, where another may be the best choice for someone
 				with asthma. Thus, the company with the cheapest rates for you depends on your unique situation and policy needs. Your best bet is to shop multiple companies and compare rates. </p>
 			<h3>What does life insurance cost monthly?</h3>
-			<p>For a term life insurance policy from one of the more well-known companies, you can expect to pay between $20 per month and $75 per month. This will depend on your age, coverage amount, term length, and overall health. See more on the <a
+			<p>For a term life policy from one of the more well-known companies, you can expect to pay between $20 per month and $75 per month. This will depend on your age, coverage amount, term length, and overall health. See more on the <a
 						href="https://www.noexam.com/life-insurance/term/average-cost/">average cost of life insurance</a>.</p>
-			<p>Here is a chart displaying the average cost of life insurance as you get older. This was done in our life insurance pricing study which analyzed over 100,000 life insurance quotes. </p>
+			<p>Here is a chart displaying the average cost of life insurance as you get older. This was done in our pricing study which analyzed over 100,000 quotes. </p>
 			<?=Yii::$app->Helpers->getImage(['class' => 'img-fluid', 'src' => '/img/life-insurance-prices.png', 'alt' => 'life insurance average prices', 'from_cdn' => true, 'lazyload' => true]);?>
 
 			<h2 id="mutual">Traditional Insurance Companies vs. Mutual Insurance Companies</h2>
-			<p>If you are looking to buy a permanent life policy, it is advisable to buy it from a mutual insurance company, rather than a traditional insurance company.</p>
-			<p>The difference between a traditional life insurance company and a mutual life insurance company is that the former is owned by stockholders whereas the latter is owned by the policyholders themselves.</p>
+			<p>If you are looking to buy a permanent life policy, it is advisable to buy it from a <a href="https://www.noexam.com/life-insurance/companies/mutual/">mutual insurance company</a>, rather than a traditional insurance company.</p>
+			<p>The difference between a traditional company and a mutual company is that the former is owned by stockholders whereas the latter is owned by the policyholders themselves.</p>
 			<p>This is why mutual insurance companies tend to distribute their surplus revenue evenly among their policyholders in the form of dividends.</p>
 			<p>If your insurance provider pays dividends every year, it could be an additional source of income for you throughout the term of the policy. This is above and beyond what you receive in terms of the cash component and the death benefit.</p>
 			<p>While this certainly should not be a make-or-break factor in deciding which company you should do business with, it can be an additional criterion based on which you can compare different insurance companies.</p>
@@ -247,7 +246,7 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 				<p><strong>Moody’s:</strong> Baa1</p>
 				<p><strong>Standard &amp; Poor’s:</strong> BBB+</p>
 				<p><strong>Fitch:</strong> BBB+</p>
-				<p><u>Why You Should Avoid It</u>: Not as financially stable as other, highly rated life insurance carriers.</p>
+				<p><u>Why You Should Avoid It</u>: Not as financially stable as other, highly rated carriers.</p>
 			</div>
 			<div class="company-box">
 				<h3>Baltimore Life</h3>
@@ -265,7 +264,7 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 					preexisting condition or risk factor.</p>
 			</div>
 			<h2 id="list">List of Companies</h2>
-			<p>Here is a list of the life insurance companies we considered in this report.</p>
+			<p>Here is a list of the companies we considered in this report.</p>
 			<div class="row">
 				<div class="col-xs-4">
 					<li>5 Star</li>
@@ -292,7 +291,7 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 					<li>Foresters</li>
 					<li>Genworth</li>
 					<li>Gerber</li>
-					<li>Globe Life Insurance</li>
+					<li>Globe Life </li>
 					<li>Great Western</li>
 					<li>Guardian</li>
 					<li>Haven Life</li>
@@ -334,10 +333,12 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 
 
 			</div>
+			<h2 id="about">About Us</h2>
+			<?=$this->render('/main/widgets/authors-bio.php', ['align' => '', 'image' => 'avatar', 'width' => '']);?>
 			<h2>References</h2>
 			<ol>
 				<li id="1"><strong>Mass Mutual Corporate Governance Information</strong> - Available from: <a href="https://www.massmutual.com/about-us/corporate-governance">https://www.massmutual.com/about-us/corporate-governance</a></li>
-				<li id="2"><strong>AIG Investor Relations</strong> - Available from: <a href="https://www.aig.com/investor-relations">https://www.aig.com/investor-relations</a></li>
+				<li id="2"><strong>AIG 2019 10-K</strong> - Available from: <a href="https://www.aig.com/content/dam/aig/america-canada/us/documents/investor-relations/2020/2019-10k.pdf">https://www.aig.com/content/dam/aig/america-canada/us/documents/investor-relations/2020/2019-10k.pdf</a></li>
 				<li id="3"><strong>AIG 2018 Combined Annual Statement</strong> - Available from: <a href="https://www.aig.com/content/dam/aig/america-canada/us/documents/investor-relations/2019/aig-2018-combined-annual-statement.pdf">https://www.aig.com/content/dam/aig/america-canada/us/documents/investor-relations/2019/aig-2018-combined-annual-statement.pdf</a>
 				</li>
 				<li id="4"><strong>Prudential Financial - We Are The Rock (PDF)</strong> - Available from: <a href="http://news.prudential.com/press_file.cfm?content_id=122671">http://news.prudential.com/press_file.cfm?content_id=122671</a></li>
@@ -348,14 +349,14 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 				<li id="8"><strong>Mutual of Omaha Financial Strength</strong> - Available from: <a href="https://www.mutualofomaha.com/our-story/company-profile/financial-strength">https://www.mutualofomaha.com/our-story/company-profile/financial-strength</a></li>
 				<li id="9"><strong>An Introduction to Aegon (PDF)</strong> - Available from: <a href="https://www.aegon.com/contentassets/b97b7cff02d24b978461ab65fda7131d/aegon-corporate-presentation.pdf">https://www.aegon.com/contentassets/b97b7cff02d24b978461ab65fda7131d/aegon-corporate-presentation.pdf</a>
 				</li>
-				<li id="10"><strong>AM Best Downgrades Credit Ratings of Aegon's US Subsidiaries - Sept 12, 2019</strong> - Available from: <a href="https://www.transamerica.com/media/am-best-aegon-usa-press-release-09-12-2019_tcm145-115859.pdf">https://www.transamerica.com/media/am-best-aegon-usa-press-release-09-12-2019_tcm145-115859.pdf</a>
+				<li id="10"><strong>AM Best Downgrades Credit Ratings of Aegon's US Subsidiaries - Sept 12, 2019</strong> - Available from: <a href="https://www.bloomberg.com/press-releases/2019-09-12/am-best-downgrades-credit-ratings-of-aegon-n-v-s-u-s-subsidiaries">https://www.bloomberg.com/press-releases/2019-09-12/am-best-downgrades-credit-ratings-of-aegon-n-v-s-u-s-subsidiaries</a>
 				</li>
 				<li id="11"><strong>Transamerica 2019 Company Strength Brochure</strong> - Availalbe from: <a href="https://mss-p-002-delivery.stylelabs.cloud/api/public/content/af8ef914ce964ed49a81c624c323a5a5?v=c4e94438">https://mss-p-002-delivery.stylelabs.cloud/api/public/content/af8ef914ce964ed49a81c624c323a5a5?v=c4e94438</a>
 				</li>
 				<li id="12"><strong>Brighthouse Financial 2018 Statutory Statement</strong> - Available from: <a href="https://investor.brighthousefinancial.com/static-files/635b0606-220d-4b04-8cdf-db3e0280a0a5">https://investor.brighthousefinancial.com/static-files/635b0606-220d-4b04-8cdf-db3e0280a0a5</a>
 				</li>
 				<li id="13"><strong>Lincoln Financial Group Ratings</strong> - Available from: <a href="https://www.lfg.com/public/aboutus/investorrelations/financialinformation/ratings">https://www.lfg.com/public/aboutus/investorrelations/financialinformation/ratings</a></li>
-				<li id="14"><strong>Lincoln National Life Insurance Company 2018 Statutory Statement </strong>- Available from: <a href="https://www.lfg.com/wcs-static/pdf/2018LNLIC.pdf">https://www.lfg.com/wcs-static/pdf/2018LNLIC.pdf</a></li>
+				<li id="14"><strong>Lincoln National Company 2018 Statutory Statement </strong>- Available from: <a href="https://www.lfg.com/wcs-static/pdf/2018LNLIC.pdf">https://www.lfg.com/wcs-static/pdf/2018LNLIC.pdf</a></li>
 				<li id="15"><strong>New York Life - Our Story</strong> - Available from: <a href="https://www.newyorklife.com/who-we-are/our-story">https://www.newyorklife.com/who-we-are/our-story</a></li>
 				<li id="16"><strong>New York Life 2018 Report to Policy Owners(PDF)</strong> - Available from: <a href="https://www.newyorklife.com/assets/docs/pdfs/financial-info/2018/report-to-policy-owners.pdf">https://www.newyorklife.com/assets/docs/pdfs/financial-info/2018/report-to-policy-owners.pdf</a>
 				</li>
@@ -367,9 +368,7 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 	</section>
 	<!-- END PAGE-CONTENT -->
 
-	<section class="related-articles">
-		<?=$this->render('/main/widgets/related-articles.php');?>
-	</section>
+
 </div>
 
 <script type="application/ld+json">

@@ -45,7 +45,7 @@ $this->params['breadcrumbs'][] = $this->title;
 		        'filter'=> $categories,
 		        'filterOptions' => ['class' => ''],
 		        'content' => function($model, $key, $index, $column){
-			        $ret = '<span class="label label-info">'.$model->category.'</span>';
+			        $ret = '<span class="badge bg-info text-light">'.$model->category.'</span>';
 
 			        return $ret;
 		        }

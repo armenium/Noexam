@@ -20,11 +20,11 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 
 	<!-- START PAGE-CONTENT -->
 	<section class="page">
-		<aside>
+		<!-- <aside>
 			<div class="sticky-block">
 				<h2>Jump to a section</h2>
 				<ul>
-					<li><a href="#types">Types of Whole Life</a></li>
+					
 					<li><a href="#what">What is Whole Life</a></li>
 					<li><a href="#who">Who Is Whole Life For?</a></li>
 					<li><a href="#advantages">Advantages of Whole Life</a></li>
@@ -32,87 +32,27 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 					<li><a href="#term-vs-whole">Term vs Whole</a></li>
 				</ul>
 			</div>
-		</aside>
+		</aside> -->
 
 		<article class="content">
 			<h1>Whole Life Insurance</h1>
-			<?=Breadcrumbs::widget(['links' => $this->params['breadcrumbs']]);?>
+			<!-- <?=Breadcrumbs::widget(['links' => $this->params['breadcrumbs']]);?> -->
 			<?=$this->render('/main/widgets/authors-small.php', ['updated' => date('F j, Y', filemtime(__FILE__))]);?>
 
-			<p>Whole life insurance is a type of permanent life insurance that offers coverage throughout the lifetime of the insured. For policy holders who are diligent about paying premiums, whole life will provide coverage until the day the policy holder passes, without the need for policy
+			<p>Whole life insurance is a type of permanent life insurance that offers coverage throughout the lifetime of the insured. For policyholders who are diligent about paying premiums, whole life will provide coverage until the day the policyholder passes, without the need for policy
 				conversion, extension, or renewal.</p>
 
 			<p>Among the various types of permanent life insurance policies, whole life insurance is the most common. The American Council of Life Insurers (ACLI) reported out of all policies sold to individuals in the US in 2017(<a href="#1">1</a>), 60 percent were whole life policies.</p>
 
-			<p>Why is whole life insurance more popular? A clear knowledge and understanding of this type of insurance coverage and its benefits and limitations should provide a fair perspective for consumers researching what <a href="https://www.noexam.com/life-insurance/types/">type of life
+			<p>Why is whole life insurance more popular? Clear knowledge and understanding of this type of insurance coverage and its benefits and limitations should provide a fair perspective for consumers researching what <a href="https://www.noexam.com/life-insurance/types/">type of life
 					insurance</a> to buy.</p>
-			<h2 id="types">Types of Whole Life Insurance Policies</h2>
 
-			<p>A whole life policy serves different purposes for different people. Below are common reasons consumers choose whole life insurance.</p>
-
-			<ul>
-				<li><em><u>Meeting expenses</u></em> – The payout as well as loans taken against the cash value of the policy are eligible for use to meet both expected and unanticipated expenses.</li>
-				<li><em><u>Large payouts</u></em> – The substantial death benefits protect beneficiaries from financial burdens when the policy holder passes.</li>
-				<li><em><u>Access to funds</u></em> – As a saving for retirement years and emergencies, the whole life cash value acts as a safety net for both immediate and long-term needs.</li>
-			</ul>
-
-			<p>Choosing which type of whole life insurance policy is best for an individual’s specific circumstances should depend on the applicant’s personal needs and goals. Below is a breakdown of the different whole life policy options available. </p>
-
-			<h3>Universal</h3>
-
-			<p>Part of the premium paid under this policy accumulates in a cash value account, which the policy holder can access and borrow from. In other words, the policy holder can take out a loan against the cash value of a universal life policy.</p>
-
-			<p>The cash value accumulation helps in two ways:</p>
-
-			<ul>
-				<li>The money collected in this account is tax-free.</li>
-				<li>The borrower does not have to repay these loans taken from this account. However, the unreturned amount is, under most circumstances, deducted from the final payout value and the beneficiary receives whatever amount remains.</li>
-			</ul>
-
-			<p>This cash value account can serve as a contingency access fund and help during any unforeseen emergencies such as a health-related emergency. During later years, some people use this cash to supplement post-retirement income.</p>
-
-			<h3>Variable</h3>
-
-			<p>Here, the cash value portion of the premium gets reinvested into various sub-accounts, much like mutual funds. Unlike the Universal whole life policy, where the buildup of premiums leads to fund accumulation in the cash value account, in the variable whole life policy the accrued
-				value grows at the rate at which each sub-account is growing.</p>
-
-			<p>Policy holders can make withdrawals from this cash value accumulation, as well. The only difference is the rate of accumulation will vary for both types of whole life policies.</p>
-
-			<h3>Guaranteed Issue</h3>
-
-			<p>The medical status of the applicant usually has a direct bearing on the cost of the premium for whole life insurance. A person with significant health complications may end up paying higher premiums. In extreme cases, insurers may deny insurance altogether.</p>
-
-			<p>Most guaranteed issue polices do not require medical underwriting. This means the policy premium is independent of the policyholder’s health condition. For this category of whole life insurance, insurers will waive the mandatory medical exams other policies require. </p>
-
-			<p>Regardless of age or health condition, this insurance does not require buyers to undergo a medical exam.</p>
-
-			<h3>Survivorship</h3>
-
-			<p>In most cases, death benefits of a life insurance policy are paid out in the event of death of the insured. Each policy offers coverage to only one person’s life.</p>
-
-			<p>However, survivorship insurance is a unique variant of life insurance that covers two individuals—most often a married couple. The beneficiary of such a policy will receive the payout only after both of the insured individuals die. While even one of the insured survives, the policy
-				continues to be active.</p>
-
-			<h3>Single Premium</h3>
-
-			<p>Most life insurance policy premiums are paid at fixed intervals—monthly, annually etc. But depending on the needs of the policy holder, single premium permanent life insurance may be an option. For such policies, a substantial sum is collected upfront in lieu of fixed interval
-				(monthly) premiums. This single premium amount can be quite large, but it spares the insured the following:</p>
-
-			<ul>
-				<li>Any worries about being able to afford premium payments for a prolonged period—literally for the entire lifetime of the insured</li>
-				<li>The risk of missing a premium payment</li>
-			</ul>
-
-			<h3>Graded Premium</h3>
-
-			<p>In this type of whole life insurance, the premium amount increases with time. The lower early premiums can match the potentially lower incomes of younger applicants. With time, as the policyholder’s income grows, so does the premium amount. This staggered approach makes whole life
-				insurance more financially prudent and affordable for younger-aged consumers looking to purchase life insurance.</p>
 			<h2 id="what">What is Whole Life Insurance</h2>
 
 			<p>To understand whole life insurance, one should first understand the key elements of this type of coverage.</p>
 
 			<h3>Permanent Coverage</h3>
-			<p>In the case of a term life insurance policy, the coverage term is fixed (e.g. 30 years). This means the policyholder may outlive the policy duration. Once the policy expires, the insurance company is no longer responsible for paying out any death benefits to the beneficiary. This
+			<p>In the case of a term life insurance policy, the coverage term is fixed (e.g. 30 years). This means the policyholder may <a href="https://www.noexam.com/life-insurance/term/outlive-policy/">outlive the policy duration</a>. Once the policy expires, the insurance company is no longer responsible for paying out any death benefits to the beneficiary. This
 				concern is avoided, though, in whole life insurance, which remains active until the last day of the insured’s life, provided there was no default on premium payments. This increases the chances of beneficiaries receiving the final payout.</p>
 
 			<h3>Fixed Premiums</h3>
@@ -120,7 +60,7 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 			<p>Most permanent life insurance policy premiums are fixed amounts. This means the rate the policy begins with will be the same rate throughout the policy—it is not subject to change. The advantages of fixed premiums are:</p>
 
 			<ul>
-				<li>The premium amount is never uncertain or unknown. Therefore, there are no surprises or worry of affordability of increasing rates in the future.</li>
+				<li>The premium amount is never uncertain or unknown. Therefore, there are no surprises or worrieds of affordability of increasing rates in the future.</li>
 				<li>Budgeting for future premium payments and personal financial planning becomes easier.</li>
 			</ul>
 
@@ -130,7 +70,7 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 
 			<ul>
 				<li>This amount grows with time.</li>
-				<li>The policy holder can withdraw or take a loan against this accumulated savings account.</li>
+				<li>The policyholder can withdraw or take a loan against this accumulated savings account.</li>
 			</ul>
 
 			<p>This additional saving feature of the whole life insurance distinguishes it from <a href="https://www.noexam.com/life-insurance/term/">term life insurance</a>.</p>
@@ -156,7 +96,7 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 
 			<p>The whole life insurance policy is not for a fixed duration like the term life plan. It provides coverage for the whole life of the insured. But whole life policies are not necessarily limited to the death benefit alone.</p>
 
-			<p>Before selecting a life insurance plan, those shopping around for coverage should consider all the options available. A brief compilation of the potential financial gains a whole life insurance policy can provide are detailed below.</p>
+			<p>Before selecting a life insurance plan, those shopping around for coverage should consider all the options available. A brief compilation of the potential financial gains a whole life insurance policy can provide is detailed below.</p>
 
 			<h3>1. Guaranteed Protection of Value and Growth</h3>
 
@@ -165,13 +105,13 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 
 			<h3>2. Additional income</h3>
 
-			<p>Whole life coverage is exchangeable for an annuity that will pay out a steady income for life. This exchange will not draw any taxation. Policy holders considering this should consult a registered financial consultant or a tax expert for advice before taking action. </p>
+			<p>Whole life coverage is exchangeable for an annuity that will pay out a steady income for life. This exchange will not draw any taxation. Policyholders considering this should consult a registered financial consultant or a tax expert for advice before taking action. </p>
 			<p>A professional licensed life insurance broker is better suited to assess what your unique needs are.
 			</p>
 
 			<h3>3. Potential Source of Funds</h3>
 
-			<p>During the lifetime of the insured, if he or she has individual needs requiring additional funds to meet important expenses, whole life insurance’s accumulated cash value can be very useful. Policy holders can take a loan from this amount and repay later, but anyone borrowing against
+			<p>During the lifetime of the insured, if he or she has individual needs requiring additional funds to meet important expenses, whole life insurance’s accumulated cash value can be very useful. Policyholders can take a loan from this amount and repay later, but anyone borrowing against
 				their benefit amount should remember:</p>
 
 			<ul>
@@ -182,11 +122,11 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 
 			<h3>4. Annual dividends</h3>
 
-			<p>Some insurance companies will share a part of their annual profits with their policy holders, in the form of annual dividends paid for the life of the whole life insurance policy. The dividend amounts are variable and depend upon the profits earned. Policy holders can use dividends to
+			<p>Some insurance companies will share a part of their annual profits with their policyholders, in the form of annual dividends paid for the life of the whole life insurance policy. The dividend amounts are variable and depend upon the profits earned. Policyholders can use dividends to
 				purchase additional coverage. Further benefits of this include the following:</p>
 
 			<ul>
-				<li>Increase the death benefit .</li>
+				<li>Increase the death benefit.</li>
 				<li>Increase cash value</li>
 			</ul>
 
@@ -205,7 +145,7 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 				policy ceases to exist.</p>
 
 			<ul>
-				<li>The policy holder does not need to pay further premiums after surrendering the policy.</li>
+				<li>The policyholder does not need to pay further premiums after surrendering the policy.</li>
 				<li>Beneficiaries named in the original policy cannot claim the death benefit.</li>
 			</ul>
 
@@ -214,7 +154,7 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 			<p>Whole life insurance can be used as a savings vehicle. It serves three purposes:</p>
 
 			<ul>
-				<li>Protects families from financial burdens in the event of the policy holder’s death</li>
+				<li>Protects families from financial burdens in the event of the policyholder’s death</li>
 				<li>Acts as a contingency financial relief option</li>
 				<li>Interests and dividends grow tax-free, increasing the amount available for compounding.</li>
 			</ul>
@@ -222,9 +162,9 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 			<h2 id="limitations">Limitations of Whole Life Insurance</h2>
 
 			<ul>
-				<li>Whole life insurance has a few complex dimensions. For instance, the insured can borrow money from the accumulated cash value only after being insured for a fixed duration. This pre-condition is mainly to ensure some funds accrue before withdrawal.</li>
-				<li>Your policy can lapse if the sum of your outstanding loan and its accumulated interest amount exceeds the cash value of your policy. So, be very careful when you take out any loan against the accumulated amount.</li>
-				<li>When someone buys a whole life policy, they commit to make regular premium payments for their lifetime. If the insured does not meet this obligation, the premiums will be paid out of the cash value account. Prolonged default will cause the polcy to lapse.</li>
+				<li>Whole life insurance has a few complex dimensions. For instance, the insured can borrow money from the accumulated cash value only after being insured for a fixed duration. This precondition is mainly to ensure some funds accrue before a withdrawal.</li>
+				<li>Your <a href="https://www.noexam.com/life-insurance/lapses/">policy can lapse</a> if the sum of your outstanding loan and its accumulated interest amount exceeds the cash value of your policy. So, be very careful when you take out any loan against the accumulated amount.</li>
+				<li>When someone buys a whole life policy, they commit to making regular premium payments for their lifetime. If the insured does not meet this obligation, the premiums will be paid out of the cash value account. Prolonged default will cause the policy to lapse.</li>
 				<li>The premium amount payable under the whole life insurance is higher than that of term life. Even though during the initial years, premiums are costlier, whole life insurance can be cost-effective, if obtained early in life.</li>
 			</ul>
 
@@ -243,13 +183,13 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 
 			<ul>
 				<li>Payout only in case of death.</li>
-				<li>No benefit if policy term expires before death of insured</li>
+				<li>No benefit if policy term expires before the death of insured</li>
 				<li>Easy to purchase.</li>
 				<li>Affordable</li>
-				<li>Policy valid for fixed term (e.g. 5, 10, 15, or 30 years)</li>
+				<li>Policy valid for a fixed term (e.g. 5, 10, 15, or 30 years)</li>
 				<li>Premium increases with age; especially higher for persons above 50</li>
-				<li>Policy renewal must take place once term ends</li>
-				<li>Could serve as a provisional protection to augment permanent life insurance coverage</li>
+				<li>Policy renewal must take place once the term ends</li>
+				<li>Could serve as provisional protection to augment permanent life insurance coverage</li>
 				<li>Convertible into whole life insurance</li>
 			</ul>
 
@@ -257,13 +197,13 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 
 			<ul>
 				<li>Lifetime coverage.</li>
-				<li>Dual benefit of death benefit in case of death as well as cash value accumulation.</li>
+				<li>Dual benefit of the death benefit in case of death as well as cash value accumulation.</li>
 				<li>Medical exam nearly always required</li>
-				<li>If purchased without medical exam, cost increases</li>
+				<li>If purchased without a medical exam, cost increases</li>
 				<li>Requires 12 to15 years for cash value to build</li>
 				<li>A good estate planning instrument</li>
-				<li>Cash value varies with the changes in value of return on investment of its underlying asset</li>
-				<li>Policy holder can withdraw or borrow against accumulated cash value while the policy is in force</li>
+				<li>Cash value varies with the changes in the value of return on investment of its underlying asset</li>
+				<li>The policyholder can withdraw or borrow against accumulated cash value while the policy is in force</li>
 				<li>Premiums are higher than that of term life insurance, especially during the initial years; however, staying invested for decades can offset this cost</li>
 			</ul>
 
@@ -273,10 +213,10 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 				with an insurance agent. The agent will walk them through the process. Before making a choice, consumers should consider the following factors:</p>
 
 			<ul>
-				<li>Current age of insured</li>
-				<li>Present health of insured</li>
+				<li>The current age of insured</li>
+				<li>The present health of insured</li>
 				<li>Family’s financial needs</li>
-				<li>Estimated <a href="https://www.noexam.com/life-insurance/burial-insurance/">cost of funeral and similar expenses</a></li>
+				<li>The estimated <a href="https://www.noexam.com/life-insurance/burial-insurance/">cost of a funeral and similar expenses</a></li>
 				<li>Children’s age</li>
 				<li>Expenses in case of serious long-term ailments</li>
 				<li>Outstanding loans and <a href="https://www.noexam.com/life-insurance/mortgage/">mortgage amounts</a></li>
@@ -301,7 +241,7 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 				<li>Children’s long term education expenses</li>
 			</ul>
 
-			<p>Many middle-aged policy holders who have children set the duration of their policy to match with the time their children might complete college. In such cases, term life insurance may be the right choice.</p>
+			<p>Many middle-aged policyholders who have children set the duration of their policy to match with the time their children might complete college. In such cases, term life insurance may be the right choice.</p>
 
 			<p>Alternatively, a whole life insurance policy with the same coverage amount is another option. With this insurance:</p>
 
@@ -311,22 +251,22 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 				<li>The cash value can serve as a financial safety net for emergencies</li>
 			</ul>
 
-			<p>Still yet another option for the example of the 32-year-old above would be a conversion of term life into whole life coverage. This could allow for additional retirement savings. </p>
+			<p>Still, yet another option for the example of the 32-year-old above would be a conversion of term life into whole life coverage. This could allow for additional retirement savings. </p>
 
 			<h2>Converting from Term Life to Whole Life</h2>
 
 			<p>Most insurers of life insurance permit converting a term life insurance policy into any permanent life insurance, including whole life. But under what circumstances is this the right course of action? Some situations in which this conversion may be useful include:</p>
 
 			<ul>
-				<li>Policy holder is already in his or her 50s or 60s, and their term life policy is due to expire</li>
-				<li>The insured want to continue coverage but due to his or her age or other factors the desired term length is not available.</li>
-				<li>Policy holder plans to set up an estate, but the significant estate taxes are bothersome</li>
+				<li>The policyholder is already in his or her 50s or 60s, and their term life policy is due to expire</li>
+				<li>The insured wants to continue coverage but due to his or her age or other factors, the desired term length is not available.</li>
+				<li>The policyholder plans to set up an estate, but the significant estate taxes are bothersome</li>
 				<li>The insured’s will includes a trust</li>
-				<li>The policy holder is looking for tax-free investment options</li>
+				<li>The policyholder is looking for tax-free investment options</li>
 
 			</ul>
 
-			<strong>Converting term life to whole life can allow policy holders to:</strong>
+			<strong>Converting term life to whole life can allow policyholders to:</strong>
 
 			<ul>
 				<li>Gain extended coverage</li>
@@ -337,7 +277,7 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 
 			<h2>Buying both Term Life and Whole Life</h2>
 
-			<p>Individuals can simultaneously own both kinds of life insurance. In most cases, persons who consider this option would already own a whole life policy. Any short-term need for additional coverage could trigger the demand for a <a
+			<p>Individuals can simultaneously own both kinds of life insurance. In most cases, persons who consider this option would already own a whole life policy. Any short-term need for additional coverage could trigger the demand for <a
 						href="https://www.noexam.com/life-insurance/supplemental/">supplementary term life insurance</a>. The duration of the term life coverage will match the duration of the additional risk.</p>
 
 			<p>In some instances, candidates for whole life insurance already own a term insurance policy and are interested in whole life insurance as an investment option for:</p>
@@ -352,11 +292,11 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 			<p>When a claim is made, the beneficiary receives the death benefit while the insurance company gets the cash value.</p>
 
 			<ul>
-				<li>Whole life insurance guarantees death benefit, irrespective of when the insured dies, because other than in extraordinary circumstances, the policy remains active for the duration of the policy holder’s life. But term life benefits are payable for a fixed duration only.</li>
-				<li>Whole life has an additional benefit of accumulated cash the policy holder can withdraw or take a loan from.</li>
+				<li>Whole life insurance guarantees a death benefit, irrespective of when the insured dies, because other than in extraordinary circumstances, the policy remains active for the duration of the policyholder’s life. But term life benefits are payable for a fixed duration only.</li>
+				<li>Whole life has an additional benefit of accumulated cash the policyholder can withdraw or take a loan from.</li>
 				<li>If a withdrawal is made, the death benefit will be reduced by that sum.</li>
 				<li>This withdrawal is not taxable unless it exceeds the amount of premiums you’ve paid into the policy.</li>
-				<li>Once a policy is “paid up”—the cash value has accumulated enough to allow loan, withdrawal etc.—the policy holder can use it to pay the whole life insurance premiums on the same policy.</li>
+				<li>Once a policy is “<a href="https://www.noexam.com/life-insurance/paid-up/">paid up</a>”—the cash value has accumulated enough to allow loan, withdrawal, etc.—the policyholder can use it to pay the whole life insurance premiums on the same policy.</li>
 
 			</ul>
 
@@ -369,7 +309,7 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 
 			<h3><a href="https://www.noexam.com/life-insurance/waiver-of-premium/">Waiver of Premium Rider</a></h3>
 
-			<p>If the policy holder is unable to work due to a permanent disability or illness, the insurer may waive the premiums. This is applicable for instances such as:</p>
+			<p>If the policyholder is unable to work due to permanent disability or illness, the insurer may waive the premiums. This is applicable for instances such as:</p>
 			<ul>
 				<li>Amputation</li>
 				<li>Paralysis (full or partial)</li>
@@ -385,34 +325,34 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 
 			<ul>
 				<li>The percentage of benefits paid in advance can be below 50 percent.</li>
-				<li>Definition of terminal illness varies from one policy to another.</li>
+				<li>The definition of terminal illness varies from one policy to another.</li>
 				<li>Benefits paid are usually taken out of the face value of the policy once a claim is made.</li>
 
 			</ul>
 
-			<p>A critical care rider is similar. The policy holder can utilize an early partial payout from the death benefit if he or she receives a diagnosis of an illness that requires prolonged intensive treatment.</p>
+			<p>A critical care rider is similar. The policyholder can utilize an early partial payout from the death benefit if he or she receives a diagnosis of an illness that requires prolonged intensive treatment.</p>
 			<p>For instance, if the insured suffers a stroke and requires constant nursing care, a premature partial payout of benefits is available to pay medical bills.</p>
 
 
-			<p>If the insurer offers this rider free of charge, it is in the best interest of the insured to take advantage of this benefit. If the insurer does not offer it for free, the policy holder can decide if it is in the best interest of the policy and, ultimately, the beneficiary, to opt-in
+			<p>If the insurer offers this rider free of charge, it is in the best interest of the insured to take advantage of this benefit. If the insurer does not offer it for free, the policyholder can decide if it is in the best interest of the policy and, ultimately, the beneficiary, to opt-in
 				after going through the terms and conditions of the rider in detail. Understanding the conditions under which this rider will apply will make the decision undoubtedly easier. </p>
 
 			<h2>Tax Rules for Whole Life Insurance</h2>
 			<ul>
-				<li>The death benefit is exempt from tax. Just as in the case of term life insurance payouts, the lump sum paid to beneficiaries upon death of the policy holder is not a taxable asset.</li>
-				<li>Using prudent measures, policy holders can avail tax-free loans issued out of their cash value. This loan can fund expenses such as college tuition or augment retirement income.</li>
+				<li>The death benefit is exempt from tax. Just as in the case of term life insurance payouts, the lump sum paid to beneficiaries upon the death of the policyholder is not a taxable asset.</li>
+				<li>Using prudent measures, policyholders can avail tax-free loans issued out of their cash value. This loan can fund expenses such as college tuition or augment retirement income.</li>
 			</ul>
 
-			<p>Conscientious policy holders should exercise extreme caution with these loans, however. Borrowing combined with poor management can create an income tax liability if the policy lapses or is surrendered. The taxable gain is calculated without considering the loan amount.</p>
+			<p>Conscientious policyholders should exercise extreme caution with these loans, however. Borrowing combined with poor management can create an income tax liability if the policy lapses or is surrendered. The taxable gain is calculated without considering the loan amount.</p>
 
 			<h2>Top Companies Selling Whole Life Insurance</h2>
 
-			<p>For a more in depth look at whole life insurance companies, see our <a href="../whole/best-companies/">guide to the best whole life insurance companies</a>.</p>
+			<p>For a more in-depth look at whole life insurance companies, see our <a href="../whole/best-companies/">guide to the best whole life insurance companies</a>.</p>
 
 			<h3>Guardian Life Insurance</h3>
 
 			<ul>
-				<li>• In certain types whole life policies offered by Guardian Life Insurance, the rate of cash value accumulation is linked to the Standard & Poor’s 500 Index.</li>
+				<li>• In certain types of whole life policies offered by Guardian Life Insurance, the rate of cash value accumulation is linked to the Standard & Poor’s 500 Index.</li>
 				<li>• On every 10th anniversary of an insured’s policy, he or she may attain the loan option at both fixed and floating rates.</li>
 				<li>• Guardian has a history of paying out dividends to policyholders.</li>
 
@@ -422,7 +362,7 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 			<ul>
 				<li>MassMutual guarantees their whole life policies against rejection on medical grounds. In other words, they do not require a medical test for 50- to 75-year-old applicants opting for coverage from $2,000 to $25,000.</li>
 				<li>Medical exams are, however, mandatory for policies with higher coverage amounts.</li>
-				<li>Policy holders may earn dividends from MassMutual.</li>
+				<li>Policyholders may earn dividends from MassMutual.</li>
 
 			</ul>
 
@@ -430,7 +370,7 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 			<ul>
 				<li>Mutual of Omaha features three offerings in whole life insurance with diverse features and payouts.</li>
 				<li>This company does not require medical examinations.</li>
-				<li>Based on chosen policy type, Mutual of Omaha offers coverage amounts between $3,000 and $50,000.</li>
+				<li>Based on the chosen policy type, Mutual of Omaha offers coverage amounts between $3,000 and $50,000.</li>
 				<li>This provider offers whole life insurance for children as well.</li>
 
 			</ul>
@@ -439,7 +379,7 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 
 			<ul>
 				<li>New York Life whole life insurance policies include a standard policy variant and a customized policy for accelerated cash value accumulation.</li>
-				<li>New York Life policy holders may earn dividends.</li>
+				<li>New York Life policyholders may earn dividends.</li>
 
 			</ul>
 
@@ -447,9 +387,9 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 
 			<ul>
 				<li>Northwestern Mutual offers standard whole life insurance and CompLife (a combination of term and whole life insurance)</li>
-				<li>Policy holders have the options of premium payment durations of until 65 years of age or until 90 years of age.</li>
+				<li>Policyholders have the options of premium payment durations of until 65 years of age or until 90 years of age.</li>
 				<li>Northwestern Mutual features policy periods of 10 to 30 years.</li>
-				<li>Policy holders benefit from a dividend payout option.</li>
+				<li>Policyholders benefit from a dividend payout option.</li>
 
 			</ul>
 
@@ -457,7 +397,7 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 
 			<ul>
 				<li>Ohio National Life Insurance Company offers four options for coverage with diverse premium payment terms.</li>
-				<li>Policy holders get a dividend payment option.</li>
+				<li>Policyholders get a dividend payment option.</li>
 				<li>This company offers an exclusive option of $10,000 for final expenses for persons aged 50 to 80.</li>
 
 			</ul>
