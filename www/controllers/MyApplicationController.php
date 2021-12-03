@@ -226,7 +226,7 @@ class MyApplicationController extends BaseController {
 		return $this->redirect([$redirect_url]);
 	}
 	
-	public function actionGoback(){
+	public function actionGobackstep(){
 		Yii::$app->response->format = Response::FORMAT_JSON;
 		
 		$redirect = '/start-quote/';
@@ -234,23 +234,21 @@ class MyApplicationController extends BaseController {
 		$current_url = Yii::$app->request->post('current_url');
 		$u = explode($_SERVER['HTTP_HOST'], $current_url);
 		$current_uri = $u[1];
-		//VarDumper::dump($current_uri);
+		#VarDumper::dump($current_uri); exit;
 		
 		switch($current_uri){
-			case "/personalinfo/":
-				$redirect = "/";
+			case "/online-application-step-2/":
+				$redirect = "/online-application-step-1/";
 				break;
-			case "/personalinfo2/":
-				$redirect = "/personalinfo/";
-				break;
-			case "/questions2/":
-				$redirect = "/personalinfo2/";
+			case "/online-application-step-3/":
+				$redirect = "/online-application-step-2/";
 				break;
 			case "/beneficiary/":
 				$redirect = "/questions2/";
 				break;
-			case "/paymentinfo/":
-				$redirect = "/beneficiary/";
+			case "/online-application-step-1/":
+			case "/online-application-step-intermediary-questions/":
+				$redirect = "/quote-results/";
 				break;
 			default:
 				$session = Yii::$app->session;
@@ -362,43 +360,31 @@ class MyApplicationController extends BaseController {
 			return $this->redirect('/');
 		}
 		
-		return $this->render('success', ['report_data' => $report]);
+		return $this->render('step-success', ['report_data' => $report]);
 	}
 	
-	public function actionNotEligible(){
-		return $this->render('not-eligible');
+	public function actionOnlineApplicationStepNotEligible(){
+		return $this->render('step-not-eligible');
 	}
 	
-	public function actionIntermediaryQuestions(){
-		$isMobile     = Yii::$app->params['devicedetect']['isMobile'];
-		$session      = Yii::$app->session;
-		
-		//$customer_data = $this->getCustomeData();
-		$customer_data = CustomerData::find()->where(['sid' => $session->id])->one();
-		//VarDumper::dump($customer_data, 10, true);
-		if(count($customer_data)){
+	public function actionOnlineApplicationStepIntermediaryQuestions(){
+		$customer_data = $this->getCustomeData('new', false);
+		#VarDumper::dump($customer_data, 10, true);
+
+		if(!is_null($customer_data)){
 			$customer_data->attributes = $customer_data->decodeData();
-			//if($customer_data->step != 'add-question' && $customer_data->step != 'personal-info2'){
-			//return $this->redirect($this->getStepUrl($customer_data->step));
-			//}
 		}else{
 			return $this->redirect('/');
 		}
 		
-		$_questions = [];
-		$_subquestions = [];
-		
-		$questions    = Questions::find()->where(['type' => 'question_nq'])->orderBy('item_order ASC')->all();
+		$questions = Questions::find()->where(['type' => 'question_nq'])->orderBy('item_order ASC')->all();
 		foreach($questions as $k => $question){
 			$questions[$k]->sub_questions = $question->getSubquestion()->all();
 		}
-		//VarDumper::dump($questions, 10, true);
-		//$subquestions = $questions->subquestion;
-		//VarDumper::dump($subquestions, 10, true);
 		
-		//VarDumper::dump($questions, 10, 1);
+		#VarDumper::dump($questions, 10, 1);
 		
-		return $this->render('intermediary', ['questions' => $questions]);
+		return $this->render('step-intermediary', ['questions' => $questions, 'customer_data' => $customer_data]);
 	}
 	
 	public function actionGetQuestions(){

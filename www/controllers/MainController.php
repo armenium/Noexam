@@ -1527,7 +1527,8 @@ class MainController extends BaseController {
 		$server->setClass('app\components\Soap');
 		$server->handle();
 	}
-
+	
+	/** OLD */
 	public function actionIntermediaryQuestions(){
 		$isMobile     = Yii::$app->params['devicedetect']['isMobile'];
 		$session      = Yii::$app->session;

@@ -6,8 +6,6 @@ use app\widgets\Author;
 use yii\bootstrap\BootstrapAsset;
 use yii\web\JqueryAsset;
 use yii\web\View;
-use app\widgets\ApplyNowForm;
-use app\widgets\RateCalcForm2;
 use app\widgets\CompanyRating;
 
 

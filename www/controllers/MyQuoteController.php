@@ -99,7 +99,7 @@ class MyQuoteController extends BaseController {
 					$model->attributes = $model->decodeData();
 					if($request->post('CustomerData')['company_code'] != 'sagicor'){
 						Yii::info('Step - "quote-result". company_code = '.$request->post('CustomerData')['company_code'].'. Planing redirect to "intermediary-questions".', 'noexam' );
-						$redirect_url = '/intermediary-questions/';
+						$redirect_url = '/online-application-step-intermediary-questions/';
 					}else{
 						Yii::info('Step - "quote-result". Planing redirect to "online-application-step-1".', 'noexam' );
 					}

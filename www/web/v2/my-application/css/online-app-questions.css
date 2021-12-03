@@ -60,6 +60,11 @@
 .main-questions table.avia input[type="text"]:disabled {background-color: #ccc;}
 .main-questions table.avia input[type="radio"] {display: inherit;}
 
+.online-app-questions__table {color: #757B77; font-size: 16px; margin: 0 15px 15px; width: 100%;}
+.online-app-questions__table .sub-question {padding: 5px; width: 50%; line-height: normal; border-bottom: 0 solid #eee; vertical-align: top;}
+.online-app-questions__table .sub-questions tbody tr:last-child .sub-question {border: 0;}
+.online-app-questions__table .sub-question .text {padding: 0; margin: 0; display: list-item;}
+
 @media screen and (max-width: 767px) {
 	.online-app-questions__box {padding: 20px;}
 	.online-app-questions__item-header {flex-direction: column;}
@@ -69,4 +74,6 @@
 	.online-app-questions__item-num {width: 32px;}
 	.online-app-questions__form-btn {height: 60px;}
 	.online-app-questions__form-btn:first-child {margin-right: 15px;}
+
+	.online-app-questions__table {margin: 0 0 15px;}
 }

@@ -20,7 +20,7 @@ $(function(){
 		},
 		vars: {},
 		routes: {
-			go_back: '/my-application/goback/',
+			go_back: '/my-application/gobackstep/',
 			add_beneficiary: '/my-application/add-beneficiary/',
 		},
 		els: {},

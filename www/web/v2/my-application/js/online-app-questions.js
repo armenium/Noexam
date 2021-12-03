@@ -25,7 +25,7 @@ $(document).ready(function(){
 		$.ajax({
 			type: "POST",
 			dataType: "json",
-			url: "/my-application/goback",
+			url: "/my-application/gobackstep/",
 			data: {current_url: window.location.href},
 		}).done(function(responce){
 			console.log(responce);
