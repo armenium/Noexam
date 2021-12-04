@@ -1,0 +1,99 @@
+.online-app-main-label {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.online-app-main-label>span,
+.online-app-main-label {
+    color: #757575;
+    margin-bottom: 10px;
+}
+
+.online-app-main-input {
+    width: 100%;
+    max-width: 245px;
+    background-color: #FFF;
+    border: 1px solid #BABABA;
+    border-radius: 4px;
+    padding: 18px 15px;
+    font-size: 18px;
+    line-height: 26px;
+    color: #000;
+}
+.online-app-main-input[type="text"],
+.online-app-main-input[type="tel"],
+.online-app-main-input[type="email"],
+.online-app-main-input[type="number"] {height: 55px;}
+
+.input--invalid {
+    background-color: #D6ECE3;
+    border: 1px solid #377660;
+}
+
+.bg-section__img1 {
+    position: absolute;
+    top: 273px;
+    left: 103px;
+    z-index: -1;
+}
+
+.bg-section__img2 {
+    position: absolute;
+    top: 490px;
+    left: 530px;
+    z-index: -1;
+}
+
+.bg-section__img3 {
+    position: absolute;
+    top: 305px;
+    right: 120px;
+    z-index: -1;
+}
+
+.question-mark {
+    font-weight: 600;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #377660;
+    transform: translateX(20px);
+}
+
+.question-mark:hover {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.popover {background-color: #98CCB4; border-color: #98CCB4; max-width: 340px;}
+.popover .arrow {left: auto; right: 10px;}
+.popover .arrow:before,
+.popover .arrow:after {border-bottom-color: #98CCB4;}
+.popover .popover-body {padding: 24px; color: #282B29; line-height: 24px;}
+
+@media screen and (max-width: 767px) {
+    .main-wrapp {
+        padding-top: 90px;
+        padding-bottom: 50px;
+    }
+    .my-quote-steps {
+        padding: 35px 0;
+    }
+    .bg-section__img1,
+    .bg-section__img2,
+    .bg-section__img3 {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .question-mark {
+        transform: translateX(10px);
+    }
+}

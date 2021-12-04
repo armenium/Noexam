@@ -83,8 +83,8 @@ $this->params['breadcrumbs'][] = ['label' => 'Careers', 'url' => Url::toRoute('c
 
 </article>
 
-<section class="container-fluid third">
-	<div class="row intro">
+<section class="main-wrapp">
+	<div class="wrapp">
 		<div class="content">
 			<div class="title">Work Remotely</div>
 			<div class="desc">Send your resume to support@noexam.com to apply. Please include what states you are licensed in. Make the right career choice in 2019!</div>
@@ -93,14 +93,5 @@ $this->params['breadcrumbs'][] = ['label' => 'Careers', 'url' => Url::toRoute('c
 	</div>
 </section>
 
-<div class="main-wrapp get-started-wrap">
-	<div class="wrapp">
-		<section class="get-started">
-			<h1 class="get-started__title heading-2">Ready to get started?</h1>
-			<p class="get-started__subtitle fontBodyL">Get a quote, compare prices, and apply online today! The new method for buying life insurance.</p>
-			<a href="/apply-now/" class="get-started__btn main-btn button-big">apply now</a>
-		</section>
-	</div>
-</div>
 
 <?=$this->render('sections/home/get-started.php');?>
