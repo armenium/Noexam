@@ -15,4 +15,4 @@ $this->title = 'Buy Life Insurance Online - Get My Price';
 $this->params['breadcrumbs'][] = ['label' => 'Get My Price', 'url' => Url::toRoute('get-my-price/'), 'class' => 'breadcrumbs__link tags breadcrumbs__link--active'];
 
 ?>
-<?=$this->render('sections/about/get-started.php');?>
+<?=$this->render('sections/home/get-started.php');?>

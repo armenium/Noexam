@@ -29,6 +29,6 @@ echo $this->render('sections/about/leadership.php');
 echo $this->render('sections/about/in-the-press.php');
 echo $this->render('sections/about/contact-us.php');
 echo $this->render('sections/about/reviews.php');
-echo $this->render('sections/about/get-started.php');
+echo $this->render('sections/home/get-started.php');
 
 

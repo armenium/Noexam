@@ -15,4 +15,4 @@ $this->title = 'Buy Life Insurance Online - Partnership';
 $this->params['breadcrumbs'][] = ['label' => 'Partnership', 'url' => Url::toRoute('partnership/'), 'class' => 'breadcrumbs__link tags breadcrumbs__link--active'];
 
 ?>
-<?=$this->render('sections/about/get-started.php');?>
+<?=$this->render('sections/home/get-started.php');?>

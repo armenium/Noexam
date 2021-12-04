@@ -279,4 +279,4 @@ $this->params['breadcrumbs'][] = ['label' => 'Privacy', 'url' => Url::toRoute('p
 		</ul>
 	</section>
 </article>
-<?=$this->render('sections/about/get-started.php');?>
+<?=$this->render('sections/home/get-started.php');?>

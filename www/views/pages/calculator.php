@@ -15,4 +15,4 @@ $this->title = 'Buy Life Insurance Online - Calculator';
 $this->params['breadcrumbs'][] = ['label' => 'Calculator', 'url' => Url::toRoute('calculator/'), 'class' => 'breadcrumbs__link tags breadcrumbs__link--active'];
 
 ?>
-<?=$this->render('sections/about/get-started.php');?>
+<?=$this->render('sections/home/get-started.php');?>

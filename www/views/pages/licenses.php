@@ -85,4 +85,4 @@ $this->params['breadcrumbs'][] = ['label' => 'Licenses', 'url' => Url::toRoute('
 		<p>If you have questions about our corporate licensing for No Exam Life Insurance, Inc, please contact our office at 888-407-0714</p>
 	</section>
 </article>
-<?=$this->render('sections/about/get-started.php');?>
+<?=$this->render('sections/home/get-started.php');?>

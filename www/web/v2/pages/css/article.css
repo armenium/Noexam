@@ -22,8 +22,13 @@ article a:hover {text-decoration: underline;}
 article .list-2-col li {flex: 0 0 50%; padding: 0 15px;}
 article .list-3-col li {flex: 0 0 33%; padding: 0 15px;}
 
-@media screen and (max-width: 768px) {
-}
+.jobs-list {list-style: none outside; padding: 0; margin: 0;}
+.jobs-list .item {margin: 0 0 25px; border: 2px solid #d6d6d6; border-radius: 8px; padding: 40px 33px; vertical-align: middle; overflow: hidden;}
+.jobs-list .item .title {float: left; vertical-align: middle; font-size: 28px; font-weight: bold; color: #4a4a4a;}
+.jobs-list .item .company {float: right; text-align: right; color: #999; line-height: 1;}
+.jobs-list .item .company .name {font-size: 18px; font-weight: bold; margin-bottom: 4px;}
+.jobs-list .item .company .location {font-size: 14px; font-weight: 100;}
+.jobs-list .item .desc {font-size: 18px; line-height: 30px; color: #999; margin-top: 15px; padding-top: 15px; border-top: 1px solid #eee;}
+.jobs-list .item:hover .title {color: #cacaca;}
+.jobs-list .item:hover .company {color: #666;}
 
-@media screen and (max-width: 575px) {
-}
