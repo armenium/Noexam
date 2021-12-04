@@ -21,14 +21,14 @@ $this->registerCssFile('@web/v2/common/css/get-started.css', ['depends' => [Boot
 $this->registerJsFile('@web/v2/plugins/js/slick.js', ['depends' => [JqueryAsset::className(), AppAsset::className()]]);
 $this->registerJsFile('@web/v2/pages/js/home.js', ['depends' => [JqueryAsset::className(), AppAsset::className()]]);
 
-echo $this->render('sections/home/01.php');
-echo $this->render('sections/home/02.php');
-echo $this->render('sections/home/03.php');
-echo $this->render('sections/home/04.php');
-echo $this->render('sections/home/05.php');
-echo $this->render('sections/home/06.php');
-echo $this->render('sections/home/07.php');
+echo $this->render('sections/home/hero.php');
+echo $this->render('sections/home/customers.php');
+echo $this->render('sections/home/advantages.php');
+echo $this->render('sections/home/steps.php');
+echo $this->render('sections/home/companies.php');
+echo $this->render('sections/home/reviews.php');
+echo $this->render('sections/home/cards.php');
 echo $this->render('sections/home/faqs.php', ['faq_items' => $faq_items]);
-echo $this->render('sections/home/09.php');
+echo $this->render('sections/home/get-started.php');
 
 

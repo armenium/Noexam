@@ -96,7 +96,7 @@ $config = [
 		        'yii\bootstrap\BootstrapAsset' => [
 			        'sourcePath' => '@app/web/v2/',
 			        'css' => [
-			        	'bootstrap-4.6.0/css/bootstrap.min.css',
+			        	'bootstrap-4.6.0/css/bootstrap.css',
 			        ]
 		        ]
 	        ]
@@ -177,6 +177,13 @@ $config = [
 	            'my-application/add-beneficiary' => 'my-application/add-beneficiary',
 
 	            'about' => 'pages/about',
+	            'licenses' => 'pages/licenses',
+	            'privacy' => 'pages/privacy',
+	            'careers' => 'pages/careers',
+	            'help' => 'pages/help',
+	            'get-my-price' => 'pages/get-my-price',
+	            'calculator' => 'pages/calculator',
+	            'partnership' => 'pages/partnership',
 	            'apply-now' => 'pages/apply-now',
 
 	            'apply-now/quote-result' => 'main/quoteresult',

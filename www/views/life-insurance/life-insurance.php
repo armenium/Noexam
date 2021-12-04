@@ -38,10 +38,8 @@ $this->params['breadcrumbs'][] = ['label' => $this->context->current_cat->title,
 			</div>
 			<div class="life-insurance__first-screen main-first-screen">
 				<h1 class="main-first-screen__title heading-0">Life Insurance</h1>
-				<div class="main-first-screen__advice fs-advice">
-					<div class="fs-advice__header">
-						<?=Author::widget(['db_time' => $this->context->current_cat->updated, 'file_time' => filemtime(__FILE__)]);?>
-					</div>
+				<div class="main-first-screen__advice">
+					<?=Author::widget(['db_time' => $this->context->current_cat->updated, 'file_time' => filemtime(__FILE__)]);?>
 					<div class="fs-advice__body">
 						<p class="fs-advice__text fontBodyM">The <b>2019 Insurance Barometer</b> published by LIMRA describes the current market as the best environment to purchase life insurance since the history of the study. However, most consumers are already worried enough about
 							having money for retirement, let alone making room in their budget for life insurance. Still, considering their options to have financial protection in place for their families should they pass away, gives many people a

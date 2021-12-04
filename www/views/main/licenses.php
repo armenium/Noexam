@@ -17,8 +17,10 @@ $this->title = 'Licenses';
 		</div>
 		<div class="row">
 			<div class="col-sm-12">
-				<p>NoExam.com is owned and operated by licensed insurance professionals, Jonathan Fritz and Jonathan Holloway. All of the content on our site is written 
-                    by licensed life insurance agents. See our <a href="https://www.noexam.com/about/">about page </a>for more info. 
+				<p>Jonathan Fritz (884037) is a licensed life insurance agent operating under No Exam Life Insurance (177110) Incorporated. The license numbers below represent the states we can help buyers find life insurance in a matter of minutes. </p>
+
+                <p>NoExam.com has life insurance agents in 50 states who are responsible for maintaining their individual residential and non-residential state licenses. If you have any questions please visit our corporate office at 24 Sloan St, Roswell GA 30075 or contact our offices at 888-407-0714. Read more <a href="https://www.noexam.com/about/">about NoExam.com</a>.</p>
+
                 </p>
                 <h2>Life Insurance License Numbers by State for Jonathan Fritz</h2>
                 <ul>

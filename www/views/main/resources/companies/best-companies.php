@@ -41,10 +41,8 @@ $this->params['breadcrumbs'][] = ['label' => 'Best Companies', 'url' => $this->c
 				<div class="main-first-screen__top-title sub-title-2">top insurance companies</div>
 				<h1 class="main-first-screen__title heading-0">Find the Best Life Insurance Company</h1>
 				<div class="main-first-screen__subtitle fontBodyM">Filter life insurance companies by their financial ratings, products offered, and approval time.</div>
-				<div class="main-first-screen__advice fs-advice">
-					<div class="fs-advice__header">
-						<?=Author::widget(['db_time' => $this->context->current_cat->updated, 'file_time' => filemtime(__FILE__)]);?>
-					</div>
+				<div class="main-first-screen__advice">
+					<?=Author::widget(['db_time' => $this->context->current_cat->updated, 'file_time' => filemtime(__FILE__)]);?>
 					<div class="fs-advice__body">
 						<p class="fs-advice__text fontBodyM">Shopping for life insurance can be overwhelming. There are dozens of companies to choose from. This comparison shopping tool presents the top 10 best life insurance companies. With just a few clicks you can compare the best
 							companies based on price, financial strength, products offered, and more.</p>

@@ -49,10 +49,8 @@ $this->params['breadcrumbs'][] = ['label' => 'Rates', 'url' => $this->context->c
 			</div>
 			<div class="rates__first-screen main-first-screen">
 				<h1 class="main-first-screen__title heading-0">See Life Insurance Rate Charts By Age</h1>
-				<div class="main-first-screen__advice fs-advice">
-					<div class="fs-advice__header">
-						<?=Author::widget(['db_time' => $this->context->current_cat->updated, 'file_time' => filemtime(__FILE__)]);?>
-					</div>
+				<div class="main-first-screen__advice">
+					<?=Author::widget(['db_time' => $this->context->current_cat->updated, 'file_time' => filemtime(__FILE__)]);?>
 					<div class="fs-advice__body">
 						<p class="fs-advice__text fontBodyM">Life insurance rates are heavily influenced by age. The older you are, the higher the rate. If you are curious about how much life insurance will cost for someone your age, use the tool below to quickly show sample life insurance rates from seven companies.</p>
 					</div>

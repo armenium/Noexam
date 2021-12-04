@@ -1725,19 +1725,19 @@ class MainController extends BaseController {
 		return $this->render('faq');
 	}
 
-	public function actionPrivacy(){
+	/*public function actionPrivacy(){
 		if($this->return_404){
 			throw new HttpException(404, 'Page not found');
 		}
 		return $this->render('privacy');
-	}
+	}*/
 
-	public function actionCareers(){
+	/*public function actionCareers(){
 		if($this->return_404){
 			throw new HttpException(404, 'Page not found');
 		}
 		return $this->render('career');
-	}
+	}*/
 
 	/*public function actionApplyNow(){
 		if($this->return_404){
@@ -2510,12 +2510,12 @@ class MainController extends BaseController {
 		return $this->render('quote-options');
 	}
 
-	public function actionLicenses(){
+	/*public function actionLicenses(){
 		if($this->return_404){
 			throw new HttpException(404, 'Page not found');
 		}
 		return $this->render('licenses');
-	}
+	}*/
 
 	/**
 	 * Testing methods

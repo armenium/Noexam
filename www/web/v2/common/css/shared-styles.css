@@ -218,6 +218,7 @@ form input[type="hidden"] {display: none;}
 .button-l:hover,
 .button-big:hover,
 .button-small:hover {text-decoration: underline;}
+.button-big[role="button"]:hover {text-decoration: none;}
 
 .button-l {
     font-size: 18px;
@@ -614,19 +615,12 @@ form input[type="hidden"] {display: none;}
 .footer__item:last-child {
     margin-bottom: 0;
 }
-.footer__link {
-    text-decoration: none;
-}
-.footer__link:hover {
-    text-decoration: underline;
-}
-.copyright {
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #FCF9F3;
-}
+.footer__link {text-decoration: none; transition: all 0.2s ease;}
+.footer__link:hover {text-decoration: none; color: #339E75; font-weight: 700;}
+.copyright {height: 80px; display: flex; justify-content: center; align-items: center; background-color: #FCF9F3;}
+.copyright a {color: #282B29;}
+.copyright a:hover {text-decoration: underline;}
+
 @media screen and (max-width: 770px) {
     .footer {
         flex-direction: column;

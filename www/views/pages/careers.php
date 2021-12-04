@@ -1,13 +1,18 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Admin
- * Date: 28.09.2018
- * Time: 9:43
- */
-$this->registerMetaTag(['name' => 'description', 'content' => 'See if selling life insurance is a possible career for you. Learn how much agents can make in this detailed guide to getting started.']);
-$this->title = 'How Much Money Can You Make Selling Life Insurance?';
 
+use app\assets\AppAsset;
+use yii\bootstrap\BootstrapAsset;
+use yii\helpers\Url;
+use yii\web\JqueryAsset;
+
+$this->registerCssFile('@web/v2/common/css/get-started.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
+$this->registerCssFile('@web/v2/pages/css/article.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
+
+$this->registerMetaTag(['name' => 'description', 'content' => 'See if selling life insurance is a possible career for you. Learn how much agents can make in this detailed guide to getting started.']);
+$this->registerMetaTag(['name' => 'keywords', 'content' => '']);
+
+$this->title = 'How Much Money Can You Make Selling Life Insurance?';
+$this->params['breadcrumbs'][] = ['label' => 'Careers', 'url' => Url::toRoute('careers/'), 'class' => 'breadcrumbs__link tags breadcrumbs__link--active'];
 
 ?>
 <div class="page-content page-wrapper">
@@ -88,47 +93,6 @@ $this->title = 'How Much Money Can You Make Selling Life Insurance?';
 			<div class="hidden-xs bg-image"></div>
 		</div>
 	</section>
-<!--
-	<section class="container-fluid fourth">
-		<div class="row">
-			<div class="slick-blocks">
-				<div class="item">
-					<div class="inner">
-						<img src="/img/q-message-big.png">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec odio eu leo sollicitudin ullamcorper at eu nibh.</p>
-					</div>
-				</div>
-				<div class="item">
-					<div class="inner">
-						<img src="/img/q-message-big.png">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec odio eu leo sollicitudin ullamcorper at eu nibh.</p>
-					</div>
-				</div>
-				<div class="item">
-					<div class="inner">
-						<img src="/img/q-message-big.png">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec odio eu leo sollicitudin ullamcorper at eu nibh.</p>
-					</div>
-				</div>
-				<div class="item">
-					<div class="inner">
-						<img src="/img/q-message-big.png">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec odio eu leo sollicitudin ullamcorper at eu nibh.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>-->
 
-	<section class="get-started-section">
-		<div class="container get-started">
-			<div class="question-block">
-				<div class="question">Ready to get started?</div>
-				<div class="answer">Automated underwriting allows you to receive an immediate decision on your life insurance application.1</div>
-			</div>
-		</div>
-		<div class="button active">
-			<a href="/apply-now/" class="btn btn-success btn-lg">Apply Now</a>
-		</div>
-	</section>
 </div>
+<?=$this->render('sections/about/get-started.php');?>

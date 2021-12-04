@@ -34,6 +34,34 @@ class PagesController extends BaseController {
 		return $this->render('about');
 	}
 	
+	public function actionLicenses(){
+		return $this->render('licenses');
+	}
+	
+	public function actionPrivacy(){
+		return $this->render('privacy');
+	}
+	
+	public function actionCareers(){
+		return $this->render('careers');
+	}
+	
+	public function actionHelp(){
+		return $this->render('help');
+	}
+	
+	public function actionCalculator(){
+		return $this->render('calculator');
+	}
+	
+	public function actionPartnership(){
+		return $this->render('partnership');
+	}
+	
+	public function actionGetMyPrice(){
+		return $this->render('get-my-price');
+	}
+	
 	public function actionApplyNow(){
 		$customer_data = new CustomerData();
 		

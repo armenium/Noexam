@@ -3,8 +3,11 @@
 
 namespace app\widgets;
 
+use app\assets\AppAsset;
 use yii\base\Widget;
+use yii\bootstrap\BootstrapAsset;
 use yii\helpers\Html;
+use yii\web\JqueryAsset;
 
 class Author extends Widget{
 	
@@ -17,6 +20,8 @@ class Author extends Widget{
 		
 		$this->db_time = strtotime($this->db_time);
 		$this->updated_date = ($this->db_time > $this->file_time) ? $this->db_time : $this->file_time;
+		
+		$this->view->registerCssFile('@web/v2/widgets/css/author.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
 	}
 	
 	public function run(){
