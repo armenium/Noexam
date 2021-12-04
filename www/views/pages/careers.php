@@ -85,13 +85,11 @@ $this->params['breadcrumbs'][] = ['label' => 'Careers', 'url' => Url::toRoute('c
 
 <section class="main-wrapp">
 	<div class="wrapp">
-		<div class="content">
-			<div class="title">Work Remotely</div>
-			<div class="desc">Send your resume to support@noexam.com to apply. Please include what states you are licensed in. Make the right career choice in 2019!</div>
+		<div class="single-block">
+			<h1>Work Remotely</h1>
+			<p>Send your resume to support@noexam.com to apply. Please include what states you are licensed in. Make the right career choice in 2019!</p>
 		</div>
-		<div class="hidden-xs bg-image"></div>
 	</div>
 </section>
-
 
 <?=$this->render('sections/home/get-started.php');?>
