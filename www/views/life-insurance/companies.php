@@ -31,7 +31,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Best Companies', 'url' => $this->c
 #$this->params['breadcrumbs'][] = $this->context->current_cat->title;
 ?>
 
-<div class="main-wrapp" style="background-color: #FCF9F3;">
+<div class="main-wrapp bg1">
 	<div class="wrapp">
 		<section class="best-companies">
 			<div class="best-companies__nav breadcrumbs">
@@ -58,7 +58,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Best Companies', 'url' => $this->c
 	</div>
 </div>
 
-<div class="main-wrapp" style="background-color: #FCF9F3;">
+<div class="main-wrapp bg1">
 	<div class="wrapp">
 		<div class="loader fixed"></div>
 		<div id="js_best_results" class="companies-list">

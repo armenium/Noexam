@@ -3,7 +3,7 @@
 use app\widgets\ApplyNowForm;
 
 ?>
-<div class="main-wrapp" style="background-color: #FCF9F3;">
+<div class="main-wrapp bg1">
 	<div class="wrapp">
 		<div class="d-flex justify-content-between flex-column-reverse align-items-center flex-lg-row align-items-lg-start">
 			<?=ApplyNowForm::widget(['form' => 'apply-now-form-v', 'title' => 'General Information']);?>

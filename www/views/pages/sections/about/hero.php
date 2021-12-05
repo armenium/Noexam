@@ -5,7 +5,7 @@
 use app\components\BreadcrumbsNew;
 ?>
 
-<div class="main-wrapp" style="background-color: #FCF9F3;">
+<div class="main-wrapp bg1">
 	<div class="wrapp">
 		<section class="about-first-screen">
 			<div class="about-first-screen__nav breadcrumbs">

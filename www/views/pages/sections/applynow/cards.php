@@ -1,4 +1,4 @@
-<div class="main-wrapp" style="background-color: #FCF9F3;">
+<div class="main-wrapp bg1">
 	<div class="wrapp">
 		<div class="life-insurance__cards cards">
 			<div class="cards__item">

@@ -1,4 +1,4 @@
-<div class="main-wrapp" style="background-color: #FCF9F3;">
+<div class="main-wrapp bg1">
 	<div class="wrapp">
 		<section class="press">
 			<h1 class="press__tilte heading-2">In the <span>Press</span></h1>

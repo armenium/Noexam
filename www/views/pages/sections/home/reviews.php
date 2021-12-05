@@ -1,4 +1,4 @@
-<div class="main-wrapp" style="background-color: #FABE75;">
+<div class="main-wrapp bg4;">
 	<div class="wrapp">
 		<section class="reviews">
 			<h1 class="reviews__title heading-2">Based on <span>1,000+ </span>reviews</h1>

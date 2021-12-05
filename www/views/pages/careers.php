@@ -17,10 +17,12 @@ $this->title = 'How Much Money Can You Make Selling Life Insurance?';
 $this->params['breadcrumbs'][] = ['label' => 'Careers', 'url' => Url::toRoute('careers/'), 'class' => 'breadcrumbs__link tags breadcrumbs__link--active'];
 
 ?>
-<article class="main-wrapp">
-	<div class="wrapp mb-4">
+<div class="main-wrapp bg1">
+	<div class="wrapp pb-4">
 		<?=BreadcrumbsNew::widget(['links' => $this->params['breadcrumbs']]);?>
 	</div>
+</div>
+<article class="main-wrapp">
 
 	<section>
 		<h1 class="heading-0">Selling Life Insurance as an Agent</h1>

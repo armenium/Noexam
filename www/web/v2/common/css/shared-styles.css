@@ -78,6 +78,12 @@ hr {
 
 form input[type="hidden"] {display: none;}
 
+.bg0 {background-color: #FFFFFF;}
+.bg1 {background-color: #FCF9F3;}
+.bg2 {background-color: #3D413E;}
+.bg3 {background-color: #377660;}
+.bg4 {background-color: #FABE75;}
+
 /* TEXT STYLE */
 
 .fontBodyL,
@@ -825,3 +831,4 @@ body:not(.my-application) .header__help-wrapp {display: none;}
 .checkbox-label > input.input--invalid + span {background-color: #d6ece3; border-color: #377660;}
 
 .err-mess {color: #377660; text-align: center; margin-bottom: 15px;}
+

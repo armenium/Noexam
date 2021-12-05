@@ -27,7 +27,7 @@ $this->registerJsFile('@web/v2/my-quote/js/'.$page_id.'.js', ['depends' => [Jque
 $isMobile = Yii::$app->params['devicedetect']['isMobile'];
 ?>
 
-<div class="main-wrapp" style="background-color: #FCF9F3;">
+<div class="main-wrapp bg1">
 	<div class="wrapp">
 		<section class="quotes-result">
 			<h1 class="quotes-result__title heading-1"><span>Compare</span> Quotes</h1>

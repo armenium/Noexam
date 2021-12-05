@@ -16,10 +16,12 @@ $this->title = 'Buy Life Insurance Online - Privacy';
 $this->params['breadcrumbs'][] = ['label' => 'Privacy', 'url' => Url::toRoute('privacy/'), 'class' => 'breadcrumbs__link tags breadcrumbs__link--active'];
 
 ?>
-<article class="main-wrapp">
-	<div class="wrapp mb-4">
+<div class="main-wrapp bg1">
+	<div class="wrapp pb-4">
 		<?=BreadcrumbsNew::widget(['links' => $this->params['breadcrumbs']]);?>
 	</div>
+</div>
+<article class="main-wrapp">
 	
 	<section>
 		<h1 class="heading-0">Privacy Policy</h1>

@@ -30,7 +30,7 @@ $this->params['breadcrumbs'][] = ['label' => $this->context->current_cat->title,
 #$this->params['breadcrumbs'][] = $this->context->current_cat->title;
 ?>
 
-<div class="main-wrapp" style="background-color: #FCF9F3;">
+<div class="main-wrapp bg1">
 	<div class="wrapp">
 		<section class="life-insurance">
 			<div class="life-insurance__nav breadcrumbs">
@@ -52,13 +52,13 @@ $this->params['breadcrumbs'][] = ['label' => $this->context->current_cat->title,
 	</div>
 </div>
 
-<div class="main-wrapp" style="background-color: #FCF9F3;">
+<div class="main-wrapp bg1">
 	<div class="wrapp">
 		<?=GetQuote::widget();?>
 	</div>
 </div>
 
-<div class="main-wrapp" style="background-color: #FCF9F3;">
+<div class="main-wrapp bg1">
 	<div class="wrapp">
 		<article class="article">
 			<div class="article__box">
@@ -87,10 +87,14 @@ $this->params['breadcrumbs'][] = ['label' => $this->context->current_cat->title,
 	</div>
 </div>
 
-<div class="main-wrapp" style="background-color: #3D413E;">
+<div class="main-wrapp bg2 states-wrapp">
+	<div class="decorate-title d-flex flex-row flex-nowrap">
+		<div class="states__title__left_decor"></div>
+		<h1 class="states__title heading-2">Life Insurance in Your State</h1>
+		<div class="states__title__right_decor"></div>
+	</div>
 	<div class="wrapp">
 		<section class="states">
-			<h1 class="states__title heading-2">Life Insurance in Your State</h1>
 
 			<div class="states__body">
 				<a href="#" class="states__item"><span>California</span></a>
@@ -104,7 +108,7 @@ $this->params['breadcrumbs'][] = ['label' => $this->context->current_cat->title,
 	</div>
 </div>
 
-<div class="main-wrapp" style="background-color: #FCF9F3;">
+<div class="main-wrapp bg1">
 	<div class="wrapp">
 		<article class="article">
 			<div class="article__box">

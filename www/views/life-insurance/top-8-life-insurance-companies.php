@@ -57,7 +57,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Top 8 Life Insurance Companies', '
 	</div>
 </div>
 
-<div class="main-wrapp" style="background-color: #FCF9F3;">
+<div class="main-wrapp bg1">
 	<div class="wrapp">
 		<div class="top-companies-v1">
 			<h1 class="top-companies-v1__title heading-5">Top 8 Life Insurance Companies - Get Multiple Quotes for the Best Price</h1>
@@ -241,7 +241,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Top 8 Life Insurance Companies', '
 	</div>
 </div>
 
-<div class="main-wrapp" style="background-color: #FFFFFF;">
+<div class="main-wrapp bg0;">
 	<div class="wrapp">
 		<div class="top-companies-v1__content">
 			<section class="top-companies-v1-content">

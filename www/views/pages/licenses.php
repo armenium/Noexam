@@ -17,10 +17,12 @@ $this->title = 'Buy Life Insurance Online - Licenses';
 $this->params['breadcrumbs'][] = ['label' => 'Licenses', 'url' => Url::toRoute('licenses/'), 'class' => 'breadcrumbs__link tags breadcrumbs__link--active'];
 
 ?>
-<article class="main-wrapp">
-	<div class="wrapp mb-4">
+<div class="main-wrapp bg1">
+	<div class="wrapp pb-4">
 		<?=BreadcrumbsNew::widget(['links' => $this->params['breadcrumbs']]);?>
 	</div>
+</div>
+<article class="main-wrapp">
 
 	<section>
 		<h1 class="heading-0">Licenses</h1>
@@ -84,5 +86,6 @@ $this->params['breadcrumbs'][] = ['label' => 'Licenses', 'url' => Url::toRoute('
 		</ul>
 		<p>If you have questions about our corporate licensing for No Exam Life Insurance, Inc, please contact our office at 888-407-0714</p>
 	</section>
+	
 </article>
 <?=$this->render('sections/home/get-started.php');?>

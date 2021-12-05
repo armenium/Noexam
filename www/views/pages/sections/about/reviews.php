@@ -1,4 +1,4 @@
-<div class="main-wrapp" style="background-color: #FFFFFF;">
+<div class="main-wrapp bg0;">
 	<div class="wrapp">
 		<div class="reviews">
 			<h1 class="reviews__title heading-2">Customer Reviews</h1>

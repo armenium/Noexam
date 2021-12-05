@@ -17,15 +17,18 @@ $this->title = 'Buy Life Insurance Online - Calculator';
 $this->params['breadcrumbs'][] = ['label' => 'Calculator', 'url' => Url::toRoute('calculator/'), 'class' => 'breadcrumbs__link tags breadcrumbs__link--active'];
 
 ?>
-<article class="main-wrapp">
-	<div class="wrapp mb-4">
+<div class="main-wrapp bg1">
+	<div class="wrapp pb-4">
 		<?=BreadcrumbsNew::widget(['links' => $this->params['breadcrumbs']]);?>
 	</div>
+</div>
+<article class="main-wrapp">
 	
 	<section>
 		<h1 class="heading-0">Calculator</h1>
 		<?=Author::widget(['db_time' => '2021-12-03', 'file_time' => filemtime(__FILE__)]);?>
 		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 	</section>
+	
 </article>
 <?=$this->render('sections/home/get-started.php');?>

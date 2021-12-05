@@ -1,4 +1,4 @@
-<div class="main-wrapp" style="background-color: #377660;">
+<div class="main-wrapp bg3;">
 	<div class="wrapp">
 		<section class="advantages-slider">
 			<h1 class="advantages-slider__title heading-2">Top-Rated Term Life Insurance</h1>

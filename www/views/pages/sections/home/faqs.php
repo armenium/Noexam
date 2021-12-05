@@ -1,4 +1,4 @@
-<div class="main-wrapp" style="background-color: #FCF9F3;">
+<div class="main-wrapp bg1">
 	<div class="wrapp">
 		<section class="questions">
 			<h1 class="questions__title heading-2">Frequently Asked <span>Questions</span></h1>

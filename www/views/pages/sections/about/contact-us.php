@@ -1,4 +1,4 @@
-<div class="main-wrapp" style="background-color: #3D413E;">
+<div class="main-wrapp bg2">
 	<div class="wrapp">
 		<section class="steps">
 			<h1 class="steps__title heading-2">Contact Us</h1>

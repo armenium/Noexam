@@ -41,7 +41,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Rates', 'url' => $this->context->c
 
 
 ?>
-<div class="main-wrapp" style="background-color: #FCF9F3;">
+<div class="main-wrapp bg1">
 	<div class="wrapp">
 		<section class="rates">
 			<div class="rates__nav breadcrumbs">
@@ -61,7 +61,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Rates', 'url' => $this->context->c
 	</div>
 </div>
 
-<div class="main-wrapp" style="background-color: #FCF9F3;">
+<div class="main-wrapp bg1">
 	<div class="wrapp">
 		<?=ApplyNowForm::widget(['form' => 'apply-now-form']);?>
 	</div>
@@ -127,7 +127,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Rates', 'url' => $this->context->c
 	<?=RateChartByAge::widget();?>
 </div>
 
-<div class="main-wrapp" style="background-color: #377660;">
+<div class="main-wrapp bg3;">
 	<div class="wrapp">
 		<section class="get-started">
 			<h1 class="get-started__title heading-2">Apply now</h1>
@@ -137,7 +137,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Rates', 'url' => $this->context->c
 	</div>
 </div>
 
-<div class="main-wrapp" style="background-color: #FCF9F3;">
+<div class="main-wrapp bg1">
 	<div class="wrapp">
 		<section class="pricing-study">
 			<h1 class="pricing-study__title  heading-2">Life Insurance Pricing Study</h1>
@@ -231,7 +231,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Rates', 'url' => $this->context->c
 	</div>
 </div>
 
-<div class="main-wrapp" style="background-color: #FCF9F3;">
+<div class="main-wrapp bg1">
 	<div class="wrapp">
 		<section class="charts-by-age">
 			<h2 class="charts-by-age__title heading-2">Life Insurance Rate</br> Charts by Age</h2>

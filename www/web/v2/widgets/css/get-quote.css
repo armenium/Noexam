@@ -8,6 +8,7 @@
 .get-quote__arrow-right {left: 130px;}
 
 @media all and (max-width: 767px) {
+	.get-quote-wrap {padding: 65px 0 85px; margin: -65px 0 -40px;}
 	.get-quote__title {font-size: 24px; line-height: 32px; max-width: 330px; margin: 0 auto 10px;}
 	.get-quote__subtitle {font-size: 18px; line-height: 26px; margin-bottom: 25px;}
 	.get-quote__arrow-left {
@@ -17,7 +18,7 @@
 		width: 65px;
 	}
 	.get-quote__arrow-right {
-		left: 10%;
+		left: 30%;
 		top: auto;
 		bottom: -70px;
 		transform: scaleY(-1) rotate(30deg);
