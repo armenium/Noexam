@@ -7,7 +7,8 @@
 .fs-advice__text:last-child {margin-bottom: 0;}
 .main-first-screen__info {padding-bottom: 25px;}
 .main-first-screen__top-title {color: #F87146; text-align: center;}
-@media screen and (max-width: 600px) {
+@media all and (max-width: 767px){
+    .main-first-screen {}
     .main-first-screen__top-title {font-size: 14px; line-height: 20px;}
     .main-first-screen__title {font-size: 32px; line-height: 40px;}
 }
