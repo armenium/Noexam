@@ -5,8 +5,8 @@ namespace app\widgets;
 
 use Yii;
 use app\assets\AppAsset;
-use yii\base\Widget;
 use yii\bootstrap\BootstrapAsset;
+use yii\base\Widget;
 use yii\helpers\Html;
 use yii\web\JqueryAsset;
 

@@ -82,7 +82,7 @@ $this->params['breadcrumbs'][] = ['label' => $this->context->current_cat->title,
 				</div>
 				<p class="article__paragraph fontBodyM">TIPS – Remember, if you have anyone depending on your income (your spouse, children, siblings, aging parents, etc.), and you are not independently wealthy, you need some form of coverage.</p>
 			</div>
-			<div class="article__btn button-small" onclick="">Back to top</div>
+			<div class="top__btn button-small">Back to top</div>
 		</article>
 	</div>
 </div>
@@ -149,7 +149,7 @@ $this->params['breadcrumbs'][] = ['label' => $this->context->current_cat->title,
 					</div>
 				</div>
 			</div>
-			<div class="article__btn button-small">Back to top</div>
+			<div class="top__btn button-small">Back to top</div>
 		</article>
 	</div>
 </div>

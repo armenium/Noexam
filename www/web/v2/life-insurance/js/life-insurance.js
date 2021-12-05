@@ -1,4 +1,4 @@
-let btnsToTop = document.querySelectorAll(".article__btn")
+let btnsToTop = document.querySelectorAll(".top__btn")
 
 btnsToTop.forEach((btn) => btn.addEventListener("click", () => {
 	window.scrollTo({

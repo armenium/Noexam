@@ -258,14 +258,9 @@ form input[type="hidden"] {display: none;}
     cursor: pointer;
     transition: all 0.2s;
 }
-.main-btn:after {
-    content: url("../images/arrow-right-white.png");
-    margin-left: 15px;
-    margin-top: 5px;
-    transition: all 0.2s;
-}
+.main-btn:after {content: url("../images/arrow-right-FFFFFF.svg"); margin: 0; transform: translateX(15px); transition: all 0.2s ease;}
 .main-btn:hover {background-color: #3dbf8d; color: #fff; text-decoration: none;}
-.main-btn:hover:after {transform: translateX(5px);}
+.main-btn:hover:after {transform: translateX(20px);}
 
 .text-btn {font-family: 'Work Sans'; font-style: normal; font-weight: 600; text-transform: uppercase; color: #282B29; text-decoration: none; cursor: pointer; user-select: none;}
 .text-btn:hover {text-decoration: none;}
