@@ -25,7 +25,19 @@ use yii\helpers\VarDumper;
 
 		<div class="col-12 col-md-6 col-lg-3 rates-form__label d-flex flex-column">
 			<label for="state"><span class="tags">State you reside in</span></label>
-			<?=$form->field($customer_data, 'state')->dropDownList($customer_data::$states_short, ['required' => 'required', 'class' => 'js_selectpicker rates-form__select', 'id' => 'state', 'data-style' => 'btn-light', 'data-size' => 8, 'data-title' => 'Select State', 'data-mobile' => (string)$isMobile])->label(false);?>
+			<?=$form->field($customer_data, 'state')->dropDownList($customer_data::$states_short, [
+				'required' => 'required',
+				'class' => 'js_selectpicker show-tick online-app-step-1__select online-app-step-1__label--state',
+				'id' => 'state',
+				'data-dropup-auto' => true,
+				'data-live-search' => 'true',
+				'data-style' => '',
+				'data-size' => 5,
+				'data-title' => 'Select state',
+				'data-mobile' => (string)$isMobile,
+				#'data-header' => 'Select state',
+				'options' => Yii::$app->Helpers->createDropdownOptionsSubtext($customer_data::$states)
+			])->label(false)->error(false);?>
 		</div>
 
 		<div class="col-12 col-md-6 col-lg-3 rates-form__label d-flex flex-column">

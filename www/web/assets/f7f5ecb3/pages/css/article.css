@@ -32,3 +32,4 @@ article .list-3-col li {flex: 0 0 33%; padding: 0 15px;}
 .jobs-list .item:hover .title {color: #cacaca;}
 .jobs-list .item:hover .company {color: #666;}
 
+.single-block {padding: 60px 0; max-width: 880px; width: 100%; margin: auto;}

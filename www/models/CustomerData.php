@@ -617,6 +617,7 @@ class CustomerData extends ActiveRecord {
 		'20' => '20 Year Term',
 		//'25' => '25 Year Term',
 		'30' => '30 Year Term',
+		'rt' => 'Renewable Term',
 		//'15rop' => '15 Year Return of Premium',
 		//'20rop' => '20 Year Return of Premium',
 		//'25rop' => '25 Year Return of Premium',
