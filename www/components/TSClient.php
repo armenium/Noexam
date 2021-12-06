@@ -197,7 +197,7 @@ class TSClient extends Component{
 	
 	public function get_quotes($args = []){
 		
-		#VarDumper::dump($args, 10, 1);
+		#VarDumper::dump($args, 10, 1); exit;
 		
 		$args['avarage_amount'] = intval($args['avarage_amount']);
 		$args['avarage_amount'] = ($args['avarage_amount'] > 1000 ? $args['avarage_amount'] : $args['avarage_amount'] * 1000);
@@ -224,7 +224,7 @@ class TSClient extends Component{
 		}
 
 		#VarDumper::dump($args, 10, 1);
-		#VarDumper::dump($params, 10, 1);
+		#VarDumper::dump($params, 10, 1); exit;
 		
 		$params_hash = md5(json_encode($params));
 		#VarDumper::dump($params_hash, 10, 1); exit;
@@ -235,7 +235,7 @@ class TSClient extends Component{
 			//->andWhere('updated > date_sub(now(), interval 1 hour)')
 			->orderBy(['updated' => 'DESC'])
 			->one();
-		#VarDumper::dump($rates_data_cache_model, 10, 1);
+		#VarDumper::dump($rates_data_cache_model, 10, 1); exit;
 
 		$data = [];
 		$update = true;
@@ -258,6 +258,7 @@ class TSClient extends Component{
 
 		if($update){
 			$data = $this->quote_request($params);
+			#VarDumper::dump($data, 10, 1); exit;
 			#$data = $this->set_ratings($data);
 			#$data = $this->change_logos($data);
 

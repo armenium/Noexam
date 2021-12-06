@@ -635,12 +635,14 @@ class CustomerData extends ActiveRecord {
 		'15' => '15 years',
 		'20' => '20 years',
 		'30' => '30 years',
+		'rt' => 'Renewable Term',
 	];
 	public static $term_lengths3 = [
 		'10' => '10 yr',
 		'15' => '15 yr',
 		'20' => '20 yr',
 		'30' => '30 yr',
+		'rt' => 'Renewable Term',
 	];
 	public static $healths = [
 		'excellent' => 'Excellent', // 5

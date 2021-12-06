@@ -368,7 +368,12 @@ class MyQuoteController extends BaseController {
 	
 	public function getQuoteResults($customer_data){
 		
-		$prices = [];
+		$prices = [
+			'plans' => [
+				'exam_no' => [],
+				'exam_yes' => [],
+			]
+		];
 		$no_plans_count = 0;
 		$yes_plans_count = 0;
 		$total_plans_count = 0;
@@ -381,7 +386,7 @@ class MyQuoteController extends BaseController {
 		}else{
 			$customer_data->attributes = $customer_data->decodeData();
 			$customer_data->avg_amount = $customer_data->avg_amount > 1000 ? $customer_data->avg_amount / 1000 : $customer_data->avg_amount;
-
+			
 			$sagicor = Yii::$app->Sagicor;
 			$nq_client = Yii::$app->NQClient;
 			$ts_client = Yii::$app->TSClient;
@@ -411,114 +416,118 @@ class MyQuoteController extends BaseController {
 			];
 			
 			#VarDumper::dump($args, 10, 1); exit;
-			#VarDumper::dump($customer_data->attributes, 10, 1); exit;
+			#VarDumper::dump($customer_data->term_length, 10, 1); exit;
 			
-			#TruStage
-			$ts_args = $args;
-			$ts_args['first_name'] = $customer_data->first_name;
-			$ts_args['last_name'] = $customer_data->last_name;
-			$ts_args['email'] = $customer_data->email;
-			$ts_args['phone'] = $customer_data->phone_number;
-			$ts_prices = $ts_client->get_quotes($ts_args);
-			$prices['plans']['exam_no']['trustage'] = $ts_prices['plans']['trustage'];
-			
-			#Sagicor
-			$sg_prices = $sagicor->getSagicorPlans($args);
-			$prices['plans']['exam_no']['sagicor'] = $sg_prices['plans']['sagicor'];
-			$prices['plans']['exam_yes'] = [];
-			
-			#Ninja Quoter
-			$nq_prices = $nq_client->get_quotes($args);
-			
-			if(intval($nq_prices['status']) == 200 && !empty($nq_prices['response']['results'])){
-				foreach($nq_prices['response']['results'] as $k => $result){
-					switch($result['company_code']){
-						case "sagicor":
-							$prices['plans']['exam_no'][$result['company_code']] = [];
-							$prices['plans']['exam_no'][$result['company_code']][$result['term']] = $result;
-							break;
-						case "sagicor_express_issue":
-							break;
-						case "mutual_omaha":
-							$prices['plans']['exam_yes'][$result['company_code']][$result['term']] = $result;
-							break;
-						case "mutual_omaha_express":
-							$prices['plans']['exam_no'][$result['company_code']][$result['term']] = $result;
-							break;
-						case "phoenix":
-							$prices['plans']['exam_no'][$result['company_code']][$result['term']] = $result;
-							break;
-						case "phoenix_express":
-							break;
-						case "protective":
-							$pc = implode("_", array_slice(explode("_", $result['product_code']), 0, 3));
-							switch($pc){
-								case "protective_classic_choice":
-									$prices['plans']['exam_yes'][$result['company_code']][$result['term']] = $result;
-									break;
-								case "protective_custom_choice":
-									break;
-							}
-							break;
-						case "north_american":
-							break;
-						case "pacific_life":
-							$prices['plans']['exam_yes'][$result['company_code']][$result['term']] = $result;
-							break;
-						case "principal":
-							break;
-						case "foresters":
-							break;
-						case "foresters_express":
-							$prices['plans']['exam_no'][$result['company_code']][$result['term']] = $result;
-							break;
-						case "john_hancock":
-							break;
-						case "american_general":
-							break;
-						case "assurity":
-							break;
-						case "transamerica_lb":
-							switch($result['product_code']){
-								case "transamerica_trendsetter_lb_10":
-									break;
-								case "transamerica_trendsetter_lb_10_all":
-									break;
-							}
-							break;
-						case "transamerica":
-							break;
-						case "banner":
-							break;
-						case "prudential":
-							$prices['plans']['exam_yes'][$result['company_code']][$result['term']] = $result;
-							break;
-						case "lincoln_financial":
-						case "lincoln_financial_express":
-							break;
-						case "sbli":
-							break;
-						case "sbli_express":
-							$prices['plans']['exam_no'][$result['company_code']][$result['term']] = $result;
-							break;
-						case "american_national":
-							break;
+			if($customer_data->term_length == 'rt'){
+				#TruStage
+				$ts_args                                = $args;
+				$ts_args['first_name']                  = $customer_data->first_name;
+				$ts_args['last_name']                   = $customer_data->last_name;
+				$ts_args['email']                       = $customer_data->email;
+				$ts_args['phone']                       = $customer_data->phone_number;
+				$ts_prices                              = $ts_client->get_quotes($ts_args);
+				$prices['plans']['exam_no']['trustage'] = $ts_prices['plans']['trustage'];
+			}else{
+				#Sagicor
+				$sg_prices                             = $sagicor->getSagicorPlans($args);
+				$prices['plans']['exam_no']['sagicor'] = $sg_prices['plans']['sagicor'];
+				
+				#Ninja Quoter
+				$nq_prices = $nq_client->get_quotes($args);
+				
+				if(intval($nq_prices['status']) == 200 && !empty($nq_prices['response']['results'])){
+					foreach($nq_prices['response']['results'] as $k => $result){
+						switch($result['company_code']){
+							case "sagicor":
+								$prices['plans']['exam_no'][$result['company_code']]                  = [];
+								$prices['plans']['exam_no'][$result['company_code']][$result['term']] = $result;
+								break;
+							case "sagicor_express_issue":
+								break;
+							case "mutual_omaha":
+								$prices['plans']['exam_yes'][$result['company_code']][$result['term']] = $result;
+								break;
+							case "mutual_omaha_express":
+								$prices['plans']['exam_no'][$result['company_code']][$result['term']] = $result;
+								break;
+							case "phoenix":
+								$prices['plans']['exam_no'][$result['company_code']][$result['term']] = $result;
+								break;
+							case "phoenix_express":
+								break;
+							case "protective":
+								$pc = implode("_", array_slice(explode("_", $result['product_code']), 0, 3));
+								switch($pc){
+									case "protective_classic_choice":
+										$prices['plans']['exam_yes'][$result['company_code']][$result['term']] = $result;
+										break;
+									case "protective_custom_choice":
+										break;
+								}
+								break;
+							case "north_american":
+								break;
+							case "pacific_life":
+								$prices['plans']['exam_yes'][$result['company_code']][$result['term']] = $result;
+								break;
+							case "principal":
+								break;
+							case "foresters":
+								break;
+							case "foresters_express":
+								$prices['plans']['exam_no'][$result['company_code']][$result['term']] = $result;
+								break;
+							case "john_hancock":
+								break;
+							case "american_general":
+								break;
+							case "assurity":
+								break;
+							case "transamerica_lb":
+								switch($result['product_code']){
+									case "transamerica_trendsetter_lb_10":
+										break;
+									case "transamerica_trendsetter_lb_10_all":
+										break;
+								}
+								break;
+							case "transamerica":
+								break;
+							case "banner":
+								break;
+							case "prudential":
+								$prices['plans']['exam_yes'][$result['company_code']][$result['term']] = $result;
+								break;
+							case "lincoln_financial":
+							case "lincoln_financial_express":
+								break;
+							case "sbli":
+								break;
+							case "sbli_express":
+								$prices['plans']['exam_no'][$result['company_code']][$result['term']] = $result;
+								break;
+							case "american_national":
+								break;
+						}
 					}
 				}
 			}
-			
 			#VarDumper::dump($prices, 10, 1); exit;
 			
-			foreach($prices['plans']['exam_no'] as $company_terms){
-				if(!is_null($company_terms) && is_array($company_terms)){
-					$total_terms_count += count($company_terms);
-					$no_plans_count += count($company_terms);
+			if(!empty($prices['plans']['exam_no'])){
+				foreach($prices['plans']['exam_no'] as $company_terms){
+					if(!is_null($company_terms) && is_array($company_terms)){
+						$total_terms_count += count($company_terms);
+						$no_plans_count    += count($company_terms);
+					}
 				}
 			}
-			foreach($prices['plans']['exam_yes'] as $company_terms){
-				if(!is_null($company_terms) && is_array($company_terms)){
-					$total_terms_count += count($company_terms);
-					$yes_plans_count += count($company_terms);
+			if(!empty($prices['plans']['exam_yes'])){
+				foreach($prices['plans']['exam_yes'] as $company_terms){
+					if(!is_null($company_terms) && is_array($company_terms)){
+						$total_terms_count += count($company_terms);
+						$yes_plans_count   += count($company_terms);
+					}
 				}
 			}
 			
