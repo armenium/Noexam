@@ -35,6 +35,7 @@ $(function(){
 			modal: null,
 			tooltip: null,
 			lazyLoadInstance: null,
+			my_range_slider: null,
 		},
 		routes: {},
 		els: {
@@ -52,9 +53,11 @@ $(function(){
 			this.vars.csrf_token = $('meta[name="csrf-token"]').attr('content');
 
 			this.Core.initEvents();
-			this.Forms.initRangeSlider();
-			this.Forms.stylingSelect();
+
+			this.Forms.Init();
 			this.Common.Init();
+
+			this.Forms.stylingSelect();
 			//this.Common.doEqualHeight();
 			this.Common.initDisclosure();
 			this.Common.initLazyLoad();
@@ -116,6 +119,9 @@ $(function(){
 						break;
 					case "contact_details_form_submit":
 						FJS.Forms.submitContactDetails($this);
+						break;
+					case "term_length":
+						FJS.Forms.changeTermLength($this);
 						break;
 					case "ajax_quote_results_request":
 						FJS.ApplyNow.QuoteResult.ajaxRequest($this);
@@ -296,6 +302,14 @@ $(function(){
 			*/
 		},
 		Forms: {
+			Init: function(){
+				FJS.Forms.initRangeSlider();
+				FJS.Forms.updateRangeSlider();
+			},
+			changeTermLength: function($obj){
+				FJS.Forms.updateRangeSlider();
+				FJS.ApplyNow.QuoteResult.ajaxRequest($obj);
+			},
 			initRangeSlider: function(){
 				if($(".js_range_slider").exists()){
 					$(".js_range_slider").ionRangeSlider({
@@ -308,6 +322,18 @@ $(function(){
 							FJS.ApplyNow.QuoteResult.ajaxRequest(data.input);
 						},
 					});
+
+					FJS.vars.my_range_slider = $(".js_range_slider").data("ionRangeSlider");
+				}
+			},
+			updateRangeSlider: function(){
+				if(FJS.vars.my_range_slider != null && $('#js_term_length').exists()){
+					var val = $('#js_term_length').val(),
+						values = (val == 'rt')
+							? ['100k','150k','200k','250k','300k']
+							: ['100k','150k','200k','250k','300k','400k','500k','600k','700k','800k','900k','1m'];
+					console.log(values);
+					FJS.vars.my_range_slider.update({'values': values});
 				}
 			},
 			stylingSelect: function(){

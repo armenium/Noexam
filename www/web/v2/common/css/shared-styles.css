@@ -203,6 +203,13 @@ form input[type="hidden"] {display: none;}
     text-transform: capitalize;
 }
 
+.heading-7 {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
 
 /* BUTTONS */
 

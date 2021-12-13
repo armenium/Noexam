@@ -31,7 +31,7 @@ $this->registerJsFile('@web/v2/my-quote/js/'.$page_id.'.js', ['depends' => [Jque
 			<div class="start-quote__range">
 				<?=$form->field($customer_data, 'avg_amount')->input('text', [
 					'required' => 'required',
-					'class' => 'js-range-slider start-quote__range-slider',
+					'class' => 'js_range_slider2 start-quote__range-slider',
 					'id' => 'rc_coverage_amount',
 					#'value' => '400',
 					'data-from' => $from,
@@ -45,7 +45,7 @@ $this->registerJsFile('@web/v2/my-quote/js/'.$page_id.'.js', ['depends' => [Jque
 						'item' => function($index, $label, $name, $checked, $value) {
 							$checked = $checked ? 'checked="checked"' : '';
 							$return = '<label class="start-quote__label main-radio-btn-label">';
-							$return .= '<input type="radio" name="'.$name.'" value="'.$value.'" '.$checked.' class="start-quote__radio-btn main-radio-btn">';
+							$return .= '<input type="radio" name="'.$name.'" value="'.$value.'" '.$checked.' class="start-quote__radio-btn main-radio-btn" data-type="term">';
 							$return .= '<span class="start-quote__btn-icon main-radio-btn-icon"></span>';
 							$return .= '<span class="fontBodyM">'.$label.'</span>';
 							$return .= '</label>';

@@ -15,11 +15,11 @@
     },
 });*/
 
-let questionsItems = [...document.querySelectorAll('.questions__item')].forEach(item => {
+/*let questionsItems = [...document.querySelectorAll('.questions__item')].forEach(item => {
     item.addEventListener('click', (e) => {
         item.classList.toggle("questions__item--active")
     });
-});
+});*/
 
 $(document).ready(function() {
     $('.quotes-result__cards').slick({
@@ -37,8 +37,7 @@ $(document).ready(function() {
             {breakpoint: 768, settings: {slidesToShow: 1, draggable: true, dots: true, centerMode: true}}
         ]
     });
+}).on('click', '.questions__item', function(){
+    $(this).toggleClass("questions__item--active");
 });
 
-$(function() {
-    //$('.js_selectpicker').selectpicker();
-});

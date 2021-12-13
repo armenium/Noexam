@@ -38,6 +38,25 @@ $isMobile = Yii::$app->params['devicedetect']['isMobile'];
 					<?=$form->field($customer_data, 'form_name')->hiddenInput(['value' => $page_id, 'id' => ''])->label(false)->error(false);?>
 					<?=$form->field($customer_data, 'redirect')->hiddenInput(['value' => '', 'id' => ''])->label(false)->error(false);?>
 					<div class="quotes-result__formColumn first">
+						<h4 class="quotes-result__formTitle main-title">Term Length</h4>
+						<div class="quotes-result__label">
+							<label for="term_length">
+								<span class="tags">Select from dropdown</span>
+							</label>
+							<?=$form->field($customer_data, 'term_length')->dropDownList($customer_data::$term_lengths2, [
+								'id' => 'js_term_length',
+								'required' => 'required',
+								'class' => 'js_selectpicker quotes-result__termSelect',
+								'data-dropup-auto' => true,
+								'data-size' => 10,
+								'data-mobile' => (string)$isMobile,
+								'data-trigger' => 'js_action_change',
+								'data-action' => 'term_length',
+								'data-parent' => "#$page_id",
+							])->label(false);?>
+						</div>
+					</div>
+					<div class="quotes-result__formColumn last">
 						<h4 class="quotes-result__formTitle main-title">Coverage</h4>
 						<label class="quotes-result__label">
 						<?=$form->field($customer_data, 'avg_amount')->input('text', [
@@ -52,25 +71,6 @@ $isMobile = Yii::$app->params['devicedetect']['isMobile'];
 						])->label(false);?>
 						</label>
 					</div>
-					<div class="quotes-result__formColumn last">
-						<h4 class="quotes-result__formTitle main-title">Term Length</h4>
-						<div class="quotes-result__label">
-							<label for="term_length">
-								<span class="tags">Select from dropdown</span>
-							</label>
-							<?=$form->field($customer_data, 'term_length')->dropDownList($customer_data::$term_lengths2, [
-								'id' => 'term_length',
-								'required' => 'required',
-								'class' => 'js_selectpicker quotes-result__termSelect',
-								'data-dropup-auto' => true,
-								'data-size' => 10,
-								'data-mobile' => (string)$isMobile,
-								'data-trigger' => 'js_action_change',
-								'data-action' => 'ajax_quote_results_request',
-								'data-parent' => "#$page_id",
-							])->label(false);?>
-						</div>
-					</div>
 				<?php ActiveForm::end();?>
 			</div>
 			
@@ -81,7 +81,8 @@ $isMobile = Yii::$app->params['devicedetect']['isMobile'];
 					'no_plans_count' => $no_plans_count,
 					'yes_plans_count' => $yes_plans_count,
 					'total_plans_count' => $total_plans_count,
-					'total_terms_count' => $total_terms_count
+					'total_terms_count' => $total_terms_count,
+					'display_trustage_blocks' => $display_trustage_blocks,
 				]);?>
 			</div>
 			

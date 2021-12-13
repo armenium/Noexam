@@ -6,6 +6,8 @@ use app\models\RatesDataCache;
 use yii\base\Component;
 use yii\helpers\VarDumper;
 use app\models\Options;
+use DateTime;
+use app\models\Customers;
 
 class TSClient extends Component{
 
@@ -177,7 +179,6 @@ class TSClient extends Component{
 			#"Cache-Control: no-cache",
 		];
 		
-		
 		$curl = curl_init($config['api_endpoints']['get_quote_link2']);
 		
 		curl_setopt($curl, CURLOPT_HEADER, false);
@@ -208,9 +209,24 @@ class TSClient extends Component{
 			'gender' => $args['sex'] == 'm' ? 'male' : 'female',
 			'tobaccoUse' => (intval($args['tobaco']) == 0 ? false : true),
 			'channel' => $this->channel,
-			'minCoverage' => $args['avarage_amount'] - 1,
+			'minCoverage' => ($args['avarage_amount'] > 100000) ? 100000 : $args['avarage_amount'] - 1,
 			'maxCoverage' => $args['avarage_amount'],
 			'postalCode' => $args['zip'],
+		];
+		
+		$link_args = [
+			#"firstName" => $args['first_name'],
+			#"lastName" => $args['last_name'],
+			#"email" => $args['email'],
+			#"phoneNumber" => str_replace(['-', '(', ')', ' ', '+'], '', $args['phone']),
+			#"streetAddress1" => "5910 Mineral Point Rd",
+			#"streetAddress2" => "",
+			#"city" => "Madison",
+			"productCategory" => "SIT",
+			"postalCode" => $params['postalCode'],
+			"stateCode" => $params['state'],
+			"birthDate" => $params['birthDate'],
+			"gender" => $params['gender']
 		];
 		
 		if($this->max_coverage > 0 && $this->max_coverage < $args['avarage_amount']){
@@ -222,9 +238,14 @@ class TSClient extends Component{
 		if(!empty($_GET) && !$args['igonre_get_params']){
 			$params = $_GET;
 		}
-
+		
+		if(isset($params['state']) && isset($params['postalCode'])){
+			#unset($params['state'], $link_args['stateCode']);
+			unset($params['postalCode']);
+		}
+		
 		#VarDumper::dump($args, 10, 1);
-		#VarDumper::dump($params, 10, 1); exit;
+		#VarDumper::dump($params, 10, 1);
 		
 		$params_hash = md5(json_encode($params));
 		#VarDumper::dump($params_hash, 10, 1); exit;
@@ -236,23 +257,31 @@ class TSClient extends Component{
 			->orderBy(['updated' => 'DESC'])
 			->one();
 		#VarDumper::dump($rates_data_cache_model, 10, 1); exit;
-
+		
 		$data = [];
+		$plans = [];
 		$update = true;
 		$id = null;
 		if(!is_null($rates_data_cache_model)){
+			$date = new DateTime();
+			$tz = $date->getTimezone();
+			
 			$id = $rates_data_cache_model->id;
 			$updated = strtotime($rates_data_cache_model->updated);
-			if($updated + $this->cache_time > time()){
+			if($updated + $this->cache_time - $tz->getOffset($date) > time()){
 				$update = false;
+				
+				$data = [
+					'status'   => $rates_data_cache_model['response_status'],
+					'response' => [],
+				];
+				
+				$data['response']['created_at'] = $rates_data_cache_model['response_created_at'];
+				
+				$plans = json_decode($rates_data_cache_model['response_results'], true);
+				
+				return ['plans' => $plans];
 			}
-
-			$data = [
-				'status' => $rates_data_cache_model['response_status'],
-				'response' => [],
-			];
-			$data['response']['created_at'] = $rates_data_cache_model['response_created_at'];
-			$data['response'] = json_decode($rates_data_cache_model['response_results'], true);
 		}
 		#VarDumper::dump($id, 10, 1);
 
@@ -263,32 +292,10 @@ class TSClient extends Component{
 			#$data = $this->change_logos($data);
 
 			if(intval($data['status']) == 200){
-				$model_request = [
-					'id'                  => $id,
-					'data_source'         => $this->data_source,
-					'params_hash'         => $params_hash,
-					'request_params'      => json_encode($params),
-					'response_status'     => $data['status'],
-					#'response_results_id' => $data['response']['results_id'],
-					'response_results'    => json_encode($data['response']),
-					'response_created_at' => date('Y-m-d\TH:i:s'),
-					'parsed' => 0
-				];
-
-				if(is_null($id)){
-					$rates_data_cache_model = new RatesDataCache($model_request);
-					$rates_data_cache_model->save(false);
-				}else{
-					$rates_data_cache_model->attributes = $model_request;
-					$rates_data_cache_model->save(false);
-				}
 			}else{
 				#VarDumper::dump($data, 10, 1);
 			}
 		}
-		
-		#VarDumper::dump($data, 10, 1);
-		$plans = [];
 		
 		if(intval($data['status']) == 200){
 			$link = '';
@@ -307,41 +314,60 @@ class TSClient extends Component{
 			];
 			$link_result = $this->quote_link_request($link_args);*/
 			
-			$link_args = [
-				#"firstName" => $args['first_name'],
-				#"lastName" => $args['last_name'],
-				#"email" => $args['email'],
-				#"phoneNumber" => str_replace(['-', '(', ')', ' ', '+'], '', $args['phone']),
-				#"streetAddress1" => "5910 Mineral Point Rd",
-				#"streetAddress2" => "",
-				#"city" => "Madison",
-				"productCategory" => "SIT",
-				"postalCode" => $params['postalCode'],
-				#"stateCode" => $params['state'],
-				"birthDate" => $params['birthDate'],
-				"gender" => $params['gender']
-			];
-			$link_result = $this->quote_link_request2($link_args);
+			$link_result = $this->quote_link_request($link_args);
+			#$link_result = $this->quote_link_request2($link_args);
+			#VarDumper::dump($link_args, 10, 1);
 			#VarDumper::dump($link_result, 10, 1);
 			
 			if($link_result['status'] == 200){
-				$link = $link_result['response']['quoteLink'];
+				if(isset($link_result['response']['quoteLink']))
+					$link = $link_result['response']['quoteLink'];
+				elseif(isset($link_result['response']['url']))
+					$link = $link_result['response']['url'];
 			}
 			
+			$allow_coverages = array_map(function($k){return $k * 1000;}, array_keys(Customers::$coverage_amounts));
+			#VarDumper::dump($allow_coverages, 10, 1); exit;
+			
 			foreach($data['response']['quotes'] as $quotes){
-				if(empty($quotes['errors'])){
-					$plans[$this->product_key][$args['term_length']]['company_code'] = $this->product_key;
-					$plans[$this->product_key][$args['term_length']]['company_name'] = $this->data_source;
-					$plans[$this->product_key][$args['term_length']]['product_code'] = $quotes['coverageOptions'][0]['productCode'];
-					$plans[$this->product_key][$args['term_length']]['product_name'] = $quotes['productCode'];
-					$plans[$this->product_key][$args['term_length']]['premium_annual'] = $quotes['coverageOptions'][0]['premiums'][0]['premium'];
-					$plans[$this->product_key][$args['term_length']]['premium_monthly'] = $quotes['coverageOptions'][0]['premiums'][1]['premium'];
-					$plans[$this->product_key][$args['term_length']]['rate_class_name'] = 'Preferred';
-					$plans[$this->product_key][$args['term_length']]['logo_url'] = '/img/company_logos/logo_trustage.svg';
-					$plans[$this->product_key][$args['term_length']]['rating'] = 'A-';
-					$plans[$this->product_key][$args['term_length']]['link'] = $link;
+				if(empty($quotes['errors']) && !empty($quotes['coverageOptions'])){
+					foreach($quotes['coverageOptions'] as $coverageOption){
+						if(in_array($coverageOption['coverage'], $allow_coverages)){
+							$plans[$this->product_key][$coverageOption['coverage']]['company_code']    = $this->product_key;
+							$plans[$this->product_key][$coverageOption['coverage']]['company_name']    = $this->data_source;
+							$plans[$this->product_key][$coverageOption['coverage']]['product_code']    = $coverageOption['productCode'];
+							$plans[$this->product_key][$coverageOption['coverage']]['product_name']    = $quotes['productCode'];
+							$plans[$this->product_key][$coverageOption['coverage']]['premium_annual']  = $coverageOption['premiums'][0]['premium'];
+							$plans[$this->product_key][$coverageOption['coverage']]['premium_monthly'] = $coverageOption['premiums'][1]['premium'];
+							$plans[$this->product_key][$coverageOption['coverage']]['rate_class_name'] = 'Preferred';
+							$plans[$this->product_key][$coverageOption['coverage']]['logo_url']        = '/img/company_logos/logo_trustage.svg';
+							$plans[$this->product_key][$coverageOption['coverage']]['rating']          = 'A';
+							$plans[$this->product_key][$coverageOption['coverage']]['link']            = $link;
+						}
+					}
 				}
 			}
+			
+			$model_request = [
+				'id'                  => $id,
+				'data_source'         => $this->data_source,
+				'params_hash'         => $params_hash,
+				'request_params'      => json_encode($params),
+				'response_status'     => $data['status'],
+				#'response_results_id' => $data['response']['results_id'],
+				'response_results'    => json_encode($plans),
+				'response_created_at' => date('Y-m-d\TH:i:s'),
+				'parsed' => 0
+			];
+			
+			if(is_null($id)){
+				$rates_data_cache_model = new RatesDataCache($model_request);
+				$rates_data_cache_model->save(false);
+			}else{
+				$rates_data_cache_model->attributes = $model_request;
+				$rates_data_cache_model->save(false);
+			}
+			
 		}
 		
 		#VarDumper::dump($plans, 10, 1);

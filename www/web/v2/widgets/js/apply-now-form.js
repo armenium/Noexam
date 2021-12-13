@@ -29,7 +29,7 @@ $(function(){
 			this.vars.csrf_token = $('meta[name="csrf-token"]').attr('content');
 
 			this.Core.initEvents();
-			this.Forms.stylingSelect();
+			this.Forms.Init();
 		},
 		Core: {
 			initEvents: function(){
@@ -49,6 +49,9 @@ $(function(){
 					case "apply_now_form_submit":
 						ANFJS.Forms.submitForm($this);
 						break;
+					case "change_term_length":
+						ANFJS.Forms.updateAvarageAmount($this);
+						break;
 					default:
 						break;
 				}
@@ -57,6 +60,36 @@ $(function(){
 			},
 		},
 		Forms: {
+			Init: function(){
+				ANFJS.Forms.stylingSelect();
+				ANFJS.Forms.updateAvarageAmount(null);
+			},
+			updateAvarageAmount: function($obj){
+				if($obj == null){
+					$obj = $('#js_term_length');
+				}
+
+				var val = $obj.val(),
+					$target = $($obj.data('target'));
+
+				$target.find('option').each(function(){
+					var $this = $(this);
+					var value = ~~$this.val();
+					if(val == 'rt'){
+						if(value > 300){
+							$this.addClass('d-none');
+						}
+					}else{
+						$this.removeClass('d-none');
+					}
+				});
+
+				if(val == 'rt'){
+					$target.selectpicker('val', 300);
+				}
+
+				$target.selectpicker('refresh');
+			},
 			stylingSelect: function(){
 				if(ANFJS.els.js_selectpicker.exists())
 					ANFJS.els.js_selectpicker.selectpicker({'mobile': ANFJS.options.device});

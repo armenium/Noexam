@@ -14,13 +14,30 @@ use yii\helpers\VarDumper;
 
 	<div class="row rates-form__row">
 		<div class="col-12 col-md-6 rates-form__label d-flex flex-column">
-			<label for="amount"><span class="tags">Coverage amount</span></label>
-			<?=$form->field($customer_data, 'avg_amount')->dropDownList($customer_data::$avg_amounts, ['required' => 'required', 'class' => 'rates-form__select js_selectpicker', 'id' => 'avarage_amount', 'data-style' => 'btn-light', 'data-mobile' => (string)$isMobile, 'options' => ['250' => ['selected' => 'selected']]])->label(false);?>
+			<label for="term"><span class="tags">Term Length</span></label>
+			<?=$form->field($customer_data, 'term_length')->dropDownList($customer_data::$term_lengths, [
+				'required' => 'required',
+				'class' => 'rates-form__select js_selectpicker',
+				'id' => 'js_term_length',
+				'data-style' => 'btn-light',
+				'data-mobile' => (string)$isMobile,
+				'data-trigger' => 'js_action_change',
+				'data-action' => 'change_term_length',
+				'data-target' => '#an_avarage_amount',
+				'options' => ['10' => ['selected' => 'selected']]
+			])->label(false);?>
 		</div>
 
 		<div class="col-12 col-md-6 rates-form__label d-flex flex-column">
-			<label for="term"><span class="tags">Term Length</span></label>
-			<?=$form->field($customer_data, 'term_length')->dropDownList($customer_data::$term_lengths, ['required' => 'required', 'class' => 'rates-form__select js_selectpicker', 'id' => 'term_length', 'data-style' => 'btn-light', 'data-mobile' => (string)$isMobile, 'options' => ['10' => ['selected' => 'selected']]])->label(false);?>
+			<label for="amount"><span class="tags">Coverage amount</span></label>
+			<?=$form->field($customer_data, 'avg_amount')->dropDownList($customer_data::$avg_amounts, [
+				'required' => 'required',
+				'class' => 'rates-form__select js_selectpicker',
+				'id' => 'an_avarage_amount',
+				'data-style' => 'btn-light',
+				'data-mobile' => (string)$isMobile,
+				'options' => ['250' => ['selected' => 'selected']]
+			])->label(false);?>
 		</div>
 	</div>
 

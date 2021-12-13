@@ -6,172 +6,67 @@ use yii\helpers\VarDumper;
 
 if($total_terms_count > 0):?>
 
-	<?php if($no_plans_count):?>
-	<div class="quotes-result__container results-table">
-		<div class="quotes-result__containerHeader">
-			<h2 class="quotes-result__containerTitle heading-5">No Medical Exam Policies</h2>
-			<div class="heading-6">Total: <span><?=$no_plans_count;?></span></div>
-		</div>
-		<div class="quotes-result__tableHeader tableHeader">
-			<div class="tableHeader__col fontBodyS">Insurance Company</div>
-			<div class="tableHeader__col fontBodyS">Monthly Payment</div>
-			<div class="tableHeader__col fontBodyS">Financial Rating</div>
-			<div class="tableHeader__col fontBodyS">Term Length</div>
-		</div>
-		<hr>
+	<?php if(!$display_trustage_blocks):?>
 		
-		<?php foreach($prices['plans']['exam_no'] as $company => $company_data):?>
-			<?php if(!empty($company_data)): $i=0;?>
-				<?php foreach($company_data as $term => $data):
-					$i++;
-					$btn_link = (isset($data['link'])) ? 'data-trigger="js_action_click" data-action="quote-result-link" data-url="'.$data['link'].'"' : '';
-					?>
-					<?php $form = ActiveForm::begin(['id' => 'quote-result-form-'.$company.'-'.$term, 'action' => '/my-quote/post/', 'options' => ['class' => 'quote-result-form'], 'fieldConfig' => ['options' => ['tag' => false]]]);?>
-					<?=$form->field($customer_data, 'form_name')->hiddenInput(['value' => 'quote-result', 'id' => ''])->label(false);?>
-					<?=$form->field($customer_data, 'term')->hiddenInput(['value' => $term, 'id' => ''])->label(false);?>
-					<?=$form->field($customer_data, 'rate_class')->hiddenInput(['value' => $data['rate_class_name'], 'id' => ''])->label(false);?>
-					<?=$form->field($customer_data, 'monthly_premium')->hiddenInput(['value' => $data['premium_monthly'], 'id' => ''])->label(false);?>
-					<?=$form->field($customer_data, 'premium_amount')->hiddenInput(['value' => $data['premium_annual'], 'id' => ''])->label(false);?>
-					<?=$form->field($customer_data, 'company_code')->hiddenInput(['value' => $data['company_code'], 'id' => ''])->label(false);?>
-					<?=$form->field($customer_data, 'company_name')->hiddenInput(['value' => $data['company_name'], 'id' => ''])->label(false);?>
-					<?=$form->field($customer_data, 'product_code')->hiddenInput(['value' => $data['product_code'], 'id' => ''])->label(false);?>
-					<?=$form->field($customer_data, 'product_name')->hiddenInput(['value' => $data['product_name'], 'id' => ''])->label(false);?>
-					<div class="quotes-result__tableRow tableRow">
-						<div class="tableRow__col">
-							<div class="tableRow__imgWrapp">
-								<img src="<?=$data['logo_url'];?>" alt="logo" class="tableRow__img">
-								<div class="tableRow__starsWrapp">
-									<img src="/v2/common/images/star.png" alt="*">
-									<img src="/v2/common/images/star.png" alt="*">
-									<img src="/v2/common/images/star.png" alt="*">
-									<img src="/v2/common/images/star.png" alt="*">
-									<img src="/v2/common/images/star-no-active.png" alt="*">
-								</div>
-							</div>
-						</div>
-						<div class="tableRow__col">
-							<div class="tableRow__price fontBodyM">$<?=number_format($data['premium_monthly'], 2);?></div>
-						</div>
-						<div class="tableRow__col">
-							<div class="tableRow__rating fontBodyM"><?=$data['rating'];?> <span>(Excellent)</span></div>
-						</div>
-						<div class="tableRow__col">
-							<div class="tableRow__term fontBodyM"><?=$term;?> Year Plan</div>
-						</div>
-						<div class="tableRow__col tableRow__col--hiden">
-							<div class="tableRow__box">
-								<div class="tableRow__boxRow">
-									<span class="fontBodyS">Monthly Payment</span>
-									<span class="fontBodyM">$<?=number_format($data['premium_monthly'], 2);?></span>
-								</div>
-								<div class="tableRow__boxRow">
-									<span class="fontBodyS">Financial Rating</span>
-									<span class="fontBodyM"><?=$data['rating'];?> <span>(Excellent)</span></span>
-								</div>
-								<div class="tableRow__boxRow">
-									<span class="fontBodyS">Term Length</span>
-									<span class="fontBodyM"><?=$term;?> Year Plan</span>
-								</div>
-							</div>
-						</div>
-						<div class="tableRow__col">
-							<?php if(isset($data['link'])):?>
-								<a id="applynow_<?=$i;?>" <?=$btn_link;?> class="tableRow__btn main-btn button-big">Apply Now</a>
-							<?php else:?>
-								<button id="applynow_<?=$i;?>" <?=$btn_link;?> type="submit" class="tableRow__btn main-btn button-big">Apply Now</button>
-							<?php endif;?>
-						</div>
-					</div>
-					<?php ActiveForm::end();?>
-					<hr>
-				<?php endforeach;?>
-			<?php endif;?>
-		<?php endforeach;?>
-	</div>
-	<?php endif;?>
+		<?php if($no_plans_count):?>
+			<?=$this->render('quote-results-list-no-plans-block', ['customer_data' => $customer_data, 'prices' => $prices, 'no_plans_count' => $no_plans_count]);?>
+		<?php endif;?>
+		
+		<?php if($yes_plans_count):?>
+			<?=$this->render('quote-results-list-yes-plans-block', ['customer_data' => $customer_data, 'prices' => $prices, 'yes_plans_count' => $yes_plans_count]);?>
+		<?php endif;?>
 	
-	<?php if($yes_plans_count):?>
-	<div class="quotes-result__container results-table">
-		<div class="quotes-result__containerHeader">
-			<h2 class="quotes-result__containerTitle heading-5">Policies that Offer Accelerated Underwriting</h2>
-			<div class="heading-6">Total: <span><?=$yes_plans_count;?></span></div>
-		</div>
-		<div class="quotes-result__tableHeader tableHeader">
-			<div class="tableHeader__col fontBodyS">Insurance Company</div>
-			<div class="tableHeader__col fontBodyS">Monthly Payment</div>
-			<div class="tableHeader__col fontBodyS">Financial Rating</div>
-			<div class="tableHeader__col fontBodyS">Term Length</div>
-		</div>
-		<hr>
-		
-		<?php foreach($prices['plans']['exam_yes'] as $company => $company_data):?>
-			<?php if(!empty($company_data)): $i=0;?>
-				<?php foreach($company_data as $term => $data):
-					$i++;
-					$btn_link = (isset($data['link'])) ? 'data-trigger="js_action_click" data-action="quote-result-link" data-url="'.$data['link'].'"' : '';
-					?>
-					<?php $form = ActiveForm::begin(['id' => 'quote-result-form-'.$company.'-'.$term, 'action' => '/my-quote/post/', 'options' => ['class' => 'quote-result-form'], 'fieldConfig' => ['options' => ['tag' => false]]]);?>
-					<?=$form->field($customer_data, 'form_name')->hiddenInput(['value' => 'quote-result', 'id' => ''])->label(false);?>
-					<?=$form->field($customer_data, 'term')->hiddenInput(['value' => $term, 'id' => ''])->label(false);?>
-					<?=$form->field($customer_data, 'rate_class')->hiddenInput(['value' => $data['rate_class_name'], 'id' => ''])->label(false);?>
-					<?=$form->field($customer_data, 'monthly_premium')->hiddenInput(['value' => $data['premium_monthly'], 'id' => ''])->label(false);?>
-					<?=$form->field($customer_data, 'premium_amount')->hiddenInput(['value' => $data['premium_annual'], 'id' => ''])->label(false);?>
-					<?=$form->field($customer_data, 'company_code')->hiddenInput(['value' => $data['company_code'], 'id' => ''])->label(false);?>
-					<?=$form->field($customer_data, 'company_name')->hiddenInput(['value' => $data['company_name'], 'id' => ''])->label(false);?>
-					<?=$form->field($customer_data, 'product_code')->hiddenInput(['value' => $data['product_code'], 'id' => ''])->label(false);?>
-					<?=$form->field($customer_data, 'product_name')->hiddenInput(['value' => $data['product_name'], 'id' => ''])->label(false);?>
-					<div class="quotes-result__tableRow tableRow">
-						<div class="tableRow__col">
-							<div class="tableRow__imgWrapp">
-								<img src="<?=$data['logo_url'];?>" alt="logo" class="tableRow__img">
-								<div class="tableRow__starsWrapp">
-									<img src="/v2/common/images/star.png" alt="*">
-									<img src="/v2/common/images/star.png" alt="*">
-									<img src="/v2/common/images/star.png" alt="*">
-									<img src="/v2/common/images/star.png" alt="*">
-									<img src="/v2/common/images/star-no-active.png" alt="*">
-								</div>
-							</div>
-						</div>
-						<div class="tableRow__col">
-							<div class="tableRow__price fontBodyM">$<?=number_format($data['premium_monthly'], 2);?></div>
-						</div>
-						<div class="tableRow__col">
-							<div class="tableRow__rating fontBodyM"><?=$data['rating'];?> <span>(Excellent)</span></div>
-						</div>
-						<div class="tableRow__col">
-							<div class="tableRow__term fontBodyM"><?=$term;?> Year Plan</div>
-						</div>
-						<div class="tableRow__col tableRow__col--hiden">
-							<div class="tableRow__box">
-								<div class="tableRow__boxRow">
-									<span class="fontBodyS">Monthly Payment</span>
-									<span class="fontBodyM">$<?=number_format($data['premium_monthly'], 2);?></span>
-								</div>
-								<div class="tableRow__boxRow">
-									<span class="fontBodyS">Financial Rating</span>
-									<span class="fontBodyM"><?=$data['rating'];?> <span>(Excellent)</span></span>
-								</div>
-								<div class="tableRow__boxRow">
-									<span class="fontBodyS">Term Length</span>
-									<span class="fontBodyM"><?=$term;?> Year Plan</span>
-								</div>
-							</div>
-						</div>
-						<div class="tableRow__col">
-							<?php if(isset($data['link'])):?>
-								<a id="applynow_<?=$i;?>" <?=$btn_link;?> class="tableRow__btn main-btn button-big">Apply Now</a>
-							<?php else:?>
-								<button id="applynow_<?=$i;?>" <?=$btn_link;?> type="submit" class="tableRow__btn main-btn button-big">Apply Now</button>
-							<?php endif;?>
-						</div>
+	<?php else:?>
+		<?php if($no_plans_count):?>
+			<?=$this->render('quote-results-list-trustage-block', ['customer_data' => $customer_data, 'prices' => $prices, 'no_plans_count' => $no_plans_count]);?>
+		<?php endif;?>
+	
+		<div class="quotes-result__container results-table info-content">
+			<div class="d-flex flex-row-reverse flex-sm-row flex-nowrap justify-content-between align-items-center mb-4">
+				<div>
+					<h2 class="heading-4">TruStage</h2>
+					<div class="d-none d-sm-block">Our Rating</div>
+					<div class="tableRow__starsWrapp">
+						<img src="/v2/common/images/star.png" alt="*">
+						<img src="/v2/common/images/star.png" alt="*">
+						<img src="/v2/common/images/star.png" alt="*">
+						<img src="/v2/common/images/star.png" alt="*">
+						<img src="/v2/common/images/star.png" alt="*">
 					</div>
-					<?php ActiveForm::end();?>
-					<hr>
-				<?php endforeach;?>
-			<?php endif;?>
-		<?php endforeach;?>
-	</div>
+				</div>
+				<div class="img-bg">
+					<img src="/img/company_logos/logo_trustage.svg" alt="logo" class="">
+				</div>
+			</div>
+			<hr>
+			<div class="row ts-d-table">
+				<div class="col-12 col-md-3 d-flex d-md-block justify-content-between mb-3 mb-md-0">
+					<div class="desc">Type of coverage</div>
+					<div class="title text-right text-md-left pl-4 pl-md-0">Term</div>
+				</div>
+				<div class="col-12 col-md-3 d-flex d-md-block justify-content-between mb-3 mb-md-0">
+					<div class="desc">Financial strenght</div>
+					<div class="title text-right text-md-left pl-4 pl-md-0">A</div>
+				</div>
+				<div class="col-12 col-md-3 d-flex d-md-block justify-content-between mb-3 mb-md-0">
+					<div class="desc">Underwriting time</div>
+					<div class="title text-right text-md-left pl-4 pl-md-0">A few minutes</div>
+				</div>
+				<div class="col-12 col-md-3 d-flex d-md-block justify-content-between">
+					<div class="desc">Underwritten by</div>
+					<div class="title text-right text-md-left pl-4 pl-md-0">CMFG Life Insurance Company</div>
+				</div>
+			</div>
+			<hr>
+			<h2 class="quotes-result__containerTitle heading-7 mb-3">About TruStage</h2>
+			<p class="gray-text">For more than 80 years, the companies behind TruStage® have strived to carry on the vision of their founders: To offer straightforward insurance backed by a strong company, that is designed to be affordable. TruStage proudly offers products from CMFG Life Insurance Company and have earned the trust of more than 20 million people. Helping families get the most value out of their financial services is at the heart of everything they do.</p>
+		</div>
+	
+		<div class="quotes-result__container results-table">
+			<h2 class="quotes-result__containerTitle heading-5 mb-4">Legal Disclosures</h2>
+			<p class="gray-text">TruStage® Term Life Insurance is issued by CMFG Life Insurance Company, part of TruStage Financial Group, Inc. Life insurance is issued by CMFG Life Insurance Company. The insurance offered is not a deposit, and is not federally insured, sold or guaranteed by any depository institution. This is a term policy to age 80 that has premiums that increase when entering each five-year band: 25, 30, 35, 45, 50, 55, 60, 65, 70, and 75. Base Policy Numbers with a face amount of 100,000 or below: ICC16-A10a-39, A10a-039-2016. Base Policy Numbers with a face amount of 101,000 or above: ICC17-SIT-2, 2047-SIT-2."</p>
+			<p class="gray-text">SIT1,SIT-3908774.1-1121-1223</p>
+		</div>
 	<?php endif;?>
 
 <?php else:?>

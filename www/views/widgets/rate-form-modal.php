@@ -31,7 +31,7 @@ $this->registerJsFile('@web/v2/widgets/js/rate-form-modal.js', ['depends' => [Jq
 		<div class="get-your-rate-popup__range">
 			<?=$form->field($customer_data, 'amount')->input('text', [
 				'required' => 'required',
-				'class' => 'js-range-slider get-your-rate-popup__range-slider',
+				'class' => 'js_range_slider2 get-your-rate-popup__range-slider',
 				'id' => 'rc_coverage_amount',
 				'data-from' => $from,
 				'value' => $customer_data->amount,
@@ -45,7 +45,7 @@ $this->registerJsFile('@web/v2/widgets/js/rate-form-modal.js', ['depends' => [Jq
 				'item' => function($index, $label, $name, $checked, $value) {
 					$checked = $checked ? 'checked="checked"' : '';
 					$return = '<label class="get-your-rate-popup__label main-radio-btn-label">';
-					$return .= '<input type="radio" name="'.$name.'" value="'.$value.'" '.$checked.' class="get-your-rate-popup__radio-btn main-radio-btn">';
+					$return .= '<input type="radio" name="'.$name.'" value="'.$value.'" '.$checked.' class="get-your-rate-popup__radio-btn main-radio-btn" data-type="term">';
 					$return .= '<span class="get-your-rate-popup__btn-icon main-radio-btn-icon"></span>';
 					$return .= '<span class="fontBodyM">'.$label.'</span>';
 					$return .= '</label>';

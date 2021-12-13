@@ -378,6 +378,7 @@ class MyQuoteController extends BaseController {
 		$yes_plans_count = 0;
 		$total_plans_count = 0;
 		$total_terms_count = 0;
+		$display_trustage_blocks = false;
 		
 		if(is_null($customer_data)){
 			$customer_data = new CustomerData();
@@ -427,6 +428,7 @@ class MyQuoteController extends BaseController {
 				$ts_args['phone']                       = $customer_data->phone_number;
 				$ts_prices                              = $ts_client->get_quotes($ts_args);
 				$prices['plans']['exam_no']['trustage'] = $ts_prices['plans']['trustage'];
+				$display_trustage_blocks = true;
 			}else{
 				#Sagicor
 				$sg_prices                             = $sagicor->getSagicorPlans($args);
@@ -533,7 +535,7 @@ class MyQuoteController extends BaseController {
 			
 			$total_plans_count = count($prices['plans']['exam_no']) + count($prices['plans']['exam_yes']);
 			
-			#VarDumper::dump($total_terms_count, 10, 1);
+			#VarDumper::dump($prices, 10, 1); exit;
 			
 			/*$na_rates = NaRates::find()->where(['foot' => $foot, 'inch' => $inch, 'sex' => $sex])->all();
 			/// Получаем Band
@@ -553,6 +555,7 @@ class MyQuoteController extends BaseController {
 			'yes_plans_count' => $yes_plans_count,
 			'total_plans_count' => $total_plans_count,
 			'total_terms_count' => $total_terms_count,
+			'display_trustage_blocks' => $display_trustage_blocks,
 		];
 	}
 	

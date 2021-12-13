@@ -7,6 +7,9 @@ $(document).ready(function(){
             ww: $(window).width(),
             wh: $(window).height(),
         },
+        vars: {
+            my_range_slider: null,
+        },
         el: {
             js_rate_from_modal: $('#js_rate_from_modal'),
             js_best_results: $('#js_best_results'),
@@ -21,6 +24,7 @@ $(document).ready(function(){
         initEvents: function(){
             $(document)
                 .on('click change keyup', '#js_rate_form_modal input', RFM.validateRateForm)
+                .on('click', '#js_rate_form_modal input[data-type="term"]', RFM.updateRangeSlider)
                 .on('mouseup', '[data-trigger="js_action_mouseup"]', RFM.doAction)
                 .on('blur', '[data-trigger="js_action_blur"]', RFM.doAction)
                 .on('change', '[data-trigger="js_action_change"]', RFM.doAction)
@@ -39,6 +43,9 @@ $(document).ready(function(){
                 case "hide_rate_modal":
                     RFM.actionCloseRateForm($this);
                     break;
+                case "update_amount": // not used
+                    RFM.updateRangeSlider($this);
+                    break;
                 case "rate_form_modal_submit":
                     RFM.submitRateForm($this);
                     break;
@@ -49,7 +56,7 @@ $(document).ready(function(){
             e.preventDefault();
         },
         initRangeSlider: function(){
-            $(".js-range-slider").ionRangeSlider({
+            $(".js_range_slider2").ionRangeSlider({
                 skin: "round",
                 //values: marks,
                 grid: true,
@@ -58,6 +65,16 @@ $(document).ready(function(){
                 hide_min_max: true,
                 step: 50000
             });
+
+            RFM.vars.my_range_slider = $(".js_range_slider2").data("ionRangeSlider");
+        },
+        updateRangeSlider: function(){
+            if(RFM.vars.my_range_slider != null){
+                var values = ($(this).val() == 'rt')
+                    ? ['100k','150k','200k','250k','300k']
+                    : ['100k','150k','200k','250k','300k','400k','500k','600k','700k','800k','900k','1m'];
+                RFM.vars.my_range_slider.update({'values': values});
+            }
         },
         actionOpenRateForm: function(){
             RFM.el.js_rate_from_modal.fadeIn(400);

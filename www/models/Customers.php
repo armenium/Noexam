@@ -59,6 +59,7 @@ class Customers extends ActiveRecord{
 		'15' => '15 years',
 		'20' => '20 years',
 		'30' => '30 years',
+		#'rt' => 'Renewable Term',
 	];
 	public static $term_lengths3 = [
 		'10' => '10 yr',
@@ -98,8 +99,8 @@ class Customers extends ActiveRecord{
 	public function rules(){
 		return [
 			[['sid'], 'required'],
-			[['age', 'byear', 'term', 'updates'], 'integer'],
-			[['prices'], 'string'],
+			[['age', 'byear', 'updates'], 'integer'],
+			[['term', 'prices'], 'string'],
 			[['amount', 'updated_at', 'created_at'], 'safe'],
 			[['sid', 'ip'], 'string', 'max' => 32],
 			[['state'], 'string', 'max' => 4],
