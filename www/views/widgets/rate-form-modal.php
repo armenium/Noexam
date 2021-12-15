@@ -21,7 +21,18 @@ $this->registerJsFile('@web/v2/widgets/js/rate-form-modal.js', ['depends' => [Jq
 		<div class="loader"></div>
 		<a class="close-btn btn-close-rate-form" data-trigger="js_action_click" data-action="hide_rate_modal"></a>
 
-		<?php $form = ActiveForm::begin(['id' => 'js_rate_form_modal', 'action' => $action, 'enableAjaxValidation' => false, 'options' => ['class' => 'applynow-form', 'data-view' => 'product', 'data-trigger' => 'js_action_submit', 'data-action' => 'rate_form_modal_submit'], 'fieldConfig' => ['options' => ['tag' => false]]]);?>
+		<?php $form = ActiveForm::begin([
+			'id' => 'js_rate_form_modal',
+			'action' => $action,
+			'enableAjaxValidation' => false,
+			'options' => [
+				'class' => 'applynow-form',
+				'data-view' => 'product',
+				'data-trigger' => 'js_action_submit',
+				'data-action' => 'rate_form_modal_submit'
+			],
+			'fieldConfig' => ['options' => ['tag' => false]]
+		]);?>
 
 		<?=$form->field($customer_data, 'form_name')->hiddenInput(['value' => 'ajaxform', 'id' => ''])->label(false)->error(false);?>
 
