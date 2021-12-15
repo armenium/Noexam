@@ -251,7 +251,8 @@ class MyQuoteController extends BaseController {
 	#STEP 1
 	public function actionStartQuote(){
 		$customer_data = $this->getCustomeData('create', false);
-
+		#VarDumper::dump($customer_data, 10, 1);
+		
 		if(!is_null($customer_data)){
 			$customer_data->attributes = $customer_data->decodeData();
 			$customer_data->avg_amount = intval($customer_data->avg_amount);
@@ -271,7 +272,6 @@ class MyQuoteController extends BaseController {
 			if($k == $customer_data->avg_amount) break;
 			$from++;
 		}
-		
 		
 		return $this->render('start-quote', ['customer_data' => $customer_data, 'from' => $from]);
 	}

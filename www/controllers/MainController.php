@@ -992,7 +992,7 @@ class MainController extends BaseController {
 	 * Homepage
 	 * @return string|\yii\web\Response
 	 */
-	public function actionIndex(){
+	/*public function actionIndex(){
 		$customer_data = $this->getCustomeData();
 		
 		if(!is_null($customer_data)){
@@ -1005,7 +1005,7 @@ class MainController extends BaseController {
 		}
 
 		return $this->render('index', ['customer_data' => $customer_data]);
-	}
+	}*/
 
 	public function actionQuestions(){
 		$this->layout = 'questions';
@@ -1019,7 +1019,7 @@ class MainController extends BaseController {
 		return $this->render('questions', ['question' => $question, 'subquestions' => $subquestions]);
 	}
 
-	public function actionPersonalinfo(){
+	/*public function actionPersonalinfo(){
 		$this->layout = 'questions';
 
 		$customer_data = $this->getCustomeData();
@@ -1040,9 +1040,9 @@ class MainController extends BaseController {
 		}
 
 		return $this->render('personal-info', ['customer_data' => $customer_data]);
-	}
+	}*/
 
-	public function actionPersonalinfo2(){
+	/*public function actionPersonalinfo2(){
 		$this->layout  = 'questions';
 		$customer_data = $this->getCustomeData();
 
@@ -1062,9 +1062,9 @@ class MainController extends BaseController {
 		}
 
 		return $this->render('personal-info2', ['customer_data' => $customer_data]);
-	}
+	}*/
 
-	public function actionBeneficiary(){
+	/*public function actionBeneficiary(){
 		$this->layout = 'questions';
 		//$customer_data = new CustomerData();
 
@@ -1088,7 +1088,7 @@ class MainController extends BaseController {
 		$bf_id = 1;
 
 		return $this->render('beneficiary', ["bf_id" => $bf_id, 'customer_data' => $customer_data]);
-	}
+	}*/
 	
 	/** OLD */
 	/*public function actionBeneficiaryAjax(){
@@ -1101,17 +1101,9 @@ class MainController extends BaseController {
 		return $this->renderPartial('_beneficiary', ["bf_id" => $bf_id, 'customer_data' => $customer_data, 'form' => $form]);
 	}*/
 
-	public function actionPaymentinfo(){
+	/*public function actionPaymentinfo(){
 		$this->layout = 'questions';
 
-		/*$session = Yii::$app->session;
-		$customer_data = CustomerData::find()->where(['sid' => $session->id])->one();
-		if($customer_data){
-			$customer_data->scenario = CustomerData::SCENARIO_PAYMENT;
-			$customer_data->save();
-		}else{
-			return $this->redirect('/');
-		}*/
 
 		$customer_data = $this->getCustomeData();
 
@@ -1132,9 +1124,9 @@ class MainController extends BaseController {
 
 
 		return $this->render('payment-info', ['customer_data' => $customer_data]);
-	}
+	}*/
 
-	public function actionSuccess(){
+	/*public function actionSuccess(){
 		$this->layout = 'questions';
 		$session = Yii::$app->session;
 
@@ -1169,34 +1161,29 @@ class MainController extends BaseController {
 		    'name' => 'PHPSESSID',
 		    'expire' => -3600,
 		]));
-		/*$report = $this->generatePDFReport(25);
-
-		$customer_data->attributes = $customer_data->decodeData();
-		$customer_data->success = $report;
-		$customer_data->save();*/
 
 		//Yii::$app->session->close();
 
 		return $this->render('success', ['report_data' => $report]);
-	}
+	}*/
 
-	public function actionApproved(){
+	/*public function actionApproved(){
 		$this->layout = 'questions';
 
 		return $this->render('approved');
-	}
+	}*/
 
-	public function actionDeclined(){
+	/*public function actionDeclined(){
 		$this->layout = 'questions';
 
 		return $this->render('declined');
-	}
+	}*/
 
-	public function actionNotEligible(){
+	/*public function actionNotEligible(){
 		$this->layout = 'questions';
 
 		return $this->render('not-eligible');
-	}
+	}*/
 
 	public function actionRtu(){
 		$this->layout = 'questions';
@@ -1251,7 +1238,7 @@ class MainController extends BaseController {
 	}
 	
 	/** OLD */
-	public function actionGetQuestions(){
+	/*public function actionGetQuestions(){
 		$isMobile = Yii::$app->params['devicedetect']['isMobile'];
 		$request = Yii::$app->request;
 		$reflexes;
@@ -1259,8 +1246,6 @@ class MainController extends BaseController {
 		if(isset($_POST['answers']) && !empty($_POST['answers'])){
 			foreach($_POST['answers'] as $key => $answer){
 				// if($answer['answer']=='yes'){
-				/*          $reflexes['id'][] = $answer['id'];
-						  $reflexes['xml_num'][] = $answer['xml_num'];*/
 
 				$result_q[$key] = Questions::findOne(['id' => $answer['id']]);
 				$result_q[$key]->q_answer = $answer['answer'];
@@ -1284,9 +1269,6 @@ class MainController extends BaseController {
 						echo 'rtu';
 						exit;
 						break;
-					/*  case 'reflex':$questions[] = $result_q[$key];
-
-							   break;*/
 				}
 
 
@@ -1308,11 +1290,6 @@ class MainController extends BaseController {
 				//VarDumper::dump($customer_data->step, 10, 1);
 				//$customer_data->save();
 
-				/*if($_POST['question_type'] == 'question_nq'){
-					return $this->redirect($this->getStepUrl(CustomerData::SCENARIO_QUOTE_RESULT), 200);
-				}else{
-					return $this->redirect($this->getStepUrl(CustomerData::SCENARIO_BENEFICIARY), 200);
-				}*/
 
 				return $this->redirect($this->getStepUrl(CustomerData::SCENARIO_BENEFICIARY), 200);
 			}
@@ -1326,10 +1303,10 @@ class MainController extends BaseController {
 		}
 
 
-	}
+	}*/
 	
 	/** OLD */
-	public function actionQuestions2(){
+	/*public function actionQuestions2(){
 		$isMobile = Yii::$app->params['devicedetect']['isMobile'];
 		$session      = Yii::$app->session;
 		$this->layout = 'questions';
@@ -1354,10 +1331,10 @@ class MainController extends BaseController {
 		//VarDumper::dump($questions, 10, 1);
 
 		return $this->render('questions', ['question' => $questions, 'subquestions' => $subquestions]);
-	}
+	}*/
 
 	/** OLD */
-	public function actionGetReflex(){
+	/*public function actionGetReflex(){
 
 		$this->layout = 'questions';
 		$request      = Yii::$app->request;
@@ -1418,9 +1395,7 @@ class MainController extends BaseController {
 		if(!$this->arraySearchRecursive2($customer_data->questions, $parent->xml_num, $preparedQuestionsData)){
 			$customer_data->questions[$parent->xml_num] = $preparedQuestionsData;
 		}
-		/*  print_r($customer_data->questions);
 
-		  die;*/
 		$customer_data->scenario = CustomerData::SCENARIO_ADDQ;
 		$customer_data->save();
 
@@ -1448,7 +1423,7 @@ class MainController extends BaseController {
 
 		return $this->renderPartial('reflex5', ['reflex' => $reflexQuestions, 'questionNumber' => $questionNumber, 'parentQustionId' => $questionId]);
 
-	}
+	}*/
 
 	public function actionWsdl(){
 		header("Content-Type: text/xml; charset=utf-8");
@@ -1529,7 +1504,7 @@ class MainController extends BaseController {
 	}
 	
 	/** OLD */
-	public function actionIntermediaryQuestions(){
+	/*public function actionIntermediaryQuestions(){
 		$isMobile     = Yii::$app->params['devicedetect']['isMobile'];
 		$session      = Yii::$app->session;
 		$this->layout = 'planinformation';
@@ -1560,7 +1535,7 @@ class MainController extends BaseController {
 		//VarDumper::dump($questions, 10, 1);
 
 		return $this->render('intermediary', ['questions' => $questions]);
-	}
+	}*/
 
 	// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 

@@ -1,5 +1,6 @@
 <?php
 namespace app\components;
+
 use app\models\Answers;
 use app\models\CustomerData;
 use app\models\Questions;
@@ -17,7 +18,7 @@ use GeoIp2\Database\Reader;
 use GeoIp2\Exception\AddressNotFoundException;
 use yii\web\Request;
 use yii\db\Query;
-
+use yii\helpers\ArrayHelper;
 //use app\components\BaseController;
 
 class BaseController extends Controller{
@@ -1126,25 +1127,64 @@ class BaseController extends Controller{
 
     }
 	
-	public function getCustomeData($status = 'new', $reset = true){
+	public function getCustomeData($status = null, $reset = false){
 		$session       = Yii::$app->session;
 		$cookies       = Yii::$app->response->cookies;
 		$params = ['sid' => $session->id];
+		
 		if(!is_null($status)){
 			$params['status'] = $status;
 		}
+		
+		$this->removeDuplicateCustomeData();
+		
 		$customer_data = CustomerData::find()->where($params)->one();
-		#VarDumper::dump($customer_data, 10, 1); exit;
+		#VarDumper::dump($params, 10, 1);
+		#VarDumper::dump($customer_data, 10, 1);
 		
 		if(!is_null($customer_data)){
-			return $customer_data;
+			if(in_array($customer_data->status, ['new', 'create'])){
+				return $customer_data;
+			}else{
+				$reset = true;
+			}
+		}else{
+			$customer_data = CustomerData::find()->where(['sid' => $session->id])->andWhere(['NOT IN', 'status', ['new', 'create']])->all();
+			#VarDumper::dump($customer_data, 10, 1);
+			if(!empty($customer_data)){
+				$reset = true;
+			}
 		}
+		#VarDumper::dump($reset, 10, 1);
 		
 		if($reset){
-			$cookies->add(new Cookie(['name'   => 'PHPSESSID', 'expire' => -3600]));
+			$cookies->add(new Cookie(['name' => 'PHPSESSID', 'expire' => -3600]));
 		}
 		
 		return null;
+	}
+	
+	public function removeDuplicateCustomeData(){
+		$session       = Yii::$app->session;
+		$params = ['sid' => $session->id];
+		$customer_data_count = CustomerData::find()->where($params)->count();
+		
+		#VarDumper::dump($session->id, 10, 1);
+		#VarDumper::dump($customer_data_count, 10, 1);
+		
+		if(intval($customer_data_count) > 1){
+			$data_ids = CustomerData::find()
+			                   ->select('id')
+			                   ->where($params)
+			                   ->andWhere(['IN', 'status', ['new', 'create']])
+			                   ->orderBy(['id' => 'ASC'])
+			                   ->limit($customer_data_count-1)
+			                   ->asArray()
+			                   ->all();
+			$ids = ArrayHelper::getColumn($data_ids, 'id');
+			#VarDumper::dump($ids, 10, 1);
+			Yii::$app->db->createCommand("DELETE FROM customer_data WHERE id IN (".implode(',', $ids).")")->execute();
+		}
 	}
 
     public function createVelocifyRecord( $data = NULL ){

@@ -8,7 +8,7 @@ form.start-quote {min-height: calc(100vh - 105px); padding: 90px 0;}
 .start-quote__radio-btns {display: flex; align-items: center; justify-content: space-between; margin-bottom: 85px; flex-wrap: wrap;}
 .start-quote__label {display: flex; align-items: center; cursor: pointer; margin-right: 10px; margin-bottom: 25px;}
 .start-quote__label:last-child {margin-right: 0;}
-.start-quote__btn {margin: 0 auto; border: none; cursor: pointer;}
+.start-quote__btn {margin: 0 auto; border: none; cursor: pointer; max-width: 300px;}
 .start-quote__range {margin-bottom: 50px; padding-top: 50px;}
 
 @media all and (max-width: 767px){

@@ -64,14 +64,16 @@ $isMobile = Yii::$app->params['devicedetect']['isMobile'];
 						<label class="contact-details__label">
 							<span class="tags">State</span>
 							<?=$form->field($customer_data, 'state')->dropDownList($customer_data::$states_short, [
-									'required' => 'required',
-									'class' => 'js_selectpicker state',
-									'id' => 'state',
-									'data-dropup-auto' => true,
-									'data-style' => 'contact-details__input fontBodyM',
-									'data-size' => 10,
-									'data-title' => 'Enter your state',
-									'data-mobile' => (string)$isMobile
+								'required' => 'required',
+								'class' => 'js_selectpicker state',
+								'id' => 'state',
+								'data-dropup-auto' => true,
+								'data-live-search' => 'true',
+								'data-style' => 'contact-details__input fontBodyM',
+								'data-size' => 10,
+								'data-title' => 'Enter your state',
+								'data-mobile' => (string)$isMobile,
+								'options' => Yii::$app->Helpers->createDropdownOptionsSubtext($customer_data::$states)
 							])->label(false);?>
 						</label>
 						<label class="contact-details__label">
