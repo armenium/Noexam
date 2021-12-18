@@ -2007,7 +2007,7 @@ class MainController extends BaseController {
 
 		$content = $this->current_cat->content;
 		
-		$template = !empty($this->current_cat->template) ? str_replace('views/', '', $this->current_cat->template) : '/main/resources/common.php';
+		$template = !empty($this->current_cat->template) ? str_replace('views/', '', $this->current_cat->template) : '/life-insurance/common.php';
 
 		if(!file_exists($view_path.$template) || empty($this->current_cat)){
 			throw new HttpException(404 ,'Page not found');

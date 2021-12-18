@@ -1,6 +1,6 @@
 .fs-author {}
-.fs-author__header {display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; margin-bottom: 30px; position: relative;}
-.fs-author__header:after {content: ""; display: block; width: 100%; height: 1px; background-color: #E4E4E4; position: absolute; bottom: -15px; left: 0;}
+.fs-author__header {display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; margin-bottom: 15px; padding-bottom: 15px; position: relative; border-bottom: 1px solid #E4E4E4;}
+/*.fs-author__header:after {content: ""; display: block; width: 100%; height: 1px; background-color: #E4E4E4; position: absolute; bottom: -15px; left: 0;}*/
 .fs-author__col:first-child {display: flex; align-items: center;}
 .fs-author__avatar {margin-right: 15px;}
 .fs-author__user-info {display: flex; flex-direction: column;}
