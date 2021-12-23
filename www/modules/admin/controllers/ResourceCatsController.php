@@ -85,6 +85,8 @@ class ResourceCatsController extends AdminController {
 	}
 
 	public function actionCreate(){
+		$ResourcesCompanies = new ResourcesCompanies();
+		
 		$model        = new ResourcesCats();
 		$old_header_image = $model->header_image;
 
@@ -105,11 +107,14 @@ class ResourceCatsController extends AdminController {
 		}else{
 			return $this->render('create', [
 				'model' => $model,
+				'resources_companies' => $ResourcesCompanies,
 			]);
 		}
 	}
 
 	public function actionUpdate($id){
+		$ResourcesCompanies = new ResourcesCompanies();
+		
 		$model = $this->findModel($id);
 		$old_header_image = $model->header_image;
 
@@ -139,7 +144,7 @@ class ResourceCatsController extends AdminController {
 		}else{
 			return $this->render('update', [
 				'model' => $model,
-				//'db_server' => $this->db_server,
+				'resources_companies' => $ResourcesCompanies,
 			]);
 		}
 	}

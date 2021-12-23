@@ -14,7 +14,6 @@ use yii\web\JsExpression;
 /* @var $model app\models\ResourcesGrid */
 /* @var $form yii\widgets\ActiveForm */
 
-$ResourcesCompanies = new ResourcesCompanies();
 ?>
 <style>
 	label {display: block;}
@@ -22,9 +21,10 @@ $ResourcesCompanies = new ResourcesCompanies();
 </style>
 <div class="resources-grid-form">
 	<?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]);?>
-
+	<?=Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => 'btn-float '.($model->isNewRecord ? 'btn btn-success' : 'btn btn-primary')]);?>
+	
 	<div class="panel panel-danger">
-		<div class="panel-heading">Page Main params</div>
+		<div class="panel-heading">Main params</div>
 		<div class="panel-body">
 			<div class="row">
 				<div class="col-md-4">
@@ -34,7 +34,7 @@ $ResourcesCompanies = new ResourcesCompanies();
 					<?=$form->field($model, 'url')->textInput(['maxlength' => true]);?>
 				</div>
 				<div class="col-md-4">
-					<?=$form->field($model, 'company_id')->dropDownList($ResourcesCompanies->getCompaniesWithId(), ['prompt' => ''])->label('Select if this entry is an insurance company page');?>
+					<?=$form->field($model, 'company_id')->dropDownList($resources_companies->getCompaniesWithId(), ['prompt' => ''])->label('Select if this entry is an insurance company page');?>
 				</div>
 			</div>
 			<div class="row">
@@ -52,7 +52,7 @@ $ResourcesCompanies = new ResourcesCompanies();
 	</div>
 
 	<div id="js_page_content" class="panel panel-primary">
-		<div class="panel-heading">Page Content</div>
+		<div class="panel-heading">Custom Content</div>
 		<div class="panel-body">
 			<div class="row">
 				<div class="col-md-12">
@@ -140,7 +140,7 @@ $ResourcesCompanies = new ResourcesCompanies();
 	</div>
 
 	<div class="panel panel-info">
-		<div class="panel-heading">Page Header params</div>
+		<div class="panel-heading">Header params</div>
 		<div class="panel-body">
 			<div class="row" data-layout="resource_fw_modern">
 				<div class="col-md-12">
@@ -166,7 +166,7 @@ $ResourcesCompanies = new ResourcesCompanies();
 	</div>
 
 	<div class="panel panel-success">
-		<div class="panel-heading">Page Meta params</div>
+		<div class="panel-heading">Meta params</div>
 		<div class="panel-body">
 			<div class="row">
 				<div class="col-md-12">
@@ -187,7 +187,7 @@ $ResourcesCompanies = new ResourcesCompanies();
 	</div>
 
 	<div class="panel panel-warning">
-		<div class="panel-heading">Page Additional params</div>
+		<div class="panel-heading">Additional params</div>
 		<div class="panel-body">
 			<div class="row">
 				<div class="col-md-5">

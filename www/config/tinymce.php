@@ -33,7 +33,7 @@ $config = [
 			"lists",
 			"media",
 			#"nonbreaking",
-			#"pagebreak",
+			"pagebreak",
 			"paste",
 			#"preview",
 			#"print",

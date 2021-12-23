@@ -11,7 +11,7 @@ $layout_class = AdminController::getLayoutClass();
 ?>
 
 <?php if($is_admin):?>
-	<header>
+	<header class="admin-header">
 		<?php
 		AdminNavBar::begin([
 			'brandLabel' => 'Admin Home',
