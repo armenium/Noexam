@@ -43,6 +43,11 @@ $this->params['breadcrumbs'][] = ['label' => $this->context->current_cat->title,
 #$db_time = strtotime($this->context->current_cat->updated);
 #$file_time = filemtime(__FILE__);
 #$updated_date = ($db_time > $file_time) ? $db_time : $file_time;
+
+if(strstr($content, '<!-- pagebreak -->') !== false){
+	$content = str_replace('<p><!-- pagebreak --></p>', '<!-- pagebreak -->', $content);
+	$content = str_replace('<!-- pagebreak -->', '</div></div><div class="main-wrapp bg1"><div class="wrapp">', $content);
+}
 ?>
 
 <div class="main-wrapp bg1">
@@ -61,6 +66,10 @@ $this->params['breadcrumbs'][] = ['label' => $this->context->current_cat->title,
 	</div>
 </div>
 
-<?=Yii::$app->shortcodes->parse($content);?>
+<div class="main-wrapp bg1">
+	<div class="wrapp">
+		<?=Yii::$app->shortcodes->parse($content);?>
+	</div>
+</div>
 
 <div class="main-wrapp bg1 pb-5"></div>

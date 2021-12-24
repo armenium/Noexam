@@ -2,7 +2,11 @@
 $(document).ready(function(){
 
 	var AJS = {
+		obj: {
+			win: null,
+		},
 		els: {
+			js_loader: $("#js_data_loader"),
 			checkboxes: null,
 			js_page_content: null,
 		},
@@ -16,11 +20,50 @@ $(document).ready(function(){
 		},
 		initEvents: function(){
 			$(document)
+				.on('mouseup', '[data-trigger="js_action_mouseup"]', AJS.doAction)
+				.on('blur', '[data-trigger="js_action_blur"]', AJS.doAction)
+				.on('change', '[data-trigger="js_action_change"]', AJS.doAction)
+				.on('click', '[data-trigger="js_action_click"]', AJS.doAction)
+				.on('submit', '[data-trigger="js_action_submit"]', AJS.doAction)
 				.on('change', '#resourcescats-template', AJS.actionChangeTemplateField)
 				.on('blur', '#resourcescats-title', AJS.actionBlurTitleField)
 				.on('click', '#resourcescats-child_to_parent_links', AJS.actionClickChildToParentLinks)
 				.on('click', '#js_fields_toggle', AJS.actionClickJsFieldsToggle);
 
+		},
+		doAction: function(e){
+			var $this = $(this),
+				action = $(this).data('action'),
+				preventDefault = $(this).data('prevent-default');
+
+			if(preventDefault == undefined){
+				preventDefault = true;
+			}
+
+			switch(action){
+				case "print":
+					window.print();
+					break;
+				case "preview_page":
+					AJS.goPreviewPage($this);
+					break;
+				default:
+					break;
+			}
+
+			//console.log(preventDefault);
+
+			if(preventDefault){
+				e.preventDefault();
+			}
+		},
+		Loader: {
+			show: function(){
+				AJS.els.js_loader.addClass('show');
+			},
+			hide: function(){
+				AJS.els.js_loader.removeClass('show');
+			},
 		},
 		string_to_slug: function(str, separator){
 			str = str.trim();
@@ -85,6 +128,39 @@ $(document).ready(function(){
 			}else{
 				AJS.els.js_page_content.hide();
 			}
+		},
+		goPreviewPage: function($btn){
+			var $yiiform = $($btn.data('parent'));
+
+			$.ajax({
+				type: $yiiform.attr('method'),
+				url: $yiiform.attr('action'),
+				data: $yiiform.serializeArray(),
+				beforeSend: function(xhr){
+					AJS.Loader.show();
+				}
+			}).done(function(responce){
+				if(responce.error == 0){
+					if(responce.url != ''){
+						if(AJS.obj.win == null){
+							AJS.obj.win = window.open(responce.url, '_blank');
+						}else{
+							if(AJS.obj.win.length == 0){
+								AJS.obj.win = window.open(responce.url, '_blank');
+							}else{
+								AJS.obj.win.location = responce.url;
+								AJS.obj.win.focus();
+							}
+						}
+					}
+				}else if(responce.error == 1){
+
+				}
+				//AJS.Loader.hide();
+			}).fail(function(){
+			}).always(function(){
+				AJS.Loader.hide();
+			});
 		},
 	};
 

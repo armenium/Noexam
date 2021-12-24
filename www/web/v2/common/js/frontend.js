@@ -37,7 +37,9 @@ $(function(){
 			lazyLoadInstance: null,
 			my_range_slider: null,
 		},
-		routes: {},
+		routes: {
+			ajax_get_partials_content: '/ajax-get-partials-content/'
+		},
 		els: {
 			body: $("body"),
 			js_loader: $(".js_data_loader"),
@@ -56,11 +58,6 @@ $(function(){
 
 			this.Forms.Init();
 			this.Common.Init();
-
-			this.Forms.stylingSelect();
-			//this.Common.doEqualHeight();
-			this.Common.initDisclosure();
-			this.Common.initLazyLoad();
 		},
 		Core: {
 			initEvents: function(){
@@ -163,6 +160,10 @@ $(function(){
 			Init: function(){
 				FJS.Storage.set('referrer_url', document.referrer);
 				FJS.Storage.set('current_url', window.location.href);
+				FJS.Common.initDisclosure();
+				FJS.Common.initLazyLoad();
+				FJS.Common.initGetAjaxContent();
+				//FJS.Common.doEqualHeight();
 			},
 			toggleMobileNav: function($obj){
 				var target = $obj.data("target");
@@ -236,6 +237,82 @@ $(function(){
 
 				tinysort('#'+target+' > .item', {data: 'weight', order: is_checked ? 'desc' : 'asc'});
 			},
+			initTableSorter: function(){
+				// https://mottie.github.io/tablesorter/docs/
+				if($('.tablesorter').length){
+					$.tablesorter.addParser({
+						id: 'ratesort',
+						is: function(s){
+							return false;
+						},
+						format: function(s, table, cell){
+							var $cell = $(cell);
+							return ~~$cell.data('value') || s;
+						},
+						type: 'number'
+					});
+					$('.tablesorter').each(function(){
+						$(this).tablesorter({
+							headers: {
+								1: {
+									sorter: 'ratesort'
+								}
+							}
+						});
+					});
+				}
+			},
+			initGetAjaxContent: function(){
+				if($('.ajaxContent').length){
+					setTimeout(function(){
+						$('.ajaxContent').each(function(){
+							var view_file = $(this).data('view-file');
+							FJS.Common.ajaxGetPartialsContent($(this), view_file);
+						});
+					}, 5000);
+				}
+			},
+			ajaxGetPartialsContent: function($container, view_file){
+				$.ajax({
+					type: "POST",
+					url: FJS.routes.ajax_get_partials_content,
+					data: {'view': view_file},
+					dataType: "json",
+					cache: false,
+					beforeSend: function(xhr){}
+				}).done(function(responce){
+					if(responce.error == 0){
+						$container.html(responce.html);
+						var $ajax_content = $(responce.html);
+						if($ajax_content.find('.selectpicker').length){
+							$('.selectpicker').selectpicker('render');
+						}
+						if($ajax_content.find('img.lazy').length){
+							FJS.Common.initLazyLoad();
+						}
+						if($ajax_content.find('.tablesorter').length){
+							FJS.Common.initTableSorter();
+						}
+						if($ajax_content.find('#rate-calc-form').length){
+							RATE_CALC.init();
+						}
+						if($ajax_content.find('.responsive-tabs').length){
+							RESPONSIVEUI.responsiveTabs();
+						}
+						if($ajax_content.find('.disclosure').length){
+							FJS.Common.initDisclosure();
+						}
+					}else if(responce.error == 1){
+
+					}
+				}).fail(function(){
+
+				}).always(function(){
+
+				});
+
+			},
+
 			/*
 			doEqualHeight: function(){
 				if($('[data-equal-height]').length){
@@ -305,6 +382,7 @@ $(function(){
 			Init: function(){
 				FJS.Forms.initRangeSlider();
 				FJS.Forms.updateRangeSlider();
+				FJS.Forms.stylingSelect();
 			},
 			changeTermLength: function($obj){
 				FJS.Forms.updateRangeSlider();

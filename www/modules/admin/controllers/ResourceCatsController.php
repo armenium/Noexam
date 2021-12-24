@@ -14,6 +14,7 @@ use yii\filters\VerbFilter;
 use yii\helpers\VarDumper;
 use yii\web\Cookie;
 use yii\web\NotFoundHttpException;
+use yii\web\Response;
 use yii\web\UploadedFile;
 
 /**
@@ -83,7 +84,7 @@ class ResourceCatsController extends AdminController {
 			'model' => $this->findModel($id),
 		]);
 	}
-
+	
 	public function actionCreate(){
 		$ResourcesCompanies = new ResourcesCompanies();
 		
@@ -103,7 +104,13 @@ class ResourceCatsController extends AdminController {
 
 			$model->header_image = $this->doUpload($old_header_image);
 			$model->save();
-			return $this->redirect(['view', 'id' => $model->id]);
+			
+			if(Yii::$app->request->isAjax){
+				Yii::$app->response->format = Response::FORMAT_JSON;
+				return ['error' => $model->errors ? 1 : 0, 'url' => $model->url];
+			}else{
+				return $this->redirect(['view', 'id' => $model->id]);
+			}
 		}else{
 			return $this->render('create', [
 				'model' => $model,
@@ -140,7 +147,13 @@ class ResourceCatsController extends AdminController {
 				$model->header_image = $this->doUpload($old_header_image);
 			}
 			$model->save();
-			return $this->redirect(['view', 'id' => $model->id]);
+			
+			if(Yii::$app->request->isAjax){
+				Yii::$app->response->format = Response::FORMAT_JSON;
+				return ['error' => $model->errors ? 1 : 0, 'url' => $model->url];
+			}else{
+				return $this->redirect(['view', 'id' => $model->id]);
+			}
 		}else{
 			return $this->render('update', [
 				'model' => $model,
@@ -391,5 +404,5 @@ class ResourceCatsController extends AdminController {
 		return false;
 		return trim(basename($file_path));
 	}
-
+	
 }
