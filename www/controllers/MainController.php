@@ -695,7 +695,7 @@ class MainController extends BaseController {
 
 	public function actionPostRateCalcTable(){
 		$ret = ['error' => 0, 'message' => '', 'request' => '', 'html' => ''];
-
+		
 		$request = Yii::$app->request;
 		$session = Yii::$app->session;
 		Yii::$app->response->format = Response::FORMAT_JSON;

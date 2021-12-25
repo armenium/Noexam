@@ -297,11 +297,7 @@
     color: #757575;
 }
 
-.charts-by-age {
-    padding: 100px 0;
-}
-
-.charts-by-age__title {text-align: center; margin-bottom: 20px;}
+.applynow-form-section.rate-calc.v2 .form-wrap {margin-top: 60px !important;}
 
 .rates-charts__table {}
 
@@ -343,47 +339,7 @@
 
 .rates-table__col {}
 
-@media screen and (max-width: 767px) {
-    .charts-by-age__container {
-        flex-direction: column;
-    }
-    .charts-by-age__input {
-        width: 100%;
-    }
-    .charts-by-age__select {
-        width: 100% !important;
-        max-width: 100%;
-    }
-    .charts-by-age__label {
-        margin-right: 0;
-        margin-bottom: 20px;
-    }
-    .charts-by-age__input-text {
-        bottom: 5px;
-    }
-    .charts-by-age__title {
-        font-size: 32px;
-        line-height: 40px;
-        margin-bottom: 50px;
-    }
-    .charts-by-age__subtitle {
-        font-size: 24px;
-        line-height: 32px;
-        margin-bottom: 25px;
-    }
-    .charts-by-age__form {
-        padding: 25px;
-    }
-    .charts-by-age__container {
-        margin-bottom: 25px;
-    }
-    .charts-by-age__decor-line {
-        margin-bottom: 25px;
-    }
-    .charts-by-age__btn {
-        height: 60px;
-        max-width: 100%;
-    }
+@media all and (max-width: 767px) {
     .rates-table {
         padding: 20px;
     }

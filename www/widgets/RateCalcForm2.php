@@ -1,12 +1,12 @@
 <?php
-
-
 namespace app\widgets;
 
+use app\assets\AppAsset;
 use app\models\CustomerData;
 use Yii;
 use yii\base\Widget;
 use yii\helpers\Html;
+use yii\web\JqueryAsset;
 
 class RateCalcForm2 extends Widget{
 	
@@ -59,6 +59,10 @@ class RateCalcForm2 extends Widget{
 		for($i = 80; $i <= 400; $i++){
 			$this->wigths[$i] = $i.' lbs';
 		}
+		
+		$this->view->registerCssFile('@web/v2/widgets/css/rate-calc-form-2.css', ['depends' => [JqueryAsset::className(), AppAsset::className()]]);
+		$this->view->registerJsFile('@web/v2/widgets/js/rate-calc-form-2.js', ['depends' => [JqueryAsset::className(), AppAsset::className()]]);
+		
 	}
 	
 	public function run(){

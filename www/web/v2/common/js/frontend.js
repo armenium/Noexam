@@ -41,6 +41,7 @@ $(function(){
 			ajax_get_partials_content: '/ajax-get-partials-content/'
 		},
 		els: {
+			head: $("head"),
 			body: $("body"),
 			js_loader: $(".js_data_loader"),
 			js_header: $("#js_header"),
@@ -294,10 +295,15 @@ $(function(){
 							FJS.Common.initTableSorter();
 						}
 						if($ajax_content.find('#rate-calc-form').length){
-							RATE_CALC.init();
+							FJS.els.js_selectpicker = $(".js_selectpicker");
+							FJS.Forms.stylingSelect();
+
+							FJS.els.head.append('<link href="/v2/widgets/css/rate-calc-form-2.css?v=1636026061" rel="stylesheet">');
+							FJS.els.body.append('<script src="/v2/widgets/js/rate-calc-form-2.js?v=1636026061"></script>');
+							//RATE_CALC.init();
 						}
 						if($ajax_content.find('.responsive-tabs').length){
-							RESPONSIVEUI.responsiveTabs();
+							//RESPONSIVEUI.responsiveTabs();
 						}
 						if($ajax_content.find('.disclosure').length){
 							FJS.Common.initDisclosure();
@@ -415,8 +421,9 @@ $(function(){
 				}
 			},
 			stylingSelect: function(){
-				if(FJS.els.js_selectpicker.exists())
+				if(FJS.els.js_selectpicker.exists()){
 					FJS.els.js_selectpicker.selectpicker({'mobile': FJS.options.device});
+				}
 			},
 			submitContactDetails: function($btn){
 				var $form = $btn.parents('form');

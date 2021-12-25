@@ -45,7 +45,11 @@ $this->params['breadcrumbs'][] = ['label' => $this->context->current_cat->title,
 #$updated_date = ($db_time > $file_time) ? $db_time : $file_time;
 
 if(strstr($content, '<!-- pagebreak -->') !== false){
-	$content = str_replace('<p><!-- pagebreak --></p>', '<!-- pagebreak -->', $content);
+	$content = str_replace([
+		'<p><!-- pagebreak --></p>',
+		'<h2><!-- pagebreak --></h2>',
+		'<h3><!-- pagebreak --></h3>'
+	], '<!-- pagebreak -->', $content);
 	$content = str_replace('<!-- pagebreak -->', '</div></div><div class="main-wrapp bg1"><div class="wrapp">', $content);
 }
 ?>

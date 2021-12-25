@@ -44,8 +44,8 @@ $(document).ready(function(){
 				case "print":
 					window.print();
 					break;
-				case "preview_page":
-					AJS.goPreviewPage($this);
+				case "save_n_preview":
+					AJS.actionSaveAndPreview($this);
 					break;
 				default:
 					break;
@@ -129,8 +129,9 @@ $(document).ready(function(){
 				AJS.els.js_page_content.hide();
 			}
 		},
-		goPreviewPage: function($btn){
+		actionSaveAndPreview: function($btn){
 			var $yiiform = $($btn.data('parent'));
+			tinymce.activeEditor.save();
 
 			$.ajax({
 				type: $yiiform.attr('method'),
@@ -156,7 +157,6 @@ $(document).ready(function(){
 				}else if(responce.error == 1){
 
 				}
-				//AJS.Loader.hide();
 			}).fail(function(){
 			}).always(function(){
 				AJS.Loader.hide();
