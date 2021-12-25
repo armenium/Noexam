@@ -29,12 +29,12 @@ use yii\web\JsExpression;
 			<?=Html::submitButton($model->isNewRecord ? 'Save & Close' : 'Update & Close', ['class' => ($model->isNewRecord ? 'btn btn-success' : 'btn btn-primary')]);?>
 		</div>
 	
-		<div class="accordion" id="accordionExample">
+		<div class="accordion" id="accordion_rcf">
 			<div class="panel panel-danger">
 				<div class="panel-heading">
 					<button class="btn btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse_1" aria-expanded="true" aria-controls="collapse_1">Main params</button>
 				</div>
-				<div id="collapse_1" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+				<div id="collapse_1" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion_rcf">
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-md-4">
@@ -66,7 +66,7 @@ use yii\web\JsExpression;
 				<div class="panel-heading">
 					<button class="btn btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse_2" aria-expanded="false" aria-controls="collapse_2">Custom Content</button>
 				</div>
-				<div id="collapse_2" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+				<div id="collapse_2" class="collapse" aria-labelledby="headingOne" data-parent="#accordion_rcf">
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-md-12">
@@ -158,7 +158,7 @@ use yii\web\JsExpression;
 				<div class="panel-heading">
 					<button class="btn btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse_3" aria-expanded="false" aria-controls="collapse_3">Header params</button>
 				</div>
-				<div id="collapse_3" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+				<div id="collapse_3" class="collapse" aria-labelledby="headingOne" data-parent="#accordion_rcf">
 					<div class="panel-body">
 						<div class="row" data-layout="resource_fw_modern">
 							<div class="col-md-12">
@@ -188,7 +188,7 @@ use yii\web\JsExpression;
 				<div class="panel-heading">
 					<button class="btn btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse_4" aria-expanded="false" aria-controls="collapse_4">Meta params</button>
 				</div>
-				<div id="collapse_4" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+				<div id="collapse_4" class="collapse" aria-labelledby="headingOne" data-parent="#accordion_rcf">
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-md-12">
@@ -213,7 +213,7 @@ use yii\web\JsExpression;
 				<div class="panel-heading">
 					<button class="btn btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse_5" aria-expanded="false" aria-controls="collapse_5">Additional params</button>
 				</div>
-				<div id="collapse_5" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+				<div id="collapse_5" class="collapse" aria-labelledby="headingOne" data-parent="#accordion_rcf">
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-md-7">

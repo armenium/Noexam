@@ -64,6 +64,7 @@ $config = [
 		'image_caption' => true,
 		'image_description' => true,
 		'toolbar' => "undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | hr | link image responsivefilemanager",
+		'toolbar_sticky' => true,
 		'external_filemanager_path' => '/plugins/responsive_filemanager/filemanager/',
 		'filemanager_title' => 'Responsive Filemanager',
 		'external_plugins' => [

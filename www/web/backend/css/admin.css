@@ -71,8 +71,8 @@ input[type="checkbox"]:checked + label::before {background-position: -18px;}
 
 textarea {resize: vertical;}
 
-body.admin {margin-top: 56px;}
-header.admin-header {position: fixed; top: 0; left: 0; right: 0; z-index: 5; box-shadow: 0 2px 5px rgba(0,0,0,0.3);}
+body.admin {/*margin-top: 56px;*/}
+header.admin-header {/*position: fixed;*/ top: 0; left: 0; right: 0; z-index: 5; box-shadow: 0 2px 5px rgba(0,0,0,0.3);}
 
 .error-input {line-height: 10px; font-size: 10px; position: absolute; width: inherit; display: none;}
 header.wrapper-main {background-color: #fff;}
@@ -348,8 +348,10 @@ table.table:not(.detail-view) tbody tr td:last-child a .glyphicon {font-size: 16
 
 .control-label {font-size: 14px;}
 section.container {position: relative;}
-.float-btn-group {position: absolute; z-index: 3; top: 0; right: 15px;}
+.float-btn-group {position: sticky; z-index: 3; top: 0; right: 15px; text-align: right;}
 h2.title {font-size: 18px; margin-bottom: 30px;}
+#accordion_rcf {margin-top: 20px;}
+#resource_cat_form {margin-top: -50px;}
 
 /*
 1. Copy widget code with 'inherit' for background and text color, and 'None' for border style.
