@@ -39,7 +39,7 @@ $this->registerJsFile('@web/v2/my-quote/js/'.$page_id.'.js', ['depends' => [Jque
 				])->label(false)->error(false);?>
 			</div>
 			<div class="start-quote__term">
-				<div class="start-quote__subtitle fontBodyM"><b>Term Lenght</b></div>
+				<div class="start-quote__subtitle fontBodyM"><b>Term Length</b></div>
 				<?=$form->field($customer_data, 'term_length')->radioList(
 					$customer_data::$term_lengths2, [
 						'item' => function($index, $label, $name, $checked, $value) {

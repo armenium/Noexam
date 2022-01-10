@@ -21,7 +21,8 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Compare life insu
 $this->registerMetaTag(['name' => 'keywords', 'content' => '']);
 
 $this->title = 'Buy Life Insurance Online - About Us';
-$this->params['breadcrumbs'][] = ['label' => 'About', 'url' => Url::toRoute('about/'), 'class' => 'breadcrumbs__link tags breadcrumbs__link--active'];
+$this->params['breadcrumbs'][] = ['label' => 'About', 'class' => 'breadcrumbs__link tags breadcrumbs__link--active'];
+#$this->params['breadcrumbs'][] = ['label' => 'About', 'url' => Url::toRoute('about/'), 'class' => 'breadcrumbs__link tags breadcrumbs__link--active'];
 #$this->params['breadcrumbs'][] = 'About';
 
 echo $this->render('sections/about/hero.php');

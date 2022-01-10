@@ -11,6 +11,7 @@ $(document).ready(function(){
             my_range_slider: null,
         },
         el: {
+            body: $("body"),
             js_rate_from_modal: $('#js_rate_from_modal'),
             js_best_results: $('#js_best_results'),
         },
@@ -78,9 +79,11 @@ $(document).ready(function(){
         },
         actionOpenRateForm: function(){
             RFM.el.js_rate_from_modal.fadeIn(400);
+            RFM.el.body.addClass("modal-opened");
         },
         actionCloseRateForm: function(){
             RFM.el.js_rate_from_modal.fadeOut(400);
+            RFM.el.body.removeClass("modal-opened");
         },
         validateRateForm: function(){
             var form = $(this).parents('form');

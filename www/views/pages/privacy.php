@@ -13,7 +13,8 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Compare life insu
 $this->registerMetaTag(['name' => 'keywords', 'content' => '']);
 
 $this->title = 'Buy Life Insurance Online - Privacy';
-$this->params['breadcrumbs'][] = ['label' => 'Privacy', 'url' => Url::toRoute('privacy/'), 'class' => 'breadcrumbs__link tags breadcrumbs__link--active'];
+$this->params['breadcrumbs'][] = ['label' => 'Privacy', 'class' => 'breadcrumbs__link tags breadcrumbs__link--active'];
+#$this->params['breadcrumbs'][] = ['label' => 'Privacy', 'url' => Url::toRoute('privacy/'), 'class' => 'breadcrumbs__link tags breadcrumbs__link--active'];
 
 ?>
 <div class="main-wrapp bg1">

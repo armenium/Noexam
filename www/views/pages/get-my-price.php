@@ -14,7 +14,8 @@ $this->registerMetaTag(['name' => 'description', 'content' => '']);
 $this->registerMetaTag(['name' => 'keywords', 'content' => '']);
 
 $this->title = 'Buy Life Insurance Online - Get My Price';
-$this->params['breadcrumbs'][] = ['label' => 'Get My Price', 'url' => Url::toRoute('get-my-price/'), 'class' => 'breadcrumbs__link tags breadcrumbs__link--active'];
+$this->params['breadcrumbs'][] = ['label' => 'Get My Price', 'class' => 'breadcrumbs__link tags breadcrumbs__link--active'];
+#$this->params['breadcrumbs'][] = ['label' => 'Get My Price', 'url' => Url::toRoute('get-my-price/'), 'class' => 'breadcrumbs__link tags breadcrumbs__link--active'];
 
 ?>
 <div class="main-wrapp bg1">

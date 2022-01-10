@@ -26,8 +26,8 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Compare life insu
 $this->registerMetaTag(['name' => 'keywords', 'content' => '']);
 
 $this->title = 'Life Insurance Quotes - Compare and Apply Online';
-$this->params['breadcrumbs'][] = ['label' => 'Apply Now', 'url' => Url::toRoute('apply-now/'), 'class' => 'breadcrumbs__link tags breadcrumbs__link--active'];
-#$this->params['breadcrumbs'][] = 'About';
+$this->params['breadcrumbs'][] = ['label' => 'Apply Now', 'class' => 'breadcrumbs__link tags breadcrumbs__link--active'];
+#$this->params['breadcrumbs'][] = ['label' => 'Apply Now', 'url' => Url::toRoute('apply-now/'), 'class' => 'breadcrumbs__link tags breadcrumbs__link--active'];
 
 echo $this->render('sections/applynow/hero.php');
 echo $this->render('sections/applynow/rates-form.php');

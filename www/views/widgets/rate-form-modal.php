@@ -50,7 +50,7 @@ $this->registerJsFile('@web/v2/widgets/js/rate-form-modal.js', ['depends' => [Jq
 			])->label(false)->error(false);?>
 		</div>
 
-		<h3 class="get-your-rate-popup__subtitle main-title">Term Lenght</h3>
+		<h3 class="get-your-rate-popup__subtitle main-title">Term Length</h3>
 		<?=$form->field($customer_data, 'term')->radioList(
 			$customer_data::$term_lengths2, [
 				'item' => function($index, $label, $name, $checked, $value) {

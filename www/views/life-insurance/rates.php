@@ -34,9 +34,10 @@ $this->registerCssFile('@web/v2/common/css/get-started.css', ['depends' => [Boot
 //$this->registerJS('jQuery(document).ready(function($) { RESPONSIVEUI.responsiveTabs(); });', View::POS_END, 'responsive-tab-js');
 #$this->registerJsFile('@web/v2/life-insurance/js/rates.js', ['depends' => [JqueryAsset::className(), AppAsset::className()]]);
 
-$this->params['breadcrumbs'][] = ['label' => 'Life Insurance', 'url' => '/life-insurance/'];
-#$this->params['breadcrumbs'][] = ['label' => 'Term Life Insurance', 'url' => '/life-insurance/term/'];
-$this->params['breadcrumbs'][] = ['label' => 'Rates', 'url' => $this->context->current_cat->url, 'class' => 'breadcrumbs__link tags breadcrumbs__link--active'];
+$this->params['breadcrumbs'][] = ['label' => 'Life Insurance', 'url' => '/life-insurance/', 'class' => 'breadcrumbs__link tags'];
+$this->params['breadcrumbs'][] = ['label' => 'Term Life Insurance', 'url' => '/life-insurance/term/', 'class' => 'breadcrumbs__link tags'];
+$this->params['breadcrumbs'][] = ['label' => 'Rates', 'class' => 'breadcrumbs__link tags breadcrumbs__link--active'];
+#$this->params['breadcrumbs'][] = ['label' => 'Rates', 'url' => $this->context->current_cat->url, 'class' => 'breadcrumbs__link tags breadcrumbs__link--active'];
 #$this->params['breadcrumbs'][] = $this->context->current_cat->title;
 
 

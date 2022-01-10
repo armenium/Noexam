@@ -103,6 +103,7 @@ class ResourceCatsController extends AdminController {
 			}
 
 			$model->header_image = $this->doUpload($old_header_image);
+			$model->url = $this->_fixPageUrl($model->url);
 			$model->save();
 			
 			if(Yii::$app->request->isAjax){
@@ -146,6 +147,8 @@ class ResourceCatsController extends AdminController {
 			}else{
 				$model->header_image = $this->doUpload($old_header_image);
 			}
+			
+			$model->url = $this->_fixPageUrl($model->url);
 			$model->save();
 			
 			if(Yii::$app->request->isAjax){
@@ -405,4 +408,13 @@ class ResourceCatsController extends AdminController {
 		return trim(basename($file_path));
 	}
 	
+	private function _fixPageUrl($url){
+		
+		if(!empty($url))
+			if(substr($url, -1) != '/')
+				if(strstr($url, '?') === false && strstr($url, '&') === false)
+					$url .= '/';
+		
+		return $url;
+	}
 }

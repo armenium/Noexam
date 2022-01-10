@@ -13,8 +13,9 @@ $this->registerCssFile('@web/v2/pages/css/article.css', ['depends' => [Bootstrap
 $this->registerMetaTag(['name' => 'description', 'content' => 'Compare life insurance policies and apply for coverage today. Shop the top rated companies offering up to $1,000,000 of coverage from $23 per month.']);
 $this->registerMetaTag(['name' => 'keywords', 'content' => '']);
 
-$this->title = 'Buy Life Insurance Online - Licenses';
-$this->params['breadcrumbs'][] = ['label' => 'Licenses', 'url' => Url::toRoute('licenses/'), 'class' => 'breadcrumbs__link tags breadcrumbs__link--active'];
+$this->title = 'NoExam.com Life Insurance Licenses';
+$this->params['breadcrumbs'][] = ['label' => 'Licenses', 'class' => 'breadcrumbs__link tags breadcrumbs__link--active'];
+#$this->params['breadcrumbs'][] = ['label' => 'Licenses', 'url' => Url::toRoute('licenses/'), 'class' => 'breadcrumbs__link tags breadcrumbs__link--active'];
 
 ?>
 <div class="main-wrapp bg1">
@@ -80,10 +81,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Licenses', 'url' => Url::toRoute('
 			<li>Wyoming 247426</li>
 
 		</ul>
-		<h2>Life Insurance Licenses by State for Jonathan Holloway</h2>
-		<ul>
-			<li>Georgia: 3133449 (Resident State)</li>
-		</ul>
+		
 		<p>If you have questions about our corporate licensing for No Exam Life Insurance, Inc, please contact our office at 888-407-0714</p>
 	</section>
 	

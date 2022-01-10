@@ -25,9 +25,10 @@ $this->registerCssFile('@web/v2/life-insurance/css/best-companies.css', ['depend
 $this->registerCssFile('@web/v2/common/css/main-first-screen.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
 $this->registerJsFile('@web/v2/life-insurance/js/best-companies.js', ['depends' => [JqueryAsset::className(), AppAsset::className()]]);
 
-$this->params['breadcrumbs'][] = ['label' => 'Life Insurance', 'url' => '/life-insurance/'];
+$this->params['breadcrumbs'][] = ['label' => 'Life Insurance', 'url' => '/life-insurance/', 'class' => 'breadcrumbs__link tags'];
+$this->params['breadcrumbs'][] = ['label' => 'Best Companies', 'class' => 'breadcrumbs__link tags breadcrumbs__link--active'];
+#$this->params['breadcrumbs'][] = ['label' => 'Best Companies', 'url' => $this->context->current_cat->url, 'class' => 'breadcrumbs__link tags breadcrumbs__link--active'];
 #$this->params['breadcrumbs'][] = ['label' => 'Life Insurance Companies', 'url' => '/life-insurance/companies/'];
-$this->params['breadcrumbs'][] = ['label' => 'Best Companies', 'url' => $this->context->current_cat->url, 'class' => 'breadcrumbs__link tags breadcrumbs__link--active'];
 #$this->params['breadcrumbs'][] = $this->context->current_cat->title;
 ?>
 
