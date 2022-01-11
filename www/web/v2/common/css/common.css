@@ -44,8 +44,8 @@ form input[type="hidden"] {display: none;}
 .main-wrapp li:not(.breadcrumbs__item) {margin-bottom: 15px;}
 .main-wrapp li:not(.breadcrumbs__item) p {margin-bottom: 2px;}
 .main-wrapp p:last-child {margin-bottom: 0;}
-.main-wrapp a {color: #339E75;}
-.main-wrapp a:hover {text-decoration: underline;}
+.main-wrapp a:not(.footer__link) {color: #339E75;}
+.main-wrapp a:not(.footer__link):hover {text-decoration: underline;}
 
 .bg2, .bg2 h1, .bg2 h2, .bg2 h3, .bg2 h4, .bg2 h5, .bg2 h6,
 .bg3, .bg3 h1, .bg3 h2, .bg3 h3, .bg3 h4, .bg3 h5, .bg3 h6,
@@ -72,13 +72,24 @@ form input[type="hidden"] {display: none;}
 .header {min-height: auto; height: 105px;}
 .header--empty .header__imgWrapp {display: flex;}
 .header--empty .header__imgBox > img {font-size: 0; width: auto;}
-@media screen and (max-width: 767px) {
+@media all and (max-width: 767px){
 	.header--empty .header__imgBox > img {width: auto; height: 20px;}
 }
 
 table.ages-table {width: 100%; background-color: #fff;}
-table.ages-table thead tr {display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 12px 30px; border-bottom: 1px solid #FEEEDA; background-color: #FEEEDA;}
-table.ages-table thead tr th {color: #757575; font-size: 14px; line-height: 24px; font-weight: normal;}
-table.ages-table tbody tr {display: flex; justify-content: space-between; align-items: center; padding: 12px 0; margin: 0 30px; border-bottom: 1px solid #f2f2f2;}
+table.ages-table thead tr {border-bottom: 1px solid #FEEEDA; background-color: #FEEEDA;}
+table.ages-table tbody tr {border-bottom: 1px solid #f2f2f2;}
 table.ages-table tbody tr:last-child {border: 0;}
-table.ages-table tbody tr td {color: #282B29; font-size: 18px; line-height: 26px; font-weight: normal;}
+table.ages-table th,
+table.ages-table td {font-weight: normal; padding: 12px 30px; text-align: center; width: 34%;}
+table.ages-table th {color: #757575; font-size: 14px; line-height: 24px;}
+table.ages-table td {color: #282B29; font-size: 18px; line-height: 26px;}
+table.ages-table tr th:first-child,
+table.ages-table tr td:first-child {text-align: left; width: 33%;}
+table.ages-table tr th:last-child,
+table.ages-table tr td:last-child {text-align: right; width: 33%;}
+@media all and (max-width: 443px){
+	table.ages-table {display: block; overflow-x: auto;}
+	table.ages-table th,
+	table.ages-table td {font-size: 14px; line-height: 18px; padding: 10px;}
+}

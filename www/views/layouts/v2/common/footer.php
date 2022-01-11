@@ -12,7 +12,7 @@
 			</div>
 			<div class="footer__col">
 				<div class="footer__box">
-					<h1 class="footer__subtitle sub-title-1">Resources</h1>
+					<div class="footer__subtitle sub-title-1">Resources</div>
 					<ul class="footer__list">
 						<li class="footer__item"><a href="/help/" class="footer__link fontBodyM">Help</a></li>
 						<li class="footer__item"><a href="/get-my-price/" class="footer__link fontBodyM">Get my price</a></li>
@@ -21,7 +21,7 @@
 					</ul>
 				</div>
 				<div class="footer__box">
-					<h1 class="footer__subtitle sub-title-1">Our website</h1>
+					<div class="footer__subtitle sub-title-1">Our website</div>
 					<ul class="footer__list">
 						<li class="footer__item"><a href="/about/" class="footer__link fontBodyM">About</a></li>
 						<li class="footer__item"><a href="/licenses/" class="footer__link fontBodyM">Licenses</a></li>
