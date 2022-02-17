@@ -74,11 +74,12 @@ $this->params['breadcrumbs'][] = ['label' => 'Rates', 'class' => 'breadcrumbs__l
 			<h1 class="rates-charts__title heading-2">Term life insurance rate Charts</h1>
 			<p class="rates-charts__info fontBodyL">Below are sample term life insurance rates by age for comparison purposes. The rates are broken up by term length, gender, age, and coverage amounts. We recommend you use this <b>comparison tool</b> to compare actual rates from <b>the best life insurance companies.</b></p>
 			<div class="rates-charts__links">
-				<a href="#" class="rates-charts__link button-small button-small--arrow">Rates by Age 18-29</a>
-				<a href="#" class="rates-charts__link button-small button-small--arrow">Rates by Age 40-49</a>
-				<a href="#" class="rates-charts__link button-small button-small--arrow">Rates by Age 60-69</a>
-				<a href="#" class="rates-charts__link button-small button-small--arrow">Rates by Age 30-39</a>
-				<a href="#" class="rates-charts__link button-small button-small--arrow">Rates by Age 50-59</a>
+				<a role="button" class="rates-charts__link button-small button-small--arrow" data-trigger="js_action_click" data-action="goto_age_tab" data-target="ages-18-28">Rates by Age 18-28</a>
+				<a role="button" class="rates-charts__link button-small button-small--arrow" data-trigger="js_action_click" data-action="goto_age_tab" data-target="ages-29-39">Rates by Age 29-39</a>
+				<a role="button" class="rates-charts__link button-small button-small--arrow" data-trigger="js_action_click" data-action="goto_age_tab" data-target="ages-40-49">Rates by Age 40-49</a>
+				<a role="button" class="rates-charts__link button-small button-small--arrow" data-trigger="js_action_click" data-action="goto_age_tab" data-target="ages-50-59">Rates by Age 50-59</a>
+				<a role="button" class="rates-charts__link button-small button-small--arrow" data-trigger="js_action_click" data-action="goto_age_tab" data-target="ages-60-69">Rates by Age 60-69</a>
+				<a role="button" class="rates-charts__link button-small button-small--arrow" data-trigger="js_action_click" data-action="goto_age_tab" data-target="ages-70-74">Rates by Age 70-74</a>
 			</div>
 			<h2 class="rates-charts__title rates-charts__title--small-title heading-5">Average Cost of Life Insurance - How Much Does Term Insurance Cost?</h2>
 			<div class="rates-charts__chart">
@@ -87,7 +88,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Rates', 'class' => 'breadcrumbs__l
 
 			<div class="rates-charts__footer">
 				<p class="rates-charts__text-content">Term insurance can cost as low as $10 per month or as high as $500+ per month depending on age, term length, coverage amount, and overall health. The charts below provide average rates for a 50-year old man in good health.</p>
-				<p class="rates-charts__text-content">It is important to note once you buy a term life policy, the rates do not increase over the term period of the policy.</p>
+				<p class="rates-charts__text-content">It is important to note that once you buy a term life policy, the rates do not increase over the term period of the policy.</p>
 				<div class="rates-charts__table">
 					<table class="rates-table">
 						<thead class="rates-table__head">
@@ -128,12 +129,12 @@ $this->params['breadcrumbs'][] = ['label' => 'Rates', 'class' => 'breadcrumbs__l
 	<?=RateChartByAge::widget();?>
 </div>
 
-<div class="main-wrapp bg3;">
+<div class="main-wrapp bg3 get-started-wrap">
 	<div class="wrapp">
 		<section class="get-started">
 			<h1 class="get-started__title heading-2">Apply now</h1>
-			<p class="get-started__subtitle fontBodyL">Our expert agents are standing by to help you find the right policy. Call 888-407-0714 to speak with an agent now, or click the button to apply online.</p>
-			<a href="#" class="get-started__btn main-btn button-big">apply now</a>
+			<p class="get-started__subtitle fontBodyL">Our expert agents are standing by to help you find the right policy.<br>Call 888-407-0714 to speak with an agent now, or click the button to apply online.</p>
+			<a href="../../../start-quote/" class="get-started__btn main-btn button-big">apply now</a>
 		</section>
 	</div>
 </div>

@@ -617,7 +617,7 @@ class CustomerData extends ActiveRecord {
 		'20' => '20 Year Term',
 		//'25' => '25 Year Term',
 		'30' => '30 Year Term',
-		'rt' => 'Renewable Term',
+		'rt' => 'Convertible Term',
 		//'15rop' => '15 Year Return of Premium',
 		//'20rop' => '20 Year Return of Premium',
 		//'25rop' => '25 Year Return of Premium',
@@ -635,14 +635,14 @@ class CustomerData extends ActiveRecord {
 		'15' => '15 years',
 		'20' => '20 years',
 		'30' => '30 years',
-		'rt' => 'Renewable Term',
+		'rt' => 'Convertible Term',
 	];
 	public static $term_lengths3 = [
 		'10' => '10 yr',
 		'15' => '15 yr',
 		'20' => '20 yr',
 		'30' => '30 yr',
-		'rt' => 'Renewable Term',
+		'rt' => 'Convertible Term',
 	];
 	public static $healths = [
 		'excellent' => 'Excellent', // 5
@@ -659,8 +659,8 @@ class CustomerData extends ActiveRecord {
 	];
 	public static $healths3 = [
 		'very-good' => 'Сompletely healthy', // 4
-		'good' => 'Have chronic diseases', // 3
-		'fair' => 'Have serious diseases', // 2
+		'good' => 'Moderately healthy', // 3
+		'fair' => 'Serious health conditions', // 2
 	];
 	public static $amount_range = [
 		100000,

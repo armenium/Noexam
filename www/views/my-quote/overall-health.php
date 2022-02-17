@@ -53,7 +53,7 @@ $this->registerJsFile('@web/v2/my-quote/js/'.$page_id.'.js', ['depends' => [Jque
 					])->label(false);?>
 				<div class="overal-health__box">
 					<div class="overal-health__col">
-						<div class="overal-health__subtitle fontBodyM"><b>Do you use tabacco?</b></div>
+						<div class="overal-health__subtitle fontBodyM"><b>Do you use tobacco?</b></div>
 						<?=$form->field($customer_data, 'tobaco')->radioList(
 							$customer_data::$yes_no,
 							[

@@ -1,6 +1,6 @@
 <div class="wrapp">
 	<section class="rates-chart-by-age">
-		<h1 class="rates-chart-by-age__title heading-2">10 Year Term Life Insurance<br> Rate Chart By Age</h1>
+		<h2 class="rates-chart-by-age__title heading-2">10 Year Term Life Insurance<br> Rate Chart By Age</h2>
 		<p class="rates-chart-by-age__subtitle fontBodyL ">
 			A 10-year term policy usually has the lowest rate.
 			It will offer a level premium for 10 years.

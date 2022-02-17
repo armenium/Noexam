@@ -18,7 +18,10 @@ $(function(){
 			xs: [767, 576],
 			xxs: [575, 0],
 		},
-		vars: {},
+		vars: {
+			ww: 0,
+			wh: 0,
+		},
 		routes: {},
 		els: {
 			js_rate_chart_by_age_prev_btn: $('#js_rate_chart_by_age_prev_btn'),
@@ -30,12 +33,19 @@ $(function(){
 		},
 		Core: {
 			initEvents: function(){
+				$(window)
+					.on('resize orientationchange deviceorientation', RCBAJS.Core.eventResizeWindow);
+
 				$(document)
 					.on('mouseup', '[data-trigger="js_action_mouseup"]', RCBAJS.Core.doAction)
 					.on('blur', '[data-trigger="js_action_blur"]', RCBAJS.Core.doAction)
 					.on('change', '[data-trigger="js_action_change"]', RCBAJS.Core.doAction)
 					.on('click', '[data-trigger="js_action_click"]', RCBAJS.Core.doAction)
 					.on('submit', '[data-trigger="js_action_submit"]', RCBAJS.Core.doAction);
+			},
+			eventResizeWindow: function(){
+				RCBAJS.vars.ww = $(window).width();
+				RCBAJS.vars.wh = $(window).height();
 			},
 			doAction: function(e){
 				var $this = $(this),
@@ -51,11 +61,33 @@ $(function(){
 					case "change_terms_tab":
 						RCBAJS.Tabs.changeTermsTab($this);
 						break;
+					case "goto_age_tab":
+						RCBAJS.Tabs.gotoAgeTab($this);
+						break;
 					default:
 						break;
 				}
 
 				e.preventDefault();
+			},
+		},
+		Common: {
+			scrollTo: function(elem, speed, effect){
+				if(speed == undefined){
+					speed = 1000;
+				}
+				if(effect == undefined){
+					effect = 'linear';
+				}
+
+				var top = ~~$(elem).offset().top;
+
+				if(top != undefined){
+					if(RCBAJS.vars.ww < 768){
+						top -= 70;
+					}
+					$('html, body').animate({scrollTop: top}, speed, effect);
+				}
 			},
 		},
 		Tabs: {
@@ -68,7 +100,7 @@ $(function(){
 					prev_text = '',
 					next_text = '';
 
-				//console.log(dir, $target);
+				console.log(dir, $btn.data('target'));
 
 				switch(dir){
 					case "prev":
@@ -97,7 +129,7 @@ $(function(){
 				if(next_text == ''){
 					next_text = $target.find('li:first').find('a').text();
 				}
-				//console.log(prev_text, next_text);
+				console.log(prev_text, next_text);
 
 				RCBAJS.els.js_rate_chart_by_age_prev_btn.find('span').text(prev_text);
 				RCBAJS.els.js_rate_chart_by_age_next_btn.find('span').text(next_text);
@@ -115,8 +147,22 @@ $(function(){
 
 				RCBAJS.Tabs.fillAgesSelect();
 			},
+			gotoAgeTab: function($this){
+				var target = $this.data('target');
+				var $custom_age_tabs = $('.custom-age-tabs:visible');
+				if($custom_age_tabs.exists()){
+					var $nav_link = $custom_age_tabs.find('.nav-link[aria-controls="'+target+'"]');
+					console.log(target, $nav_link.length);
+					if($nav_link.exists()){
+						var id = $nav_link.attr('id');
+						$nav_link.tab('show');
+						RCBAJS.Common.scrollTo('#'+id, 800, 'easeOutExpo');
+					}
+				}
+
+			},
 			fillAgesSelect: function(){
-				
+
 			},
 		},
 	};

@@ -1,6 +1,6 @@
 <div class="wrapp">
 	<section class="rates-chart-by-age">
-		<h1 class="rates-chart-by-age__title heading-2">UL Universal Life Insurance Quotes<br> Rate Chart By Age</h1>
+		<h2 class="rates-chart-by-age__title heading-2">UL Universal Life Insurance Quotes<br> Rate Chart By Age</h2>
 		<p class="rates-chart-by-age__subtitle fontBodyL ">
 			Universal life, or sometimes called lifetime coverage, is a policy that offers a level premium for life.
 			A universal life policy will offer coverage to up to age 121.
@@ -28,6 +28,6 @@
 		</div>
 	
 		<p class="rate-chart-by-age-desc fontBodyS">* Quotes are presented in a monthly premium format. The above quotes are for a non-smoker in excellent health and are subject to changes.</p>
-		<p class="rate-chart-by-age-desc fontBodyS">* Pricing samples above are rates based on a 10-year term for a healthy non-smoking male with a Preferred Plus rating.</p>
+
 	</section>
 </div>

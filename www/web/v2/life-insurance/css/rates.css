@@ -1,601 +1,149 @@
 .rates {}
-
 .rates__nav {}
-
 .rates__first-screen {}
 
-
 /* RATES CHARTS SECTION */
-
-.rates-charts {
-    padding: 100px 0;
-}
-
-.rates-charts__title {
-    text-align: center;
-    margin-bottom: 15px;
-}
-
-.rates-charts__info {
-    width: 100%;
-    max-width: 810px;
-    margin: 0 auto;
-    text-align: center;
-    margin-bottom: 60px;
-    color: #757575;
-}
-
-.rates-charts__links {
-    width: 100%;
-    max-width: 905px;
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 55px;
-}
-
-.rates-charts__link {
-    width: 100%;
-    max-width: 300px;
-    margin-bottom: 25px;
-    color: #339E75;
-}
-
-.rates-charts__link:hover {
-    color: #339E75;
-}
-
-.rates-charts__chart {
-    /*padding: 0 70px 0 0;*/
-    margin-bottom: 70px;
-    /*height: 450px;*/
-    /*border: 1px dashed #000;*/
-}
-
-.rates-charts__footer {
-    width: 100%;
-    max-width: 880px;
-    margin: 0 auto;
-}
-
-.rates-charts__text-content {
-    margin-bottom: 25px;
-    color: #757575;
-}
-
-.rates-charts__table {
-    margin-bottom: 25px;
-}
-
-.rates-charts__banner {
-    min-height: 120px;
-    background: #D6ECE3;
-    border-radius: 4px;
-    padding: 30px;
-}
-
-.rates-charts__banner-text {
-    color: #339E75;
-}
-
+.rates-charts {padding: 100px 0;}
+.rates-charts__title {text-align: center; margin-bottom: 15px;}
+.rates-charts__info {width: 100%; max-width: 810px; margin: 0 auto; text-align: center; margin-bottom: 60px; color: #757575;}
+.rates-charts__links {width: 100%; max-width: 905px; display: flex; flex-wrap: wrap; margin-bottom: 55px;}
+.rates-charts__link {width: 100%; max-width: 300px; margin-bottom: 25px; color: #339E75;}
+.rates-charts__link:hover {color: #339E75;}
+.rates-charts__chart {margin-bottom: 70px;}
+.rates-charts__footer {width: 100%; max-width: 880px; margin: 0 auto;}
+.rates-charts__text-content {margin-bottom: 25px; color: #757575;}
+.rates-charts__table {margin-bottom: 25px;}
+.rates-charts__banner {min-height: 120px; background-color: #D6ECE3; border-radius: 4px; padding: 30px;}
+.rates-charts__banner-text {color: #339E75;}
 
 /* RATE BY AGE SECTION */
-
-.rates-chart-by-age {
-    padding: 100px 0;
-}
-
-.rates-chart-by-age__title {
-    margin-bottom: 15px;
-    text-align: center;
-}
-
-.rates-chart-by-age__subtitle {
-    width: 100%;
-    max-width: 700px;
-    margin: 0 auto;
-    margin-bottom: 60px;
-    text-align: center;
-    color: #757575;
-}
-
-.rates-chart-by-age__slider {
-    height: 900px;
-    border: 1px dashed #000;
-}
-
+.rates-chart-by-age {padding: 100px 0;}
+.rates-chart-by-age__title {margin-bottom: 15px; text-align: center;}
+.rates-chart-by-age__subtitle {width: 100%; max-width: 700px; margin: 0 auto; margin-bottom: 60px; text-align: center; color: #757575;}
+.rates-chart-by-age__slider {height: 900px; border: 1px dashed #000;}
 
 /* PRICING-STUDY SECTION */
-
-.pricing-study {
-    padding: 100px 0;
-}
-
-.pricing-study__title {
-    text-align: center;
-    margin-bottom: 60px;
-}
-
-.pricing-study__text {
-    color: #757575;
-    width: 100%;
-    max-width: 880px;
-    margin: 0 auto 20px auto;
-}
-
-.pricing-study__chart {
-    min-height: 345px;
-    background: #FEEEDA;
-    border-radius: 4px;
-    margin-bottom: 60px;
-}
-
-.pricing-study__subtitle {
-    max-width: 880px;
-    width: 100%;
-    margin: 0 auto 25px auto;
-}
-
-.pricing-study__list {
-    margin-bottom: 60px;
-    max-width: 880px;
-    width: 100%;
-    margin: 0 auto 60px auto;
-}
-
-.pricing-study__list-item {
-    position: relative;
-    padding-left: 60px;
-    margin-bottom: 10px;
-    color: #757575;
-}
-
-.pricing-study__list-item:last-child {
-    margin-bottom: 0;
-}
-
-.pricing-study__list-item>span {
-    color: #F8A846;
-}
-
-.pricing-study__list-item>b {
-    color: #282B29;
-}
-
-.pricing-study__list-item:after {
-    content: url("../../common/images/arrow-right-red.png");
-    position: absolute;
-    left: 0;
-}
-
-.pricing-study__graph {
-    /*height: 460px;*/
-    /*border: 1px dashed #000;*/
-    margin-bottom: 60px;
-}
-
-.pricing-study-chart {
-    padding: 30px;
-    width: 100%;
-    max-width: 880px;
-    margin: 0 auto 60px auto;
-}
-
-.pricing-study-chart__title {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
+.pricing-study {padding: 100px 0;}
+.pricing-study__title {text-align: center; margin-bottom: 60px;}
+.pricing-study__text {color: #757575; width: 100%; max-width: 880px; margin: 0 auto 20px auto;}
+.pricing-study__chart {min-height: 345px; background-color: #FEEEDA; border-radius: 4px; margin-bottom: 60px;}
+.pricing-study__subtitle {max-width: 880px; width: 100%; margin: 0 auto 25px auto;}
+.pricing-study__list {max-width: 880px; width: 100%; margin: 0 auto 60px auto;}
+.pricing-study__list-item {position: relative; padding-left: 60px; margin-bottom: 10px; color: #757575;}
+.pricing-study__list-item:last-child {margin-bottom: 0;}
+.pricing-study__list-item > span {color: #F8A846;}
+.pricing-study__list-item > b {color: #282B29;}
+.pricing-study__list-item:after {content: url("../../common/images/arrow-right-red.png"); position: absolute; left: 0;}
+.pricing-study__graph {margin-bottom: 60px;}
+.pricing-study-chart {padding: 30px; width: 100%; max-width: 880px; margin: 0 auto 60px auto;}
+.pricing-study-chart__title {text-align: center; margin-bottom: 30px;}
 .color-y {color: #F8A846 !important;}
 .color-g {color: #339E75 !important;}
 .color-o {color: #F87146 !important;}
-
-
-.pricing-study-chart__body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.pricing-study-chart__col:first-child {
-    width: 225px;
-    height: 225px;
-    border-radius: 50%;
-    background-color: transparent;
-    margin-right: 60px;
-}
-
+.pricing-study-chart__body {display: flex; justify-content: center; align-items: center;}
+.pricing-study-chart__col:first-child {width: 225px; height: 225px; border-radius: 50%; background-color: transparent; margin-right: 60px;}
 .pricing-study-chart__list {}
-
-.pricing-study-chart__list-item {
-    position: relative;
-    color: #757575;
-    margin-bottom: 10px;
-    padding-left: 30px;
-}
-
-.pricing-study-chart__list-item :last-child {
-    margin-bottom: 0;
-}
-
-.pricing-study-chart__list-item:after {
-    content: "";
-    position: absolute;
-    top: 5px;
-    left: 0;
-    width: 15px;
-    height: 15px;
-    display: block;
-    background-color: #ccc;
-    border-radius: 50%;
-}
+.pricing-study-chart__list-item {position: relative; color: #757575; margin-bottom: 10px; padding-left: 30px;}
+.pricing-study-chart__list-item :last-child {margin-bottom: 0;}
+.pricing-study-chart__list-item:after {content: ""; position: absolute; top: 5px; left: 0; width: 15px; height: 15px; display: block; background-color: #ccc; border-radius: 50%;}
 .pricing-study-chart__list-item.y:after {background-color: #F8A846;}
 .pricing-study-chart__list-item.g:after {background-color: #339E75;}
 .pricing-study-chart__list-item.o:after {background-color: #F87146;}
 
-
-
-@media screen and (max-width: 950px) {
-    .pricing-study-chart__body {
-        flex-direction: column;
-    }
-    .pricing-study-chart__col:first-child {
-        margin-bottom: 25px;
-        margin-right: 0;
-    }
+@media all and (max-width: 950px) {
+    .pricing-study-chart__body {flex-direction: column;}
+    .pricing-study-chart__col:first-child {margin-bottom: 25px; margin-right: 0;}
 }
-
-@media screen and (max-width: 767px) {
-    .pricing-study__list {
-        display: none;
-    }
-    .pricing-study__subtitle--hide {
-        display: none;
-    }
-    .pricing-study__text--hide {
-        display: none;
-    }
-    .pricing-study__graph {
-        display: none;
-    }
-}
-
-.listen-us {
-    padding: 100px 0;
-    width: 100%;
-    max-width: 880px;
-    margin: 0 auto;
-}
-
-.listen-us__title {
-    text-align: center;
-    margin-bottom: 15px;
-}
-
-.listen-us__info {
-    text-align: center;
-    padding-bottom: 60px;
-    width: 100%;
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-.listen-us__subtitle {
-    margin-bottom: 25px;
-}
-
-.listen-us__card {
-    margin-bottom: 25px;
-    display: block;
-}
-
-.listen-us__card>span {
-    text-decoration: underline;
-}
-
-.listen-us__text {
-    margin-bottom: 60px;
-    color: #757575;
-}
-
-.applynow-form-section.rate-calc.v2 .form-wrap {margin-top: 60px !important;}
-
-.rates-charts__table {}
-
-.rates-table {
-    box-shadow: 1px 12px 42px rgba(155, 164, 162, 0.12);
-    border-radius: 4px;
-    display: block;
-    padding: 30px;
-}
-
-.rates-table__head {
-    display: block;
-}
-
-.rates-table__head>tr {
-    border-bottom: 1px solid #E4E4E4;
-    ;
-}
-
-.rates-table__head>tr>td {
-    color: #757575;
-}
-
-.rates-table__body {
-    display: block;
-}
-
-.rates-table__row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 50px;
-    border-bottom: 1px solid #e4e4e47a;
-}
-
-.rates-table__body>.rates-table__row:last-child {
-    border-bottom: none;
-}
-
-.rates-table__col {}
-
 @media all and (max-width: 767px) {
-    .rates-table {
-        padding: 20px;
-    }
-    .rates-table__row {
-        height: 45px;
-    }
-    .rates-table__head>tr>td {
-        font-size: 12px;
-        line-height: 18px;
-    }
-    .rates-table__head>tr>td:last-child {
-        text-align: right;
-    }
-    .rates-table__body>tr>td {
-        font-size: 14px;
-        line-height: 24px;
-    }
+    .rates-charts__links {max-width: 300px; margin-left: auto; margin-right: auto;}
+    .pricing-study__list {display: none;}
+    .pricing-study__subtitle--hide {display: none;}
+    .pricing-study__text--hide {display: none;}
+    .pricing-study__graph {display: none;}
 }
 
-@media screen and (max-width: 575px) {
-    .main-first-screen__title {
-        font-size: 32px;
-        line-height: 40px;
-    }
-    .fs-advice .fs-advice__header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .fs-advice__col:first-child {
-        margin-bottom: 30px;
-    }
-    .rates-charts__title {
-        font-size: 32px;
-        line-height: 40px;
-    }
-    .rates-charts__title--small-title {
-        font-size: 24px;
-        line-height: 32px;
-    }
-    .rates-charts__info {
-        font-size: 18px;
-        line-height: 26px;
-    }
-    .rates-charts__link {
-        max-width: 100%;
-        display: flex;
-        justify-content: flex-start;
-    }
-    .rates-charts__banner {
-        padding: 20px;
-    }
-    .rates-charts__banner-text {
-        font-size: 14px;
-        line-height: 24px;
-    }
-    .rates-charts {
-        padding: 60px 0;
-    }
-    .rates-chart-by-age {
-        padding: 60px 0;
-    }
-    .rates-chart-by-age__title {
-        font-size: 32px;
-        line-height: 40px;
-    }
-    .rates-chart-by-age__subtitle {
-        font-size: 18px;
-        line-height: 26px;
-        margin-bottom: 50px;
-    }
-    .pricing-study {
-        padding: 60px 0;
-    }
-    .pricing-study__title {
-        font-size: 32px;
-        line-height: 40px;
-        margin-bottom: 20px;
-    }
-    .pricing-study-chart__list-item {
-        font-size: 12px;
-        line-height: 18px;
-    }
-    .pricing-study-chart__list-item:after {
-        top: 5px;
-    }
-    .pricing-study-chart {
-        padding: 20px;
-    }
-    .listen-us {
-        padding: 60px 0;
-    }
-    .listen-us__title {
-        font-size: 32px;
-        line-height: 40px;
-    }
-    .listen-us__info {
-        font-size: 18px;
-        line-height: 26px;
-    }
-    .listen-us__subtitle {
-        font-size: 20px;
-        line-height: 28px;
-    }
+.listen-us {padding: 100px 0; width: 100%; max-width: 880px; margin: 0 auto;}
+.listen-us__title {text-align: center; margin-bottom: 15px;}
+.listen-us__info {text-align: center; padding-bottom: 60px; width: 100%; max-width: 700px; margin: 0 auto;}
+.listen-us__subtitle {margin-bottom: 25px;}
+.listen-us__card {margin-bottom: 25px; display: block;}
+.listen-us__card > span {text-decoration: underline;}
+.listen-us__text {margin-bottom: 60px; color: #757575;}
+.applynow-form-section.rate-calc.v2 .form-wrap {margin-top: 60px !important;}
+.rates-charts__table {}
+.rates-table {box-shadow: 1px 12px 42px rgba(155, 164, 162, 0.12); border-radius: 4px; display: block; padding: 30px;}
+.rates-table__head {display: block;}
+.rates-table__head > tr {border-bottom: 1px solid #E4E4E4;}
+.rates-table__head > tr > td {color: #757575;}
+.rates-table__body {display: block;}
+.rates-table__row {display: flex; justify-content: space-between; align-items: center; height: 50px; border-bottom: 1px solid #e4e4e47a;}
+.rates-table__body > .rates-table__row:last-child {border-bottom: none;}
+.rates-table__col {}
+@media all and (max-width: 767px) {
+    .rates-table {padding: 20px;}
+    .rates-table__row {height: 45px;}
+    .rates-table__head > tr > td {font-size: 12px; line-height: 18px;}
+    .rates-table__head > tr > td:last-child {text-align: right;}
+    .rates-table__body > tr > td {font-size: 14px; line-height: 24px;}
 }
-
-
-@media screen and (max-width: 360px) {
-    .rates-table__head>tr>td {
-        font-size: 10px;
-        line-height: 14px;
-    }
+@media all and (max-width: 575px) {
+    .main-first-screen__title {font-size: 32px; line-height: 40px;}
+    .fs-advice .fs-advice__header {flex-direction: column; align-items: flex-start;}
+    .fs-advice__col:first-child {margin-bottom: 30px;}
+    .rates-charts__title {font-size: 32px; line-height: 40px;}
+    .rates-charts__title--small-title {font-size: 24px; line-height: 32px;}
+    .rates-charts__info {font-size: 18px; line-height: 26px;}
+    .rates-charts__link {max-width: 100%; display: flex; justify-content: flex-start;}
+    .rates-charts__banner {padding: 20px;}
+    .rates-charts__banner-text {font-size: 14px; line-height: 24px;}
+    .rates-charts {padding: 60px 0;}
+    .rates-chart-by-age {padding: 60px 0;}
+    .rates-chart-by-age__title {font-size: 32px; line-height: 40px;}
+    .rates-chart-by-age__subtitle {font-size: 18px; line-height: 26px; margin-bottom: 50px;}
+    .pricing-study {padding: 60px 0;}
+    .pricing-study__title {font-size: 32px; line-height: 40px; margin-bottom: 20px;}
+    .pricing-study-chart__list-item {font-size: 12px; line-height: 18px;}
+    .pricing-study-chart__list-item:after {top: 5px;}
+    .pricing-study-chart {padding: 20px;}
+    .listen-us {padding: 60px 0;}
+    .listen-us__title {font-size: 32px; line-height: 40px;}
+    .listen-us__info {font-size: 18px; line-height: 26px;}
+    .listen-us__subtitle {font-size: 20px; line-height: 28px;}
+}
+@media all and (max-width: 360px) {
+    .rates-table__head > tr > td {font-size: 10px; line-height: 14px;}
 }
 
 
 /* tabs */
-
 .tabs {}
-
-.tabs__nav {
-    width: 100%;
-    border-bottom: 1px solid #E4E4E4;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 25px;
-}
-
-.tabs-age>.tabs__nav {
-    margin-bottom: 0;
-    border-bottom: none;
-}
-
-.tabs-age>.tabs__nav>.tabs__link {
-    align-items: center;
-}
-
-.tabs-age>.tabs__nav>.tabs__link_active {
-    color: #000000 !important;
-    background: #FEEEDA;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-}
-
-.tabs__link {
-    display: flex;
-    justify-content: center;
-    position: relative;
-    text-transform: uppercase;
-    color: #339E75 !important;
-    opacity: 0.5;
-    transition: all .2s ease-in;
-    width: 100%;
-    max-width: 350px;
-}
-
-.tabs__link_active {
-    opacity: 1;
-    transition: all .2s ease-in;
-}
-
-.tabs__link_active:after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 2px;
-    background-color: #339E75;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}
-
-.tabs-age>.tabs__nav>.tabs__link_active:after {
-    content: none;
-}
-
+.tabs__nav {width: 100%; border-bottom: 1px solid #E4E4E4; height: 50px; display: flex; justify-content: center; margin-bottom: 25px;}
+.tabs-age > .tabs__nav {margin-bottom: 0; border-bottom: none;}
+.tabs-age > .tabs__nav > .tabs__link {align-items: center;}
+.tabs-age > .tabs__nav > .tabs__link_active {color: #000000 !important; background: #FEEEDA; border-top-left-radius: 20px; border-top-right-radius: 20px;}
+.tabs__link {display: flex; justify-content: center; position: relative; text-transform: uppercase; color: #339E75 !important; opacity: 0.5; transition: all .2s ease-in; width: 100%; max-width: 350px;}
+.tabs__link_active {opacity: 1; transition: all .2s ease-in;}
+.tabs__link_active:after {content: ""; display: block; width: 100%; height: 2px; background-color: #339E75; position: absolute; bottom: 0; left: 0;}
+.tabs-age > .tabs__nav > .tabs__link_active:after {content: none;}
 .tabs__link:not(.tabs__link_active):hover,
 .tabs__link:not(.tabs__link_active):focus {}
-
 .tabs__content {}
-
-.tabs__pane {
-    position: relative;
-    display: none;
-}
-
-.tabs__pane_show {
-    display: block;
-}
-
-.age-table {
-    width: 100%;
-    background: #FFFFFF;
-    box-shadow: 1px 12px 42px rgba(155, 164, 162, 0.12);
-    border-radius: 4px;
-    padding: 0 30px;
-}
-
-.age-table__row {
-    height: 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 0 30px;
-    border-bottom: 1px solid #FEEEDA;
-}
-
-.age-table__header>.age-table__row {
-    background-color: #FEEEDA;
-}
-
-.age-table__header>.age-table__row>.age-table__col {
-    color: #757575;
-}
-
-.age-table__body>.age-table__row:last-child {
-    border-bottom: none;
-}
-
-.tabs__selects {
-    display: none;
-    margin-bottom: 15px;
-}
-
+.tabs__pane {position: relative; display: none;}
+.tabs__pane_show {display: block;}
+.age-table {width: 100%; background-color: #FFF; box-shadow: 1px 12px 42px rgba(155, 164, 162, 0.12); border-radius: 4px; padding: 0 30px;}
+.age-table__row {height: 50px; display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 0 30px; border-bottom: 1px solid #FEEEDA;}
+.age-table__header > .age-table__row {background-color: #FEEEDA;}
+.age-table__header > .age-table__row > .age-table__col {color: #757575;}
+.age-table__body > .age-table__row:last-child {border-bottom: none;}
+.tabs__selects {display: none; margin-bottom: 15px;}
 .tabs-selects {}
-
-.tabs-selects__label {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-}
-
-.tabs-selects__label>span {
-    color: #757575;
-    margin-bottom: 10px;
-}
-
-.tabs-selects__label:first-child {
-    margin-right: 15px;
-}
-
+.tabs-selects__label {width: 50%; display: flex; flex-direction: column;}
+.tabs-selects__label>span {color: #757575; margin-bottom: 10px;}
+.tabs-selects__label:first-child {margin-right: 15px;}
 /*.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {width: 100% !important;}*/
-
-
-@media screen and (max-width: 767px) {
-    .tabs-age>.tabs__nav {
-        display: none;
-    }
-    .tabs__selects {
-        display: flex;
-    }
-    .age-table__row {
-        padding: 0 20px;
-    }
-    .age-table__col {
-        font-size: 14px;
-        line-height: 24px;
-    }
+@media all and (max-width: 767px) {
+    .tabs-age > .tabs__nav {display: none;}
+    .tabs__selects {display: flex;}
+    .age-table__row {padding: 0 20px;}
+    .age-table__col {font-size: 14px; line-height: 24px;}
 }

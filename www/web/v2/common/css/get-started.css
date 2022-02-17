@@ -3,8 +3,16 @@
 .get-started-wrap .wrapp {position: relative; z-index: 1;}
 .get-started-wrap:before,
 .get-started-wrap:after {content: ""; position: absolute; left: 0; top: 0; right: 0; bottom: 0; display: block; background-repeat: no-repeat;}
-.get-started-wrap:before {background-image: url(../images/get-started-decor-1.svg); background-position: left 10% top;}
-.get-started-wrap:after {background-image: url(../images/get-started-decor-2.svg); background-position: right 10% bottom;}
+.get-started-wrap:before {background-image: url(../images/get-started-decor-1.svg); background-position: left 10% center;}
+.get-started-wrap:after {background-image: url(../images/get-started-decor-2.svg); background-position: right 10% center;}
+@media all and (max-width: 1400px){
+	.get-started-wrap:before {background-position: left 10% top;}
+	.get-started-wrap:after {background-position: right 10% bottom;}
+}
+@media all and (min-width: 768px) and (max-width: 1400px){
+	.get-started-wrap:before {background-size: auto 40%;}
+	.get-started-wrap:after {background-size: auto 40%;}
+}
 @media all and (max-width: 767px){
 	.get-started-wrap:before {background-image: url(../images/get-started-decor-1-m.svg); background-position: left -9% top; top: -100px;}
 	.get-started-wrap:after {background-image: url(../images/get-started-decor-2-m.svg); background-position: center 50px;}

@@ -1,9 +1,8 @@
 <div class="wrapp">
 	<section class="rates-chart-by-age">
-		<h1 class="rates-chart-by-age__title heading-2">20 Year Term Life Insurance<br> Rate Chart By Age</h1>
+		<h2 class="rates-chart-by-age__title heading-2">20 Year Term Life Insurance<br> Rate Chart By Age</h2>
 		<p class="rates-chart-by-age__subtitle fontBodyL ">
-			A 20-year term policy usually has the lowest rate.
-			It will offer a level premium for 20 years.
+			A 20-year term policy will offer a level premium for 20 years.
 			Once the initial 20 years are up, the premium will rise annually if the policy is renewable.
 		</p>
 	
@@ -28,6 +27,6 @@
 		</div>
 	
 		<p class="rate-chart-by-age-desc fontBodyS">* Quotes are presented in a monthly premium format. The above quotes are for a non-smoker in excellent health and are subject to changes.</p>
-		<p class="rate-chart-by-age-desc fontBodyS">* Pricing samples above are rates based on a 10-year term for a healthy non-smoking male with a Preferred Plus rating.</p>
+		<p class="rate-chart-by-age-desc fontBodyS">* Pricing samples above are rates based on a 20-year term for a healthy non-smoking male with a Preferred Plus rating.</p>
 	</section>
 </div>

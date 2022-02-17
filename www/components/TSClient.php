@@ -143,7 +143,7 @@ class TSClient extends Component{
 		$config = $this->{$this->env};
 		
 		$headers = [
-			"X-IBM-Client-Id: ".$config['clientId']['quote_api'],
+			"X-IBM-Client-Id: ".$config['clientId']['quote_link_api'],
 			"Authorization: Bearer ".$this->access_token,
 			"Content-type: application/json",
 			#"Accept: */*",
@@ -197,6 +197,7 @@ class TSClient extends Component{
 	}
 	
 	public function get_quotes($args = []){
+		$config = $this->{$this->env};
 		
 		#VarDumper::dump($args, 10, 1); exit;
 		
@@ -283,7 +284,7 @@ class TSClient extends Component{
 				return ['plans' => $plans];
 			}
 		}
-		#VarDumper::dump($id, 10, 1);
+		#VarDumper::dump($data, 10, 1);exit;
 
 		if($update){
 			$data = $this->quote_request($params);
@@ -325,6 +326,11 @@ class TSClient extends Component{
 				elseif(isset($link_result['response']['url']))
 					$link = $link_result['response']['url'];
 			}
+			
+			if(!empty($link) && !empty($config['utm_params']))
+				$link .= '&'.http_build_query($config['utm_params']);
+			
+			#VarDumper::dump($link, 10, 1); exit;
 			
 			$allow_coverages = array_map(function($k){return $k * 1000;}, array_keys(Customers::$coverage_amounts));
 			#VarDumper::dump($allow_coverages, 10, 1); exit;

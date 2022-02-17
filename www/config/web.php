@@ -277,9 +277,9 @@ $config = [
         ],
 	    'TSClient' => [
 		    'class'      => 'app\components\TSClient',
-		    'cache_time' => 604800,  # 7 days
+		    'cache_time' => 30,  # 7 days = 604800
 		    'max_coverage' => 1000000, # 0 = ignore
-		    'env'        => 'demo',  # demo | prod
+		    'env'        => 'prod',  # demo | prod
 		    'channel'    => 'phone', # web | phone
 		    'demo'       => [
 			    'userName'      => 'SA-PrtnrApiNoExam-M',
@@ -295,6 +295,7 @@ $config = [
 				    'get_quote_link' => 'https://gw-demo.developer-nonprod.cunamutual.com/cmfg/demo/partnerapi/v1/links/crm',
 				    'get_quote_link2' => 'https://apigatewaydemo.cunamutual.com/cmfg/demo-int/quote-link/api/v2/QuoteLink',
 			    ],
+			    'utm_params' => [],
 		    ],
 		    'prod'       => [
 			    'userName'      => 'SA-PrtnrApiNoExam-P',
@@ -306,8 +307,13 @@ $config = [
 			    'api_endpoints' => [
 				    'get_token'      => 'https://gw.developer.cunamutual.com/cmfg/prod/openid-connect-authorization/v10/token',
 				    'get_quote'      => 'https://gw.developer.cunamutual.com/cmfg/prod/partnerapi/v1/quotes',
-				    'get_quote_link' => 'https://gw.developer.cunamutual.com/cmfg/prod/partnerapi/v1/links/crm',
-				    #'get_quote_link' => 'https://apigateway.cunamutual.com/cmfg/prod-int/quote-link/api/v2/QuoteLink',
+				    #'get_quote_link' => 'https://gw.developer.cunamutual.com/cmfg/prod/partnerapi/v1/links/crm',
+				    'get_quote_link' => 'https://apigateway.cunamutual.com/cmfg/prod-int/quote-link/api/v2/QuoteLink',
+			    ],
+			    'utm_params' => [
+			    	'utm_medium' => 'referral',
+			    	'utm_source' => 'noexam_sit',
+			    	'utm_campaign' => 'organic',
 			    ],
 		    ],
 	    ],
