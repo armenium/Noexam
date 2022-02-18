@@ -44,8 +44,8 @@ form input[type="hidden"] {display: none;}
 .main-wrapp li:not(.breadcrumbs__item) {margin-bottom: 15px;}
 .main-wrapp li:not(.breadcrumbs__item) p {margin-bottom: 2px;}
 .main-wrapp p:last-child {margin-bottom: 0;}
-.main-wrapp a:not(.footer__link) {color: #339E75;}
-.main-wrapp a:not(.footer__link):hover {text-decoration: underline;}
+.main-wrapp a:not([role="button"]):not(.main-btn):not(.footer__link) {color: #339E75;}
+.main-wrapp a:not([role="button"]):not(.main-btn):not(.footer__link):hover {text-decoration: underline;}
 
 .bg2, .bg2 h1, .bg2 h2, .bg2 h3, .bg2 h4, .bg2 h5, .bg2 h6,
 .bg3, .bg3 h1, .bg3 h2, .bg3 h3, .bg3 h4, .bg3 h5, .bg3 h6,
@@ -68,6 +68,8 @@ form input[type="hidden"] {display: none;}
 
 .main-btn {transition: all 0.2s;}
 .main-btn:hover {color: inherit; background-color: #3dbf8d;}
+
+.get-quote__btn:hover {text-decoration: none !important; color: #fff !important;}
 
 .header {min-height: auto; height: 105px;}
 .header--empty .header__imgWrapp {display: flex;}

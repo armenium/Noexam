@@ -115,10 +115,21 @@ use yii\web\JsExpression;
 										<tr>
 											<td>[authors-small]</td>
 											<td>
-												<b>id</b> = post_id <em><small>(<a href="http://joxi.ru/BA0KNL0spwRPJ2" target="_blank">Screenshot</a>)</small></em><br>
+												<b>id</b> = current post_id <em><small>(<a href="http://joxi.ru/BA0KNL0spwRPJ2" target="_blank">Screenshot</a>)</small></em><br>
 												<b>model</b> = "resources-cats" or "ResourcesCats" <em><small>(defualt value = "ResourcesCats")</small></em>
 											</td>
 											<td>Param "id" is required<br>Param "model" is optional</td>
+										</tr>
+										<tr>
+											<td>[get-quote]</td>
+											<td><em>No params</em></td>
+											<td>
+												<b>with_wrap_tags</b> = boolean <em><small>(default value = true)</small></em><br>
+												<b>title</b> = string <em><small>(default value = "Get a Quote")</small></em><br>
+												<b>subtitle</b> = string <em><small>(default value = "No phone calls or emails. Quickly compare prices with our free comparison tool.")</small></em><br>
+												<b>button_text</b> = string <em><small>(default value = "Apply Now")</small></em><br>
+												<b>button_link</b> = string <em><small>(default value = "/start-quote/")</small></em><br>
+											</td>
 										</tr>
 										<tr>
 											<td>[rate-widget-cta]</td>

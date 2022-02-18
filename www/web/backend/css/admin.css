@@ -342,9 +342,10 @@ nav.footer-nav .nav > li > a:after {display: none;}
 
 
 
-table.table:not(.detail-view) tbody tr td:last-child {white-space: nowrap;}
+table.table:not(.detail-view):not(.tablepress) tbody tr td:last-child {white-space: nowrap;}
 table.table:not(.detail-view) tbody tr td:last-child a {display: inline-block; padding: 0 5px;}
 table.table:not(.detail-view) tbody tr td:last-child a .glyphicon {font-size: 16px;}
+
 
 .control-label {font-size: 14px;}
 section.container {position: relative;}

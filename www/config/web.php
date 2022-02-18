@@ -339,6 +339,7 @@ $config = [
 			    'breadcrumbs' => ['app\components\shortcodes\BreadcrumbsShortcode', 'widget'],
 			    'rate-calc-form' => ['app\components\shortcodes\RateCalcFormShortcode', 'widget'],
 			    'rate-widget-cta' => ['app\components\shortcodes\RateWidgetCtaShortcode', 'widget'],
+			    'get-quote' => ['app\components\shortcodes\GetQuoteShortcode', 'widget'],
 			    'anothershortcode' => function($attrs, $content, $tag){
 				    ///
 			    },

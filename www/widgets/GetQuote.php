@@ -24,7 +24,7 @@ class GetQuote extends Widget{
 			$this->title = 'Get a Quote';
 		
 		if(empty($this->button_text))
-			$this->button_text = 'apply now';
+			$this->button_text = 'Apply Now';
 		
 		if(empty($this->button_link))
 			$this->button_link = '/start-quote/';
