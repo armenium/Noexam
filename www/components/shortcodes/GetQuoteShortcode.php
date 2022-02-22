@@ -23,22 +23,22 @@ class GetQuoteShortcode extends Widget{
 	public function init(){
 		parent::init();
 		
-		if(empty($this->title))
+		if(!empty($this->title))
 			$this->config['title'] = $this->title;
 		
-		if(empty($this->subtitle))
+		if(!empty($this->subtitle))
 			$this->config['subtitle'] = $this->subtitle;
 		
-		if(empty($this->button_text))
+		if(!empty($this->button_text))
 			$this->config['button_text'] = $this->button_text;
 		
-		if(empty($this->button_link))
+		if(!empty($this->button_link))
 			$this->config['button_link'] = $this->button_link;
 		
-		if(empty($this->left_decor))
+		if(!empty($this->left_decor))
 			$this->config['left_decor'] = $this->left_decor;
 		
-		if(empty($this->right_decor))
+		if(!empty($this->right_decor))
 			$this->config['right_decor'] = $this->right_decor;
 		
 		$this->with_wrap_tags = (bool) $this->with_wrap_tags;

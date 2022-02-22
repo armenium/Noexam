@@ -28,6 +28,8 @@
 .states__item > span:after {content: url("../../common/images/arrow-right-F8A846.svg"); display: inline-block; transform: translateX(12px); transition: all .2s ease;}
 .states__item:hover {background-color: #339E75; color: #FFF;}
 .states__item:hover > span:after {content: url("../../common/images/arrow-right-FFFFFF.svg"); transform: translateX(20px);}
+.company-box{ border:2px solid #ebebeb; border-radius: 5px; padding:15px; width:100%; clear:both; overflow:hidden; margin:0 0 15px;}
+.company-box img {float:right;}
 @media all and (max-width: 768px) {
 	.states__title {font-size: 32px; line-height: 40px;}
 	.states {padding: 0 0 50px;}
