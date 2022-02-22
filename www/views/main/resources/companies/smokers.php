@@ -4,10 +4,11 @@ use app\assets\AppAsset;
 use yii\bootstrap\BootstrapAsset;
 use yii\web\JqueryAsset;
 use yii\widgets\Breadcrumbs;
+use app\widgets\SmokingVsNonSmoking;
 
-$this->registerCssFile('@web/css/Chart.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
-$this->registerJsFile('@web/js/Chart.min.js', ['depends' => [JqueryAsset::className(), AppAsset::className()]]);
-$this->registerJsFile('@web/js/charts2.options.js', ['depends' => [JqueryAsset::className(), AppAsset::className()]]);
+#$this->registerCssFile('@web/css/Chart.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
+#$this->registerJsFile('@web/js/Chart.min.js', ['depends' => [JqueryAsset::className(), AppAsset::className()]]);
+#$this->registerJsFile('@web/js/charts2.options.js', ['depends' => [JqueryAsset::className(), AppAsset::className()]]);
 
 $this->registerCssFile('@web/css/table-default.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
 $this->registerJsFile('@web/js/tabby.js', ['depends' => [JqueryAsset::className(), AppAsset::className()]]);
@@ -55,7 +56,7 @@ $this->params['breadcrumbs'][] = $this->context->current_cat->title;
 
 			<p>Apart from your age and gender, your smoking habit is the most important factor that insurance providers take into account while assigning a risk class for you. </p>
 			
-			<?=$this->render('/main/widgets/smoking-vs-nonsmoking.php');?>
+			<?=SmokingVsNonSmoking::widget();?>
 			
 			<h2 id="affect">How Does Your Smoking Habit Affect Your Insurability?</h2>
 

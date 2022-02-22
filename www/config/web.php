@@ -340,6 +340,7 @@ $config = [
 			    'rate-calc-form' => ['app\components\shortcodes\RateCalcFormShortcode', 'widget'],
 			    'rate-widget-cta' => ['app\components\shortcodes\RateWidgetCtaShortcode', 'widget'],
 			    'get-quote' => ['app\components\shortcodes\GetQuoteShortcode', 'widget'],
+			    'smoking-vs-nonsmoking-chart' => ['app\components\shortcodes\SmokingVsNonSmokingChartShortcode', 'widget'],
 			    'anothershortcode' => function($attrs, $content, $tag){
 				    ///
 			    },

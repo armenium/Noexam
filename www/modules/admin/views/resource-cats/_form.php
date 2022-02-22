@@ -103,7 +103,7 @@ use yii\web\JsExpression;
 						</div>
 						<div class="row">
 							<div class="col-md-12">
-								<table class="tablepress table">
+								<table class="tablepress table shortcode-descs">
 									<thead>
 										<tr>
 											<th>Shortcode</th>
@@ -122,13 +122,24 @@ use yii\web\JsExpression;
 										</tr>
 										<tr>
 											<td>[get-quote]</td>
-											<td><em>No params</em></td>
 											<td>
 												<b>with_wrap_tags</b> = boolean <em><small>(default value = true)</small></em><br>
 												<b>title</b> = string <em><small>(default value = "Get a Quote")</small></em><br>
 												<b>subtitle</b> = string <em><small>(default value = "No phone calls or emails. Quickly compare prices with our free comparison tool.")</small></em><br>
 												<b>button_text</b> = string <em><small>(default value = "Apply Now")</small></em><br>
 												<b>button_link</b> = string <em><small>(default value = "/start-quote/")</small></em><br>
+											</td>
+										</tr>
+										<tr>
+											<td nowrap="">[smoking-vs-nonsmoking-chart]</td>
+											<td>
+												<b>with_wrap_tags</b> = boolean <em><small>(default value = true)</small></em><br>
+												<b>title</b> = string <em><small>(default value = "Life Insurance Rates – Smoking vs Non-Smoking Price Chart")</small></em><br>
+												<b>subtitle</b> = string <em><small>(default value = "Rates are for a 20-year-term policy with a $500,000 death benefit. Rates are quoted for a 50-year-old man in excellent health.")</small></em><br>
+												<b>chart_width</b> = int <em><small>(default value = 760)</small></em><br>
+												<b>chart_height</b> = int <em><small>(default value = 400)</small></em><br>
+												<b>chart_legend_1</b> = string <em><small>(default value = "Smoking Rate Per Month")</small></em><br>
+												<b>chart_legend_2</b> = string <em><small>(default value = "Non-Smoking Rate Per Month")</small></em><br>
 											</td>
 										</tr>
 										<tr>
