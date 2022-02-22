@@ -19,6 +19,8 @@ use app\models\ResourcesCompanies;
  * @property string $meta_title
  * @property string $meta_desc
  * @property string $meta_keys
+ * @property integer $meta_nofollow
+ * @property integer $meta_noindex
  * @property string $template
  * @property string $item_order
  * @property string $child_to_parent_links
@@ -66,6 +68,7 @@ class ResourcesCats extends ActiveRecord {
 			[['id', 'parent_id', 'item_order', 'child_to_parent_links', 'company_id', 'is_companies_main_page', 'is_best_companies_page', 'display_subpages_in_footer'], 'integer'],
 			[['title', 'meta_title', 'meta_desc', 'meta_keys', 'url', 'template', 'layout', 'header_title', 'header_subtitle', 'header_image'], 'string', 'max' => 255],
 			//[['custom_childs_links'], 'string', 'max' => 1024],
+			[['meta_nofollow', 'meta_noindex'], 'integer'],
 			[['content'], 'string'],
 			[['url'], 'unique'],
 			[['file'], 'file', 'skipOnEmpty' => true, 'extensions' => 'gif, jpg, jpeg, png'],
@@ -82,9 +85,11 @@ class ResourcesCats extends ActiveRecord {
 			'title'      => 'Title',
 			'content'      => 'Content',
 			'url'       => 'Page URL',
-			'meta_title' => 'Meta-Title',
-			'meta_desc'  => 'Meta-description',
-			'meta_keys'  => 'Meta-Keywords',
+			'meta_title' => 'Meta Title',
+			'meta_desc'  => 'Meta Description',
+			'meta_keys'  => 'Meta Keywords',
+			'meta_noindex'  => 'Meta NoIndex',
+			'meta_nofollow'  => 'Meta NoFollow',
 			'layout'  => 'Layout file',
 			'template'  => 'Template file',
 			'item_order'  => 'Item order',

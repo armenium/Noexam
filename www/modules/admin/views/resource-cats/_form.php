@@ -227,6 +227,16 @@ use yii\web\JsExpression;
 								<?=$form->field($model, 'meta_keys')->textInput(['maxlength' => true]);?>
 							</div>
 						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<?=$form->field($model, 'meta_noindex')->checkbox();?>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<?=$form->field($model, 'meta_nofollow')->checkbox();?>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

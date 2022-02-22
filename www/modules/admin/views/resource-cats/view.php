@@ -59,6 +59,28 @@ $this->params['breadcrumbs'][] = $this->title;
             'meta_title',
             'meta_desc',
 	        'meta_keys',
+	        [
+		        'attribute' => 'meta_noindex',
+		        'format' => 'html',
+		        'value' => function($data){
+			        $ret = '<span class="badge bg-danger text-light">No</span>';
+			        if($data->meta_noindex){
+				        $ret = '<span class="badge bg-warning text-dark">Yes</span>';
+			        }
+			        return $ret;
+		        },
+	        ],
+	        [
+		        'attribute' => 'meta_nofollow',
+		        'format' => 'html',
+		        'value' => function($data){
+			        $ret = '<span class="badge bg-danger text-light">No</span>';
+			        if($data->meta_nofollow){
+				        $ret = '<span class="badge bg-warning text-dark">Yes</span>';
+			        }
+			        return $ret;
+		        },
+	        ],
 	        'template',
 	        'layout',
 	        'item_order',

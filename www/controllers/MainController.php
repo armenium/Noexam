@@ -2006,13 +2006,15 @@ class MainController extends BaseController {
 		}
 
 		$content = $this->current_cat->content;
+
+		$this->addMetaNoindex();
 		
 		$template = !empty($this->current_cat->template) ? str_replace('views/', '', $this->current_cat->template) : '/life-insurance/common.php';
 
 		if(!file_exists($view_path.$template) || empty($this->current_cat)){
 			throw new HttpException(404 ,'Page not found');
 		}else{
-			$grid_data = $this->getResourceCatGrid($this->current_cat->id);
+			#$grid_data = $this->getResourceCatGrid($this->current_cat->id);
 		}
 
 		$companies_data = ($this->current_cat->is_companies_main_page) ? $this->CompaniesFilterController->getCompanies() : [];
@@ -2027,12 +2029,26 @@ class MainController extends BaseController {
 		}
 		
 		return $this->render($template, [
-			'grid_data' => $grid_data,
+			#'grid_data' => $grid_data,
 			'dataProvider' => $companies_data,
 			'dataProviderBest' => $best_companies_data,
 			'content' => $content,
 			'faq_items' => $faq_items,
 		]);
+	}
+	
+	public function addMetaNoindex(){
+		$meta = [];
+		
+		if($this->current_cat->meta_noindex)
+			$meta['noindex'] = 'noindex';
+		
+		if($this->current_cat->meta_nofollow)
+			$meta['nofollow'] = 'nofollow';
+		
+		if(!empty($meta)){
+			$this->view->registerMetaTag(['name' => 'robots', 'content' => implode(',', $meta)]);
+		}
 	}
 
 	public function getCatsTree(){
