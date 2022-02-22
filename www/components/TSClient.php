@@ -346,7 +346,7 @@ class TSClient extends Component{
 							$plans[$this->product_key][$coverageOption['coverage']]['premium_annual']  = $coverageOption['premiums'][0]['premium'];
 							$plans[$this->product_key][$coverageOption['coverage']]['premium_monthly'] = $coverageOption['premiums'][1]['premium'];
 							$plans[$this->product_key][$coverageOption['coverage']]['rate_class_name'] = 'Preferred';
-							$plans[$this->product_key][$coverageOption['coverage']]['logo_url']        = '/img/company_logos/logo_trustage.svg';
+							$plans[$this->product_key][$coverageOption['coverage']]['logo_url']        = '/img/company_logos/logo_trustage.png';
 							$plans[$this->product_key][$coverageOption['coverage']]['rating']          = 'A';
 							$plans[$this->product_key][$coverageOption['coverage']]['link']            = $link;
 						}
