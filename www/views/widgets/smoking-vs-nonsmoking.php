@@ -1,6 +1,6 @@
 <div id="smoking-vs-nonsmoking">
 	<h2 class="title"><?=$title;?></h2>
-	<div class="subtitle"><?=$subtitle;?></div>
+	<p class="subtitle"><?=$subtitle;?></p>
 	<div class="chart-wrapper">
 		<canvas id="smokingChart" height="<?=$chart_height;?>" width="<?=$chart_width;?>"></canvas>
 	</div>

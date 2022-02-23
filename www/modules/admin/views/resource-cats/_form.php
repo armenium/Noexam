@@ -136,8 +136,10 @@ use yii\web\JsExpression;
 												<b>with_wrap_tags</b> = boolean <em><small>(default value = true)</small></em><br>
 												<b>title</b> = string <em><small>(default value = "Life Insurance Rates – Smoking vs Non-Smoking Price Chart")</small></em><br>
 												<b>subtitle</b> = string <em><small>(default value = "Rates are for a 20-year-term policy with a $500,000 death benefit. Rates are quoted for a 50-year-old man in excellent health.")</small></em><br>
+												<!--
 												<b>chart_width</b> = int <em><small>(default value = 760)</small></em><br>
 												<b>chart_height</b> = int <em><small>(default value = 400)</small></em><br>
+												-->
 												<b>chart_legend_1</b> = string <em><small>(default value = "Smoking Rate Per Month")</small></em><br>
 												<b>chart_legend_2</b> = string <em><small>(default value = "Non-Smoking Rate Per Month")</small></em><br>
 											</td>
