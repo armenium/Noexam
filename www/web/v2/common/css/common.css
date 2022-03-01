@@ -95,3 +95,47 @@ table.ages-table tr td:last-child {text-align: right; width: 33%;}
 	table.ages-table th,
 	table.ages-table td {font-size: 14px; line-height: 18px; padding: 10px;}
 }
+
+.decorate-tabs {margin: 24px 0; padding: 24px 0; box-shadow: 1px 12px 42px rgba(155, 164, 162, 0.12); border-radius: 4px;}
+.decorate-tabs * {transition: all 0.2s ease;}
+
+.decorate-tabs,
+.decorate-tabs .nav-tabs .nav-item .nav-link,
+.decorate-tabs .nav-tabs .nav-item .nav-link span:before,
+.decorate-tabs .nav-tabs .nav-item .nav-link span:after {background-color: #fff;}
+
+.decorate-tabs .nav-tabs {border: 0; flex-wrap: nowrap; list-style: none !important; padding: 0 !important; margin: 0; overflow-x: auto;}
+.decorate-tabs .nav-tabs .nav-item {width: auto; position: relative; text-align: center; margin: 0;}
+.decorate-tabs .nav-tabs .nav-item .nav-link:hover {text-decoration: none !important;}
+
+.decorate-tabs .nav-tabs .nav-item .nav-link {color: #717171 !important; border: 0 none; padding: 0 9px; position: relative; height: 100%;}
+.decorate-tabs .nav-tabs .nav-item .nav-link:before,
+.decorate-tabs .nav-tabs .nav-item .nav-link:after {content: ""; position: absolute; z-index: 1; bottom: 0; display: block; width: 9px; height: 8px; background-color: transparent;}
+.decorate-tabs .nav-tabs .nav-item .nav-link:before {left: 0;}
+.decorate-tabs .nav-tabs .nav-item .nav-link:after {right: 0;}
+
+.decorate-tabs .nav-tabs .nav-item .nav-link span {display: block; padding: 16px 20px; border-radius: 20px 20px 0 0; position: relative; height: 100%;}
+.decorate-tabs .nav-tabs .nav-item .nav-link span:before,
+.decorate-tabs .nav-tabs .nav-item .nav-link span:after {content: ""; position: absolute; z-index: 2; bottom: 1px; display: block; width: 9px; height: 9px;}
+.decorate-tabs .nav-tabs .nav-item .nav-link span:before {left: -9px; border-radius: 0 0 20px 0;}
+.decorate-tabs .nav-tabs .nav-item .nav-link span:after {right: -9px; border-radius: 0 0 0 20px;}
+.decorate-tabs .nav-tabs .nav-item.show .nav-link span,
+.decorate-tabs .nav-tabs .nav-link.active span {color: #000 !important; background-color: #FEEEDA; border-color: transparent;}
+
+.decorate-tabs .nav-tabs .nav-item.show .nav-link:before,
+.decorate-tabs .nav-tabs .nav-item.show .nav-link:after,
+.decorate-tabs .nav-tabs .nav-link.active:before,
+.decorate-tabs .nav-tabs .nav-link.active:after {background-color: #FEEEDA;}
+
+.decorate-tabs .nav-tabs .nav-item .nav-link:focus,
+.decorate-tabs .nav-tabs .nav-item .nav-link:hover {border-color: transparent; color: #000;}
+
+table.tablepress {width: 100%; background-color: #fff;}
+table.tablepress thead tr {display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 12px 30px; border-bottom: 1px solid #FEEEDA; background-color: #FEEEDA;}
+table.tablepress thead tr th {color: #757575; font-size: 14px; line-height: 24px; font-weight: normal; border: 0; background-color: transparent;}
+table.tablepress thead tr th:hover {background-color: transparent;}
+table.tablepress tbody tr {display: flex; justify-content: space-between; align-items: center; padding: 12px 0; margin: 0 30px; border-bottom: 1px solid #f2f2f2; background-color: transparent !important;}
+table.tablepress tbody tr:last-child {border: 0;}
+table.tablepress tbody tr td {color: #282B29; font-size: 18px; line-height: 26px; font-weight: normal; border: 0; padding: 0;}
+table.tablepress tbody tr:hover td {background-color: transparent !important; color: #FFC67F;}
+table.tablepress tbody tr:hover {/*background-color: #fcfcfc !important;*/}

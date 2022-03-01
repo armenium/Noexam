@@ -28,7 +28,9 @@ $this->registerCssFile('@web/v2/life-insurance/css/life-insurance.css', ['depend
 $this->registerCssFile('@web/v2/common/css/main-first-screen.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
 #$this->registerCssFile('@web/v2/pages/css/article.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
 $this->registerCssFile('@web/v2/common/css/common.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
-$this->registerCssFile('@web/css/table-default.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
+$this->registerCssFile('@web/v2/plugins/css/table-default.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
+
+$this->registerJsFile('@web/v2/plugins/js/tablesorter/jquery.tablesorter.min.js', ['depends' => [JqueryAsset::className(), AppAsset::className()]]);
 $this->registerJsFile('@web/v2/life-insurance/js/life-insurance.js', ['depends' => [JqueryAsset::className(), AppAsset::className()]]);
 
 $this->params['breadcrumbs'][] = ['label' => 'Life Insurance', 'url' => '/life-insurance/', 'class' => 'breadcrumbs__link tags'];

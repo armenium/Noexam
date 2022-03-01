@@ -164,6 +164,7 @@ $(function(){
 				FJS.Common.initDisclosure();
 				FJS.Common.initLazyLoad();
 				FJS.Common.initGetAjaxContent();
+				FJS.Common.initTableSorter();
 				//FJS.Common.doEqualHeight();
 			},
 			toggleMobileNav: function($obj){
