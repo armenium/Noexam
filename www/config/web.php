@@ -1,11 +1,14 @@
 <?php
 
-$params = require(__DIR__ . '/params.php');
+use yii\web\Request;
+
+$params            = require(__DIR__.'/params.php');
 $params['tinymce'] = require(__DIR__ . '/tinymce.php');
-$params['nav'] = require(__DIR__ . '/nav.php');
+$params['nav']     = require(__DIR__ . '/nav.php');
 //$cdn = require(__DIR__ . '/cdn.php');
 $assetsAutoCompress = require(__DIR__ . '/assetsAutoCompress.php');
 
+$baseUrl = str_replace('/web', '', (new Request)->getBaseUrl());
 
 $config = [
     'id' => 'basic',
@@ -19,7 +22,8 @@ $config = [
 	    ],
     ],
     'aliases' => [
-	    '@uploads' => '@app/web/uploads'
+	    '@uploads' => '@app/web/uploads',
+	    '@reviews_images' => '@app/web/uploads/reviews',
     ],
     'components' => [
 	    //'cdn' => $cdn,
@@ -98,11 +102,15 @@ $config = [
 			        'css' => [
 			        	'bootstrap-4.6.0/css/bootstrap.css',
 			        ]
-		        ]
+		        ],
+		        /*'kartik\form\ActiveFormAsset' => [
+			        'bsDependencyEnabled' => false // do not load bootstrap assets for a specific asset bundle
+		        ],*/
 	        ]
         ],
         'urlManager' => [
 	        'class' => 'yii\web\UrlManager',
+	        'baseUrl' => $baseUrl,
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'suffix' => '/',
@@ -135,6 +143,12 @@ $config = [
 	            '<controller:(faqs)>/<action:(upload)>' => 'admin/<controller>/<action>',
 	            '<controller:(faqs)>/<id:\d+>/<action:(update|delete|view)>' => 'admin/<controller>/<action>',
 	            '<controller:(faqs)>' => 'admin/<controller>/index',
+
+	            '<controller:(customer-reviews)>/<action:(create)>' => 'admin/<controller>/<action>',
+	            '<controller:(customer-reviews)>/<action:(view)>' => 'admin/<controller>/<action>',
+	            '<controller:(customer-reviews)>/<action:(upload)>' => 'admin/<controller>/<action>',
+	            '<controller:(customer-reviews)>/<id:\d+>/<action:(update|delete|view|remove-image)>' => 'admin/<controller>/<action>',
+	            '<controller:(customer-reviews)>' => 'admin/<controller>/index',
 
 	            '<controller:(resource-companies)>/<action:(create)>' => 'admin/<controller>/<action>',
 	            '<controller:(resource-companies)>/<action:(view)>' => 'admin/<controller>/<action>',
@@ -353,6 +367,10 @@ $config = [
 		    #'secretV3' => '6LeVpNsZAAAAAILW_qz0qwFs4k48iA1-_ps2X8Ri',
 		    'siteKeyV3' => '6Lf3Fd4ZAAAAAJhGizsJWSedOix1QPvPUkHabjS3',
 		    'secretV3' => '6Lf3Fd4ZAAAAAGvAOfcWe03NhyJ6vWL9qTPGwUwy',
+	    ],
+	    'image' => [
+		    'class' => 'yii\image\ImageDriver',
+		    'driver' => 'GD',  //GD or Imagick
 	    ],
     ],
     'params' => $params,

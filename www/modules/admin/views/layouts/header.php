@@ -38,6 +38,7 @@ $layout_class = AdminController::getLayoutClass();
 					'linkOptions' => ['class' => 'nav-link dropdown-toggle']
 				],
 				['label' => 'FAQs', 'url' => ['/faqs'], 'options' => ['class' => 'nav-item'], 'linkOptions' => ['class' => 'nav-link']],
+				['label' => 'Reviews', 'url' => ['/customer-reviews'], 'options' => ['class' => 'nav-item'], 'linkOptions' => ['class' => 'nav-link']],
 			],
 		]);
 		echo Nav::widget([

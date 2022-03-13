@@ -15,12 +15,11 @@ $this->registerCssFile('@web/v2/common/css/steps.css', ['depends' => [BootstrapA
 $this->registerCssFile('@web/v2/common/css/get-started.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
 
 $this->registerJsFile('@web/v2/plugins/js/slick.js', ['depends' => [JqueryAsset::className(), AppAsset::className()]]);
-$this->registerJsFile('@web/v2/pages/js/about.js', ['depends' => [JqueryAsset::className(), AppAsset::className()]]);
 
 $this->registerMetaTag(['name' => 'description', 'content' => 'Compare life insurance policies and apply for coverage today. Shop the top rated companies offering up to $1,000,000 of coverage from $23 per month.']);
 $this->registerMetaTag(['name' => 'keywords', 'content' => '']);
 
-$this->title = 'Buy Life Insurance Online - About Us';
+$this->title = 'About NoExam.com - Leadership';
 $this->params['breadcrumbs'][] = ['label' => 'About', 'class' => 'breadcrumbs__link tags breadcrumbs__link--active'];
 #$this->params['breadcrumbs'][] = ['label' => 'About', 'url' => Url::toRoute('about/'), 'class' => 'breadcrumbs__link tags breadcrumbs__link--active'];
 #$this->params['breadcrumbs'][] = 'About';

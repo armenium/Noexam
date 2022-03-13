@@ -10,6 +10,11 @@ $(document).ready(function(){
 			checkboxes: null,
 			js_page_content: null,
 		},
+		route: {
+			forms: {
+				remove_image: '/%controller%/%id%/remove-image/',
+			},
+		},
 		Init: function(){
 			this.els.checkboxes = $('#js_fields_toggle').parents('table').find('tbody').find('input[name^="fields"]:not(:disabled)');
 			this.els.js_page_content = $('#js_page_content');
@@ -46,6 +51,9 @@ $(document).ready(function(){
 					break;
 				case "save_n_preview":
 					AJS.actionSaveAndPreview($this);
+					break;
+				case "remove_image":
+					AJS.ajaxRemoveImage($this);
 					break;
 				default:
 					break;
@@ -160,6 +168,33 @@ $(document).ready(function(){
 			}).fail(function(){
 			}).always(function(){
 				AJS.Loader.hide();
+			});
+		},
+		ajaxRemoveImage: function($obj){
+			var $loader_tag = $obj.find('i');
+			var $parent = $obj.parents('li');
+			var post_data = {
+				"id": $obj.data("id"),
+				"field": $obj.data("field"),
+				"file": $obj.data("file"),
+				"controller": $obj.data("controller"),
+			};
+			//console.log(post_data);
+
+			$loader_tag.addClass('fa-spinner fa-spin').removeClass('fa-times');
+
+			$.ajax({
+				type: "POST",
+				url: AJS.route.forms.remove_image.replace('%controller%', post_data.controller).replace('%id%', post_data.id),
+				data: {'data': post_data},
+				dataType: "json"
+			}).done(function(responce){
+				if(responce.error == 0){
+					$parent.remove();
+				}
+			}).fail(function(){
+				$loader_tag.removeClass('fa-spinner').addClass('fa-times');
+				console.log("SYSTEM TECHNICAL ERROR");
 			});
 		},
 	};

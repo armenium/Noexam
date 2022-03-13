@@ -82,7 +82,7 @@ $(function(){
 
 				}
 
-				//FJS.Common.doEqualHeight();
+				FJS.Common.doEqualHeight();
 			},
 			eventScrollWindow: function(){
 				FJS.vars.scrollTop = $(window).scrollTop();
@@ -165,7 +165,7 @@ $(function(){
 				FJS.Common.initLazyLoad();
 				FJS.Common.initGetAjaxContent();
 				FJS.Common.initTableSorter();
-				//FJS.Common.doEqualHeight();
+				FJS.Common.doEqualHeight();
 			},
 			toggleMobileNav: function($obj){
 				var target = $obj.data("target");
@@ -319,71 +319,26 @@ $(function(){
 				});
 
 			},
-
-			/*
 			doEqualHeight: function(){
-				if($('[data-equal-height]').length){
-					var devices = ['desktop', 'tablet', 'mobile'];
-					var obj_arr = [];
+				if($('[data-equal-height="1"]').length){
+					var $parent = $('[data-equal-height]'),
+						$elements = $($parent.data('equal-height-element')),
+						breakpoint = ~~$parent.data('equal-height-breakpoint'),
+						height = 0;
+					console.log(breakpoint);
+					$elements.removeAttr('style');
 
-					$('[data-equal-height]').removeAttr('style');
-
-					$('[data-equal-height]').each(function(i, p){
-						var sizes = $(this).data('equal-height').split(',');
-						console.log(sizes);
-
-						$(this).find('.mk-imagelist-item').each(function(j, c){
-							if(obj_arr[j] != undefined){
-								if(obj_arr[j] < $(c).height()){
-									obj_arr[j] = $(c).height();
+					if(FJS.vars.ww >= breakpoint){
+						setTimeout(function(){
+							$elements.each(function(i, p){
+								if($(p).height() > height){
+									height = $(p).height();
 								}
-							}else{
-								obj_arr[j] = $(c).height();
-							}
-						});
-					});
-
-					//console.log(obj_arr);
-
-					$('.js_equal_height').each(function(i, p){
-						$(this).find('.mk-imagelist-item').each(function(j, e){
-							//console.log(j, obj_arr[j]);
-							$(e).height(Math.round(obj_arr[j]));
-						});
-					});
-
-					if(FJS.vars.ww >= 768){
-						//FJS.Common._setEqualHeight()
-						//console.log(globals.device, JP.options.ww);
-
+							}).height(height);
+						}, 2000);
 					}
 				}
 			},
-			_setEqualHeight: function($elem, size){
-				var obj_arr = [];
-
-				$elem.each(function(i, p){
-					$(this).find('.eq_height-in-'+size).each(function(j, c){
-						if(obj_arr[j] != undefined){
-							if(obj_arr[j] < $(c).height()){
-								obj_arr[j] = $(c).height();
-							}
-						}else{
-							obj_arr[j] = $(c).height();
-						}
-					});
-				});
-
-				//console.log(obj_arr);
-
-				$elem.each(function(i, p){
-					$(this).find('.eq_height-in-'+size).each(function(j, e){
-						//console.log(j, obj_arr[j]);
-						$(e).height(Math.round(obj_arr[j]));
-					});
-				});
-			},
-			*/
 		},
 		Forms: {
 			Init: function(){

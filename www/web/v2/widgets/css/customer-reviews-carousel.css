@@ -1,0 +1,57 @@
+.reviews {padding: 100px 0; position: relative;}
+.reviews:before {content: ""; background: url(../../common/images/icon-quote.svg) no-repeat; background-size: contain; position: absolute; z-index: 1; right: -10%; top: 6%; width: 175px; height: 150px; display: block;}
+.reviews__title {text-align: center; margin-bottom: 0;}
+.reviews__body .slick-track {display: flex; flex-flow: row nowrap; padding: 50px 0;}
+@media all and (min-width: 1024px){
+	.reviews__body .slick-list {padding: 0 50px;}
+	.reviews__body .slick-list:before,
+	.reviews__body .slick-list:after {content: ""; position: absolute; width: 75px; height: 100%; top: 0; z-index: 1;}
+	.reviews__body .slick-list:before {left: 0; background: linear-gradient(to right, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);}
+	.reviews__body .slick-list:after {right: 0; background: linear-gradient(to left, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);}
+}
+.reviews__item {margin: 0 10px; display: flex !important; flex-direction: column; align-items: center; justify-content: space-between; height: auto;}
+.reviews__content {position: relative; padding: 30px; width: 100%; max-width: 520px; min-height: 266px; background-color: #FFF; margin-bottom: 35px; transition: all .5s ease; box-shadow: 10px 20px 80px rgba(187, 178, 166, 0.2);}
+.reviews__content:after {
+	content: "";
+	position: absolute;
+	bottom: -20px;
+	left: 50%;
+	transform: rotate(45deg) translateX(-12px);
+	display: block;
+	width: 25px;
+	height: 25px;
+	background: #FFFFFF;
+	/* box-shadow: 10px 20px 80px rgba(187, 178, 166, 0.2); */
+	z-index: 0;
+}
+.reviews__item.slick-active .reviews__content {}
+.reviews__stars {display: flex; margin-bottom: 12px;}
+.reviews__stars > img {margin-right: 5px;}
+.reviews__subtitle {margin-bottom: 10px;}
+.reviews__text {}
+.reviews__author {display: flex;}
+.reviews__author-photo {margin-right: 15px; border-radius: 50%; width: 56px; height: 56px;}
+.reviews__author-photo.ava {background-color: #E4E4E4; color: #BABABA; font-family: Poppins; font-size: 32px; font-weight: 600; text-align: center; line-height: 56px;}
+.reviews__author-info {display: flex; flex-direction: column; justify-content: center;}
+
+.slick-dots {display: flex; justify-content: center;}
+.slick-dots > li {margin-right: 20px;}
+.slick-dots > li:last-child {margin-right: 0;}
+.slick-dots > li > button {width: 10px; height: 10px; background-color: #D6ECE3; border: none; outline: none; font-size: 0; border-radius: 50%; padding: 0;}
+.slick-dots > li.slick-active > button {background-color: #339E75;}
+
+@media all and (max-width: 1270px){
+	.reviews:before {right: 10%; top: 10%; height: 75px; width: 100px;}
+}
+@media all and (max-width: 1024px){
+	.reviews__content {box-shadow: 10px 20px 80px rgba(187, 178, 166, 0.2);}
+}
+@media all and (max-width: 991px){
+	.reviews__body {flex-direction: column;}
+	.reviews__item {margin-right: 0;}
+}
+@media all and (max-width: 767px) {
+	.reviews {padding: 60px 0;}
+	.reviews__title {font-size: 32px; line-height: 40px; margin-bottom: 50px;}
+	.reviews__content {padding: 25px;}
+}

@@ -448,7 +448,7 @@ blockquote.blue {
 	font-size: 18px;
 }
 .actions-col a:hover {background-color: #fff; border-color: #ddd; color: #c00; box-shadow: none;}
-.table-striped {box-shadow: 0 5px 10px rgba(0,0,0,0.03);}
+.table-striped {box-shadow: 0 10px 10px -10px rgba(0,0,0,0.03);}
 .table-striped th,
 .table-striped td {padding: 5px 10px; font-size: 15px;}
 .table-bordered > thead > tr > th,
@@ -461,7 +461,7 @@ blockquote.blue {
 .table-striped tbody tr:nth-of-type(2n+1) {background-color: rgba(0, 0, 0, 0.02);}
 .table-striped tbody tr:hover {background-color: #eee;}
 .table-striped tbody tr td:last-child {white-space: normal;}
-.table-striped tr.filters {background-color: #99d199;}
+.table-striped tr.filters {background-color: #FCF9F3;}
 .table-striped tr.filters td {padding: 5px;}
 .table-striped .pre-wrap {white-space: pre-wrap;}
 .table-striped .nowrap {white-space: nowrap;}
@@ -829,3 +829,37 @@ blockquote.blue {
 .panel-danger > .panel-footer + .panel-collapse > .panel-body {
 	border-bottom-color: #ebccd1;
 }
+
+.file-drop-zone.clickable {margin: 0; padding: 0; border: 0; min-height: auto;}
+.file-drop-zone.clickable:hover,
+.file-drop-zone.clickable:focus,
+.file-drop-zone.clickable:active {background-color: #fcfcfc; border: 0;}
+.file-drop-zone .file-preview-thumbnails {display: flex; flex-flow: row wrap;}
+.krajee-default.file-preview-frame {margin: 2px; box-shadow: none; padding: 5px; float: none; border-radius: 5px;}
+.krajee-default .file-footer-caption {margin-bottom: 0;}
+.file-drop-zone-title {font-size: 12px; padding: 10px;}
+.file-footer-buttons .btn {box-shadow: none;}
+.krajee-default.file-preview-frame .kv-file-content {width: auto; height: auto; max-width: 213px; max-height: 160px;}
+.krajee-default.file-preview-frame {border: 1px solid rgba(0, 0, 0, 0.05);}
+.krajee-default.file-preview-frame:not(.file-preview-error):hover {border: 1px solid rgba(0, 0, 0, 0.1); box-shadow: none;}
+
+.datepicker .datepicker-days td,
+.datepicker .datepicker-days th {
+	width: 20px !important;
+	height: 20px !important;
+	font-size: 12px;
+	padding: 5px;
+}
+.datepicker-dropdown {box-shadow: 0 3px 20px -5px rgba(0,0,0,0.2);}
+
+.customer-avatar-col img {max-width: 100%;}
+.customer-avatar-row img {max-width: 50px;}
+
+.fileinput-remove {font-size: 30px; background: #fff !important; display: block; line-height: 1; padding: 0; border: 1px solid #999; border-radius: 4px; opacity: 1;}
+.fileinput-remove span {display: block; background-color: #fff; width: 100%; height: 100%; line-height: 20px;}
+.fileinput-remove:hover {opacity: 0.7;}
+.gallery-images {display: flex; flex-flow: row wrap; align-items: center; list-style: none; margin: -5px; padding: 0;}
+.gallery-images li {position: relative; margin: 5px;}
+.gallery-images img {border-radius: 5px; max-width: 220px;}
+.gallery-images .fileinput-remove {display: flex; align-items: center; justify-content: center; position: absolute; z-index: 1; right: 0; top: 0; font-size: 20px; transition: all .2s ease;}
+.gallery-images .fileinput-remove:hover {left: 0; bottom: 0; font-size: 40px; color: #f00;}

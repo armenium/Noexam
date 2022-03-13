@@ -7,12 +7,12 @@
 
 			<div class="leadership__row">
 				<div class="leadership__col">
-					<img src="/v2/pages/img/leadership-1.png" alt="avatar" class="leadership__avatar">
+					<img src="/v2/pages/img/leadership-1.png" alt="jon fritz headshot" class="leadership__avatar">
 				</div>
 				<div class="leadership__col">
 					<div class="leadership__social">
-						<a href="#" class="leadership__socialImgBox"><img src="/v2/common/images/linkedin-icon.png" alt="i" class="leadership__socialImg"></a>
-						<a href="#" class="leadership__socialImgBox"><img src="/v2/common/images/twitter-icon.png" alt="i" class="leadership__socialImg"></a>
+						<a href="https://www.linkedin.com/in/jonny-fritz-25035526/" class="leadership__socialImgBox"><img src="/v2/common/images/linkedin-icon.png" alt="i" class="leadership__socialImg"></a>
+						<a href="https://twitter.com/noexam" class="leadership__socialImgBox"><img src="/v2/common/images/twitter-icon.png" alt="i" class="leadership__socialImg"></a>
 					</div>
 					<div class="leadership__name heading-5">Jonathan Fritz</div>
 					<div class="leadership__position sub-title-3">Co-founder & CEO</div>
@@ -24,16 +24,16 @@
 
 			<div class="leadership__row leadership__row--reverse">
 				<div class="leadership__col">
-					<img src="/v2/pages/img/leadership-1.png" alt="avatar" class="leadership__avatar">
+					<img src="/v2/pages/img/john-holloway-head-shot.png" alt="john holloway headshot" class="leadership__avatar">
 				</div>
 				<div class="leadership__col">
 					<div class="leadership__social">
-						<a href="#" class="leadership__socialImgBox"><img src="/v2/common/images/linkedin-icon.png" alt="i" class="leadership__socialImg"></a>
-						<a href="#" class="leadership__socialImgBox"><img src="/v2/common/images/twitter-icon.png" alt="i" class="leadership__socialImg"></a>
+						<a href="https://www.linkedin.com/in/johnholloway1/" class="leadership__socialImgBox"><img src="/v2/common/images/linkedin-icon.png" alt="i" class="leadership__socialImg"></a>
+						<a href="https://twitter.com/noexam" class="leadership__socialImgBox"><img src="/v2/common/images/twitter-icon.png" alt="i" class="leadership__socialImg"></a>
 					</div>
 					<div class="leadership__name heading-5">Jonathan Holloway</div>
-					<div class="leadership__position sub-title-3">Co-founder & Director of Digital Strategy</div>
-					<p class="leadership__info fontBodyM">Jonathan is the Co-Founder & Director of Digital Strategy at noexam.com. In this capacity, he has overseen the digital success of NoExam and spearheaded the digital transformation of sales and marketing. He has been recognized
+					<div class="leadership__position sub-title-3">Co-founder</div>
+					<p class="leadership__info fontBodyM">Jonathan is a co-founder of noexam.com. In this capacity, he has overseen the digital success of NoExam and spearheaded the digital transformation of sales and marketing. He has been recognized
 						by the media as a life insurance expert, and he is a licensed life insurance agent. In his role at NoExam, Jonathan looks to bring innovation to Insurtech through data and transparency. Jonathan also volunteers with Junior
 						Achievement of Georgia and Hire Heroes USA.</p>
 				</div>
