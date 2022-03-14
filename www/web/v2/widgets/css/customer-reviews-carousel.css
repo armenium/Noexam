@@ -10,7 +10,7 @@
 	.reviews__body .slick-list:after {right: 0; background: linear-gradient(to left, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);}
 }
 .reviews__item {margin: 0 10px; display: flex !important; flex-direction: column; align-items: center; justify-content: space-between; height: auto;}
-.reviews__content {position: relative; padding: 30px; width: 100%; max-width: 520px; min-height: 266px; background-color: #FFF; margin-bottom: 35px; transition: all .5s ease; box-shadow: 10px 20px 80px rgba(187, 178, 166, 0.2);}
+.reviews__content {position: relative; padding: 30px; width: 100%; max-width: 520px; min-height: 290px; background-color: #FFF; margin-bottom: 35px; transition: all .5s ease; box-shadow: 10px 20px 80px rgba(187, 178, 166, 0.2);}
 .reviews__content:after {
 	content: "";
 	position: absolute;

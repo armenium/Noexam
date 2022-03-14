@@ -5,6 +5,7 @@ namespace app\controllers;
 use app\components\BaseController;
 use app\models\CustomerData;
 use app\models\Faqs;
+use Yii;
 use yii\helpers\VarDumper;
 use yii\web\HttpException;
 
@@ -24,6 +25,43 @@ class PagesController extends BaseController {
 
 	## ACTIONS
 	
+	public function actionView(){
+		$request = trim(Yii::$app->request->url, '/');
+		$options = [];
+		
+		#VarDumper::dump($request, 10, 1); exit;
+		
+		switch($request){
+			case "careers":
+				return $this->redirect('/careers/getting-started-life-insurance/', 302);
+				break;
+			case "careers/getting-started-life-insurance":
+				$view = 'careers';
+				break;
+			case "help":
+			case "about":
+			case "privacy":
+			case "licenses":
+			case "calculator":
+			case "partnership":
+			case "get-my-price":
+				$view = $request;
+				break;
+			case "apply-now":
+				$view = 'applynow';
+				$customer_data = new CustomerData();
+				$options = ['faq_items' => $this->getFaqs(['homepage']), 'customer_data' => $customer_data, 'display_form' => true];
+				break;
+			default:
+				$view = 'home';
+				$options = ['faq_items' => $this->getFaqs(['homepage'])];
+				break;
+		}
+		
+		return $this->render($view, $options);
+	}
+
+	/*
 	public function actionHome(){
 		$faq_items = $this->getFaqs(['homepage']);
 		
@@ -69,6 +107,7 @@ class PagesController extends BaseController {
 		
 		return $this->render('applynow', ['customer_data' => $customer_data, 'display_form' => true, 'faq_items' => $faq_items]);
 	}
+	*/
 	
 	## OTHERS
 	

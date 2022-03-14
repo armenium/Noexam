@@ -37,7 +37,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Life Insurance', 'url' => '/life-i
 //$this->params['breadcrumbs'][] = ['label' => $this->context->current_cat->title, 'url' => Url::toRoute('life-insurance/'), 'class' => 'breadcrumbs__link tags breadcrumbs__link--active'];
 
 #$this->params['breadcrumbs'][] = ['label' => 'Life Insurance', 'url' => '/life-insurance/'];
-$this->params['breadcrumbs'][] = $this->context->current_cat->title;
+$this->params['breadcrumbs'][$this->context->current_cat->url] = $this->context->current_cat->title;
 
 #$breadcrumbs = Breadcrumbs::widget(['links' => $this->params['breadcrumbs']]);
 #$authors_small = $this->render('/main/widgets/authors-small.php', ['updated' => date('F j, Y', filemtime(__FILE__))]);
