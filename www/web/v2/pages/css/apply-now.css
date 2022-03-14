@@ -41,6 +41,7 @@
 .rates-form-info__text {
     color: #7D7D82;
 }
+.main-first-screen__subtitle {margin-bottom: 5px;}
 
 @media screen and (max-width: 991px) {
     .main-first-screen__subtitle {

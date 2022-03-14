@@ -2,6 +2,7 @@
 
 use app\assets\AppAsset;
 use app\components\BreadcrumbsNew;
+use app\models\ResourcesCats;
 use yii\bootstrap\BootstrapAsset;
 use yii\helpers\Url;
 use app\widgets\Author;
@@ -26,7 +27,7 @@ $this->registerCssFile('@web/v2/life-insurance/css/life-insurance.css', ['depend
 $this->registerCssFile('@web/v2/common/css/main-first-screen.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
 $this->registerJsFile('@web/v2/life-insurance/js/life-insurance.js', ['depends' => [JqueryAsset::className(), AppAsset::className()]]);
 
-$this->params['breadcrumbs'][] = ['label' => $this->context->current_cat->title, 'class' => 'breadcrumbs__link tags breadcrumbs__link--active'];
+#$this->params['breadcrumbs'][] = ['label' => $this->context->current_cat->title, 'class' => 'breadcrumbs__link tags breadcrumbs__link--active'];
 #$this->params['breadcrumbs'][] = ['label' => $this->context->current_cat->title, 'url' => Url::toRoute('life-insurance/'), 'class' => 'breadcrumbs__link tags breadcrumbs__link--active'];
 #$this->params['breadcrumbs'][] = $this->context->current_cat->title;
 ?>
@@ -35,7 +36,8 @@ $this->params['breadcrumbs'][] = ['label' => $this->context->current_cat->title,
 	<div class="wrapp">
 		<section class="life-insurance">
 			<div class="life-insurance__nav breadcrumbs">
-				<?=BreadcrumbsNew::widget(['links' => $this->params['breadcrumbs']]);?>
+				<?=BreadcrumbsNew::widget(['links_by_url' => ['url' => $this->context->current_cat->url, 'model' => ResourcesCats::class]]);?>
+				<?php #=BreadcrumbsNew::widget(['links' => $this->params['breadcrumbs']]);?>
 			</div>
 			<div class="life-insurance__first-screen main-first-screen">
 				<h1 class="main-first-screen__title heading-0">Life Insurance</h1>

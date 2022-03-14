@@ -15,7 +15,7 @@ $this->registerCssFile('@web/v2/plugins/css/slick.css', ['depends' => [Bootstrap
 $this->registerCssFile('@web/v2/common/css/cards.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
 $this->registerCssFile('@web/v2/common/css/main-first-screen.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
 $this->registerCssFile('@web/v2/common/css/questions.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
-$this->registerCssFile('@web/v2/pages/css/about.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
+#$this->registerCssFile('@web/v2/pages/css/about.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
 $this->registerCssFile('@web/v2/life-insurance/css/rates.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
 $this->registerCssFile('@web/v2/pages/css/apply-now.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
 
@@ -31,7 +31,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Apply Now', 'class' => 'breadcrumb
 
 echo $this->render('sections/applynow/hero.php');
 echo $this->render('sections/applynow/rates-form.php');
-echo $this->render('sections/applynow/reviews.php');
+echo $this->render('sections/about/reviews.php');
 echo $this->render('sections/applynow/cards.php');
 echo $this->render('sections/applynow/faqs.php', ['faq_items' => $faq_items]);
 

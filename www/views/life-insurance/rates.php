@@ -2,6 +2,7 @@
 
 use app\assets\AppAsset;
 use app\components\BreadcrumbsNew;
+use app\models\ResourcesCats;
 use app\widgets\Author;
 use yii\bootstrap\BootstrapAsset;
 use yii\web\JqueryAsset;
@@ -34,9 +35,9 @@ $this->registerCssFile('@web/v2/common/css/get-started.css', ['depends' => [Boot
 //$this->registerJS('jQuery(document).ready(function($) { RESPONSIVEUI.responsiveTabs(); });', View::POS_END, 'responsive-tab-js');
 #$this->registerJsFile('@web/v2/life-insurance/js/rates.js', ['depends' => [JqueryAsset::className(), AppAsset::className()]]);
 
-$this->params['breadcrumbs'][] = ['label' => 'Life Insurance', 'url' => '/life-insurance/', 'class' => 'breadcrumbs__link tags'];
-$this->params['breadcrumbs'][] = ['label' => 'Term Life Insurance', 'url' => '/life-insurance/term/', 'class' => 'breadcrumbs__link tags'];
-$this->params['breadcrumbs'][] = ['label' => 'Rates', 'class' => 'breadcrumbs__link tags breadcrumbs__link--active'];
+#$this->params['breadcrumbs'][] = ['label' => 'Life Insurance', 'url' => '/life-insurance/', 'class' => 'breadcrumbs__link tags'];
+#$this->params['breadcrumbs'][] = ['label' => 'Term Life Insurance', 'url' => '/life-insurance/term/', 'class' => 'breadcrumbs__link tags'];
+#$this->params['breadcrumbs'][] = ['label' => 'Rates', 'class' => 'breadcrumbs__link tags breadcrumbs__link--active'];
 #$this->params['breadcrumbs'][] = ['label' => 'Rates', 'url' => $this->context->current_cat->url, 'class' => 'breadcrumbs__link tags breadcrumbs__link--active'];
 #$this->params['breadcrumbs'][] = $this->context->current_cat->title;
 
@@ -46,7 +47,8 @@ $this->params['breadcrumbs'][] = ['label' => 'Rates', 'class' => 'breadcrumbs__l
 	<div class="wrapp">
 		<section class="rates">
 			<div class="rates__nav breadcrumbs">
-				<?=BreadcrumbsNew::widget(['links' => $this->params['breadcrumbs']]);?>
+				<?=BreadcrumbsNew::widget(['links_by_url' => ['url' => $this->context->current_cat->url, 'model' => ResourcesCats::class]]);?>
+				<?php #=BreadcrumbsNew::widget(['links' => $this->params['breadcrumbs']]);?>
 			</div>
 			<div class="rates__first-screen main-first-screen">
 				<h1 class="main-first-screen__title heading-0">See Life Insurance Rate Charts By Age</h1>

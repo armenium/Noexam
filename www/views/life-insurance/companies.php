@@ -2,6 +2,7 @@
 
 use app\assets\AppAsset;
 use app\components\BreadcrumbsNew;
+use app\models\ResourcesCats;
 use yii\bootstrap\BootstrapAsset;
 use yii\helpers\Url;
 use app\widgets\Author;
@@ -25,8 +26,8 @@ $this->registerCssFile('@web/v2/life-insurance/css/best-companies.css', ['depend
 $this->registerCssFile('@web/v2/common/css/main-first-screen.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
 $this->registerJsFile('@web/v2/life-insurance/js/best-companies.js', ['depends' => [JqueryAsset::className(), AppAsset::className()]]);
 
-$this->params['breadcrumbs'][] = ['label' => 'Life Insurance', 'url' => '/life-insurance/', 'class' => 'breadcrumbs__link tags'];
-$this->params['breadcrumbs'][] = ['label' => 'Best Companies', 'class' => 'breadcrumbs__link tags breadcrumbs__link--active'];
+#$this->params['breadcrumbs'][] = ['label' => 'Life Insurance', 'url' => '/life-insurance/', 'class' => 'breadcrumbs__link tags'];
+#$this->params['breadcrumbs'][] = ['label' => 'Best Companies', 'class' => 'breadcrumbs__link tags breadcrumbs__link--active'];
 #$this->params['breadcrumbs'][] = ['label' => 'Best Companies', 'url' => $this->context->current_cat->url, 'class' => 'breadcrumbs__link tags breadcrumbs__link--active'];
 #$this->params['breadcrumbs'][] = ['label' => 'Life Insurance Companies', 'url' => '/life-insurance/companies/'];
 #$this->params['breadcrumbs'][] = $this->context->current_cat->title;
@@ -36,12 +37,13 @@ $this->params['breadcrumbs'][] = ['label' => 'Best Companies', 'class' => 'bread
 	<div class="wrapp">
 		<section class="best-companies">
 			<div class="best-companies__nav breadcrumbs">
-				<?=BreadcrumbsNew::widget(['links' => $this->params['breadcrumbs']]);?>
+				<?=BreadcrumbsNew::widget(['links_by_url' => ['url' => $this->context->current_cat->url, 'model' => ResourcesCats::class]]);?>
+				<?php #=BreadcrumbsNew::widget(['links' => $this->params['breadcrumbs']]);?>
 			</div>
 			<div class="best-companies__first-screen main-first-screen">
-				<div class="main-first-screen__top-title sub-title-2">top insurance companies</div>
+				<div class="main-first-screen__top-title sub-title-2">Best life insurance companies</div>
 				<h1 class="main-first-screen__title heading-0">Find the Best Life Insurance Company</h1>
-				<div class="main-first-screen__subtitle fontBodyM">Filter life insurance companies by their financial ratings, products offered, and approval time.</div>
+				<div class="main-first-screen__subtitle fontBodyM">Compare life insurance companies by their financial ratings, products offered, prices, and approval times.</div>
 				<div class="main-first-screen__advice">
 					<?=Author::widget(['db_time' => $this->context->current_cat->updated, 'file_time' => filemtime(__FILE__)]);?>
 					<div class="fs-advice__body">
@@ -74,8 +76,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Best Companies', 'class' => 'bread
 			<h1 class="choose-company__title heading-2">How to Choose a Life Insurance<br> Company</h1>
 			<div class="choose-company__box">
 				<h2 class="choose-company__subtitle"></h2>
-				<p class="choose-company__text fontBodyM">NoExam.com has been in business since 2013. As a small business, we have helped over 10,000 families purchase life insurance. We have <b>over 1,000 verified 3rd party reviews</b> and maintain a score of 4.8 out of 5.</p>
-				<p class="choose-company__text fontBodyM">Our philosophy is to go above and beyond without any expectation for something in return.</p>
+				<p class="choose-company__text fontBodyM">When choosing a life insurance company you should consider several important factors. Your financial needs, the company's financial strength, pricing, underwriting guidelines, and more. Please see the guide below for all the things to consider when picking a life insurance company.</p>
 			</div>
 			<div class="choose-company__box">
 				<h2 class="choose-company__subtitle heading-5">Our Company Ratings Explained</h2>
@@ -87,14 +88,14 @@ $this->params['breadcrumbs'][] = ['label' => 'Best Companies', 'class' => 'bread
 				<p class="choose-company__text fontBodyM">There are two main types of life insurance you can buy. The most popular choice is term life insurance, which gives you coverage for a set number of years. The other type is permanent life insurance, also called whole life, which provides
 					coverage for your entire life as long as premiums are paid.</p>
 				<p class="choose-company__text fontBodyM">In terms of value, term life insurance is hard to beat. The monthly premiums are low and the coverage amounts are high. but has other features that term lacks, such as the cash value component. To learn more about the difference between
-					term and whole life, see our article on <b>term vs whole life insurance.</b></p>
+					term and whole life, see our article on <b><a href="https://www.noexam.com/life-insurance/term-vs-whole/">term vs whole life insurance</a>.</b></p>
 			</div>
 			<div class="choose-company__box">
-				<h2 class="choose-company__subtitle heading-5">Types of Coverage</h2>
+				<h2 class="choose-company__subtitle heading-5">Financial Strength</h2>
 				<p class="choose-company__text fontBodyM">When buying an insurance product that may be needed 20+ years from now, you want to be certain that the company will be able to pay the claim. To address this very concern, many 3rd party rating agencies grade the financial strength
 					of insurance companies. There are several that you will see reporting grades for insurance companies:</p>
 				<ul class="choose-company__list fontBodyM">
-					<li><b>AM Best</b></li>
+					<li><b><a href="https://www.noexam.com/life-insurance/companies/am-best-ratings/">AM Best</a></b></li>
 					<li>Moody’s</li>
 					<li>Standard & Poors</li>
 					<li>Fitch</li>
@@ -113,9 +114,9 @@ $this->params['breadcrumbs'][] = ['label' => 'Best Companies', 'class' => 'bread
 
 				<p class="choose-company__text fontBodyM">A good rule of thumb is to choose a company that has the letter “A” in its ratings and to avoid the companies that do not.</p>
 
-				<div class="choose-company__chart text-center">
+				<!--<div class="choose-company__chart text-center">
 					<?=Yii::$app->Helpers->getImage(['class' => 'img-fluid', 'src' => '/v2/life-insurance/img/image-2828.jpg', 'alt' => 'average cost of life insurance', 'from_cdn' => true, 'lazyload' => true]);?>
-				</div>
+				</div>-->
 
 				<div class="choose-company__box">
 					<h2 class="choose-company__subtitle heading-5">Underwriting Time</h2>
@@ -126,7 +127,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Best Companies', 'class' => 'bread
 						to as simplified issue life insurance. These policies generally get issued in under a week. This is possible because the insurance company can look at digital records such as your prescription report, driving record, and MIB
 						record.
 					</p>
-					<p class="choose-company__text fontBodyM">One important thing to keep in mind when applying for life insurance that advertises an instant decision is what happens if you get declined. The <b>instant issue policies</b> have very strict requirements, and they are quick to
+					<p class="choose-company__text fontBodyM">One important thing to keep in mind when applying for life insurance that advertises an instant decision is what happens if you get declined. The <b><a href="https://www.noexam.com/life-insurance/instant/">instant issue policies</a></b> have very strict requirements, and they are quick to
 						decline an applicant. When you go to apply for a different policy, you now have to disclose that you applied somewhere else and were declined. This can affect their decision on your application.</p>
 				</div>
 				<div class="choose-company__box">
@@ -137,7 +138,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Best Companies', 'class' => 'bread
 				</div>
 				<div class="choose-company__box">
 					<h2 class="choose-company__subtitle heading-5">Company Age</h2>
-					<p class="choose-company__text fontBodyM">Why should the age of a life insurance company matter to you? The <b>average lifespan of a male and female in the US is around 80.</b> If you bought life insurance in your forties, it's important to know the company you are putting
+					<p class="choose-company__text fontBodyM">Why should the age of a life insurance company matter to you? The <b><a href="https://www.statista.com/statistics/274513/life-expectancy-in-north-america/">average lifespan of a male and female in the US is around 80.</a></b> If you bought life insurance in your forties, it's important to know the company you are putting
 						your business with has a positive financial outlook and will have the ability to pay claims years down the road. </p>
 					<p class="choose-company__text fontBodyM">We factor in age as part of our criteria. After all, if a company has made it through the great depression, ww1,ww2, and the great recession, all while being able to make good on their commitment to their policyholders, we think
 						that's worth something. </p>
@@ -167,7 +168,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Best Companies', 'class' => 'bread
 
 				<div class="choose-company__box">
 					<h3 class="choose-company__subtitle-small heading-6">In-Person - Agent</h3>
-					<p class="choose-company__text fontBodyM">Whether you buy online, via phone, or in person, you are always buying from a <b>licensed life insurance agent.</b> How you go about purchasing, receiving customer support, and maintaining your life insurance policy is your choice.
+					<p class="choose-company__text fontBodyM">Whether you buy online, via phone, or in person, you are always buying from a <b><a href="https://www.noexam.com/life-insurance/using-an-agent/">licensed life insurance agent</a>.</b> How you go about purchasing, receiving customer support, and maintaining your life insurance policy is your choice.
 						If you choose to buy from a local life insurance agent that's in your network, we can help point you in the right direction. </p>
 				</div>
 
@@ -190,7 +191,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Best Companies', 'class' => 'bread
 					<ul class="choose-company__list fontBodyM">
 						<li>The best life insurance company is the one with the highest rating that will underwrite you favorably. This means the best financial ratings and the best price given your current health.</li>
 					</ul>
-					<p class="choose-company__text fontBodyM">Every insurance company has different rules for how they price policies. For example, if you are in the 50% of Americans that have used at least one prescription drug in the last 30 days, your price can vary from company to company.
+					<p class="choose-company__text fontBodyM">Every insurance company has different rules for how they price policies. For example, if you are in the <a href="https://www.cdc.gov/nchs/fastats/drug-use-therapeutic.htm">50% of Americans that have used at least one prescription drug in the last 30 days</a>, your price can vary from company to company.
 						If you are overweight, you will also see that your price can vary from company to company. These are quick examples, but you can imagine how complex it can get when you are factoring in your health history, medications, and
 						family history.</p>
 					<p class="choose-company__text fontBodyM">Some life insurance companies quote people low rates, and once the underwriting is complete they determine they do not qualify for the initial rates. The industry refers to this as a “bait and switch”. This is something to keep

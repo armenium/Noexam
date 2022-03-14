@@ -86,3 +86,5 @@ Redirect 301 /medical-conditions-medications/ https://phpstack-223893-690316.clo
 Redirect 301 /financial-cost-of-smoking/ https://phpstack-223893-690316.cloudwaysapps.com/health/financial-cost-of-smoking/
 Redirect 301 /options-seniors/ https://phpstack-223893-690316.cloudwaysapps.com/life-insurance/no-exam/options-seniors/
 Redirect 301 /no-exam-life-insurance-diabetics/ https://phpstack-223893-690316.cloudwaysapps.com/life-insurance/no-exam/diabetics/
+Redirect 301 /about/jon-fritz/ /about/
+Redirect 301 /about/john-holloway/ /about/

@@ -8,6 +8,7 @@ use yii\helpers\VarDumper;
 use yii\web\JqueryAsset;
 use yii\widgets\Breadcrumbs;
 use app\components\shortcodes\BreadcrumbsShortcode;
+use app\models\ResourcesCats;
 
 $isMobile = Yii::$app->params['devicedetect']['isMobile'];
 
@@ -33,11 +34,11 @@ $this->registerCssFile('@web/v2/plugins/css/table-default.css', ['depends' => [B
 $this->registerJsFile('@web/v2/plugins/js/tablesorter/jquery.tablesorter.min.js', ['depends' => [JqueryAsset::className(), AppAsset::className()]]);
 $this->registerJsFile('@web/v2/life-insurance/js/life-insurance.js', ['depends' => [JqueryAsset::className(), AppAsset::className()]]);
 
-$this->params['breadcrumbs'][] = ['label' => 'Life Insurance', 'url' => '/life-insurance/', 'class' => 'breadcrumbs__link tags'];
+#$this->params['breadcrumbs'][] = ['label' => 'Life Insurance', 'url' => '/life-insurance/', 'class' => 'breadcrumbs__link tags'];
 //$this->params['breadcrumbs'][] = ['label' => $this->context->current_cat->title, 'url' => Url::toRoute('life-insurance/'), 'class' => 'breadcrumbs__link tags breadcrumbs__link--active'];
 
 #$this->params['breadcrumbs'][] = ['label' => 'Life Insurance', 'url' => '/life-insurance/'];
-$this->params['breadcrumbs'][$this->context->current_cat->url] = $this->context->current_cat->title;
+#$this->params['breadcrumbs'][$this->context->current_cat->url] = $this->context->current_cat->title;
 
 #$breadcrumbs = Breadcrumbs::widget(['links' => $this->params['breadcrumbs']]);
 #$authors_small = $this->render('/main/widgets/authors-small.php', ['updated' => date('F j, Y', filemtime(__FILE__))]);
@@ -61,7 +62,8 @@ if(strstr($content, '<!-- pagebreak -->') !== false){
 	<div class="wrapp first-section">
 		<section class="life-insurance">
 			<div class="life-insurance__nav breadcrumbs">
-				<?=BreadcrumbsNew::widget(['links' => $this->params['breadcrumbs']]);?>
+				<?=BreadcrumbsNew::widget(['links_by_url' => ['url' => $this->context->current_cat->url, 'model' => ResourcesCats::class]]);?>
+				<?php #=BreadcrumbsNew::widget(['links' => $this->params['breadcrumbs']]);?>
 			</div>
 			<div class="life-insurance__first-screen main-first-screen">
 				<h1 class="main-first-screen__title heading-0"><?=$this->context->current_cat->title;?></h1>
