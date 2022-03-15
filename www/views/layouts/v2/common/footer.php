@@ -1,4 +1,4 @@
-<div class="main-wrapp">
+<div class="main-wrapp footer-wrap">
 	<div class="wrapp">
 		<footer class="footer">
 			<div class="footer__col">
@@ -14,10 +14,10 @@
 				<div class="footer__box">
 					<div class="footer__subtitle sub-title-1">Resources</div>
 					<ul class="footer__list">
-						<li class="footer__item"><a href="/help/" class="footer__link fontBodyM">Help</a></li>
-						<li class="footer__item"><a href="/get-my-price/" class="footer__link fontBodyM">Get my price</a></li>
-						<li class="footer__item"><a href="/calculator/" class="footer__link fontBodyM">Calculator</a></li>
-						<li class="footer__item"><a href="/partnership/" class="footer__link fontBodyM">Partnership</a></li>
+						<li class="footer__item"><a href="/life-insurance/companies/no-exam/" class="footer__link fontBodyM">No Exam Life Insurance</a></li>
+						<li class="footer__item"><a href="/life-insurance/term/rates/" class="footer__link fontBodyM">Life Insurance Rates</a></li>
+						<li class="footer__item"><a href="/life-insurance/how-much-coverage/" class="footer__link fontBodyM">Life Insurance Calculator</a></li>
+						<li class="footer__item"><a href="/life-insurance/seniors/" class="footer__link fontBodyM">Life Insurance for Seniors</a></li>
 					</ul>
 				</div>
 				<div class="footer__box">
@@ -25,7 +25,7 @@
 					<ul class="footer__list">
 						<li class="footer__item"><a href="/about/" class="footer__link fontBodyM">About</a></li>
 						<li class="footer__item"><a href="/licenses/" class="footer__link fontBodyM">Licenses</a></li>
-						<li class="footer__item"><a href="/careers/" class="footer__link fontBodyM">Careers</a></li>
+						<li class="footer__item"><a href="/careers/getting-started-life-insurance/" class="footer__link fontBodyM">Careers</a></li>
 						<li class="footer__item"><a href="/privacy/" class="footer__link fontBodyM">Privacy Policy</a></li>
 					</ul>
 				</div>
