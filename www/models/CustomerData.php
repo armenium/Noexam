@@ -684,7 +684,7 @@ class CustomerData extends ActiveRecord {
 	];
 	public static $payment_methods = [
 		'payment-method-eft' => 'EFT Checking Account',
-		'payment-method-card' => 'Credit Card',
+		#'payment-method-card' => 'Credit Card',
 	];
 
 	public function beforeSave($insert){
