@@ -431,7 +431,7 @@ class MyQuoteController extends BaseController {
 				$display_trustage_blocks = true;
 			}else{
 				#Sagicor
-				$sg_prices                             = $sagicor->getSagicorPlans($args);
+				$sg_prices = $sagicor->getSagicorPlans($args);
 				$prices['plans']['exam_no']['sagicor'] = $sg_prices['plans']['sagicor'];
 				
 				#Ninja Quoter

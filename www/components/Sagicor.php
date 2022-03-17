@@ -198,6 +198,8 @@ class Sagicor extends Component{
 	private $FaceAmount;
 
 	public function getSagicorPlans(array $args){
+		return ['message' => '', 'plans' => []];
+		
 		$message = '';
 		//VarDumper::dump($args, 10, 1);
 		if(empty($args)){
