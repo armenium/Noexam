@@ -1127,6 +1127,10 @@ class BaseController extends Controller{
 
     }
 	
+    public function resetCustomerData(){
+	    Yii::$app->response->cookies->add(new Cookie(['name' => 'PHPSESSID', 'expire' => -3600]));
+    }
+    
 	public function getCustomeData($status = null, $reset = false){
 		$session       = Yii::$app->session;
 		$cookies       = Yii::$app->response->cookies;
@@ -1136,23 +1140,24 @@ class BaseController extends Controller{
 			$params['status'] = $status;
 		}
 		
-		$this->removeDuplicateCustomeData();
+		#$this->removeDuplicateCustomeData();
 		
 		$customer_data = CustomerData::find()->where($params)->one();
 		#VarDumper::dump($params, 10, 1);
-		#VarDumper::dump($customer_data, 10, 1);
+		#VarDumper::dump($customer_data, 10, 1); exit;
 		
 		if(!is_null($customer_data)){
 			if(in_array($customer_data->status, ['new', 'create'])){
-				return $customer_data;
+			
 			}else{
-				$reset = true;
+				#$reset = true;
 			}
+			return $customer_data;
 		}else{
-			$customer_data = CustomerData::find()->where(['sid' => $session->id])->andWhere(['NOT IN', 'status', ['new', 'create']])->all();
+			#$customer_data = CustomerData::find()->where(['sid' => $session->id])->andWhere(['NOT IN', 'status', ['new', 'create']])->all();
 			#VarDumper::dump($customer_data, 10, 1);
 			if(!empty($customer_data)){
-				$reset = true;
+				#$reset = true;
 			}
 		}
 		#VarDumper::dump($reset, 10, 1);

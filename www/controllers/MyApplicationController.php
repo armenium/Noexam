@@ -216,6 +216,7 @@ class MyApplicationController extends BaseController {
 					
 				}
 				Yii::debug('Redirecting to "'.$redirect_url.'"', 'noexam');
+				#VarDumper::dump($redirect_url, 10, 1); exit;
 				
 				return $this->redirect([$redirect_url]);
 			}
@@ -344,7 +345,8 @@ class MyApplicationController extends BaseController {
 	}
 	
 	public function actionOnlineApplicationStepSuccess(){
-		$customer_data = $this->getCustomeData('completed', true);
+		$customer_data = $this->getCustomeData('completed', false);
+		#VarDumper::dump($customer_data, 10, 1); exit;
 		
 		if(!is_null($customer_data)){
 			$customer_data->attributes = $customer_data->decodeData();

@@ -226,20 +226,22 @@ class MyQuoteController extends BaseController {
 		$error = 0;
 		
 		if($iniciator == 'quote-results'){
-			$model = $this->getCustomeData(null, false);
+			$model = $this->getCustomeData('new');
 			if(!is_null($model)){
 				$model->load($request_post);
-				$model->scenario = $scenario;
-				$model->iniciator = $iniciator;
-				if($model->validate()){
-					if($model->save()){
-						$html = $this->renderPartial('partials/quote-results-list', $this->getQuoteResults($this->getCustomeData(null, false)));
-					}else{
-						$error = 3;
-					}
+			}else{
+				$model = new CustomerData();
+			}
+			$model->scenario = $scenario;
+			$model->iniciator = $iniciator;
+			if($model->validate()){
+				if($model->save()){
+					$html = $this->renderPartial('partials/quote-results-list', $this->getQuoteResults($this->getCustomeData('new')));
 				}else{
-					$error = 2;
+					$error = 3;
 				}
+			}else{
+				$error = 2;
 			}
 		}else{
 			$error = 1;
@@ -250,10 +252,12 @@ class MyQuoteController extends BaseController {
 	
 	#STEP 1
 	public function actionStartQuote(){
-		$customer_data = $this->getCustomeData('create', false);
-		#VarDumper::dump($customer_data, 10, 1);
+		#$this->resetCustomerData();
 		
-		if(!is_null($customer_data)){
+		$customer_data = $this->getCustomeData('create', false);
+		#VarDumper::dump($customer_data, 10, 1);exit;
+		
+		if(!is_null($customer_data) && !empty($customer_data)){
 			$customer_data->attributes = $customer_data->decodeData();
 			$customer_data->avg_amount = intval($customer_data->avg_amount);
 			if($customer_data->avg_amount > 1000)
@@ -367,7 +371,7 @@ class MyQuoteController extends BaseController {
 	}
 	
 	public function getQuoteResults($customer_data){
-		
+		#VarDumper::dump($customer_data, 10, 1); exit;
 		$prices = [
 			'plans' => [
 				'exam_no' => [],
@@ -392,7 +396,7 @@ class MyQuoteController extends BaseController {
 			$nq_client = Yii::$app->NQClient;
 			$ts_client = Yii::$app->TSClient;
 			
-			$customer_data->attributes = $customer_data->decodeData();
+			#$customer_data->attributes = $customer_data->decodeData();
 			$age            = $this->getAge($customer_data->birthday);
 			$foot           = $customer_data->h_foot ? $customer_data->h_foot : 5;
 			$inch           = $customer_data->h_inch ? $customer_data->h_inch : 10;
@@ -402,7 +406,8 @@ class MyQuoteController extends BaseController {
 			$sex            = $customer_data->sex;
 			$zip            = $customer_data->zip;
 			
-			$db = $sagicor->getBirthdates($customer_data->birthday);
+			#$db = $sagicor->getBirthdates($customer_data->birthday);
+			$db = explode('/', $customer_data->birthday);
 			$args = [
 				'birthdate'      => $db[1].'/'.$db[0].'/'.$db[2],
 				'sex'            => $sex,

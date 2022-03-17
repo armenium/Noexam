@@ -63,7 +63,7 @@
     height: 40px;
     border-radius: 50%;
     background: #377660;
-    transform: translateX(20px);
+    /*transform: translateX(20px);*/
 }
 
 .question-mark:hover {
@@ -78,6 +78,10 @@
 .popover .popover-body {padding: 24px; color: #282B29; line-height: 24px;}
 
 @media screen and (max-width: 767px) {
+    .header__burger-wrapp .menu-btn.black span {
+        background-color: #fff;
+    }
+    .question-mark {background-color: #339E75;}
     .main-wrapp {
         padding-top: 90px;
         padding-bottom: 50px;
@@ -92,8 +96,3 @@
     }
 }
 
-@media screen and (max-width: 650px) {
-    .question-mark {
-        transform: translateX(10px);
-    }
-}

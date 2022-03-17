@@ -680,7 +680,7 @@ form input[type="hidden"] {display: none;}
 /* MY QUOTE STEPS */
 
 .my-quote-steps {
-    margin-top: -105px;
+    /*margin-top: -105px;*/
     padding: 35px 0;
 }
 
@@ -714,7 +714,7 @@ form input[type="hidden"] {display: none;}
 }
 
 .my-quote-steps__steps-item:last-child {
-    margin-right: 0;
+    /*margin-right: 0;*/
 }
 
 .my-quote-steps__decor-line {
@@ -749,7 +749,7 @@ form input[type="hidden"] {display: none;}
 
 @media screen and (max-width: 1400px) {
     .my-quote-steps {
-        margin-top: -50px;
+        margin-top: 70px;
     }
     .my-quote-steps__steps-item {
         flex-grow: 1;
