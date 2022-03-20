@@ -49,7 +49,7 @@ use yii\widgets\ActiveForm;
 						<div class="tableRow__price fontBodyM">$<?=number_format($data['premium_monthly'], 2);?></div>
 					</div>
 					<div class="tableRow__col">
-						<div class="tableRow__rating fontBodyM"><?=$data['rating'];?> <span>(Excellent)</span></div>
+						<div class="tableRow__rating fontBodyM"><?=$data['rating'];?> <span>(Excellent)*</span></div>
 					</div>
 					<div class="tableRow__col">
 						<div class="tableRow__term fontBodyM">$<?=number_format($coverage_amount, 0);?></div>
@@ -62,7 +62,7 @@ use yii\widgets\ActiveForm;
 							</div>
 							<div class="tableRow__boxRow">
 								<span class="fontBodyS">Financial Rating</span>
-								<span class="fontBodyM"><?=$data['rating'];?> <span>(Excellent)</span></span>
+								<span class="fontBodyM"><?=$data['rating'];?> <span>(Excellent)*</span></span>
 							</div>
 							<div class="tableRow__boxRow">
 								<span class="fontBodyS">Term Length</span>

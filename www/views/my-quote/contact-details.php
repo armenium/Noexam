@@ -81,7 +81,7 @@ $isMobile = Yii::$app->params['devicedetect']['isMobile'];
 							<?=$form->field($customer_data, 'zip')->textInput(['required' => 'required', 'class' => 'contact-details__input fontBodyM', 'placeholder' => 'Enter your zip code', 'autocomplete' => 'on', 'autofocus' => false])->label(false);?>
 						</label>
 					</div>
-
+					<?php /*
 					<div class="contact-details__row">
 						<label class="contact-details__checkbox-label checkbox-label">
 							<input type="checkbox" required="required" value="1">
@@ -89,6 +89,7 @@ $isMobile = Yii::$app->params['devicedetect']['isMobile'];
 							<div class="fontBodyS">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dictumst nisl proin lobortis morbi in vel elit molestie scelerisque. Dui pretium et nibh volutpat quisque.</div>
 						</label>
 					</div>
+					*/?>
 				</div>
 				<?=Html::submitButton('see my quote', [
 					'id' => 'submit_btn',

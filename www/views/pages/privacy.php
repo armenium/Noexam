@@ -12,7 +12,7 @@ $this->registerCssFile('@web/v2/pages/css/article.css', ['depends' => [Bootstrap
 $this->registerMetaTag(['name' => 'description', 'content' => 'Compare life insurance policies and apply for coverage today. Shop the top rated companies offering up to $1,000,000 of coverage from $23 per month.']);
 $this->registerMetaTag(['name' => 'keywords', 'content' => '']);
 
-$this->title = 'Buy Life Insurance Online - Privacy';
+$this->title = 'NoExam.com Privacy Policy';
 $this->params['breadcrumbs'][] = ['label' => 'Privacy', 'class' => 'breadcrumbs__link tags breadcrumbs__link--active'];
 #$this->params['breadcrumbs'][] = ['label' => 'Privacy', 'url' => Url::toRoute('privacy/'), 'class' => 'breadcrumbs__link tags breadcrumbs__link--active'];
 
@@ -26,7 +26,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Privacy', 'class' => 'breadcrumbs_
 	
 	<section>
 		<h1 class="heading-0">Privacy Policy</h1>
-		<?=Author::widget(['db_time' => '2021-12-03', 'file_time' => filemtime(__FILE__)]);?>
+		<?=Author::widget(['db_time' => '2022-3-16', 'file_time' => filemtime(__FILE__)]);?>
 		<p>This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.</p>
 		<p>We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy.</p>
 	</section>

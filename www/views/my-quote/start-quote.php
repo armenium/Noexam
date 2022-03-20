@@ -10,7 +10,7 @@ use yii\helpers\Html;
 
 $page_id = 'start-quote';
 
-$this->title = 'Buy Life Insurance Online - Get My Quote';
+$this->title = 'Start a Life Insurance Quote - NoExam.com';
 $this->registerMetaTag(['name' => 'description', 'content' => 'Compare life insurance policies and apply for coverage today. Shop the top rated companies offering up to $1,000,000 of coverage from $23 per month.']);
 $this->registerMetaTag(['name' => 'keywords', 'content' => '']);
 

@@ -1137,12 +1137,16 @@ class BaseController extends Controller{
 		$params = ['sid' => $session->id];
 		
 		if(!is_null($status)){
-			$params['status'] = $status;
+			if(is_array($status)){
+				$customer_data = CustomerData::find()->where($params)->andWhere(['IN', 'status', $status])->one();
+			}else{
+				$params['status'] = $status;
+				$customer_data = CustomerData::find()->where($params)->one();
+			}
 		}
 		
 		#$this->removeDuplicateCustomeData();
 		
-		$customer_data = CustomerData::find()->where($params)->one();
 		#VarDumper::dump($params, 10, 1);
 		#VarDumper::dump($customer_data, 10, 1); exit;
 		

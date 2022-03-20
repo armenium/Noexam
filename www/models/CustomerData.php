@@ -48,6 +48,7 @@ class CustomerData extends ActiveRecord {
 	public $reCaptcha;
     public $agree;
     public $form_name;
+    public $redirect;
     public $avg_amount;
     public $completed_application;
     public $monthly_premium;
@@ -784,9 +785,8 @@ class CustomerData extends ActiveRecord {
 			[['id', 'h_foot', 'h_inch', 'weight', 'term', 'ssn', 'zip', 'agree', 'age', 'guess_price'], 'integer'],
 			[['avg_amount'], 'string'],
 			[['household_income', 'monthly_premium', 'premium_amount'], 'number', 'numberPattern' => '/^\s*[-+]?[0-9]*[.,]?[0-9]+([eE][-+]?[0-9]+)?[.,]?[0-9]+([eE][-+]?[0-9]+)?\s*$/'],
-			[['sid', 'dls', 'step', 'birth_state', 'birth_country', 'occupation', 'status', 'iniciator', 'rate_class', 'completed_application', 'term_length', 'company_code', 'company_name', 'product_code', 'product_name', 'guess_result'], 'string', 'max' => 255],
+			[['last_name', 'first_name', 'sid', 'dls', 'step', 'birth_state', 'birth_country', 'occupation', 'status', 'iniciator', 'rate_class', 'completed_application', 'term_length', 'company_code', 'company_name', 'product_code', 'product_name', 'guess_result'], 'string', 'max' => 255],
 			[['last_name', 'first_name'], 'validateFirstName'],
-			[['last_name', 'first_name'], 'string', 'max' => 19],
 			[['middle_name'], 'validateMiddleName'],
 			[['middle_name'], 'string', 'max' => 1],
 			[['city'], 'validateCity'],
@@ -858,6 +858,8 @@ class CustomerData extends ActiveRecord {
 			[['agree'], 'in', 'range' => [1], 'message' => 'Please select checkbox'],
 			[['age', 'sex', 'avg_amount', 'term_length', 'health', 'user_ip'], 'required', 'on' => self::SCENARIO_RATE_CALC],
 			[['age', 'sex', 'term_length', 'health', 'user_ip'], 'required', 'on' => self::SCENARIO_RATE_CALC_TABLE],
+			[['first_name', 'last_name', 'state', 'zip', 'phone_number', 'email'], 'required', 'on' => self::SCENARIO_CONTACT_DETAILS],
+			[['redirect', 'referer'], 'safe'],
 			[['reCaptcha'], ReCaptchaValidator3::className(),
 				'threshold' => 0.1,
 				#'secret' => 'your secret key', // unnecessary if reСaptcha is already configured
@@ -906,6 +908,8 @@ class CustomerData extends ActiveRecord {
 
 	public function validateFirstName($attribute){
 		if(!preg_match('/^[a-zA-Z-\'\s]*$/', $this->$attribute)){
+			#VarDumper::dump($this->$attribute, 10, 1);
+			#die('The only Special Characters allowed are Hyphen (-), Apostrophe (\') and blank space.');
 			$this->addError($attribute, 'The only Special Characters allowed are Hyphen (-), Apostrophe (\') and blank space.');
 		}
 	}

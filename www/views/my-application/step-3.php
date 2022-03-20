@@ -47,7 +47,7 @@ $this->registerJsFile('@web/v2/my-application/js/online-app.js', ['depends' => [
 
 			<div class="online-app-step-3__form-box">
 				<h1 class="online-app-step-3__title heading-5">Beneficiary Information</h1>
-				<p class="online-app-step-3__subtitle fontBodyM">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus feugiat lacus, orci duis.</p>
+				<p class="online-app-step-3__subtitle fontBodyM">Please enter your beneficiary details below. If you have multiple beneficiaries, their percentage must total to 100%.</p>
 
 				<div id="benef_fields">
 					<?=$this->render('_beneficiary', ["bf_id" => $bf_id, 'customer_data' => $customer_data, 'form' => $form, 'isMobile' => $isMobile]);?>

@@ -37,8 +37,8 @@ class MyQuoteController extends BaseController {
 			switch($CustomerData['form_name']){
 				#After STEP 1
 				case 'start-quote':
+					$model = $this->getCustomeData(['create', 'new'], false);
 					$status = 'create';
-					$model = $this->getCustomeData($status, false);
 					
 					$scenario     = CustomerData::SCENARIO_SELECT_COVERAGE;
 					$redirect_url = '/'.$CustomerData['redirect'];
@@ -50,8 +50,8 @@ class MyQuoteController extends BaseController {
 
 				#After STEP 2
 				case 'overall-health':
+					$model = $this->getCustomeData(['create', 'new'], false);
 					$status = 'create';
-					$model = $this->getCustomeData($status, false);
 					
 					$scenario     = CustomerData::SCENARIO_OVERALL_HEALTH;
 					$redirect_url = '/'.$CustomerData['redirect'];
@@ -61,8 +61,8 @@ class MyQuoteController extends BaseController {
 
 				#After STEP 3
 				case 'date-of-birth':
+					$model = $this->getCustomeData(['create', 'new'], false);
 					$status = 'create';
-					$model = $this->getCustomeData($status, false);
 					
 					$scenario     = CustomerData::SCENARIO_DATE_OF_BIRTH;
 					$redirect_url = '/'.$CustomerData['redirect'];
@@ -79,8 +79,7 @@ class MyQuoteController extends BaseController {
 
 				#After STEP 4
 				case 'contact-details':
-					$status = 'create';
-					$model = $this->getCustomeData($status, false);
+					$model = $this->getCustomeData(['create', 'new'], false);
 					$status = 'new';
 					
 					$scenario     = CustomerData::SCENARIO_CONTACT_DETAILS;
@@ -111,14 +110,15 @@ class MyQuoteController extends BaseController {
 					break;
 			}
 			
+			
 			if(!is_null($model)){
-				
 				$model->load($request_post);
 				$model->scenario = $scenario;
 				$model->iniciator = $iniciator;
 				$model->status    = $status;
 				
 				if($model->validate()){
+			#VarDumper::dump($request_post, 10, 1); exit;
 					
 					if($model->save()){
 						Yii::info('CustomerData - updated record - '.$model->id, 'noexam');

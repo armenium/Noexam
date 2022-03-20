@@ -193,7 +193,7 @@ $payment_frequencies = [
 
 			<p class="online-app-step-2__note fontBodyS">
 				<b>Note:</b> The submissin of this form does not bind your life insurance policy. Policy approvals occur in 24-48 hours of the initial application submission to the insurance company. Upon the time of your policy approval you will
-				be notified by e-mail. If approved please expect 305 business days to recieve a hard copy of your policy in the mail.
+				be notified by e-mail. If approved please expect 3-5 business days to recieve a hard copy of your policy in the mail.
 			</p>
 
 		</div>

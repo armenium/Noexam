@@ -5,13 +5,13 @@
 				<div class="slider-customers__row">
 					<div class="slider-customers__col">
 						<div class="slider-customers__subtitle sub-title-3">what people say</div>
-						<blockquote class="slider-customers__quote quote-30">“Smooth and very easy process from start to finish. Would recommend!”</blockquote>
+						<blockquote class="slider-customers__quote quote-30">“My entire experience with NoExam.com was extraordinary from broker contact through policy delivery.”</blockquote>
 						<a href="/start-quote/" class="slider-customers__link button-big main-btn">see Quotes</a>
 					</div>
 					<div class="slider-customers__col">
 						<img src="/v2/pages/img/customer-1.png" class="slider-customers__photo" alt="photo">
 						<div class="slider-customers__photo-label">
-							<span class="fontBodyM">Sarah S</span>
+							<span class="fontBodyM">Mason</span>
 							<span class="fontBodyS">Satisfied Customer</span>
 						</div>
 					</div>
@@ -19,13 +19,13 @@
 				<div class="slider-customers__row">
 					<div class="slider-customers__col">
 						<div class="slider-customers__subtitle sub-title-3">what people say</div>
-						<blockquote class="slider-customers__quote quote-30">“Smooth and very easy process from start to finish. Would recommend!”</blockquote>
+						<blockquote class="slider-customers__quote quote-30">“This is a great service. We were just aproved for a loan and we cannot close until we have life insurance in place and we need to move quickly to close.”</blockquote>
 						<a href="/start-quote/" class="slider-customers__link button-big main-btn">see Quotes</a>
 					</div>
 					<div class="slider-customers__col">
 						<img src="/v2/pages/img/customer-2.png" class="slider-customers__photo" alt="photo">
 						<div class="slider-customers__photo-label">
-							<span class="fontBodyM">Sarah S</span>
+							<span class="fontBodyM">L H</span>
 							<span class="fontBodyS">Satisfied Customer</span>
 						</div>
 					</div>

@@ -130,7 +130,7 @@ class MainController extends BaseController {
 	 * Этот метод временно не используется
 	 */
 	public function actionErrors(){
-		$this->layout = 'main_modern';
+		$this->layout = 'v2/main';
 
 		$exception = Yii::$app->errorHandler->exception;
 		#VarDumper::dump($exception, 10, 1);

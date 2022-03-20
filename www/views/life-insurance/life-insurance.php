@@ -264,7 +264,7 @@ $this->registerJsFile('@web/v2/life-insurance/js/life-insurance.js', ['depends' 
                         <a href="/life-insurance/questions/" class="article__link fontBodyS">What questions should I ask when buying a policy?</a>
                         <a href="/life-insurance/health-exam/" class="article__link fontBodyS">What does the health exam consist of?</a>
                         <a href="/life-insurance/seniors/" class="article__link fontBodyS">What life insurance is best for seniors?</a>
-                        <a href="/life-insurance/face-value-vs-cash-value/" class="article__link fontBodyS">What is the difference between face and cash value</a>
+                        <a href="/life-insurance/whole/face-value-vs-cash-value/" class="article__link fontBodyS">What is the difference between face and cash value</a>
                         <a href="/life-insurance/sba-loans/" class="article__link fontBodyS">How do I get life insurance for an SBA loan?</a>
                         <a href="/life-insurance/one-million/" class="article__link fontBodyS">How much does $1,000,000 of life insurance cost?</a>
                         <a href="/life-insurance/using-an-agent/" class="article__link fontBodyS">Should I use a life insurance agent when buying a policy?</a>

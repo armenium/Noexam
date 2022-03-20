@@ -36,7 +36,7 @@ class RatesDataCache extends ActiveRecord{
 	 */
 	public function rules(){
 		return [
-			[['response_status', 'response_results_id', 'parsed'], 'integer'],
+			[['id', 'response_status', 'response_results_id', 'parsed'], 'integer'],
 			[['request_params', 'data_source', 'params_hash', 'response_results', 'response_created_at'], 'string'],
 		];
 	}
