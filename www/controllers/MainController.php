@@ -259,8 +259,9 @@ class MainController extends BaseController {
 			$request_post = $request->post();
 
 			$scenario = null;
-
-			$model = CustomerData::find()->where(['sid' => $session->id, 'status' => 'new'])->one();
+			
+			$model = $this->getCustomeData(['create', 'new'], false);
+			#$model = CustomerData::find()->where(['sid' => $session->id, 'status' => 'create'])->one();
 			#VarDumper::dump($request->post('CustomerData'), 10, 1);
 			#VarDumper::dump($model, 10, 1); exit;
 			
@@ -353,13 +354,13 @@ class MainController extends BaseController {
 					$scenario     = CustomerData::SCENARIO_APPLY_NOW;
 					$redirect_url = '/'.$request->post('CustomerData')['redirect'];
 					Yii::info( 'Step - "'.$request->post('CustomerData')['form_name'].'". Planing redirect to "' . $redirect_url . '".', 'noexam' );
-					$status = 'new';
+					$status = 'create';
 					$iniciator = $request->post('CustomerData')['form_name'];
 
 					#VarDumper::dump($request_post, 10, 1); exit;
-					$day = intval($request_post['CustomerData']['birthday']['day']);
-					$month = intval($request_post['CustomerData']['birthday']['month']);
-					$year = intval($request_post['CustomerData']['birthday']['year']);
+					$day = intval($request_post['CustomerData']['birth_day']);
+					$month = intval($request_post['CustomerData']['birth_month']);
+					$year = intval($request_post['CustomerData']['birth_year']);
 					$birthday = date('d/m/Y', strtotime($day.'.'.$month.'.'.$year));
 					$request_post['CustomerData']['birthday'] = $birthday;
 					//VarDumper::dump($request_post, 10, 1); exit;
@@ -403,7 +404,6 @@ class MainController extends BaseController {
 				$model->scenario = $scenario;
 
 				if($model->validate()){
-
 					if($model->save()){
 						Yii::info('CustomerData - updated record - '.$model->id, 'noexam');
 
@@ -613,8 +613,8 @@ class MainController extends BaseController {
 		if($request->isPost){
 			$request_post        = $request->post();
 			$requestCustomerData = $request->post('CustomerData');
-			$model               = CustomerData::find()->where(['sid' => $session->id, 'status' => 'new'])->one();
-			$status              = 'new';
+			$model = $this->getCustomeData(['create', 'new'], false);
+			#$model               = CustomerData::find()->where(['sid' => $session->id, 'status' => 'new'])->one();
 			$iniciator           = $requestCustomerData['form_name'];
 			$scenario            = CustomerData::SCENARIO_RATE_CALC;
 			if(intval($request_post['CustomerData']['avg_amount']) > 1000){
@@ -631,7 +631,7 @@ class MainController extends BaseController {
 			}else{
 				$model = new CustomerData(['scenario' => $scenario]);
 				$model->load($request_post);
-				$model->status    = $status;
+				$model->status    = 'create';
 				$model->iniciator = $iniciator;
 				$ret['message'] = 'CustomerData - new record is created - '.$model->id;
 			}
@@ -703,8 +703,8 @@ class MainController extends BaseController {
 		if($request->isPost){
 			$request_post        = $request->post();
 			$requestCustomerData = $request->post('CustomerData');
-			$model               = CustomerData::find()->where(['sid' => $session->id, 'status' => 'new'])->one();
-			$status              = 'new';
+			$model = $this->getCustomeData(['create', 'new'], false);
+			#$model               = CustomerData::find()->where(['sid' => $session->id, 'status' => 'new'])->one();
 			$iniciator           = $requestCustomerData['form_name'];
 			$scenario            = CustomerData::SCENARIO_RATE_CALC_TABLE;
 
@@ -715,7 +715,7 @@ class MainController extends BaseController {
 			}else{
 				$model = new CustomerData(['scenario' => $scenario]);
 				$model->load($request_post);
-				$model->status    = $status;
+				$model->status    = 'create';
 				$model->iniciator = $iniciator;
 				$ret['message'] = 'CustomerData - new record is created - '.$model->id;
 			}
@@ -1991,7 +1991,11 @@ class MainController extends BaseController {
 			}
 		}
 
-		if(is_null($this->current_cat) && strstr($this->url, '-vs-') !== false){
+		/**
+		 * For displaying Resource Comparison pages
+		 * Temporary disabled
+		 */
+		/*if(is_null($this->current_cat) && strstr($this->url, '-vs-') !== false){
 			$compare_data = $this->getComparisonCompaniesData();
 
 			if($request_type == 'ajax'){
@@ -2003,7 +2007,7 @@ class MainController extends BaseController {
 				}
 				return $this->render('/main/templates/comparison-result.php', ['compare_data' => $compare_data]);
 			}
-		}
+		}*/
 
 		$content = $this->current_cat->content;
 

@@ -23,15 +23,15 @@ use yii\widgets\ActiveForm;
 				$btn_link = (isset($data['link'])) ? 'data-trigger="js_action_click" data-action="quote-result-link" data-url="'.$data['link'].'"' : '';
 				?>
 				<?php $form = ActiveForm::begin(['id' => 'quote-result-form-'.$company.'-'.$coverage_amount, 'action' => '/my-quote/post/', 'options' => ['class' => 'quote-result-form'], 'fieldConfig' => ['options' => ['tag' => false]]]);?>
-				<?=$form->field($customer_data, 'form_name')->hiddenInput(['value' => 'quote-result', 'id' => ''])->label(false);?>
-				<?=$form->field($customer_data, 'term')->hiddenInput(['value' => $coverage_amount, 'id' => ''])->label(false);?>
-				<?=$form->field($customer_data, 'rate_class')->hiddenInput(['value' => $data['rate_class_name'], 'id' => ''])->label(false);?>
-				<?=$form->field($customer_data, 'monthly_premium')->hiddenInput(['value' => $data['premium_monthly'], 'id' => ''])->label(false);?>
-				<?=$form->field($customer_data, 'premium_amount')->hiddenInput(['value' => $data['premium_annual'], 'id' => ''])->label(false);?>
-				<?=$form->field($customer_data, 'company_code')->hiddenInput(['value' => $data['company_code'], 'id' => ''])->label(false);?>
-				<?=$form->field($customer_data, 'company_name')->hiddenInput(['value' => $data['company_name'], 'id' => ''])->label(false);?>
-				<?=$form->field($customer_data, 'product_code')->hiddenInput(['value' => $data['product_code'], 'id' => ''])->label(false);?>
-				<?=$form->field($customer_data, 'product_name')->hiddenInput(['value' => $data['product_name'], 'id' => ''])->label(false);?>
+				<?=$form->field($customer_data, 'form_name')->hiddenInput(['value' => 'quote-result', 'id' => ''])->label(false)->error(false);?>
+				<?=$form->field($customer_data, 'term')->hiddenInput(['value' => $coverage_amount, 'id' => ''])->label(false)->error(false);?>
+				<?=$form->field($customer_data, 'rate_class')->hiddenInput(['value' => $data['rate_class_name'], 'id' => ''])->label(false)->error(false);?>
+				<?=$form->field($customer_data, 'monthly_premium')->hiddenInput(['value' => $data['premium_monthly'], 'id' => ''])->label(false)->error(false);?>
+				<?=$form->field($customer_data, 'premium_amount')->hiddenInput(['value' => $data['premium_annual'], 'id' => ''])->label(false)->error(false);?>
+				<?=$form->field($customer_data, 'company_code')->hiddenInput(['value' => $data['company_code'], 'id' => ''])->label(false)->error(false);?>
+				<?=$form->field($customer_data, 'company_name')->hiddenInput(['value' => $data['company_name'], 'id' => ''])->label(false)->error(false);?>
+				<?=$form->field($customer_data, 'product_code')->hiddenInput(['value' => $data['product_code'], 'id' => ''])->label(false)->error(false);?>
+				<?=$form->field($customer_data, 'product_name')->hiddenInput(['value' => $data['product_name'], 'id' => ''])->label(false)->error(false);?>
 				<div class="quotes-result__tableRow tableRow">
 					<div class="tableRow__col">
 						<div class="tableRow__imgWrapp">

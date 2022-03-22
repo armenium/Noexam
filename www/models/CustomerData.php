@@ -55,6 +55,9 @@ class CustomerData extends ActiveRecord {
     public $premium_amount;
     public $rate_class;
     public $birthday;
+    public $birth_month;
+    public $birth_day;
+    public $birth_year;
     public $h_foot;
     public $h_inch;
     public $weight;
@@ -95,9 +98,6 @@ class CustomerData extends ActiveRecord {
     public $health;
     public $guessing_statistic_type;
     public $gender;
-	//public $birth_month;
-	//public $birth_day;
-	//public $birth_year;
 	public static $states = [
 		"AL" => "Alabama",
 		//"AK" => "Alaska",
@@ -756,7 +756,7 @@ class CustomerData extends ActiveRecord {
 		$scenarios[self::SCENARIO_PAYMENT] = ['payment', 'completed_application'];
 		$scenarios[self::SCENARIO_SUCCESS] = ['success'];
 		$scenarios[self::SCENARIO_PLAN] = ['agree'];
-		$scenarios[self::SCENARIO_APPLY_NOW] = ['avg_amount', 'birthday', 'h_foot', 'h_inch', 'weight', 'sex', 'first_name', 'last_name', 'phone_number', 'email', 'state', 'tobaco', 'term_length'];
+		$scenarios[self::SCENARIO_APPLY_NOW] = ['avg_amount', 'birthday', 'birth_day', 'birth_month', 'birth_year', 'h_foot', 'h_inch', 'weight', 'sex', 'first_name', 'last_name', 'phone_number', 'email', 'state', 'tobaco', 'term_length'];
 		$scenarios[self::SCENARIO_APPLY_NOW_HOME] = ['avg_amount', 'birthday', 'h_foot', 'h_inch', 'weight', 'sex', 'first_name', 'last_name', 'phone_number', 'email', 'state', 'tobaco', 'term_length', 'reCaptcha'];
 		$scenarios[self::SCENARIO_QUOTE_RESULT] = ['term', 'rate_class', 'monthly_premium', 'premium_amount', 'company_code', 'company_name', 'product_code', 'product_name'];
 		$scenarios[self::SCENARIO_DSR] = ['status'];
@@ -782,7 +782,7 @@ class CustomerData extends ActiveRecord {
      */
 	public function rules(){
 		return [
-			[['id', 'h_foot', 'h_inch', 'weight', 'term', 'ssn', 'zip', 'agree', 'age', 'guess_price'], 'integer'],
+			[['id', 'h_foot', 'h_inch', 'weight', 'term', 'ssn', 'zip', 'agree', 'age', 'guess_price', 'birth_day', 'birth_month', 'birth_year'], 'integer'],
 			[['avg_amount'], 'string'],
 			[['household_income', 'monthly_premium', 'premium_amount'], 'number', 'numberPattern' => '/^\s*[-+]?[0-9]*[.,]?[0-9]+([eE][-+]?[0-9]+)?[.,]?[0-9]+([eE][-+]?[0-9]+)?\s*$/'],
 			[['last_name', 'first_name', 'sid', 'dls', 'step', 'birth_state', 'birth_country', 'occupation', 'status', 'iniciator', 'rate_class', 'completed_application', 'term_length', 'company_code', 'company_name', 'product_code', 'product_name', 'guess_result'], 'string', 'max' => 255],

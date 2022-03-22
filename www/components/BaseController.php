@@ -1132,13 +1132,20 @@ class BaseController extends Controller{
     }
     
 	public function getCustomeData($status = null, $reset = false){
+		$customer_data = null;
 		$session       = Yii::$app->session;
 		$cookies       = Yii::$app->response->cookies;
 		$params = ['sid' => $session->id];
 		
 		if(!is_null($status)){
 			if(is_array($status)){
-				$customer_data = CustomerData::find()->where($params)->andWhere(['IN', 'status', $status])->one();
+				#$customer_data = CustomerData::find()->where($params)->andWhere(['IN', 'status', $status])->one();
+				foreach($status as $v){
+					$customer_data = $this->getCustomeData($v);
+					if(!is_null($customer_data)){
+						break;
+					}
+				}
 			}else{
 				$params['status'] = $status;
 				$customer_data = CustomerData::find()->where($params)->one();
@@ -1146,31 +1153,12 @@ class BaseController extends Controller{
 		}
 		
 		#$this->removeDuplicateCustomeData();
-		
-		#VarDumper::dump($params, 10, 1);
-		#VarDumper::dump($customer_data, 10, 1); exit;
-		
-		if(!is_null($customer_data)){
-			if(in_array($customer_data->status, ['new', 'create'])){
-			
-			}else{
-				#$reset = true;
-			}
-			return $customer_data;
-		}else{
-			#$customer_data = CustomerData::find()->where(['sid' => $session->id])->andWhere(['NOT IN', 'status', ['new', 'create']])->all();
-			#VarDumper::dump($customer_data, 10, 1);
-			if(!empty($customer_data)){
-				#$reset = true;
-			}
-		}
-		#VarDumper::dump($reset, 10, 1);
-		
+	
 		if($reset){
 			$cookies->add(new Cookie(['name' => 'PHPSESSID', 'expire' => -3600]));
 		}
 		
-		return null;
+		return $customer_data;
 	}
 	
 	public function removeDuplicateCustomeData(){

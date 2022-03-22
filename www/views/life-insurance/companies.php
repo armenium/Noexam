@@ -88,14 +88,14 @@ $this->registerJsFile('@web/v2/life-insurance/js/best-companies.js', ['depends' 
 				<p class="choose-company__text fontBodyM">There are two main types of life insurance you can buy. The most popular choice is term life insurance, which gives you coverage for a set number of years. The other type is permanent life insurance, also called whole life, which provides
 					coverage for your entire life as long as premiums are paid.</p>
 				<p class="choose-company__text fontBodyM">In terms of value, term life insurance is hard to beat. The monthly premiums are low and the coverage amounts are high. but has other features that term lacks, such as the cash value component. To learn more about the difference between
-					term and whole life, see our article on <b><a href="https://www.noexam.com/life-insurance/term-vs-whole/">term vs whole life insurance</a>.</b></p>
+					term and whole life, see our article on <b><a href="/life-insurance/term-vs-whole/">term vs whole life insurance</a>.</b></p>
 			</div>
 			<div class="choose-company__box">
 				<h2 class="choose-company__subtitle heading-5">Financial Strength</h2>
 				<p class="choose-company__text fontBodyM">When buying an insurance product that may be needed 20+ years from now, you want to be certain that the company will be able to pay the claim. To address this very concern, many 3rd party rating agencies grade the financial strength
 					of insurance companies. There are several that you will see reporting grades for insurance companies:</p>
 				<ul class="choose-company__list fontBodyM">
-					<li><b><a href="https://www.noexam.com/life-insurance/companies/am-best-ratings/">AM Best</a></b></li>
+					<li><b><a href="/life-insurance/companies/am-best-ratings/">AM Best</a></b></li>
 					<li>Moody’s</li>
 					<li>Standard & Poors</li>
 					<li>Fitch</li>
@@ -127,7 +127,7 @@ $this->registerJsFile('@web/v2/life-insurance/js/best-companies.js', ['depends' 
 						to as simplified issue life insurance. These policies generally get issued in under a week. This is possible because the insurance company can look at digital records such as your prescription report, driving record, and MIB
 						record.
 					</p>
-					<p class="choose-company__text fontBodyM">One important thing to keep in mind when applying for life insurance that advertises an instant decision is what happens if you get declined. The <b><a href="https://www.noexam.com/life-insurance/instant/">instant issue policies</a></b> have very strict requirements, and they are quick to
+					<p class="choose-company__text fontBodyM">One important thing to keep in mind when applying for life insurance that advertises an instant decision is what happens if you get declined. The <b><a href="/life-insurance/instant/">instant issue policies</a></b> have very strict requirements, and they are quick to
 						decline an applicant. When you go to apply for a different policy, you now have to disclose that you applied somewhere else and were declined. This can affect their decision on your application.</p>
 				</div>
 				<div class="choose-company__box">
@@ -168,7 +168,7 @@ $this->registerJsFile('@web/v2/life-insurance/js/best-companies.js', ['depends' 
 
 				<div class="choose-company__box">
 					<h3 class="choose-company__subtitle-small heading-6">In-Person - Agent</h3>
-					<p class="choose-company__text fontBodyM">Whether you buy online, via phone, or in person, you are always buying from a <b><a href="https://www.noexam.com/life-insurance/using-an-agent/">licensed life insurance agent</a>.</b> How you go about purchasing, receiving customer support, and maintaining your life insurance policy is your choice.
+					<p class="choose-company__text fontBodyM">Whether you buy online, via phone, or in person, you are always buying from a <b><a href="/life-insurance/using-an-agent/">licensed life insurance agent</a>.</b> How you go about purchasing, receiving customer support, and maintaining your life insurance policy is your choice.
 						If you choose to buy from a local life insurance agent that's in your network, we can help point you in the right direction. </p>
 				</div>
 

@@ -5,7 +5,7 @@ use yii\helpers\VarDumper;
 ?>
 <div class="rates-form applynow-form-section widget <?=$position;?>" style="width:<?=$width;?>;">
 	<?php $form = ActiveForm::begin(['id' => 'applynow-form', 'action' => '/post/', 'options' => ['class' => 'rates-form__form'], 'fieldConfig' => ['options' => ['tag' => false]]]);?>
-	<?=$form->field($customer_data, 'form_name')->hiddenInput(['value' => 'contentform', 'id' => ''])->label(false);?>
+	<?=$form->field($customer_data, 'form_name')->hiddenInput(['value' => 'applynow', 'id' => ''])->label(false);?>
 	<?=$form->field($customer_data, 'redirect')->hiddenInput(['value' => 'quote-results', 'id' => ''])->label(false);?>
 	
 	<?php if($display_title):?>
@@ -67,17 +67,17 @@ use yii\helpers\VarDumper;
 	<div class="row rates-form__row">
 		<div class="col-6 col-md-4 col-lg-3 rates-form__label d-flex flex-column">
 			<label for="date"><span class="tags">Date</span></label>
-			<?=$form->field($customer_data, 'birthday[day]')->dropDownList($days, ['required' => 'required', 'class' => 'js_selectpicker rates-form__select', 'id' => 'birth_day', 'data-style' => 'btn-light', 'data-size' => 8, 'data-title' => 'Day', 'data-mobile' => (string)$isMobile, 'options' => ['0' => ['selected' => 'selected']]])->label(false);?>
+			<?=$form->field($customer_data, 'birth_day')->dropDownList($days, ['required' => 'required', 'class' => 'js_selectpicker rates-form__select', 'id' => 'birth_day', 'data-style' => 'btn-light', 'data-size' => 8, 'data-title' => 'Day', 'data-mobile' => (string)$isMobile, 'options' => ['0' => ['selected' => 'selected']]])->label(false);?>
 		</div>
 
 		<div class="col-6 col-md-4 col-lg-3 rates-form__label d-flex flex-column">
 			<label for="month"><span class="tags">Month</span></label>
-			<?=$form->field($customer_data, 'birthday[month]')->dropDownList($months, ['required' => 'required', 'class' => 'js_selectpicker rates-form__select', 'id' => 'birth_month', 'data-style' => 'btn-light', 'data-size' => 8, 'data-title' => 'Month', 'data-mobile' => (string)$isMobile, 'options' => ['0' => ['selected' => 'selected']]])->label(false);?>
+			<?=$form->field($customer_data, 'birth_month')->dropDownList($months, ['required' => 'required', 'class' => 'js_selectpicker rates-form__select', 'id' => 'birth_month', 'data-style' => 'btn-light', 'data-size' => 8, 'data-title' => 'Month', 'data-mobile' => (string)$isMobile, 'options' => ['0' => ['selected' => 'selected']]])->label(false);?>
 		</div>
 
 		<div class="col-12 col-md-4 col-lg-3 rates-form__label d-flex flex-column">
 			<label for="year"><span class="tags">Year</span></label>
-			<?=$form->field($customer_data, 'birthday[year]')->dropDownList($years, ['required' => 'required', 'class' => 'js_selectpicker rates-form__select', 'id' => 'birth_year', 'data-style' => 'btn-light', 'data-size' => 8, 'data-title' => 'Year', 'data-mobile' => (string)$isMobile, 'options' => ['1970' => ['selected' => 'selected']]])->label(false);?>
+			<?=$form->field($customer_data, 'birth_year')->dropDownList($years, ['required' => 'required', 'class' => 'js_selectpicker rates-form__select', 'id' => 'birth_year', 'data-style' => 'btn-light', 'data-size' => 8, 'data-title' => 'Year', 'data-mobile' => (string)$isMobile, 'options' => ['0' => ['selected' => 'selected']]])->label(false);?>
 		</div>
 	</div>
 

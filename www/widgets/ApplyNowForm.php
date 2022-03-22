@@ -10,6 +10,8 @@ use yii\base\Widget;
 use yii\bootstrap\BootstrapAsset;
 use yii\helpers\Html;
 use yii\web\JqueryAsset;
+use app\components\BaseController;
+use yii\helpers\VarDumper;
 
 class ApplyNowForm extends Widget{
 	
@@ -28,7 +30,16 @@ class ApplyNowForm extends Widget{
 	public function init(){
 		parent::init();
 		
-		$this->customer_data = new CustomerData();
+		$bc = new BaseController('BaseController', null);
+		$model = $bc->getCustomeData(['create', 'new', 'completed'], false);
+		if(!is_null($model)){
+			$model->attributes = $model->decodeData();
+			$this->customer_data = $model;
+		}else{
+			$this->customer_data = new CustomerData();
+		}
+		#VarDumper::dump($this->customer_data, 10, 1);
+		
 		$this->isMobile = Yii::$app->params['devicedetect']['isMobile'];
 		
 		for($i = 1; $i <= 31; $i++){

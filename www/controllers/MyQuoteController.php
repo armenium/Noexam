@@ -80,7 +80,7 @@ class MyQuoteController extends BaseController {
 				#After STEP 4
 				case 'contact-details':
 					$model = $this->getCustomeData(['create', 'new'], false);
-					$status = 'new';
+					$status = 'create';
 					
 					$scenario     = CustomerData::SCENARIO_CONTACT_DETAILS;
 					$redirect_url = '/'.$CustomerData['redirect'];
@@ -89,13 +89,15 @@ class MyQuoteController extends BaseController {
 					break;
 				
 				case 'quote-result':
+					$model = $this->getCustomeData(['create', 'new'], false);
 					$status = 'new';
-					$model = $this->getCustomeData($status, false);
-
-					$scenario     = CustomerData::SCENARIO_QUOTE_RESULT;
+					$scenario = CustomerData::SCENARIO_QUOTE_RESULT;
+					
+					if(!is_null($model)){
+						$model->attributes = $model->decodeData();
+					}
+					
 					$redirect_url = '/online-application-step-1/';
-
-					$model->attributes = $model->decodeData();
 					if($request->post('CustomerData')['company_code'] != 'sagicor'){
 						Yii::info('Step - "quote-result". company_code = '.$request->post('CustomerData')['company_code'].'. Planing redirect to "intermediary-questions".', 'noexam' );
 						$redirect_url = '/online-application-step-intermediary-questions/';
@@ -118,9 +120,9 @@ class MyQuoteController extends BaseController {
 				$model->status    = $status;
 				
 				if($model->validate()){
-			#VarDumper::dump($request_post, 10, 1); exit;
 					
 					if($model->save()){
+			#VarDumper::dump($request_post, 10, 1); exit;
 						Yii::info('CustomerData - updated record - '.$model->id, 'noexam');
 						
 						$SF_process_flag = false;
@@ -345,14 +347,14 @@ class MyQuoteController extends BaseController {
 	public function actionQuoteResults(){
 		$this->layout = 'v2/my-quote-results';
 		
-		$customer_data = $this->getCustomeData('new', false);
+		$customer_data = $this->getCustomeData(['create', 'new'], false);
 		
 		if(is_null($customer_data)){
 			$customer_data = new CustomerData();
 			$customer_data->avg_amount = 300;
 			$customer_data->term_length = '10';
 		}else{
-			$customer_data->attributes      = $customer_data->decodeData();
+			$customer_data->attributes = $customer_data->decodeData();
 			$customer_data->avg_amount = $customer_data->avg_amount > 1000 ? $customer_data->avg_amount / 1000 : $customer_data->avg_amount;
 		}
 		

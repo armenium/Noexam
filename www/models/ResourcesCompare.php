@@ -41,7 +41,7 @@ class ResourcesCompare extends \yii\db\ActiveRecord{
 		return [
 			'id'          => 'ID',
 			'company1_id' => 'Company 1',
-			'company2_id' => 'Compant 2',
+			'company2_id' => 'Company 2',
 			'title'       => 'Title',
 			'content'     => 'Content',
 			'no_index'     => 'NoIndex',

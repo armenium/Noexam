@@ -74,7 +74,8 @@ class MyApplicationController extends BaseController {
 			
 			$scenario = null;
 			
-			$model = $this->getCustomeData('new', false);
+			$model = $this->getCustomeData(['create', 'new'], false);
+			#$model = $this->getCustomeData('new', false);
 			#VarDumper::dump($request->post('CustomerData'), 10, 1); exit;
 			#VarDumper::dump($model, 10, 1); exit;
 			
