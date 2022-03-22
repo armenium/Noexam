@@ -122,15 +122,15 @@ $this->params['breadcrumbs'][] = $this->title;
 				'buttons' => [
 					'view' => function ($url, $model){
 						$t = '/resource-grid/'.$model->id.'/view/';
-						return Html::a('<span class="glyphicon glyphicon-eye-open"></span>', Url::to($t), ['title' => 'View', 'aria-label' => 'View', 'data-pjax' => '0']);
+						return Html::a('<span class="bi-eye"></span>', Url::to($t), ['title' => 'View', 'aria-label' => 'View', 'data-pjax' => '0']);
 					},
 					'update' => function ($url, $model){
 						$t = '/resource-grid/'.$model->id.'/update/';
-						return Html::a('<span class="glyphicon glyphicon-pencil"></span>', Url::to($t), ['title' => 'Update', 'aria-label' => 'Update', 'data-pjax' => '0']);
+						return Html::a('<span class="bi-pencil"></span>', Url::to($t), ['title' => 'Update', 'aria-label' => 'Update', 'data-pjax' => '0']);
 					},
 					'delete' => function ($url, $model){
 						$t = '/resource-grid/'.$model->id.'/delete/';
-						return Html::a('<span class="glyphicon glyphicon-trash"></span>', Url::to($t), ['title' => 'Delete', 'aria-label' => 'Delete', 'data-pjax' => '0', 'data' => ['confirm' => 'Are you sure you want to delete this item?', 'method' => 'post']]);
+						return Html::a('<span class="bi-trash"></span>', Url::to($t), ['title' => 'Delete', 'aria-label' => 'Delete', 'data-pjax' => '0', 'data' => ['confirm' => 'Are you sure you want to delete this item?', 'method' => 'post']]);
 					},
 				],
 			],

@@ -122,15 +122,15 @@ yii::$app->params['child_to_parent_links'] = ['0' => 'No', '1' => 'Yes'];
 				    },
 					/*'import' => function ($url, $model){
 					    $t = '/resource-cats/'.$model->id.'/import/';
-					    return Html::a('<span class="glyphicon glyphicon-import"></span>', Url::to($t), ['title' => 'Import', 'aria-label' => 'Import', 'data-pjax' => '0', 'data' => ['confirm' => 'Are you sure you want to import this item?', 'method' => 'post']]);
+					    return Html::a('<span class="bi-import"></span>', Url::to($t), ['title' => 'Import', 'aria-label' => 'Import', 'data-pjax' => '0', 'data' => ['confirm' => 'Are you sure you want to import this item?', 'method' => 'post']]);
 				    },
 					'compare' => function ($url, $model){
 					    $t = '/resource-cats/'.$model->id.'/compare/';
-					    return Html::a('<span class="glyphicon glyphicon-transfer"></span>', Url::to($t), ['title' => 'Compare', 'aria-label' => 'Compare', 'data-pjax' => '0']);
+					    return Html::a('<span class="bi-transfer"></span>', Url::to($t), ['title' => 'Compare', 'aria-label' => 'Compare', 'data-pjax' => '0']);
 				    },
 					'export' => function ($url, $model){
 					    $t = '/resource-cats/'.$model->id.'/export/';
-					    return Html::a('<span class="glyphicon glyphicon-export"></span>', Url::to($t), ['title' => 'Export', 'aria-label' => 'Export', 'data-pjax' => '0', 'data' => ['confirm' => 'Are you sure you want to export this item?', 'method' => 'post']]);
+					    return Html::a('<span class="bi-export"></span>', Url::to($t), ['title' => 'Export', 'aria-label' => 'Export', 'data-pjax' => '0', 'data' => ['confirm' => 'Are you sure you want to export this item?', 'method' => 'post']]);
 				    },*/
 				],
 			],
