@@ -855,6 +855,7 @@ class CustomerData extends ActiveRecord {
 			[['status'], 'required', 'on' => self::SCENARIO_COMPLETED],
 			//[['form_name', 'avg_amount', 'birthday', 'sex', 'height', 'weight', 'first_name', 'last_name', 'phone_number', 'email', 'term_length'], 'required', 'on' => self::SCENARIO_APPLY_NOW],
 			[['reCaptcha'], 'required', 'on' => self::SCENARIO_APPLY_NOW_HOME],
+			[['reCaptcha'], 'required', 'on' => self::SCENARIO_APPLY_NOW],
 			[['agree'], 'in', 'range' => [1], 'message' => 'Please select checkbox'],
 			[['age', 'sex', 'avg_amount', 'term_length', 'health', 'user_ip'], 'required', 'on' => self::SCENARIO_RATE_CALC],
 			[['age', 'sex', 'term_length', 'health', 'user_ip'], 'required', 'on' => self::SCENARIO_RATE_CALC_TABLE],

@@ -1,3 +1,9 @@
+var RECAPTCHA = {
+	test: function(token){
+		//console.log(token);
+	},
+};
+
 if(typeof jQuery === "undefined"){
 	throw new Error("Frontend requires jQuery");
 }

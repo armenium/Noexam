@@ -1,4 +1,6 @@
 <?php
+
+use himiklab\yii2\recaptcha\ReCaptcha3;
 use yii\widgets\ActiveForm;
 use yii\helpers\Html;
 use yii\helpers\VarDumper;
@@ -7,6 +9,7 @@ use yii\helpers\VarDumper;
 	<?php $form = ActiveForm::begin(['id' => 'applynow-form', 'action' => '/post/', 'options' => ['class' => 'rates-form__form'], 'fieldConfig' => ['options' => ['tag' => false]]]);?>
 	<?=$form->field($customer_data, 'form_name')->hiddenInput(['value' => 'applynow', 'id' => ''])->label(false);?>
 	<?=$form->field($customer_data, 'redirect')->hiddenInput(['value' => 'quote-results', 'id' => ''])->label(false);?>
+	<?=$form->field($customer_data, 'reCaptcha')->widget(ReCaptcha3::className(), ['action' => '/post/', 'jsCallback' => 'RECAPTCHA.test'])->label(false);?>
 	
 	<?php if($display_title):?>
 		<h2 class="rates-form__title heading-5"><?=$title;?></h2>
