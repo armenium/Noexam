@@ -9,10 +9,10 @@
 	
 		<ul class="nav nav-tabs custom-tabs justify-content-center trans_all" id="js_<?=$id;?>_tab" role="tablist">
 			<li class="nav-item text-center" role="presentation">
-				<a class="nav-link active" id="<?=$id;?>-male-tab" data-toggle="tab" href="#<?=$id;?>-male" role="tab" aria-controls="male" aria-selected="true">Male</a>
+				<a class="nav-link active" id="<?=$id;?>-male-tab" data-toggle="tab" href="#<?=$id;?>-male" role="tab" aria-controls="<?=$id;?>-male" aria-selected="true">Male</a>
 			</li>
 			<li class="nav-item text-center" role="presentation">
-				<a class="nav-link" id="<?=$id;?>-female-tab" data-toggle="tab" href="#<?=$id;?>-female" role="tab" aria-controls="female" aria-selected="false">Female</a>
+				<a class="nav-link" id="<?=$id;?>-female-tab" data-toggle="tab" href="#<?=$id;?>-female" role="tab" aria-controls="<?=$id;?>-female" aria-selected="false">Female</a>
 			</li>
 		</ul>
 		

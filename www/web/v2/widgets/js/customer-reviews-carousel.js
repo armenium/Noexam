@@ -14,6 +14,7 @@ $(document).ready(function(){
 	});*/
 
 	$('.reviews__body').slick({
+		accessibility: false,
 		infinite: true,
 		dots: true,
 		arrows: false,

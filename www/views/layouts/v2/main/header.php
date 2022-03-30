@@ -3,7 +3,7 @@ use yii\bootstrap\Nav;
 ?>
 <header id="js_header" class="header trans_me">
 	<div class="header__col">
-		<a href="/"><img src="/v2/common/images/header/Logo.svg" alt="" title="" class="header__logo" width="112" height="16"></a>
+		<a href="/" title="Noexam.com"><img src="/v2/common/images/header/Logo.svg" alt="Noexam.com" title="Noexam.com" class="header__logo" width="112" height="16"></a>
 		<nav class="header__nav">
 			<?=Nav::widget(['options' => ['class' => 'header__list'], 'items' => Yii::$app->params['nav']]);?>
 		</nav>

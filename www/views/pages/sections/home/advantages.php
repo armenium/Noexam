@@ -2,7 +2,7 @@
 	<div class="wrapp">
 		<section class="advantages-slider">
 			<h1 class="advantages-slider__title heading-2">Top-Rated No Exam Life Insurance</h1>
-			<h5 class="advantages-slider__subtitle fontBodyL">See why thousands of people choose <b>noexam.com</b></h5>
+			<div class="advantages-slider__subtitle fontBodyL">See why thousands of people choose <b>noexam.com</b></div>
 			
 			<div class="advantages-slider__container">
 				<div class="advantages-slider__col">

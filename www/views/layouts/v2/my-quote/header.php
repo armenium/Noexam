@@ -3,9 +3,9 @@ use yii\bootstrap\Nav;
 ?>
 <header id="js_header" class="header header--empty trans_me">
 	<div class="header__col">
-		<a href="/">
-			<img src="/v2/common/images/header/Logo.svg" alt="" title="" class="header__logo d-none d-md-block" width="112" height="16">
-			<img src="/v2/common/images/header/Logo-w.svg" alt="" title="" class="header__logo d-md-none" width="112" height="16">
+		<a href="/" title="Noexam.com">
+			<img src="/v2/common/images/header/Logo.svg" alt="Noexam.com" title="Noexam.com" class="header__logo d-none d-md-block" width="112" height="16">
+			<img src="/v2/common/images/header/Logo-w.svg" alt="Noexam.com" title="Noexam.com" class="header__logo d-md-none" width="112" height="16">
 		</a>
 	</div>
 	<div class="header__col">

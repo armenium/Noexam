@@ -5,7 +5,7 @@
 			<div class="questions__container">
 				<?php foreach($faq_items as $item):?>
 					<div class="questions__item questions__item--life-insurance trans_all" id="question_<?=$item->id;?>">
-						<h6 class="questions__card-title heading-6"><?=$item->question;?></h6>
+						<div class="questions__card-title heading-6"><?=$item->question;?></div>
 						<div class="questions__card-body">
 							<div class="questions__card-text fontBodyM">
 								<?php if(!empty($item->answer_tpl)):?>

@@ -23,6 +23,7 @@
 
 $(document).ready(function() {
     $('.quotes-result__cards').slick({
+        accessibility: false,
         infinite: true,
         dots: false,
         arrows: false,

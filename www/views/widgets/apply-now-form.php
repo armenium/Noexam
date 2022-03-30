@@ -125,7 +125,7 @@ use yii\helpers\VarDumper;
 	<div class="rates-form__decor-line"></div>
 
 	<?=Html::submitButton('See My Quotes', [
-		'id' => 'submit_btn',
+		#'id' => 'submit_btn',
 		'class' => 'rates-form__btn main-btn button-big',
 		'data-trigger' => 'js_action_click',
 		'data-action' => 'apply_now_form_submit',

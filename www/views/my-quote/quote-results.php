@@ -38,7 +38,7 @@ $isMobile = Yii::$app->params['devicedetect']['isMobile'];
 					<?=$form->field($customer_data, 'form_name')->hiddenInput(['value' => $page_id, 'id' => ''])->label(false)->error(false);?>
 					<?=$form->field($customer_data, 'redirect')->hiddenInput(['value' => '', 'id' => ''])->label(false)->error(false);?>
 					<div class="quotes-result__formColumn first">
-						<h4 class="quotes-result__formTitle main-title">Term Length</h4>
+						<div class="quotes-result__formTitle main-title">Term Length</div>
 						<div class="quotes-result__label">
 							<label for="term_length">
 								<span class="tags">Select from dropdown</span>
@@ -57,7 +57,7 @@ $isMobile = Yii::$app->params['devicedetect']['isMobile'];
 						</div>
 					</div>
 					<div class="quotes-result__formColumn last">
-						<h4 class="quotes-result__formTitle main-title">Coverage</h4>
+						<div class="quotes-result__formTitle main-title">Coverage</div>
 						<label class="quotes-result__label">
 						<?=$form->field($customer_data, 'avg_amount')->input('text', [
 							'required' => 'required',

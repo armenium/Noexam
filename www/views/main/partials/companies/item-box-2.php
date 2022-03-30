@@ -25,7 +25,7 @@ $id_attr = ($insert_id_attributs) ? 'id="'.$model->slug.'"' : '';
 			<span class="company__name heading-5"><?=$model->title;?></span>
 			<span class="company__rating-label fontBodyS">Our Rating</span>
 			<div class="company__rating-stars">
-				<img class="star" src="/v2/common/images/stars/<?=$model->our_rating;?>.svg">
+				<img class="star" src="/v2/common/images/stars/<?=$model->our_rating;?>.svg" alt="Rating: <?=$model->our_rating;?>">
 			</div>
 		</div>
 		<div class="company__header-column">
@@ -73,7 +73,7 @@ $id_attr = ($insert_id_attributs) ? 'id="'.$model->slug.'"' : '';
 	
 	<?php if(!empty($model->content)):?>
 	<div class="company__footer">
-		<h3 class="company__footer-title main-title">About <?=$model->title;?></h3>
+		<div class="company__footer-title main-title">About <?=$model->title;?></div>
 		<p class="company__content fontBodyM"><?=$model->content;?></p>
 	</div>
 	<div class="company__footer-btn btn-read-more">read more</div>

@@ -59,7 +59,7 @@ use app\components\BaseController;
 
 		<div class="charts-by-age__decor-line"></div>
 
-		<?=Html::submitButton($submit_text, ['class' => 'charts-by-age__btn main-btn button-big', 'id' => 'submit_btn']);?>
+		<?=Html::submitButton($submit_text, ['class' => 'charts-by-age__btn main-btn button-big']);?>
 
 		<?php ActiveForm::end();?>
 	</div>

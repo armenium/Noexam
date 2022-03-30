@@ -1,15 +1,22 @@
-let questionsItems = [...document.querySelectorAll('.questions__item')].forEach(item => {
+/*let questionsItems = [...document.querySelectorAll('.questions__item')].forEach(item => {
     item.addEventListener('click', (e) => {
         item.classList.toggle("questions__item--active")
     });
-});
+});*/
 
 $(document).ready(function() {
+    $('.questions__item').on('click', function(){
+        $(this).toggleClass('questions__item--active');
+    });
+
     $('.slider-customers__container').slick({
+        accessibility: false,
         prevArrow: ".slider-customers__arrow-prev",
         nextArrow: ".slider-customers__arrow-next"
     });
+
     $('.advantages-slider__container').slick({
+        accessibility: false,
         infinite: true,
         prevArrow: ".advantages-slider__arrow-prev",
         nextArrow: ".advantages-slider__arrow-next",
@@ -24,6 +31,7 @@ $(document).ready(function() {
     });
 
     $('.cards__container').slick({
+        accessibility: false,
         infinite: true,
         arrows: false,
         slidesToShow: 4,

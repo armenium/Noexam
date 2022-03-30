@@ -36,7 +36,7 @@ $this->registerJsFile('@web/v2/my-quote/js/'.$page_id.'.js', ['depends' => [Jque
 					#'value' => '400',
 					'data-from' => $from,
 					'data-values' => implode(',', $customer_data::$coverage_amounts),
-				])->label(false)->error(false);?>
+				])->error(false);?>
 			</div>
 			<div class="start-quote__term">
 				<div class="start-quote__subtitle fontBodyM"><b>Term Length</b></div>

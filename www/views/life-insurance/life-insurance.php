@@ -44,7 +44,7 @@ $this->registerJsFile('@web/v2/life-insurance/js/life-insurance.js', ['depends' 
 				<div class="main-first-screen__advice">
 					<?=Author::widget(['db_time' => $this->context->current_cat->updated, 'file_time' => filemtime(__FILE__)]);?>
 					<div class="fs-advice__body">
-						<p class="fs-advice__text fontBodyM">The <b>2019 Insurance Barometer</b> published by LIMRA describes the current market as the best environment to purchase life insurance since the history of the study. However, most consumers are already worried enough about
+						<p class="fs-advice__text fontBodyM">The <b>Insurance Barometer</b> published by LIMRA describes the current market as the best environment to purchase life insurance since the history of the study. However, most consumers are already worried enough about
 							having money for retirement, let alone making room in their budget for life insurance. Still, considering their options to have financial protection in place for their families should they pass away, gives many people a
 							sense of comfort. Though the study presents life insurance as one of the lesser-weighted priorities in the minds of Americans when it comes to financial planning, consumers who do seek out final expense options typically
 							find an affordable and adequate policy after all.</p>
@@ -250,7 +250,7 @@ $this->registerJsFile('@web/v2/life-insurance/js/life-insurance.js', ['depends' 
 	<div class="wrapp">
 		<article class="article">
 			<div class="article__box">
-				<h1 class="article__title heading-2 article__title--center">Frequently Asked Questions</h1>
+				<h2 class="article__title heading-2 article__title--center">Frequently Asked Questions</h2>
 				<div class="article__links">
 					<div class="article__links-column">
 						<a href="/life-insurance/types/" class="article__link fontBodyS">What are the different types of life insurance?</a>

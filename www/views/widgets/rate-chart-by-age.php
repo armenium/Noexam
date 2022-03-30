@@ -28,7 +28,7 @@
 					$chart_id = Yii::$app->getSecurity()->generateRandomString(8);
 					$k++;
 				?>
-				<div class="<?=$class;?>" id="<?=$id;?>-<?=$chart;?>" role="tabpanel" aria-labelledby="<?=$id;?>-<?=$chart;?>-tab">
+				<div class="<?=$class;?>" id="<?=$id;?>-<?=$chart;?>" role="tabpanel" aria-labelledby="<?=$chart;?>-tab">
 					<?=$this->render('/widgets/'.$main_dir.'/'.$chart.'.php', ['id' => $chart_id, 'main_dir' => $main_dir, 'view_dir' => $chart, 'charts' => $charts]);?>
 				</div>
 				<?php endforeach;?>

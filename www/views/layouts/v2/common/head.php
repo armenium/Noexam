@@ -4,8 +4,8 @@ use yii\helpers\VarDumper;
 ?>
 <head>
 	<meta charset="<?=Yii::$app->charset;?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=1, minimal-ui">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, minimal-ui">
 	<meta http-equiv="Cache-Control" content="no-cache">
 	<meta name="robots" content="noindex,nofollow">
 	<?=Html::csrfMetaTags();?>

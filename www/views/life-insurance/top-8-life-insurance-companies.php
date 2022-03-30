@@ -61,12 +61,12 @@ $this->params['breadcrumbs'][] = ['label' => 'Top 8 Life Insurance Companies', '
 <div class="main-wrapp bg1">
 	<div class="wrapp">
 		<div class="top-companies-v1">
-			<h1 class="top-companies-v1__title heading-5">Top 8 Life Insurance Companies - Get Multiple Quotes for the Best Price</h1>
+			<h2 class="top-companies-v1__title heading-5">Top 8 Life Insurance Companies - Get Multiple Quotes for the Best Price</h2>
 
 			<div class="top-companies-v1__box">
-				<span class="top-companies-v1__box-label fontBodyM">Are you over the age of 55?</span>
+				<label for="js_over_age_55" class="top-companies-v1__box-label fontBodyM">Are you over the age of 55?</label>
 				<div class="button b2" id="button-10">
-					<input type="checkbox" class="checkbox" name="sorting" data-trigger="js_action_click" data-action="sort_companies" data-target="sorting_list" data-prevent-default="false">
+					<input type="checkbox" id="js_over_age_55" class="checkbox" name="sorting" data-trigger="js_action_click" data-action="sort_companies" data-target="sorting_list" data-prevent-default="false">
 					<div class="knobs">
 						<span class="button-small">YES</span>
 					</div>
@@ -246,7 +246,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Top 8 Life Insurance Companies', '
 	<div class="wrapp">
 		<div class="top-companies-v1__content">
 			<section class="top-companies-v1-content">
-				<h5 class="top-companies-v1-content__title heading-5">Best For No Medical Exam & Fast 100% Online Application: Bestow</h5>
+				<h2 class="top-companies-v1-content__title heading-5">Best For No Medical Exam & Fast 100% Online Application: Bestow</h2>
 				<p class="top-companies-v1-content__paragraph fontBodyM">
 					If you’re looking for quick life insurance coverage that doesn’t require a medical exam, Bestow might be the right choice for you.
 				</p>
@@ -275,7 +275,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Top 8 Life Insurance Companies', '
 			</section>
 
 			<section class="top-companies-v1-content">
-				<h5 class="top-companies-v1-content__title heading-5">Most Flexible Life Insurance: Ladder</h5>
+				<h2 class="top-companies-v1-content__title heading-5">Most Flexible Life Insurance: Ladder</h2>
 				<p class="top-companies-v1-content__paragraph fontBodyM">
 					Buying life insurance can be a decades-long commitment. Considering that your financial needs may change over time, though, it makes sense that you should be able to change your life insurance coverage as well.
 				</p>
@@ -307,7 +307,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Top 8 Life Insurance Companies', '
 			</section>
 
 			<section class="top-companies-v1-content">
-				<h5 class="top-companies-v1-content__title heading-5">Best Rated For Financial Strength & Best Riders: Haven Life</h5>
+				<h2 class="top-companies-v1-content__title heading-5">Best Rated For Financial Strength & Best Riders: Haven Life</h2>
 				<p class="top-companies-v1-content__paragraph fontBodyM">
 					When buying life insurance, it’s important to pick a policy that can be customized to fit your personal needs while also providing you with peace of mind for years to come. Through Haven Life, you can check both of those boxes.
 				</p>
