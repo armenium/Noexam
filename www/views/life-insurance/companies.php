@@ -70,7 +70,7 @@ $this->registerJsFile('@web/v2/life-insurance/js/best-companies.js', ['depends' 
 	</div>
 </div>
 
-<div class="main-wrapp">
+<div class="main-wrapp bg0">
 	<div class="wrapp">
 		<section class="choose-company">
 			<h1 class="choose-company__title heading-2">How to Choose a Life Insurance<br> Company</h1>

@@ -1,4 +1,4 @@
-<div class="main-wrapp">
+<div class="main-wrapp bg0">
 	<div class="wrapp">
 		<section class="cards">
 			<div class="cards__container row flex-nowrap justify-content-between">

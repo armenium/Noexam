@@ -1,4 +1,4 @@
-<div class="main-wrapp">
+<div class="main-wrapp bg0">
 	<div class="wrapp">
 		<div class="quotes-result__cards cards">
 			<div class="cards__item s01 js_eqh_item">

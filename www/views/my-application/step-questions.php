@@ -25,7 +25,7 @@ $this->registerJsFile('@web/v2/my-application/js/online-app.js', ['depends' => [
 $this->registerJsFile('@web/v2/my-application/js/'.$page_id.'.js', ['depends' => [JqueryAsset::className(), AppAsset::className()]]);
 ?>
 
-<div class="main-wrapp main-questions">
+<div class="main-wrapp bg0 main-questions">
 	<div class="wrapp">
 		<div class="online-app-questions my-quote-steps">
 			<div class="my-quote-steps__steps">

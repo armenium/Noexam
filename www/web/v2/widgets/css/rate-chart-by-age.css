@@ -65,3 +65,14 @@ table.ages-table tbody tr td {color: #282B29; font-size: 18px; line-height: 26px
 	.rates-chart-by-age .custom-age-tabs .nav-item .nav-link {font-size: 14px;}
 	.rates-chart-by-age .custom-age-tabs .nav-item .nav-link span {padding: 10px 12px;}
 }
+@media all and (max-width: 540px){
+	.rates-chart-by-age .custom-age-tabs .nav-item .nav-link {font-size: 11px; line-height: normal;}
+	.rates-chart-by-age .custom-age-tabs .nav-item .nav-link span {padding: 6px;}
+}
+@media all and (max-width: 410px){
+	.rates-chart-by-age .custom-age-tabs .nav-item .nav-link {padding: 0;}
+	.rates-chart-by-age .custom-age-tabs .nav-item .nav-link::before,
+	.rates-chart-by-age .custom-age-tabs .nav-item .nav-link::after,
+	.rates-chart-by-age .custom-age-tabs .nav-item .nav-link span::before,
+	.rates-chart-by-age .custom-age-tabs .nav-item .nav-link span::after {display: none;}
+}

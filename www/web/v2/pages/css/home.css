@@ -1,7 +1,7 @@
 /* FIRST SCREEN */
 .first-screen {width: 100%; min-height: calc(100vh - 105px); padding: 0 15px; display: flex; justify-content: center; align-items: center; background-color: #fcf9f3;}
 @media all and (max-width: 767px) {
-	.first-screen {padding-top: 105px;}
+	.first-screen {padding-top: 20px;}
 }
 .first-screen__container {max-width: 1350px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap;}
 .first-screen__col {width: 50%;}

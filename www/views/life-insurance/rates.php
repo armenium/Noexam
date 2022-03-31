@@ -70,7 +70,7 @@ $this->registerCssFile('@web/v2/common/css/get-started.css', ['depends' => [Boot
 	</div>
 </div>
 
-<div class="main-wrapp">
+<div class="main-wrapp bg0">
 	<div class="wrapp">
 		<section class="rates-charts">
 			<h1 class="rates-charts__title heading-2">Term life insurance rate Charts</h1>
@@ -127,7 +127,7 @@ $this->registerCssFile('@web/v2/common/css/get-started.css', ['depends' => [Boot
 	</div>
 </div>
 
-<div class="main-wrapp">
+<div class="main-wrapp bg0">
 	<?=RateChartByAge::widget();?>
 </div>
 
@@ -191,7 +191,7 @@ $this->registerCssFile('@web/v2/common/css/get-started.css', ['depends' => [Boot
 	</div>
 </div>
 
-<div class="main-wrapp">
+<div class="main-wrapp bg0">
 	<div class="wrapp">
 		<section class="listen-us">
 			<h1 class="listen-us__title heading-2">Why Should You Listen to Us?</h1>

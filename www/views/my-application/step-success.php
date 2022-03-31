@@ -19,7 +19,7 @@ $this->registerCssFile('@web/v2/my-application/css/'.$page_id.'.css', ['depends'
 #$this->registerJsFile('@web/v2/my-application/js/online-app.js', ['depends' => [JqueryAsset::className(), AppAsset::className()]]);
 $this->registerJsFile('@web/v2/my-application/js/'.$page_id.'.js', ['depends' => [JqueryAsset::className(), AppAsset::className()]]);
 ?>
-<div class="main-wrapp">
+<div class="main-wrapp bg0">
 	<div class="wrapp">
 		<section class="online-app-finish">
 			<img src="/v2/my-application/img/dog-bg.png" alt="background" class="online-app-finish__img">

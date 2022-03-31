@@ -1,4 +1,4 @@
-<div class="main-wrapp">
+<div class="main-wrapp bg0">
 	<div class="wrapp">
 		<section class="companies">
 			<h1 class="companies__title heading-2">We represent the best life<br> insurance companies</h1>

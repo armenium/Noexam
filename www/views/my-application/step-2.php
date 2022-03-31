@@ -24,7 +24,7 @@ $payment_frequencies = [
 	'annual' => 'Annual ($'.$customer_data->premium_amount.')',
 ];
 ?>
-<div class="main-wrapp">
+<div class="main-wrapp bg0">
 	<div class="wrapp">
 		<div class="online-app-step-2 my-quote-steps">
 			<div class="my-quote-steps__steps">

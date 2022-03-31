@@ -18,7 +18,7 @@ $this->registerCssFile('@web/v2/my-application/css/online-app.css', ['depends' =
 $this->registerCssFile('@web/v2/my-application/css/'.$page_id.'.css', ['depends' => [BootstrapAsset::className(), AppAsset::className()]]);
 $this->registerJsFile('@web/v2/my-application/js/online-app.js', ['depends' => [JqueryAsset::className(), AppAsset::className()]]);
 ?>
-<div class="main-wrapp">
+<div class="main-wrapp bg0">
 	<div class="wrapp">
 		<div class="online-app-step-1 my-quote-steps">
 			<div class="my-quote-steps__steps">
