@@ -25,6 +25,8 @@
 .bg3 .top__btn {color: #fff;}
 .bg3 .top__btn:after { content: url("../../common/images/arrow-right-ffffff.svg");}
 
+body {background-color: #FCF9F3;}
+
 form input[type="hidden"] {display: none;}
 
 .main-wrapp h1,
@@ -44,7 +46,7 @@ form input[type="hidden"] {display: none;}
 .main-wrapp:not(.footer-wrap) li:not(.breadcrumbs__item) {margin-bottom: 15px;}
 .main-wrapp:not(.footer-wrap) li:not(.breadcrumbs__item) p {margin-bottom: 2px;}
 .main-wrapp:not(.footer-wrap) p:last-child {margin-bottom: 0;}
-.main-wrapp:not(.footer-wrap) a:not([role="button"]):not(.main-btn):not(.footer__link) {color: #339E75;}
+.main-wrapp:not(.footer-wrap) a:not([role="button"]):not(.main-btn):not(.footer__link) {color: #339E75; word-break: break-word;}
 .main-wrapp:not(.footer-wrap) a:not([role="button"]):not(.main-btn):not(.footer__link):hover {text-decoration: underline;}
 
 .bg2, .bg2 h1, .bg2 h2, .bg2 h3, .bg2 h4, .bg2 h5, .bg2 h6,
@@ -76,6 +78,8 @@ form input[type="hidden"] {display: none;}
 .header--empty .header__imgBox > img {font-size: 0; width: auto;}
 @media all and (max-width: 767px){
 	.header--empty .header__imgBox > img {width: auto; height: 20px;}
+	.main-wrapp h1.heading-0 {text-align: left;}
+	.main-first-screen {padding: 40px 0 0;}
 }
 
 table.ages-table {width: 100%; background-color: #fff;}

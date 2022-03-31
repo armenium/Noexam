@@ -8,7 +8,10 @@ body {
 }
 
 body.modal-opened {overflow: hidden; height: 100vh;}
-
+@media all and (max-width: 767px){
+    body {margin-top: 105px;}
+    body.scrolled {/*margin-top: 60px;*/}
+}
 /* main {
     min-height: calc(100vh - 105px - 360px - 80px);
 } */
@@ -580,57 +583,23 @@ form input[type="hidden"] {display: none;}
 
 /* FOOTER */
 
-.footer {
-    min-height: 360px;
-    background: #FFFFFF;
-    padding-top: 70px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-.footer__col {
-    margin-right: 20px;
-}
-.footer__col:last-child {
-    margin-right: 0;
-}
-.footer__col:first-child {
-    max-width: 472px;
-}
-.footer__col:last-child {
-    display: flex;
-    justify-content: space-around;
-    flex-grow: 1;
-}
-.footer__box {
-    display: flex;
-    flex-direction: column;
-}
-.footer__logo {
-    margin-bottom: 20px;
-}
-.footer__paragraph {
-    margin-bottom: 25px;
-}
-.footer__icons {
-    display: flex;
-}
-.footer__icon {
-    margin-right: 25px;
-    cursor: pointer;
-}
-.footer__icon:last-child {
-    margin-right: 0;
-}
-.footer__subtitle {
-    margin-bottom: 25px;
-}
-.footer__item {
-    margin-bottom: 15px;
-}
-.footer__item:last-child {
-    margin-bottom: 0;
-}
+.footer {min-height: 360px; background-color: #fff; padding: 70px 0 80px; width: 100%; margin: 0 auto;}
+.footer .inner {max-width: 1140px; margin: 0 auto; padding: 0 15px;}
+/*
+.footer__col {margin-right: 20px;}
+.footer__col:last-child {margin-right: 0;}
+.footer__col:first-child {max-width: 472px;}
+.footer__col:last-child {display: flex; justify-content: space-around; flex-grow: 1;}
+.footer__box {display: flex; flex-direction: column;}
+*/
+.footer__logo {margin-bottom: 20px;}
+.footer__paragraph {margin-bottom: 25px;}
+.footer__icons {display: flex;}
+.footer__icon {margin-right: 25px; cursor: pointer;}
+.footer__icon:last-child {margin-right: 0;}
+.footer__subtitle {margin-bottom: 25px;}
+.footer__item {margin-bottom: 15px;}
+.footer__item:last-child {margin-bottom: 0;}
 .footer__link {text-decoration: none; transition: all 0.2s ease;}
 .footer__link:hover {text-decoration: none; color: #339E75;}
 .copyright {height: 80px; display: flex; justify-content: center; align-items: center; background-color: #FCF9F3;}

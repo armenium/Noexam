@@ -80,7 +80,7 @@ $config = [
         ],
         'db' => require(__DIR__.'/db.php'),
         'assetManager' => [
-	        'appendTimestamp' => true, #https://www.yiiframework.com/doc/guide/2.0/ru/structure-assets#cache-busting
+	        'appendTimestamp' => YII_ENV_DEV ? true : false, #https://www.yiiframework.com/doc/guide/2.0/ru/structure-assets#cache-busting
 	        'bundles' => [
 		        'yii\web\JqueryAsset' => [
 			        'sourcePath' => null,
