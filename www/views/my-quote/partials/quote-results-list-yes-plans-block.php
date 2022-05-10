@@ -21,7 +21,7 @@ use yii\widgets\ActiveForm;
 			<?php foreach($company_data as $term => $data):
 				$btn_link = (isset($data['link'])) ? 'data-trigger="js_action_click" data-action="quote-result-link" data-url="'.$data['link'].'"' : '';
 				?>
-				<?php $form = ActiveForm::begin(['id' => 'quote-result-form-'.$company.'-'.$term, 'action' => '/my-quote/post/', 'options' => ['class' => 'quote-result-form'], 'fieldConfig' => ['options' => ['tag' => false]]]);?>
+				<?php $form = ActiveForm::begin(['id' => 'quote-result-form-'.$company.'-'.$term, 'action' => '/my-quote/post/', 'enableClientValidation' => false, 'options' => ['class' => 'quote-result-form'], 'fieldConfig' => ['options' => ['tag' => false]]]);?>
 				<?=$form->field($customer_data, 'form_name')->hiddenInput(['value' => 'quote-result'])->label(false)->error(false);?>
 				<?=$form->field($customer_data, 'term')->hiddenInput(['value' => $term])->label(false)->error(false);?>
 				<?=$form->field($customer_data, 'rate_class')->hiddenInput(['value' => $data['rate_class_name']])->label(false)->error(false);?>

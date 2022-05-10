@@ -798,8 +798,7 @@ class CustomerData extends ActiveRecord {
 			// [['phone_number'], 'integer'],
 			[['phone_number'], 'string', 'length' => [10, 14]],
 			//[['phone_number'], 'number', 'numberPattern' => '([0-9]{3}) [0-9]{3}-[0-9]{4}'],
-			[['occupation', 'health'], 'string', 'max' => 40],
-			[
+			[['occupation', 'health'], 'string', 'max' => 40], [
 				['occupation'],
 				'in',
 				'not'   => true,
@@ -820,8 +819,7 @@ class CustomerData extends ActiveRecord {
 					'Wrestler',
 					'Pacific Northwest Fisherman',
 					'Commercial Crab Fisherman',
-				]
-			],
+			]],
 			[['household_income'], 'string', 'max' => 12],
 			[['ssn'], 'string', 'length' => [9, 9]],
 			[['dln'], 'alphaNumeric'],

@@ -378,7 +378,7 @@ $(function(){
 						values = (val == 'rt')
 							? ['100k','150k','200k','250k','300k']
 							: ['100k','150k','200k','250k','300k','400k','500k','600k','700k','800k','900k','1m'];
-					console.log(values);
+					//console.log(values);
 					FJS.vars.my_range_slider.update({'values': values});
 				}
 			},
