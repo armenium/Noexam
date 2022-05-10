@@ -9,7 +9,7 @@ return [
 	'supportEmail' => 'robot@noexam.com',
 	'adminAllowedIPs' => [
 		'45.26.156.154',  # Jonathan's IP
-		'109.111.128.252', # Armen's IP
+		'5.11.70.116', # Armen's IP
 		null, # Armen's IP
 	],
 

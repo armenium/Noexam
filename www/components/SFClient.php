@@ -100,7 +100,7 @@ class SFClient extends Component{
 	}
 	
 	function update_lead($id, array $fields){
-		$url = "$this->instance_url/services/data/v20.0/sobjects/Lead/$id";
+		$url = "$this->instance_url/services/data/v35.0/sobjects/Lead/$id";
 		
 		$content = json_encode($fields);
 		
@@ -303,7 +303,7 @@ class SFClient extends Component{
 	 */
 	public function delete_lead($lead_id){
 		
-		$url = "$this->instance_url/services/data/v20.0/sobjects/Lead/$lead_id";
+		$url = "$this->instance_url/services/data/v35.0/sobjects/Lead/$lead_id";
 		
 		$curl = curl_init($url);
 		curl_setopt($curl, CURLOPT_HEADER, false);
